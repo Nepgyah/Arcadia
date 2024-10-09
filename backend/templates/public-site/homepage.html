@@ -4,7 +4,7 @@
 {% block stylesheets %}
 <link href="{% static "css/globals/_header.css" %}" rel="stylesheet" type="text/css">
 <!-- <link href="{% static "css/globals/_footer.css" %}" rel="stylesheet" type="text/css"> -->
-<!-- <link href="{% static "css/homepage.css" %}" rel="stylesheet" type="text/css"> -->
+<link href="{% static "css/homepage.css" %}" rel="stylesheet" type="text/css">
 <link href="{% static "css/globals/_base.css" %}" rel="stylesheet" type="text/css">
 {% endblock %}
 
@@ -12,7 +12,25 @@
 
     {% include 'public-site/header.html' %}
 
-    <section>
+    <section id="hero">
+        <img id="sakura-latern" src="{% static "images/public-site/homepage/sakura_latern.svg" %}" />
+        <!-- <img id="hero-flower-one" src="{% static "images/public-site/sakura_flower.svg" %}" />
+        <img id="hero-flower-two" src="{% static "images/public-site/sakura_flower.svg" %}" /> -->
+        <div class="inner-section-wrapper">
+            <div class="flex-grid">
+                <div class="text">
+                    <h1>All Things Anime,<br>All in One Place</h1>
+                    <p>Your one-stop destination for managing, discovering and sharing your love for anime culture.</p>
+                    <a href="/account/login/">
+                        <div class="btn btn-hero btn-primary">Login</div>
+                    </a>
+                </div>
+                <div class="image">
+                    <img id="hero-image" src="{% static "images/public-site/homepage/homepage_hero.svg" %}" />
+                    <img id="hero-blob" src="{% static "images/public-site/homepage/homepage_blob.svg" %}" />
+                </div>
+            </div>
+        </div>
     </section>
 
 {% endblock %}

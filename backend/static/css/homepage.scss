@@ -1,0 +1,66 @@
+@use "./globals/variables";
+
+#content {
+    #hero {
+        overflow: hidden;
+        height: auto;
+        min-height: 90dvh;
+        padding: 0;
+        position: relative;
+
+        #sakura-latern {
+            position: absolute;
+            left: 0px;
+            top: 4rem;
+
+        }
+
+        #hero-flower-one {
+            position: absolute;
+            bottom: 0px;
+            right: 25%;
+            height: 82px;
+            width: 82px;
+        }
+        #hero-flower-two {
+            position: absolute;
+            bottom: 1rem;
+            right: 35%;
+        }
+        .inner-section-wrapper {
+            margin-top: 6rem;
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+
+            .flex-grid {
+                .text {
+                    width: 60%;
+                    padding-right: 36px;
+                    p {
+                        font-size: 24px;
+                        margin-bottom: 48px;
+                    }
+                }
+
+                .image {
+                    width: 40%;
+                    position: relative;
+                    img {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translateX(-50%) translateY(-50%);
+
+                        &#hero-image {
+                            z-index: 2;
+                        }
+
+                        &#hero-blob {
+                            z-index: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,7 +1,7 @@
 @use './variables';
 @use './fonts';
 @use './reset';
-
+ 
 html,
 body {
     background-color: variables.$bg-body-light-primary;
@@ -85,11 +85,20 @@ a {
     }
 
     &.btn-primary {
-        background-color: variables.$pink-primary;
-        color: variables.$text-dark-primary;
+        background-color: variables.$arcadia-primary-one;
+        color: variables.$text-light-primary;
         
         &:hover {
-            background-color: variables.$pink-secondary;
+            background-color: variables.$arcadia-primary-two;
+        }
+    }
+
+    &.btn-secondary {
+        background-color: variables.$arcadia-secondary-one;
+        color: variables.$arcadia-primary-one;
+
+        &:hover {
+            background-color: variables.$arcadia-secondary-two;
         }
     }
 }
