@@ -1,0 +1,18 @@
+{% extends 'public-site/base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+<link href="{% static "css/globals/_header.css" %}" rel="stylesheet" type="text/css">
+<!-- <link href="{% static "css/globals/_footer.css" %}" rel="stylesheet" type="text/css"> -->
+<!-- <link href="{% static "css/homepage.css" %}" rel="stylesheet" type="text/css"> -->
+<link href="{% static "css/globals/_base.css" %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+
+    {% include 'public-site/header.html' %}
+
+    <section>
+    </section>
+
+{% endblock %}
