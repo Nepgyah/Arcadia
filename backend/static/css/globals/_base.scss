@@ -14,6 +14,7 @@ body {
 
 * {
     font-family: "Noto Sans JP", Helvetica, Arial, sans-serif;
+    color: variables.$text-dark;
 }
 
 p {
@@ -42,10 +43,17 @@ h1, h2, h3, h4 {
 }
 
 h3 {
-    font-size: 64px;
-    margin-bottom: 73px;
+    font-size: 59px;
+    margin-bottom: 48px;
 }
 
+.color-arcadia-primary {
+    color: variables.$arcadia-primary-one;
+}
+
+.color-white-primary {
+    color: variables.$text-light-primary;
+}
 section {
     display: block;
     position: relative;
@@ -59,13 +67,18 @@ section {
         margin: 0 auto;
         padding: 0 20px;
         z-index: 1;
+
+        .sub-header {
+            font-size: 18px;
+            margin-bottom: 48px;
+        }
+
+        .header-description {
+            margin-top: 73px;
+        }
     }
 }
 
-.section-header {
-    font-size: 18px;
-    margin-bottom: 48px;
-}
 
 a {
     text-decoration: none;

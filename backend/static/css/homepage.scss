@@ -104,7 +104,6 @@
                 }
 
                 .text-col {
-                    color: white;
                     width: 60%;
                     display: flex;
                     flex-direction: column;
@@ -113,6 +112,7 @@
                     h2 {
                         font-size: 73px;
                         margin-bottom: 73px;
+                        color: variables.$text-light-primary;
                     }
 
                     .differences {
@@ -123,14 +123,207 @@
                         .feature {
                             display: flex;
                             column-gap: 8px;
+                            width: 50%;
+                            
                             .line-header {
                                 background-color: variables.$arcadia-secondary-one;
                                 width: 3px;
                                 height: 36px;
                                 flex-shrink: 0;
                             }
-                            width: 50%;
+
+                            .feature-text {
+
+                                .feature-name, .feature-description {
+                                    color: variables.$text-light-primary;
+                                }
+                            }
                         }
+                    }
+                }
+            }
+        }
+    }
+
+    #primary-suite-intro {
+
+        .inner-section-wrapper {
+
+            .suite-tile {
+                box-shadow: 0px 2px 9px -2px #bbbbbb;
+                border-radius: 10px;
+                overflow: hidden;
+
+                &.dark {
+                    color: variables.$text-dark;
+                }
+
+                &.light {
+                    .suite-text {
+                        .title {
+                            color: variables.$text-light-primary;
+                        }
+                        .slogan {
+                            color: variables.$text-light-primary;
+                        }
+                    }
+                }
+                .suite-image {
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+                .suite-text {
+                    padding: 24px;
+                    font-size: 24px;
+
+                    .title {
+                        font-weight: bold;
+                        margin-bottom: variables.$margin-medium;
+                    }
+
+                }
+                &.vertical {
+                    display: flex;
+                    flex-direction: column;
+
+                    .suite-image {
+                        height: 50%;
+                    }
+
+                    .suite-text {
+                        height: 50%;
+                    }
+                }
+
+                &.horizontal {
+                    display: flex;
+
+                    .suite-image {
+                        width: 50%;
+                    }
+
+                    .suite-text {
+                        width: 50%;
+                    }
+                }
+            }
+            .top-half {
+                margin-bottom: 18px;
+                height: 500px;
+
+                .section-text {
+                    width: 50%;
+                }
+                
+                #miru-tile {
+                    background-color: variables.$miru-primary;
+                    margin-left: 9px;
+                    width: 50%;
+                }
+            }
+
+            .bottom-half {
+
+                .left-col {
+                    flex-direction: column;
+                    width: 50%;
+                    margin-right: 9px;
+
+                    #yomu-tile {
+                        background-color: variables.$yomu-primary;
+                        height: 450px;
+                        margin-bottom: 9px;
+                    }
+
+                    #kau-tile {
+                        background-color: variables.$kau-primary;
+                        min-height: 225px;
+                        margin-top: 9px;
+                    }
+                }
+
+                .right-col {
+                    flex-direction: column;
+                    width: 50%;
+                    margin-left: 9px;
+
+                    #hiku-tile {
+                        background-color: variables.$hiku-primary;
+                        height: 335px;
+                        margin-bottom: 9px;
+                        flex-grow: 1;
+                    }
+
+                    #tsunagu-tile {
+                        background-color: variables.$tsunagu-primary;
+                        min-height: 340px;
+                        margin-top: 9px;
+                        flex-grow: 2;
+                    }
+                }
+            }
+        }
+    }
+
+    #stats {
+
+        .inner-section-wrapper {
+
+            .header-content {
+                text-align: center;
+
+            }
+
+            .image {
+                width: 40%;
+                position: relative;
+
+                #stats-girl {
+                    position: relative;
+                    z-index: 2;
+                    margin: auto;
+                }
+
+                #stats-blob {
+                    position: absolute;
+                    z-index: 1;
+                    top: 50%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+            }
+
+            .stats-content {
+                width: 60%;
+
+                &.flex-grid {
+                    flex-wrap: wrap;
+                    row-gap: 64px;
+                }
+
+                .stat {
+                    width: 50%;
+
+                    .japanese {
+                        writing-mode: vertical-lr;
+                        text-orientation: upright;
+                        color: variables.$miru-primary;
+                        font-size: 64px;
+                    }
+
+                    .value, .label {
+                        color: variables.$arcadia-primary-one;
+                    }
+                    .value {
+                        font-size: 59px;
+                        font-weight: bold;
+                    }
+
+                    .label {
+                        font-size: 36px;
                     }
                 }
             }
