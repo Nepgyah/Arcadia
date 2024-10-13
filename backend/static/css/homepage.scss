@@ -374,4 +374,18 @@
             }
         }
     }
+
+    #partners {
+        .inner-section-wrapper {
+            .flex-grid {
+                flex-wrap: wrap;
+                row-gap: 64px;
+                
+                img {
+                    width: 25%;
+                    max-height: 150px;
+                }
+            }
+        }
+    }
 }
