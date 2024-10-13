@@ -35,6 +35,10 @@
                 display: flex;
                 column-gap: variables.$margin-small;
                 align-items: center;
+
+                a {
+                    color: variables.$text-light-primary;
+                }
             }
         }
     }
