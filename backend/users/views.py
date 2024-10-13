@@ -1,8 +1,14 @@
 from django.shortcuts import render, redirect
+from django.http import JsonResponse
 from django.contrib.auth import authenticate, login, logout
 from .forms import CreateUserForm, LoginForm
-
 from django.contrib.auth.decorators import login_required
+
+# Authentication - Important for access to platform frontend
+def checkAuthentication(request):
+    print('call')
+    print(request.user.is_authenticated)
+    return JsonResponse({'authenticated': request.user.is_authenticated})
 
 # Create your views here.
 def loginPage(request):
@@ -25,8 +31,9 @@ def loginPage(request):
     return render(request, 'account/login.html', context)
 
 def logoutUser(request):
+    print("Call to logout recieved!")
     logout(request)
-    return redirect('login')
+    return JsonResponse({}, status=200)
 
 def register(request):
     form = CreateUserForm()
