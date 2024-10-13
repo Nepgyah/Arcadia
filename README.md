@@ -10,12 +10,24 @@ The project will be a stack of Django backend with React JS frontend. Due to bot
 # Suite Breakdown
  Since anime and otaku culture stems from Japan, the apps name were inspired by the Japanese language.
 ## Primary Apps
- - Arcadia Miru - Anime streaming / tracker database
- - Arcadia Yomu - Manga/ LN reading / tracker database
- - Arcadia Hiku - Gacha game guides / news
+ - Arcadia Miru
+	 - This will the primary app for anime related media (Movies, ova, etc)
+	 - Users here will be able to watch and also track their anime on the same app, combining the features of stream apps like crunchyroll, funimation with myanimelist, and anilist
+ - Arcadia Yomu
+	 - The primary app for literature related media (LN, Manga, Comic, etc)
+	 - Users here will be able to read and also track their manga, combining any manga reading site with the manga features on myanimelist
  - Arcadia Kau - Anime merch
  - Arcadia Tsuagu - Social media
 ## Secondary Apps
-- Arcadia Iku - Convention tracker
-- Arcadia Shiru - Blog and article
-- Arcadia Kiku - Lofi radio basically
+- Arcadia Hiku
+	- The primary app for all things gacha (News, guides, media, etc). This is a seperate app from Asobu since gachas arent really common on mainstream gaming libraries, and gacha itself is a keystaple in the otaku community. Its worthy to have its own app dedicated to it.
+	- Users here will be able to edit, create, share guides on gacha games as well as keep up with the news of the most popular gachas, inspiration for the Hoyoverse app
+- Arcadia Iku
+	- The primary app for events and conventions
+	- Users her will be able to check news and track the events they are going to during the year. There really isnt an app that does this that i am aware of but would be cool to have. Building of the classic todolist or planner based projects.
+- Arcadia Shiru
+	- The primary app for articles and blog posts
+	- Users here will be able to read up on anything anime, otaku culture related. Not much complexity here.
+- Arcadia Kiku
+	- The primary app for listening to music
+	- Users here will be able to listen to various radio music channels. Lofi radio basically
