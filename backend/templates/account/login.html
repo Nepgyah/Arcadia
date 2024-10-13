@@ -7,5 +7,15 @@
 </head>
 <body>
     <h1>Login</h1>
+    
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.username.label }}
+        {{ form.username }}
+
+        {{ form.password.label }}
+        {{ form.password }}
+        <input type="submit" name="Login"/>
+    </form>
 </body>
 </html>
