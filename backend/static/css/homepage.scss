@@ -2,6 +2,68 @@
 
 #content {
 
+    .suite-tile {
+        box-shadow: 0px 2px 9px -2px #bbbbbb;
+        border-radius: 10px;
+        overflow: hidden;
+
+        &.dark {
+            color: variables.$text-dark-primary;
+        }
+
+        &.light {
+            .suite-text {
+                .title {
+                    color: variables.$text-light-primary;
+                }
+                .slogan {
+                    color: variables.$text-light-primary;
+                }
+            }
+        }
+        .suite-image {
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        .suite-text {
+            padding: 24px;
+            font-size: 24px;
+
+            .title {
+                font-weight: bold;
+                margin-bottom: variables.$margin-medium;
+            }
+
+        }
+        &.vertical {
+            display: flex;
+            flex-direction: column;
+
+            .suite-image {
+                height: 50%;
+            }
+
+            .suite-text {
+                height: 50%;
+            }
+        }
+
+        &.horizontal {
+            display: flex;
+
+            .suite-image {
+                width: 50%;
+            }
+
+            .suite-text {
+                width: 50%;
+            }
+        }
+    }
+
     #hero {
         overflow: hidden;
         height: auto;
@@ -149,6 +211,7 @@
 
         .inner-section-wrapper {
 
+<<<<<<< Updated upstream
             .suite-tile {
                 box-shadow: 0px 2px 9px -2px #bbbbbb;
                 border-radius: 10px;
@@ -210,6 +273,8 @@
                     }
                 }
             }
+=======
+>>>>>>> Stashed changes
             .top-half {
                 margin-bottom: 18px;
                 height: 500px;
@@ -385,6 +450,36 @@
                 img {
                     width: 25%;
                     max-height: 150px;
+                }
+            }
+        }
+    }
+
+    #secondary-suite-intro {
+        .inner-section-wrapper {
+            .flex-grid {
+                flex-wrap: wrap;
+                gap: 18px;
+
+                .suite-tile {
+                    flex: 0 0 calc(50% - 9px);
+                    height: 300px;
+
+                    &#iku-tile {
+                        background-color: variables.$iku-primary;
+                    }
+
+                    &#shiru-tile {
+                        background-color: variables.$shiru-primary;
+                    }
+
+                    &#hiku-tile {
+                        background-color: variables.$hiku-primary;
+                    }
+
+                    &#kiku-tile {
+                        background-color: variables.$kiku-primary;
+                    }
                 }
             }
         }
