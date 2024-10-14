@@ -1,0 +1,74 @@
+@use './globals/variables';
+
+.flex-grid {
+    height: 100dvh;
+
+    .content {
+        width: 50%;
+        padding: 5%;
+
+        h1 {
+            text-align: center;
+        }
+
+        img {
+            margin: auto;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+            .input-field {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 36px;
+
+                label {
+                    margin-bottom: 16px;
+                }
+
+                input {
+                    border: 1px solid #BBBBBB;
+                    border-radius: 44px;
+                    height: 44px;
+                    padding-left: 24px;
+
+                }
+
+                &#submit {
+
+                    input {
+                        background-color: variables.$arcadia-primary-one;
+                        color: white;
+
+                        &:hover {
+                            cursor: pointer;
+                            
+                        }
+                    }
+
+                    a {
+                        margin: auto;
+                        font-size: 12px;
+                        
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .image {
+        width: 50%;
+        background-color: black;
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}

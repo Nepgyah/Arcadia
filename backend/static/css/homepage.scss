@@ -13,7 +13,6 @@
             position: absolute;
             left: 0px;
             top: 4rem;
-
         }
 
         #hero-flower-one {
@@ -155,7 +154,7 @@
                 overflow: hidden;
 
                 &.dark {
-                    color: variables.$text-dark;
+                    color: variables.$text-dark-primary;
                 }
 
                 &.light {
@@ -250,8 +249,8 @@
                     width: 50%;
                     margin-left: 9px;
 
-                    #hiku-tile {
-                        background-color: variables.$hiku-primary;
+                    #asobu-tile {
+                        background-color: variables.$asobu-primary;
                         height: 335px;
                         margin-bottom: 9px;
                         flex-grow: 1;

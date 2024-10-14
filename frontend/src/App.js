@@ -19,7 +19,7 @@ function App() {
             setIsAuth(response.data.authenticated)
             if (response.data.authenticated === false) {
               // Return a loading state while the authentication status is being checked
-              console.log("Not authenticated!")
+              window.location.href = 'http://127.0.0.1:8000/account/login/';
             } else {
               console.log("Authenticated!")
             }

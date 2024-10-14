@@ -1,21 +1,39 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arcadia - Login</title>
+    <link href="{% static "css/globals/_base.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static "css/account.css" %}" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <h1>Login</h1>
-    
-    <form method="POST" action="">
-        {% csrf_token %}
-        {{ form.username.label }}
-        {{ form.username }}
-
-        {{ form.password.label }}
-        {{ form.password }}
-        <input type="submit" name="Login"/>
-    </form>
+    <div class="flex-grid">
+        <div class="content">
+            <a href="/">
+                <img src="{% static "images/public-site/logo_dark.svg" %}" />
+            </a>
+            <h1>Login</h1>
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="input-field">
+                    <label>{{ form.username.label }}</label>
+                    {{ form.username }}
+                </div>
+                <div class="input-field">
+                    <label>{{ form.password.label }}</label>
+                    {{ form.password }}
+                </div>
+                <div id="submit" class="input-field">
+                    <input type="submit" name="Login"/>
+                    <a href="/account/register/">Don't have an account? Get started</a>
+                </div>
+            </form>
+        </div>
+        <div class="image">
+            <img src="{% static "images/account/login.jpg" %}" />
+        </div>
+    </div>
 </body>
 </html>

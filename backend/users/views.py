@@ -6,13 +6,15 @@ from django.contrib.auth.decorators import login_required
 
 # Authentication - Important for access to platform frontend
 def checkAuthentication(request):
-    print('call')
-    print(request.user.is_authenticated)
     return JsonResponse({'authenticated': request.user.is_authenticated})
 
 # Create your views here.
 def loginPage(request):
 
+    ## Auto redirect if already logged in
+    if request.user.is_authenticated:
+        return redirect('http://127.0.0.1:3000/')
+    
     form = LoginForm
     context = {
         'form': form
