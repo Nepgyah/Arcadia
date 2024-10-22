@@ -9,16 +9,18 @@ This is the currently planned structure and essentially the pages
 	- Primary
 		- Arcadia Miru
 		- Arcadia Yomu
-		- Arcadia Hiku
-		- Arcadia Kai
+		- Arcadia Asobu
+		- Arcadia Kau
 		- Arcadia Tsunagu
 	- Secondary
+		- Arcadia Hiku
 		- Arcadia Iku
 		- Arcadia Shiru
 		- Arcadia Kiku
 - Resources
 	- About Us
 	- Internship Opportunities
+	- Leadership
 	- Case studies
 	- Changelogs
 		- Arcadia

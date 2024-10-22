@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import { redirect } from "react-router-dom";
+import Button from '@mui/material/Button'
+import { Box, Drawer, List, ListItemButton, ListItemText } from "@mui/material";
 
 function Dashboard() {
 
@@ -20,11 +22,35 @@ function Dashboard() {
     };
 
     return (
-        <div>
-            <h1>Dashboard</h1>
-            <button onClick={logout}>Logout</button>
-        </div>
+        <Box sx={{ display: "flex"}}>
+            <Box
+                component={"main"}
+                sx={{ flexGrow: 1}}
+            >
+                <h1>Dashboard</h1>
+            </Box>
+        </Box>
     )
 }
 
+function HomeNav({}) {
+    return (
+        <Drawer variant="permanent" >
+            <h1>Home</h1>
+            <Box>
+                <List>
+                    <ListLinkItem name={"Miru"} />
+                </List>
+            </Box>
+        </Drawer>
+    )
+}
+
+function ListLinkItem({link, name, open}) {
+    return (
+        <ListItemButton>
+            <ListItemText primary={name}>OH</ListItemText>
+        </ListItemButton>
+    )
+}
 export default Dashboard;

@@ -16,11 +16,15 @@ The project will be a stack of Django backend with React JS frontend. Due to bot
  - Arcadia Yomu
 	 - The primary app for literature related media (LN, Manga, Comic, etc)
 	 - Users here will be able to read and also track their manga, combining any manga reading site with the manga features on myanimelist
+ - Arcadia Asobu
+	 - The primary app for purchasing / holding games
+	 - Users here will be able to buy and play games, track their stats, having features of apps like steam and origin
  - Arcadia Kau - Anime merch
- - Arcadia Tsuagu - Social media
+ - Arcadia Tsunagu - Social media
+	 - This primary for social media (Posts,  discussions, etc)
 ## Secondary Apps
 - Arcadia Hiku
-	- The primary app for all things gacha (News, guides, media, etc). This is a seperate app from Asobu since gachas arent really common on mainstream gaming libraries, and gacha itself is a keystaple in the otaku community. Its worthy to have its own app dedicated to it.
+	- The primary app for all things gacha (News, guides, media, etc). This is a seperate app from Asobu since gachas arent really common on mainstream gaming libraries, and gacha itself is a key staple in the otaku community. Its worthy to have its own app dedicated to it.
 	- Users here will be able to edit, create, share guides on gacha games as well as keep up with the news of the most popular gachas, inspiration for the Hoyoverse app
 - Arcadia Iku
 	- The primary app for events and conventions

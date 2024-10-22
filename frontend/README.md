@@ -1,8 +1,9 @@
 # FRONTEND
 The frontend will house the platform side of the project all the multiple apps of arcadia. Using the foundation of react here to avoided all the full page request rendering that django inherently uses. Also can use react here since bot scrapping, seo, etc arent necessary and not possible due to authentication required.
 
-## Structure
-There will be a main dashboard which will serve as the central hub for the user before branching off to 
+# App Features
+## Miru
+
 
 # Original Documentation
 

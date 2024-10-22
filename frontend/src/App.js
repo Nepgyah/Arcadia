@@ -1,9 +1,11 @@
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Link } from 'react-router-dom';
 import axios from 'axios';
 import Dashboard from './components/dashboard';
 import AnimeHome from './components/anime_miru/anime-home';
 import { useState, useEffect } from 'react';
+import Navigation from './components/navigation/navigation';
+import { AppBar, Box, CssBaseline, Drawer, List, ListItem, ListItemText, Toolbar, Typography } from '@mui/material';
 
 function App() {
 
@@ -34,13 +36,30 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      <Routes>
-        <Route path='/' element={ <Dashboard /> } />
-        <Route path='/anime' element={ <AnimeHome /> } />
-      </Routes>
-    </div>
+    <RoutesWrapper />
   );
 }
 
 export default App;
+
+function RoutesWrapper() {
+
+  const drawerWidth = 240;
+
+  return (
+    <Box sx={{ display: 'flex' }}>
+    
+      <Navigation />
+      <Box
+        component="main"
+        sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3, mt: '64px' }} // Space for AppBar and Drawer
+      >
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/anime" element={<AnimeHome />} />
+          {/* Add more routes here */}
+        </Routes>
+      </Box>
+    </Box>
+  );
+}
