@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "backend/public_site/README.md",
+                "file": "backend/README.md",
                 "mode": "source",
                 "source": false
               },
@@ -164,8 +164,9 @@
   },
   "active": "80b978c07af240a5",
   "lastOpenFiles": [
-    "README.md",
     "backend/public_site/README.md",
+    "backend/README.md",
+    "README.md",
     "frontend/README.md",
     "backend/users/__pycache__/urls.cpython-312.pyc.2770886915696",
     "backend/templates/account/register.html",

@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import AppsIcon from '@mui/icons-material/Apps';
-import { AppBar, Box, CssBaseline, Drawer, IconButton, List, ListItem, ListItemText, Toolbar, Typography } from '@mui/material';
+import { AppBar, Box, CssBaseline, Divider, Drawer, IconButton, List, ListItem, ListItemText, Menu, MenuItem, Toolbar, Typography } from '@mui/material';
 
 function Navigation() {
     const drawerWidth = 240;
 
+    const [openProfileMenu, setOpenProfileMenu] = useState(false);
+    
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
     return (
         <>
         <CssBaseline />
@@ -22,10 +32,11 @@ function Navigation() {
             <IconButton>
                 <AppsIcon />
             </IconButton>
-            <IconButton>
+            <IconButton onClick={handleClick}>
                 <AccountCircleIcon />
             </IconButton>
         </Toolbar>
+        <ProfileMenu anchorEl={anchorEl} isOpen={open} handleClose={handleClose} />
       </AppBar>
 
       {/* Side Bar */}
@@ -40,10 +51,10 @@ function Navigation() {
         <Toolbar />
         <Box sx={{ overflow: 'auto' }}>
             <List>
-                <ListItem button component={Link} to="/">
+                <ListItem component={Link} to="/">
                     <ListItemText primary="Dashboard" />
                 </ListItem>
-                <ListItem button component={Link} to="/anime">
+                <ListItem component={Link} to="/anime">
                     <ListItemText primary="Anime Home" />
                 </ListItem>
             </List>
@@ -55,3 +66,29 @@ function Navigation() {
 
 
 export default Navigation;
+
+function ProfileMenu({ anchorEl, isOpen, handleClose}) {
+
+    return (
+        <Menu
+            anchorEl={anchorEl}
+            open={isOpen}
+            onClose={handleClose}
+            onClick={handleClose}
+        >
+            {/* <MenuItem>
+                My Account
+            </MenuItem> */}
+            <ListItem component={Link} to="/profile">
+                <ListItemText primary="My Account" />
+            </ListItem>
+            <Divider />
+            <MenuItem>
+                Settings
+            </MenuItem>
+            <MenuItem>
+                Log Out
+            </MenuItem>
+        </Menu>
+    )
+}

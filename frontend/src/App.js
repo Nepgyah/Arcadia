@@ -1,11 +1,13 @@
 import './App.css';
 import { Routes, Route, Link } from 'react-router-dom';
 import axios from 'axios';
-import Dashboard from './components/dashboard';
-import AnimeHome from './components/anime_miru/anime-home';
 import { useState, useEffect } from 'react';
 import Navigation from './components/navigation/navigation';
 import { AppBar, Box, CssBaseline, Drawer, List, ListItem, ListItemText, Toolbar, Typography } from '@mui/material';
+
+import Dashboard from './components/dashboard';
+import Profile from './components/main/profile';
+import AnimeHome from './components/anime_miru/anime-home';
 
 function App() {
 
@@ -57,6 +59,7 @@ function RoutesWrapper() {
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/anime" element={<AnimeHome />} />
+          <Route path="/profile" element={<Profile />} />
           {/* Add more routes here */}
         </Routes>
       </Box>
