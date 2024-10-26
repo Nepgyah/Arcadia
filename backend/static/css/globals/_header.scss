@@ -13,7 +13,7 @@
         height: 100%;
         max-width: variables.$max-width;
         margin: 0 auto;
-        padding: 10px 20px;
+        padding: 0px 20px;
 
         .container {
             display: flex;
@@ -26,6 +26,7 @@
                 a {
                     height: 100%;
                     img {
+                        padding: 10px 0px;
                         height: 100%;
                     }
                 }
@@ -35,9 +36,85 @@
                 display: flex;
                 column-gap: variables.$margin-small;
                 align-items: center;
-
+                height: 100%;
                 a {
                     color: variables.$text-light-primary;
+                }
+
+                .top-nav {
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .dropdown {
+                    position: relative;
+
+                    &:hover {
+                        .dropdown-content {
+                            display: block;
+                            
+                            .apps-container {
+                                display: flex;
+                                align-items: stretch;
+                            }
+                        }
+                    }
+                    .dropdown-content {
+                        display: none;
+                        position: absolute;
+                        top: 4rem;
+                        padding: 16px;
+                        background-color: white;
+                        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                        z-index: 1;
+
+                        .divider {
+                            background-color: #bbbbbb;
+                            width: 2px;
+                            margin: 0px 16px;
+                        }
+                        a {
+                            color: variables.$arcadia-primary-one;
+                            padding: 4px;
+                            width: max-content;
+                            border-radius: 2px;
+                            
+                            &:hover {
+                                background-color: #ebebeb;
+                            }
+
+                            .link-content {
+                                display: flex;
+                                align-items: center;
+                                column-gap: 8px;
+                                img {
+                                    width: 32px;
+                                    height: 32px;
+                                }
+                                p {
+                                    margin-bottom: 0px;
+                                }
+                            }
+                        }
+
+                        .col-header {
+                            width: fit-content;
+                            white-space: nowrap;
+                            font-weight: bold;
+                        }
+                    }
+
+                    #solutions {
+                        min-width: 200px;
+
+                        .app-links {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr;
+                            column-gap: 8px;
+                        }
+
+                    }
                 }
             }
         }

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "backend/README.md",
+                "file": "backend/public_site/README.md",
                 "mode": "source",
                 "source": false
               },
@@ -164,10 +164,20 @@
   },
   "active": "80b978c07af240a5",
   "lastOpenFiles": [
-    "backend/public_site/README.md",
+    "backend/static/images/app-icons/kiku.svg",
+    "backend/static/images/app-icons/hiku.svg",
+    "backend/static/images/app-icons/iku.svg",
+    "backend/static/images/app-icons/shiru.svg",
+    "backend/static/images/app-icons/tsunagu.svg",
+    "backend/static/images/app-icons/kau.svg",
+    "backend/static/images/app-icons/asobu.svg",
+    "backend/static/images/app-icons/yomu.svg",
+    "backend/static/images/app-icons/miru.svg",
+    "backend/static/images/app-icons",
     "backend/README.md",
-    "README.md",
     "frontend/README.md",
+    "README.md",
+    "backend/public_site/README.md",
     "backend/users/__pycache__/urls.cpython-312.pyc.2770886915696",
     "backend/templates/account/register.html",
     "backend/templates/account/login.html",
@@ -178,15 +188,6 @@
     "backend/templates/public-site",
     "backend/static/images/public-site/suite-bgs/yomu.jpg",
     "backend/static/images/public-site/suite-bgs/tsunagu.jpg",
-    "backend/static/images/public-site/suite-bgs/miru.jpg",
-    "backend/static/images/public-site/suite-bgs/kau.jpg",
-    "backend/static/images/public-site/suite-bgs/hiku.jpg",
-    "backend/static/images/public-site/suite-bgs",
-    "backend/static/images/public-site/sakura_flower.svg",
-    "backend/static/images/public-site/logo_white.svg",
-    "backend/static/images/public-site/logo_dark.svg",
-    "backend/static/images/public-site/homepage/step_signup.jpg",
-    "backend/static/images/public-site/homepage/step_explore.jpg",
-    "backend/static/images/public-site/homepage"
+    "backend/static/images/public-site/suite-bgs"
   ]
 }
