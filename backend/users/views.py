@@ -11,6 +11,7 @@ def checkAuthentication(request):
 # Create your views here.
 def loginPage(request):
 
+    print(request.user)
     ## Auto redirect if already logged in
     if request.user.is_authenticated:
         return redirect('http://127.0.0.1:3000/')

@@ -1,29 +1,23 @@
 # Arcadia Miru
 ## Anime
- - name_en - string
- - name_jp - string
- - theme - array
- - type
-	 - 1 - TV
-	 - 2 - Movie
-	 - 3 - OVA
-	 - 4 - ONA
-	 - 5 - Special
-	 - 6 - Music
-	 - 7 - PV
- - status
+ - name - String
+ - alternate_names - Array : strings
+ - summary - textfield
+ - Genre - FK / One To many
+ - stats - JSON
+	 - score
+	 - users
+	 - favorites
+ - status - ChoiceInt
 	 - 0 - Not yet aired
-	 - 1 - Airing
-	 - 2 - Aired
- - season - FK
- - air_date - dateTime
- - start_date - dateTime
- - end_date - dateTime
- - rating
-	 - 0 - PG
-	 - 1 - PG-13
-	 - 2 - 18+
- - favorites
+	 - 1 - Currently Airing
+	 - 2 - Airing Completed
+ - run_time - Int
+ - socials - json
+ - previous_anime - FK : Anime
+ - next_anime - FK : Anime
+ - airing_start - DateTime
+ - airing_end - DateTime
 ## Season
 - name
 ## Themes
