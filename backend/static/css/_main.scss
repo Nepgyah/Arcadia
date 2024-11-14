@@ -4,6 +4,7 @@
 
 @import "./core/components/footer";
 @import "./core/components/header";
+@import "./core/components/button";
 
 html,
 body {
@@ -89,34 +90,4 @@ a {
     text-decoration: none;
     display: block;
     width: fit-content;
-}
-
-.btn {
-    border-radius: 36px;
-    padding: 12px 24px;
-    display: flex;
-    font-weight: bold;
-    width: fit-content;
-    
-    &.btn-hero {
-        font-size: 24px;
-    }
-
-    &.btn-primary {
-        background-color: variables.$arcadia-primary-one;
-        color: variables.$text-light-primary;
-        
-        &:hover {
-            background-color: variables.$arcadia-primary-two;
-        }
-    }
-
-    &.btn-secondary {
-        background-color: variables.$arcadia-secondary-one;
-        color: variables.$arcadia-primary-one;
-
-        &:hover {
-            background-color: variables.$arcadia-secondary-two;
-        }
-    }
 }
