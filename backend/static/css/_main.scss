@@ -1,7 +1,10 @@
-@use './variables';
-@use './fonts';
-@use './reset';
- 
+@use './core/base/variables';
+@use './core/base/typography';
+@use './core/base/reset';
+
+@import "./core/components/footer";
+@import "./core/components/header";
+
 html,
 body {
     background-color: variables.$bg-body-light-primary;
@@ -14,7 +17,7 @@ body {
 
 * {
     font-family: "Noto Sans JP", Helvetica, Arial, sans-serif;
-    color: variables.$text-dark;
+    color: variables.$text-dark-primary;
 }
 
 p {
