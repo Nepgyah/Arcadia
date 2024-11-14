@@ -1,0 +1,22 @@
+@use "../base/variables" as *;
+
+.section {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 101px 0;
+    margin-top: -1px;
+
+    &__inner-wrapper {
+        position: relative;
+        max-width: $max-width;
+        margin: 0 auto;
+        padding: 0 20px;
+        z-index: 1;
+
+        &--two-col {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+}
