@@ -9,20 +9,89 @@
                 </a>
             </div>
             <div class="menu">
-                <div>
+                <div class="top-nav dropdown">
                     <a href="#">Solutions</a>
+                    <div id="solutions" class="dropdown-content">
+                        <div class="apps-container">
+                            <div id="primary-apps">
+                                <p class="col-header">Primary Apps</p>
+                                <div class="app-links">
+                                    <a href="/miru">
+                                        <div class="link-content">
+                                            <img src="{% static "images/app-icons/miru.svg" %}" />
+                                            <p>Miru</p>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="link-content">
+                                            <img src="{% static "images/app-icons/yomu.svg" %}" />
+                                            <p>Yomu</p>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="link-content">
+                                            <img src="{% static "images/app-icons/asobu.svg" %}" />
+                                            <p>Asobu</p>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="link-content">
+                                            <img src="{% static "images/app-icons/kau.svg" %}" />
+                                            <p>kau</p>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="link-content">
+                                            <img src="{% static "images/app-icons/tsunagu.svg" %}" />
+                                            <p>Tsunagu</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            <div id="secondary-apps">
+                                <p class="col-header">Secondary Apps</p>
+                                <div class="app-links">
+                                    <a href="/miru">
+                                        <div class="link-content">
+                                            <img src="{% static "images/app-icons/iku.svg" %}" />
+                                            <p>Iku</p>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="link-content">
+                                            <img src="{% static "images/app-icons/shiru.svg" %}" />
+                                            <p>Shiru</p>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="link-content">
+                                            <img src="{% static "images/app-icons/hiku.svg" %}" />
+                                            <p>Hiku</p>
+                                        </div>
+                                    </a>
+                                    <a href="#">
+                                        <div class="link-content">
+                                            <img src="{% static "images/app-icons/kiku.svg" %}" />
+                                            <p>Kiku</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div>
+                <div class="top-nav">
                     <a href="/about_us/">Resources</a>
                 </div>
-                <div>
+                <div class="top-nav">
                     <a href="/about_us/">About Us</a>
                 </div>
-                <div>
+                <div class="top-nav">
                     <a href="/about_us/">Enterprise</a>
                 </div>
                 <a href="/account/login/">
-                    <div class="btn btn-secondary">Login</div>
+                    <div class="btn btn--secondary">Login</div>
                 </a>
                 <a href="#">
                     <div>Contact</div>

@@ -1,0 +1,33 @@
+@use "../base/variables" as *;
+
+.btn {
+    font-weight: bold;
+
+    display: flex;
+    width: fit-content;
+    padding: 12px 24px;
+    
+    border-radius: 36px;
+    
+    &--hero {
+        font-size: 24px;
+    }
+
+    &--primary {
+        background-color: $arcadia-primary-one;
+        color: $text-light-primary;
+
+        &:hover {
+            background-color: $arcadia-primary-two;
+        }
+    }
+
+    &--secondary {
+        background-color: $arcadia-secondary-one;
+        color: $arcadia-primary-one;
+
+        &:hover {
+            background-color: $arcadia-secondary-two;
+        }
+    }
+}

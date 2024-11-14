@@ -1,0 +1,95 @@
+@use './core/base/variables';
+@use './core/base/typography';
+@use './core/base/reset';
+
+@import "./core/components/footer";
+@import "./core/components/header";
+@import "./core/components/button";
+@import "./core/components/section";
+@import "./core/components/hero";
+
+html,
+body {
+    background-color: variables.$bg-body-light-primary;
+    scroll-behavior: smooth;
+    scroll-padding: 4em;
+    font-size: 18px;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+* {
+    font-family: "Noto Sans JP", Helvetica, Arial, sans-serif;
+    color: variables.$text-dark-primary;
+}
+
+p {
+    margin-bottom: .5em;
+}
+
+.mobile-only {
+    display: block;
+}
+
+.desktop-only {
+    display: none;
+}
+
+.flex-grid {
+    display: flex;
+}
+
+h1 {
+    font-size: 73px;
+    margin-bottom: 48px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Noto Serif JP', Arial, sans-serif;
+    color: variables.$arcadia-primary-one;
+}
+
+h3 {
+    font-size: 59px;
+    margin-bottom: 48px;
+}
+
+.color-arcadia-primary {
+    color: variables.$arcadia-primary-one;
+}
+
+.color-white-primary {
+    color: variables.$text-light-primary;
+}
+
+// section {
+//     display: block;
+//     position: relative;
+//     width: 100%;
+//     padding: 101px 0;
+//     margin-top: -1px;
+
+//     .inner-section-wrapper {
+//         position: relative;
+//         max-width: variables.$max-width;
+//         margin: 0 auto;
+//         padding: 0 20px;
+//         z-index: 1;
+
+//         .sub-header {
+//             font-size: 18px;
+//             margin-bottom: 48px;
+//         }
+
+//         .header-description {
+//             margin-top: 73px;
+//         }
+//     }
+// }
+
+
+a {
+    text-decoration: none;
+    display: block;
+    width: fit-content;
+}

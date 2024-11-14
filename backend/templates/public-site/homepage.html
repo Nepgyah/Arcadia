@@ -2,35 +2,30 @@
 {% load static %}
 
 {% block stylesheets %}
-<link href="{% static "css/globals/_header.css" %}" rel="stylesheet" type="text/css">
-<!-- <link href="{% static "css/globals/_footer.css" %}" rel="stylesheet" type="text/css"> -->
-<link href="{% static "css/homepage.css" %}" rel="stylesheet" type="text/css">
-<link href="{% static "css/globals/_base.css" %}" rel="stylesheet" type="text/css">
+<link href="{% static "css/pages/main/homepage.css" %}" rel="stylesheet" type="text/css">
 {% endblock %}
 
 {% block content %}
 
     {% include 'public-site/header.html' %}
 
-    <section id="hero">
+    <section class="hero hero--standard-height">
         <img id="sakura-latern" src="{% static "images/public-site/homepage/sakura_latern.svg" %}" />
-        <!-- <img id="hero-flower-one" src="{% static "images/public-site/sakura_flower.svg" %}" />
-        <img id="hero-flower-two" src="{% static "images/public-site/sakura_flower.svg" %}" /> -->
-        <div class="inner-section-wrapper">
-            <div class="flex-grid">
-                <div class="text">
-                    <h1>All Things Anime,<br>All in One Place</h1>
-                    <p>Your one-stop destination for managing, discovering and sharing your love for anime culture.</p>
-                    <a href="/account/login/">
-                        <div class="btn btn-hero btn-primary">Login</div>
-                    </a>
-                </div>
-                <div class="image">
-                    <img id="hero-image" src="{% static "images/public-site/homepage/homepage_hero.svg" %}" />
-                    <img id="hero-blob" src="{% static "images/public-site/homepage/homepage_blob.svg" %}" />
-                </div>
+        <div class="hero__inner-wrapper hero__inner-wrapper--two-col">
+            <div class="hero__text hero__text--left-side">
+                <h1>All Things Anime,<br>All in One Place</h1>
+                <p>Your one-stop destination for managing, discovering and sharing your love for anime culture.</p>
+                <a href="/account/login/">
+                    <div class="btn btn--hero btn--primary">Login</div>
+                </a>
+            </div>
+            <div class="hero__image">
+                <img id="hero-image" src="{% static "images/public-site/homepage/homepage_hero.svg" %}" />
+                <img id="hero-blob" src="{% static "images/public-site/homepage/homepage_blob.svg" %}" />
             </div>
         </div>
+        <!-- <img id="hero-flower-one" src="{% static "images/public-site/sakura_flower.svg" %}" />
+        <img id="hero-flower-two" src="{% static "images/public-site/sakura_flower.svg" %}" /> -->
     </section>
 
     <section id="hero-2">
@@ -100,19 +95,19 @@
             </div>
             <div class="bottom-half flex-grid">
                 <div class="left-col flex-grid">
-                    <div id="yomu-tile" class="suite-tile vertical light">
+                    <div id="yomu-tile" class="suite-tile vertical dark">
                         <div class="suite-image">
                             <img src="{% static "images/public-site/suite-bgs/yomu.jpg" %}" />
                          </div>
                         <div class="suite-text">
                             <p class="title">Arcadia Yomu</p>
-                            <p class="slogan">Explore the world of anime, one episode at a time</p>
+                            <p class="slogan">Where words create worlds</p>
                         </div>
                     </div>
                     <div id="kau-tile" class="suite-tile horizontal light">
                         <div class="suite-text">
                             <p class="title">Arcadia Kau</p>
-                            <p class="slogan">Explore the world of anime, one episode at a time</p>
+                            <p class="slogan">From wish list to reality</p>
                         </div>
                         <div class="suite-image">
                             <img src="{% static "images/public-site/suite-bgs/kau.jpg" %}" />
@@ -120,22 +115,22 @@
                     </div>
                 </div>
                 <div class="right-col flex-grid">
-                    <div id="hiku-tile" class="suite-tile horizontal dark">
+                    <div id="asobu-tile" class="suite-tile horizontal light">
                         <div class="suite-image">
                             <img src="{% static "images/public-site/suite-bgs/hiku.jpg" %}" />
                         </div>
                         <div class="suite-text">
-                            <p class="title">Arcadia Hiku</p>
-                            <p class="slogan">Explore the world of anime, one episode at a time</p>
+                            <p class="title">Arcadia Asobu</p>
+                            <p class="slogan">Press any button to continue</p>
                         </div>
                     </div>
-                    <div id="tsunagu-tile" class="suite-tile horizontal light">
+                    <div id="tsunagu-tile" class="suite-tile horizontal dark">
                         <div class="suite-image">
                             <img src="{% static "images/public-site/suite-bgs/tsunagu.jpg" %}" />
                         </div>
                         <div class="suite-text">
                             <p class="title">Arcadia Tsunagu</p>
-                            <p class="slogan">Explore the world of anime, one episode at a time</p>
+                            <p class="slogan">Join the conversation, shape the fandom</p>
                         </div>
                     </div>
                 </div>
@@ -238,4 +233,54 @@
             </div>
         </div>
     </section>
+
+    <section id="secondary-suite-intro">
+        <div class="inner-section-wrapper">
+            <div class="header-content">
+                <p class="sub-header">Other Apps</p>
+                <h3>More Than Just The Essentials</h3>
+            </div>
+            <div class="flex-grid">
+                <div id="iku-tile" class="suite-tile horizontal light">
+                    <div class="suite-text">
+                        <p class="title">Arcadia Iku</p>
+                        <p class="slogan">Go Where the community goes</p>
+                    </div>
+                    <div class="suite-image">
+                        <img src="{% static "images/public-site/suite-bgs/iku.jpg" %}" />
+                     </div>
+                </div>
+                <div id="shiru-tile" class="suite-tile horizontal dark">
+                    <div class="suite-image">
+                        <img src="{% static "images/public-site/suite-bgs/shiru.jpg" %}" />
+                     </div>
+                    <div class="suite-text">
+                        <p class="title">Arcadia Shiru</p>
+                        <p class="slogan">Explore, Learn and Share the Journey</p>
+                    </div>
+                </div>
+                <div id="hiku-tile" class="suite-tile horizontal dark">
+                    <div class="suite-image">
+                        <img src="{% static "images/public-site/suite-bgs/hiku.jpg" %}" />
+                     </div>
+                    <div class="suite-text">
+                        <p class="title">Arcadia Hiku</p>
+                        <p class="slogan">Pull your way to victory</p>
+                    </div>
+                </div>
+                <div id="kiku-tile" class="suite-tile horizontal light">
+                    <div class="suite-text">
+                        <p class="title">Arcadia Kiku</p>
+                        <p class="slogan">Relax. Focus. Create</p>
+                    </div>
+                    <div class="suite-image">
+                        <img src="{% static "images/public-site/suite-bgs/kiku.jpg" %}" />
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'public-site/footer.html' %}
+
 {% endblock %}

@@ -1,0 +1,386 @@
+@use "../../core/base/variables";
+@import "../../main";
+
+#content {
+
+    .suite-tile {
+        box-shadow: 0px 2px 9px -2px #bbbbbb;
+        border-radius: 10px;
+        overflow: hidden;
+
+        &.dark {
+            color: variables.$text-dark-primary;
+        }
+
+        &.light {
+            .suite-text {
+                .title {
+                    color: variables.$text-light-primary;
+                }
+                .slogan {
+                    color: variables.$text-light-primary;
+                }
+            }
+        }
+        .suite-image {
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        .suite-text {
+            padding: 24px;
+            font-size: 24px;
+
+            .title {
+                font-weight: bold;
+                margin-bottom: variables.$margin-medium;
+            }
+
+        }
+        &.vertical {
+            display: flex;
+            flex-direction: column;
+
+            .suite-image {
+                height: 50%;
+            }
+
+            .suite-text {
+                height: 50%;
+            }
+        }
+
+        &.horizontal {
+            display: flex;
+
+            .suite-image {
+                width: 50%;
+            }
+
+            .suite-text {
+                width: 50%;
+            }
+        }
+    }
+
+    .hero {
+        #sakura-latern {
+            position: absolute;
+            left: 0px;
+            top: 4rem;
+        }
+
+        .hero__image {
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+    
+                &#hero-image {
+                    z-index: 2;
+                }
+    
+                &#hero-blob {
+                    z-index: 1;
+                }
+            }
+        }
+    }
+
+    #hero-2 {
+        padding: 0;
+        background-color: variables.$arcadia-primary-one;
+        height: 90dvh;
+        position: relative;
+
+        .bg-image-wrapper{
+            position: absolute;
+            z-index: 1;
+            height: inherit;
+            display: flex;
+            width: 100%;
+            .bg-image-col {
+                width: 40%;
+                height: inherit;
+
+                #hero-image-2 {
+                    height: inherit;
+                    object-fit: cover;
+                }
+            }
+
+            .bg-ghost-col {
+                width: 60%;
+            }
+        }
+
+        .inner-section-wrapper {
+            z-index: 2;
+            height: inherit;
+
+            .flex-grid {
+                height: inherit;
+
+                .ghost-col {
+                    width: 40%;
+                }
+
+                .text-col {
+                    width: 60%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+
+                    h2 {
+                        font-size: 73px;
+                        margin-bottom: 73px;
+                        color: variables.$text-light-primary;
+                    }
+
+                    .differences {
+                        display: flex;
+                        flex-wrap: wrap;
+                        row-gap: 24px;
+
+                        .feature {
+                            display: flex;
+                            column-gap: 8px;
+                            width: 50%;
+                            
+                            .line-header {
+                                background-color: variables.$arcadia-secondary-one;
+                                width: 3px;
+                                height: 36px;
+                                flex-shrink: 0;
+                            }
+
+                            .feature-text {
+
+                                .feature-name, .feature-description {
+                                    color: variables.$text-light-primary;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #primary-suite-intro {
+
+        .inner-section-wrapper {
+
+            .top-half {
+                margin-bottom: 18px;
+                height: 500px;
+
+                .section-text {
+                    width: 50%;
+                }
+                
+                #miru-tile {
+                    background-color: variables.$miru-primary;
+                    margin-left: 9px;
+                    width: 50%;
+                }
+            }
+
+            .bottom-half {
+
+                .left-col {
+                    flex-direction: column;
+                    width: 50%;
+                    margin-right: 9px;
+
+                    #yomu-tile {
+                        background-color: variables.$yomu-primary;
+                        height: 450px;
+                        margin-bottom: 9px;
+                    }
+
+                    #kau-tile {
+                        background-color: variables.$kau-primary;
+                        min-height: 225px;
+                        margin-top: 9px;
+                    }
+                }
+
+                .right-col {
+                    flex-direction: column;
+                    width: 50%;
+                    margin-left: 9px;
+
+                    #asobu-tile {
+                        background-color: variables.$asobu-primary;
+                        height: 335px;
+                        margin-bottom: 9px;
+                        flex-grow: 1;
+                    }
+
+                    #tsunagu-tile {
+                        background-color: variables.$tsunagu-primary;
+                        min-height: 340px;
+                        margin-top: 9px;
+                        flex-grow: 2;
+                    }
+                }
+            }
+        }
+    }
+
+    #stats {
+
+        .inner-section-wrapper {
+
+            .header-content {
+                text-align: center;
+
+            }
+
+            .image {
+                width: 40%;
+                position: relative;
+
+                #stats-girl {
+                    position: relative;
+                    z-index: 2;
+                    margin: auto;
+                }
+
+                #stats-blob {
+                    position: absolute;
+                    z-index: 1;
+                    top: 50%;
+                    left: 50%;
+                    transform: translateX(-50%) translateY(-50%);
+                }
+            }
+
+            .stats-content {
+                width: 60%;
+
+                &.flex-grid {
+                    flex-wrap: wrap;
+                    row-gap: 64px;
+                }
+
+                .stat {
+                    width: 50%;
+
+                    .japanese {
+                        writing-mode: vertical-lr;
+                        text-orientation: upright;
+                        color: variables.$miru-primary;
+                        font-size: 64px;
+                    }
+
+                    .value, .label {
+                        color: variables.$arcadia-primary-one;
+                    }
+                    .value {
+                        font-size: 59px;
+                        font-weight: bold;
+                    }
+
+                    .label {
+                        font-size: 36px;
+                    }
+                }
+            }
+        }
+    }
+
+    #steps {
+        background-color: variables.$arcadia-primary-one;
+
+        .inner-section-wrapper {
+            .header-content {
+                text-align: center;
+                
+                p, h3 {
+                    color: variables.$text-light-primary;
+                }
+            }
+            .flex-grid {
+                justify-content: space-between;
+                .step {
+                    width: 30%;
+
+                    .image {
+                        width: 100%;
+                        height: 450px;
+                        border-radius: 15px;
+                        overflow: hidden;
+                        box-shadow: 0px 2px 9px rgba(#000000, .25);
+
+                        img {
+                            width: inherit;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+
+                    .step-title, .step-description {
+                        color: variables.$text-light-primary;
+                    }
+
+                    .step-title {
+                        font-weight: bold;
+                        font-size: 34px;
+                        margin-top: 24px;
+                        margin-bottom: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    
+    #partners {
+        .inner-section-wrapper {
+            .flex-grid {
+                flex-wrap: wrap;
+                row-gap: 64px;
+                
+                img {
+                    width: 25%;
+                    max-height: 150px;
+                }
+            }
+        }
+    }
+
+    #secondary-suite-intro {
+        .inner-section-wrapper {
+            .flex-grid {
+                flex-wrap: wrap;
+                gap: 18px;
+
+                .suite-tile {
+                    flex: 0 0 calc(50% - 9px);
+                    height: 300px;
+
+                    &#iku-tile {
+                        background-color: variables.$iku-primary;
+                    }
+
+                    &#shiru-tile {
+                        background-color: variables.$shiru-primary;
+                    }
+
+                    &#hiku-tile {
+                        background-color: variables.$hiku-primary;
+                    }
+
+                    &#kiku-tile {
+                        background-color: variables.$kiku-primary;
+                    }
+                }
+            }
+        }
+    }
+}

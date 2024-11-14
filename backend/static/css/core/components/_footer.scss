@@ -1,0 +1,40 @@
+@use "../base/variables";
+
+#footer {
+    background-color: variables.$arcadia-primary-one;
+    width: 100%;
+
+    .footer-inner-wrapper {
+        max-width: variables.$max-width;
+        margin: 0 auto;
+        padding: 73px 0px;
+
+        .flex-grid {
+            
+            .left-col {
+                width: 30%;
+            }
+            
+            .mid-col {
+                width: 30%;
+                color: white;
+
+                .flex-grid {
+                    width: 100%;
+                    
+                    .link-group {
+                        width: 50%;
+
+                        p, a {
+                            color: white;
+                        }
+                    }
+                }
+            }
+
+            .right-col {
+                width: 40%;
+            }
+        }
+    }
+}

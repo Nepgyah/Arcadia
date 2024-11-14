@@ -8,7 +8,7 @@
         "type": "tabs",
         "children": [
           {
-            "id": "80b978c07af240a5",
+            "id": "370e974277a72f22",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -16,7 +16,9 @@
                 "file": "README.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "README"
             }
           }
         ]
@@ -39,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -54,7 +58,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -62,7 +68,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
@@ -85,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
+                "file": "frontend/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -93,7 +101,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for README"
             }
           },
           {
@@ -102,10 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
+                "file": "frontend/README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from README"
             }
           },
           {
@@ -116,7 +128,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -125,8 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "README.md"
-              }
+                "file": "frontend/README.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of README"
             }
           }
         ]
@@ -146,10 +162,53 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "80b978c07af240a5",
+  "active": "370e974277a72f22",
   "lastOpenFiles": [
-    "frontend/README.md",
     "backend/public_site/README.md",
-    "README.md"
+    "backend/static/css/misc/misc.css",
+    "backend/static/css/misc/misc.scss",
+    "backend/static/css/misc",
+    "backend/templates/public-site/footer.html",
+    "backend/static/css/globals/_footer.scss",
+    "backend/static/css/globals/_footer.css",
+    "frontend/tsconfig.json",
+    "frontend/public/window.svg",
+    "frontend/public/vercel.svg",
+    "frontend/public/next.svg",
+    "frontend/public/globe.svg",
+    "frontend/public/file.svg",
+    "frontend/next.config.ts",
+    "frontend/app/profile/page.tsx",
+    "frontend/app/profile",
+    "frontend/src/logo.svg",
+    "frontend/public/logo192.png",
+    "frontend/node_modules/next/dist/compiled/@babel/runtime/README.md",
+    "frontend/node_modules/next/dist/compiled/regenerator-runtime/README.md",
+    "frontend/node_modules/next/dist/compiled/react-refresh/README.md",
+    "frontend/node_modules/next/dist/compiled/react-is/README.md",
+    "frontend/node_modules/@typescript-eslint/typescript-estree/node_modules/fast-glob/README.md",
+    "frontend/node_modules/@typescript-eslint/typescript-estree/node_modules/minimatch/README.md",
+    "frontend/node_modules/@typescript-eslint/typescript-estree/node_modules/glob-parent/README.md",
+    "frontend/node_modules/@typescript-eslint/typescript-estree/node_modules/glob-parent/CHANGELOG.md",
+    "frontend/node_modules/@typescript-eslint/typescript-estree/node_modules/brace-expansion/README.md",
+    "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/type-annotation-spacing.md",
+    "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/TEMPLATE.md",
+    "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/space-infix-ops.md",
+    "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/space-before-function-paren.md",
+    "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/space-before-blocks.md",
+    "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/semi.md",
+    "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/README.md",
+    "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/quotes.md",
+    "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/padding-line-between-statements.md",
+    "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/object-curly-spacing.md",
+    "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/no-extra-semi.md",
+    "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/no-extra-parens.md",
+    "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/member-delimiter-style.md",
+    "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/lines-between-class-members.md",
+    "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/lines-around-comment.md",
+    "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/keyword-spacing.md",
+    "backend/static/images/app-icons/kiku.svg",
+    "backend/static/images/app-icons/hiku.svg",
+    "backend/static/images/app-icons/iku.svg"
   ]
 }
