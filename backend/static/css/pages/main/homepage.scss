@@ -8,58 +8,61 @@
         border-radius: 10px;
         overflow: hidden;
 
-        &.dark {
-            color: variables.$text-dark-primary;
-        }
-
-        &.light {
-            .suite-text {
-                .title {
-                    color: variables.$text-light-primary;
-                }
-                .slogan {
-                    color: variables.$text-light-primary;
-                }
-            }
-        }
-        .suite-image {
+        .suite-tile__image {
             img {
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
             }
         }
-        .suite-text {
+
+        .suite-tile__text {
+            height: 50%;
             padding: 24px;
             font-size: 24px;
 
-            .title {
+            .suite-tile__title {
                 font-weight: bold;
                 margin-bottom: variables.$margin-medium;
             }
-
         }
-        &.vertical {
+
+        &--dark {
+            color: variables.$text-dark-primary;
+        }
+
+        &--light {
+            .suite-tile__text {
+                .suite-tile__title {
+                    color: variables.$text-light-primary;
+                }
+                .suite-tile__slogan {
+                    color: variables.$text-light-primary;
+                }
+            }
+        }
+
+        &--vertical {
             display: flex;
             flex-direction: column;
 
-            .suite-image {
+            .suite-tile__image {
                 height: 50%;
             }
 
-            .suite-text {
+            .suite-tile__text {
                 height: 50%;
             }
         }
 
-        &.horizontal {
+        &--horizontal {
             display: flex;
 
-            .suite-image {
+            .suite-tile__image {
                 width: 50%;
             }
 
-            .suite-text {
+            .suite-tile__text {
                 width: 50%;
             }
         }
@@ -118,6 +121,10 @@
         }
 
         .inner-section-wrapper {
+            position: relative;
+            max-width: 75rem;
+            margin: 0 auto;
+            padding: 0 20px;
             z-index: 2;
             height: inherit;
 
@@ -172,64 +179,123 @@
 
     #primary-suite-intro {
 
-        .inner-section-wrapper {
+        .section__text {
+            width: 50%;
+        }
 
-            .top-half {
-                margin-bottom: 18px;
-                height: 500px;
+        .section {
 
-                .section-text {
-                    width: 50%;
-                }
-                
-                #miru-tile {
-                    background-color: variables.$miru-primary;
-                    margin-left: 9px;
-                    width: 50%;
-                }
-            }
+            &__inner-wrapper {
 
-            .bottom-half {
-
-                .left-col {
-                    flex-direction: column;
-                    width: 50%;
-                    margin-right: 9px;
-
-                    #yomu-tile {
-                        background-color: variables.$yomu-primary;
-                        height: 450px;
-                        margin-bottom: 9px;
-                    }
-
-                    #kau-tile {
-                        background-color: variables.$kau-primary;
-                        min-height: 225px;
-                        margin-top: 9px;
-                    }
+                .top-half {
+                    margin-bottom: 18px;
+                    height: 500px;
                 }
 
-                .right-col {
-                    flex-direction: column;
-                    width: 50%;
-                    margin-left: 9px;
-
-                    #asobu-tile {
-                        background-color: variables.$asobu-primary;
-                        height: 335px;
-                        margin-bottom: 9px;
-                        flex-grow: 1;
+                .bottom-half {
+                    .left-col {
+                        flex-direction: column;
+                        width: 50%;
+                        margin-right: 9px;
                     }
 
-                    #tsunagu-tile {
-                        background-color: variables.$tsunagu-primary;
-                        min-height: 340px;
-                        margin-top: 9px;
-                        flex-grow: 2;
+                    .right-col {
+                        flex-direction: column;
+                        width: 50%;
+                        margin-left: 9px;
                     }
                 }
             }
         }
+        #miru-tile {
+            background-color: variables.$miru-primary;
+            margin-left: 9px;
+            width: 50%;
+        }
+
+        #yomu-tile {
+            background-color: variables.$yomu-primary;
+            height: 450px;
+            margin-bottom: 9px;
+        }
+
+        #kau-tile {
+            background-color: variables.$kau-primary;
+            min-height: 225px;
+            margin-top: 9px;
+        }
+
+        #asobu-tile {
+            background-color: variables.$asobu-primary;
+            height: 335px;
+            margin-bottom: 9px;
+            flex-grow: 1;
+        }
+
+        #tsunagu-tile {
+            background-color: variables.$tsunagu-primary;
+            min-height: 340px;
+            margin-top: 9px;
+            flex-grow: 2;
+        }
+        // .inner-section-wrapper {
+
+        //     .top-half {
+        //         margin-bottom: 18px;
+        //         height: 500px;
+
+        //         .section-text {
+        //             width: 50%;
+        //         }
+                
+        //         #miru-tile {
+        //             background-color: variables.$miru-primary;
+        //             margin-left: 9px;
+        //             width: 50%;
+        //         }
+        //     }
+
+        //     .bottom-half {
+
+        //         .left-col {
+        //             flex-direction: column;
+        //             width: 50%;
+        //             margin-right: 9px;
+
+        //             #yomu-tile {
+        //                 background-color: variables.$yomu-primary;
+        //                 height: 450px;
+        //                 margin-bottom: 9px;
+        //             }
+
+        //             #kau-tile {
+        //                 background-color: variables.$kau-primary;
+        //                 min-height: 225px;
+        //                 margin-top: 9px;
+        //             }
+        //         }
+
+        //         .right-col {
+        //             flex-direction: column;
+        //             width: 50%;
+        //             margin-left: 9px;
+
+        //             #asobu-tile {
+        //                 background-color: variables.$asobu-primary;
+        //                 height: 335px;
+        //                 margin-bottom: 9px;
+        //                 flex-grow: 1;
+        //             }
+
+        //             #tsunagu-tile {
+        //                 background-color: variables.$tsunagu-primary;
+        //                 min-height: 340px;
+        //                 margin-top: 9px;
+        //                 flex-grow: 2;
+        //             }
+        //         }
+        //     }
+        // }
     }
 
     #stats {

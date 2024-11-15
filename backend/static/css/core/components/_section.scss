@@ -19,4 +19,16 @@
             flex-direction: row;
         }
     }
+
+    &__text {
+
+        .section__sub-header {
+            font-size: 59px;
+            margin-bottom: 48px;
+        }
+
+        .section__description {
+            margin-top: 73px;
+        }
+    }
 }
