@@ -179,7 +179,7 @@
 
     #primary-suite-intro {
 
-        .section__text {
+        .section__header-content {
             width: 50%;
         }
 
@@ -300,14 +300,9 @@
 
     #stats {
 
-        .inner-section-wrapper {
+        .section__main-content {
 
-            .header-content {
-                text-align: center;
-
-            }
-
-            .image {
+            .section__item-image {
                 width: 40%;
                 position: relative;
 
@@ -326,13 +321,11 @@
                 }
             }
 
-            .stats-content {
-                width: 60%;
-
-                &.flex-grid {
-                    flex-wrap: wrap;
-                    row-gap: 64px;
-                }
+            .section__item-text {
+                padding-left: 64px;
+                display: flex;
+                flex-wrap: wrap;
+                row-gap: 64px;
 
                 .stat {
                     width: 50%;
@@ -405,7 +398,6 @@
         }
     }
 
-    
     #partners {
         .inner-section-wrapper {
             .flex-grid {

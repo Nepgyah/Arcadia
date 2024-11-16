@@ -14,21 +14,38 @@
         padding: 0 20px;
         z-index: 1;
 
-        &--two-col {
-            display: flex;
-            flex-direction: row;
+        .section__header-content {
+
+            &--align-middle {
+                text-align: center;
+            }
+
+            .section__sub-header {
+                font-size: 18px;
+                margin-bottom: 48px;
+            }
+            .section__header {
+                font-size: 59px;
+                margin-bottom: 48px;
+            }
+            .section__description {
+                margin-top: 73px;
+            }
         }
-    }
 
-    &__text {
+        .section__main-content {
+            &--two-col {
+                display: flex;
+                flex-direction: row;
+            }
 
-        .section__sub-header {
-            font-size: 59px;
-            margin-bottom: 48px;
-        }
+            .section__item-image {
 
-        .section__description {
-            margin-top: 73px;
+            }
+
+            .section__item-text {
+                
+            }
         }
     }
 }
