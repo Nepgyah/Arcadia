@@ -78,10 +78,10 @@
     <section class="section" id="primary-suite-intro">
         <div class="section__inner-wrapper">
             <div class="top-half flex-grid">
-                <div class="section__header-content">
-                    <p class="section__sub-header">Introducing Arcadia</p>
-                    <h3>Essentials for the Ultimate Otaku</h3>
-                    <p class="header-description">Explore all the suites of Arcadia. With different sections to explore, there is sure to be a world for you.</p>
+                <div class="section-header">
+                    <p class="section-header__sub-header">Introducing Arcadia</p>
+                    <h3 class="section-header__main-header">Essentials for the Ultimate Otaku</h3>
+                    <p class="section-header__description">Explore all the suites of Arcadia. With different sections to explore, there is sure to be a world for you.</p>
                 </div>
                 <div id="miru-tile" class="suite-tile suite-tile--vertical suite-tile--dark">
                     <div class="suite-tile__image">
@@ -140,16 +140,16 @@
 
     <section id="stats" class="section">
         <div class="section__inner-wrapper">
-            <div class="section__header-content section__header-content--align-middle">
+            <div class="section-header section-header--align-middle">
                 <p class="section__sub-header">Statistics</p>
-                <h3 class="section__main-header">A Constant Growing <br> Community and Libary</h3>
+                <h3 class="section__header">A Constant Growing <br> Community and Libary</h3>
             </div>
             <div class="section__main-content section__main-content--two-col">
-                <div class="section__item-image">
+                <div class="section__item--image">
                     <img id="stats-girl" src="{% static "images/public-site/homepage/stats_anime_girl.svg" %}" />
                     <img id="stats-blob" src="{% static "images/public-site/homepage/stats_blob.svg" %}" />
                 </div>
-                <div class="section__item-text flex-grid">
+                <div class="section__item--text flex-grid">
                     <div class="stat flex-grid">
                         <div class="japanese">ユーザ</div>
                         <div>
@@ -183,30 +183,30 @@
         </div>
     </section>
 
-    <section id="steps">
-        <div class="inner-section-wrapper">
-            <div class="header-content">
-                <p class="sub-header">Easy Steps</p>
-                <h3>Join The World of Arcadia</h3>
+    <section class="section section--light" id="steps">
+        <div class="section__inner-wrapper">
+            <div class="section-header section-header--align-middle section-header--light">
+                <p class="section-header__sub-header">Easy Steps</p>
+                <h3 class="section-header__main-header">Join The World of Arcadia</h3>
             </div>
-            <div class="flex-grid">
-                <div class="step">
-                    <div class="image">
-                        <img id="step-one" src="{% static "images/public-site/homepage/step_signup.jpg" %}" />
+            <div class="section__main-content section__main-content--three-col">
+                <div class="section__item">
+                    <div class="section__image">
+                        <img src="{% static "images/public-site/homepage/step_signup.jpg" %}" />
                     </div>
                     <p class="step-title">Signup</p>
                     <p class="step-description">All you need is a username and email and your all set. Delve right in or 'character create' your account for hours, its up to you. The best part? its free.</p>
                 </div>
-                <div class="step">
-                    <div class="image">
-                        <img id="step-one" src="{% static "images/public-site/homepage/step_explore.jpg" %}" />
+                <div class="section__item">
+                    <div class="section__image">
+                        <img src="{% static "images/public-site/homepage/step_explore.jpg" %}" />
                     </div>
                     <p class="step-title">Explore</p>
                     <p class="step-description">Discover the realms of Arcadia. Find which peaks your interest and explore what Arcadia truly has to offer.</p>
                 </div>
-                <div class="step">
-                    <div class="image">
-                        <img id="step-one" src="{% static "images/public-site/homepage/step_connect.jpg" %}" />
+                <div class="section__item">
+                    <div class="section__image">
+                        <img src="{% static "images/public-site/homepage/step_connect.jpg" %}" />
                     </div>
                     <p class="step-title">Connect</p>
                     <p class="step-description">Every hero needs their party members! Remember, you aren’t alone. Connect with others and build a community worth remembering!</p>
@@ -215,13 +215,13 @@
         </div>
     </section>
 
-    <section id="partners">
-        <div class="inner-section-wrapper">
-            <div class="header-content">
+    <section class="section" id="partners">
+        <div class="section__inner-wrapper">
+            <div class="section-header">
                 <p class="sub-header">Collaboration</p>
-                <h3>Industry Leaders <br> Trust Arcadia</h3>
+                <h3 class="section-header__main-header">Industry Leaders <br> Trust Arcadia</h3>
             </div>
-            <div class="flex-grid">
+            <div class="section__main-content--flex">
                 <img src="{% static "images/partners/aniplex.svg" %}" />
                 <img src="{% static "images/partners/crunchyroll.svg" %}" />
                 <img src="{% static "images/partners/funimation.svg" %}" />
