@@ -62,34 +62,15 @@ h3 {
     color: variables.$text-light-primary;
 }
 
-// section {
-//     display: block;
-//     position: relative;
-//     width: 100%;
-//     padding: 101px 0;
-//     margin-top: -1px;
-
-//     .inner-section-wrapper {
-//         position: relative;
-//         max-width: variables.$max-width;
-//         margin: 0 auto;
-//         padding: 0 20px;
-//         z-index: 1;
-
-//         .sub-header {
-//             font-size: 18px;
-//             margin-bottom: 48px;
-//         }
-
-//         .header-description {
-//             margin-top: 73px;
-//         }
-//     }
-// }
-
-
 a {
     text-decoration: none;
     display: block;
     width: fit-content;
+}
+
+input {
+    border: 1px solid #BBBBBB;
+    border-radius: 44px;
+    height: 44px;
+    padding-left: 24px;
 }

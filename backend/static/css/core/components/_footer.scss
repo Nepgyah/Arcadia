@@ -1,39 +1,59 @@
 @use "../base/variables";
 
-#footer {
+.footer {
     background-color: variables.$arcadia-primary-one;
     width: 100%;
 
-    .footer-inner-wrapper {
+    &__inner-wrapper {
         max-width: variables.$max-width;
         margin: 0 auto;
         padding: 73px 0px;
+        display: flex;
+        
+        .footer-logo {
+            width: 30%;
+            padding-right: 24px;
 
-        .flex-grid {
-            
-            .left-col {
-                width: 30%;
+            .footer-description {
+                margin-top: 16px;
+                color: variables.$text-light-primary;
             }
-            
-            .mid-col {
-                width: 30%;
-                color: white;
+        }
+        .footer-links {
+            width: 30%;
 
-                .flex-grid {
-                    width: 100%;
-                    
-                    .link-group {
-                        width: 50%;
+            .footer-links__solutions, .footer-links__other {
+                display: flex;
+            }
 
-                        p, a {
-                            color: white;
-                        }
+            .footer-links__solutions {
+                margin-bottom: 24px;
+            }
+
+            &__group {
+                width: 50%;
+
+                .footer-links__group-header, a {
+                    color: white;
+                }
+
+                .footer-links__group-header {
+                    font-weight: bold;
+                }
+
+                a {
+                    &:hover {
+                        cursor: pointer;
                     }
                 }
             }
+        }
 
-            .right-col {
-                width: 40%;
+        .footer-contact {
+            width: 40%;
+
+            .footer__input {
+                width: 100%;
             }
         }
     }
