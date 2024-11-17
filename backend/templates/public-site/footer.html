@@ -1,46 +1,47 @@
 {% load static %}
 
-<div id="footer">
-    <div class="footer-inner-wrapper">
-        <div class="flex-grid">
-            <div class="left-col">
-                Picture
-            </div>
-            <div class="mid-col">
-                <div class="top-nav flex-grid">
-                    <div class="link-group">
-                        <p>Primary Apps</p>
-                        <a>Miru</a>
-                        <a>Yomu</a>
-                        <a>Asobu</a>
-                        <a>Kau</a>
-                        <a>Tsunagu</a>
-                    </div>
-                    <div class="link-group">
-                        <p>Primary Apps</p>
-                        <a>Iku</a>
-                        <a>Shiru</a>
-                        <a>Hiku</a>
-                        <a>Kiku</a>
-                    </div>
+<div class="footer">
+    <div class="footer__inner-wrapper">
+        <div class="footer-logo">
+            <a href="/">
+                <img src="{% static "images/public-site/logo_white.svg" %}" alt="Arcadia log in white text " />
+            </a>
+            <p class="footer-description">Arcadia is a pretend platform created to practice and learn about full stack development using a subject that is more personal to me. Thanks for stopping by!</p>
+        </div>
+        <div class="footer-links">
+            <div class="footer-links__solutions">
+                <div class="footer-links__group">
+                    <p class="footer-links__group-header">Primary Apps</p>
+                    <a href="#">Miru</a>
+                    <a href="#">Yomu</a>
+                    <a href="#">Asobu</a>
+                    <a href="#">Kau</a>
+                    <a href="#">Tsunagu</a>
                 </div>
-                <div class="bot-nav flex-grid">
-                    <div class="link-group">
-                        <p>Primary Apps</p>
-                        <a>About Us</a>
-                        <a>Internships</a>
-                    </div>
-                    <div class="link-group">
-                        <p>Primary Apps</p>
-                        <a>Terms & Conditions</a>
-                        <a>Privacy Policy</a>
-                        <a>Cookie Policy</a>
-                    </div>
+                <div class="footer-links__group">
+                    <p class="footer-links__group-header">Secondary Apps</p>
+                    <a href="#">Iku</a>
+                    <a href="#">Shiru</a>
+                    <a href="#">Hiku</a>
+                    <a href="#">Kiku</a>
                 </div>
             </div>
-            <div class="right-col">
-                Contact
+            <div class="footer-links__other">
+                <div class="footer-links__group">
+                    <p class="footer-links__group-header">Company</p>
+                    <a href="#">About Us</a>
+                    <a href="#">Internships</a>
+                </div>
+                <div class="footer-links__group">
+                    <p class="footer-links__group-header">Legal</p>
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
             </div>
+        </div>
+        <div class="footer-contact">
+            <input class="footer__input" placeholder="Email" />
         </div>
     </div>
 </div>

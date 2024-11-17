@@ -7,6 +7,15 @@
     padding: 101px 0;
     margin-top: -1px;
 
+    &--light {
+        .section-header {
+            &__sub-header, &__main-header  {
+                color: $text-light-primary;
+            }
+
+        }
+    }
+
     &__inner-wrapper {
         position: relative;
         max-width: $max-width;
@@ -14,9 +23,48 @@
         padding: 0 20px;
         z-index: 1;
 
-        &--two-col {
-            display: flex;
-            flex-direction: row;
+        .section-header {
+
+            &--align-middle {
+                text-align: center;
+            }
+
+            &__sub-header {
+                font-size: 18px;
+                margin-bottom: 48px;
+            }
+            &__main-header {
+                font-size: 59px;
+                margin-bottom: 48px;
+            }
+            &__description {
+                margin-top: 73px;
+            }
+        }
+
+        .section__main-content {
+
+            &--flex {
+                display: flex;
+                flex-wrap: wrap;
+            }
+
+            &--two-col {
+                display: flex;
+                flex-direction: row;
+            }
+
+            &--three-col {
+                display: flex;
+                justify-content: space-between;
+
+                .section__item {
+                    width: 30%;
+                }
+            }
+
+            .section__item {
+            }
         }
     }
 }

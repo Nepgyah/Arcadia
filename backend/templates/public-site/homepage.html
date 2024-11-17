@@ -75,62 +75,62 @@
         </div>
     </section>
 
-    <section id="primary-suite-intro">
-        <div class="inner-section-wrapper">
+    <section class="section" id="primary-suite-intro">
+        <div class="section__inner-wrapper">
             <div class="top-half flex-grid">
-                <div class="section-text">
-                    <p class="sub-header">Introducing Arcadia</p>
-                    <h3>Essentials for the Ultimate Otaku</h3>
-                    <p class="header-description">Explore all the suites of Arcadia. With different sections to explore, there is sure to be a world for you.</p>
+                <div class="section-header">
+                    <p class="section-header__sub-header">Introducing Arcadia</p>
+                    <h3 class="section-header__main-header">Essentials for the Ultimate Otaku</h3>
+                    <p class="section-header__description">Explore all the suites of Arcadia. With different sections to explore, there is sure to be a world for you.</p>
                 </div>
-                <div id="miru-tile" class="suite-tile vertical dark">
-                    <div class="suite-image">
+                <div id="miru-tile" class="suite-tile suite-tile--vertical suite-tile--dark">
+                    <div class="suite-tile__image">
                         <img src="{% static "images/public-site/suite-bgs/miru.jpg" %}" />
                      </div>
-                    <div class="suite-text">
-                        <p class="title">Arcadia Miru</p>
-                        <p class="slogan">Explore the world of anime, one episode at a time</p>
+                    <div class="suite-tile__text">
+                        <p class="suite-tile__title">Arcadia Miru</p>
+                        <p class="suite-tile__slogan">Explore the world of anime, one episode at a time</p>
                     </div>
                 </div>
             </div>
             <div class="bottom-half flex-grid">
                 <div class="left-col flex-grid">
-                    <div id="yomu-tile" class="suite-tile vertical dark">
-                        <div class="suite-image">
+                    <div id="yomu-tile" class="suite-tile suite-tile--vertical suite-tile--dark">
+                        <div class="suite-tile__image">
                             <img src="{% static "images/public-site/suite-bgs/yomu.jpg" %}" />
                          </div>
-                        <div class="suite-text">
-                            <p class="title">Arcadia Yomu</p>
-                            <p class="slogan">Where words create worlds</p>
+                        <div class="suite-tile__text">
+                            <p class="suite-tile__title">Arcadia Yomu</p>
+                            <p class="suite-tile__slogan">Where words create worlds</p>
                         </div>
                     </div>
-                    <div id="kau-tile" class="suite-tile horizontal light">
-                        <div class="suite-text">
-                            <p class="title">Arcadia Kau</p>
-                            <p class="slogan">From wish list to reality</p>
+                    <div id="kau-tile" class="suite-tile suite-tile--horizontal suite-tile--light">
+                        <div class="suite-tile__text">
+                            <p class="suite-tile__title">Arcadia Kau</p>
+                            <p class="suite-tile__slogan">From wish list to reality</p>
                         </div>
-                        <div class="suite-image">
+                        <div class="suite-tile__image">
                             <img src="{% static "images/public-site/suite-bgs/kau.jpg" %}" />
                         </div>
                     </div>
                 </div>
                 <div class="right-col flex-grid">
-                    <div id="asobu-tile" class="suite-tile horizontal light">
-                        <div class="suite-image">
+                    <div id="asobu-tile" class="suite-tile suite-tile--horizontal suite-tile--light">
+                        <div class="suite-tile__text">
+                            <p class="suite-tile__title">Arcadia Asobu</p>
+                            <p class="suite-tile__slogan">Press any button to continue</p>
+                        </div>
+                        <div class="suite-tile__image">
                             <img src="{% static "images/public-site/suite-bgs/hiku.jpg" %}" />
                         </div>
-                        <div class="suite-text">
-                            <p class="title">Arcadia Asobu</p>
-                            <p class="slogan">Press any button to continue</p>
-                        </div>
                     </div>
-                    <div id="tsunagu-tile" class="suite-tile horizontal dark">
-                        <div class="suite-image">
+                    <div id="tsunagu-tile" class="suite-tile suite-tile--horizontal suite-tile--dark">
+                        <div class="suite-tile__image">
                             <img src="{% static "images/public-site/suite-bgs/tsunagu.jpg" %}" />
                         </div>
-                        <div class="suite-text">
-                            <p class="title">Arcadia Tsunagu</p>
-                            <p class="slogan">Join the conversation, shape the fandom</p>
+                        <div class="suite-tile__text">
+                            <p class="suite-tile__title">Arcadia Tsunagu</p>
+                            <p class="suite-tile__slogan">Join the conversation, shape the fandom</p>
                         </div>
                     </div>
                 </div>
@@ -138,18 +138,18 @@
         </div>
     </section>
 
-    <section id="stats">
-        <div class="inner-section-wrapper">
-            <div class="header-content">
-                <p class="sub-header">Statistics</p>
-                <h3>A Constant Growing <br> Community and Libary</h3>
+    <section id="stats" class="section">
+        <div class="section__inner-wrapper">
+            <div class="section-header section-header--align-middle">
+                <p class="section__sub-header">Statistics</p>
+                <h3 class="section__header">A Constant Growing <br> Community and Libary</h3>
             </div>
-            <div class="flex-grid">
-                <div class="image">
+            <div class="section__main-content section__main-content--two-col">
+                <div class="section__item--image">
                     <img id="stats-girl" src="{% static "images/public-site/homepage/stats_anime_girl.svg" %}" />
                     <img id="stats-blob" src="{% static "images/public-site/homepage/stats_blob.svg" %}" />
                 </div>
-                <div class="stats-content flex-grid">
+                <div class="section__item--text flex-grid">
                     <div class="stat flex-grid">
                         <div class="japanese">ユーザ</div>
                         <div>
@@ -183,30 +183,30 @@
         </div>
     </section>
 
-    <section id="steps">
-        <div class="inner-section-wrapper">
-            <div class="header-content">
-                <p class="sub-header">Easy Steps</p>
-                <h3>Join The World of Arcadia</h3>
+    <section class="section section--light" id="steps">
+        <div class="section__inner-wrapper">
+            <div class="section-header section-header--align-middle section-header--light">
+                <p class="section-header__sub-header">Easy Steps</p>
+                <h3 class="section-header__main-header">Join The World of Arcadia</h3>
             </div>
-            <div class="flex-grid">
-                <div class="step">
-                    <div class="image">
-                        <img id="step-one" src="{% static "images/public-site/homepage/step_signup.jpg" %}" />
+            <div class="section__main-content section__main-content--three-col">
+                <div class="section__item">
+                    <div class="section__image">
+                        <img src="{% static "images/public-site/homepage/step_signup.jpg" %}" />
                     </div>
                     <p class="step-title">Signup</p>
                     <p class="step-description">All you need is a username and email and your all set. Delve right in or 'character create' your account for hours, its up to you. The best part? its free.</p>
                 </div>
-                <div class="step">
-                    <div class="image">
-                        <img id="step-one" src="{% static "images/public-site/homepage/step_explore.jpg" %}" />
+                <div class="section__item">
+                    <div class="section__image">
+                        <img src="{% static "images/public-site/homepage/step_explore.jpg" %}" />
                     </div>
                     <p class="step-title">Explore</p>
                     <p class="step-description">Discover the realms of Arcadia. Find which peaks your interest and explore what Arcadia truly has to offer.</p>
                 </div>
-                <div class="step">
-                    <div class="image">
-                        <img id="step-one" src="{% static "images/public-site/homepage/step_connect.jpg" %}" />
+                <div class="section__item">
+                    <div class="section__image">
+                        <img src="{% static "images/public-site/homepage/step_connect.jpg" %}" />
                     </div>
                     <p class="step-title">Connect</p>
                     <p class="step-description">Every hero needs their party members! Remember, you aren’t alone. Connect with others and build a community worth remembering!</p>
@@ -215,13 +215,13 @@
         </div>
     </section>
 
-    <section id="partners">
-        <div class="inner-section-wrapper">
-            <div class="header-content">
+    <section class="section" id="partners">
+        <div class="section__inner-wrapper">
+            <div class="section-header">
                 <p class="sub-header">Collaboration</p>
-                <h3>Industry Leaders <br> Trust Arcadia</h3>
+                <h3 class="section-header__main-header">Industry Leaders <br> Trust Arcadia</h3>
             </div>
-            <div class="flex-grid">
+            <div class="section__main-content--flex">
                 <img src="{% static "images/partners/aniplex.svg" %}" />
                 <img src="{% static "images/partners/crunchyroll.svg" %}" />
                 <img src="{% static "images/partners/funimation.svg" %}" />
@@ -234,46 +234,46 @@
         </div>
     </section>
 
-    <section id="secondary-suite-intro">
-        <div class="inner-section-wrapper">
-            <div class="header-content">
-                <p class="sub-header">Other Apps</p>
-                <h3>More Than Just The Essentials</h3>
+    <section class="section" id="secondary-suite-intro">
+        <div class="section__inner-wrapper">
+            <div class="section-header">
+                <p class="section-header__sub-header">Other Apps</p>
+                <h3 class="section-header__main-header">More Than Just The Essentials</h3>
             </div>
-            <div class="flex-grid">
-                <div id="iku-tile" class="suite-tile horizontal light">
-                    <div class="suite-text">
-                        <p class="title">Arcadia Iku</p>
-                        <p class="slogan">Go Where the community goes</p>
+            <div class="section__main-content section__main-content--flex">
+                <div id="iku-tile" class="suite-tile suite-tile--horizontal suite-tile--light">
+                    <div class="suite-tile__text">
+                        <p class="suite-tile__title">Arcadia Iku</p>
+                        <p class="suite-tile__slogan">Go Where the community goes</p>
                     </div>
-                    <div class="suite-image">
+                    <div class="suite-tile__image">
                         <img src="{% static "images/public-site/suite-bgs/iku.jpg" %}" />
                      </div>
                 </div>
-                <div id="shiru-tile" class="suite-tile horizontal dark">
-                    <div class="suite-image">
+                <div id="shiru-tile" class="suite-tile suite-tile--horizontal suite-tile--dark">
+                    <div class="suite-tile__image">
                         <img src="{% static "images/public-site/suite-bgs/shiru.jpg" %}" />
                      </div>
-                    <div class="suite-text">
-                        <p class="title">Arcadia Shiru</p>
-                        <p class="slogan">Explore, Learn and Share the Journey</p>
+                    <div class="suite-tile__text">
+                        <p class="suite-tile__title">Arcadia Shiru</p>
+                        <p class="suite-tile__slogan">Explore, Learn and Share the Journey</p>
                     </div>
                 </div>
-                <div id="hiku-tile" class="suite-tile horizontal dark">
-                    <div class="suite-image">
+                <div id="hiku-tile" class="suite-tile suite-tile--horizontal suite-tile--dark">
+                    <div class="suite-tile__image">
                         <img src="{% static "images/public-site/suite-bgs/hiku.jpg" %}" />
                      </div>
-                    <div class="suite-text">
-                        <p class="title">Arcadia Hiku</p>
-                        <p class="slogan">Pull your way to victory</p>
+                    <div class="suite-tile__text">
+                        <p class="suite-tile__title">Arcadia Hiku</p>
+                        <p class="suite-tile__slogan">Pull your way to victory</p>
                     </div>
                 </div>
-                <div id="kiku-tile" class="suite-tile horizontal light">
-                    <div class="suite-text">
-                        <p class="title">Arcadia Kiku</p>
-                        <p class="slogan">Relax. Focus. Create</p>
+                <div id="kiku-tile" class="suite-tile suite-tile--horizontal suite-tile--light">
+                    <div class="suite-tile__text">
+                        <p class="suite-tile__title">Arcadia Kiku</p>
+                        <p class="suite-tile__slogan">Relax. Focus. Create</p>
                     </div>
-                    <div class="suite-image">
+                    <div class="suite-tile__image">
                         <img src="{% static "images/public-site/suite-bgs/kiku.jpg" %}" />
                     </div>  
                 </div>
