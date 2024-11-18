@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import Button from '@mui/material/Button'
 
 export default function Home() {
   return (
@@ -36,13 +37,16 @@ export default function Home() {
             />
             Deploy now
           </a>
+          <Button variant="contained" color="primary">
+              Balls in miami
+            </Button>
           <a
             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
             className={styles.secondary}
           >
-            Read our docs
+            GO
           </a>
         </div>
       </main>
