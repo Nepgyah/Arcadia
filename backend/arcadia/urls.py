@@ -19,7 +19,7 @@ from django.urls import path, include, re_path
 from public_site.views import not_found
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("account/", include("users.urls")),
+    path("account/", include("user.urls")),
     path('', include('public_site.urls')),
 
     re_path(r'^.*$', not_found),

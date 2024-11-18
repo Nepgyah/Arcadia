@@ -5,16 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arcadia - Login</title>
-    <link href="{% static "css/globals/_base.css" %}" rel="stylesheet" type="text/css">
-    <link href="{% static "css/account.css" %}" rel="stylesheet" type="text/css">
+    <link href="{% static "css/pages/account/account.css" %}" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div class="flex-grid">
-        <div class="content">
-            <a href="/">
+    <div class="account">
+        <div class="account__content">
+            <a class="account__icon" href="/">
                 <img src="{% static "images/public-site/logo_dark.svg" %}" />
             </a>
-            <h1>Login</h1>
+            <h1 class="account__title">Login</h1>
             <form method="POST" action="">
                 {% csrf_token %}
                 <div class="input-field">
@@ -31,7 +30,7 @@
                 </div>
             </form>
         </div>
-        <div class="image">
+        <div class="account__image">
             <img src="{% static "images/account/login.jpg" %}" />
         </div>
     </div>
