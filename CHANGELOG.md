@@ -1,5 +1,11 @@
 ## Unreleased
 - Frontend
-	- navigation
+	- Navigation bars and base paths
 - Backend
-	- user app implementation
+	- User app implementation
+   	- Update account pages to BEM styling
+
+ ## Upcoming Roadmap
+ - Backend
+	- Miru App Implementation
+ 	- Asobu detailed page
