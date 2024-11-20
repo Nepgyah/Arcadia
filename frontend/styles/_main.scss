@@ -1,3 +1,6 @@
+@import "./components/sidenav/sidenav";
+@import "./components/topnav/topnav";
+
 html,
 body {
     max-width: 100vw;
@@ -9,24 +12,17 @@ body {
     background-color: #171717;
     display: flex;
 
-    .side-nav {
-        width: 240px;
-        background-color: green;
-    }
-
     .main {
         flex-grow: 1;
         display: flex;
         flex-direction: column;
 
-        .top-nav {
-            height: 80px;
-            background-color: red;
-        }
-
         .page {
-            background-color: gray;
+            background-color: #FFF6E1;
             flex-grow: 1;
+            padding: 36px;
+
+            color: #505477;
         }
     }
   }

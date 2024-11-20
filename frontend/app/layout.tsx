@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./styles.css";
+import "../styles/pages/home.scss"
 import SideNav from "./components/navigation/sideNav";
 import TopNav from "./components/navigation/topNav";
 
@@ -25,6 +25,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
