@@ -1,0 +1,40 @@
+
+.side-nav {
+    width: 72px;
+    background-color: #505477;
+
+    .global-home {
+        height: 68px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .app-nav-container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+        align-items: center;
+
+        .app-nav {
+            color: white;
+            text-decoration: none;
+            width: 100%;
+            text-align: center;
+            padding: 12px 0px;
+    
+    
+            &:hover {
+                background-color: #3D405B;
+            }
+            
+            .icon-container {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 8px;
+            }
+            
+        }
+    }
+}
