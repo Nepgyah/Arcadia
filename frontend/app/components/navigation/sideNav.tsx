@@ -1,8 +1,10 @@
 'use client'
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { redirect, usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { sidebar } from "./sidebarConfig";
+import API from "../../util/API";
+import Button from '@mui/material/Button'
 
 const SideNav = () => {
 
@@ -17,6 +19,19 @@ const SideNav = () => {
         }
     }, [pathname])
 
+    const handleLogout = () => {
+        console.log("Loggin out");
+        API.post("user/logout/", {})
+        .then((res) => {
+            console.log(res)
+        })
+        .catch((res) => {
+            console.log(res)
+        })
+        .finally(() => {
+            redirect("http://127.0.0.1:8000/")
+        })
+    }
     return (
         <div className="side-nav">
             <div className="global-home">
@@ -36,6 +51,9 @@ const SideNav = () => {
                     ))
                 }
             </div>
+            <Button variant="text" color="primary" onClick={handleLogout}>
+               logout
+            </Button>
         </div>
     )
 }

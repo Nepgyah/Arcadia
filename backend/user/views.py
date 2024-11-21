@@ -5,8 +5,9 @@ from django.shortcuts import render, redirect
 from django.http import JsonResponse
 from django.contrib.auth import authenticate, login, logout
 from .forms import CreateUserForm, LoginForm
-from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_protect
 
+@csrf_protect
 def test(request):
     print("OK")
     return JsonResponse({'message': "OK"})

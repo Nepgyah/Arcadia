@@ -24,7 +24,7 @@ urlpatterns = [
     path("api/user/", include("user.urls")),
     path('', include('public_site.urls')),
 
-    path("login/", user.login),
-    path("register/", user.register),
+    path("login", user.loginPage),
+    path("register", user.register),
     re_path(r'^.*$', not_found),
 ]
