@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "../styles/pages/home.scss"
+import "../styles/pages/home.css"
 import SideNav from "./components/navigation/sideNav";
 import TopNav from "./components/navigation/topNav";
 

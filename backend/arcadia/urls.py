@@ -17,10 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include, re_path
 from public_site.views import not_found
+import user.views as user
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("account/", include("user.urls")),
+    path("api/user/", include("user.urls")),
     path('', include('public_site.urls')),
 
+    path("login/", user.login),
+    path("register/", user.register),
     re_path(r'^.*$', not_found),
 ]

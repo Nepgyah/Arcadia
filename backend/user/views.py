@@ -7,6 +7,10 @@ from django.contrib.auth import authenticate, login, logout
 from .forms import CreateUserForm, LoginForm
 from django.contrib.auth.decorators import login_required
 
+def test(request):
+    print("OK")
+    return JsonResponse({'message': "OK"})
+
 # Authentication - Important for access to platform frontend
 def checkAuthentication(request):
     return JsonResponse({'authenticated': request.user.is_authenticated})
