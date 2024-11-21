@@ -19,13 +19,23 @@ const SideNav = () => {
 
     return (
         <div className="side-nav">
-            {
-                sidebarLinks.map((item, index) => (
-                    <Link href={item.link} key={index}>
-                        {item.name}
-                    </Link>
-                ))
-            }
+            <div className="global-home">
+                <Link href="/">
+                    Home
+                </Link>
+            </div>
+            <div className="app-nav-container">
+                {
+                    sidebarLinks.map((item, index) => (
+                        <Link className="app-nav" href={item.link} key={index}>
+                            <div className="icon-container">
+                                {item.icon}
+                            </div>
+                            {item.name}
+                        </Link>
+                    ))
+                }
+            </div>
         </div>
     )
 }
