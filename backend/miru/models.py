@@ -42,6 +42,7 @@ class Anime(models.Model):
 
     name = models.CharField(max_length=500)
     name_alternatives = models.JSONField(blank=True, null=True)
+    visual = models.ImageField(default="fallback.png", blank=True)
     summary = models.TextField(blank=True, null=True)
     season = models.ForeignKey(Season, on_delete=models.SET_NULL, related_name="animes", null=True)
     status = models.CharField(
