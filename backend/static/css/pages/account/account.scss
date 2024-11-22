@@ -1,13 +1,19 @@
 @use "../../core/base/variables";
+@import "../../main";
 
-.flex-grid {
+.account {
     height: 100dvh;
+    display: flex;
 
-    .content {
+    &__content {
         width: 50%;
         padding: 5%;
 
-        h1 {
+        .account__icon {
+            margin: auto;
+        }
+
+        .account__title {
             text-align: center;
         }
 
@@ -60,7 +66,7 @@
         }
     }
 
-    .image {
+    &__image {
         width: 50%;
         background-color: black;
 
