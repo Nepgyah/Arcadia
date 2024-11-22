@@ -6,6 +6,21 @@ class Genre(models.Model):
     def __str__(self):
         return self.name
 
+class Season(models.Model):
+    season = models.CharField(
+        max_length=20,
+        choices=[
+            ("Winter", "Winter"),
+            ("Spring", "Spring"),
+            ("Summer", "Summer"),
+            ("Fall", "Fall"),
+        ],
+    )
+    year = models.PositiveIntegerField()
+
+    def __str__(self):
+        return f"{self.season} {self.year}"
+
 class Anime(models.Model):
     class AiringStatus(models.TextChoices):
         NOT_YET_AIRING = "not_yet_airing", "Not Yet Airing"
@@ -21,6 +36,7 @@ class Anime(models.Model):
     name = models.CharField(max_length=500)
     name_alternatives = models.JSONField(blank=True, null=True)
     summary = models.TextField(blank=True, null=True)
+    season = models.ForeignKey(Season, on_delete=models.SET_NULL, related_name="animes", null=True)
     status = models.CharField(
         max_length=30, 
         choices=AiringStatus.choices, 
