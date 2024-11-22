@@ -21,6 +21,13 @@ class Season(models.Model):
     def __str__(self):
         return f"{self.season} {self.year}"
 
+class Character(models.Model):
+    name = models.CharField(max_length=100, blank=False)
+    description = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.name
+
 class Anime(models.Model):
     class AiringStatus(models.TextChoices):
         NOT_YET_AIRING = "not_yet_airing", "Not Yet Airing"
@@ -50,7 +57,8 @@ class Anime(models.Model):
     airing_start_date = models.DateField(blank=True, null=True)
     airing_end_date = models.DateField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    genres = models.ManyToManyField(Genre, related_name="animes")
+    genres = models.ManyToManyField(Genre, related_name="genre_animes")
+    characters = models.ManyToManyField(Character, related_name="character_animes")
 
     def __str__(self):
         return self.name
@@ -58,3 +66,13 @@ class Anime(models.Model):
     class Meta:
         verbose_name_plural = "Anime"
         ordering = ["-created_at"]
+
+class Episode(models.Model):
+    anime = models.ForeignKey(Anime, on_delete=models.CASCADE, related_name="episodes" )
+    episode_number = models.PositiveIntegerField()
+    title = models.CharField(max_length=255, blank=True, null=True)
+    summary = models.TextField(blank=True, null=True)
+    air_date = models.DateField(blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.anime.name} - Episode {self.episode_number}"
