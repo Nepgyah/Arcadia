@@ -1,6 +1,5 @@
 import Link from "next/link";
 import "../styles/pages/home.scss";
-import Button from '@mui/material/Button'
 
 export default function Home() {
   return (

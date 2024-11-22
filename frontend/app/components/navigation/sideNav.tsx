@@ -20,7 +20,6 @@ const SideNav = () => {
     }, [pathname])
 
     const handleLogout = () => {
-        console.log("Loggin out");
         API.post("user/logout/", {})
         .then((res) => {
             console.log(res)
