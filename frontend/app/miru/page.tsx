@@ -7,6 +7,7 @@ import "../../static/css/pages/miru/miru-home.css"
 import { Grid2 } from '@mui/material';
 import Link from 'next/link';
 interface Anime {
+  id: number,
   name: string,
   visual: string
 }
@@ -18,10 +19,9 @@ const MiruHome = () => {
 
   useEffect(() => {
     API.get("miru/dashboard/", {})
-      .then((res) => {
-        console.log(res.data.seasonal)
-        setSeasonalAnime(res.data.seasonal);
-        setIsLoading(false)
+    .then((res) => {
+      setSeasonalAnime(res.data.seasonal);
+      setIsLoading(false)
     })
     .catch((res) => {
         console.log(res)
@@ -79,7 +79,10 @@ export default MiruHome;
 
 const AnimeCard = ({ anime }: { anime: Anime }) => {
   return (
-    <Link href={`/miru/detail/${1}`}>
+    <Link href={{
+      pathname: "/miru/detail/",
+      query: { id: anime.id}
+    }}>
       <div className='anime-card'>
         <img className='anime-card__visual' src={anime.visual} alt={anime.name} />
         <p className='anime-card__title'>{anime.name}</p>

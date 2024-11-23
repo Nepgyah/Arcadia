@@ -193,6 +193,8 @@
   },
   "active": "484d99c5f19da1ef",
   "lastOpenFiles": [
+    "frontend/static/css/pages/miru/anime-detail.css",
+    "frontend/static/css/pages/miru/anime-detail.scss",
     "README.md",
     "CHANGELOG.md",
     "backend/public_site/README.md",
@@ -210,7 +212,6 @@
     "frontend/public/file.svg",
     "frontend/next.config.ts",
     "frontend/app/profile/page.tsx",
-    "frontend/app/profile",
     "frontend/src/logo.svg",
     "frontend/public/logo192.png",
     "frontend/node_modules/next/dist/compiled/@babel/runtime/README.md",
@@ -235,7 +236,6 @@
     "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/no-extra-semi.md",
     "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/no-extra-parens.md",
     "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/member-delimiter-style.md",
-    "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/lines-between-class-members.md",
     "backend/static/images/app-icons/kiku.svg",
     "backend/static/images/app-icons/hiku.svg",
     "backend/static/images/app-icons/iku.svg"

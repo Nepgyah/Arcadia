@@ -69,11 +69,21 @@ class Anime(models.Model):
         verbose_name_plural = "Anime"
         ordering = ["-created_at"]
 
-    def to_json(self):
+    def get_snippet(self):
         return {
             'id': self.id,
             'name' : self.name,
             'visual' : f"http://localhost:8000{self.visual.url}"
+        }
+    
+    def to_json(self):
+        return {
+            'id': self.id,
+            'name' : self.name,
+            'name_alternatives' : self.name_alternatives,
+            'visual' : f"http://localhost:8000{self.visual.url}",
+            'summary' : self.summary,
+            'season' : self.season.__str__()
         }
 
 class Episode(models.Model):

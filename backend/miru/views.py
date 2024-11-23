@@ -10,7 +10,7 @@ def MiruDashboard(request):
     '''
     season = Season.objects.get(season="Fall", year=2024)
     animes = season.animes.all()
-    animes = [anime.to_json() for anime in animes]
+    animes = [anime.get_snippet() for anime in animes]
 
     return JsonResponse(
         {
@@ -18,3 +18,11 @@ def MiruDashboard(request):
         },
         status = 200
     )
+
+def anime_details(request, id):
+    try:
+        anime = Anime.objects.get(id=id)
+    except Exception as e:
+        print(e)
+        return JsonResponse({ "message" : "A server error has occured" }, status=500)
+    return JsonResponse({ "anime" : anime.to_json() }, status=200)
