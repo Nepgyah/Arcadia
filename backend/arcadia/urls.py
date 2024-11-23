@@ -24,11 +24,15 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("api/user/", include("user.urls")),
+    path("api/miru/", include("miru.urls")),
     path('', include('public_site.urls')),
 
     path("login", user.loginPage),
     path("register", user.register),
-    re_path(r'^.*$', not_found),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
+urlpatterns += [
+    re_path(r'^.*$', not_found),
+]

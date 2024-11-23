@@ -23,6 +23,7 @@ class Season(models.Model):
 
 class Character(models.Model):
     name = models.CharField(max_length=100, blank=False)
+    visual = models.ImageField(upload_to="characters/" ,default="fallback.png", blank=True)
     description = models.TextField(blank=True, null=True)
 
     def __str__(self):
@@ -42,7 +43,7 @@ class Anime(models.Model):
 
     name = models.CharField(max_length=500)
     name_alternatives = models.JSONField(blank=True, null=True)
-    visual = models.ImageField(default="fallback.png", blank=True)
+    visual = models.ImageField(upload_to="anime/" ,default="fallback.png", blank=True)
     summary = models.TextField(blank=True, null=True)
     season = models.ForeignKey(Season, on_delete=models.SET_NULL, related_name="animes", null=True)
     status = models.CharField(
@@ -59,7 +60,7 @@ class Anime(models.Model):
     airing_end_date = models.DateField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     genres = models.ManyToManyField(Genre, related_name="genre_animes")
-    characters = models.ManyToManyField(Character, related_name="character_animes")
+    characters = models.ManyToManyField(Character, related_name="character_animes", blank=True)
 
     def __str__(self):
         return self.name
@@ -67,6 +68,13 @@ class Anime(models.Model):
     class Meta:
         verbose_name_plural = "Anime"
         ordering = ["-created_at"]
+
+    def to_json(self):
+        return {
+            'id': self.id,
+            'name' : self.name,
+            'visual' : f"http://localhost:8000{self.visual.url}"
+        }
 
 class Episode(models.Model):
     anime = models.ForeignKey(Anime, on_delete=models.CASCADE, related_name="episodes" )
