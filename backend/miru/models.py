@@ -56,6 +56,9 @@ class Anime(models.Model):
         choices=Type.choices, 
         default=Type.TV
     )
+    score = models.DecimalField(blank=True, null=True, max_digits=4, decimal_places=2)
+    users = models.PositiveIntegerField(blank=True, null=True)
+    score_breakdown = models.JSONField(blank=True, null=True)
     airing_start_date = models.DateField(blank=True, null=True)
     airing_end_date = models.DateField(blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
