@@ -1,11 +1,12 @@
 'use client';
 
 import React, { useEffect, useState } from 'react'
+import { Grid2 } from '@mui/material';
+import Link from 'next/link';
 import API from '../util/API'
 
 import "../../static/css/pages/miru/miru-home.css"
-import { Grid2 } from '@mui/material';
-import Link from 'next/link';
+
 interface Anime {
   id: number,
   name: string,
@@ -21,7 +22,7 @@ const MiruHome = () => {
   useEffect(() => {
     API.get("miru/dashboard/", {})
     .then((res) => {
-      setSeasonalAnime(res.data.seasonal);
+      setSeasonalAnime(res.data.seasonal_anime);
       setTopAnime(res.data.top_anime)
       setIsLoading(false)
     })
@@ -33,11 +34,8 @@ const MiruHome = () => {
   return (
     <div id='miru-home'>
       <h1>Miru Home</h1>
-
       <Grid2 container className="container">
-
         <Grid2 size={{ xs: 12, lg: 9}} className='main-content'>
-
           <div className='anime-row'>
             <h2>Fall 2024</h2>
             <Grid2 container justifyContent={'space-between'} columnSpacing={"16px"} className='anime-row__container'>
