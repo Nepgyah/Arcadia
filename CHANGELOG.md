@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 ## Unreleased V 0.2
+=======
+## Unreleased V 0.2.1
+>>>>>>> Stashed changes
 - Backend
 	- Miru App Implementation
 		- Add all related models for the miru app
