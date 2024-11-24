@@ -1,21 +1,15 @@
-## Unreleased V 0.2
+## Unreleased V 0.3
 - Backend
-	- Miru App Implementation
-		- Add all related models for the miru app
-	- Public page
-		- Asobu detailed page
+	- Public site
+		- About us page
 - Frontend
-	- Implement the miru home page
-	- Implement the miru anime detailed page
-
+	- Miru anime detailed page
 
 ## Roadmap
 
-### V 0.3
+### V 0.4
 - Backend
-	- Add functionality for a user to add to their 'anime list'
 - Frontend
-	- 
 
 ## 0.1
  Frontend
@@ -23,3 +17,15 @@
 - Backend
 	- User app implementation
 	- Update account pages to BEM styling
+
+## 0.2
+- Backend
+	- Miru App
+		- The following models have been added
+			- Anime
+			- Genre
+			- Season
+			- Character
+			- Episdoe
+- Frontend
+	- Miru app homepage content
