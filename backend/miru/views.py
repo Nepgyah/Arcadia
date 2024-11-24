@@ -9,12 +9,14 @@ def MiruDashboard(request):
         - Most Popular
     '''
     season = Season.objects.get(season="Fall", year=2024)
+    top_animes = Anime.objects.filter(score__isnull=False).order_by('-score')[:5]
     animes = season.animes.all()
     animes = [anime.get_snippet() for anime in animes]
-
+    top_animes = [anime.get_snippet() for anime in top_animes]
     return JsonResponse(
         {
-            "seasonal": animes
+            "seasonal": animes,
+            "top_anime": top_animes
         },
         status = 200
     )

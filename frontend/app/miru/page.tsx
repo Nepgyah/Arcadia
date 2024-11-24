@@ -16,11 +16,13 @@ const MiruHome = () => {
   
   const [isLoading, setIsLoading] = useState(true)
   const [seasonalAnime, setSeasonalAnime] = useState<Anime[]>([]);
+  const [topAnime, setTopAnime] = useState<Anime[]>([]);
 
   useEffect(() => {
     API.get("miru/dashboard/", {})
     .then((res) => {
       setSeasonalAnime(res.data.seasonal);
+      setTopAnime(res.data.top_anime)
       setIsLoading(false)
     })
     .catch((res) => {
@@ -56,7 +58,7 @@ const MiruHome = () => {
             <Grid2 container justifyContent={'space-between'} className='anime-row__container'>
               {
                 !isLoading ?
-                  seasonalAnime.map((anime, index) => (
+                  topAnime.map((anime, index) => (
                     <AnimeCard anime={anime} key={index} />
                   )
                   )
