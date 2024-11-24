@@ -1,11 +1,31 @@
-## Unreleased
+## Unreleased V 0.3
+- Backend
+	- Public site
+		- About us page
 - Frontend
+	- Miru anime detailed page
+
+## Roadmap
+
+### V 0.4
+- Backend
+- Frontend
+
+## 0.1
+ Frontend
 	- Navigation bars and base paths
 - Backend
 	- User app implementation
-   	- Update account pages to BEM styling
+	- Update account pages to BEM styling
 
- ## Upcoming Roadmap
- - Backend
-	- Miru App Implementation
- 	- Asobu detailed page
+## 0.2
+- Backend
+	- Miru App
+		- The following models have been added
+			- Anime
+			- Genre
+			- Season
+			- Character
+			- Episdoe
+- Frontend
+	- Miru app homepage content

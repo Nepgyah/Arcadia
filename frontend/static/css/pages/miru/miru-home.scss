@@ -1,0 +1,53 @@
+
+#miru-home {
+
+    .divider {
+        margin: 24px 0px;
+        width: 100%;
+        height: 1px;
+        background-color: #bbbbbb;
+    }
+    .container {
+        display: flex;
+
+        .main-content {
+            border-right: 1px solid #bbbbbb;
+            padding-right: 24px;
+
+            .anime-row {
+                
+                a {
+                    text-decoration: none;
+                    color: #505477;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+                &__container {
+                    display: flex;
+                    
+                    .anime-card {
+                        max-width: 160px;
+
+                        &__visual {
+                            max-height: 220px;
+                            border-radius: 5px;
+                            box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+                            margin-bottom: 18px;
+                        }
+
+                        &__title {
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+
+        .friend-activity {
+            padding-left: 24px;
+        }
+    }
+}
