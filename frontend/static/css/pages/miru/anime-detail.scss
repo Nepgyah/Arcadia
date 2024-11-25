@@ -1,18 +1,86 @@
+@use "../../core/base/variables" as *;
+
 #anime-details {
 
-    .anime {
+    .entry-section {
+        margin-bottom: 24px;
+    }
 
-        .anime-access {
-            img {
-                max-width: 400px;
+    .arcadia-entry {
+        display: flex;
+
+        h2 {
+            border-bottom: 1px solid #bbbbbb;
+        }
+        &__utility {
+            width: 15%;
+            
+            &-splash-art {
+                max-width: 100%;
                 height: auto;
                 border-radius: 5px;
                 box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
             }
         }
 
-        .anime-main-content {
-            padding: 0px 24px;
+        &__main {
+            width: 65%;
+            padding-right: 24px;
+            border-right: 1px solid #bbbbbb;
+
+            &-meta {
+                display: flex;
+                column-gap: 32px;
+                
+                .quick-stats {
+                    width: 60%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    row-gap: 24px;
+                    
+                    &__type {
+                        width: 100%;
+                        color: white;
+                        background-color: $arcadia-primary-one;
+                        border-radius: 5px;
+                    }
+
+                    &__score {
+                        width: 40%;
+                        color: white;
+                        background-color: $arcadia-primary-one;
+                        border-radius: 5px;
+                    }
+                    
+                    &__genre {
+                        width: 60%;
+                        padding-left: 24px;
+
+                        &-container {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 8px;
+
+                            div {
+                                padding: 4px;
+                                color: white;
+                                width: fit-content;
+                                background-color: $arcadia-secondary-two;
+                                border-radius: 4px;
+                            }
+                        }
+                    }
+                }
+
+                .promo-video {
+                    width: 40%;
+                }
+            }
+        }
+
+        &__media {
+            padding-left: 24px;
+            width: 20%;
         }
     }
 }

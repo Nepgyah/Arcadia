@@ -84,9 +84,18 @@ class Anime(models.Model):
             'id': self.id,
             'name' : self.name,
             'name_alternatives' : self.name_alternatives,
-            'visual' : f"http://localhost:8000{self.visual.url}",
+            'season' : self.season.__str__(),
+            'type' : Anime.Type(self.media_type).label,
+            'ranking_info' : {
+                "score": self.score,
+                "users" : self.users
+            },
+            'genres' : [genre.name for genre in self.genres.all()],
             'summary' : self.summary,
-            'season' : self.season.__str__()
+            'media': {
+                "status": Anime.AiringStatus(self.status).label
+            },
+            'visual' : f"http://localhost:8000{self.visual.url}",
         }
 
 class Episode(models.Model):
