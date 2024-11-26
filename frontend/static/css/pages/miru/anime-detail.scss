@@ -13,7 +13,7 @@
             border-bottom: 1px solid #bbbbbb;
         }
         &__utility {
-            width: 15%;
+            width: 20%;
             
             &-splash-art {
                 max-width: 100%;
@@ -24,8 +24,9 @@
         }
 
         &__main {
-            width: 65%;
+            width: 60%;
             padding-right: 24px;
+            padding-left: 24px;
             border-right: 1px solid #bbbbbb;
 
             &-meta {
@@ -43,17 +44,29 @@
                         color: white;
                         background-color: $arcadia-primary-one;
                         border-radius: 5px;
+                        padding: 16px;
+                        display: flex;
+                        justify-content: space-between;
                     }
 
-                    &__score {
-                        width: 40%;
+                    &__ranking {
+                        width: 30%;
                         color: white;
                         background-color: $arcadia-primary-one;
                         border-radius: 5px;
+                        padding: 16px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        
+                        &-score {
+                            font-size: 2rem;
+                            font-weight: bold;
+                        }
                     }
                     
                     &__genre {
-                        width: 60%;
+                        width: 70%;
                         padding-left: 24px;
 
                         &-container {

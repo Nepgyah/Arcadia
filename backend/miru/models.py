@@ -64,6 +64,8 @@ class Anime(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     genres = models.ManyToManyField(Genre, related_name="genre_animes")
     characters = models.ManyToManyField(Character, related_name="character_animes", blank=True)
+    previous_anime = models.ForeignKey('self', blank=True, null=True, on_delete=models.SET_NULL, related_name='previous_in_series')
+    next_anime = models.ForeignKey('self', blank=True, null=True, on_delete=models.SET_NULL, related_name='next_in_series')
 
     def __str__(self):
         return self.name
@@ -94,6 +96,10 @@ class Anime(models.Model):
             'summary' : self.summary,
             'media': {
                 "status": Anime.AiringStatus(self.status).label
+            },
+            'series' : {
+                "next": self.next_anime.get_snippet() if self.next_anime else None,
+                "previous": self.previous_anime.get_snippet() if self.previous_anime else None
             },
             'visual' : f"http://localhost:8000{self.visual.url}",
         }

@@ -11,6 +11,10 @@ interface Anime {
   summary: string,
   season: string,
   type: string,
+  ranking_info: {
+    score: number,
+    users: number
+  },
   genres: string[],
   visual: string,
 }
@@ -52,14 +56,27 @@ export default function AnimeDetails() {
 function Main({ anime }: { anime: Anime }) {
   return (
     <div className='arcadia-entry__main'>
-      <div className='arcadia-entry__main-meta'>
+      <div className='arcadia-entry__main-meta entry-section '>
         <div className='quick-stats'>
           <div className='quick-stats__type'>
             <div><span className='emp'>Season: </span>{anime.season}</div>
             <div><span className='emp'>Type: </span>{anime.type}</div>
           </div>
-          <div className='quick-stats__score'>
-            Score
+          <div className='quick-stats__ranking'>
+            <div className='quick-stats__ranking-score'>
+              {anime.ranking_info.score == null ?
+                "N/A"
+              :
+                anime.ranking_info.score
+              }
+            </div>
+            <div className='quick-stats__ranking-user'>
+              {anime.ranking_info.users == null ?
+                "N/A"
+              :
+                `${anime.ranking_info.users } Users`
+              }
+            </div>
           </div>
           <div className='quick-stats__genre'>
             <h2>Genre</h2>
