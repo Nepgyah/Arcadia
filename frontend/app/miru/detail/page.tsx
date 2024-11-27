@@ -15,8 +15,23 @@ interface Anime {
     score: number,
     users: number
   },
+  series: {
+    previous : {
+      id: number,
+      name: string,
+      visual: string
+    }
+    next: {
+      id: number,
+      name: string,
+      visual: string
+    }
+  },
   genres: string[],
   visual: string,
+  media: {
+    status: string,
+  }
 }
 
 export default function AnimeDetails() {
@@ -41,9 +56,8 @@ export default function AnimeDetails() {
         <React.Fragment>
         <h1>{anime.name}</h1>
         <div className='arcadia-entry'>
-          <Utility anime={anime} />
+          <Sidebar anime={anime} />
           <Main anime={anime} />
-          <Media />
         </div>
         </React.Fragment>
       :
@@ -56,57 +70,100 @@ export default function AnimeDetails() {
 function Main({ anime }: { anime: Anime }) {
   return (
     <div className='arcadia-entry__main'>
-      <div className='arcadia-entry__main-meta entry-section '>
-        <div className='quick-stats'>
-          <div className='quick-stats__type'>
-            <div><span className='emp'>Season: </span>{anime.season}</div>
-            <div><span className='emp'>Type: </span>{anime.type}</div>
+      <div className='arcadia-entry__main-overview entry-section'>
+        <div className='arcadia-entry__main-overview-meta'>
+          <div className='meta-data entry-section '>
+            <div className='meta-data__quick-stats'>
+              <div className='meta-data__quick-stats-type'>
+                <div><span className='emp'>Season: </span>{anime.season}</div>
+                <div><span className='emp'>Type: </span>{anime.type}</div>
+              </div>
+              <div className='meta-data__quick-stats-ranking'>
+                <div className='meta-data__quick-stats-ranking-score'>
+                  {anime.ranking_info.score == null ?
+                    "N/A"
+                  :
+                    anime.ranking_info.score
+                  }
+                </div>
+                <div className='meta-data__quick-stats-ranking-user'>
+                  {anime.ranking_info.users == null ?
+                    "N/A"
+                  :
+                    `${anime.ranking_info.users } Users`
+                  }
+                </div>
+              </div>
+              <div className='meta-data__quick-stats-genre'>
+                <h2>Genre</h2>
+                <div className='meta-data__quick-stats-genre-container'>
+                  {anime.genres.map((genre, index) => (
+                    <div key={index}>{genre}</div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className='meta-data__promo-video'>
+              <h2>Promotional Video</h2>
+            </div>
           </div>
-          <div className='quick-stats__ranking'>
-            <div className='quick-stats__ranking-score'>
-              {anime.ranking_info.score == null ?
-                "N/A"
-              :
-                anime.ranking_info.score
-              }
-            </div>
-            <div className='quick-stats__ranking-user'>
-              {anime.ranking_info.users == null ?
-                "N/A"
-              :
-                `${anime.ranking_info.users } Users`
-              }
-            </div>
-          </div>
-          <div className='quick-stats__genre'>
-            <h2>Genre</h2>
-            <div className='quick-stats__genre-container'>
-              {anime.genres.map((genre, index) => (
-                <div key={index}>{genre}</div>
-              ))}
-            </div>
+          <div className='arcadia-entry__main-summary'>
+            <h2>Summary</h2>
+            {anime.summary}
           </div>
         </div>
-        <div className='promo-video'>
-          <h2>Promotional Video</h2>
-        </div>
+        <Media />
       </div>
-      <div className='arcadia-entry__main-summary'>
-        <h2>Summary</h2>
-        {anime.summary}
+      <div className='arcadia-entry__main-secondary'>
+        <div className='anime-flow entry-section'>
+          <h2>Anime Flow</h2>
+          <div className='container'>
+            <div className='previous-anime'>
+              <h3>Previous Anime</h3>
+              {
+                  anime.series.previous ?
+                    <div className='series-anime container'>
+                      <img src={anime.series.previous.visual} />
+                      <p>{anime.series.previous.name}</p>
+                    </div>
+                  :
+                  <>
+                  No Anime
+                  </>
+                }
+            </div>
+            <div className='next-anime'>
+                <h3>Next Anime</h3>
+                {
+                  anime.series.next ?
+                    <div className='series-anime container'>
+                      <img src={anime.series.next.visual} />
+                      <p>{anime.series.next.name}</p>
+                    </div>
+                  :
+                  <></>
+                }
+            </div>
+          </div>
+        </div>
+        <div className='anime-characters entry-section'>
+          <h2>Characters</h2>
+        </div>
       </div>
     </div>
   )
 }
 
-function Utility({ anime }: { anime: Anime }) {
+function Sidebar({ anime }: { anime: Anime }) {
   return (
-    <div className='arcadia-entry__utility'>
-      <img className='arcadia-entry__utility-splash-art entry-section' src={anime.visual} />
-      <div className='arcadia-entry__utility-update-stats entry-section'>
+    <div className='arcadia-entry__sidebar'>
+      <div className='arcadia-entry__sidebar-splash-art entry-section'>
+        <img src={anime.visual} />
+      </div>
+      <div className='arcadia-entry__sidebar-update-stats entry-section'>
         <h2>Update Stats</h2>
       </div>
-      <div className='arcadia-entry__utility-socials entry-section'>
+      <div className='arcadia-entry__sidebar-socials entry-section'>
         <h2>Social Media</h2>
       </div>
     </div>
@@ -115,7 +172,7 @@ function Utility({ anime }: { anime: Anime }) {
 
 function Media() {
   return (
-    <div className='arcadia-entry__media'>
+    <div className='arcadia-entry__main-overview-media'>
       <h2>Media</h2>
     </div>
   )

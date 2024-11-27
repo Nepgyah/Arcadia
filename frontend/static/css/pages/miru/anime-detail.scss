@@ -12,88 +12,142 @@
         h2 {
             border-bottom: 1px solid #bbbbbb;
         }
-        &__utility {
+        &__sidebar {
             width: 20%;
             
             &-splash-art {
-                max-width: 100%;
-                height: auto;
-                border-radius: 5px;
-                box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+                display: flex;
+                justify-content: center;
+                img {
+                    max-width: 100%;
+                    height: auto;
+                    border-radius: 5px;
+                    box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+                }
             }
         }
 
         &__main {
-            width: 60%;
+            width: 80%;
             padding-right: 24px;
             padding-left: 24px;
-            border-right: 1px solid #bbbbbb;
 
-            &-meta {
+            &-overview {
                 display: flex;
-                column-gap: 32px;
-                
-                .quick-stats {
-                    width: 60%;
-                    display: flex;
-                    flex-wrap: wrap;
-                    row-gap: 24px;
-                    
-                    &__type {
-                        width: 100%;
-                        color: white;
-                        background-color: $arcadia-primary-one;
-                        border-radius: 5px;
-                        padding: 16px;
-                        display: flex;
-                        justify-content: space-between;
-                    }
 
-                    &__ranking {
-                        width: 30%;
-                        color: white;
-                        background-color: $arcadia-primary-one;
-                        border-radius: 5px;
-                        padding: 16px;
+                &-meta {
+                    width: 70%;
+                    padding-right: 24px;
+                    border-right: 1px solid #bbbbbb;
+                    .meta-data {
                         display: flex;
-                        flex-direction: column;
-                        align-items: center;
+                        column-gap: 32px;
                         
-                        &-score {
-                            font-size: 2rem;
-                            font-weight: bold;
-                        }
-                    }
-                    
-                    &__genre {
-                        width: 70%;
-                        padding-left: 24px;
-
-                        &-container {
+                        &__quick-stats {
+                            width: 60%;
                             display: flex;
                             flex-wrap: wrap;
-                            gap: 8px;
-
-                            div {
-                                padding: 4px;
+                            row-gap: 24px;
+                            
+                            &-type {
+                                width: 100%;
                                 color: white;
-                                width: fit-content;
-                                background-color: $arcadia-secondary-two;
-                                border-radius: 4px;
+                                background-color: $arcadia-primary-one;
+                                border-radius: 5px;
+                                padding: 16px;
+                                display: flex;
+                                justify-content: space-between;
                             }
+
+                            &-ranking {
+                                width: 30%;
+                                color: white;
+                                background-color: $arcadia-primary-one;
+                                border-radius: 5px;
+                                padding: 16px;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                
+                                &-score {
+                                    font-size: 2rem;
+                                    font-weight: bold;
+                                }
+                            }
+                            
+                            &-genre {
+                                width: 70%;
+                                padding-left: 24px;
+
+                                &-container {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    gap: 8px;
+
+                                    div {
+                                        padding: 4px;
+                                        color: white;
+                                        width: fit-content;
+                                        background-color: $arcadia-secondary-two;
+                                        border-radius: 4px;
+                                    }
+                                }
+                            }
+                        }
+
+                        &__promo-video {
+                            width: 40%;
                         }
                     }
                 }
+                &-media {
+                    width: 30%;
+                    padding-left: 24px;
+                    width: 20%;
+                }
+            }
 
-                .promo-video {
+            &-secondary {
+                display: flex;
+                
+                .anime-flow {
+                    padding-right: 24px;
+                    width: 60%;
+
+                    .container {
+                        display: flex;
+
+                        .previous-anime, .next-anime {
+                            width: 50%;
+                        }
+
+                        .previous-anime {
+                            padding-right: 24px;
+                        }
+                        .next-anime {
+                            padding-left: 24px;
+                            border-left: 1px solid #bbbbbb;
+                        }
+                        .series-anime {
+                            align-items: center;
+                            column-gap: 8px;
+
+                            img {
+                                max-height: 200px;
+                                border-radius: 5px;
+                                box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+                            }
+                        }
+                    }   
+                }
+
+                .anime-characters {
+                    padding-left: 24px;
                     width: 40%;
+                    border-left: 1px solid #bbbbbb;
                 }
             }
         }
 
-        &__media {
-            padding-left: 24px;
-            width: 20%;
-        }
     }
 }
