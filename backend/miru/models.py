@@ -89,8 +89,8 @@ class Anime(models.Model):
             'season' : self.season.__str__(),
             'type' : Anime.Type(self.media_type).label,
             'ranking_info' : {
-                "score": self.score,
-                "users" : self.users
+                "score": self.score if not self.score == None else 0,
+                "users" : self.users if not self.users == None else 0
             },
             'genres' : [genre.name for genre in self.genres.all()],
             'summary' : self.summary,

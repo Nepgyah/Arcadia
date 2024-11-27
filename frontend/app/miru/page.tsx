@@ -6,6 +6,7 @@ import API from '../util/API'
 import "../../static/css/pages/miru/miru-home.css"
 import { Grid2 } from '@mui/material';
 import Link from 'next/link';
+
 interface Anime {
   id: number,
   name: string,
@@ -13,7 +14,6 @@ interface Anime {
 }
 
 const MiruHome = () => {
-  
   const [isLoading, setIsLoading] = useState(true)
   const [seasonalAnime, setSeasonalAnime] = useState<Anime[]>([]);
   const [topAnime, setTopAnime] = useState<Anime[]>([]);
@@ -80,15 +80,17 @@ const MiruHome = () => {
 export default MiruHome;
 
 const AnimeCard = ({ anime }: { anime: Anime }) => {
+
+  const handleClick = () => {
+
+  }
+
   return (
-    <Link href={{
-      pathname: "/miru/detail/",
-      query: { id: anime.id}
-    }}>
+    <Link href={`/miru/detail/${anime.id}`}>
       <div className='anime-card'>
         <img className='anime-card__visual' src={anime.visual} alt={anime.name} />
         <p className='anime-card__title'>{anime.name}</p>
       </div>
-    </Link>
+      </Link>
   );
 };

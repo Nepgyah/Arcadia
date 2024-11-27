@@ -1,10 +1,9 @@
-'use client';
-
 import React, { useEffect, useState } from 'react'
 import { useSearchParams } from 'next/navigation'
 import API from '@/app/util/API';
 
-import "../../../static/css/pages/miru/anime-detail.css";
+import "../../../../static/css/pages/miru/anime-detail.css";
+import { GetServerSideProps } from 'next';
 
 interface Anime {
   name: string,
@@ -12,8 +11,8 @@ interface Anime {
   season: string,
   type: string,
   ranking_info: {
-    score: number,
-    users: number
+    score: number | null ,
+    users: number | null
   },
   series: {
     previous : {
@@ -34,35 +33,27 @@ interface Anime {
   }
 }
 
-export default function AnimeDetails() {
-  const searchParam = useSearchParams()
-  const [anime, setAnime] = useState<Anime | null >(null);
+export default async function AnimeDetails( {params } : { params: { id: string} }) {
+  const { id } = params;
+  const res = await fetch(`http://127.0.0.1:8000/api/miru/anime/${id}/details/`, {
+    cache: 'no-store',
+  });
 
-  useEffect(() => {
-    const id = searchParam.get("id")!;
-    console.log(id)
-    API.get(`miru/anime/${id}/details/`)
-    .then((res) => {
-      setAnime(res.data.anime);
-      console.log(res.data.anime)
-    })
-    .catch((res) => {
-        console.log(res)
-    })
-  }, [])
+  if (!res.ok) {
+    return <p>Opps</p>
+  }
+
+  const data = await res.json();
+  const anime = data.anime
+  console.log(anime)
+ 
   return (
     <div id='anime-details'>
-      {anime ?
-        <React.Fragment>
         <h1>{anime.name}</h1>
         <div className='arcadia-entry'>
           <Sidebar anime={anime} />
           <Main anime={anime} />
         </div>
-        </React.Fragment>
-      :
-        <></>
-      }
     </div>
   )
 }
@@ -80,18 +71,10 @@ function Main({ anime }: { anime: Anime }) {
               </div>
               <div className='meta-data__quick-stats-ranking'>
                 <div className='meta-data__quick-stats-ranking-score'>
-                  {anime.ranking_info.score == null ?
-                    "N/A"
-                  :
-                    anime.ranking_info.score
-                  }
+                    {anime.ranking_info.score}
                 </div>
                 <div className='meta-data__quick-stats-ranking-user'>
-                  {anime.ranking_info.users == null ?
-                    "N/A"
-                  :
-                    `${anime.ranking_info.users } Users`
-                  }
+                    {`${anime.ranking_info.users } Users`}
                 </div>
               </div>
               <div className='meta-data__quick-stats-genre'>
@@ -119,12 +102,14 @@ function Main({ anime }: { anime: Anime }) {
           <h2>Anime Flow</h2>
           <div className='container'>
             <div className='previous-anime'>
-              <h3>Previous Anime</h3>
               {
                   anime.series.previous ?
                     <div className='series-anime container'>
                       <img src={anime.series.previous.visual} />
-                      <p>{anime.series.previous.name}</p>
+                      <div>
+                        <h3>Previous Anime</h3> 
+                        <p>{anime.series.previous.name}</p>
+                      </div>
                     </div>
                   :
                   <>
@@ -133,12 +118,14 @@ function Main({ anime }: { anime: Anime }) {
                 }
             </div>
             <div className='next-anime'>
-                <h3>Next Anime</h3>
                 {
                   anime.series.next ?
                     <div className='series-anime container'>
                       <img src={anime.series.next.visual} />
-                      <p>{anime.series.next.name}</p>
+                      <div>
+                        <h3>Next Anime</h3> 
+                        <p>{anime.series.next.name}</p>
+                      </div>
                     </div>
                   :
                   <></>
