@@ -5,6 +5,7 @@ import API from '@/app/util/API';
 import "../../../../static/css/pages/miru/anime-detail.css";
 import { GetServerSideProps } from 'next';
 import UpdateTracker from '../detail_form';
+import Avatar from '@mui/material/Avatar'
 
 interface Anime {
   name: string,
@@ -34,6 +35,12 @@ interface Anime {
   }
 }
 
+interface Character {
+  name: string,
+  summary: string,
+  visual: string,
+}
+
 export default async function AnimeDetails( {params } : { params: { id: string} }) {
   const { id } = params;
   const res = await fetch(`http://127.0.0.1:8000/api/miru/anime/${id}/details/`, {
@@ -45,21 +52,22 @@ export default async function AnimeDetails( {params } : { params: { id: string} 
   }
 
   const data = await res.json();
-  const anime = data.anime
-  console.log(anime)
+  const anime : Anime = data.anime
+  const characters : Character[] = data.characters
+  console.log(characters)
  
   return (
     <div id='anime-details'>
         <h1>{anime.name}</h1>
         <div className='arcadia-entry'>
           <Sidebar anime={anime} />
-          <Main anime={anime} />
+          <Main anime={anime} characters={characters} />
         </div>
     </div>
   )
 }
 
-function Main({ anime }: { anime: Anime }) {
+function Main({ anime, characters }: { anime: Anime, characters: Character[] }) {
   return (
     <div className='arcadia-entry__main'>
       <div className='arcadia-entry__main-overview entry-section'>
@@ -136,6 +144,21 @@ function Main({ anime }: { anime: Anime }) {
         </div>
         <div className='anime-characters entry-section'>
           <h2>Characters</h2>
+          <div className='characters-container'>
+            {
+              characters.map((character, index) => (
+                <div key={index} className='character'>
+                  <Avatar 
+                    variant="circular" 
+                    src={character.visual} 
+                    alt={character.name}
+                    sx={{ width: '64px', height: '64px' }} 
+                  />
+                  <p>{character.name}</p>
+                </div>
+              ))
+            }
+          </div>
         </div>
       </div>
     </div>

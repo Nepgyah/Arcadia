@@ -22,9 +22,16 @@ def MiruDashboard(request):
     )
 
 def anime_details(request, id):
+
     try:
         anime = Anime.objects.get(id=id)
+        characters = anime.characters.all()
+        characters = [character.to_json() for character in characters]
     except Exception as e:
         print(e)
         return JsonResponse({ "message" : "A server error has occured" }, status=500)
-    return JsonResponse({ "anime" : anime.to_json() }, status=200)
+    return JsonResponse({ 
+            "anime" : anime.to_json(),
+            "characters" : characters,
+        },
+        status=200)

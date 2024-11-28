@@ -25,9 +25,17 @@ class Character(models.Model):
     name = models.CharField(max_length=100, blank=False)
     visual = models.ImageField(upload_to="characters/" ,default="fallback.png", blank=True)
     description = models.TextField(blank=True, null=True)
-
+    
     def __str__(self):
         return self.name
+    
+    def to_json(self):
+        return {
+            'id': self.id,
+            'name' : self.name,
+            'description': self.description,
+            'visual' : f"http://localhost:8000{self.visual.url}",
+        }
 
 class Anime(models.Model):
     class AiringStatus(models.TextChoices):

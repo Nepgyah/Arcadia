@@ -161,6 +161,16 @@
                     padding-left: 24px;
                     width: 40%;
                     border-left: 1px solid #bbbbbb;
+
+                    .characters-container {
+                        
+                        .character {
+                            display: flex;
+                            align-items: center;
+                            column-gap: 16px;
+                            margin-bottom: 16px;
+                        }
+                    }
                 }
             }
         }
