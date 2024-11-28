@@ -12,6 +12,7 @@
         h2 {
             border-bottom: 1px solid #bbbbbb;
         }
+
         &__sidebar {
             width: 20%;
             
@@ -23,6 +24,21 @@
                     height: auto;
                     border-radius: 5px;
                     box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+                }
+            }
+            
+            .update-form {
+                display: flex;
+                flex-direction: column;
+                row-gap: 24px;
+                .episode {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: flex-end;
+    
+                    p {
+                        font-size: 1.5rem;
+                    }
                 }
             }
         }

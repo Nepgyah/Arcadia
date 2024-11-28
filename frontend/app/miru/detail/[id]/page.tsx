@@ -4,6 +4,7 @@ import API from '@/app/util/API';
 
 import "../../../../static/css/pages/miru/anime-detail.css";
 import { GetServerSideProps } from 'next';
+import UpdateTracker from '../detail_form';
 
 interface Anime {
   name: string,
@@ -149,6 +150,7 @@ function Sidebar({ anime }: { anime: Anime }) {
       </div>
       <div className='arcadia-entry__sidebar-update-stats entry-section'>
         <h2>Update Stats</h2>
+        <UpdateTracker />
       </div>
       <div className='arcadia-entry__sidebar-socials entry-section'>
         <h2>Social Media</h2>
