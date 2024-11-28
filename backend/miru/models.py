@@ -1,4 +1,6 @@
 from django.db import models
+from django.utils.dateformat import format
+import datetime
 
 class Genre(models.Model):
     name = models.CharField(max_length=100, blank=False)
@@ -49,6 +51,22 @@ class Anime(models.Model):
         ONA = "ona", "ONA"
         MOVIE = "movie", "Movie"
 
+    class Source(models.TextChoices):
+        MANGA = "manga", "Manga"
+        LN = "light", "Light Novel"
+        VN = "vn", "Visual Novel"
+        MANHWA = "mnwha", "Manwha"
+        GAME = "game", "Video Game"
+        ORIGINAL = "original", "Original"
+        OTHER = "other", "Other"
+
+    class Rating(models.TextChoices):
+        G = "g", "G (General Audience)"
+        PG = "pg", "PG (Parental Guidence)"
+        PG_13 = "pg-13", "PG-13 (Teens 13 and Up)"
+        R = "r", "R (Restricted 17+)"
+        R_PLUS = "r+", "R (Explicit 18+)"
+
     name = models.CharField(max_length=500)
     name_alternatives = models.JSONField(blank=True, null=True)
     visual = models.ImageField(upload_to="anime/" ,default="fallback.png", blank=True)
@@ -63,6 +81,16 @@ class Anime(models.Model):
         max_length=10, 
         choices=Type.choices, 
         default=Type.TV
+    )
+    source = models.CharField(
+        max_length=50, 
+        choices=Source.choices, 
+        default=Source.ORIGINAL
+    )
+    rating = models.CharField(
+        max_length=40,
+        choices=Rating.choices,
+        default=Rating.G
     )
     score = models.DecimalField(blank=True, null=True, max_digits=4, decimal_places=2)
     users = models.PositiveIntegerField(blank=True, null=True)
@@ -93,6 +121,7 @@ class Anime(models.Model):
         return {
             'id': self.id,
             'name' : self.name,
+            'summary' : self.summary,
             'name_alternatives' : self.name_alternatives,
             'season' : self.season.__str__(),
             'type' : Anime.Type(self.media_type).label,
@@ -101,9 +130,12 @@ class Anime(models.Model):
                 "users" : self.users if not self.users == None else 0
             },
             'genres' : [genre.name for genre in self.genres.all()],
-            'summary' : self.summary,
             'media': {
-                "status": Anime.AiringStatus(self.status).label
+                "source": Anime.Source(self.source).label,
+                "status": Anime.AiringStatus(self.status).label,
+                "rating": Anime.Rating(self.rating).label,
+                'start_date' : self.airing_start_date.strftime('%b %d, %Y'),
+                'end_date' : self.airing_end_date.strftime('%b %d, %Y')
             },
             'series' : {
                 "next": self.next_anime.get_snippet() if self.next_anime else None,

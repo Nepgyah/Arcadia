@@ -13,8 +13,16 @@ interface Anime {
   season: string,
   type: string,
   ranking_info: {
-    score: number | null ,
-    users: number | null
+    score: number,
+    users: number
+  },
+  genres: string[],
+  media: {
+    source: string,
+    status: string,
+    rating: string,
+    start_date: string,
+    end_date: string
   },
   series: {
     previous : {
@@ -28,11 +36,7 @@ interface Anime {
       visual: string
     }
   },
-  genres: string[],
   visual: string,
-  media: {
-    status: string,
-  }
 }
 
 interface Character {
@@ -54,7 +58,7 @@ export default async function AnimeDetails( {params } : { params: { id: string} 
   const data = await res.json();
   const anime : Anime = data.anime
   const characters : Character[] = data.characters
-  console.log(characters)
+  console.log(anime)
  
   return (
     <div id='anime-details'>
@@ -104,7 +108,7 @@ function Main({ anime, characters }: { anime: Anime, characters: Character[] }) 
             {anime.summary}
           </div>
         </div>
-        <Media />
+        <Media anime={anime} />
       </div>
       <div className='arcadia-entry__main-secondary'>
         <div className='anime-flow entry-section'>
@@ -182,10 +186,30 @@ function Sidebar({ anime }: { anime: Anime }) {
   )
 }
 
-function Media() {
+function Media({ anime } : { anime: Anime }) {
   return (
     <div className='arcadia-entry__main-overview-media'>
-      <h2>Media</h2>
+      <div className='entry-section'>
+        <h2>Details</h2>
+        <div className='details'>
+          <p><span className='emp label'>Status: </span>{anime.media.status}</p>
+          <p><span className='emp label'>Started Airing: </span>{anime.media.start_date}</p>
+          <p><span className='emp label'>Ended Airing: </span>{anime.media.end_date}</p>
+          <p><span className='emp label'>Rating: </span>{anime.media.rating}</p>
+        </div>
+      </div>
+      <div className='entry-section'>
+        <h2>Production</h2>
+        <div className='production'>
+  
+        </div>
+      </div>
+      <div className='entry-section'>
+        <h2>Misc</h2>
+        <div className='misc'>
+          <p><span className='emp label'>Status: </span>{anime.media.source}</p>
+        </div>
+      </div>
     </div>
   )
 }

@@ -6,6 +6,9 @@
         margin-bottom: 24px;
     }
 
+    .label {
+        color: $arcadia-primary-one;
+    }
     .arcadia-entry {
         display: flex;
 
@@ -119,7 +122,6 @@
                 &-media {
                     width: 30%;
                     padding-left: 24px;
-                    width: 20%;
                 }
             }
 
