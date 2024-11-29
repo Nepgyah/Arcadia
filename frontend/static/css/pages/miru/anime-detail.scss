@@ -107,7 +107,7 @@
                                         padding: 4px;
                                         color: white;
                                         width: fit-content;
-                                        background-color: $arcadia-secondary-two;
+                                        background-color: $arcadia-secondary-one;
                                         border-radius: 4px;
                                     }
                                 }
@@ -122,6 +122,10 @@
                 &-media {
                     width: 30%;
                     padding-left: 24px;
+
+                    p {
+                        margin-bottom: 12px;
+                    }
                 }
             }
 
@@ -171,6 +175,10 @@
                             align-items: center;
                             column-gap: 16px;
                             margin-bottom: 16px;
+
+                            .MuiAvatar-root {
+                                border: 2px solid $arcadia-primary-one
+                            }
                         }
                     }
                 }

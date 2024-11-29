@@ -13,7 +13,6 @@
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
   margin: 0px;
 
   .content {
@@ -26,9 +25,10 @@ body {
         flex-grow: 1;
         display: flex;
         flex-direction: column;
-        min-width: 1200px;
-      
+
         .page {
+            min-width: 1080px;
+            width: 100%;
             background-color: #FFF6E1;
             flex-grow: 1;
             padding: 36px;

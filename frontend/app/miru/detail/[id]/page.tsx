@@ -201,13 +201,15 @@ function Media({ anime } : { anime: Anime }) {
       <div className='entry-section'>
         <h2>Production</h2>
         <div className='production'>
-  
+          <p><span className='emp label'>Studio: </span>{}</p>
+          <p><span className='emp label'>Licensors: </span>{}</p>
+          <p><span className='emp label'>Producers: </span>{}</p>
         </div>
       </div>
       <div className='entry-section'>
         <h2>Misc</h2>
         <div className='misc'>
-          <p><span className='emp label'>Status: </span>{anime.media.source}</p>
+          <p><span className='emp label'>Source: </span>{anime.media.source}</p>
         </div>
       </div>
     </div>

@@ -134,8 +134,8 @@ class Anime(models.Model):
                 "source": Anime.Source(self.source).label,
                 "status": Anime.AiringStatus(self.status).label,
                 "rating": Anime.Rating(self.rating).label,
-                'start_date' : self.airing_start_date.strftime('%b %d, %Y'),
-                'end_date' : self.airing_end_date.strftime('%b %d, %Y')
+                'start_date' : self.airing_start_date.strftime('%b %d, %Y') if self.airing_start_date else "TBD",
+                'end_date' : self.airing_end_date.strftime('%b %d, %Y') if self.airing_end_date else "TBD"
             },
             'series' : {
                 "next": self.next_anime.get_snippet() if self.next_anime else None,
