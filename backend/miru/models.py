@@ -2,6 +2,21 @@ from django.db import models
 from django.utils.dateformat import format
 import datetime
 
+class Studio(models.Model):
+    name = models.CharField(max_length=100, blank=False)
+    def __str__(self):
+        return self.name
+    
+class Licensor(models.Model):
+    name = models.CharField(max_length=100, blank=False)
+    def __str__(self):
+        return self.name
+    
+class Producer(models.Model):
+    name = models.CharField(max_length=100, blank=False)
+    def __str__(self):
+        return self.name
+    
 class Genre(models.Model):
     name = models.CharField(max_length=100, blank=False)
 
@@ -100,6 +115,9 @@ class Anime(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     genres = models.ManyToManyField(Genre, related_name="genre_animes")
     characters = models.ManyToManyField(Character, related_name="character_animes", blank=True)
+    studios = models.ManyToManyField(Studio, related_name="studio_animes", blank=True)
+    licenors = models.ManyToManyField(Licensor, related_name="licensor_animes", blank=True)
+    producers = models.ManyToManyField(Producer, related_name="producer_animes", blank=True)
     previous_anime = models.ForeignKey('self', blank=True, null=True, on_delete=models.SET_NULL, related_name='previous_in_series')
     next_anime = models.ForeignKey('self', blank=True, null=True, on_delete=models.SET_NULL, related_name='next_in_series')
 
@@ -135,7 +153,10 @@ class Anime(models.Model):
                 "status": Anime.AiringStatus(self.status).label,
                 "rating": Anime.Rating(self.rating).label,
                 'start_date' : self.airing_start_date.strftime('%b %d, %Y') if self.airing_start_date else "TBD",
-                'end_date' : self.airing_end_date.strftime('%b %d, %Y') if self.airing_end_date else "TBD"
+                'end_date' : self.airing_end_date.strftime('%b %d, %Y') if self.airing_end_date else "TBD",
+                'studio' : [studio.name for studio in self.studios.all()],
+                'licensors' : [licensor.name for licensor in self.licenors.all()],
+                'producers' : [producer.name for producer in self.producers.all()]
             },
             'series' : {
                 "next": self.next_anime.get_snippet() if self.next_anime else None,

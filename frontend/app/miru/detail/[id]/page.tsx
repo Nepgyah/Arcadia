@@ -22,7 +22,10 @@ interface Anime {
     status: string,
     rating: string,
     start_date: string,
-    end_date: string
+    end_date: string,
+    studios: string[],
+    licensors: string[],
+    producers: string[]
   },
   series: {
     previous : {
