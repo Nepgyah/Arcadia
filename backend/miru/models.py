@@ -155,8 +155,8 @@ class Anime(models.Model):
                 'start_date' : self.airing_start_date.strftime('%b %d, %Y') if self.airing_start_date else "TBD",
                 'end_date' : self.airing_end_date.strftime('%b %d, %Y') if self.airing_end_date else "TBD",
                 'studio' : [studio.name for studio in self.studios.all()],
-                'licensors' : [licensor.name for licensor in self.licenors.all()],
-                'producers' : [producer.name for producer in self.producers.all()]
+                'licensor' : [licensor.name for licensor in self.licenors.all()],
+                'producer' : [producer.name for producer in self.producers.all()]
             },
             'series' : {
                 "next": self.next_anime.get_snippet() if self.next_anime else None,

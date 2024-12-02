@@ -23,9 +23,9 @@ interface Anime {
     rating: string,
     start_date: string,
     end_date: string,
-    studios: string[],
-    licensors: string[],
-    producers: string[]
+    studio: string[],
+    licensor: string[],
+    producer: string[]
   },
   series: {
     previous : {
@@ -61,7 +61,6 @@ export default async function AnimeDetails( {params } : { params: { id: string} 
   const data = await res.json();
   const anime : Anime = data.anime
   const characters : Character[] = data.characters
-  console.log(anime)
  
   return (
     <div id='anime-details'>
@@ -83,6 +82,7 @@ function Main({ anime, characters }: { anime: Anime, characters: Character[] }) 
             <div className='meta-data__quick-stats'>
               <div className='meta-data__quick-stats-type'>
                 <div><span className='emp'>Season: </span>{anime.season}</div>
+                <div><span className='emp'>Episdoe: </span>8 / 12</div>
                 <div><span className='emp'>Type: </span>{anime.type}</div>
               </div>
               <div className='meta-data__quick-stats-ranking'>
@@ -104,6 +104,7 @@ function Main({ anime, characters }: { anime: Anime, characters: Character[] }) 
             </div>
             <div className='meta-data__promo-video'>
               <h2>Promotional Video</h2>
+              <iframe src='https://www.youtube.com/watch?v=xpah3hGfkEs'/>
             </div>
           </div>
           <div className='arcadia-entry__main-summary'>
@@ -190,6 +191,7 @@ function Sidebar({ anime }: { anime: Anime }) {
 }
 
 function Media({ anime } : { anime: Anime }) {
+  console.log(anime.media);
   return (
     <div className='arcadia-entry__main-overview-media'>
       <div className='entry-section'>
@@ -204,9 +206,27 @@ function Media({ anime } : { anime: Anime }) {
       <div className='entry-section'>
         <h2>Production</h2>
         <div className='production'>
-          <p><span className='emp label'>Studio: </span>{}</p>
-          <p><span className='emp label'>Licensors: </span>{}</p>
-          <p><span className='emp label'>Producers: </span>{}</p>
+          <p><span className='emp label'>Studio: </span>
+            {
+              anime.media.studio.map((studio, index) => (
+                <span key={index}>{studio} </span>
+              ))
+            }
+          </p>
+          <p><span className='emp label'>Licensors: </span>
+            {
+              anime.media.licensor.map((licensor, index) => (
+                <span key={index}>{licensor} </span>
+              ))
+            }
+          </p>
+          <p><span className='emp label'>Producers: </span>
+            {
+              anime.media.producer.map((producer, index) => (
+                <span key={index}>{producer} </span>
+              ))
+            }
+          </p>
         </div>
       </div>
       <div className='entry-section'>
