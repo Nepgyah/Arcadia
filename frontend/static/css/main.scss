@@ -27,13 +27,17 @@ body {
         flex-direction: column;
 
         .page {
-            min-width: 1080px;
+            min-width: 1200px;
             width: 100%;
             background-color: #FFF6E1;
             flex-grow: 1;
             padding: 36px;
             color: #505477;
 
+            .page-wrapper {
+              max-width: 1400px;
+              margin: auto;
+            }
             h1 {
               font-size: 2rem;
               margin-bottom: 2.25rem;

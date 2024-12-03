@@ -33,7 +33,9 @@ export default function RootLayout({
           <main className="main">
             <TopNav />
             <div className="page">
-              {children}
+              <div className="page-wrapper">
+                {children}
+              </div>
             </div>
           </main>
         </div>
