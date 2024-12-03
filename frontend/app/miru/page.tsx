@@ -21,7 +21,7 @@ const MiruHome = () => {
   useEffect(() => {
     API.get("miru/dashboard/", {})
     .then((res) => {
-      setSeasonalAnime(res.data.seasonal);
+      setSeasonalAnime(res.data.seasonal_anime);
       setTopAnime(res.data.top_anime)
       setIsLoading(false)
     })
