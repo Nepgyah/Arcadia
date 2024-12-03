@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from miru.models import *
 from django.http import JsonResponse
 
@@ -8,14 +7,16 @@ def MiruDashboard(request):
         - Currently Airing
         - Most Popular
     '''
-    season = Season.objects.get(season="Fall", year=2024)
+    current_season = Season.objects.get(season="Fall", year=2024)
+    seasonal_anime = current_season.animes.all()
+    seasonal_anime = [anime.get_snippet() for anime in seasonal_anime]
+
     top_animes = Anime.objects.filter(score__isnull=False).order_by('-score')[:5]
-    animes = season.animes.all()
-    animes = [anime.get_snippet() for anime in animes]
     top_animes = [anime.get_snippet() for anime in top_animes]
+
     return JsonResponse(
         {
-            "seasonal": animes,
+            "seasonal_anime": seasonal_anime,
             "top_anime": top_animes
         },
         status = 200
