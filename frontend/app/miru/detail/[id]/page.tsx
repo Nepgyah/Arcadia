@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from 'react'
-import { useSearchParams } from 'next/navigation'
-import API from '@/app/util/API';
-
-import "../../../../static/css/pages/miru/anime-detail.css";
-import { GetServerSideProps } from 'next';
+import React from 'react'
 import UpdateTracker from '../detail_form';
 import Avatar from '@mui/material/Avatar'
+
+import "../../../../static/css/pages/miru/anime-detail.css";
 
 interface Anime {
   name: string,
@@ -65,7 +62,7 @@ export default async function AnimeDetails( {params } : { params: { id: string} 
   return (
     <div id='anime-details'>
         <h1>{anime.name}</h1>
-        <div className='arcadia-entry'>
+        <div className='content-container'>
           <Sidebar anime={anime} />
           <Main anime={anime} characters={characters} />
         </div>
@@ -75,46 +72,55 @@ export default async function AnimeDetails( {params } : { params: { id: string} 
 
 function Main({ anime, characters }: { anime: Anime, characters: Character[] }) {
   return (
-    <div className='arcadia-entry__main'>
-      <div className='arcadia-entry__main-overview entry-section'>
-        <div className='arcadia-entry__main-overview-meta'>
+    <div className='main'>
+      <div className='overview entry-section'>
+        <div className='meta'>
           <div className='meta-data entry-section '>
-            <div className='meta-data__quick-stats'>
-              <div className='meta-data__quick-stats-type'>
-                <div><span className='emp'>Season: </span>{anime.season}</div>
-                <div><span className='emp'>Episdoe: </span>8 / 12</div>
-                <div><span className='emp'>Type: </span>{anime.type}</div>
+            <div className='quick-stats'>
+              <div className='types'>
+                <div>
+                  <p className='emp'>Season:</p>
+                  <p>{anime.season}</p>
+                </div>
+                <div>
+                  <p className='emp'>Episode:</p>
+                  <p>8 / 12</p>
+                </div>
+                <div>
+                  <p className='emp'>Type:</p>
+                  <p>{anime.type}</p>
+                </div>
               </div>
-              <div className='meta-data__quick-stats-ranking'>
-                <div className='meta-data__quick-stats-ranking-score'>
+              <div className='ranking'>
+                <div className='score'>
                     {anime.ranking_info.score}
                 </div>
-                <div className='meta-data__quick-stats-ranking-user'>
+                <div className='user'>
                     {`${anime.ranking_info.users } Users`}
                 </div>
               </div>
-              <div className='meta-data__quick-stats-genre'>
+              <div className='genre'>
                 <h2>Genre</h2>
-                <div className='meta-data__quick-stats-genre-container'>
+                <div className='.container'>
                   {anime.genres.map((genre, index) => (
                     <div key={index}>{genre}</div>
                   ))}
                 </div>
               </div>
             </div>
-            <div className='meta-data__promo-video'>
+            <div className='.promo-video'>
               <h2>Promotional Video</h2>
               <iframe src='https://www.youtube.com/watch?v=xpah3hGfkEs'/>
             </div>
           </div>
-          <div className='arcadia-entry__main-summary'>
+          <div className='summary'>
             <h2>Summary</h2>
             {anime.summary}
           </div>
         </div>
         <Media anime={anime} />
       </div>
-      <div className='arcadia-entry__main-secondary'>
+      <div className='secondary'>
         <div className='anime-flow entry-section'>
           <h2>Anime Flow</h2>
           <div className='container'>
@@ -175,15 +181,15 @@ function Main({ anime, characters }: { anime: Anime, characters: Character[] }) 
 
 function Sidebar({ anime }: { anime: Anime }) {
   return (
-    <div className='arcadia-entry__sidebar'>
-      <div className='arcadia-entry__sidebar-splash-art entry-section'>
+    <div className='sidebar'>
+      <div className='splash-art entry-section'>
         <img src={anime.visual} />
       </div>
-      <div className='arcadia-entry__sidebar-update-stats entry-section'>
+      <div className='update-stats entry-section'>
         <h2>Update Stats</h2>
         <UpdateTracker />
       </div>
-      <div className='arcadia-entry__sidebar-socials entry-section'>
+      <div className='socials entry-section'>
         <h2>Social Media</h2>
       </div>
     </div>
@@ -193,7 +199,7 @@ function Sidebar({ anime }: { anime: Anime }) {
 function Media({ anime } : { anime: Anime }) {
   console.log(anime.media);
   return (
-    <div className='arcadia-entry__main-overview-media'>
+    <div className='media'>
       <div className='entry-section'>
         <h2>Details</h2>
         <div className='details'>

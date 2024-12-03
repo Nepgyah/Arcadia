@@ -1,27 +1,26 @@
 @use "../../core/base/variables" as *;
 
+
 #anime-details {
+
+    h2 {
+        border-bottom: 1px solid #bbbbbb;
+    }
 
     .entry-section {
         margin-bottom: 24px;
     }
 
-    .label {
-        color: $arcadia-primary-one;
-    }
-    .arcadia-entry {
+    .content-container {
         display: flex;
 
-        h2 {
-            border-bottom: 1px solid #bbbbbb;
-        }
-
-        &__sidebar {
+        .sidebar {
             width: 20%;
-            
-            &-splash-art {
+
+            .splash-art {
                 display: flex;
                 justify-content: center;
+
                 img {
                     max-width: 100%;
                     height: auto;
@@ -29,46 +28,49 @@
                     box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
                 }
             }
-            
-            .update-form {
-                display: flex;
-                flex-direction: column;
-                row-gap: 24px;
-                .episode {
+
+            .update-stats {
+
+                .update-form {
                     display: flex;
-                    justify-content: space-between;
-                    align-items: flex-end;
-    
-                    p {
-                        font-size: 1.5rem;
+                    flex-direction: column;
+                    row-gap: 24px;
+                    .episode {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-end;
+        
+                        p {
+                            font-size: 1.5rem;
+                        }
                     }
                 }
             }
         }
-
-        &__main {
+        .main {
             width: 80%;
             padding-right: 24px;
             padding-left: 24px;
 
-            &-overview {
+            .overview {
                 display: flex;
 
-                &-meta {
+                .meta {
                     width: 70%;
                     padding-right: 24px;
                     border-right: 1px solid #bbbbbb;
+
                     .meta-data {
                         display: flex;
                         column-gap: 32px;
                         
-                        &__quick-stats {
+                        .quick-stats {
                             width: 60%;
                             display: flex;
                             flex-wrap: wrap;
                             row-gap: 24px;
                             
-                            &-type {
+                            .types {
                                 width: 100%;
                                 color: white;
                                 background-color: $arcadia-primary-one;
@@ -78,7 +80,7 @@
                                 justify-content: space-between;
                             }
 
-                            &-ranking {
+                            .ranking {
                                 width: 30%;
                                 color: white;
                                 background-color: $arcadia-primary-one;
@@ -88,17 +90,17 @@
                                 flex-direction: column;
                                 align-items: center;
                                 
-                                &-score {
+                                .score {
                                     font-size: 2rem;
                                     font-weight: bold;
                                 }
                             }
                             
-                            &-genre {
+                            .genre {
                                 width: 70%;
                                 padding-left: 24px;
 
-                                &-container {
+                                .container {
                                     display: flex;
                                     flex-wrap: wrap;
                                     gap: 8px;
@@ -114,12 +116,13 @@
                             }
                         }
 
-                        &__promo-video {
+                        .promo-video {
                             width: 40%;
                         }
                     }
                 }
-                &-media {
+
+                .media {
                     width: 30%;
                     padding-left: 24px;
 
@@ -129,9 +132,9 @@
                 }
             }
 
-            &-secondary {
+            .secondary {
                 display: flex;
-                
+
                 .anime-flow {
                     padding-right: 24px;
                     width: 60%;
@@ -184,6 +187,5 @@
                 }
             }
         }
-
     }
 }
