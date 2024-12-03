@@ -9,7 +9,9 @@
 
 ### V 0.4
 - Backend
+	- Begin implementation of anime tracking
 - Frontend
+	- Miru detailed page
 
 ## 0.1
  Frontend
