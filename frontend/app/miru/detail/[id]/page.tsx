@@ -45,7 +45,7 @@ interface Character {
   visual: string,
 }
 
-export default async function AnimeDetails( {params } : { params: { id: string} }) {
+export default async function AnimeDetails( { params } : { params: { id: string} }) {
   const { id } = params;
   const res = await fetch(`http://127.0.0.1:8000/api/miru/anime/${id}/details/`, {
     cache: 'no-store',

@@ -4,6 +4,8 @@
 		- About us page
 - Frontend
 	- Miru anime detailed page
+	- Seasonal Anime Page
+	- Top Anime Page
 
 ## Roadmap
 
@@ -11,8 +13,10 @@
 - Backend
 	- Begin implementation of anime tracking
 - Frontend
+	- Arcadia platform homepage
 	- Miru detailed page
 
+# Release Notes
 ## 0.1
  Frontend
 	- Navigation bars and base paths

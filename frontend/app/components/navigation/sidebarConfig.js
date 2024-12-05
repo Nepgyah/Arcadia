@@ -10,7 +10,7 @@ import SearchIcon from '@mui/icons-material/Search';
 export const sidebar = {
     miru: [
         { name: "Miru Home", link: "/miru", icon: < DashboardIcon />},
-        { name: "List", link: "/miru/list", icon: < ListIcon />},
+        { name: "List", link: "/miru/animelist", icon: < ListIcon />},
         { name: "Search", link: "/miru/search", icon: < SearchIcon />},
         { name: "Watch", link: "/miru/watch", icon: < WatchIcon />}
     ],

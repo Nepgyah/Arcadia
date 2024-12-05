@@ -173,6 +173,22 @@ class Anime(models.Model):
             'visual' : f"http://localhost:8000{self.visual.url}"
         }
     
+    def get_card_data(self):
+        """
+        Returns more than snippet data but less than a full detail page
+        """
+
+        return {
+            'id': self.id,
+            'name' : self.name,
+            'summary': self.summary,
+            'ranking_info' : {
+                "score": self.score if not self.score == None else 0,
+                "users" : self.users if not self.users == None else 0
+            },
+            'genres' : [genre.name for genre in self.genres.all()],
+            'visual' : f"http://localhost:8000{self.visual.url}"
+        }
     def to_json(self):
         """
         Returns all details for a single anime

@@ -39,7 +39,11 @@ const MiruHome = () => {
         <Grid2 size={{ xs: 12, lg: 9}} className='main-content'>
 
           <div className='anime-row'>
-            <h2>Fall 2024</h2>
+            <h2>
+              <Link href="/miru/list/seasonal">
+              Fall 2024
+              </Link>
+            </h2>
             <Grid2 container justifyContent={'space-between'} columnSpacing={"16px"} className='anime-row__container'>
               {
                 !isLoading ?
@@ -54,7 +58,11 @@ const MiruHome = () => {
           </div>
           <div className='divider'></div>
           <div className='anime-row'>
-            <h2>Most Popular</h2>
+            <h2>
+              <Link href="/miru/list/top">
+              Most Popular
+              </Link>
+            </h2>
             <Grid2 container justifyContent={'space-between'} className='anime-row__container'>
               {
                 !isLoading ?
