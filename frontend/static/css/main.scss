@@ -19,20 +19,18 @@ body {
     width: 5px;
   }
   
-  /* Track */
   ::-webkit-scrollbar-track {
     background: rgba($color: #f1f1f1, $alpha: .5); 
   }
    
-  /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #888; 
+    background: #888888; 
   }
   
-  /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #757575; 
   }
+
   .content {
     color: white;
     min-height: 100dvh;

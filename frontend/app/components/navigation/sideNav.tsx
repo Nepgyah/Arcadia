@@ -17,7 +17,6 @@ interface SideNavItem {
 
 function SideNav({ appNavigation } : { appNavigation : SideNavItem[]}){
 
-    console.log(appNavigation)
     const pathname = usePathname();
     const [sidebarLinks, setSidebarLinks] = useState(appNavigation)
 

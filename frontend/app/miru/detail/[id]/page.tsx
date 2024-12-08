@@ -197,7 +197,6 @@ function Sidebar({ anime }: { anime: Anime }) {
 }
 
 function Media({ anime } : { anime: Anime }) {
-  console.log(anime.media);
   return (
     <div className='media'>
       <div className='entry-section'>
