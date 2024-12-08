@@ -1,18 +1,191 @@
+@use "../../core/base/variables" as *;
+
+
 #anime-details {
 
-    .anime {
+    h2 {
+        border-bottom: 1px solid #bbbbbb;
+    }
 
-        .anime-access {
-            img {
-                max-width: 400px;
-                height: auto;
-                border-radius: 5px;
-                box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+    .entry-section {
+        margin-bottom: 24px;
+    }
+
+    .content-container {
+        display: flex;
+
+        .sidebar {
+            width: 20%;
+
+            .splash-art {
+                display: flex;
+                justify-content: center;
+
+                img {
+                    max-width: 100%;
+                    height: auto;
+                    border-radius: 5px;
+                    box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+                }
+            }
+
+            .update-stats {
+
+                .update-form {
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 24px;
+                    .episode {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: flex-end;
+        
+                        p {
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
             }
         }
+        .main {
+            width: 80%;
+            padding-right: 24px;
+            padding-left: 24px;
 
-        .anime-main-content {
-            padding: 0px 24px;
+            .overview {
+                display: flex;
+
+                .meta {
+                    width: 70%;
+                    padding-right: 24px;
+                    border-right: 1px solid #bbbbbb;
+
+                    .meta-data {
+                        display: flex;
+                        column-gap: 32px;
+                        
+                        .quick-stats {
+                            width: 60%;
+                            display: flex;
+                            flex-wrap: wrap;
+                            row-gap: 24px;
+                            
+                            .types {
+                                width: 100%;
+                                color: white;
+                                background-color: $arcadia-primary-one;
+                                border-radius: 5px;
+                                padding: 16px;
+                                display: flex;
+                                justify-content: space-between;
+                            }
+
+                            .ranking {
+                                width: 30%;
+                                color: white;
+                                background-color: $arcadia-primary-one;
+                                border-radius: 5px;
+                                padding: 16px;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                
+                                .score {
+                                    font-size: 2rem;
+                                    font-weight: bold;
+                                }
+                            }
+                            
+                            .genre {
+                                width: 70%;
+                                padding-left: 24px;
+
+                                .container {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    gap: 8px;
+
+                                    div {
+                                        padding: 4px;
+                                        color: white;
+                                        width: fit-content;
+                                        background-color: $arcadia-secondary-one;
+                                        border-radius: 4px;
+                                    }
+                                }
+                            }
+                        }
+
+                        .promo-video {
+                            width: 40%;
+                        }
+                    }
+                }
+
+                .media {
+                    width: 30%;
+                    padding-left: 24px;
+
+                    p {
+                        margin-bottom: 12px;
+                    }
+                }
+            }
+
+            .secondary {
+                display: flex;
+
+                .anime-flow {
+                    padding-right: 24px;
+                    width: 60%;
+
+                    .container {
+                        display: flex;
+
+                        .previous-anime, .next-anime {
+                            width: 50%;
+                        }
+
+                        .previous-anime {
+                            padding-right: 24px;
+                        }
+                        .next-anime {
+                            padding-left: 24px;
+                            border-left: 1px solid #bbbbbb;
+                        }
+                        .series-anime {
+                            align-items: center;
+                            column-gap: 8px;
+
+                            img {
+                                max-height: 200px;
+                                border-radius: 5px;
+                                box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+                            }
+                        }
+                    }   
+                }
+
+                .anime-characters {
+                    padding-left: 24px;
+                    width: 40%;
+                    border-left: 1px solid #bbbbbb;
+
+                    .characters-container {
+                        
+                        .character {
+                            display: flex;
+                            align-items: center;
+                            column-gap: 16px;
+                            margin-bottom: 16px;
+
+                            .MuiAvatar-root {
+                                border: 2px solid $arcadia-primary-one
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

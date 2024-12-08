@@ -6,11 +6,31 @@
   font-family: "Noto Sans JP", Helvetica, Arial, sans-serif;
 }
 
+.emp {
+  font-weight: bold;
+}
+
 html,
 body {
-    max-width: 100vw;
-    overflow-x: hidden;
-    margin: 0px;
+  max-width: 100vw;
+  margin: 0px;
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba($color: #f1f1f1, $alpha: .5); 
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: #888888; 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #757575; 
+  }
+
   .content {
     color: white;
     min-height: 100dvh;
@@ -23,19 +43,35 @@ body {
         flex-direction: column;
 
         .page {
-            background-color: #FFF6E1;
-            flex-grow: 1;
-            padding: 36px;
+            display: flex;
             color: #505477;
 
-            h1 {
-              font-size: 2rem;
-              margin-bottom: 2.25rem;
-            }
+            .page-content {
+              background-color: #FFF6E1;
+              width: 100%;
+              min-height: calc(100dvh - 68px);
+              
+              .page-wrapper {
+                width: 1280px;
+                margin: auto;
+                flex-grow: 1;
+                padding: 36px;
+              }
 
-            h2 {
-              font-size: 1.5rem;
-              margin-bottom: 1.5rem;
+              h1 {
+                font-size: 2rem;
+                margin-bottom: 2.25rem;
+              }
+  
+              h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+              }
+  
+              h3 {
+                font-size: 1rem;
+                margin-bottom: .75rem;
+              }
             }
         }
     }

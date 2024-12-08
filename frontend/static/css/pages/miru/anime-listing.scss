@@ -1,0 +1,72 @@
+@use "../../core/base/variables" as *;
+
+.anime-listing {
+
+    .container {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        a {
+            text-decoration: none;
+        }
+        .anime-card {
+            width: 400px;
+            background-color: $arcadia-primary-one;
+            border-radius: 5px;
+            padding: 24px;
+            color: white;
+            box-shadow: rgba(100, 100, 111, 0.4) 0px 7px 29px 0px;
+
+            &:hover {
+                box-shadow: rgba(100, 100, 111, 1) 0px 7px 29px 0px;
+            }
+
+            .title {
+                text-align: center;
+                font-size: 16px;
+                font-weight: bold;
+                min-height: 48px;
+                margin-bottom: 12px;
+            }
+
+            .anime-content {
+                display: flex;
+                flex-wrap: nowrap;
+
+                .left-col, .right-col {
+                    width: 50%;
+                }
+
+                .left-col {
+                    img {
+                        border-radius: 2px;
+                    }
+
+                    .quick-stats {
+                        margin-top: 8px;
+                        font-size: 12px;
+
+                        .label {
+                            color: rgba($color: #ffffff, $alpha: .5);
+                        }
+                        .stat {
+                            display: flex;
+                            justify-content: space-between;
+                        }
+                    }
+                }
+
+                .right-col {
+                    max-height: 248px;
+                    overflow-y: auto;
+                    p {
+                        font-size: 12px;
+                        padding: 8px;
+                    }
+                }
+            }
+        }
+    }
+}

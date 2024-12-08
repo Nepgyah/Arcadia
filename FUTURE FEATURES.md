@@ -1,0 +1,8 @@
+- [ ] Research about NewsAPI https://newsapi.org/pricing
+	- Potential use for miru, yomu and asobu apps
+- [ ] Research about PokeAPI https://pokeapi.co
+	- Potential use for asobu app
+- [ ] Research about Spotif API https://developer.spotify.com/documentation/web-api/tutorials/getting-started
+	- [ ] Potential use
+		- Kiku - Lofi stream or music
+		- Miru - Link spotify to artists for anisongs

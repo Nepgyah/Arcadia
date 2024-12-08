@@ -1,11 +1,11 @@
 'use client';
 
 import React, { useEffect, useState } from 'react'
-import { Grid2 } from '@mui/material';
-import Link from 'next/link';
 import API from '../util/API'
 
 import "../../static/css/pages/miru/miru-home.css"
+import { Grid2 } from '@mui/material';
+import Link from 'next/link';
 
 interface Anime {
   id: number,
@@ -14,7 +14,6 @@ interface Anime {
 }
 
 const MiruHome = () => {
-  
   const [isLoading, setIsLoading] = useState(true)
   const [seasonalAnime, setSeasonalAnime] = useState<Anime[]>([]);
   const [topAnime, setTopAnime] = useState<Anime[]>([]);
@@ -34,10 +33,17 @@ const MiruHome = () => {
   return (
     <div id='miru-home'>
       <h1>Miru Home</h1>
+
       <Grid2 container className="container">
+
         <Grid2 size={{ xs: 12, lg: 9}} className='main-content'>
+
           <div className='anime-row'>
-            <h2>Fall 2024</h2>
+            <h2>
+              <Link href="/miru/list/seasonal">
+              Fall 2024
+              </Link>
+            </h2>
             <Grid2 container justifyContent={'space-between'} columnSpacing={"16px"} className='anime-row__container'>
               {
                 !isLoading ?
@@ -52,7 +58,11 @@ const MiruHome = () => {
           </div>
           <div className='divider'></div>
           <div className='anime-row'>
-            <h2>Most Popular</h2>
+            <h2>
+              <Link href="/miru/list/top">
+              Most Popular
+              </Link>
+            </h2>
             <Grid2 container justifyContent={'space-between'} className='anime-row__container'>
               {
                 !isLoading ?
@@ -78,11 +88,9 @@ const MiruHome = () => {
 export default MiruHome;
 
 const AnimeCard = ({ anime }: { anime: Anime }) => {
+
   return (
-    <Link href={{
-      pathname: "/miru/detail/",
-      query: { id: anime.id}
-    }}>
+    <Link href={`/miru/detail/${anime.id}`}>
       <div className='anime-card'>
         <img className='anime-card__visual' src={anime.visual} alt={anime.name} />
         <p className='anime-card__title'>{anime.name}</p>
