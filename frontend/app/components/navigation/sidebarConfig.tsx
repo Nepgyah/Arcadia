@@ -10,7 +10,7 @@ import { SvgIconComponent } from '@mui/icons-material';
 
 interface SideNavItem {
     name: string;
-    path: string;
+    path?: string;
     icon?: React.ReactNode;
     submenu?: boolean;
     subMenuItems?: SideNavItem[]
@@ -19,13 +19,12 @@ interface SideNavItem {
 export const miruNavigation: SideNavItem[] =
 [
     { 
-        name: "Miru Home",
+        name: "Home",
         path: "/miru", 
         icon: < DashboardIcon />
     },
     { 
         name: "List", 
-        path: "/miru/animelist", 
         icon: < ListIcon />,
         submenu: true,
         subMenuItems: [
@@ -36,7 +35,7 @@ export const miruNavigation: SideNavItem[] =
             {
                 name: "Top Anime",
                 path: "/miru/list/top",
-            }
+            },
         ]
     },
     { 
@@ -46,8 +45,18 @@ export const miruNavigation: SideNavItem[] =
     },
     { 
         name: "Watch", 
-        path: "/miru/watch", 
-        icon: < WatchIcon />
+        icon: < WatchIcon />,
+        submenu: true,
+        subMenuItems: [
+            {
+                name: "Explore",
+                path: "/miru/list/seasonal",
+            },
+            {
+                name: "Watchlists",
+                path: "/miru/list/top",
+            },
+        ]
     }
 ]
 

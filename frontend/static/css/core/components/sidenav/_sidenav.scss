@@ -1,6 +1,7 @@
 
 .side-nav {
-    width: 72px;
+    width: 144px;
+    min-height: 100%;
     background-color: #505477;
 
     .global-home {
@@ -11,22 +12,75 @@
         align-items: center;
     }
 
+    .focus {
+        background-color: #3D405B
+    }
+    
     .app-nav-container {
         display: flex;
         flex-direction: column;
         row-gap: 24px;
         align-items: center;
 
-        .app-nav {
+        .nav-section {
+            width: 100%;
             color: white;
+
+            .hoverable {
+                &:hover {
+                    background-color: #3D405B;
+                    cursor: pointer;
+                }
+            }
+
+            a {
+                color: white;
+                text-decoration: none;
+            }
+
+            .secondary-nav {
+                
+                &.show {
+                    max-height: 500px;
+                    transition: max-height 0.5s ease-in;
+                }
+
+                &.hide {
+                    max-height: 0;
+                    transition: max-height 0.5s ease-out;
+                    overflow: hidden;
+                }
+            }
+
+            .item-container {
+                width: 100%;
+                padding: 8px 16px;
+                display: flex;
+                column-gap: 8px;
+                
+                .nav-name {
+    
+                }
+            }
+
+        }
+
+        .app-nav {
+            // color: white;
             text-decoration: none;
             width: 100%;
             text-align: center;
             padding: 12px 0px;
     
-    
-            &:hover {
-                background-color: #3D405B;
+            .nav-item {
+
+                .primary-nav {
+                    color: white;
+                }
+
+                .nav-name {
+                    color: white;
+                }
             }
             
             .icon-container {

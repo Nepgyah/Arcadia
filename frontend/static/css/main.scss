@@ -45,30 +45,35 @@ body {
         flex-direction: column;
 
         .page {
-            min-width: 1200px;
-            width: 100%;
-            background-color: #FFF6E1;
-            flex-grow: 1;
-            padding: 36px;
+            display: flex;
             color: #505477;
 
-            .page-wrapper {
-              max-width: 1400px;
-              margin: auto;
-            }
-            h1 {
-              font-size: 2rem;
-              margin-bottom: 2.25rem;
-            }
+            .page-content {
+              background-color: #FFF6E1;
+              width: 100%;
+              min-height: calc(100dvh - 68px);
+              
+              .page-wrapper {
+                width: 1280px;
+                margin: auto;
+                flex-grow: 1;
+                padding: 36px;
+              }
 
-            h2 {
-              font-size: 1.5rem;
-              margin-bottom: 1.5rem;
-            }
-
-            h3 {
-              font-size: 1rem;
-              margin-bottom: .75rem;
+              h1 {
+                font-size: 2rem;
+                margin-bottom: 2.25rem;
+              }
+  
+              h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1.5rem;
+              }
+  
+              h3 {
+                font-size: 1rem;
+                margin-bottom: .75rem;
+              }
             }
         }
     }

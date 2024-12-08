@@ -15,20 +15,11 @@ interface SideNavItem {
     subMenuItems?: SideNavItem[]
 }
 
-const SideNav = () => {
+function SideNav({ appNavigation } : { appNavigation : SideNavItem[]}){
 
+    console.log(appNavigation)
     const pathname = usePathname();
-    const [sidebarLinks, setSidebarLinks] = useState(defaultNavigation)
-
-    useEffect(() => {
-        if (pathname.startsWith('/miru')) {
-            setSidebarLinks(miruNavigation);
-        } else if(pathname.startsWith('/asobu')) {
-            setSidebarLinks(asobuNavigation);
-        } else {
-            setSidebarLinks(defaultNavigation);
-        }
-    }, [pathname])
+    const [sidebarLinks, setSidebarLinks] = useState(appNavigation)
 
     const handleLogout = () => {
         API.post("user/logout/", {})
@@ -45,11 +36,11 @@ const SideNav = () => {
 
     return (
         <div className="side-nav">
-            <div className="global-home">
+            {/* <div className="global-home">
                 <Link href="/">
                     Home
                 </Link>
-            </div>
+            </div> */}
             <div className="app-nav-container">
                 {
                     sidebarLinks.map((item, index) => (
@@ -57,9 +48,6 @@ const SideNav = () => {
                     ))
                 }
             </div>
-            <Button variant="text" color="primary" onClick={handleLogout}>
-               logout
-            </Button>
         </div>
     )
 }
@@ -75,11 +63,51 @@ function MenuItem({item} : { item : SideNavItem}) {
     }
 
     return (
-        <Link className="app-nav" href={item.path}>
-            <div className="icon-container">
-                {item.icon}
-            </div>
-            {item.name}
-        </Link>
+        <div className="nav-section">
+            {
+                item.subMenuItems ? (
+                    <React.Fragment>
+                        <div className="primary-nav has-sub-nav" onClick={() => toggleSubMenu()}>
+                            <div className="item-container hoverable">
+                                    {item.icon}
+                                <p className="nav-name">
+                                {item.name}
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className={`secondary-nav ${subMenuOpen ? "show" : "hide"}`}>
+                        {
+                            item.subMenuItems.map((subItem, index) => (
+                                <div className="item-container hoverable" key={index}>
+                                    <Link href={subItem.path}>
+                                        <div className="nav-name">
+                                            {subItem.name}
+                                        </div>
+                                    </Link>
+                                </div>
+                            ))
+                        }
+                        </div>
+                    </React.Fragment>
+                ) : (
+                    <div className="hoverable">
+                        <Link href={item.path}>
+                            <div className="primary-nav">
+                                <div className="item-container">
+                                    <div className="nav-icon">
+                                        {item.icon}
+                                    </div>
+                                    <div className="nav-name">
+                                        {item.name}
+                                    </div>
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+                )
+            }
+        </div>
+
 )
 }
