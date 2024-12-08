@@ -101,7 +101,7 @@ function Main({ anime, characters }: { anime: Anime, characters: Character[] }) 
               </div>
               <div className='genre'>
                 <h2>Genre</h2>
-                <div className='.container'>
+                <div className='container'>
                   {anime.genres.map((genre, index) => (
                     <div key={index}>{genre}</div>
                   ))}

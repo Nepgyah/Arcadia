@@ -5,10 +5,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
     .logo {
         img {
             height: 36px;
         }
+    }
+
+    .top-navigation {
+        display: flex;
     }
 }
