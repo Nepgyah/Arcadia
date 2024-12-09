@@ -30,7 +30,6 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <div className="content">
-          {/* <SideNav navigation={defaultNavigation} /> */}
           <main className="main">
             <TopNav />
             {children}

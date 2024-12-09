@@ -1,3 +1,4 @@
+@use "./core/base/variables" as *;
 @import "./core/base/reset";
 @import "./core/components/sidenav/sidenav";
 @import "./core/components/topnav/topnav";
@@ -8,6 +9,96 @@
 
 .emp {
   font-weight: bold;
+}
+
+.miru {
+  background-color: $miru-primary;
+
+  &--has-hover {
+    &:hover {
+      background-color: $miru-secondary;
+    }
+  }
+}
+
+.yomu {
+  background-color: $yomu-primary;
+
+  &--has-hover {
+    &:hover {
+      background-color: $yomu-secondary;
+    }
+  }
+}
+
+.asobu {
+  background-color: $asobu-primary;
+
+  &--has-hover {
+    &:hover {
+      background-color: $asobu-secondary;
+    }
+  }
+}
+
+.kau {
+  background-color: $kau-primary;
+
+  &--has-hover {
+    &:hover {
+      background-color: $kau-secondary;
+    }
+  }
+}
+
+.tsunagu {
+  background-color: $tsunagu-primary;
+
+  &--has-hover {
+    &:hover {
+      background-color: $tsunagu-secondary;
+    }
+  }
+}
+
+.iku {
+  background-color: $iku-primary;
+
+  &--has-hover {
+    &:hover {
+      background-color: $iku-secondary;
+    }
+  }
+}
+
+.shiru {
+  background-color: $shiru-primary;
+
+  &--has-hover {
+    &:hover {
+      background-color: $shiru-secondary;
+    }
+  }
+}
+
+.hiku {
+  background-color: $hiku-primary;
+
+  &--has-hover {
+    &:hover {
+      background-color: $hiku-secondary;
+    }
+  }
+}
+
+.kiku {
+  background-color: $kiku-primary;
+
+  &--has-hover {
+    &:hover {
+      background-color: $kiku-secondary;
+    }
+  }
 }
 
 html,
@@ -41,13 +132,13 @@ body {
         flex-grow: 1;
         display: flex;
         flex-direction: column;
+        background-color: #FFF6E1;
+        color: #505477;
 
         .page {
             display: flex;
-            color: #505477;
 
             .page-content {
-              background-color: #FFF6E1;
               width: 100%;
               min-height: calc(100dvh - 68px);
               

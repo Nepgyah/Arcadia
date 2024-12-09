@@ -1,18 +1,44 @@
+@use "../core/base/variables" as *;
 
 #home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
     h1 {
         text-align: center;
     }
 
     .app-container {
         display: flex;
-        flex-wrap: wrap;
+        justify-content: space-between;
 
         a {
-            width: 25%;
+            text-decoration: none;
+
+            &:hover {
+                p {
+                    text-decoration: underline;
+                }
+            }
+            
+            .app {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                row-gap: 8px;
+
+                .icon-container {
+                    padding: 12px;
+    
+                    height: 64px;
+                    width: 64px;
+    
+                    border-radius: 64px;
+                }
+
+                p {
+                    color: #3E3E42;
+                    font-weight: bold;
+                }
+            }
         }
     }
 }
