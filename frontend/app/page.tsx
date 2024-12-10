@@ -1,13 +1,19 @@
 import Link from "next/link";
+import Image from "next/image";
 import "../static/css/pages/home.css";
+
+import landingImage from '@static/images/pages/home/anime-night-sky-illustration.jpg'
 
 export default function Home() {
   return (
     <div className="page">
       <div id="home" className="page-content">
         <div className="page-wrapper">
-          <h1>Welcome to Arcadia</h1>
-          <div className="dashboard-art"></div>
+          <div className="dashboard-art">
+            <div className="art-overlay"></div>
+            <h1>Welcome To Arcadia</h1>
+            <Image src={landingImage} alt="Night skyline of an anime world" />
+          </div>
           <div className="app-container">
             <Link href="/miru">
               <div className="app">

@@ -6,6 +6,36 @@
         text-align: center;
     }
 
+    .dashboard-art {
+        margin-bottom: 44px;
+        max-height: 300px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+
+        border-radius: 12px;
+        overflow-y: hidden;
+        box-shadow: $arcadia-shadow;
+        
+        .art-overlay {
+            position: absolute;
+            background-color: rgba($color: black, $alpha: .3);
+            height: 100%;
+            width: 100%;
+        }
+
+        h1 {
+            position: absolute;
+            color: white;
+            top: 16px;
+            left: 16px;
+        }
+        img {
+            width: 100%;
+            height: auto
+        }
+    }
     .app-container {
         display: flex;
         justify-content: space-between;
@@ -18,7 +48,7 @@
                     text-decoration: underline;
                 }
             }
-            
+
             .app {
                 display: flex;
                 flex-direction: column;
