@@ -1,4 +1,6 @@
-@use "../globals/variables";
+@use "../../core/base/variables";
+@import "../../main";
+@import "../../core/components/footer";
 
 #content {
 
