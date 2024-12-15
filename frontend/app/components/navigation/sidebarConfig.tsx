@@ -20,7 +20,7 @@ export const miruNavigation: SideNavItem[] =
 [
     { 
         name: "Home",
-        path: "/miru", 
+        path: "/app/miru", 
         icon: < DashboardIcon />
     },
     { 
@@ -30,17 +30,17 @@ export const miruNavigation: SideNavItem[] =
         subMenuItems: [
             {
                 name: "Seasonal",
-                path: "/miru/list/seasonal",
+                path: "/app/miru/list/seasonal",
             },
             {
                 name: "Top Anime",
-                path: "/miru/list/top",
+                path: "/app/miru/list/top",
             },
         ]
     },
     { 
         name: "Search", 
-        path: "/miru/search", 
+        path: "/app/miru/search", 
         icon: < SearchIcon />
     },
     { 
@@ -50,11 +50,11 @@ export const miruNavigation: SideNavItem[] =
         subMenuItems: [
             {
                 name: "Explore",
-                path: "/miru/list/seasonal",
+                path: "/app/miru/list/seasonal",
             },
             {
                 name: "Watchlists",
-                path: "/miru/list/top",
+                path: "/app/miru/list/top",
             },
         ]
     }

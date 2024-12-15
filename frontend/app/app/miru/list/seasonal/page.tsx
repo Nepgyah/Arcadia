@@ -1,4 +1,4 @@
-import "../../../../static/css/pages/miru/anime-listing.css";
+import "@static/css/pages/miru/anime-listing.css";
 import AnimeCard from "../animeCard";
 
 interface Anime {

@@ -2,7 +2,7 @@ import React from 'react'
 import UpdateTracker from '../detail_form';
 import Avatar from '@mui/material/Avatar'
 
-import "../../../../static/css/pages/miru/anime-detail.css";
+import "@static/css/pages/miru/anime-detail.css";
 
 interface Anime {
   name: string,

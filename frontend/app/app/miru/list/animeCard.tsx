@@ -38,7 +38,7 @@ interface Anime {
   
 export default function AnimeCard({ anime } : { anime: Anime}) {
     return (
-        <Link href={`/miru/detail/${anime.id}`}>
+        <Link href={`/app/miru/detail/${anime.id}`}>
             <div className="anime-card">
                 <p className="title">{anime.name}</p>
                 <div className="anime-content">

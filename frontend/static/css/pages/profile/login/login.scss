@@ -1,0 +1,24 @@
+
+#login {
+    display: flex;
+    padding-top: 64px;
+
+    .centered {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .image {
+        width: 50%;
+    }
+
+    .form {
+        width: 50%;
+        row-gap: 36px;
+
+        .MuiInputBase-root {
+            background-color: white;
+        }
+    }
+}
