@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "backend/public_site/README.md",
+                "file": "CHANGELOG.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "CHANGELOG"
             }
           }
         ]
@@ -164,30 +164,31 @@
   },
   "active": "484d99c5f19da1ef",
   "lastOpenFiles": [
-    "README.md",
+    "backend/arcadia/__pycache__/urls.cpython-312.pyc",
+    "backend/miru/__pycache__/admin.cpython-312.pyc",
+    "backend/miru/__pycache__/models.cpython-312.pyc",
+    "frontend/static/images/app_icons/yomu.svg",
+    "frontend/static/images/app_icons/tsunagu.svg",
+    "frontend/static/images/app_icons/shiru.svg",
+    "frontend/static/images/app_icons/miru.svg",
+    "frontend/static/images/app_icons/kiku.svg",
+    "frontend/static/images/app_icons/kau.svg",
+    "frontend/static/images/app_icons/iku.svg",
+    "frontend/static/images/app_icons/hiku.svg",
+    "frontend/static/images/app_icons/asobu.svg",
+    "frontend/static/images/app_icons",
+    "frontend/static/css/pages/profile/login/login.scss",
+    "frontend/static/css/pages/profile/login/login.css",
+    "frontend/static/css/pages/profile/login",
+    "frontend/static/css/pages/profile",
+    "frontend/app/profile/[id]/page.tsx",
+    "frontend/app/profile/[id]",
+    "frontend/static/images/stelle.jpg",
+    "frontend/static/images/pages/home",
     "FUTURE FEATURES.md",
-    "CHANGELOG.md",
-    "frontend/app/components/navigation/sidebarConfig.tsx",
-    "frontend/static/css/pages/miru/anime-listing.scss",
-    "frontend/static/css/pages/miru/anime-listing.css",
-    "frontend/app/miru/list/top/page.tsx",
-    "frontend/app/miru/list/top",
-    "frontend/app/miru/list/seasonal/page.tsx",
-    "frontend/app/miru/list/seasonal",
-    "frontend/app/miru/list/animeCard.tsx",
-    "frontend/app/miru/animelist/page.tsx",
-    "frontend/app/miru/animelist",
-    "backend/media/anime/145597.jpg",
-    "backend/media/anime/media-re-zero-season-3-new-key-visual-v0-tdsjdgh9grhd1.webp",
-    "backend/media/anime/danmachi-one.jpg",
-    "backend/media/anime/145505.jpg",
-    "backend/media/anime/144738.jpg",
-    "backend/media/anime/144583.jpg",
-    "backend/media/anime/143719.jpg",
-    "backend/media/anime/138581.jpg",
-    "backend/media/anime/134736.jpg",
-    "backend/media/anime/127956.jpg",
     "backend/public_site/README.md",
+    "README.md",
+    "CHANGELOG.md",
     "frontend/node_modules/next/dist/compiled/@babel/runtime/README.md",
     "frontend/node_modules/next/dist/compiled/regenerator-runtime/README.md",
     "frontend/node_modules/next/dist/compiled/react-refresh/README.md",
@@ -208,7 +209,6 @@
     "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/padding-line-between-statements.md",
     "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/object-curly-spacing.md",
     "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/no-extra-semi.md",
-    "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/no-extra-parens.md",
-    "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/member-delimiter-style.md"
+    "frontend/node_modules/@typescript-eslint/eslint-plugin/docs/rules/no-extra-parens.md"
   ]
 }
