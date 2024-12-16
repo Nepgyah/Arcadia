@@ -1,19 +1,6 @@
 import type { Metadata } from "next";
 import "../static/css/main.css"
-import SideNav from "./components/navigation/sideNav";
 import TopNav from "./components/navigation/topNav";
-import { defaultNavigation } from "./components/navigation/sidebarConfig";
-
-// const geistSans = localFont({
-//   src: "./fonts/GeistVF.woff",
-//   variable: "--font-geist-sans",
-//   weight: "100 900",
-// });
-// const geistMono = localFont({
-//   src: "./fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
 
 export const metadata: Metadata = {
   title: "Create Next App",

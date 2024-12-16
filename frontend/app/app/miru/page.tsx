@@ -1,9 +1,9 @@
 'use client';
 
 import React, { useEffect, useState } from 'react'
-import API from '../util/API'
+import API from '../../util/API'
 
-import "../../static/css/pages/miru/miru-home.css"
+import "../../../static/css/pages/miru/miru-home.css"
 import { Grid2 } from '@mui/material';
 import Link from 'next/link';
 
@@ -40,7 +40,7 @@ const MiruHome = () => {
 
           <div className='anime-row'>
             <h2>
-              <Link href="/miru/list/seasonal">
+              <Link href="/app/miru/list/seasonal">
               Fall 2024
               </Link>
             </h2>
@@ -59,7 +59,7 @@ const MiruHome = () => {
           <div className='divider'></div>
           <div className='anime-row'>
             <h2>
-              <Link href="/miru/list/top">
+              <Link href="/app/miru/list/top">
               Most Popular
               </Link>
             </h2>
@@ -90,7 +90,7 @@ export default MiruHome;
 const AnimeCard = ({ anime }: { anime: Anime }) => {
 
   return (
-    <Link href={`/miru/detail/${anime.id}`}>
+    <Link href={`/app/miru/detail/${anime.id}`}>
       <div className='anime-card'>
         <img className='anime-card__visual' src={anime.visual} alt={anime.name} />
         <p className='anime-card__title'>{anime.name}</p>

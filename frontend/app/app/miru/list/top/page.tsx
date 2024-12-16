@@ -1,6 +1,6 @@
-import AnimeCard from "../animeCard"
+import AnimeCard from "../animeCard";
 
-import "../../../../static/css/pages/miru/anime-listing.css";
+import "@static/css/pages/miru/anime-listing.css";
 
 interface Anime {
   id: number,

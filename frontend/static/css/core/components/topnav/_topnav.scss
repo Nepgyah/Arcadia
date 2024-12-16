@@ -1,18 +1,80 @@
-.top-bar {
-    padding: 6px;
-    background-color: #505477;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+@use "../../../core/base/variables" as *;
 
-    .logo {
-        img {
-            height: 36px;
+.top-nav {
+    position: relative;
+
+    .bar {
+        padding: 6px;
+        background-color: #505477;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+        .logo {
+            img {
+                height: 36px;
+            }
         }
+    
     }
 
-    .top-navigation {
+    .profile-popup {
+        background-color: #3D405B;
+        min-width: 275px;
+        padding: 16px;
+
+        border-radius: 5px;
+        
+        position: absolute;
+        z-index: 99;
+        top: 84px;
+        right: 6px;
+    
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 8px;
+    
+        &.hidden {
+            display: none;
+        }
+
+        .avatar-pic {
+            width: 128px;
+            height: 128px;
+            
+            border: 2px solid #bbbbbb;
+        }
+
+        .username {
+            font-size: 16px;
+            color: white;
+        }
+
+        .email {
+            color: #bbbbbb;
+        }
+
+        a {
+            display: flex;
+            margin-bottom: 8px;
+            text-decoration: none;
+
+            &:hover {
+                svg, p {
+                    color: $arcadia-secondary-one;
+                }
+            }
+            svg {
+                color: white;
+            }
+
+            p {
+                color: white;
+                margin-left: 8px;
+            }
+        }
+    
     }
 }
