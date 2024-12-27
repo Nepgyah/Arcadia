@@ -9,16 +9,47 @@
         min-height: 90dvh;
     }
 
+    &__background {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+    }
+
+    &__button-container {
+        display: flex;
+        justify-content: flex-start;
+        column-gap: 36px;
+        a {
+
+        }
+    }
     &__inner-wrapper {
         max-width: $max-width;
         margin: 0 auto;
         padding: 0 20px;
-        z-index: 1;
+        position: relative;
+        z-index: 2;
         margin-top: 6rem;
         padding-top: 6rem;
         padding-bottom: 6rem;
-
+    
         // Variants go here
+        &--one-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .hero__text {
+
+                &--white {
+
+                    h1, p {
+                        color: white;
+                    }
+                }
+            }
+        }
         &--two-col {
             display: flex;
             justify-content: space-between;
