@@ -8,4 +8,5 @@ handler404 = views.not_found
 
 urlpatterns = [
     path('', views.homepage, name='homepage'),
+    path('about-us/', views.aboutUs, name='about-us'),
 ]

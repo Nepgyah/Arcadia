@@ -1,0 +1,29 @@
+{% extends 'public-site/base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+<link href="{% static "css/pages/company/about-us.css" %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+
+    {% include 'public-site/header.html' %}
+
+    <section class="hero hero--standard-height">
+        <img class="hero hero__background" src="{% static "images/public-site/company/about-us/office.jpg" %}" />
+        <div class="hero__inner-wrapper hero__inner-wrapper--two-col">
+            <div class="hero__text hero__text--left-side">
+                <h1>Creators of Arcadia,<br>Team Double Dragon</h1>
+                <p>Discover and learn about the company dedicated to create the ulitmate anime platform.</p>
+                <a href="#">
+                    <div class="btn btn--hero btn--primary">Learn More</div>
+                </a>
+            </div>
+            <div class="hero__image">
+            </div>
+        </div>
+    </section>
+
+    {% include 'public-site/footer.html' %}
+
+{% endblock %}
