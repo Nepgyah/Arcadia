@@ -23,10 +23,6 @@ body {
     color: variables.$text-dark-primary;
 }
 
-p {
-    margin-bottom: .5em;
-}
-
 .mobile-only {
     display: block;
 }
@@ -40,18 +36,12 @@ p {
 }
 
 h1 {
-    font-size: 73px;
-    margin-bottom: 48px;
+    font-size: 4rem;
 }
 
 h1, h2, h3, h4 {
     font-family: 'Noto Serif JP', Arial, sans-serif;
     color: variables.$arcadia-primary-one;
-}
-
-h3 {
-    font-size: 59px;
-    margin-bottom: 48px;
 }
 
 .color-arcadia-primary {

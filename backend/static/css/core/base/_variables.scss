@@ -10,7 +10,7 @@ $text-light-primary: #ffffff;
 
 $arcadia-primary-one: #505477;
 $arcadia-primary-two: #3E415B;
-$arcadia-secondary-one: #FFC2C2;
+$arcadia-secondary-one: #F982AA;
 $arcadia-secondary-two: #FFAAAA;
 $bg-body-light-primary: #FFF6E1;
 
@@ -26,3 +26,6 @@ $hiku-primary: #F0D66A;
 $kiku-primary: #9370DB;
 
 $box-shadow-default: 0px 4px 4px rgba(#000000, .25);
+
+// Background gradients
+$arcadia-gradient-vertical: linear-gradient(to bottom, #505477, #2F324B);

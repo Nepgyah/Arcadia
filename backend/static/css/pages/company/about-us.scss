@@ -1,7 +1,26 @@
-@use "../../core/base/variables";
+@use "../../core/base/variables" as *;
 @import "../../main";
 @import "../../core/components/footer";
 
 #content {
     
+    #ceo-statement {
+        .section__template--chip {
+            background: linear-gradient(to right, #483D8B, #9370DB);
+        }
+    }
+
+    #values {
+        background: $arcadia-gradient-vertical;
+
+        h3 {
+            color: $arcadia-secondary-one;
+        }
+    }
+
+    #cofounder-statement {
+        .section__template--chip {
+            background: linear-gradient(to right, #F6A875, #E63946);
+        }
+    }
 }

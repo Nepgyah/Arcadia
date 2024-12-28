@@ -4,8 +4,20 @@
     display: block;
     position: relative;
     width: 100%;
-    padding: 101px 0;
+    padding: 80px 0;
     margin-top: -1px;
+
+    &--white-text {
+
+        h2, h3, p, div {
+            color: white;
+        }
+    }
+
+    &--solid-bg {
+        margin: 160px 0px;
+        padding: 160px 0px;
+    }
 
     &--light {
         .section-header {
@@ -16,54 +28,91 @@
         }
     }
 
-    &__inner-wrapper {
+    &__template {
         position: relative;
         max-width: $max-width;
         margin: 0 auto;
-        padding: 0 20px;
         z-index: 1;
 
-        .section-header {
+        &--chip {
+            border-radius: 1.5rem;
+            padding: 3rem;
+            display: flex;
+            column-gap: 36px;
 
-            &--align-middle {
-                text-align: center;
+            .section-main {
+                width: 60%;
             }
 
-            &__sub-header {
-                font-size: 18px;
-                margin-bottom: 48px;
-            }
-            &__main-header {
-                font-size: 59px;
-                margin-bottom: 48px;
-            }
-            &__description {
-                margin-top: 73px;
+            .section-image {
+                width: 40%;
             }
         }
 
-        .section__main-content {
-
-            &--flex {
-                display: flex;
-                flex-wrap: wrap;
+        &--two-part {
+            
+            .section-main {
+                margin-bottom: 5rem;
             }
 
-            &--two-col {
+            .section-content {
                 display: flex;
-                flex-direction: row;
-            }
+                column-gap: 36px;
 
-            &--three-col {
-                display: flex;
-                justify-content: space-between;
+                &__image {
+                    width: 40%;
 
-                .section__item {
-                    width: 30%;
+                    img {
+                        border-radius: 1.5rem;
+                    }
+                }
+
+                &__text {
+                    width: 60%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    align-items: center;
+                    row-gap: 2rem;
+
+                    .text-concept {
+
+                        &__header {
+                            font-size: 1.5rem;
+                        }
+                    }
                 }
             }
+        }
 
-            .section__item {
+        &--two-col {
+            display: flex;
+            column-gap: 36px;
+            
+            .section-main {
+                width: 50%;
+            }
+
+            .section-image {
+                width: 50%;
+            }
+        }
+
+        .section-main {
+            display: flex;
+            flex-direction: column;
+            row-gap: 2rem;
+
+            &__title {
+                font-size: .75rem;
+            }
+
+            &__header {
+                font-size: 2.3125rem;
+            }
+
+            &__text {
+                font-size: 1rem;
             }
         }
     }

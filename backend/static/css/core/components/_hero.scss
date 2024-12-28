@@ -14,22 +14,33 @@
         height: 100%;
         position: absolute;
         z-index: 1;
+        object-fit: cover;
     }
 
     &__button-container {
         display: flex;
-        justify-content: flex-start;
-        column-gap: 36px;
+        justify-content: space-around;
         a {
 
         }
     }
+
+    &__mask {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(#000000, .4);
+
+        position: absolute;
+        z-index: 2;
+
+    }
+    
     &__inner-wrapper {
         max-width: $max-width;
         margin: 0 auto;
         padding: 0 20px;
         position: relative;
-        z-index: 2;
+        z-index: 5;
         margin-top: 6rem;
         padding-top: 6rem;
         padding-bottom: 6rem;
@@ -41,6 +52,9 @@
             align-items: center;
 
             .hero__text {
+                display: flex;
+                flex-direction: column;
+                row-gap: 2rem;
 
                 &--white {
 
@@ -56,7 +70,10 @@
 
             .hero__text {
                 width: 60%;
-
+                display: flex;
+                flex-direction: column;
+                row-gap: 2rem;
+                
                 p {
                     font-size: 24px;
                     margin-bottom: 48px;

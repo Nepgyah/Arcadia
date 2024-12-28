@@ -10,7 +10,8 @@
     {% include 'public-site/header.html' %}
 
     <section class="hero hero--standard-height">
-        <img class="hero hero__background" src="{% static "images/public-site/company/about-us/office.jpg" %}" />
+        <img class="hero__background" src="{% static "images/public-site/company/about-us/office.jpg" %}" />
+        <div class="hero__mask"></div>
         <div class="hero__inner-wrapper hero__inner-wrapper--one-col">
             <div class="hero__text hero__text--white">
                 <h1>Creators of Arcadia,<br>Team Double Dragon</h1>
@@ -20,11 +21,86 @@
                         <div class="btn btn--hero btn--primary">Learn More</div>
                     </a>
                     <a href="#">
-                        <div class="btn btn--hero btn--primary">Learn More</div>
+                        <div class="btn btn--hero btn--primary">Contact Us</div>
                     </a>
                 </div>
             </div>
-            <div class="hero__image">
+        </div>
+    </section>
+
+    <section class="section" id="company-intro">
+        <div class="section__template">
+            <div class="section-main">
+                <div class="section-main__title">Our Company</div>
+                <div class="section-main__header">Founded by fans, <br />For fans who share our passion</div>
+                <div class="section-main__paragraph">At Team Double Dragon, we create because of what we love. Born from a shared passion for anime, gaming, and creativity, our mission is simple: to build a platform that celebrates fandom and connects fans worldwide. We’re not in it for corporate greed; we’re here to bring joy, inspire imagination, and foster a vibrant community of like-minded enthusiasts.</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--white-text" id="ceo-statement">
+        <div class="section__template section__template--chip">
+            <div class="section-main section-main--white-text">
+                <div class="section-main__title">Message from the founder</div>
+                <h2 class="section-main__header">Motivated by Passion, <br />The D2X Way</h2>
+                <div class="section-main__paragraph">As a lifelong fan of anime and gaming, I’m thrilled to help build a space where our passions come to life. Team Double Dragon represents our dream of connecting fans from all walks of life. Together, we can explore new worlds and create unforgettable experiences</div>
+            </div>
+            <div class="section-image">
+                IMAGE
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--solid-bg section--white-text" id="values">
+        <div class="section__template section__template--two-part">
+            <div class="section-main">
+                <div class="section-main__title">Our Values</div>
+                <h2 class="section-main__header">The Foundations,<br />Of Team Double Dragon</h2>
+            </div>
+            <div class="section-content">
+                <div class="section-content__image">
+                    <img src="{% static "images/public-site/company/about-us/values.png" %}" />
+                </div>
+                <div class="section-content__text">
+                    <div class="text-concept">
+                        <h3 class="text-concept__header">Passion for Fandom</h3>
+                        <div class="text-concept__description">We understand that anime, gaming, and all forms of creative expression bring joy and inspiration to countless fans. Our mission is to create experiences that resonate deeply with our community, celebrating the vibrant worlds that unite us.</div>
+                    </div>
+                    <div class="text-concept">
+                        <h3 class="text-concept__header">Empowerment Through Collaboration</h3>
+                        <div class="text-concept__description">We believe in the power of collaboration to uplift and inspire one another. At D2X, we are committed to empowering fans and creators alike, ensuring that everyone has a voice in shaping our platform.</div>
+                    </div>
+                    <div class="text-concept">
+                        <h3 class="text-concept__header">Community First</h3>
+                        <div class="text-concept__description">D2X is dedicated to fostering an inclusive environment where fans can connect, collaborate, and share their love for their favorite genres. By prioritizing the voices of our community, we aim to build a space where everyone feels welcome and valued.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="job-opporitunity">
+        <div class="section__template section__template--two-col">
+            <div class="section-main">
+                <div class="section-main__title">Get Involved</div>
+                <h2 class="section-main__header">Become Part of Our <br />Journey at D2X</h2>
+                <div class="section-main__paragraph">As a lifelong fan of anime and gaming, I’m thrilled to help build a space where our passions come to life. Team Double Dragon represents our dream of connecting fans from all walks of life. Together, we can explore new worlds and create unforgettable experiences</div>
+            </div>
+            <div class="section-image">
+                IMAGE
+            </div>
+        </div>
+    </section>
+
+    <section class="section section--white-text" id="cofounder-statement">
+        <div class="section__template section__template--chip">
+            <div class="section-image">
+                <img />
+            </div>
+            <div class="section-main section-main--white-text">
+                <div class="section-main__title">Message from the Co-Founder</div>
+                <h2 class="section-main__header">Building Something Real,<br />The D2X Way</h2>
+                <div class="section-main__paragraph">As a co-founder, I’m excited to help bring our vision to life. We believe that modern coding often lacks the heart and dedication needed to create meaningful experiences. At Team Double Dragon, we’re committed to building a platform that works—something fans can rely on. We aim to redefine what it means to be passionate coders!</div>
             </div>
         </div>
     </section>
