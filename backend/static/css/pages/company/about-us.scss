@@ -4,6 +4,30 @@
 
 #content {
     
+    #founder, #cofounder {
+        box-shadow: none;
+    }
+
+    .section__template--chip {
+        .section-image {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            row-gap: 2rem;
+
+            img {
+                margin: auto;
+                max-height: 300px;
+                max-width: 300px;
+            }
+        }
+        .profile {
+            .name {
+                font-weight: bold;
+            }
+        }
+    }
+    
     #ceo-statement {
         .section__template--chip {
             background: linear-gradient(to right, #483D8B, #9370DB);
@@ -18,6 +42,20 @@
         }
     }
 
+    #job-opporitunity {
+        .section-image {
+
+            #job-image-one {
+                margin-left: 1rem;
+            }
+
+            #job-image-two {
+                margin-top: 1rem;
+                margin-right: 1rem;
+                float: right;
+            }
+        }
+    }
     #cofounder-statement {
         .section__template--chip {
             background: linear-gradient(to right, #F6A875, #E63946);

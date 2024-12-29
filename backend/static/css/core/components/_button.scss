@@ -30,4 +30,20 @@
             background-color: $arcadia-secondary-two;
         }
     }
+
+    &--outlined {
+        border: 1px solid #ffffff;
+        border-radius: 74px;
+    }
+
+    &--text {
+        color: white;
+
+        &:hover {
+            color: $arcadia-primary-one;
+            background-color: $arcadia-secondary-one;
+
+            transition: background-color 200ms ease-in;
+        }
+    }
 }

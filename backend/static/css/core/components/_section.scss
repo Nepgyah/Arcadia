@@ -42,6 +42,7 @@
 
             .section-main {
                 width: 60%;
+
             }
 
             .section-image {
@@ -88,7 +89,7 @@
         &--two-col {
             display: flex;
             column-gap: 36px;
-            
+
             .section-main {
                 width: 50%;
             }
@@ -101,10 +102,26 @@
         .section-main {
             display: flex;
             flex-direction: column;
+            justify-content: center;
             row-gap: 2rem;
 
             &__title {
                 font-size: .75rem;
+
+                &--underline {
+                    
+                    &::after {
+                        content: "";
+                        width: 25%;
+                        height: 1px;
+                        
+                        /* background-color: var(--c-title-underline-color); */
+                        background: $arcadia-secondary-one;
+                        position: absolute;
+                        top: 1.25rem;
+                        left: 0;
+                    }
+                }
             }
 
             &__header {
@@ -114,6 +131,11 @@
             &__text {
                 font-size: 1rem;
             }
+        }
+
+        img {
+            border-radius: .75rem;
+            box-shadow: $box-shadow-default;
         }
     }
 }
