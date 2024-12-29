@@ -1,14 +1,36 @@
-@use "../../core/base/variables";
+@use "../../core/base/variables" as *;
 @import "../../main";
 @import "../../core/components/footer";
 
 #content {
+    overflow-y: hidden;
 
-    #error {
+    .section {
         height: 100dvh;
+        padding: 0px;
+        position: relative;
 
-        .flex-grid {
-            
+        .divider {
+            position: absolute;
+            background-color: $arcadia-primary-one;
+            height: 100%;
+            width: 50%;
+            left: -5%;
+            transform: skew(10deg);
+        }
+
+        .section__template {
+            height: 100%;
+            align-items: center;
+
+            div {
+                width: 50%;
+            }
+        }
+        img {
+            box-shadow: none;
+            border-radius: 0px;
+            border-bottom: 4px solid $arcadia-secondary-one;
         }
     }
 }

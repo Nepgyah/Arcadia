@@ -8,5 +8,9 @@ def homepage(request):
 def aboutUs(request):
     return render(request, 'public-site/company/about-us.html')
 
+# Misc
 def not_found(request):
     return render(request, 'misc/404.html')
+
+def not_ready(request):
+    return render(request, 'misc/not-ready.html')
