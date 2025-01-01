@@ -1,0 +1,30 @@
+{% extends 'public-site/base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+<link href="{% static "css/pages/company/about-us.css" %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+
+    {% include 'public-site/header.html' %}
+
+    <section class="hero hero--standard-height">
+        <img class="hero__background" src="{% static "images/public-site/app/miru/landing.png" %}" />
+        <div class="hero__mask"></div>
+        <div class="hero__inner-wrapper hero__inner-wrapper--one-col">
+            <div class="hero__text hero__text--white">
+                <h1>The Ultimate<br>Anime App</h1>
+                <p>Track, Watch, and Rate your favorite (or trashiest) <br />anime all on a single platform</p>
+                <div class="hero__button-container">
+                    <a href="#">
+                        <div class="btn btn--hero btn--primary">Explore Miru</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include 'public-site/footer.html' %}
+
+{% endblock %}

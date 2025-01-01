@@ -4,6 +4,11 @@ from django.shortcuts import render
 def homepage(request):
     return render(request, "public-site/homepage.html")
 
+# Apps
+
+def miruAbout(request):
+    return render(request, 'app/miru.html')
+
 # Company Pages
 def aboutUs(request):
     return render(request, 'public-site/company/about-us.html')
