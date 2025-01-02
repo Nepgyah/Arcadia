@@ -1,0 +1,40 @@
+{% extends 'public-site/base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+<link href="{% static "css/pages/company/team.css" %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block content %}
+
+    {% include 'public-site/header.html' %}
+
+    <section class="hero hero--standard-height">
+        <img class="hero__background" src="{% static "images/public-site/company/team/office-scene.webp" %}" />
+        <div class="hero__mask"></div>
+        <div class="hero__inner-wrapper hero__inner-wrapper--one-col">
+            <div class="hero__text hero__text--white">
+                <h1>Meet the Team Behind Arcadia</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="leadership">
+        <section class="section__template">
+            <div class="section-main">
+                <h2 class="section-main__header">Leadership</h2>
+            </div>
+            <div class="members">
+                {% for member in leadership %}
+                    <div class="member-profile">
+                        <img src="{% static 'images/team/'|add:member.image %}"/>
+                        <p class="name">{{ member.name }}</p>
+                        <p class="position">{{ member.position }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+    </section>
+    {% include 'public-site/footer.html' %}
+
+{% endblock %}

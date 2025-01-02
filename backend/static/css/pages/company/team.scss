@@ -1,0 +1,46 @@
+@use "../../core/base/variables" as *;
+@import "../../main";
+@import "../../core/components/footer";
+
+#content {
+    
+    .section-main {
+        &__header {
+            text-align: center;
+        }
+    }
+    
+    .members {
+        margin-top: 5rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        row-gap: 1.5rem;
+
+        .member-profile {
+            width: 280px;
+            margin: auto;
+
+            img {
+                height: 280px;
+                object-fit: cover;
+                margin-bottom: 1rem;
+            }
+
+            .name {
+                font-weight: bold;
+                font-size: 1.25rem;
+            }
+
+            .position {
+                color: $arcadia-primary-one;
+                font-size: 1.25rem;
+            }
+        }
+    }
+
+    .hero {
+        &--standard-height {
+            min-height: 50dvh;
+        }
+    }
+}
