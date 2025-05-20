@@ -1,31 +1,19 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { ThemeProvider } from '@mui/material/styles';
+import type { Metadata } from 'next';
+import ThemeWrapper from './(public)/components/themeWrapper';
+import { CssBaseline } from '@mui/material';
 
 export const metadata: Metadata = {
-  title: "Arcadia",
-  description: "Your Otaku Sanctuary",
+  title: 'Arcadia',
+  description: 'Welcome to Arcadia.',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body>
+    <ThemeWrapper>
+      <CssBaseline>
         {children}
-      </body>
-    </html>
+      </CssBaseline>
+    </ThemeWrapper>
   );
 }

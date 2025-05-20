@@ -1,7 +1,11 @@
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: "#eee", padding: "1rem" }}>
-      This is a footer
+    <footer className="footer">
+      <div className="footer__wrapper">
+        <div className="footer__logo">
+          <img src="/global/logo_white.svg" alt="" />
+        </div>
+      </div>
     </footer>
   );
 }

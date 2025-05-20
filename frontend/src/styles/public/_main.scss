@@ -1,0 +1,37 @@
+@use '../abstract/variables' as *;
+@forward '../layouts';
+@forward '../base';
+html {
+    background-color: $bg-body-light-primary;
+    font-size: 18px;
+
+    body {
+        padding-top: 5rem;
+        color: $text-dark-primary;
+    }
+}
+
+.MuiButtonBase-root {
+    width: fit-content;
+
+    text-transform: capitalize;
+}
+
+.desktop-only {
+    display: none;
+}
+
+.mobile-only {
+    display: block;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .desktop-only {
+        display: block;
+    }
+
+    .mobile-only {
+        display: none;
+    }
+}

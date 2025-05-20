@@ -1,0 +1,50 @@
+@use '../abstract/variables' as *;
+
+.header {
+    background-color: $arcadia-primary-one;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    width: 100%;
+    border-bottom: 1px solid $text-dark-primary;
+    &__logo {
+        height: 100%;
+        img {
+            height: 100%;
+        }
+    }
+    &__wrapper {
+        height: 5rem;
+        padding: 20px;
+        max-width: $max-width;
+        margin: auto;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav {
+        display: flex;
+
+        &__main {
+            color: white;
+            text-decoration: none;
+        }
+    }
+
+    &__cta {
+        display: flex;
+        column-gap: 1rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .header {
+        
+        &__cta {
+            flex-direction: row;
+        }
+    }
+}
