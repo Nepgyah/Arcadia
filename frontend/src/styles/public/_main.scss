@@ -1,6 +1,7 @@
 @use '../abstract/variables' as *;
 @forward '../layouts';
 @forward '../base';
+
 html {
     background-color: $bg-body-light-primary;
     font-size: 18px;
@@ -8,6 +9,14 @@ html {
     body {
         padding-top: 5rem;
         color: $text-dark-primary;
+    }
+}
+
+a {
+    text-decoration: none;
+
+    &:visited {
+        color: inherit;
     }
 }
 
@@ -23,6 +32,12 @@ html {
 
 .mobile-only {
     display: block;
+}
+
+.center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media only screen and (min-width: 768px) {

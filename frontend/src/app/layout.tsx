@@ -1,6 +1,6 @@
 import { ThemeProvider } from '@mui/material/styles';
 import type { Metadata } from 'next';
-import ThemeWrapper from './(public)/components/themeWrapper';
+import ThemeWrapper from '../components/themeWrapper';
 import { CssBaseline } from '@mui/material';
 
 export const metadata: Metadata = {

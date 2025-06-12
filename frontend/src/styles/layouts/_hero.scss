@@ -24,20 +24,23 @@
         &--two-column {
             display: grid;
             grid-template-columns: 1fr;
+            row-gap: 4rem;
         }
     }
 
     &__text {
-        display: flex;
-        flex-direction: column;
-        row-gap: 2rem;
+
+        .japanese {
+            font-size: .75rem;
+        }
 
         h1 {
             font-size: 3.5rem;
         }
 
-        h1, p {
+        h1, .main-text {
             color: $arcadia-primary-one;
+            margin-bottom: 2rem;
         }
     }
 

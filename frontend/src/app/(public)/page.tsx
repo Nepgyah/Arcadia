@@ -1,6 +1,4 @@
 import React from "react";
-
-import '../../styles/public/homepage.scss';
 import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import { Accordion, AccordionDetails, AccordionSummary, Slide } from "@mui/material";
@@ -8,6 +6,9 @@ import Image from "next/image";
 
 import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 import Script from "next/script";
+import Link from "next/link";
+
+import '../../styles/public/homepage.scss';
 
 export default function Homepage() {
     return(
@@ -138,16 +139,18 @@ export default function Homepage() {
                         </div>
                         <div id="primary-bottom-half">
                             <div id="bottom-left">
-                                <div className="app-tile app-tile--vertical" id="yomu">
-                                    <div className="app-tile__image">
-                                        <img src="/website/homepage/primary-apps/yomu.jpg" alt="" />
+                                <Link href="apps/yomu">
+                                    <div className="app-tile app-tile--vertical" id="yomu">
+                                        <div className="app-tile__image">
+                                            <img src="/website/homepage/primary-apps/yomu.jpg" alt="" />
+                                        </div>
+                                        <div className="app-tile__text">
+                                            <p className="japanese">よむ</p>
+                                            <h3 className="name">Yomu</h3>
+                                            <p className="slogan">Where words create worlds</p>
+                                        </div>
                                     </div>
-                                    <div className="app-tile__text">
-                                        <p className="japanese">よむ</p>
-                                        <h3 className="name">Yomu</h3>
-                                        <p className="slogan">Where words create worlds</p>
-                                    </div>
-                                </div>
+                                </Link>
                                 <div className="app-tile" id="kau">
                                     <div className="app-tile__image">
                                         <img src="/website/homepage/primary-apps/kau.jpg" alt="" />
