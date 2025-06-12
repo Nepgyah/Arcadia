@@ -32,6 +32,19 @@
     #page-apps-yomu {
 
         .hero {
+
+            #left-books {
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+            }
+
+            #right-books {
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0;
+            }
+            
             .hero-image {
                 order: 1;
                 align-items: flex-start;

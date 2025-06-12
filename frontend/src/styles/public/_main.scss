@@ -5,24 +5,29 @@
 html {
     background-color: $bg-body-light-primary;
     font-size: 18px;
-
+    
     body {
         padding-top: 5rem;
         color: $text-dark-primary;
+        overflow-x: hidden;
     }
 }
 
 a {
     text-decoration: none;
-
+    color: inherit;
+    
     &:visited {
         color: inherit;
     }
 }
 
+h1, h2, h3, h4, p {
+    color: inherit;
+}
+
 .MuiButtonBase-root {
     width: fit-content;
-
     text-transform: capitalize;
 }
 
@@ -34,10 +39,24 @@ a {
     display: block;
 }
 
+// Positioning
 .center-content {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.center-vertically {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.opacity-container {
+    background-color: rgba(white, .7);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
 }
 
 @media only screen and (min-width: 768px) {

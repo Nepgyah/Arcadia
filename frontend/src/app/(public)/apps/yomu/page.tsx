@@ -8,6 +8,18 @@ export default function Yomu() {
         <div id="page-apps-yomu">
             <section id="hero" className="hero">
                 <img
+                    id="left-books"
+                    className="hero__bg-element desktop-only" 
+                    src="/website/apps/yomu/hero/left-side-books.png" 
+                    alt="" 
+                />
+                <img
+                    id="right-books"
+                    className="hero__bg-element desktop-only" 
+                    src="/website/apps/yomu/hero/right-side-books.png" 
+                    alt="" 
+                />
+                <img
                     className="hero__bg-image" 
                     src="/website/apps/yomu/hero/bg.png" 
                     alt="" 

@@ -21,7 +21,9 @@ export default function Header() {
     <header className="header">
       <div className='header__wrapper'>
         <div className='header__logo'>
-          <img src="/global/logo_white.svg" alt="Alter" />
+          <a href="/">
+            <img src="/global/logo_white.svg" alt="Alter" />
+          </a>
         </div>
         <div className='nav'>
           {/* <a className='nav__main' href="">Home</a> */}
