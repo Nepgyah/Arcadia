@@ -30,7 +30,7 @@ export default function Homepage() {
                                 <Button variant="contained" color="primary">
                                     Enter Arcadia
                                 </Button>
-                                <Button variant="text" color="primary">
+                                <Button variant="text" color="primary" href="#primary-apps">
                                     Explore the Apps
                                 </Button>
                             </div>
@@ -139,7 +139,7 @@ export default function Homepage() {
                         </div>
                         <div id="primary-bottom-half">
                             <div id="bottom-left">
-                                <Link href="apps/yomu">
+                                <a href="apps/yomu">
                                     <div className="app-tile app-tile--vertical" id="yomu">
                                         <div className="app-tile__image">
                                             <img src="/website/homepage/primary-apps/yomu.jpg" alt="" />
@@ -150,7 +150,7 @@ export default function Homepage() {
                                             <p className="slogan">Where words create worlds</p>
                                         </div>
                                     </div>
-                                </Link>
+                                </a>
                                 <div className="app-tile" id="kau">
                                     <div className="app-tile__image">
                                         <img src="/website/homepage/primary-apps/kau.jpg" alt="" />
