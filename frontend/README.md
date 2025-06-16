@@ -1,36 +1,15 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Overview
+This is the frontend of Arcadia built which contains both the public website and platform for Arcadia. The frontend will make API calls back to Django to grab information for each app.
 
-## Getting Started
+## Design / Tech
+The frontend will be split at the top between the public website which is labeled as `(public)` and the platform labeled as `platform`. The platform is built using Next.Js and its app router system alongside MUI for components and consistent styling. Further styling will be done through SCSS and implement the **BEM** methodology.
 
-First, run the development server:
+## Features
+The main features built/planned are the following.
+- Single account use between all the apps
+- App usability without having an account ( viewing anime/manga/game info but not tracking or watching/reading)
+- Customizable profiles
+- Implementation of smaller AI tasks and other creative free APIs
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ENV Example
+The frontend current does not need a private env file, so this section will be updated accordingly.

@@ -1,5 +1,25 @@
-# Arcadia
-Welcome to Arcadia! The ultimate platform for the ultimate Otaku. Now that I have a bit of full stack development under my belt, I decided to start this personal project. I wanted to create a sorta suite like platform like Google's suite and Adobe's but put a personal twist on it. I use several different anime related sites to do what I want to do but had the idea to create this sort of super suite just made for all things anime / otaku / gaming culture. I decided to take on this challenge firstly for fun but also to hone the skills I have learned so far, get opportunities to improve on those and learn new skills along the way.
+
+## Name
+Arcadia: Your Otaku Sanctuary!
+
+## Description
+Welcome to Arcadia! The ultimate platform for the ultimate Otaku. Arcadia is a web platform that aims to combine the common activities of an otaku into one convenient platform. The public website aims to explain the details of each app, and also a info simulation of our company "Team Double Dragon" such as about us, team and opportunity pages. There are the planned apps and a short description as well as real life equivalents.
+
+**Miru** - Anime info, tracking and watching ( MyAnimeList / Crunchyroll )
+**Yomu** - Manga, LN, etc tracking and reading ( MangaDex )
+**Asobu** - Video game and mod library ( NexusMods / Steam )
+**Kau** - Online merch/commerce ( Amazon )
+**Tsunagu** - Social media platform 
+
+**Iku** - Event planner and tracker
+**Kiku** - Music library ( Spotify / Soundcloud )
+**Kumitateru** - PC guide and builder ( PcPartPicker )
+**Hiku** - Gacha game guide ( Prydwen )
+**Shiru** - Blog and Articles ( AnimeNewsNetwork )
+
+## Technologies
+Arcadia will be implement using a Next JS frontend to handle both the public website, platform and possible admin sections. The backend will be built using Django and serve as a API accepting calls only from the frontends domain. There will be further plans to create a downloaded application and will require research on which technology will be suited to fit along side the prementioned.
+
 ## Installation / Setup
 1. Install **python3 **and **Node JS**
 2. Setup virtual environment
