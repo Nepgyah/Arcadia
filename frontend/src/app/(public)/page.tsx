@@ -1,6 +1,4 @@
 import React from "react";
-
-import '../../styles/public/homepage.scss';
 import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import { Accordion, AccordionDetails, AccordionSummary, Slide } from "@mui/material";
@@ -8,6 +6,9 @@ import Image from "next/image";
 
 import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 import Script from "next/script";
+import Link from "next/link";
+
+import '../../styles/public/homepage.scss';
 
 export default function Homepage() {
     return(
@@ -24,12 +25,12 @@ export default function Homepage() {
                         <div className="hero-gradient"></div>
                         <div className="hero__text">
                             <h1><span className="container"><span id="word" className="rotating-word">Stream.</span></span><br />Your Way.</h1>
-                            <p>Arcadia is your home base for everything otaku. Where fans come together to celebrate what they love and find something new.</p>
+                            <p className="main-text">Arcadia is your home base for everything otaku. Where fans come together to celebrate what they love and find something new.</p>
                             <div className="hero__button-container">
                                 <Button variant="contained" color="primary">
                                     Enter Arcadia
                                 </Button>
-                                <Button variant="text" color="primary">
+                                <Button variant="text" color="primary" href="#primary-apps">
                                     Explore the Apps
                                 </Button>
                             </div>
@@ -125,61 +126,71 @@ export default function Homepage() {
                                 Sign Up Today
                                 </Button>
                             </div>
-                            <div className="app-tile app-tile--vertical" id="miru">
-                                <div className="app-tile__image">
-                                    <img src="/website/homepage/primary-apps/miru.jpg" alt="" />
+                            <a href="apps/miru">
+                                <div className="app-tile app-tile--vertical" id="miru">
+                                    <div className="app-tile__image">
+                                        <img src="/website/homepage/primary-apps/miru.jpg" alt="" />
+                                    </div>
+                                    <div className="app-tile__text">
+                                        <p className="japanese">みる</p>
+                                        <h3 className="name">Miru</h3>
+                                        <p className="slogan">Explore the world of anime, one episode at a time</p>
+                                    </div>
                                 </div>
-                                <div className="app-tile__text">
-                                    <p className="japanese">みる</p>
-                                    <h3 className="name">Miru</h3>
-                                    <p className="slogan">Explore the world of anime, one episode at a time</p>
-                                </div>
-                            </div>
+                            </a>
                         </div>
                         <div id="primary-bottom-half">
                             <div id="bottom-left">
-                                <div className="app-tile app-tile--vertical" id="yomu">
-                                    <div className="app-tile__image">
-                                        <img src="/website/homepage/primary-apps/yomu.jpg" alt="" />
+                                <a href="apps/yomu">
+                                    <div className="app-tile app-tile--vertical" id="yomu">
+                                        <div className="app-tile__image">
+                                            <img src="/website/homepage/primary-apps/yomu.jpg" alt="" />
+                                        </div>
+                                        <div className="app-tile__text">
+                                            <p className="japanese">よむ</p>
+                                            <h3 className="name">Yomu</h3>
+                                            <p className="slogan">Where words create worlds</p>
+                                        </div>
                                     </div>
-                                    <div className="app-tile__text">
-                                        <p className="japanese">よむ</p>
-                                        <h3 className="name">Yomu</h3>
-                                        <p className="slogan">Where words create worlds</p>
+                                </a>
+                                <a href="apps/kau">
+                                    <div className="app-tile" id="kau">
+                                        <div className="app-tile__image">
+                                            <img src="/website/homepage/primary-apps/kau.jpg" alt="" />
+                                        </div>
+                                        <div className="app-tile__text">
+                                            <p className="japanese">かう</p>
+                                            <h3 className="name">Kau</h3>
+                                            <p className="slogan">From wish list to reality</p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="app-tile" id="kau">
-                                    <div className="app-tile__image">
-                                        <img src="/website/homepage/primary-apps/kau.jpg" alt="" />
-                                    </div>
-                                    <div className="app-tile__text">
-                                        <p className="japanese">かう</p>
-                                        <h3 className="name">Kau</h3>
-                                        <p className="slogan">From wish list to reality</p>
-                                    </div>
-                                </div>
+                                </a>
                             </div>
                             <div id="bottom-right">
-                                <div className="app-tile" id="asobu">
-                                    <div className="app-tile__image">
-                                        <img src="/website/homepage/primary-apps/asobu.jpg" alt="" />
+                                <a href="apps/asobu">
+                                    <div className="app-tile" id="asobu">
+                                        <div className="app-tile__image">
+                                            <img src="/website/homepage/primary-apps/asobu.jpg" alt="" />
+                                        </div>
+                                        <div className="app-tile__text">
+                                            <p className="japanese">あそぶ</p>
+                                            <h3 className="name">Asobu</h3>
+                                            <p className="slogan">From wish list to reality</p>
+                                        </div>
                                     </div>
-                                    <div className="app-tile__text">
-                                        <p className="japanese">あそぶ</p>
-                                        <h3 className="name">Asobu</h3>
-                                        <p className="slogan">From wish list to reality</p>
+                                </a>
+                                <a href="apps/tsunagu">
+                                    <div className="app-tile" id="tsunagu">
+                                        <div className="app-tile__text">
+                                            <p className="japanese">つなぐ</p>
+                                            <h3 className="name">Tsunagu</h3>
+                                            <p className="slogan">Join the conversation, shape the fandom</p>
+                                        </div>
+                                        <div className="app-tile__image">
+                                            <img src="/website/homepage/primary-apps/tsunagu.jpg" alt="" />
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="app-tile" id="tsunagu">
-                                    <div className="app-tile__text">
-                                        <p className="japanese">つなぐ</p>
-                                        <h3 className="name">Tsunagu</h3>
-                                        <p className="slogan">Join the conversation, shape the fandom</p>
-                                    </div>
-                                    <div className="app-tile__image">
-                                        <img src="/website/homepage/primary-apps/tsunagu.jpg" alt="" />
-                                    </div>
-                                </div>
+                                </a>
                             </div>
                         </div>
                     </div>

@@ -11,33 +11,47 @@
         left: 0;
         width: 100%;
         height: 100%;
+        object-fit: cover;
+    }
+
+    &__bg-element {
+        position: absolute;
+        z-index: 2;
     }
 
     &__wrapper {
         position: relative;
         z-index: 2;
         max-width: $max-width;
-        padding: 0 20px;
+        padding: 5rem 20px;
         margin: auto;
         min-height: inherit;
         
         &--two-column {
             display: grid;
             grid-template-columns: 1fr;
+            row-gap: 4rem;
         }
     }
 
     &__text {
-        display: flex;
-        flex-direction: column;
-        row-gap: 2rem;
 
-        h1 {
-            font-size: 3.5rem;
+        &--white {
+            color: white;
         }
 
-        h1, p {
-            color: $arcadia-primary-one;
+        .japanese {
+            font-size: .75rem;
+            color: inherit;
+        }
+
+        h1 {
+            text-box-trim: trim-both;
+            font-size: 4rem;
+        }
+
+        h1, .main-text {
+            margin-bottom: 2rem;
         }
     }
 
@@ -56,6 +70,7 @@
 
             &--two-column {
                 grid-template-columns: 1fr 1fr;
+                column-gap: 2rem;
             }
         }
     }
