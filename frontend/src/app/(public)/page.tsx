@@ -7,6 +7,7 @@ import Image from "next/image";
 import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 import Script from "next/script";
 import Link from "next/link";
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 import '../../styles/public/homepage.scss';
 
@@ -15,10 +16,11 @@ export default function Homepage() {
         <div id="page-homepage">
             <section id="hero" className="hero">
                 <p id="arcadia-text">アルケディア</p>
-                <img 
+                <Image 
                     className="hero__bg-image"
-                    src="/website/homepage/hero/anime-world.png" 
-                    alt="" 
+                    src="/website/images/homepage/hero/anime-world.png" 
+                    alt="Anime fantasy world"
+                    fill
                 />
                 <div className="homepage-hero-wrapper">
                     <div className="left-col">
@@ -45,16 +47,107 @@ export default function Homepage() {
                     </div>
                     <div className="right-col">
                         <div className="hero-gradient"></div>
-                        <img id="hero-blurb" src="/website/homepage/hero/hero-blurb.svg" alt="" />
-                        <img id="furina" src="/website/homepage/hero/furina.png" alt="" />
+                        <Image 
+                            id="hero-blurb"
+                            className="responsive-image" 
+                            width={525} 
+                            height={413} 
+                            src="/website/images/homepage/hero/hero-blurb.svg" 
+                            alt="Purple shapes" 
+                        />
+                        <Image 
+                            id="furina"
+                            className="responsive-image"
+                            width={500} 
+                            height={900} 
+                            src="/website/images/homepage/hero/furina.png" 
+                            alt="Furina de Fontaine"
+                        />
                     </div>
                 </div>
             </section>
+
             <div id="gradient-one">
+
+                <section id="bento-overview" className="section">
+                    <div className="section__wrapper">
+                        <div className="group one">
+                            <Tooltip title="Check out the repo!" arrow placement="top">
+                                <a className="github shadow-box" href="https://github.com/Nepgyah/Arcadia" target="_blank">
+                                    <div>
+                                        <GitHubIcon />
+                                    </div>
+                                </a>
+                            </Tooltip>
+                            <div className="apps primary shadow-box">
+                                <img src="/global/app-icons/miru.svg" alt="Miru icon" />
+                                <img src="/global/app-icons/yomu.svg" alt="Yomu icon" />
+                                <img src="/global/app-icons/asobu.svg" alt="Asobu icon" />
+                                <img src="/global/app-icons/kau.svg" alt="Kau icon" />
+                                <img src="/global/app-icons/tsunagu.svg" alt="Tsunagu icon" />
+                            </div>
+                            <div className="girl desktop-only">
+                                <img src="/website/images/homepage/hero/anime-girl-one.png" alt="" />
+                            </div>
+                            <div className="users shadow-box">
+                                <p className="count">1,364</p>
+                                <p className="user">ユーザー</p>
+                            </div>
+                            <div className="girl desktop-only">
+                                <img src="/website/images/homepage/hero/anime-girl-two.png" alt="" />
+                            </div>
+                            <div className="slogan shadow-box">
+                                Your Otaku Sanctuary
+                            </div>
+                        </div>
+                        <div className="stats desktop-only shadow-box">
+                            <div>
+                                <p>2,102</p>
+                                <p>アニメ</p>
+                            </div>
+                            <div>
+                                <p>1,956</p>
+                                <p>漫画</p>
+                            </div>
+                            <div>
+                                <p>1,367</p>
+                                <p>ゲ-ム</p>
+                            </div>
+                            <div id="one-platform">
+                                1 Platform
+                            </div>
+                        </div>
+                        <div className="group two">
+                            <div className="anime-peace shadow-box">
+                                <img src="/website/images/homepage/hero/kongou.png" alt="" />
+                            </div>
+                            <div className="logo">
+                                <img src="/global/logo/logo-solo-icon.png" alt="" />
+                            </div>
+                            <div className="icon">
+                                <img className="animation__rotate" src="/website/images/homepage/hero/flower.png" alt="" />
+                            </div>
+                            <div className="apps secondary shadow-box">
+                                <img src="/global/app-icons/iku.svg" alt="Iku icon" />
+                                <img src="/global/app-icons/hiku.svg" alt="Hiku icon" />
+                                <img src="/global/app-icons/kiku.svg" alt="Kiku icon" />
+                                <img src="/global/app-icons/shiru.svg" alt="Shiru icon" />
+                                <img src="/global/app-icons/kumitateru.svg" alt="Kumitateru icon" />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <section id="features" className="section">
                     <div id="feature-image" className="desktop-only">
                         <div className="offset-frame"></div>
-                        <img src="/website/homepage/features/anime-girl-on-phone.png" alt="" />
+                        <Image
+                            className="responsive-image"
+                            width={298} 
+                            height={550} 
+                            src="/website/images/homepage/features/anime-girl-on-phone.png" 
+                            alt="Anime girl on her phone" 
+                        />
                     </div>
                     <div className="section__wrapper">
                         <div id="features-text">
@@ -83,6 +176,7 @@ export default function Homepage() {
                         </div>
                     </div>
                 </section>
+
                 <section id="partners" className="section">
                     <div className="section__wrapper">
                         <div className="section-main section-main--white">
@@ -92,7 +186,7 @@ export default function Homepage() {
                         </div>
                         <div className="section-content section-content--flex">
                             <div className="partner-logo">
-                                <img src="/website/partners/crunchyroll_white.svg" alt="" />
+                                <img src="/website/partners/crunchyroll_white.svg" alt="Crunchyroll logo" />
                             </div>
                             <div className="partner-logo">
                                 <img src="/website/partners/nexon_white.png" alt="" />
@@ -115,6 +209,7 @@ export default function Homepage() {
                         </div>
                     </div>
                 </section>
+
                 <section id="primary-apps" className="section">
                     <div className="section__wrapper">
                         <div id="primary-top-half">
@@ -129,7 +224,7 @@ export default function Homepage() {
                             <a href="apps/miru">
                                 <div className="app-tile app-tile--vertical" id="miru">
                                     <div className="app-tile__image">
-                                        <img src="/website/homepage/primary-apps/miru.jpg" alt="" />
+                                        <Image fill src="/website/images/homepage/primary-apps/miru.jpg" alt="Anime girls watching togther" />
                                     </div>
                                     <div className="app-tile__text">
                                         <p className="japanese">みる</p>
@@ -144,7 +239,7 @@ export default function Homepage() {
                                 <a href="apps/yomu">
                                     <div className="app-tile app-tile--vertical" id="yomu">
                                         <div className="app-tile__image">
-                                            <img src="/website/homepage/primary-apps/yomu.jpg" alt="" />
+                                            <Image fill src="/website/images/homepage/primary-apps/yomu.jpg" alt="Smiling anime girl with book" />
                                         </div>
                                         <div className="app-tile__text">
                                             <p className="japanese">よむ</p>
@@ -156,7 +251,7 @@ export default function Homepage() {
                                 <a href="apps/kau">
                                     <div className="app-tile" id="kau">
                                         <div className="app-tile__image">
-                                            <img src="/website/homepage/primary-apps/kau.jpg" alt="" />
+                                            <Image fill src="/website/images/homepage/primary-apps/kau.jpg" alt="Blue asthetic shopping" />
                                         </div>
                                         <div className="app-tile__text">
                                             <p className="japanese">かう</p>
@@ -170,7 +265,7 @@ export default function Homepage() {
                                 <a href="apps/asobu">
                                     <div className="app-tile" id="asobu">
                                         <div className="app-tile__image">
-                                            <img src="/website/homepage/primary-apps/asobu.jpg" alt="" />
+                                            <Image fill src="/website/images/homepage/primary-apps/asobu.jpg" alt="Gaming friends" />
                                         </div>
                                         <div className="app-tile__text">
                                             <p className="japanese">あそぶ</p>
@@ -187,7 +282,7 @@ export default function Homepage() {
                                             <p className="slogan">Join the conversation, shape the fandom</p>
                                         </div>
                                         <div className="app-tile__image">
-                                            <img src="/website/homepage/primary-apps/tsunagu.jpg" alt="" />
+                                            <Image fill src="/website/images/homepage/primary-apps/tsunagu.jpg" alt="Anime guys hanging out" />
                                         </div>
                                     </div>
                                 </a>
@@ -197,7 +292,7 @@ export default function Homepage() {
                 </section>
             </div>
             <div id="root-experience">
-                <img id="root-bg" src="/website/homepage/roots/sakura-branch.svg" alt="" />
+                <img id="root-bg" src="/website/images/homepage/roots/sakura-branch.svg" alt="" />
                 <section id="roots" className="section">
                     <div className="section__wrapper">
                         <div className="section-main">
@@ -207,7 +302,7 @@ export default function Homepage() {
                         <div className="section-content section-content--two-col">
                             <div className="image">
                                 <div className="bg-box"></div>
-                                <Image height={500} width={500} src="/website/homepage/roots/game_developers.jpg" alt=""/>
+                                <Image height={500} width={500} className="responsive-image" src="/website/images/homepage/roots/game_developers.jpg" alt=""/>
                             </div>
                             <div className="accordion">
                                 <Accordion>
@@ -243,28 +338,52 @@ export default function Homepage() {
                         </div>
                         <div className="section-content section-content--four-col">
                             <div className="step">
-                                <img src="/website/homepage/steps/bored-anime-girls.png" alt="" />
+                                <Image 
+                                    className="responsive-image" 
+                                    width={332} 
+                                    height={332} 
+                                    src="/website/images/homepage/steps/bored-anime-girls.png" 
+                                    alt="Bored anime girls" 
+                                />
                                 <div className="step__text">
                                     <h3>Create</h3>
                                     <p>Create your Arcadia account! An email, password and your passion is all you need.</p>
                                 </div>
                             </div>
                             <div className="step">
-                                <img src="/website/homepage/steps/thinking-anime-girl.png" alt="" />
+                                <Image 
+                                    className="responsive-image" 
+                                    width={332} 
+                                    height={332} 
+                                    src="/website/images/homepage/steps/thinking-anime-girl.png" 
+                                    alt="Studying and refining" 
+                                />
                                 <div className="step__text">
                                     <h3>Tune</h3>
                                     <p>Your account isn’t just some data vessel, customize it to make it your own!</p>
                                 </div>
                             </div>
                             <div className="step">
-                                <img src="/website/homepage/steps/exploring-anime-girls.png" alt="" />
+                                <Image 
+                                    className="responsive-image" 
+                                    width={332} 
+                                    height={332} 
+                                    src="/website/images/homepage/steps/exploring-anime-girls.png" 
+                                    alt="Looking at a map" 
+                                />
                                 <div className="step__text">
                                     <h3>Explore</h3>
                                     <p>Find the apps that suit your fandom, and dive into Arcadia adventures.</p>
                                 </div>
                             </div>
                             <div className="step">
-                                <img src="/website/homepage/steps/delivering-anime-girl.png" alt="" />
+                                <Image 
+                                    className="responsive-image" 
+                                    width={332} 
+                                    height={332} 
+                                    src="/website/images/homepage/steps/delivering-anime-girl.png" 
+                                    alt="Transferingg goods" 
+                                />
                                 <div className="step__text">
                                     <h3>Transfer</h3>
                                     <p>Coming from MAL, PC Partpicker or somewhere else? Bring them along here!</p>
@@ -275,7 +394,7 @@ export default function Homepage() {
                 </section>
             </div>
             <div id="sakura-world">
-                <img id="sakura-lake" src="/website/homepage/middle-cta/sakura-lake.svg" alt="" />
+                <Image className="responsive-image" width={1861} height={1669} id="sakura-lake" src="/website/images/homepage/middle-cta/sakura-lake.svg" alt="" />
                 <section id="secondary-app" className="section">
                     <div className="section__wrapper">
                         <div className="section-main section-main--center">
@@ -292,12 +411,12 @@ export default function Homepage() {
                                         <p className="slogan">Go where the community goes</p>
                                     </div>
                                     <div className="app-tile__image">
-                                        <img src="/website/homepage/secondary-apps/iku.jpg" alt="" />
+                                        <Image fill src="/website/images/homepage/secondary-apps/iku.jpg" alt="Exploring the anime universe" />
                                     </div>
                                 </div>
                                 <div className="app-tile" id="hiku">
                                     <div className="app-tile__image">
-                                        <img src="/website/homepage/secondary-apps/hiku.jpg" alt="" />
+                                        <Image fill src="/website/images/homepage/secondary-apps/hiku.jpg" alt="Gamer girl" />
                                     </div>
                                     <div className="app-tile__text">
                                         <p className="japanese">ひく</p>
@@ -309,7 +428,7 @@ export default function Homepage() {
                             <div className="right-col">
                                 <div className="app-tile" id="shiru">
                                     <div className="app-tile__image">
-                                        <img src="/website/homepage/secondary-apps/shiru.jpg" alt="" />
+                                        <Image fill src="/website/images/homepage/secondary-apps/shiru.jpg" alt="Hanging out at a dinner" />
                                     </div>
                                     <div className="app-tile__text">
                                         <p className="japanese">しる</p>
@@ -319,7 +438,7 @@ export default function Homepage() {
                                 </div>
                                 <div className="app-tile" id="kumitateru">
                                     <div className="app-tile__image">
-                                        <img src="/website/homepage/secondary-apps/kumitateru.jpg" alt="" />
+                                        <Image fill src="/website/images/homepage/secondary-apps/kumitateru.jpg" alt="Building a PC" />
                                     </div>
                                     <div className="app-tile__text">
                                         <p className="japanese">くみたてる</p>
@@ -334,7 +453,7 @@ export default function Homepage() {
                                         <p className="slogan">Relax.<br />Focus.<br /> Create.</p>
                                     </div>
                                     <div className="app-tile__image">
-                                        <img src="/website/homepage/secondary-apps/kiku.jpg" alt="" />
+                                        <Image fill src="/website/images/homepage/secondary-apps/kiku.jpg" alt="Studying and listening to lofi" />
                                     </div>
                                 </div>
                             </div>
@@ -392,7 +511,12 @@ export default function Homepage() {
             <section id="footer-cta">
                 <div className="section__full-wrapper">
                     <div className="img">
-                        <img src="/website/homepage/footer-cta/anime-girls.jpg" alt="" />
+                        <Image
+                            fill
+                            src="/website/images/homepage/footer-cta/anime-girls.jpg" 
+                            alt="Girls having a great time" 
+                            loading="lazy"
+                        />
                     </div>
                     <div className="text">
                         <h2>Ready to Enter Arcadia?</h2>
@@ -404,7 +528,7 @@ export default function Homepage() {
                 </div>
             </section>
 
-            <Script src="/js/homepage.js" />
+            <Script src="/website/js/homepage.js" />
         </div>
     )
 }

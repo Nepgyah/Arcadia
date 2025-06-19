@@ -9,7 +9,7 @@ export default function Tsunagu() {
             <section id='hero' className='hero'>
                 <img
                     className='hero__bg-element' 
-                    src="/website/apps/tsunagu/hero/globe.svg" 
+                    src="/website/images/apps/tsunagu/hero/globe.svg" 
                     alt="" 
                 />
 
@@ -26,13 +26,13 @@ export default function Tsunagu() {
                     </div>
                     <div className='support-image'>
                         <div className='column'>
-                            <img src="/website/apps/tsunagu/hero/jjk.jpg" alt="" />
+                            <img src="/website/images/apps/tsunagu/hero/jjk.jpg" alt="" />
                             <p className='headline'>Your <br /><span>Feed</span></p>
-                            <img src="/website/apps/tsunagu/hero/ba.jpg" alt="" />
+                            <img src="/website/images/apps/tsunagu/hero/ba.jpg" alt="" />
                         </div>
                         <div className='column'>
                             <p className='headline'>Your <br /><span>World</span></p>
-                            <img src="/website/apps/tsunagu/hero/selfie.png" alt="" />
+                            <img src="/website/images/apps/tsunagu/hero/selfie.png" alt="" />
                             <p className='headline'>Your <br /><span>Fandom</span></p>
                         </div>
                     </div>

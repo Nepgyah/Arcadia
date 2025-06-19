@@ -7,7 +7,7 @@ export default function Asobu() {
         <div id='page-apps-asobu'>
 
             <section id='hero' className='hero'>
-                <img className='hero__bg-image' src="/website/apps/asobu/hero/irelia.jpg" alt="" />
+                <img className='hero__bg-image' src="/website/images/apps/asobu/hero/irelia.jpg" alt="" />
                 <div id='hero-arrow-1' className='hero__bg-element hero-arrow desktop-only' />
                 <div id='hero-arrow-2' className='hero__bg-element hero-arrow desktop-only' />
                 <div id='hero-arrow-3' className='hero__bg-element hero-arrow desktop-only' />

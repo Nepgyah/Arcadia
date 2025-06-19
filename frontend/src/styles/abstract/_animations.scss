@@ -1,0 +1,17 @@
+// Animation Class
+.animation {
+    
+    &__rotate {
+        animation: rotate 10s infinite linear;
+    }
+}
+
+// Animations
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

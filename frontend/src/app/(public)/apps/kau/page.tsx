@@ -10,10 +10,10 @@ export default function Kau() {
     return (
         <div id="page-apps-kau">
             <section id="hero" className="hero">
-                <img id='hero-lines-1' className='hero__bg-element desktop-only' src="/website/apps/kau/hero/hero-lines.svg" alt="" />
-                <img id='hero-lines-2' className='hero__bg-element desktop-only' src="/website/apps/kau/hero/hero-lines-2.svg" alt="" />
+                <img id='hero-lines-1' className='hero__bg-element desktop-only' src="/website/images/apps/kau/hero/hero-lines.svg" alt="" />
+                <img id='hero-lines-2' className='hero__bg-element desktop-only' src="/website/images/apps/kau/hero/hero-lines-2.svg" alt="" />
                 <div className="hero__wrapper">
-                    <img id='marin' className='desktop-only' src="/website/apps/kau/hero/marin.png" alt="Marin Kitagawa" />
+                    <img id='marin' className='desktop-only' src="/website/images/apps/kau/hero/marin.png" alt="Marin Kitagawa" />
                     <div className="hero__text">
                         <div className="mobile-only">
                             <p className="japanese">アケーディアーかう</p>
@@ -25,7 +25,7 @@ export default function Kau() {
                         </div>
                     </div>
                     <div className="cta">
-                        <img className='desktop-only' src="/website/apps/kau/hero/signature.png" alt="" />
+                        <img className='desktop-only' src="/website/images/apps/kau/hero/signature.png" alt="" />
                         <div className='cta-container'>
                             <p>Shop the latest anime merch, trendy apparel, and exclusive cosplay pieces</p>
                             <Button variant="contained" color="primary">
@@ -39,13 +39,13 @@ export default function Kau() {
                     </div>
                     <div className='spotlight'>
                         <div className='image'>
-                            <img src="/website/apps/kau/hero/marin-smol-1.png" alt="" />
+                            <img src="/website/images/apps/kau/hero/marin-smol-1.png" alt="" />
                         </div>
                         <div className='image'>
-                            <img src="/website/apps/kau/hero/marin-smol-2.png" alt="" />
+                            <img src="/website/images/apps/kau/hero/marin-smol-2.png" alt="" />
                         </div>
                         <div className='image'>
-                            <img src="/website/apps/kau/hero/marin-smol-3.png" alt="" />
+                            <img src="/website/images/apps/kau/hero/marin-smol-3.png" alt="" />
                         </div>
                         <div className='socials'>
                             <div className='social-links'>

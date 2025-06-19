@@ -9,30 +9,30 @@ export default function Miru() {
 
             <section id="hero" className="hero">
                 
-                <img className='hero__bg-image' src="/website/apps/miru/hero/anime-world.jpg" alt="" />
+                <img className='hero__bg-image' src="/website/images/apps/miru/hero/anime-world.jpg" alt="" />
                 <div id='hero-divider' className='hero__bg-element desktop-only'></div>
                 <img 
                     id='anime-characters'
                     className='hero__bg-element desktop-only' 
-                    src="/website/apps/miru/hero/anime-characters.png" 
+                    src="/website/images/apps/miru/hero/anime-characters.png" 
                     alt="" 
                 />
                 <img 
                     id='wind-el-1'
                     className='hero__bg-element desktop-only' 
-                    src="/website/apps/miru/hero/wind-el-1.png" 
+                    src="/website/images/apps/miru/hero/wind-el-1.png" 
                     alt="" 
                 />
                 <img 
                     id='wind-el-2'
                     className='hero__bg-element desktop-only' 
-                    src="/website/apps/miru/hero/wind-el-2.png" 
+                    src="/website/images/apps/miru/hero/wind-el-2.png" 
                     alt="" 
                 />
                 <img 
                     id='wind-el-3'
                     className='hero__bg-element desktop-only' 
-                    src="/website/apps/miru/hero/wind-el-3.png" 
+                    src="/website/images/apps/miru/hero/wind-el-3.png" 
                     alt="" 
                 />
                 <div className="hero__wrapper hero__wrapper--two-column">

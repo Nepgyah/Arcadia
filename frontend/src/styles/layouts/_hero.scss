@@ -47,7 +47,7 @@
 
         h1 {
             text-box-trim: trim-both;
-            font-size: 4rem;
+            font-size: 2rem;
         }
 
         h1, .main-text {
@@ -64,13 +64,20 @@
 @media only screen and (min-width: 768px) {
 
     .hero {
-        min-height: 900px;
+        min-height: 860px;
 
         &__wrapper {
 
             &--two-column {
                 grid-template-columns: 1fr 1fr;
                 column-gap: 2rem;
+            }
+        }
+
+        &__text {
+            h1 {
+                text-box-trim: trim-both;
+                font-size: 4rem;
             }
         }
     }

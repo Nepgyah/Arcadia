@@ -10,23 +10,23 @@ export default function Yomu() {
                 <img
                     id="left-books"
                     className="hero__bg-element desktop-only" 
-                    src="/website/apps/yomu/hero/left-side-books.png" 
+                    src="/website/images/apps/yomu/hero/left-side-books.png" 
                     alt="" 
                 />
                 <img
                     id="right-books"
                     className="hero__bg-element desktop-only" 
-                    src="/website/apps/yomu/hero/right-side-books.png" 
+                    src="/website/images/apps/yomu/hero/right-side-books.png" 
                     alt="" 
                 />
                 <img
                     className="hero__bg-image" 
-                    src="/website/apps/yomu/hero/bg.png" 
+                    src="/website/images/apps/yomu/hero/bg.png" 
                     alt="" 
                 />
                 <div className="hero__wrapper hero__wrapper--two-column">
                     <div className="hero-image">
-                        <img src="/website/apps/yomu/hero/manga-panels.png" alt="manga-panels" />
+                        <img src="/website/images/apps/yomu/hero/manga-panels.png" alt="manga-panels" />
                     </div>
                     <div className="center-content text-container">
                         <div className="hero__text">
