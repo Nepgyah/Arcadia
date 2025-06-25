@@ -1,27 +1,6 @@
 @use '../abstract/variables' as *;
 @forward "../abstract";
 @forward '../layouts';
-@forward '../base';
-
-html {
-    background-color: $bg-body-light-primary;
-    font-size: 18px;
-    
-    body {
-        padding-top: 5rem;
-        color: $text-dark-primary;
-        overflow-x: hidden;
-    }
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    
-    &:visited {
-        color: inherit;
-    }
-}
 
 .responsive-image {
   height: auto !important;
@@ -32,9 +11,8 @@ h1, h2, h3, h4, p {
     color: inherit;
 }
 
-.MuiButtonBase-root {
-    width: fit-content;
-    text-transform: capitalize;
+body {
+    padding-top: 5rem;
 }
 
 .desktop-only {

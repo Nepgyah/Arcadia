@@ -1,0 +1,28 @@
+// Holds styles that persists through all parts of arcadia
+@use  "./abstract/variables" as *;
+@forward './base/';
+
+html {
+    background-color: $bg-body-light-primary;
+    font-size: 18px;
+    
+    body {
+        color: $text-dark-primary;
+        overflow-x: hidden;
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            
+            &:visited {
+                color: inherit;
+            }
+        }
+
+        .MuiButtonBase-root {
+            width: fit-content;
+            text-transform: capitalize;
+            font-weight: bold;
+        }
+    }
+}
