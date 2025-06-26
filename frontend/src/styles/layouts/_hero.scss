@@ -14,6 +14,16 @@
         object-fit: cover;
     }
 
+    &__mask {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+    }
+
     &__bg-element {
         position: absolute;
         z-index: 2;
@@ -38,6 +48,10 @@
 
         &--white {
             color: white;
+        }
+
+        &--center {
+            text-align: center;
         }
 
         .japanese {

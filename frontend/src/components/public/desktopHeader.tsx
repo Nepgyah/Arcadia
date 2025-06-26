@@ -11,12 +11,12 @@ export default function DesktopHeader() {
     const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
     const solutionsAnchor = useRef<HTMLElement | null>(null);
 
-    const [isResourcesOpen, setIsResourcesOpen] = useState(false);
-    const resourceAnchor = useRef<HTMLElement | null>(null);
+    const [isD2XOpen, setIsD2XOpen] = useState(false);
+    const d2xAnchor = useRef<HTMLElement | null>(null);
 
     useEffect(() => {
         solutionsAnchor.current = document.getElementById('solutions-btn');
-        resourceAnchor.current = document.getElementById('resources-btn');
+        d2xAnchor.current = document.getElementById('d2x-btn');
     }, []);
 
     return (
@@ -28,7 +28,7 @@ export default function DesktopHeader() {
             </div>
             <div className='nav'>
                 <div>
-                    <Button className='nav__main' variant='text'>
+                    <Button className='nav__main' variant='text' onClick={() => router.push('/')}>
                         Home
                     </Button>
                 </div>
@@ -52,6 +52,24 @@ export default function DesktopHeader() {
                         <MenuItem onClick={() => router.push('/apps/asobu')}>Asobu</MenuItem>
                         <MenuItem onClick={() => router.push('/apps/kau')}>Kau</MenuItem>
                         <MenuItem onClick={() => router.push('/apps/tsunagu')}>Tsunagu</MenuItem>
+                    </Menu>
+                </div>
+                <div>
+                    <Button 
+                        className='nav__main' 
+                        id='d2x-btn' 
+                        onClick={() => setIsD2XOpen(true)}
+                    >
+                        D2X
+                    </Button>
+                    <Menu
+                        id='d2x-dropdown'
+                        anchorEl={d2xAnchor.current}
+                        open={isD2XOpen}
+                        onClose={() => setIsD2XOpen(false)}
+                        disableScrollLock
+                    >
+                        <MenuItem onClick={() => router.push('/d2x/team')}>Team</MenuItem>
                     </Menu>
                 </div>
             </div>

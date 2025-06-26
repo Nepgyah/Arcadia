@@ -6,6 +6,7 @@ import { useRef, useState } from "react";
 
 import BurgerIcon from '@mui/icons-material/LunchDining';
 import React from "react";
+import Link from "next/link";
 
 export default function MobileHeader() {
 
@@ -14,7 +15,8 @@ export default function MobileHeader() {
     const [isOpen, setIsOpen] = useState<boolean>(false)
 
     const [isAppsOpen, setIsAppsOpen] = useState(false);
-    
+    const [isD2XOpen, setIsD2XOpen] = useState(false);
+
     const handleClick = (route: string) => {
         setIsOpen(false)
         router.push(route)
@@ -24,12 +26,12 @@ export default function MobileHeader() {
         <React.Fragment>
             <Drawer className="mobile-nav-drawer" open={isOpen} onClose={() => setIsOpen(false)}>
                 <div className='header__logo'>
-                    <a href="/">
+                    <Link href="/">
                         <img src="/global/logo_white.svg" alt="Alter" />
-                    </a>
+                    </Link>
                 </div>
                 <nav className="nav">
-                    <Button>Home</Button>
+                    <Button onClick={() => handleClick('/')}>Home</Button>
                     <Button onClick={() => setIsAppsOpen(!isAppsOpen)}>Apps</Button>
                     <Collapse in={isAppsOpen}>
                         <Button onClick={() => handleClick('/apps/miru')}>Miru</Button>
@@ -37,6 +39,10 @@ export default function MobileHeader() {
                         <Button onClick={() => handleClick('/apps/asobu')}>Asobu</Button>
                         <Button onClick={() => handleClick('/apps/kau')}>Kau</Button>
                         <Button onClick={() => handleClick('/apps/tsunagu')}>Tsunagu</Button>
+                    </Collapse>
+                    <Button onClick={() => setIsD2XOpen(!isD2XOpen)}>D2X</Button>
+                    <Collapse in={isD2XOpen}>
+                        <Button onClick={() => handleClick('/d2x/team')}>Team</Button>
                     </Collapse>
                 </nav>
                 <div className='header__cta'>
