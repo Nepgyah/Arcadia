@@ -74,12 +74,16 @@ export default function DesktopHeader() {
                 </div>
             </div>
             <div className='header__cta'>
-                <Button variant="contained" color="secondary">
+                <Button 
+                    variant="contained" 
+                    color="secondary"
+                    onClick={() => router.push('/auth/login')}
+                >
                     Login
                 </Button>
-                <Button variant="outlined" color="secondary">
+                {/* <Button variant="outlined" color="secondary">
                     Contact Us
-                </Button>
+                </Button> */}
             </div>
         </div>
     );

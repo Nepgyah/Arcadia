@@ -37,7 +37,7 @@ export default function ForgotPassword() {
                         >
                             Send
                         </Button>
-                        <p className='instruction'><Link href="/auth/login">Remember Your Password?</Link></p>
+                        <p className='instruction'><Link href="/platform/auth/login">Remember Your Password?</Link></p>
                     </div>
                 </div>
                 <div className="logo">

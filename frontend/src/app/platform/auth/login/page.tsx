@@ -22,7 +22,7 @@ export default function Login() {
                     <h1>Login</h1>
                     <p className='note'><b>NOTE:</b> Currently the platform is in development, so account login/creation is disabled. This page does nothing... yet.</p>
                     <div className="form-content">
-                        <p className="instruction">Dont have an account? <a href="/auth/create">Create one here</a></p>
+                        <p className="instruction">Dont have an account? <Link href="/platform/auth/create">Create one here</Link></p>
                         <TextField
                           id="email"
                           label="Email"
@@ -47,7 +47,7 @@ export default function Login() {
                         >
                             Login
                         </Button>
-                        <p className='instruction'><Link href="/auth/forgot">Forgot your password?</Link></p>
+                        <p className='instruction'><Link href="/platform/auth/forgot">Forgot your password?</Link></p>
                     </div>
                 </div>
                 <div className="logo">
