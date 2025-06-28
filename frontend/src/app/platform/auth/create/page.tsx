@@ -50,11 +50,13 @@ export default function CreateAccount() {
                         >
                             Create
                         </Button>
-                        <p className='instruction'><Link href="/auth/login">Already have an account?</Link></p>
+                        <p className='instruction'><Link href="/platform/auth/login">Already have an account?</Link></p>
                     </div>
                 </div>
                 <div className="logo">
-                    <img src="/global/logo/logo-dark.svg" alt="Arcadia logo dark version" />
+                    <Link href="/">
+                        <img src="/global/logo/logo-dark.svg" alt="Arcadia logo dark version" />
+                    </Link>
                 </div>
             </div>
             <div className="image">

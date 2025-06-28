@@ -15,9 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <ThemeWrapper>
       <CssBaseline>
         <html lang="en">
-          <body>
             {children}
-          </body>
         </html>
       </CssBaseline>
     </ThemeWrapper>

@@ -9,7 +9,9 @@ export default async function PlatformShell({ children }: { children: React.Reac
 
   return (
     <UserProvider user={user}>
-        <main>{children}</main>
+      <body>
+        {children}
+      </body>
     </UserProvider>
   );
 }

@@ -77,7 +77,7 @@ export default function DesktopHeader() {
                 <Button 
                     variant="contained" 
                     color="secondary"
-                    onClick={() => router.push('/auth/login')}
+                    onClick={() => router.push('/platform/auth/login')}
                 >
                     Login
                 </Button>

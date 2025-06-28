@@ -49,7 +49,7 @@ export default function MobileHeader() {
                     <Button 
                         variant="contained" 
                         color="secondary"
-                        onClick={() => handleClick('/auth/login')}
+                        onClick={() => handleClick('platform/auth/login')}
                     >
                         Login
                     </Button>

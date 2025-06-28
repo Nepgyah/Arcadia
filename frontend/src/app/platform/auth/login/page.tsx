@@ -51,7 +51,9 @@ export default function Login() {
                     </div>
                 </div>
                 <div className="logo">
-                    <img src="/global/logo/logo-dark.svg" alt="Arcadia logo dark version" />
+                    <Link href="/">
+                        <img src="/global/logo/logo-dark.svg" alt="Arcadia logo dark version" />
+                    </Link>
                 </div>
             </div>
             <div className="image">
@@ -59,7 +61,7 @@ export default function Login() {
                     <p>Source: Blue Archive</p>
                     <p>Credit: Nexon Games</p>
                 </div>
-                <img src="/auth/sunaookami-shiroko.jpg" alt="Sunaookami Shiroko" />
+                <img src="/auth/sunaookami-shiroko.jpg" alt="Sunaookami Shiroko" />            
             </div>
         </div>
     )

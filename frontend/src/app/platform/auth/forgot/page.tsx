@@ -41,7 +41,9 @@ export default function ForgotPassword() {
                     </div>
                 </div>
                 <div className="logo">
-                    <img src="/global/logo/logo-dark.svg" alt="Arcadia logo dark version" />
+                    <Link href="/">
+                        <img src="/global/logo/logo-dark.svg" alt="Arcadia logo dark version" />    
+                    </Link>
                 </div>
             </div>
         </div>
