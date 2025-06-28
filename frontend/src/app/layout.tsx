@@ -11,6 +11,9 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  // Wraps the entire project, include things that are absolutely
+  // Essential to both sides of the project
+  
   return (
     <ThemeWrapper>
       <CssBaseline>
