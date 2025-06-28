@@ -46,7 +46,11 @@ export default function MobileHeader() {
                     </Collapse>
                 </nav>
                 <div className='header__cta'>
-                    <Button variant="contained" color="secondary">
+                    <Button 
+                        variant="contained" 
+                        color="secondary"
+                        onClick={() => handleClick('platform/auth/login')}
+                    >
                         Login
                     </Button>
                     <Button variant="outlined" color="secondary">
