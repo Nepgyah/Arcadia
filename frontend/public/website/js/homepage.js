@@ -1,4 +1,3 @@
-console.log('loaded');
 const words = ["Stream.", "Read.", "Game.", "Collect.", "Connect."];
 let index = 0;
 const span = document.getElementById("word");

@@ -110,6 +110,7 @@
 
         &#iku {
             background-color: $iku-primary;
+            height: 343px;
 
             .app-tile__image {
                 width: 55%;
@@ -123,6 +124,7 @@
 
         &#hiku {
             background-color: $hiku-primary;
+            height: 343px;
 
             .app-tile__image {
                 width: 50%;
@@ -703,8 +705,6 @@
             &#tsunagu {
                 background-color: $tsunagu-primary;
                 height: 350px;
-                
-            
             }
         }
 
