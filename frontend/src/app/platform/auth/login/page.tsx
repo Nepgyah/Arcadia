@@ -1,5 +1,6 @@
 'use client';
 
+import { apiPOST } from '@/util/api';
 import { Button, Checkbox, FormControl, FormControlLabel } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import Link from 'next/link';
@@ -14,6 +15,11 @@ export default function Login() {
     const handleRemember = (event: React.ChangeEvent<HTMLInputElement>) => {
         setRemember(event.target.checked)
     }
+
+    const login = () => {
+
+    }
+    
     return (
         <div className="auth-wrapper" id="page-auth-login">
             <div className="form">
@@ -44,6 +50,7 @@ export default function Login() {
                         <Button 
                             className='submit'
                             variant='contained'
+                            onClick={() => login()}
                         >
                             Login
                         </Button>
