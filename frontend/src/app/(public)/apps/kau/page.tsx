@@ -1,6 +1,6 @@
 import Button from '@mui/material/Button';
 
-import "@/styles/public/apps/kau.scss"
+import "@/styles/public/pages/apps/kau.scss"
 import IconButton from '@mui/material/IconButton'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';

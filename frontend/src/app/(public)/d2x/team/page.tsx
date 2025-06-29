@@ -1,6 +1,6 @@
 import { teamMember, leadership, appLeads, dev, design, finance, rnd, devops } from "@/data/team";
 
-import "@/styles/public/d2x/team.scss";
+import "@/styles/public/pages/d2x/team.scss";
 
 export default function Team() {
 

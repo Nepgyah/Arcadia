@@ -1,4 +1,4 @@
-import '@/styles/public/apps/tsunagu.scss';
+import '@/styles/public/pages/apps/tsunagu.scss';
 import { Button } from '@mui/material';
 
 export default function Tsunagu() {

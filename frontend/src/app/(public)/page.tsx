@@ -9,7 +9,7 @@ import Script from "next/script";
 import Link from "next/link";
 import GitHubIcon from '@mui/icons-material/GitHub';
 
-import '../../styles/public/homepage.scss';
+import '../../styles/public/pages/homepage.scss';
 
 export default function Homepage() {
     return(

@@ -1,4 +1,4 @@
-import '@/styles/public/apps/asobu.scss';
+import '@/styles/public/pages/apps/asobu.scss';
 import { Button } from '@mui/material';
 
 export default function Asobu() {

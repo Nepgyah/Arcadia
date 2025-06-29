@@ -1,6 +1,6 @@
 import Button from '@mui/material/Button';
 
-import "@/styles/public/apps/miru.scss";
+import "@/styles/public/pages/apps/miru.scss";
 
 export default function Miru() {
 

@@ -3,7 +3,7 @@
 import { Button } from "@mui/material";
 import { useRouter } from "next/navigation";
 
-import "@/styles/public/not-found.scss";
+import "@/styles/public/pages/not-found.scss";
 
 export default function PublicNotFound() {
 

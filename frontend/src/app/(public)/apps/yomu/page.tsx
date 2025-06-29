@@ -1,4 +1,4 @@
-import "@/styles/public/apps/yomu.scss"
+import "@/styles/public/pages/apps/yomu.scss"
 import Image from "next/image"
 import Button from '@mui/material/Button'
 
