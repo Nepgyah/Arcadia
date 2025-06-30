@@ -5,10 +5,14 @@ import { CssBaseline } from '@mui/material';
 
 import "@/styles/_master.scss";
 import CSRFLoader from '@/util/csrfLoader';
+import Head from 'next/head';
 
 export const metadata: Metadata = {
-  title: 'Arcadia',
+  title: 'Arcadia - Otaku Santuary',
   description: 'Welcome to Arcadia.',
+  icons: {
+    icon: '/icon1.png'
+  }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
