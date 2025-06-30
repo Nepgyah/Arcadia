@@ -126,13 +126,13 @@ export default function Homepage() {
                             </div>
                             <div className="group two">
                                 <div className="anime-peace shadow-box">
-                                    <img src="/website/images/homepage/hero/kongou.png" alt="" />
+                                    <img src="/website/images/homepage/hero/kongou.png" alt="Kongou from Kantai Collection" />
                                 </div>
                                 <div className="logo">
-                                    <img src="/global/logo/logo-solo-icon.png" alt="" />
+                                    <img src="/global/logo/logo-solo-icon.png" alt="Arcadia simple logo" />
                                 </div>
                                 <div className="icon">
-                                    <img className="animation__rotate" src="/website/images/homepage/hero/flower.png" alt="" />
+                                    <img className="animation__rotate" src="/website/images/homepage/hero/flower.png" alt="Sakura petal" />
                                 </div>
                                 <div className="apps secondary shadow-box">
                                     <img src="/global/app-icons/iku.svg" alt="Iku icon" />
@@ -199,32 +199,32 @@ export default function Homepage() {
                                 </FadeIn>
                                 <FadeIn direction="up" delay={.15}>
                                     <div className="partner-logo">
-                                        <img src="/website/partners/nexon_white.png" alt="" />
+                                        <img src="/website/partners/nexon_white.png" alt="Nexon games" />
                                     </div>
                                 </FadeIn>
                                 <FadeIn direction="up" delay={.2}>
                                     <div className="partner-logo">
-                                        <img src="/website/partners/square-enix_white.svg" alt="" />
+                                        <img src="/website/partners/square-enix_white.svg" alt="Square Enix" />
                                     </div>
                                 </FadeIn>
                                 <FadeIn direction="up" delay={.25}>
                                     <div className="partner-logo">
-                                        <img src="/website/partners/aniplex_white.svg" alt="" />
+                                        <img src="/website/partners/aniplex_white.svg" alt="Aniplex" />
                                     </div>
                                 </FadeIn>
                                 <FadeIn direction="up" delay={.3}>
                                     <div className="partner-logo">
-                                        <img src="/website/partners/hoyoverse_white.png" alt="" />
+                                        <img src="/website/partners/hoyoverse_white.png" alt="Hoyoverse" />
                                     </div>
                                 </FadeIn>
                                 <FadeIn direction="up" delay={.35}>
                                     <div className="partner-logo">
-                                        <img src="/website/partners/ryu-ga-gotoku_white.svg" alt="" />
+                                        <img src="/website/partners/ryu-ga-gotoku_white.svg" alt="Ryu Ga Gotoku" />
                                     </div>
                                 </FadeIn>
                                 <FadeIn direction="up" delay={.4}>
                                     <div className="partner-logo">
-                                        <img src="/website/partners/yostar_white.svg" alt="" />
+                                        <img src="/website/partners/yostar_white.svg" alt="Yostar" />
                                     </div>
                                 </FadeIn>
                             </div>
@@ -324,7 +324,7 @@ export default function Homepage() {
                 </div>
 
                 <div id="root-experience">
-                    <img id="root-bg" src="/website/images/homepage/roots/sakura-branch.svg" alt="" />
+                    <img id="root-bg" src="/website/images/homepage/roots/sakura-branch.svg" alt="Sakura branch" />
                     
                     <section id="roots" className="section">
                         <div className="section__wrapper">
@@ -335,7 +335,7 @@ export default function Homepage() {
                             <div className="section-content section-content--two-col">
                                 <div className="image">
                                     <div className="bg-box"></div>
-                                    <Image height={500} width={500} className="responsive-image" src="/website/images/homepage/roots/game_developers.jpg" alt=""/>
+                                    <Image height={500} width={500} className="responsive-image" src="/website/images/homepage/roots/game_developers.jpg" alt="D2X Platform Team"/>
                                 </div>
                                 <div className="accordion">
                                     <Accordion>
@@ -415,7 +415,7 @@ export default function Homepage() {
                                         width={332} 
                                         height={332} 
                                         src="/website/images/homepage/steps/delivering-anime-girl.png" 
-                                        alt="Transferingg goods" 
+                                        alt="Transfering goods" 
                                     />
                                     <div className="step__text">
                                         <h3>Transfer</h3>
@@ -428,7 +428,7 @@ export default function Homepage() {
                 </div>
 
                 <div id="sakura-world">
-                    <Image className="responsive-image" width={1861} height={1669} id="sakura-lake" src="/website/images/homepage/middle-cta/sakura-lake.svg" alt="" />
+                    <Image className="responsive-image" width={1861} height={1669} id="sakura-lake" src="/website/images/homepage/middle-cta/sakura-lake.svg" alt="Sakura fantasy world" />
                     
                     <section id="secondary-app" className="section">
                         <div className="section__wrapper">
@@ -573,7 +573,7 @@ export default function Homepage() {
                         <div className="section-content">
                             <FadeIn id="jamal" direction="right" delay={.1}>
                                 <div className="card">
-                                    <img className="card__image" src="/website/images/homepage/stories/jamal-williams.jpg" alt="" />
+                                    <img className="card__image" src="/website/images/homepage/stories/jamal-williams.jpg" alt="Jamal Williams" />
                                     <div className="card__text">
                                         <p className="name">Jamal Williams</p>
                                         <p className="job">NFL Running Back</p>
@@ -585,7 +585,7 @@ export default function Homepage() {
                             <div className="col">
                                 <FadeIn direction="down" delay={.1}>
                                     <div className="card">
-                                        <img className="card__image" src="/website/images/homepage/stories/snoop.jpg" alt="" />
+                                        <img className="card__image" src="/website/images/homepage/stories/snoop.jpg" alt="Snoop Dog" />
                                         <div className="card__text">
                                             <p className="name">Snoop Dog</p>
                                             <p className="job">Rapper</p>
@@ -595,7 +595,7 @@ export default function Homepage() {
                                 </FadeIn>
                                 <FadeIn direction="up" delay={.1}>
                                     <div className="card">
-                                        <img className="card__image" src="/website/images/homepage/stories/keanu.webp" alt="" />
+                                        <img className="card__image" src="/website/images/homepage/stories/keanu.webp" alt="Keanu Reaves" />
                                         <div className="card__text">
                                             <p className="name">Keanu Reaves</p>
                                             <p className="job">Actor</p>
@@ -607,7 +607,7 @@ export default function Homepage() {
                             <div className="col">
                                 <FadeIn direction="left" delay={.1}>
                                     <div className="card">
-                                        <img className="card__image" src="/website/images/homepage/stories/ariana.jpg" alt="" />
+                                        <img className="card__image" src="/website/images/homepage/stories/ariana.jpg" alt="Ariana Grande" />
                                         <div className="card__text">
                                             <p className="name">Ariana Grande</p>
                                             <p className="job">Singer</p>
@@ -617,7 +617,7 @@ export default function Homepage() {
                                 </FadeIn>
                                 <FadeIn direction="left" delay={.2}>
                                     <div className="card">
-                                        <img className="card__image" src="/website/images/homepage/stories/fox.png" alt="" />
+                                        <img className="card__image" src="/website/images/homepage/stories/fox.png" alt="DeAaron Fox" />
                                         <div className="card__text">
                                             <p className="name">DeAaron Fox</p>
                                             <p className="job">NBA Point Guard</p>
