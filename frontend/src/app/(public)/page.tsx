@@ -1,5 +1,3 @@
-'use client';
-
 import React, { useEffect } from "react";
 import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
@@ -12,6 +10,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 import '../../styles/public/pages/homepage.scss';
 import FadeIn from "@/components/public/fadeIn";
+import Link from "next/link";
 
 declare global {
     interface Window {
@@ -323,8 +322,10 @@ export default function Homepage() {
                         </div>
                     </section>
                 </div>
+
                 <div id="root-experience">
                     <img id="root-bg" src="/website/images/homepage/roots/sakura-branch.svg" alt="" />
+                    
                     <section id="roots" className="section">
                         <div className="section__wrapper">
                             <div className="section-main">
@@ -425,8 +426,10 @@ export default function Homepage() {
                         </div>
                     </section>
                 </div>
+
                 <div id="sakura-world">
                     <Image className="responsive-image" width={1861} height={1669} id="sakura-lake" src="/website/images/homepage/middle-cta/sakura-lake.svg" alt="" />
+                    
                     <section id="secondary-app" className="section">
                         <div className="section__wrapper">
                             <div className="section-main section-main--center">
@@ -436,7 +439,7 @@ export default function Homepage() {
                             </div>
                             <div className="app-container">
                                 <div className="left-col">
-                                    <FadeIn direction="right" delay={.4}>
+                                    <FadeIn direction="right" delay={.1}>
                                         <div className="app-tile" id="iku">
                                             <div className="app-tile__text">
                                                 <p className="japanese">いく</p>
@@ -448,7 +451,7 @@ export default function Homepage() {
                                             </div>
                                         </div>
                                     </FadeIn>
-                                    <FadeIn direction="right" delay={.5} threshold={.7}>
+                                    <FadeIn direction="right" delay={.2} threshold={.7}>
                                         <div className="app-tile" id="hiku">
                                             <div className="app-tile__image">
                                                 <Image fill src="/website/images/homepage/secondary-apps/hiku.jpg" alt="Gamer girl" />
@@ -462,7 +465,7 @@ export default function Homepage() {
                                     </FadeIn>
                                 </div>
                                 <div className="right-col">
-                                    <FadeIn direction="left" delay={.4}>
+                                    <FadeIn direction="left" delay={.3}>
                                         <div className="app-tile" id="shiru">
                                             <div className="app-tile__image">
                                                 <Image fill src="/website/images/homepage/secondary-apps/shiru.jpg" alt="Hanging out at a dinner" />
@@ -474,7 +477,7 @@ export default function Homepage() {
                                             </div>
                                         </div>
                                     </FadeIn>
-                                    <FadeIn direction="left" delay={.5}>
+                                    <FadeIn direction="left" delay={.4}>
                                         <div className="app-tile" id="kumitateru">
                                             <div className="app-tile__image">
                                                 <Image fill src="/website/images/homepage/secondary-apps/kumitateru.jpg" alt="Building a PC" />
@@ -486,7 +489,7 @@ export default function Homepage() {
                                             </div>
                                         </div>
                                     </FadeIn>
-                                    <FadeIn direction="left" delay={.6}>
+                                    <FadeIn direction="left" delay={.45}>
                                         <div className="app-tile" id="kiku">
                                             <div className="app-tile__text">
                                                 <p className="japanese">きく</p>
@@ -510,11 +513,11 @@ export default function Homepage() {
                                 <p>Stop browsing. Start belonging. Step into your otaku world today.</p>
                                 <div className="button-container button-container--center">
                                     <Button variant="contained" color="primary">
-                                        Join Now
+                                        <Link href="/platform/auth/create">Join Now</Link>
                                     </Button>
-                                    <Button variant="text" color="primary">
+                                    {/* <Button variant="text" color="primary">
                                         Got Questions?
-                                    </Button>
+                                    </Button> */}
                                 </div>
                             </div>
                         </div>
@@ -528,7 +531,7 @@ export default function Homepage() {
                                 <p>We’re just getting started. From new features to fan-powered expansions, Arcadia’s evolving. Here's a glimpse at what’s coming next </p>
                             </div>
                             <div className="goals">
-                                <FadeIn direction="up" delay={.4}>
+                                <FadeIn direction="up" delay={0}>
                                     <div className="goal">
                                         <h3>Launching the Core Platform</h3>
                                         <p>We're starting with the essentials: Arcadia's primary apps, account setup, personalization, and easy data import from other platforms.</p>
@@ -537,7 +540,7 @@ export default function Homepage() {
                                 <div className="icon desktop-only">
                                     <DoubleArrowIcon />
                                 </div>
-                                <FadeIn direction="up" delay={.6}>
+                                <FadeIn direction="up" delay={.2}>
                                 <div className="goal">
                                     <h3>Expanding the Ecosystem</h3>
                                     <p>Next, we’ll roll out the full website, secondary apps, and new features that bring the community and platform to life.</p>
@@ -546,7 +549,7 @@ export default function Homepage() {
                                 <div className="icon desktop-only">
                                     <DoubleArrowIcon />
                                 </div>
-                                <FadeIn direction="up" delay={.8}>
+                                <FadeIn direction="up" delay={.4}>
                                 <div className="goal">
                                     <h3>Introducing the Anime Persona Quiz</h3>
                                     <p>A fun, personalized quiz that matches you with an anime-inspired archetype.</p>
@@ -556,6 +559,113 @@ export default function Homepage() {
                         </div>
                     </section>
                 </div>
+
+                <section id="stories" className="section">
+                    <img id="branch" className="section__bg-element desktop-only" src="/website/images/homepage/stories/blooming-branches.png" alt="Blooming branches" />
+                    <img id="sand-mtn" className="section__bg-element desktop-only" src="/website/images/homepage/stories/sand-mountain.png" alt="Mountain" />
+                    <img id="gate-mtn" className="section__bg-element" src="/website/images/homepage/stories/mountain-with-gate.png" alt="Mountain with a gate" />
+
+                    <div className="section__wrapper">
+                        <div className="section-main section-main--center">
+                            <p className="section-main__mini-title">Otaku's Agree</p>
+                            <h2 className="section-main__main-title">Arcadia Is A Must For Fanatics</h2>
+                        </div>
+                        <div className="section-content">
+                            <FadeIn id="jamal" direction="right" delay={.1}>
+                                <div className="card">
+                                    <img className="card__image" src="/website/images/homepage/stories/jamal-williams.jpg" alt="" />
+                                    <div className="card__text">
+                                        <p className="name">Jamal Williams</p>
+                                        <p className="job">NFL Running Back</p>
+                                        <p>Look, I don’t just like anime—I live it. If I’m not on the field, I’m grinding through One Piece, rewatching Naruto, or catching up on the latest heat. And Arcadia? Man, this is like the ultimate training ground for otaku. Everything you need—tracking, merch, community—all in one place? That’s straight-up elite!"</p>
+                                        <p>"Most places just don’t get it. But Arcadia is built different—built by real fans, for real fans. Whether you’re arguing over the best anime arcs, supporting indie creators, or just looking for a crew that gets your passion, this is the spot. No fillers, just pure fire. Believe it!</p>
+                                    </div>
+                                </div>
+                            </FadeIn>
+                            <div className="col">
+                                <FadeIn direction="down" delay={.1}>
+                                    <div className="card">
+                                        <img className="card__image" src="/website/images/homepage/stories/snoop.jpg" alt="" />
+                                        <div className="card__text">
+                                            <p className="name">Snoop Dog</p>
+                                            <p className="job">Rapper</p>
+                                            <p>Man, Arcadia got that real anime energy. If you ain’t on Arcadia yet, you slippin’.</p>
+                                        </div>
+                                    </div>
+                                </FadeIn>
+                                <FadeIn direction="up" delay={.1}>
+                                    <div className="card">
+                                        <img className="card__image" src="/website/images/homepage/stories/keanu.webp" alt="" />
+                                        <div className="card__text">
+                                            <p className="name">Keanu Reaves</p>
+                                            <p className="job">Actor</p>
+                                            <p>I’ve been a fan of anime for years, and Arcadia feels like the ultimate place for fans. Whether you’re into classics or discovering new gems, this platform has something for everyone.</p>
+                                        </div>
+                                    </div>
+                                </FadeIn>
+                            </div>
+                            <div className="col">
+                                <FadeIn direction="left" delay={.1}>
+                                    <div className="card">
+                                        <img className="card__image" src="/website/images/homepage/stories/ariana.jpg" alt="" />
+                                        <div className="card__text">
+                                            <p className="name">Ariana Grande</p>
+                                            <p className="job">Singer</p>
+                                            <p>I’ve been obsessed with anime forever, and Arcadia is like a dream come true for fans. Whether you’re binging old favorites or finding new series to fall in love with, it’s all here. </p>
+                                        </div>
+                                    </div>
+                                </FadeIn>
+                                <FadeIn direction="left" delay={.2}>
+                                    <div className="card">
+                                        <img className="card__image" src="/website/images/homepage/stories/fox.png" alt="" />
+                                        <div className="card__text">
+                                            <p className="name">DeAaron Fox</p>
+                                            <p className="job">NBA Point Guard</p>
+                                            <p>Just like in basketball, it’s all about having the right squad—Arcadia is that squad for anime fans.</p>
+                                        </div>
+                                    </div>
+                                </FadeIn>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="d2x" className="section">
+                    <p id="double" className="section__bg-element vertical-text">DOUBLE</p>
+                    <p id="dragon" className="section__bg-element vertical-text">DRAGON</p>
+                    <div className="section__wrapper">
+                        <div className="section-content section-content--two-col">
+                            <div className="section-main">
+                                <p className="section-main__mini-title">Who We Are</p>
+                                <h2 className="section-main__main-title">Born from Fandom,<br />Forged with Passion</h2>
+                                <p>Team Double Dragon was forged upon passion: passion for Esports and passion for doing things the right way and for the right things.</p>
+                                <p>What started with what-ifs and no technical skill, Arcadia began with two friends, countless fandom debates, and a dream to build the otaku platform we always wished existed. </p>
+                            </div>
+                            <div className="center-content">
+                                <FadeIn direction="left" delay={.1}>
+                                    <img src="/global/d2x.svg" alt="D2X Logo" />
+                                </FadeIn>
+                            </div>
+                        </div>
+
+                        <div id="jobs" className="section-content section-content--two-col">
+                            <div className="girls">
+                                <FadeIn id="pointing-girl-1" direction="left">
+                                    <img src="/website/images/homepage/d2x/pointing-girl-1.png" alt="Anime girl pointing" />
+                                </FadeIn>
+                                <FadeIn id="pointing-girl-2" direction="left">
+                                    <img src="/website/images/homepage/d2x/pointing-girl-2.png" alt="Anime girl pointing" />
+                                </FadeIn>
+                            </div>
+                            <div className="section-main">
+                                <p className="section-main__mini-title">We're Hiring</p>
+                                <h2 className="section-main__main-title">Become Legendary,<br />Like A Dragon</h2>
+                                <p>Got passion? Drive? or just a fungi? We are hiring. Discover our openings and find out if you got a dragon in you!</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
                 <section id="footer-cta">
                     <div className="section__full-wrapper">
                         <div className="img">
@@ -570,7 +680,7 @@ export default function Homepage() {
                             <h2>Ready to Enter Arcadia?</h2>
                             <p>Join a platform built by fans, for fans. Watch, read, play and more.</p>
                             <Button variant="contained" color="secondary">
-                                Create Your Free Account
+                                <Link href="/platform/auth/create">Create Your Free Account</Link>
                             </Button>
                         </div>
                     </div>

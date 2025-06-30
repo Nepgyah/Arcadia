@@ -15,16 +15,20 @@
         max-width: $max-width;
         padding: 0 20px;
         margin: auto;
+        display: flex;
+        flex-direction: column;
+        row-gap: 5rem;
     }
 
     &__full-wrapper {
+        
     }
 
     .section-main {
         display: flex;
         flex-direction: column;
         row-gap: 2rem;
-        margin-bottom: 3.5rem;
+        // margin-bottom: 3.5rem;
 
         &__mini-title {
             font-size: .75rem;
@@ -38,7 +42,7 @@
         &--center {
             text-align: center;
             width: 75%;
-            margin: 0 auto 3.5rem;
+            margin: 0 auto;
         }
 
         &--white {
@@ -52,6 +56,7 @@
         &--four-col {
             display: grid;
             grid-template-columns: 1fr 1fr;
+            column-gap: 2rem;
         }
 
         &--two-col {
@@ -90,6 +95,12 @@
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 column-gap: 2rem;
+            }
+
+            &--three-col {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                column-gap: 1.5rem;
             }
         }
     }

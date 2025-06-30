@@ -452,6 +452,10 @@
         
         #primary-apps {
 
+            .section__wrapper {
+                display: block;
+            }
+            
             #primary-bottom-half {
 
                 #bottom-left, #bottom-right {
@@ -608,11 +612,100 @@
                     backdrop-filter: blur(5px);
                     border-radius: 15px;
                     box-shadow: $box-shadow-default;
-
+                    height: 100%;
+                    
                     h3 {
                         margin-bottom: 1.5rem;
                     }
                 }
+            }
+        }
+    }
+
+    #stories {
+        .card {
+            background-color: $arcadia-primary-one;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: $box-shadow-default;
+
+            &__image {
+                height: 150px;
+                width: 100%;
+                object-fit: cover;
+            }
+
+            &__text {
+                padding: 1rem;
+                color: white;
+
+                .name {
+                    font-weight: bold;
+                    font-size: 2rem;
+                    margin-bottom: 0;
+                }
+
+                .job {
+                    font-size: .75rem;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+
+        #branch {
+            right: 0;
+            top: 10px;
+        }
+
+        #sand-mtn {
+            bottom: 0;
+            left: 0;
+        }
+
+        #gate-mtn {
+            right: 0;
+            bottom: 0;
+        }
+
+        .section-content {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+
+            .col {
+                >div {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+
+    #d2x {
+        background: $gradient-pink-blue-horizontal;
+        padding: 5rem 0 0 0;
+
+        #jobs {
+            .girls {
+                order: 2;
+                position: relative;
+
+                #pointing-girl-1, #pointing-girl-2 {
+                    position: absolute;
+                    bottom: 0;
+                }
+
+                #pointing-girl-1 {
+                    right: 10%;
+                }
+
+                #pointing-girl-2 {
+                    left: 10%;
+                }
+            }
+
+            .section-main {
+                order: 1;
+                padding-bottom: 5rem;
             }
         }
     }
@@ -872,8 +965,13 @@
                     width: 70%;
                     margin: 0 0 0 auto;
 
+                    .section-main {
+                        margin-bottom: 2rem;
+                    }
+
                     .section-content--four-col {
                         grid-template-columns: 1fr 1fr;
+                        column-gap: 2rem;
                     }
                 }
             }
@@ -959,6 +1057,62 @@
                             color: $arcadia-primary-one-dark;
                         }
                     }
+                }
+            }
+        }
+
+        #stories {
+            .section-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                column-gap: 1.5rem;
+
+                #jamal {
+                    .card {
+                        height: 100%;
+                    }
+                }
+
+                .col {
+                    >div {
+                        margin-bottom: 0;
+
+                        &:first-of-type {
+                            margin-bottom: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        #d2x {
+            background: $gradient-pink-blue-horizontal;
+
+            #double, #dragon {
+                opacity: 10%;
+                font-weight: bold;
+                font-size: 5rem;
+                position: absolute;
+                width: fit-content;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            #double {
+                left: 0;
+            }
+
+            #dragon {
+                right: 0;
+            }
+
+            #jobs {
+                .girls {
+                    order: 1;
+                }
+
+                .section-main {
+                    order: 2;
                 }
             }
         }

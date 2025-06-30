@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useEffect, useState } from "react";
 import { useInView } from 'react-intersection-observer';
 import { styled, keyframes } from '@mui/system';
@@ -5,8 +7,9 @@ import { Box, Fade, Grow, Slide } from "@mui/material";
 
 type direction = "up" | "down" | "left" | "right";
 
-const FadeIn = ({children, direction = 'up', delay = .2, threshold = 0.5,} : {
+const FadeIn = ({children, id, direction = 'up', delay = .2, threshold = 0.7,} : {
         children: React.ReactNode,
+        id?: string,
         direction: direction,
         delay?: number,
         threshold?: number
@@ -33,6 +36,7 @@ const FadeIn = ({children, direction = 'up', delay = .2, threshold = 0.5,} : {
     return (
 
     <Box
+        id={`${id}`}
         ref={ref}
         sx={{
             opacity: show ? 1 : 0,
