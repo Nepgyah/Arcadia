@@ -1,6 +1,7 @@
 'use client';
 
-import { createContext, useContext } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { apiGET } from "./api";
 
 type User = {
     id: number,
@@ -8,18 +9,38 @@ type User = {
     email: string
 }
 
-const UserContext = createContext<User | null>(null);
+type UserContextType = {
+    user: User | null;
+    setUser: (user: User | null) => void
+}
+const UserContext = createContext<UserContextType | null>(null);
 
 export function UserProvider({
-    user,
     children
 } : {
     user: User,
     children: React.ReactNode
 }) {
-    return <UserContext.Provider value={user}>{children}</UserContext.Provider>
+
+    const [user, setUser] = useState<User | null>(null)
+
+    useEffect(() => {
+        apiGET<any>('account/get/')
+        .then((res) => {
+            setUser(res)
+        })
+    }, [])
+
+    return (
+        <UserContext.Provider value={{user, setUser}}>
+            {children}
+    </UserContext.Provider>)
 }
 
-export function getUser() {
-    return useContext(UserContext);
+export function useUser() {
+    const context = useContext(UserContext);
+    if (!context) {
+        throw new Error('useUser must be used within a UserProvider');
+    }
+    return context;
 }

@@ -1,15 +1,22 @@
 'use client';
 
 import { apiPOST } from '@/util/api';
+import { useUser } from '@/util/userContext';
 import { Button, Checkbox, FormControl, FormControlLabel } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 export default function Login() {
+    const {
+        user, setUser
+    } = useUser();
+
+    const router = useRouter()
 
     const [email, setEmail] = useState<string>('')
-    const [pasword, setPassword] = useState<string>('');
+    const [password, setPassword] = useState<string>('');
     const [remember, setRemember] = useState<boolean>(false);
 
     const handleRemember = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -17,7 +24,14 @@ export default function Login() {
     }
 
     const login = () => {
-        // apiPOST('account/test/post/', {})
+        apiPOST<any>('account/auth/login/', {
+            email: email,
+            password: password
+        })
+        .then((res) => {
+            setUser(res)
+            router.push('/platform');
+        })
     }
     
     return (
@@ -38,7 +52,7 @@ export default function Login() {
                         <TextField
                           id="password"
                           label="Password"
-                          value={pasword}
+                          value={password}
                           onChange={(e) => setPassword(e.target.value)}
                         />
                         <FormControlLabel
