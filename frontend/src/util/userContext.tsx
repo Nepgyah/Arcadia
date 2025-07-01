@@ -6,7 +6,15 @@ import { apiGET } from "./api";
 type User = {
     id: number,
     username: string,
-    email: string
+    tag: number,
+    email: string,
+    real_name: string,
+    about: string,
+    birth_date: string | null,
+    updated_at: string,
+    created_at: string,
+    picture_preset: number,
+    color_preset: number
 }
 
 type UserContextType = {

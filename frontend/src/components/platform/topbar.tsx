@@ -27,7 +27,7 @@ export default function Topbar() {
                 <IconButton>
                     <AppsIcon />
                 </IconButton>
-                <Avatar onClick={() => test()} />
+                <Avatar src={`/auth/profile-pics/profile_${user?.picture_preset}.webp`} onClick={() => test()} />
             </div>
         </div>
     )

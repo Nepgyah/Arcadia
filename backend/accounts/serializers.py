@@ -15,5 +15,7 @@ class UserSerializer(serializers.ModelSerializer):
             'about',
             'birth_date',
             'updated_at',
-            'created_at'
+            'created_at',
+            'picture_preset',
+            'color_preset'
         ]
