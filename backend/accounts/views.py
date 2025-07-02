@@ -34,7 +34,19 @@ class LogoutView(APIView):
         logout(request)
         return Response({})
     
-class GetAccount(APIView):
+class GetProfileView(APIView):
+
+    def get(self, request, profile_id = 0):
+        try:
+            user_obj = User.objects.get(id=profile_id)
+        except User.DoesNotExist:
+            return Response({})
+
+        user_data = UserSerializer(user_obj, many=False).data
+
+        return Response(user_data)
+        
+class GetAccountView(APIView):
 
     def get(self, request):
         try:

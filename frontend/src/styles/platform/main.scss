@@ -1,4 +1,5 @@
 @use "../abstract/variables" as *;
+@forward "./layout/index";
 
 #platform-layout {
     min-height: 100dvh;
@@ -17,7 +18,23 @@
             color: white;
             flex-grow: 1;
             background-color: $platform-bg-1;
+            overflow-y: scroll;
+
+            .card {
+                background-color: #36373D;
+                border-radius: 12px;
+                box-shadow: $box-shadow-default;
+                overflow: hidden;
+                padding: 1.5rem;
+
+                &--custom {
+                    padding: 0;
+                }
+
+                &__content {
+                    padding: 1.5rem;
+                }
+            }
         }
     }
-
 }
