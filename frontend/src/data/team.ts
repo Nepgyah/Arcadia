@@ -13,10 +13,10 @@ export const leadership: teamMember[] = [
     { firstName: "Groza", position: "Chief Operating Officer", url: "groza.jpg"},
     { firstName: "Yukong", position: "Chief Logistics Officer", url: "yukong.jpg"},
     { firstName: "Pheonix", lastName: "Wright", position: "Chief Legal Officer", url: "pheonix-wright.jpg"},
+    { firstName: "Jon", lastName: "Lühmann", position: "Chief Design Officer", url: "jon.jpg"},
     { firstName: "The", lastName: "Herta", position: "Chief Innovation Officer", url: "the-herta.jpg"},
     { firstName: "Jade", lastName: "", position: "Chief Financial Officer", url: "jade.jpg"},
     { firstName: "Fugue", lastName: "", position: "Chief Marketing Officer", url: "fugue.jpg"},
-    { firstName: "Jon", lastName: "Germany", position: "Chief Design Officer", url: "jon.jpg"},
     { firstName: "Hazuki", lastName: "Shizuka", position: "Chief Product Officer", url: "shizuku-hazuki.jpg"},
 ]
 

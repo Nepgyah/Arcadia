@@ -17,7 +17,7 @@ export default function Asobu() {
                         <div className='hero__text hero__text--white'>
                             <p className="japanese">アケーディアーあそぶ</p>
                             <h1>Gaming Adventures Begin Here</h1>
-                            <p className="main-text">Discover hidden gems and mod up on current classics. Arcaida Asobu is the place for any gamer.</p>
+                            <p className="main-text">Discover hidden gems and mod up on current classics. Arcadia Asobu is the place for any gamer.</p>
                             <Button variant="contained" color="primary">
                                 Game On
                             </Button>

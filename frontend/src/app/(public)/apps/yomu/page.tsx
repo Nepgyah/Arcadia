@@ -32,7 +32,7 @@ export default function Yomu() {
                         <div className="hero__text">
                             <p className="japanese">アケーディアーみる</p>
                             <h1>Read, Track and Discover One Page At a Time</h1>
-                            <p className="main-text">Discover, manage and read mangas, light novels and manwhas and more with Arcadia Miru. Your one stop destination for readable otaku material.</p>
+                            <p className="main-text">Discover, manage and read mangas, light novels and manwhas and more with Arcadia Miru. Yomu is the place for all the readable otaku material.</p>
                             <Button variant="contained" color="primary">
                                 Find Your Next Story
                             </Button>

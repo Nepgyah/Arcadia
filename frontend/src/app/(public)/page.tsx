@@ -45,11 +45,12 @@ export default function Homepage() {
                                 </div>
                             </div>
                             <div className="partners">
-                                <img className="partner" src="/website/partners/pony-canyon.svg" alt="" />
-                                <img className="partner" src="/website/partners/pcpartpicker.png" alt="" />
-                                <img className="partner" src="/website/partners/myanimelist.svg" alt="" />
-                                <img className="partner" src="/website/partners/funimation.svg" alt="" />
-                                <img className="partner" src="/website/partners/jc-staff.png" alt="" />
+                                <img className="partner" src="/website/partners/pony-canyon.svg" alt="Pony Canyon" />
+                                <img className="partner" src="/website/partners/pcpartpicker.png" alt="PcPartPicker" />
+                                <img className="partner" src="/website/partners/myanimelist.svg" alt="MyAnimeList" />
+                                <img className="partner" src="/website/partners/jc-staff.png" alt="JC Stafff" />
+                                <img className="partner" src="/website/partners/funimation.svg" alt="Funimation" />
+                                <img className="partner" src="/website/partners/mangadex.png" alt="Mangadex" />
                             </div>
                         </div>
                         <div className="right-col">
@@ -214,17 +215,22 @@ export default function Homepage() {
                                 </FadeIn>
                                 <FadeIn direction="up" delay={.3}>
                                     <div className="partner-logo">
-                                        <img src="/website/partners/hoyoverse_white.png" alt="Hoyoverse" />
+                                        <img src="/website/partners/ryu-ga-gotoku_white.svg" alt="Ryu Ga Gotoku" />
                                     </div>
                                 </FadeIn>
                                 <FadeIn direction="up" delay={.35}>
                                     <div className="partner-logo">
-                                        <img src="/website/partners/ryu-ga-gotoku_white.svg" alt="Ryu Ga Gotoku" />
+                                        <img src="/website/partners/yostar_white.svg" alt="Yostar" />
                                     </div>
                                 </FadeIn>
                                 <FadeIn direction="up" delay={.4}>
                                     <div className="partner-logo">
-                                        <img src="/website/partners/yostar_white.svg" alt="Yostar" />
+                                        <img src="/website/partners/hoyoverse_white.png" alt="Hoyoverse" />
+                                    </div>
+                                </FadeIn>
+                                <FadeIn direction="up" delay={.45}>
+                                    <div className="partner-logo">
+                                        <img src="/website/partners/kadokawa.png" alt="Kadokawa" />
                                     </div>
                                 </FadeIn>
                             </div>
@@ -334,7 +340,7 @@ export default function Homepage() {
                             </div>
                             <div className="section-content section-content--two-col">
                                 <div className="image">
-                                    <div className="bg-box"></div>
+                                    <div className="bg-box desktop-only"></div>
                                     <Image height={500} width={500} className="responsive-image" src="/website/images/homepage/roots/game_developers.jpg" alt="D2X Platform Team"/>
                                 </div>
                                 <div className="accordion">
@@ -551,7 +557,7 @@ export default function Homepage() {
                                 </div>
                                 <FadeIn direction="up" delay={.4}>
                                 <div className="goal">
-                                    <h3>Introducing the Anime Persona Quiz</h3>
+                                    <h3>Introducing the Anime Archetypes Quiz</h3>
                                     <p>A fun, personalized quiz that matches you with an anime-inspired archetype.</p>
                                 </div>
                                 </FadeIn>
@@ -631,8 +637,8 @@ export default function Homepage() {
                 </section>
 
                 <section id="d2x" className="section">
-                    <p id="double" className="section__bg-element vertical-text">DOUBLE</p>
-                    <p id="dragon" className="section__bg-element vertical-text">DRAGON</p>
+                    <p id="double" className="section__bg-element vertical-text desktop-only">DOUBLE</p>
+                    <p id="dragon" className="section__bg-element vertical-text desktop-only">DRAGON</p>
                     <div className="section__wrapper">
                         <div className="section-content section-content--two-col">
                             <div className="section-main">
@@ -649,7 +655,7 @@ export default function Homepage() {
                         </div>
 
                         <div id="jobs" className="section-content section-content--two-col">
-                            <div className="girls">
+                            <div className="girls desktop-only">
                                 <FadeIn id="pointing-girl-1" direction="left">
                                     <img src="/website/images/homepage/d2x/pointing-girl-1.png" alt="Anime girl pointing" />
                                 </FadeIn>

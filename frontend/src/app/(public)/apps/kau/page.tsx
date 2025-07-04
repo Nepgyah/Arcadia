@@ -27,7 +27,7 @@ export default function Kau() {
                     <div className="cta">
                         <img className='desktop-only' src="/website/images/apps/kau/hero/signature.png" alt="" />
                         <div className='cta-container'>
-                            <p>Shop the latest anime merch, trendy apparel, and exclusive cosplay pieces</p>
+                            <p>Shop the latest anime merch, trendy apparel, and exclusive cosplay pieces.</p>
                             <Button variant="contained" color="primary">
                             Shop Now
                             </Button>
