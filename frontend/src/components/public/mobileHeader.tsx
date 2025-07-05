@@ -43,6 +43,7 @@ export default function MobileHeader() {
                     <Button onClick={() => setIsD2XOpen(!isD2XOpen)}>D2X</Button>
                     <Collapse in={isD2XOpen}>
                         <Button onClick={() => handleClick('/d2x/team')}>Team</Button>
+                        <Button onClick={() => handleClick('/d2x/about-us')}>About Us</Button>
                     </Collapse>
                 </nav>
                 <div className='header__cta'>

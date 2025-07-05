@@ -70,6 +70,7 @@ export default function DesktopHeader() {
                         disableScrollLock
                     >
                         <MenuItem onClick={() => router.push('/d2x/team')}>Team</MenuItem>
+                        <MenuItem onClick={() => router.push('/d2x/about-us')}>About Us</MenuItem>
                     </Menu>
                 </div>
             </div>

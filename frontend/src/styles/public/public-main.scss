@@ -23,6 +23,14 @@ h1, h2, h3, h4, p {
     display: block;
 }
 
+.blur-container {
+    padding: 2rem;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    background-color: rgba(white, .7);
+    border-radius: 12px;
+}
+
 // Positioning
 .center-content {
     display: flex;
@@ -48,6 +56,54 @@ h1, h2, h3, h4, p {
     box-shadow: $box-shadow-default;
 }
 
+.quote {
+    border-radius: 24px;
+    box-sizing: $box-shadow-default;
+    padding: 2rem;
+    
+    > div {
+        margin-bottom: 2rem;
+    }
+    
+    &--white {
+        color: white;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+        justify-content: center;
+
+        &__mini-title {
+            font-size: .75rem;
+        }
+
+        &__main-title {
+            font-size: 2rem;
+        }
+        &__main {
+            font-size: .80rem;
+            
+            p {
+                &:first-of-type {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+
+    .profile {
+        img {
+            width: 100%;
+        }
+
+        .name {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+    }
+}
 @media only screen and (min-width: 768px) {
 
     .desktop-only {
@@ -56,5 +112,10 @@ h1, h2, h3, h4, p {
 
     .mobile-only {
         display: none;
+    }
+
+    .quote {
+        display: grid;
+        justify-content: space-between;
     }
 }

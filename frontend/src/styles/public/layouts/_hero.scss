@@ -89,6 +89,13 @@
         }
 
         &__text {
+
+            &--center {
+                p {
+                    width: 60%;
+                    margin: auto;
+                }
+            }
             h1 {
                 text-box-trim: trim-both;
                 font-size: 4rem;
