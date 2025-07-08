@@ -50,6 +50,11 @@
             height:  inherit;
         }
 
+        #about {
+            h3 {
+                color: $arcadia-primary-two;
+            }
+        }
         #spirit {
             .section-content {
                 display: grid;

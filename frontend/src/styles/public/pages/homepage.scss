@@ -483,7 +483,7 @@
 
         #root-bg {
             position: absolute;
-            opacity: .5;
+            opacity: .2;
             top: 0;
             max-width: none;
             height: 100%;
@@ -633,6 +633,15 @@
     }
 
     #stories {
+
+        .section-main {
+            background-color: rgba($arcadia-primary-three, .8);
+            color: white;
+
+            &__main-title {
+                color: white;
+            }
+        }
         .card {
             background-color: $arcadia-primary-one;
             border-radius: 15px;

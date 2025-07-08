@@ -68,7 +68,7 @@ export default function AboutD2X() {
                     <div className="hero__wrapper">
                         <div className="hero__text hero__text--center">
                             <h1>Creators of Arcadia,<br />Team Double Dragon</h1>
-                            <p>Team Double Dragon is a squad of creators, coders, and chaos agents building a platform for anime, manga, games, and all things otaku. Explore what makes D2X special.</p>
+                            <p>Team Double Dragon is a squad of creators, coders, and chaos gamers building a platform for anime, manga, games, and all things otaku. Explore what makes D2X special.</p>
                         </div>
                     </div>
                 </section>
@@ -102,7 +102,7 @@ export default function AboutD2X() {
                             <img className="two" src="/website/images/d2x/about/spirit/donut-girls.jpg" alt="" />
                             <div className="blur-container three">
                                 <h3>Stay True, Stay Weird</h3>
-                                <p>Arcadia isn’t for everyone, and that’s the point. We embrace what makes us (and you) different. The fandom thrives when we celebrate the niche and the nerdy.</p>
+                                <p>Arcadia has <i>something</i> for <i>someone</i>. We embrace what makes us (and you) different. The fandom thrives when we celebrate the niche and the nerdy.</p>
                             </div>
                             <img className="four" src="/website/images/d2x/about/spirit/game-office.jpg" alt="" />
                             <div className="five"><h2>The Spirit of Team Double Dragon</h2></div>
@@ -128,7 +128,7 @@ export default function AboutD2X() {
                                 <h2 className="text__main-title">Motivated by Passion,<br />The D2X Way</h2>
                                 <div className="text__main">
                                     <p>"Every great journey begins with a single step, but it’s the passion behind that step that turns it into something greater. At D2X, we’re not just building a platform—we’re paving the way for an otaku community that thrives together.</p>
-                                    <p>Just as the Astral Express serves as a vessel for exploration, we’re here to be a guide for our users—offering a space for discovery, connection, and growth. We’re not just a company; we’re part of something much bigger, something that will continue to shape the future of anime and gaming culture for years to come."</p>
+                                    <p>Just as the Astral Express serves as a vessel for exploration, we’re here to be a guide for our users, offering a space for discovery, connection, and growth. We’re not just a company; we’re part of something much bigger, something that will continue to shape the future of anime and gaming culture for years to come."</p>
                                 </div>
                             </div>
                             <div className="profile">
@@ -202,7 +202,7 @@ export default function AboutD2X() {
                                 <p className="text__mini-title">Message From Our CC</p>
                                 <h2 className="text__main-title">Bringing the Hype, One Stream at a Time!</h2>
                                 <div className="text__main">
-                                    <p>"At D2X, I get to do what I love—entertain, connect, and bring the hype to the fans who live and breathe anime, games, and manga. Every time I stream or create content, I’m not just sharing my passion; I’m building something bigger. Our community is everything to us—it’s about those moments of excitement, that sense of belonging, and that spark of joy we bring to fans worldwide.</p>
+                                    <p>"At D2X, I get to do what I love: entertain, connect, and bring the hype to the fans who live and breathe anime, games, and manga. Every time I stream or create content, I’m not just sharing my passion; I’m building something bigger. Our community is everything to us! It’s about those moments of excitement, that sense of belonging, and that spark of joy we bring to fans worldwide.</p>
                                     <p>If I can make someone’s day even 1% more fun, whether through a funny moment or an epic stream, then hey, that’s a win in my book! And knowing that we’re all part of something like D2X, where every otaku feels at home, makes it all the more worth it."</p>
                                 </div>
                             </div>

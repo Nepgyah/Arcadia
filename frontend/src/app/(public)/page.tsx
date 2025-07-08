@@ -160,12 +160,12 @@ export default function Homepage() {
                         <div className="section__wrapper">
                             <div id="features-text">
                                 <div className="section-main section-main--white">
-                                    <p className="section-main__mini-title">Arcadia Difference</p>
-                                    <h2 className="section-main__main-title">Arcadia<br />The Flagship of Fandom Tools</h2>
+                                    <p className="section-main__mini-title">The Arcadia Difference</p>
+                                    <h2 className="section-main__main-title">Introducing Arcadia:<br />The Flagship of Fandom Tools</h2>
                                 </div>
                                 <div className="section-content section-content--four-col">
                                     <div className="feature">
-                                        <h3>All-In-On</h3>
+                                        <h3>All-In-One</h3>
                                         <p>Arcadia combines anime tracking, manga reading, gaming, merch shopping and more.</p>
                                     </div>
                                     <div className="feature">
@@ -241,11 +241,13 @@ export default function Homepage() {
                         <div className="section__wrapper">
                             <div id="primary-top-half">
                                 <div className="section-main section-main--white">
-                                    <p className="section-main__mini-title">Introducing Arcadia</p>
+                                    <p className="section-main__mini-title">Arcadia's Primary Apps</p>
                                     <h2 className="section-main__main-title">Essentials for the Ultimate Otaku</h2>
-                                    <p className="section-main__description">Your all-in-one toolkit for tracking, streaming, gaming, and shopping. These flagship apps form the heart of your ultimate otaku experience.</p>
+                                    <p className="section-main__description">Your all-in-one toolkit for tracking, streaming, gaming, and shopping. These flagship apps form the heart of your otaku experience.</p>
                                     <Button variant="contained" color="secondary">
-                                    Sign Up Today
+                                        <Link href='/platform/auth/create'>
+                                            Sign Up Today
+                                        </Link>
                                     </Button>
                                 </div>
                                 <FadeIn direction="left">
@@ -441,7 +443,7 @@ export default function Homepage() {
                             <div className="section-main section-main--center">
                                 <p className="sectin-main__mini-title">Beyond the Essentials</p>
                                 <h2 className="section-main__main-title">The Arcadia Side Suite</h2>
-                                <p>These supplementary apps are smaller in scope, but big on impact. From planning events to diving into niche blogs and lo-fi vibes, the Side Suite adds extra flavor to your fandom journey, because even side quests matter.</p>
+                                <p>These supplementary apps are smaller in scope, but big on impact. From planning events to diving into niche blogs and lo-fi vibes, the Arcadia side suites adds extra flavor to your fandom journey, because even side quests matter.</p>
                             </div>
                             <div className="app-container">
                                 <div className="left-col">
@@ -531,10 +533,10 @@ export default function Homepage() {
 
                     <section id="roadmap" className="section">
                         <div className="section__wrapper">
-                            <div className="section-main">
+                            <div className="section-main blur-container">
                                 <p className="section-main__mini-title">The Journey Ahead</p>
                                 <h2 className="section-main__main-title">What's Next For Arcadia</h2>
-                                <p>We’re just getting started. From new features to fan-powered expansions, Arcadia’s evolving. Here's a glimpse at what’s coming next </p>
+                                <p>We’re just getting started with Project Arcadia! Here's a glimpse at what’s coming next.</p>
                             </div>
                             <div className="goals">
                                 <FadeIn direction="up" delay={0}>
@@ -558,7 +560,7 @@ export default function Homepage() {
                                 <FadeIn direction="up" delay={.4}>
                                 <div className="goal">
                                     <h3>Introducing the Anime Archetypes Quiz</h3>
-                                    <p>A fun, personalized quiz that matches you with an anime-inspired archetype.</p>
+                                    <p>To wrap it up: A fun, personalized quiz that matches you with an anime-inspired archetype.</p>
                                 </div>
                                 </FadeIn>
                             </div>
@@ -572,9 +574,9 @@ export default function Homepage() {
                     <img id="gate-mtn" className="section__bg-element" src="/website/images/homepage/stories/mountain-with-gate.png" alt="Mountain with a gate" />
 
                     <div className="section__wrapper">
-                        <div className="section-main section-main--center">
+                        <div className="section-main section-main--center blur-container">
                             <p className="section-main__mini-title">Otaku's Agree</p>
-                            <h2 className="section-main__main-title">Arcadia Is A Must For Fanatics</h2>
+                            <h2 className="section-main__main-title">Arcadia Is a Must For Fanatics</h2>
                         </div>
                         <div className="section-content">
                             <FadeIn id="jamal" direction="right" delay={.1}>
@@ -646,6 +648,9 @@ export default function Homepage() {
                                 <h2 className="section-main__main-title">Born from Fandom,<br />Forged with Passion</h2>
                                 <p>Team Double Dragon was forged upon passion: passion for Esports and passion for doing things the right way and for the right things.</p>
                                 <p>What started with what-ifs and no technical skill, Arcadia began with two friends, countless fandom debates, and a dream to build the otaku platform we always wished existed. </p>
+                                <Button variant="contained" color="primary">
+                                    <Link href="/d2x/about-us">Learn About D2X</Link>
+                                </Button>
                             </div>
                             <div className="center-content">
                                 <FadeIn direction="left" delay={.1}>
