@@ -1,15 +1,36 @@
 @use "../abstract/variables" as *;
 @forward "./layout/index";
 
+.font {
+
+    &--xs {
+        font-size: 12px;
+    }
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    &__label {
+
+    }
+
+    &__value {
+
+    }
+}
+
 #platform-layout {
     min-height: 100dvh;
 
     #platform-second-layout {
-        display: flex;
+        display: grid;
+        grid-template-columns: 150px 1fr;
         height: calc(100dvh - 3.5rem);
 
         #platform-sidebar {
-            width: 150px;
+            // width: 150px;
             height: 100%;
         }
 
@@ -33,6 +54,10 @@
 
                 &__content {
                     padding: 1.5rem;
+                }
+
+                &__title {
+                    font-weight: bold;
                 }
             }
         }

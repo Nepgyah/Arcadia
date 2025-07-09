@@ -18,6 +18,10 @@
 
         &__left-column {
             margin-right: .5rem;
+
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
         }
 
         &__right-column {

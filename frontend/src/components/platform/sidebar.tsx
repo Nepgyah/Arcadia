@@ -9,15 +9,16 @@ import { useRouter } from "next/navigation";
 
 export default function Sidebar({ links }: { links: url[] }) {
     const {
+        user,
         setUser
     } = useUser()
 
     const router = useRouter();
 
     const handleLogout = () => {
-        apiPOST('account/auth/logout/', {})
-        .then(() => {
-            setUser(null)
+        apiPOST<any>('account/auth/logout/', {})
+        .then((res) => {
+            setUser(res.user)
         })
     }
     return (
@@ -33,9 +34,15 @@ export default function Sidebar({ links }: { links: url[] }) {
                     </Button>
                 ))
             }
-            <Button fullWidth onClick={() => handleLogout()}>
-                Logout
-            </Button>
+            {user?
+                <Button fullWidth onClick={() => handleLogout()}>
+                    Logout
+                </Button>
+            :
+                <Button fullWidth onClick={() => router.push('/platform/auth/login')}>
+                    Login
+                </Button>
+            }
         </div>
     )
 }

@@ -35,7 +35,7 @@ export function UserProvider({
     useEffect(() => {
         apiGET<any>('account/get/')
         .then((res) => {
-            setUser(res)
+            setUser(res.user)
         })
     }, [])
 
