@@ -3,7 +3,8 @@
 #page-d2x-about {
     position: relative;
     overflow: hidden;
-    height: calc(100dvh - 5rem);
+    min-height: calc(100dvh - 5rem);
+    height: 500px;
     background: linear-gradient(to bottom, #7EBCED, #F1E3E7, #FBEDE8);
 
     .clouds {
@@ -155,6 +156,8 @@
 @media only screen and (min-width: 768px) {
 
     #page-d2x-about {
+        height: 900px;
+        
         #scroller {
             #about {
                 .blur-container {

@@ -3,12 +3,13 @@
 import React, { useEffect, useState } from "react";
 import { useInView } from 'react-intersection-observer';
 import { styled, keyframes } from '@mui/system';
-import { Box, Fade, Grow, Slide } from "@mui/material";
+import { Box, Fade, Grid, Grow, Slide } from "@mui/material";
 
 type direction = "up" | "down" | "left" | "right";
 
-const FadeIn = ({children, id, direction = 'up', delay = .2, threshold = 0.7,} : {
+const FadeIn = ({children, id, className='', direction = 'up', delay = .2, threshold = 0.7,} : {
         children: React.ReactNode,
+        className?: string,
         id?: string,
         direction: direction,
         delay?: number,
@@ -35,7 +36,8 @@ const FadeIn = ({children, id, direction = 'up', delay = .2, threshold = 0.7,} :
     };
     return (
 
-    <Box
+    <Grid
+        className={className}
         id={`${id}`}
         ref={ref}
         sx={{
@@ -45,7 +47,7 @@ const FadeIn = ({children, id, direction = 'up', delay = .2, threshold = 0.7,} :
         }}
     >
       {children}
-    </Box>
+    </Grid>
     )
 }
 
