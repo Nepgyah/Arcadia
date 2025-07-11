@@ -5,17 +5,17 @@ Arcadia: Your Otaku Sanctuary!
 ## Description
 Welcome to Arcadia! The ultimate platform for the ultimate Otaku. Arcadia is a web platform that aims to combine the common activities of an otaku into one convenient platform. The public website aims to explain the details of each app, and also a info simulation of our company "Team Double Dragon" such as about us, team and opportunity pages. There are the planned apps and a short description as well as real life equivalents.
 
-**Miru** - Anime info, tracking and watching ( MyAnimeList / Crunchyroll )
-**Yomu** - Manga, LN, etc tracking and reading ( MangaDex )
-**Asobu** - Video game and mod library ( NexusMods / Steam )
-**Kau** - Online merch/commerce ( Amazon )
-**Tsunagu** - Social media platform 
+**Miru** - Anime info, tracking and watching ( MyAnimeList / Crunchyroll )  
+**Yomu** - Manga, LN, etc tracking and reading ( MangaDex )  
+**Asobu** - Video game and mod library ( NexusMods / Steam )  
+**Kau** - Online merch/commerce ( Amazon, Ebay )  
+**Tsunagu** - Any Social media platform 
 
-**Iku** - Event planner and tracker
-**Kiku** - Music library ( Spotify / Soundcloud )
-**Kumitateru** - PC guide and builder ( PcPartPicker )
-**Hiku** - Gacha game guide ( Prydwen )
-**Shiru** - Blog and Articles ( AnimeNewsNetwork )
+**Iku** - Event planner and tracker  
+**Kiku** - Music library ( Spotify / Soundcloud )  
+**Kumitateru** - PC guide and builder ( PcPartPicker )  
+**Hiku** - Gacha game guide ( Prydwen, Game8 )  
+**Shiru** - Blog and Articles ( AnimeNewsNetwork )  
 
 ## Technologies
 Arcadia will be implement using a Next JS frontend to handle both the public website, platform and possible admin sections. The backend will be built using Django and serve as a API accepting calls only from the frontends domain. There will be further plans to create a downloaded application and will require research on which technology will be suited to fit along side the prementioned.
