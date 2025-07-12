@@ -69,8 +69,9 @@ export default function DesktopHeader() {
                         onClose={() => setIsD2XOpen(false)}
                         disableScrollLock
                     >
-                        <MenuItem onClick={() => router.push('/d2x/team')}>Team</MenuItem>
                         <MenuItem onClick={() => router.push('/d2x/about-us')}>About Us</MenuItem>
+                        <MenuItem onClick={() => router.push('/d2x/team')}>Team</MenuItem>
+                        <MenuItem onClick={() => router.push('/d2x/careers')}>Careers</MenuItem>
                     </Menu>
                 </div>
             </div>
