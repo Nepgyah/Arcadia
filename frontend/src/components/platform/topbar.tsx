@@ -101,8 +101,20 @@ export default function Topbar() {
                     open={open === 'app'}
                     onClose={() => setOpen('none')}
                 >
-                    <MenuItem>
+                    <MenuItem onClick={() => routeTo('/platform/miru')}>
                         Miru
+                    </MenuItem>
+                    <MenuItem onClick={() => routeTo('/platform/yomu')}>
+                        Yomu
+                    </MenuItem>
+                    <MenuItem onClick={() => routeTo('/platform/asobu')}>
+                        Asobu
+                    </MenuItem>
+                    <MenuItem onClick={() => routeTo('/platform/kau')}>
+                        Kau
+                    </MenuItem>
+                    <MenuItem onClick={() => routeTo('/platform/tsunagu')}>
+                        Tsunagu
                     </MenuItem>
                 </Menu>
             </div>

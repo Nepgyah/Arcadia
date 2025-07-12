@@ -5,15 +5,18 @@ import Topbar from "@/components/platform/topbar";
 import React from "react";
 
 import "@/styles/platform/main.scss";
-import { mainboard} from "@/data/platform/urls";
+import { asobuNav, kauNav, mainboard, miruNav, tsunaguNav, yomuNav} from "@/data/platform/urls";
 import { usePathname } from "next/navigation";
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
 
     const getNav = () => {
-        // if (pathname.startsWith('/platform/miru')) return miruNav;
-        // if (pathname.startsWith('/platform/asobu')) return asobuNav;
+        if (pathname.startsWith('/platform/miru')) return miruNav;
+        if (pathname.startsWith('/platform/yomu')) return yomuNav;
+        if (pathname.startsWith('/platform/asobu')) return asobuNav;
+        if (pathname.startsWith('/platform/kau')) return kauNav;
+        if (pathname.startsWith('/platform/tsunagu')) return tsunaguNav;
         // fallback to main platform nav
         return mainboard;
     };

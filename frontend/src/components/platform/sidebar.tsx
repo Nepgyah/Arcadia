@@ -4,7 +4,7 @@ import { url } from "@/data/platform/urls"
 import "@/styles/platform/components/sideNav.scss"
 import { apiPOST } from "@/util/api";
 import { useUser } from "@/util/userContext";
-import { Button } from "@mui/material"
+import { Button, Divider } from "@mui/material"
 import { useRouter } from "next/navigation";
 import React from "react";
 
@@ -36,6 +36,7 @@ export default function Sidebar({ links }: { links: url[] }) {
                     </Button>
                 ))
             }
+            <Divider sx={{ backgroundColor: 'white'}} />
             {user?
                 <React.Fragment>
                     <Button fullWidth onClick={() => router.push(`/platform/profile`)}>
