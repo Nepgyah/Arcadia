@@ -28,14 +28,36 @@ export const apiPOST = async <T>(url: string, body: any): Promise<T> => {
 export const apiGET = async <T>(url: string): Promise<T> => {
     const endpoint = `http://localhost:8000/api/${url}`;
 
-    const res = await fetch(endpoint, {
-        method: "GET",
-        credentials: "include",
-        headers: {
-            Accept: "application/json",
-        },
-    });
+    try {
+        const res = await fetch(endpoint, {
+            method: "GET",
+            credentials: "include",
+            headers: {
+                Accept: "application/json",
+            },
+        });
 
-    if (!res.ok) throw new Error(`GET ${url} failed`);
-    return res.json();
+        if (!res.ok) {
+            let message = `Request failed with status ${res.status}`;
+            try {
+                const errorData = await res.json();
+                message = errorData?.detail || message;
+            } catch {
+                if (res.status >= 500) {
+                    message = "Server error occurred. Please try again later.";
+                }
+            }
+            throw message;
+            
+        } else {
+            return await res.json();
+        }
+
+    } catch (error) {
+
+        if (error instanceof Error) {
+            throw "An unexpected error occured. Please try again later.";
+        }
+        throw error;
+    }
 };

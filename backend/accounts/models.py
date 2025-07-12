@@ -56,6 +56,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
 
+    picture_preset = models.SmallIntegerField(default=0)
+    color_preset = models.SmallIntegerField(default=0)
     objects = CustomUserManager()
 
     class Meta:

@@ -79,9 +79,9 @@ export default function DesktopHeader() {
                 <Button 
                     variant="contained" 
                     color="secondary"
-                    onClick={() => router.push('/platform/auth/login')}
+                    onClick={() => router.push('/platform')}
                 >
-                    Login
+                    Platform
                 </Button>
                 {/* <Button variant="outlined" color="secondary">
                     Contact Us

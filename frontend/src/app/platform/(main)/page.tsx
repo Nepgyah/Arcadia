@@ -1,5 +1,7 @@
+import { useSnackbar } from "@/components/snackbarProvider"
+
 export default function HomeDashboard() {
     return (
-        <h1>Platform Dashboard</h1>
+        <h1>Home</h1>
     )
 }

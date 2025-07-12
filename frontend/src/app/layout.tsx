@@ -1,11 +1,8 @@
-import { ThemeProvider } from '@mui/material/styles';
 import type { Metadata } from 'next';
 import ThemeWrapper from '../components/themeWrapper';
 import { CssBaseline } from '@mui/material';
 
 import "@/styles/_master.scss";
-import CSRFLoader from '@/util/csrfLoader';
-import Head from 'next/head';
 
 export const metadata: Metadata = {
   title: 'Arcadia - Otaku Santuary',

@@ -50,13 +50,13 @@ export default function MobileHeader() {
                     <Button 
                         variant="contained" 
                         color="secondary"
-                        onClick={() => handleClick('platform/auth/login')}
+                        onClick={() => handleClick('platform')}
                     >
-                        Login
+                        Platforms
                     </Button>
-                    <Button variant="outlined" color="secondary">
+                    {/* <Button variant="outlined" color="secondary">
                         Contact Us
-                    </Button>
+                    </Button> */}
                 </div>
             </Drawer>
             <div className='header__wrapper header__wrapper--mobile'>

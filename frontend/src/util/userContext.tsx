@@ -1,25 +1,50 @@
 'use client';
 
-import { createContext, useContext } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { apiGET } from "./api";
+import { useSnackbar } from "@/components/snackbarProvider";
+import { User } from "./types/account";
 
-type User = {
-    id: number,
-    username: string,
-    email: string
+type UserContextType = {
+    user: User | null;
+    setUser: (user: User | null) => void,
+    userLoading: boolean
 }
-
-const UserContext = createContext<User | null>(null);
+const UserContext = createContext<UserContextType | null>(null);
 
 export function UserProvider({
-    user,
     children
 } : {
-    user: User,
     children: React.ReactNode
 }) {
-    return <UserContext.Provider value={user}>{children}</UserContext.Provider>
+    const { showMessage } = useSnackbar()
+    const [user, setUser] = useState<User | null>(null)
+    const [userLoading, setUserLoading] = useState<boolean>(true);
+
+    useEffect(() => {
+        apiGET<any>('account/get/')
+        .then((res) => {
+            setUser(res.user)
+        })
+        .catch((error) => {
+            showMessage(error, "error");
+        })
+        .finally(() => {
+            setUserLoading(false)
+        })
+    }, [])
+
+    return (
+        <UserContext.Provider value={{user, setUser, userLoading}}>
+            {children}
+        </UserContext.Provider>
+    )
 }
 
-export function getUser() {
-    return useContext(UserContext);
+export function useUser() {
+    const context = useContext(UserContext);
+    if (!context) {
+        throw new Error('useUser must be used within a UserProvider');
+    }
+    return context;
 }
