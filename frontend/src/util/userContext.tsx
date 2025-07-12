@@ -24,7 +24,7 @@ export function UserProvider({
     useEffect(() => {
         apiGET<any>('account/get/')
         .then((res) => {
-            setUser(res)
+            setUser(res.user)
         })
         .catch((error) => {
             showMessage(error, "error");

@@ -52,11 +52,11 @@ class GetAccountView(APIView):
         try:
             user_obj = User.objects.get(id=request.user.id)
         except User.DoesNotExist:
-            return Response({})
+            return Response({'user': None})
 
         user_data = UserSerializer(user_obj, many=False).data
 
-        return Response(user_data)
+        return Response({'user': user_data})
 
 @require_POST
 def testPost(request):
