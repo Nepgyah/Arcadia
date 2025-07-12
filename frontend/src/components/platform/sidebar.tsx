@@ -6,6 +6,7 @@ import { apiPOST } from "@/util/api";
 import { useUser } from "@/util/userContext";
 import { Button } from "@mui/material"
 import { useRouter } from "next/navigation";
+import React from "react";
 
 export default function Sidebar({ links }: { links: url[] }) {
     const {
@@ -18,7 +19,8 @@ export default function Sidebar({ links }: { links: url[] }) {
     const handleLogout = () => {
         apiPOST<any>('account/auth/logout/', {})
         .then((res) => {
-            setUser(res.user)
+            setUser(res.user);
+            router.push('/platform')
         })
     }
     return (
@@ -35,9 +37,14 @@ export default function Sidebar({ links }: { links: url[] }) {
                 ))
             }
             {user?
-                <Button fullWidth onClick={() => handleLogout()}>
-                    Logout
-                </Button>
+                <React.Fragment>
+                    <Button fullWidth onClick={() => router.push(`/platform/profile`)}>
+                        Profile
+                    </Button>
+                    <Button fullWidth onClick={() => handleLogout()}>
+                        Logout
+                    </Button>
+                </React.Fragment>
             :
                 <Button fullWidth onClick={() => router.push('/platform/auth/login')}>
                     Login
