@@ -1,5 +1,5 @@
 export default function MiruHome() {
     return (
-        <h1>Miru</h1>
+        <h1>Miru Home</h1>
     )
 }

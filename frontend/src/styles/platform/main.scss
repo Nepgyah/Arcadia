@@ -3,9 +3,27 @@
 
 .font {
 
+    &--lg {
+        font-size: 24px;
+    }
+
     &--xs {
         font-size: 12px;
     }
+}
+
+.app-bg {
+    &--miru { background-color: $miru-primary; }
+    &--yomu { background-color: $yomu-primary; }
+    &--asobu { background-color: $asobu-primary; }
+    &--kau { background-color: $kau-primary; }
+    &--tsunagu { background-color: $tsunagu-primary; }
+
+    &--iku { background-color: $iku-primary; }
+    &--kiku { background-color: $kiku-primary; }
+    &--hiku { background-color: $hiku-primary; }
+    &--shiru { background-color: $shiru-primary; }
+    &--kumitateru { background-color: $kumitateru-primary; }
 }
 
 .stat {
@@ -59,6 +77,10 @@
                 &__title {
                     font-weight: bold;
                 }
+            }
+
+            h1 {
+                font-size: 1.5rem;
             }
         }
     }
