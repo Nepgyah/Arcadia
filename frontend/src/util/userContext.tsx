@@ -2,47 +2,43 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 import { apiGET } from "./api";
-
-type User = {
-    id: number,
-    username: string,
-    tag: number,
-    email: string,
-    real_name: string,
-    about: string,
-    birth_date: string | null,
-    updated_at: string,
-    created_at: string,
-    picture_preset: number,
-    color_preset: number
-}
+import { useSnackbar } from "@/components/snackbarProvider";
+import { User } from "./types/account";
 
 type UserContextType = {
     user: User | null;
-    setUser: (user: User | null) => void
+    setUser: (user: User | null) => void,
+    userLoading: boolean
 }
 const UserContext = createContext<UserContextType | null>(null);
 
 export function UserProvider({
     children
 } : {
-    user: User,
     children: React.ReactNode
 }) {
-
+    const { showMessage } = useSnackbar()
     const [user, setUser] = useState<User | null>(null)
+    const [userLoading, setUserLoading] = useState<boolean>(true);
 
     useEffect(() => {
         apiGET<any>('account/get/')
         .then((res) => {
-            setUser(res.user)
+            setUser(res)
+        })
+        .catch((error) => {
+            showMessage(error, "error");
+        })
+        .finally(() => {
+            setUserLoading(false)
         })
     }, [])
 
     return (
-        <UserContext.Provider value={{user, setUser}}>
+        <UserContext.Provider value={{user, setUser, userLoading}}>
             {children}
-    </UserContext.Provider>)
+        </UserContext.Provider>
+    )
 }
 
 export function useUser() {
