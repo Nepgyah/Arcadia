@@ -1,9 +1,9 @@
 'use client';
 
-import { url } from "@/data/platform/urls"
+import { url } from "@/data/urls"
 import "@/styles/platform/components/sideNav.scss"
-import { apiPOST } from "@/util/api";
-import { useUser } from "@/util/userContext";
+import { apiPOST } from "@/util/api/api";
+import { useUser } from "@/util/wrappers/userContext";
 import { Button, Divider } from "@mui/material"
 import { useRouter } from "next/navigation";
 import React from "react";

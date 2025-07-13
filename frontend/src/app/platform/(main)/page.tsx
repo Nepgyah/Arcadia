@@ -1,6 +1,6 @@
 'use client';
 
-import { useSnackbar } from "@/components/snackbarProvider"
+import { useSnackbar } from "@/util/wrappers/snackbarProvider"
 import React from "react"
 import Image from 'next/image'
 

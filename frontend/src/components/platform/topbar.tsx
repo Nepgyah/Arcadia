@@ -6,10 +6,10 @@ import AppsIcon from '@mui/icons-material/Apps';
 
 import "@/styles/platform/components/topNav.scss";
 import { Avatar, IconButton, Menu, MenuItem, Tooltip } from "@mui/material";
-import { useUser } from "@/util/userContext";
+import { useUser } from "@/util/wrappers/userContext";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { apiPOST } from "@/util/api";
+import { apiPOST } from "@/util/api/api";
 
 type openStatus = 'app' | 'profile' | 'none';
 
@@ -66,7 +66,7 @@ export default function Topbar() {
                         id="profile"
                         onClick={() => handleOpen('profile')}
                     >
-                        <Avatar src={user ? `/auth/profile-pics/profile_${user?.picture_preset}.webp` : ''}/>
+                        <Avatar src={user ? `/platform/auth/profile-pics/profile_${user?.picture_preset}.webp` : ''}/>
                     </IconButton>
                 </Tooltip>
                 {!user ?

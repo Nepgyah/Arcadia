@@ -17,7 +17,7 @@ export default function ResetPassword() {
                     <p>Source: Genshin Impact</p>
                     <p>Credit: Hoyoverse</p>
                 </div>
-                <img src="/auth/xilonen.jpg" alt="Xilonen" />
+                <img src="/platform/auth/xilonen.jpg" alt="Xilonen" />
             </div>
             <div className="form">
                 <div></div>

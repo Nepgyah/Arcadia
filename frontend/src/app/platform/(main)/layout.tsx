@@ -5,7 +5,7 @@ import Topbar from "@/components/platform/topbar";
 import React from "react";
 
 import "@/styles/platform/main.scss";
-import { asobuNav, kauNav, mainboard, miruNav, tsunaguNav, yomuNav} from "@/data/platform/urls";
+import { asobuNav, kauNav, mainboard, miruNav, tsunaguNav, yomuNav} from "@/data/urls";
 import { usePathname } from "next/navigation";
 
 export default function MainLayout({ children }: { children: React.ReactNode }) {

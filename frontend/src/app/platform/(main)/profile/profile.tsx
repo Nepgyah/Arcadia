@@ -1,4 +1,4 @@
-import { useUser } from "@/util/userContext";
+import { useUser } from "@/util/wrappers/userContext";
 import { Avatar, Button, Divider } from '@mui/material';
 import React from 'react';
 
@@ -15,7 +15,7 @@ export default function Profile({user} : {user: any}) {
                 <div className="page-content__left-column">
                     <div id="overview" className="card card--custom">
                         <img className="background" src="/website/images/homepage/hero/anime-world.png" alt="" />
-                        <Avatar className={`profile-pic profile-pic--color-${user.color_preset}`} src={user ? `/auth/profile-pics/profile_${user?.picture_preset}.webp` : ''}/>
+                        <Avatar className={`profile-pic profile-pic--color-${user.color_preset}`} src={user ? `/platform/auth/profile-pics/profile_${user?.picture_preset}.webp` : ''}/>
                         <div className="card__content">
                             <h2 className="name">{user?.username}</h2>
                             <p className="font--xs">{user?.about}</p>

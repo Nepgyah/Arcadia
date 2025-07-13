@@ -14,16 +14,22 @@
 | Shiru      |         |
 ## Alpha v0.3 - xxx
 ---
-Note: Still setting up the API backend for production but changes will be visible on the **develop** branch 
+Note: Still setting up the API backend for production so only updates related to the public side of the website will be visible. See **develop** branch for full changes
 This version adds the basic profile actions and the skeleton for the platform
-- Added **Profile** page
-- Added placeholder pages for the following apps
-	- **Miru**
-	- **Yomu**
-	- **Asobu**
-	- **Kau**
-	- **Tsunagu**
-## Alpha v0.2 - Jul 18 2025
+- API
+	-  Created **accounts** app
+	- Added profile endpoints
+- Website
+	- Added hero sections for the following apps
+		- **Iku**
+		- **Kiku**
+		- **Hiku**
+		- **Kumitateru**
+		- **Shiru**
+- Platform
+	- Added simple placeholder for all apps
+	- Added **Profile** page
+## Alpha v0.2 - Jul 13 2025
 ---
 This version adds 2 more pages under the **D2X** tab for the public website
 - Added **About Us**

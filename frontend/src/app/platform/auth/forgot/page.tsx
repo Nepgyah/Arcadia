@@ -16,7 +16,7 @@ export default function ForgotPassword() {
                     <p>Source: Honkai Star Rail</p>
                     <p>Credit: Hoyoverse</p>
                 </div>
-                <img src="/auth/castorice.jpg" alt="Castorice" />
+                <img src="/platform/auth/castorice.jpg" alt="Castorice" />
             </div>
             <div className="form">
                 <div></div>

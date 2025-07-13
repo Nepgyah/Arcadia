@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
-import ThemeWrapper from '../components/themeWrapper';
+import ThemeWrapper from '../util/wrappers/themeWrapper';
 import { CssBaseline } from '@mui/material';
 
 import "@/styles/_master.scss";
+import CSRFLoader from '@/util/api/csrfLoader';
 
 export const metadata: Metadata = {
   title: 'Arcadia - Otaku Santuary',
@@ -20,7 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <ThemeWrapper>
       <CssBaseline>
         <html lang="en">
-            {/* <CSRFLoader /> */}
+            <CSRFLoader />
             {children}
         </html>
       </CssBaseline>

@@ -1,7 +1,7 @@
 'use client';
 
-import { apiPOST } from '@/util/api';
-import { useUser } from '@/util/userContext';
+import { apiPOST } from '@/util/api/api';
+import { useUser } from '@/util/wrappers/userContext';
 import { Button, Checkbox, FormControl, FormControlLabel } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import Link from 'next/link';
@@ -82,7 +82,7 @@ export default function Login() {
                     <p>Source: Blue Archive</p>
                     <p>Credit: Nexon Games</p>
                 </div>
-                <img src="/auth/sunaookami-shiroko.jpg" alt="Sunaookami Shiroko" />            
+                <img src="/platform/auth/sunaookami-shiroko.jpg" alt="Sunaookami Shiroko" />            
             </div>
         </div>
     )

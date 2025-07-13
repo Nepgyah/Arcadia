@@ -3,7 +3,7 @@
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Profile from "../profile";
-import { apiGET } from "@/util/api";
+import { apiGET } from "@/util/api/api";
 
 export default function PublicProfile() {
     const params = useParams();

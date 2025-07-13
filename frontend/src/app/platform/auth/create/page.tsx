@@ -64,7 +64,7 @@ export default function CreateAccount() {
                     <p>Source: Uma Musume Pretty Derby</p>
                     <p>Credit: Cygames Games</p>
                 </div>
-                <img src="/auth/uma-musume.jpg" alt="Sunaookami Shiroko" />
+                <img src="/platform/auth/uma-musume.jpg" alt="Uma Musume" />
             </div>
         </div>
     )

@@ -1,6 +1,6 @@
 'use client';
 
-import { useUser } from "@/util/userContext";
+import { useUser } from "@/util/wrappers/userContext";
 import Profile from "./profile";
 
 export default function SelfProfile() {
