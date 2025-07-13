@@ -37,3 +37,23 @@ html {
     writing-mode: vertical-rl;
     text-orientation: upright;
 }
+
+// Popups appear on the same level as the main content, thus
+// we need to target them at the top level :/
+#solutions-dropdown {
+    .MuiPaper-root {
+        ul {
+            display: flex;
+
+            .MuiButtonBase-root {
+                img {
+                    margin-right: .5rem;
+                }
+            }
+        }
+        
+        .secondary {
+            border-left: 2px solid rgba(white, .2);
+        }
+    }
+}

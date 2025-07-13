@@ -3,6 +3,7 @@
 import { Button, Menu, MenuItem } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import AppIcon from "../appIcon";
 
 export default function DesktopHeader() {
 
@@ -47,11 +48,20 @@ export default function DesktopHeader() {
                         onClose={() => setIsSolutionsOpen(false)}
                         disableScrollLock
                     >
-                        <MenuItem onClick={() => router.push('/apps/miru')}>Miru</MenuItem>
-                        <MenuItem onClick={() => router.push('/apps/yomu')}>Yomu</MenuItem>
-                        <MenuItem onClick={() => router.push('/apps/asobu')}>Asobu</MenuItem>
-                        <MenuItem onClick={() => router.push('/apps/kau')}>Kau</MenuItem>
-                        <MenuItem onClick={() => router.push('/apps/tsunagu')}>Tsunagu</MenuItem>
+                        <div className="primary">
+                            <MenuItem onClick={() => router.push('/apps/miru')}><AppIcon app="miru" /><p>Miru</p></MenuItem>
+                            <MenuItem onClick={() => router.push('/apps/yomu')}><AppIcon app="yomu" /><p>Yomu</p></MenuItem>
+                            <MenuItem onClick={() => router.push('/apps/asobu')}><AppIcon app="asobu" /><p>Asobu</p></MenuItem>
+                            <MenuItem onClick={() => router.push('/apps/kau')}><AppIcon app="kau" /><p>Kau</p></MenuItem>
+                            <MenuItem onClick={() => router.push('/apps/tsunagu')}><AppIcon app="tsunagu" /><p>Tsunaguu</p></MenuItem>
+                        </div>
+                        <div className="secondary">
+                            <MenuItem onClick={() => router.push('/apps/iku')}><AppIcon app="iku" /><p>Iku</p></MenuItem>
+                            <MenuItem onClick={() => router.push('/apps/hiku')}><AppIcon app="hiku" /><p>Hiku</p></MenuItem>
+                            <MenuItem onClick={() => router.push('/apps/shiru')}><AppIcon app="shiru" /><p>Shiru</p></MenuItem>
+                            <MenuItem onClick={() => router.push('/apps/kumitateru')}><AppIcon app="kumitateru" /><p>Kumitateru</p></MenuItem>
+                            <MenuItem onClick={() => router.push('/apps/kiku')}><AppIcon app="kiku" /><p>Kiku</p></MenuItem>
+                        </div>
                     </Menu>
                 </div>
                 <div>

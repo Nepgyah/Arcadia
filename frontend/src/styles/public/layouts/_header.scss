@@ -38,9 +38,14 @@
                 }
 
                 .MuiList-root {
+                    display: flex;
                     .MuiButtonBase-root {
                         width: 100%;
                     }
+                }
+
+                #solutions-dropdown {
+                    display: flex;
                 }
             }
 
@@ -79,12 +84,24 @@
 
             .MuiButton-root {
                 color: white;
+
+                &.dropdown-open {
+                    color: $arcadia-secondary-one;
+                }
             }
 
             .MuiCollapse-root {
                 padding-left: 20px;
                 color: white;
-
+                
+                &.apps {
+                    .MuiButtonBase-root {
+                        display: flex;
+                        justify-content: flex-start;
+                        column-gap: .5rem;
+                        width: 100%;
+                    }
+                }
                 .MuiCollapse-wrapperInner {
                     display: flex;
                     flex-direction: column;
