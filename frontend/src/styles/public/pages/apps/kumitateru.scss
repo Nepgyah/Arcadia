@@ -1,0 +1,75 @@
+@use '../../../abstract/variables' as *;
+
+#page-apps-kumitateru {
+    
+    #hero {
+        background-color: $bg-body-light-primary;
+        .hero__wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 1rem;
+            .left-col {
+                order: 2;
+                width: 50%;
+            }
+
+            .middle-col {
+                width: 100%;
+                order: 1;
+
+                .top-row {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    justify-items: center;
+                    margin-bottom: 1rem;
+
+                    #cpu {
+                        max-width: 100px;
+                    }
+                }
+            }
+            .right-col {
+                order: 3;
+                width: 50%;
+
+                #mobo {
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #page-apps-kumitateru {
+
+        #hero {
+            .hero__wrapper {
+                display: grid;
+                grid-template-columns: 1fr 2fr 1fr;
+                column-gap: 2rem;
+                .left-col {
+                    order: 1;
+                    width: 100%;
+                }
+
+                .middle-col {
+                    order: 2;
+                    
+                    .top-row {
+                        margin-bottom: 4rem;
+                        justify-items: flex-start;
+                        #cpu {
+                            max-width: 100%;
+                        }
+                    }
+                }
+
+                .right-col {
+                    order: 3;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
