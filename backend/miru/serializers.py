@@ -1,10 +1,10 @@
-import rest_framework
-import models
+from rest_framework import serializers
+from .models import Anime
 
-class AnimeSerializer(rest_framework.serializers.ModelSerializer):
+class AnimeSerializer(serializers.ModelSerializer):
 
-    class meta:
-        model=models.Anime
+    class Meta:
+        model=Anime
         fields = [
             'title', 'title_ja', 'title_romaji', 'title_alternatives',
             'slug',
