@@ -49,6 +49,7 @@ SESSION_COOKIE_SECURE = False
 
 INSTALLED_APPS = [
     'accounts',
+    'miru',
     'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
