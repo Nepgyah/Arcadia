@@ -1,3 +1,5 @@
+## NOTE
+The backend is still in the process of being put on production. To view the latest backend code, please check the `develop` or any app focused feature branch.
 
 ## Name
 Arcadia: Your Otaku Sanctuary!
@@ -18,7 +20,7 @@ Welcome to Arcadia! The ultimate platform for the ultimate Otaku. Arcadia is a w
 **Shiru** - Blog and Articles ( AnimeNewsNetwork )  
 
 ## Technologies
-Arcadia will be implement using a Next JS frontend to handle both the public website, platform and possible admin sections. The backend will be built using Django and serve as a API accepting calls only from the frontends domain. There will be further plans to create a downloaded application and will require research on which technology will be suited to fit along side the prementioned.
+Arcadia will be implement using a Next JS frontend to handle both the public website, platform and possible admin sections. The backend will be built using Django and serve as an API accepting calls only from the frontend domain. There will be further plans to create a downloadable application and will require research on which technology will be suited to fit along side the prementioned.
 
 ## Installation / Setup
 1. Install **python3 **and **Node JS**
