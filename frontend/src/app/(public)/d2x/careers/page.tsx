@@ -88,8 +88,8 @@ export default function D2XCareers() {
                 <section id="benefits" className="section">
                     <div className="section__wrapper">
                         <div className="section-main section-main--center">
-                            <p className="section-main__mini-title">Easy Steps</p>
-                            <h2 className="section-main__main-title">Set up your Arcadia experience</h2>
+                            <p className="section-main__mini-title">Because Passion Needs Fuel</p>
+                            <h2 className="section-main__main-title">Discover Your D2X Buffs</h2>
                         </div>
                         <div className="section-content section-content--three-col">
                             <div className="buff">
