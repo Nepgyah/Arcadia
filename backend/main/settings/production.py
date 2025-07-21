@@ -7,16 +7,16 @@ load_dotenv(os.path.join(BASE_DIR, ".env.prod"))
 SECRET_KEY = os.getenv("DJANGO_SECRET")
 
 ALLOWED_HOSTS = [
-    "arcadia-lovat.vercel.app",
-    "bizarre-rhoda-team-double-dragon-9509d707.koyeb.app"
+    "arcadia-inky.vercel.app",
+    "causal-marianne-team-double-dragon-372edf81.koyeb.app"
 ]
 
 CORS_ALLOWED_ORIGINS = [
-    "https://arcadia-lovat.vercel.app"
+    "https://arcadia-inky.vercel.app"
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://arcadia-lovat.vercel.app"
+    "https://arcadia-inky.vercel.app"
 ]
 
 CSRF_COOKIE_SAMESITE = "None"
