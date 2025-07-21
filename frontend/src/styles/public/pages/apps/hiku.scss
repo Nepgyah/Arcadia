@@ -1,0 +1,92 @@
+@use '../../../abstract/variables' as *;
+
+#page-apps-hiku {
+    
+    #hero {
+        background-color: #1E1E1E;
+
+        #gold-arrows {
+            right: 0;
+            bottom: 0;
+        }
+        .hero__wrapper {
+            display: flex;
+            flex-direction: column;
+            row-gap: 2rem;
+
+            h1 {
+                color: $hiku-primary;
+            }
+            
+            #gacha-slideshow {
+                transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+                will-change: opacity, transform;
+
+                &.fade-out {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+
+                &.fade-in {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            #gacha-image {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                column-gap: .5rem;
+                justify-items: stretch;
+
+                #image-part-1 {
+                    margin-top: 48%;
+                }
+                #image-part-3 {
+                    margin-top: 69%;
+                }
+            }
+
+             #features {
+                display: flex;
+                flex-direction: column;
+                row-gap: 2rem;
+                .feature {
+                    > div {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    .MuiSvgIcon-root {
+                        color: white;
+                        margin-right: 1rem;
+                    }
+
+                    &__header {
+                        color: $hiku-primary;
+                        font-weight: bold;
+                    }
+
+                    &__text {
+                        padding-left:calc( 1rem + 27px);
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #page-apps-hiku {
+
+        #hero {
+            .hero__wrapper {
+                display: grid;
+                align-items: center;
+                grid-template-columns: 1fr 1fr 1fr;
+                column-gap: 1rem;
+            }
+        }
+    }
+}

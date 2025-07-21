@@ -1,0 +1,44 @@
+$div-bottom-margin: 5rem;
+$section-margin-large: 10rem;
+$grid-row-gap: 2rem;
+$max-width: 85rem;
+
+// Text Colors
+$text-dark-primary: #3E3E42;
+$text-light-primary: #ffffff;
+
+// Main Arcadia
+$arcadia-primary-one: #505477;
+$arcadia-primary-one-dark: #3F3E56;
+$arcadia-primary-two: #86486E;
+$arcadia-primary-three: #3D1F34;
+$arcadia-secondary-one: #FFC2C2;
+$bg-body-light-primary: #FFF6E1;
+
+// App colors
+$miru-primary: #61CF93;
+$yomu-primary: #979797;
+$asobu-primary: #EE473D;
+$kau-primary: #2692D3;
+$tsunagu-primary: #FFCA3C;
+
+$iku-primary: #483D8B;
+$shiru-primary: #FFA468;
+$hiku-primary: #F0D66A;
+$kumitateru-primary: #61CF93;
+$kiku-primary: #9370DB;
+
+// Background gradients
+$arcadia-gradient-vertical: linear-gradient(to bottom, #505477, #2F324B);
+$gradient-lightpnk-darkpnk-vertical: linear-gradient(to bottom, #EACCD2, #E2647D);
+$gradient-pink-blue-horizontal: linear-gradient(to right, #FFC8DD, #A2D2FF);
+$gradient-orange-pink-vertical: linear-gradient(to bottom, #FFD7BA, #FFA7A1);
+$gradient-vertical-one: linear-gradient(to bottom, #59304D, #2F324B);
+
+// Misc
+$border-radius: 15px;
+$box-shadow-default: 0px 4px 4px rgba(#000000, .25);
+
+// Platform colors
+$platform-bg-1: #23242A;
+$platform-bg-2: #1C1D1F;

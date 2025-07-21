@@ -1,0 +1,132 @@
+@use "../../../abstract/variables" as *;
+
+#page-d2x-team {
+
+    .card {
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        
+        &__image {
+            height: 250px;
+            width: 250px;
+            object-fit: cover;
+            margin-bottom: .5rem;
+            border-radius: 5px;
+            box-shadow: $box-shadow-default;
+
+            &--highlight {
+                border: 4px solid $arcadia-secondary-one;
+            }
+        }
+
+        &__text {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            color: $arcadia-primary-one;
+
+            .position {
+                margin-top: .5rem;
+                color: $text-dark-primary;
+            }
+
+            &--white {
+                color: white;
+
+                .position {
+                    color: white;
+                }
+            }
+
+            .first-name {
+                font-size: .75rem;
+            }
+
+            .emphasis {
+                font-weight: bold;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    .full-width {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+        gap: 2rem;
+    }
+
+    .section-content {
+
+        h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .right-col {
+            margin-top: 5rem;
+        }
+        
+        .col-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-items: center;
+            gap: 2rem;
+        }
+    }
+
+    #hero {
+        min-height: 430px;
+    }
+
+    .hero__mask {
+        opacity: .5
+    };
+    
+    #main-division {
+        background: $gradient-vertical-one;
+    }
+    
+    #tech-division {
+        background: $gradient-lightpnk-darkpnk-vertical;
+
+        #dev-ops {
+            margin-top: 5rem;
+        }
+    }
+
+    #finance-rnd {
+        background-color: #1D1E21;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    #page-d2x-team {
+
+        .section-content {
+
+            &.two-col {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .left-col {
+                border-right: 2px solid rgba($arcadia-primary-one, .5);
+            }
+
+            .right-col {
+                margin-top: 0;
+            }
+        }
+
+        .full-width {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            justify-items: center;
+            gap: 2rem;
+        }
+    }
+}

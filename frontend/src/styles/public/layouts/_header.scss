@@ -1,0 +1,133 @@
+@use '../..//abstract/variables' as *;
+
+.header {
+    background-color: $arcadia-primary-one;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    width: 100dvw;
+    border-bottom: 1px solid $text-dark-primary;
+
+    &__logo {
+        height: 100%;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    &__wrapper {
+        height: 5rem;
+        padding: 20px;
+        max-width: $max-width;
+        margin: auto;
+
+        display: flex;
+        justify-content: space-between;
+
+        &--desktop {
+
+            .nav {
+                display: flex;
+                align-items: center;
+                column-gap: 1rem;
+
+                &__main {
+                    color: white;
+                    text-decoration: none;
+                }
+
+                .MuiList-root {
+                    display: flex;
+                    .MuiButtonBase-root {
+                        width: 100%;
+                    }
+                }
+
+                #solutions-dropdown {
+                    display: flex;
+                }
+            }
+
+            .header__cta {
+                display: flex;
+                column-gap: 1rem;
+            }
+        }
+
+        &--mobile {
+            .burger {
+                .MuiSvgIcon-root {
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+.mobile-nav-drawer {
+    .MuiPaper-root {
+        padding: 20px;
+        background-color: $arcadia-primary-one;
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+
+        .header__logo {
+            height: 2.5rem;
+        }
+
+        .nav {
+            display: flex;
+            flex-direction: column;
+
+            .MuiButton-root {
+                color: white;
+
+                &.dropdown-open {
+                    color: $arcadia-secondary-one;
+                }
+            }
+
+            .MuiCollapse-root {
+                padding-left: 20px;
+                color: white;
+                
+                &.apps {
+                    .MuiButtonBase-root {
+                        display: flex;
+                        justify-content: flex-start;
+                        column-gap: .5rem;
+                        width: 100%;
+                    }
+                }
+                .MuiCollapse-wrapperInner {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+        .header__cta {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+
+            .MuiButton-root {
+                width: 100%;
+            }
+        }
+    }
+}
+
+#solutions-dropdown, #d2x-dropdown {
+    
+    .MuiList-root {
+        background-color: $arcadia-primary-one-dark;
+
+        .MuiButtonBase-root {
+            color: white;
+            width: 100%;
+        }   
+    }
+}

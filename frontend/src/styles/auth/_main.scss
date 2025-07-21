@@ -1,0 +1,97 @@
+@use "../abstract/variables" as *;
+#auth-layout {
+    .auth-wrapper {
+        display: grid;
+        min-height: 100dvh;
+        height: 900px;
+    }
+
+    .note {
+        text-align: center;
+    }
+    .form, .image {
+        min-height: inherit;
+    }
+
+    .form {
+        background: $gradient-pink-blue-horizontal;
+        padding: 4rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .text {
+            h1 {
+                text-align: center;
+                font-size: 4rem;
+                color: $arcadia-primary-one;
+                margin-bottom: 4rem;
+            }
+
+            .instruction {
+                text-align: center;
+
+                a {
+                    text-decoration: underline;
+                }
+            }
+
+            .form-content {
+                display: flex;
+                flex-direction: column;
+                row-gap: 1.5rem;
+
+                .MuiButton-root {
+                    width: 100%;
+                }
+            }
+        }
+
+        .logo {
+            img  {
+                margin: auto;
+            }
+        }
+    }
+
+    .image {
+        display: none;
+    }
+
+    #page-auth-login {
+
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #auth-layout {
+
+        .auth-wrapper {
+            
+            .image {
+                display: block;
+                position: relative;
+
+                .citation {
+                    position: absolute;
+                    bottom: 24px;
+                    right: 24px;
+                    color: white;
+                }
+                img {
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        #page-auth-login, #page-auth-create {
+            grid-template-columns: 40% 60%;
+        }
+
+        #page-auth-forgot, #page-auth-reset {
+            grid-template-columns: 60% 40%;
+        }
+    }
+}

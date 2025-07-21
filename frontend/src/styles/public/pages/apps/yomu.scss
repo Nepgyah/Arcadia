@@ -1,0 +1,58 @@
+@use '../../../abstract/variables' as *;
+
+#page-apps-yomu {
+
+    .hero {
+        background-color: #FFF6E1;
+
+        &__bg-image {
+            object-fit: cover;
+        }
+        
+        .hero-image {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            order: 2;
+
+            img {
+                width: 75%;
+            }
+        }
+
+        .text-container {
+            order: 1;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    #page-apps-yomu {
+
+        .hero {
+
+            #left-books {
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+            }
+
+            #right-books {
+                top: 50%;
+                transform: translateY(-50%);
+                right: 0;
+            }
+            
+            .hero-image {
+                order: 1;
+                align-items: flex-start;
+            }
+
+            .text-container {
+                order: 2;
+            }
+        }
+    }
+}

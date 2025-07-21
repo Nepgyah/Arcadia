@@ -1,0 +1,90 @@
+@use '../../../abstract/variables' as *;
+
+#page-apps-shiru {
+
+    .hero {
+        &__full-wrapper  {
+            display: flex;
+            flex-direction: column;
+            min-height: inherit;
+            
+            #topics {
+                background-color: $arcadia-primary-one;
+                padding: 1rem;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                .topic {
+                    display: flex;
+                    flex-direction: column;
+                    div {
+                        aspect-ratio: 1 / 1;
+                        max-height: 150px;
+                        background-color: $shiru-primary;
+                        padding: 8px;
+
+                        img {
+                            height: 100%;
+                            margin: auto;
+                        }
+                    }
+
+                    p {
+                        margin-top: 1rem;
+                        color: white;
+                        font-weight: bold;
+                        text-align: center;
+                    }
+                }
+            }
+
+            #hero-text {
+                position: relative;
+
+                img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                .mask {
+                    opacity: .25;
+                }
+
+                .hero__text {
+                    position: relative;
+                    z-index: 3;
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    #page-apps-shiru {
+
+        .hero {
+            &__full-wrapper  {
+                display: grid;
+                grid-template-columns: 1fr 4fr;
+
+                #topics {
+                    height: 100%;
+                    
+                    .topic {
+                        display: flex;
+                        flex-direction: column;
+
+                        p {
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+@use '../../../abstract/variables' as *;
+
+#page-apps-iku {
+
+    .hero {
+        background: linear-gradient(to right, #483D8B, #C83234);
+
+        .hero-image {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 2rem;
+
+            >div {
+                display: flex;
+                flex-direction: column;
+                row-gap: 1rem;
+            }
+
+            #expo-logo {
+                height: 75px;
+            }
+
+            .event-logo {
+                height: 100px;
+                width: auto;
+                margin: auto;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    #page-apps-iku {
+
+        .hero {
+        }
+    }
+}

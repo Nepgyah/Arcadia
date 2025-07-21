@@ -1,0 +1,31 @@
+.page-content {
+    min-height: 900px;
+
+    &--two-col {
+
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .page-content {
+        min-height: 900px;
+
+        &--two-col {
+            display: grid;
+            grid-template-columns: 20% 80%;
+        }
+
+        &__left-column {
+            margin-right: .5rem;
+
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+        }
+
+        &__right-column {
+            margin-left: .5rem;
+        }
+    }
+}

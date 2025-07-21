@@ -1,0 +1,87 @@
+@use "../abstract/variables" as *;
+@forward "./layout/index";
+
+.font {
+
+    &--lg {
+        font-size: 24px;
+    }
+
+    &--xs {
+        font-size: 12px;
+    }
+}
+
+.app-bg {
+    &--miru { background-color: $miru-primary; }
+    &--yomu { background-color: $yomu-primary; }
+    &--asobu { background-color: $asobu-primary; }
+    &--kau { background-color: $kau-primary; }
+    &--tsunagu { background-color: $tsunagu-primary; }
+
+    &--iku { background-color: $iku-primary; }
+    &--kiku { background-color: $kiku-primary; }
+    &--hiku { background-color: $hiku-primary; }
+    &--shiru { background-color: $shiru-primary; }
+    &--kumitateru { background-color: $kumitateru-primary; }
+}
+
+.stat {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    &__label {
+
+    }
+
+    &__value {
+
+    }
+}
+
+#platform-layout {
+    min-height: 100dvh;
+
+    #platform-second-layout {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        height: calc(100dvh - 3.5rem);
+
+        #platform-sidebar {
+            // width: 150px;
+            height: 100%;
+        }
+
+        #platform-content {
+            padding: 1rem;
+            color: white;
+            flex-grow: 1;
+            background-color: $platform-bg-1;
+            overflow-y: scroll;
+
+            .card {
+                background-color: #36373D;
+                border-radius: 12px;
+                box-shadow: $box-shadow-default;
+                overflow: hidden;
+                padding: 1.5rem;
+
+                &--custom {
+                    padding: 0;
+                }
+
+                &__content {
+                    padding: 1.5rem;
+                }
+
+                &__title {
+                    font-weight: bold;
+                }
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

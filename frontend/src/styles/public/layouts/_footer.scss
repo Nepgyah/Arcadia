@@ -1,0 +1,20 @@
+@use '../../abstract/variables' as *;
+
+.footer {
+    background-color: $arcadia-primary-one;
+    color: white;
+
+    &__wrapper {
+        padding: 3rem 20px;
+        max-width:$max-width;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__logo {
+        img {
+            height: 75px;
+        }
+    }
+}

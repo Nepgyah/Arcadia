@@ -1,0 +1,38 @@
+@use '../../../abstract/variables' as *;
+
+#page-apps-kiku {
+    
+    #hero {
+        background-color: #292B2E;
+
+        #ribbon {
+            width: 100%;
+        }
+
+        #sound-wave {
+            max-width: 150px;
+            left: 47%;
+            bottom: 0;
+            transform: translateY(-45%);
+        }
+
+        #record {
+            bottom: 0;
+            left: 0;
+        }
+        #robin {
+            margin: 0 0 0 auto;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #page-apps-kiku {
+
+        #hero {
+            #sound-wave {
+                max-width: 250px;
+            }
+        }
+    }
+}

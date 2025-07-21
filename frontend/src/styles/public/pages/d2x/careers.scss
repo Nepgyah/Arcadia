@@ -1,0 +1,223 @@
+@use "../../../abstract/variables" as *;
+
+#page-d2x-careers {
+    #gradient-one {
+        background: $arcadia-gradient-vertical;
+
+        #hero {
+            .hero__text {
+                width: 90%;
+            }
+            .hero-images {
+                display: flex;
+                flex-direction: column;
+                row-gap: 1rem;
+
+                >div {
+                    display: grid;
+                    gap: 1rem;
+
+                    img {
+                        width: 100%;
+                        border-radius: 15px;
+                        box-shadow: $box-shadow-default;
+                        object-fit: cover;
+                        height: 200px;
+                    }
+                }
+
+                .row-1 {
+                    grid-template-columns: 3fr 2fr;
+                }
+
+                .row-2 {
+                    grid-template-columns: 1fr 3fr;
+                }
+
+                .row-3 {
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+        }
+    }
+
+    #ribbon-one {
+        position: relative;
+
+        #ribbon-one-image {
+            position: absolute;
+            z-index: 1;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100%;
+        }
+
+        #life {
+            position: relative;
+            z-index: 2;
+
+            .stats {
+                margin-top: 2rem;
+                display: flex;
+                column-gap: 5rem;
+
+                div {
+                    text-align: center;
+
+                    .value {
+                        font-size: 5rem;
+                        font-weight: bold;
+                        color: $arcadia-primary-one;
+                    }
+                }
+            }
+        }
+
+        #benefits {
+            position: relative;
+            z-index: 2;
+            
+            .section-content {
+                background-color: $arcadia-primary-one;
+                padding: 1.5rem;
+                border-radius: 15px;
+                box-shadow: $box-shadow-default;
+
+                .buff {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    row-gap: 1.5rem;
+
+                    img {
+                        max-width: 200px;
+                        margin-bottom: 24px;
+                        border-radius: 15px;
+                        box-shadow: $box-shadow-default;
+                    }
+
+                    div {
+                        text-align: center;
+                        background-color: $arcadia-primary-one-dark;
+                        flex-grow: 1;
+                        color: white;
+                        padding: 12px;
+                        border-radius: 15px;
+
+                        h3 {
+                            margin-bottom: 1rem;
+                        }
+
+                        p {
+                            margin: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #locations {
+
+        .section__full-wrapper {
+            position: relative;
+
+            .section-main {
+                position: absolute;
+                z-index: 3;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                background-color: $arcadia-primary-one;
+                padding: 2rem;
+                border-radius: 15px;
+            }
+            .mask {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: black;
+                opacity: .5;
+            }
+            img {
+                width: 100%;
+                height: 350px;
+                object-fit: cover;
+            }
+        }
+    }
+
+    #positions {
+
+        #pink-ribbon-two {
+            width: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .section-content--two-col {
+            row-gap: 1rem;
+        }
+        .position {
+            padding: 1rem;
+            border-radius: 12px;
+            background-color: $arcadia-primary-one;
+            box-shadow: $box-shadow-default;
+            color: white;
+
+            &__header {
+                display: flex;
+                justify-content: space-between;
+                font-weight: bold;
+
+                >div {
+                    display: flex;
+
+                    .MuiSvgIcon-root {
+                        color: $arcadia-secondary-one;
+                    }
+                }
+            }
+
+            &__posted {
+                color: #bbbbbb;
+                margin-bottom: 1rem;
+            }
+
+            &__description {
+                font-size: .9rem;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    #page-d2x-careers  {
+
+        #ribbon-one {
+            #benefits {
+                .section-content {
+                    .buff {
+                        img {
+                            max-width: 100%;
+                        }
+
+                        p {
+                            width: 75%;
+                        }
+                    }
+                }
+            }
+        }
+
+        #locations {
+            .section__full-wrapper {
+                img {
+                    width: 100%;
+                    height: 500px;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

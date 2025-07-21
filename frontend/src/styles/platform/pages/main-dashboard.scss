@@ -1,0 +1,61 @@
+@use '../../abstract/variables' as *;
+
+#page-main-dashboard {
+
+    .app-icon-button {
+        .icon {
+            margin: auto;
+            width: 64px;
+            height: 64px;
+            border-radius: 64px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: $box-shadow-default;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        p {
+            margin-top: 8px;
+            text-transform: capitalize;
+            text-align: center;
+        }
+        &:hover {
+
+        }
+    }
+    
+    .app-navigation {
+        h3 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            row-gap: 1rem;
+        }
+    }
+
+    .greeting-image {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        object-fit: cover;
+
+        .bg-mask {
+            opacity: .4;
+        }
+
+        p {
+            position: absolute;
+            left: 1rem;
+            bottom: 1rem;
+            z-index: 2;
+        }
+    }
+}
