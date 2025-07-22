@@ -40,3 +40,8 @@ class Company(models.Model):
     def __str__(self):
         return f"{self.name}"
     
+class Genre(models.Model):
+    name=models.CharField(max_length=150)
+
+    def __str__(self):
+        return self.name
