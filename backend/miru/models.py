@@ -1,6 +1,17 @@
 from django.db import models
 from shared.models import Character, Company
 
+class Season(models.Model):
+
+    class Type(models.IntegerChoices):
+        WINTER = 0, 'Winter'
+        SPRING = 1, 'Spring'
+        SUMMMER = 2, 'Summer'
+        FALL = 2, 'Fall'
+
+    season=models.IntegerField(choices=Type.choices, null=True, blank=True)
+    year=models.IntegerField(default=2000, blank=True)
+
 class Anime(models.Model):
 
     class MediaType(models.IntegerChoices):
@@ -21,9 +32,10 @@ class Anime(models.Model):
     title_alternatives=models.JSONField(default=list)
     slug=models.SlugField(unique=True, blank=True)
     summary=models.TextField(max_length=1500, default='A synopsis will be written later', blank=True)
-    type=models.IntegerField(choices=MediaType.choices, default=MediaType.TV)
+    season=models.ForeignKey(Season, on_delete=models.DO_NOTHING, null=True, blank=True)
     status=models.IntegerField(choices=Status.choices, default=Status.NOT_AIRED)
 
+    type=models.IntegerField(choices=MediaType.choices, default=MediaType.TV)
     company=models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
     score=models.FloatField(null=True, blank=True)
     users=models.IntegerField(default=0, blank=True)
