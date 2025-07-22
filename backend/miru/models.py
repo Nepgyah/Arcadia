@@ -1,4 +1,5 @@
 from django.db import models
+from shared.models import Character, Company
 
 class Anime(models.Model):
 
@@ -23,6 +24,7 @@ class Anime(models.Model):
     type=models.IntegerField(choices=MediaType.choices, default=MediaType.TV)
     status=models.IntegerField(choices=Status.choices, default=Status.NOT_AIRED)
 
+    company=models.ForeignKey(Company, on_delete=models.CASCADE, null=True, blank=True)
     score=models.FloatField(null=True, blank=True)
     users=models.IntegerField(default=0, blank=True)
     airing_start_date=models.DateField(null=True, blank=True)
