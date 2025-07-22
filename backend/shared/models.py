@@ -1,15 +1,42 @@
 from django.db import models
+from django.utils.text import slugify
+from .utils import unique_slugify
 
 class Talent(models.Model):
-    first_name=models.CharField(max_length=150, blank=False)
+    first_name=models.CharField(max_length=150)
     last_name=models.CharField(max_length=150, null=True, blank=True)
-    bio=models.TextField(max_length=1000, default='A bio will be written at a later date.', blank=True)
+    slug=models.SlugField(unique=True, blank=True)
+    bio=models.TextField(default='A bio will be written at a later date.', blank=True)
+
+    def __str__(self):
+        return f"{self.first_name} {self.last_name or ''}"
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            full_name = f"{self.first_name} {self.last_name}".strip()
+            self.slug = unique_slugify(self, full_name)
+        super().save(*args, **kwargs)
 
 class Character(models.Model):
     first_name=models.CharField(max_length=150, blank=False)
     last_name=models.CharField(max_length=150, null=True, blank=True)
     nickname=models.JSONField(default=list, blank=True)
-    played_by=models.ForeignKey(Talent, on_delete=models.DO_NOTHING, null=True, blank=True)
+    slug=models.SlugField(unique=True, blank=True)
+    played_by=models.ForeignKey(Talent, on_delete=models.SET_NULL, null=True, blank=True)
 
+    def __str__(self):
+        return f"{self.first_name} {self.last_name or ''}"
+    
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            full_name = f"{self.first_name} {self.last_name}".strip()
+            self.slug = unique_slugify(self, full_name)
+        super().save(*args, **kwargs)
+        
 class Company(models.Model):
     name=models.CharField(max_length=150, null=False, blank=False)
+    slug=models.SlugField(unique=True, blank=True)
+
+    def __str__(self):
+        return f"{self.name}"
+    
