@@ -44,7 +44,7 @@ class Anime(models.Model):
 
     type=models.IntegerField(choices=MediaType.choices, default=MediaType.TV)
     company=models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
-    score=models.FloatField(null=True, blank=True)
+    score=models.FloatField(default=0.0, blank=True)
     users=models.IntegerField(default=0, blank=True)
     airing_start_date=models.DateField(null=True, blank=True)
     airing_end_date=models.DateField(null=True, blank=True)
@@ -65,6 +65,7 @@ class AnimeCharacter(models.Model):
 
     anime=models.ForeignKey(Anime, on_delete=models.CASCADE)
     character=models.ForeignKey(Character, on_delete=models.CASCADE)
+    role=models.IntegerField(choices=Role.choices, default=Role.SUPPORT, blank=True)
 
     def __str__(self):
         return f"{self.character} in {self.anime} as {self.get_role_display()} character"
