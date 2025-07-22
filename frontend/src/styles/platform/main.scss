@@ -1,6 +1,14 @@
 @use "../abstract/variables" as *;
 @forward "./layout/index";
 
+h2 {
+    margin-bottom: 1rem;
+}
+
+.MuiTypography-root {
+    color: white;
+}
+
 .font {
 
     &--lg {
@@ -26,6 +34,20 @@
     &--kumitateru { background-color: $kumitateru-primary; }
 }
 
+.app-font {
+    &--miru { color: $miru-primary; }
+    &--yomu { color: $yomu-primary; }
+    &--asobu { color: $asobu-primary; }
+    &--kau { color: $kau-primary; }
+    &--tsunagu { color: $tsunagu-primary; }
+
+    &--iku { color: $iku-primary; }
+    &--kiku { color: $kiku-primary; }
+    &--hiku { color: $hiku-primary; }
+    &--shiru { color: $shiru-primary; }
+    &--kumitateru { color: $kumitateru-primary; }
+}
+
 .stat {
     display: flex;
     justify-content: space-between;
@@ -39,6 +61,14 @@
     }
 }
 
+.flex-grid {
+    display: grid;
+    column-gap: 1rem;
+
+    &--5 {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
 #platform-layout {
     min-height: 100dvh;
 

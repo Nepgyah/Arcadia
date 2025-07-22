@@ -1,13 +1,13 @@
-from rest_framework.serializers import Serializer
+from rest_framework import serializers
 from .models import Anime
 
-class AnimeSerializer(Serializer):
+class AnimeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model=Anime
         fields = [
             'id', 'slug',
-            'title', 'title_ja', 'title_romaji',' title_alternatives',
+            'title', 'title_ja', 'title_romaji','title_alternatives',
             'summary',
             'season', 'status', 'type',
             'company',
