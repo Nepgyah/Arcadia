@@ -1,0 +1,21 @@
+export interface Anime {
+    id: number,
+    slug: string,
+    title: string,
+    title_ja: string,
+    title_romaji: string,
+    title_alternatives: string[],
+    summary: string,
+    season: {
+        id: number,
+        season: string,
+        year: number
+    },
+    status: string,
+    type: string,
+    company: string,
+    score: number,
+    users: number,
+    airing_start_date: string,
+    airing_end_date: string
+}
