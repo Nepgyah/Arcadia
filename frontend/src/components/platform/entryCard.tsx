@@ -1,21 +1,30 @@
+import Link from "next/link"
+
 export default function EntryCard(
-    { app, title, imageLink }
+    { app, title, imageLink, clickLink }
     : 
     {
         app: string,
         title: string,
-        imageLink?: string
+        imageLink?: string,
+        clickLink?: string
     }
 ) {
-    return (
-        <div className="entry-card">
-            {
-                imageLink ?
-                    <img className="entry-card__image" src={imageLink} />
-                :
-                    <img className="entry-card__image" src='/global/404-resource.jpg' alt="Resource not found" />
-            }
-            <p className="entry-card__title">{title}</p>
-        </div>
-    )
+    if (clickLink) {
+        return (
+            <Link href={clickLink}>
+                <div className="entry-card">
+                    <img className="entry-card__image" src={imageLink ? imageLink : '/global/404-resource.jpg'} />
+                    <p className="entry-card__title">{title}</p>
+                </div>
+            </Link>
+        )
+    } else {
+        return (
+            <div className="entry-card">
+                <img className="entry-card__image" src={imageLink ? imageLink : '/global/404-resource.jpg'} />
+                <p className="entry-card__title">{title}</p>
+            </div>
+        )
+    }
 }
