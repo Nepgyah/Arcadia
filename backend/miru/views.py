@@ -1,5 +1,6 @@
 import rest_framework.views
 import rest_framework.response
+import rest_framework.status
 import miru.models
 import miru.serializers
 
@@ -16,3 +17,13 @@ class HomeView(rest_framework.views.APIView):
             'seasonal': seasonal_anime_data,
             'top': all_time_anime_data
         })
+
+class AnimeDetailView(rest_framework.views.APIView):
+
+    def get(self, request, slug=None):
+        try:
+            anime=miru.models.Anime.objects.get(slug=slug)
+            anime_data = miru.serializers.AnimeSerializer(anime).data
+        except miru.models.Anime.DoesNotExist():
+            return rest_framework.response.Response({}, status=rest_framework.status.HTTP_404_NOT_FOUND)
+        return rest_framework.response.Response(anime_data)
