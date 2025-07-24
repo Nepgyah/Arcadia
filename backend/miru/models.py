@@ -30,6 +30,12 @@ class Anime(models.Model):
         AIRING = 1, 'Airing'
         COMPLETED = 2, 'Finished airing'
         
+    class Rating(models.IntegerChoices):
+        G = 0, 'All ages'
+        PG = 1, 'Children'
+        PG_13 = 2, 'Teens 13 or older'
+        R = 3, '17+ (Violence/Profanity)'
+
     title=models.CharField(max_length=255, null=False, blank=False)
     title_ja=models.CharField(max_length=255, null=True, blank=True)
     title_romaji=models.CharField(max_length=255, null=True, blank=True)
@@ -43,7 +49,8 @@ class Anime(models.Model):
     genres=models.ManyToManyField(Genre, related_name='animes', blank=True)
 
     type=models.IntegerField(choices=MediaType.choices, default=MediaType.TV)
-    company=models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
+    studio=models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
+    rating=models.IntegerField(choices=Rating.choices, default=Rating.G, blank=True)
     score=models.FloatField(default=0.0, blank=True)
     users=models.IntegerField(default=0, blank=True)
     airing_start_date=models.DateField(null=True, blank=True)
