@@ -16,7 +16,7 @@ export default function D2XCareers() {
                                 <h1>Level Up With D2X Opporitunities</h1>
                                 <p className="main-text">Discover and learn about the company dedicated to creating the ultimate Otaku platform and what it means to work with us!</p>
                                 <div className="hero__button-container">
-                                    <Button variant="contained">See Positions</Button>
+                                    <Button variant="contained" color="secondary" href="#positions">See Positions</Button>
                                 </div>
                             </div>
                         </div>
@@ -69,12 +69,12 @@ export default function D2XCareers() {
                                 </div>
                                 <div className="stats">
                                     <div>
-                                        <p className="value">100+</p>
+                                        <p className="value">50+</p>
                                         <p className="label"><span className="underline">Employees</span></p>
                                     </div>
                                     <div>
                                         <p className="value">10</p>
-                                        <p className="label"><span className="underline">Major Location</span></p>
+                                        <p className="label"><span className="underline">Major Locations</span></p>
                                     </div>
                                 </div>
                             </FadeIn>
@@ -172,7 +172,7 @@ export default function D2XCareers() {
                                     <Location />
                                 </div>
                             </div>
-                            <p className="position__posted">2 ember eras ago</p>
+                            <p className="position__posted">2 Amber eras ago</p>
                             <p className="position__description">Join the sharpest minds in the galaxy and help decode anomalies across the stars. You'll sift through massive datasets from expeditions, simulations, and Simulated Universe trials to uncover patterns, optimize research, and maybe impress Herta (unlikely, but dream big). Curiosity required. Sleep optional.</p>
                         </FadeIn>
                         <FadeIn direction="left" className="position animation__hover-grow">
