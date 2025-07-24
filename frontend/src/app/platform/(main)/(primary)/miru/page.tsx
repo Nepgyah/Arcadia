@@ -33,7 +33,7 @@ export default function MiruHome() {
                             {
                                 seasonalAnime &&
                                 seasonalAnime.map((anime: any, key: number) => (
-                                    <EntryCard key={key} app="miru" title={anime.title} />
+                                    <EntryCard key={key} app="miru" title={anime.title} clickLink={`/platform/miru/anime/${anime.slug}`} />
                                 ))
                             }
                         </div>

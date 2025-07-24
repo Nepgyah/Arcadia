@@ -1,0 +1,18 @@
+@use "../../../abstract/variables" as *;
+
+#page-miru-anime-detail {
+
+    #primary {
+        display: grid;
+        grid-template-columns: 3.5fr 1fr;
+
+        #primary-left {
+
+            #overview {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                column-gap: 1rem;
+            }
+        }
+    }
+}

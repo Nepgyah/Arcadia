@@ -13,9 +13,10 @@ export interface Anime {
     },
     status: string,
     type: string,
-    company: string,
+    studio: string,
     score: number,
     users: number,
+    rating: string,
     airing_start_date: string,
     airing_end_date: string
 }

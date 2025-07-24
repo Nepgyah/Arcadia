@@ -2,9 +2,13 @@
 @forward "./layout/index";
 
 h2 {
+    font-size: 1.25rem;
     margin-bottom: 1rem;
 }
 
+p {
+    font-size: 14px;
+}
 .MuiTypography-root {
     color: white;
 }
@@ -69,6 +73,55 @@ h2 {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
 }
+
+.flex {
+    display: flex;
+
+    &--small-gap {
+        column-gap: 12px;
+    }
+}
+
+.row-gap {
+    >div {
+        margin-bottom: 1.25rem;
+    }
+}
+.divider {
+    &--vertical {
+        border-right: 1px solid #BBBBBB;
+    }
+}
+
+.border-bottom {
+    border-bottom: 1px solid #bbbbbb;
+}
+.padding-right {
+    &--sm { padding-right: .5rem; }
+    &--md { padding-right: .75rem;}
+}
+
+.padding-left {
+    &--small { padding-left: .5rem; }
+    &--md { padding-left: .75rem; }
+}
+
+.gray-container {
+    background-color: #2C2D33;
+    padding: 1rem;
+}
+
+.text-label {
+    font-size: 16px;
+
+    .label {
+        font-weight: bold;
+    }
+    .value {
+        color: #939393;
+    }
+}
+
 #platform-layout {
     min-height: 100dvh;
 
@@ -78,7 +131,6 @@ h2 {
         height: calc(100dvh - 3.5rem);
 
         #platform-sidebar {
-            // width: 150px;
             height: 100%;
         }
 
