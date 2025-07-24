@@ -13,7 +13,6 @@
 | Hiku       |         |
 | Shiru      |         |
 ## Alpha v0.2.1 - Jul 21 2025
----
 - API
 	-  Created **accounts** app
 	- Added profile endpoints
@@ -30,12 +29,10 @@
 - Dev
 	- Add backend API service
 ## Alpha v0.2 - Jul 13 2025
----
 This version adds 2 more pages under the **D2X** tab for the public website
 - Added **About Us**
 - Added **Careers**
 ## Alpha v0.1 - Jul 2 2025
----
 This version focuses on the the public platform and the essentials for the website
 - Added the **homepage**
 - Created hero sections for the following apps
