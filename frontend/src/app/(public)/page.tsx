@@ -36,9 +36,11 @@ export default function Homepage() {
                                 <h1><span className="container"><span id="word" className="rotating-word">Stream.</span></span><br />Your Way.</h1>
                                 <p className="main-text">Arcadia is your home base for everything otaku. Where fans come together to celebrate what they love and find something new.</p>
                                 <div className="hero__button-container">
-                                    <Button variant="contained" color="primary">
-                                        Enter Arcadia
-                                    </Button>
+                                    <Link href='/platform'>
+                                        <Button variant="contained" color="primary">
+                                            Enter Arcadia
+                                        </Button>
+                                    </Link>
                                     <Button variant="text" color="primary" href="#primary-apps">
                                         Explore the Apps
                                     </Button>
@@ -244,11 +246,6 @@ export default function Homepage() {
                                     <p className="section-main__mini-title">Arcadia's Primary Apps</p>
                                     <h2 className="section-main__main-title">Essentials for the Ultimate Otaku</h2>
                                     <p className="section-main__description">Your all-in-one toolkit for tracking, streaming, gaming, and shopping. These flagship apps form the heart of your otaku experience.</p>
-                                    <Button variant="contained" color="secondary">
-                                        <Link href='/platform/auth/create'>
-                                            Sign Up Today
-                                        </Link>
-                                    </Button>
                                 </div>
                                 <FadeIn direction="left">
                                     <a href="apps/miru">
@@ -520,9 +517,11 @@ export default function Homepage() {
                                 <h2 className="section-main__main-title">Your Otaku World is Waiting</h2>
                                 <p>Stop browsing. Start belonging. Step into your otaku world today.</p>
                                 <div className="button-container button-container--center">
-                                    <Button variant="contained" color="primary">
-                                        <Link href="/platform/auth/create">Join Now</Link>
-                                    </Button>
+                                    <Link href="/platform/auth/create">
+                                        <Button variant="contained" color="primary">
+                                            Join Now
+                                        </Button>
+                                    </Link>
                                     {/* <Button variant="text" color="primary">
                                         Got Questions?
                                     </Button> */}
@@ -648,9 +647,6 @@ export default function Homepage() {
                                 <h2 className="section-main__main-title">Born from Fandom,<br />Forged with Passion</h2>
                                 <p>Team Double Dragon was forged upon passion: passion for Esports and passion for doing things the right way and for the right things.</p>
                                 <p>What started with what-ifs and no technical skill, Arcadia began with two friends, countless fandom debates, and a dream to build the otaku platform we always wished existed. </p>
-                                <Button variant="contained" color="primary">
-                                    <Link href="/d2x/about-us">Learn About D2X</Link>
-                                </Button>
                             </div>
                             <div className="center-content">
                                 <FadeIn direction="left" delay={.1}>
@@ -672,6 +668,11 @@ export default function Homepage() {
                                 <p className="section-main__mini-title">We're Hiring</p>
                                 <h2 className="section-main__main-title">Become Legendary,<br />Like A Dragon</h2>
                                 <p>Got passion? Drive? or just a fungi? We are hiring. Discover our openings and find out if you got a dragon in you!</p>
+                                <Link href="/d2x/careers">
+                                    <Button variant="contained" color="secondary">
+                                        Careers
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
                     </div>

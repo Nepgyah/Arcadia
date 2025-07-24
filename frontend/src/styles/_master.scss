@@ -6,7 +6,8 @@
 html {
     background-color: $bg-body-light-primary;
     font-size: 18px;
-    
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
     body {
         color: $text-dark-primary;
         overflow-x: hidden;
