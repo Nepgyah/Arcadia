@@ -10,7 +10,7 @@ class HomeView(rest_framework.views.APIView):
         latest_season = miru.models.Season.objects.all().first()
         seasonal_anime_objects = miru.models.Anime.objects.filter(season=latest_season)[:5]
         seasonal_anime_data = miru.serializers.AnimeSerializer(seasonal_anime_objects, many=True).data
-        all_time_anime_objects = miru.models.Anime.objects.all().order_by('score')[:5]
+        all_time_anime_objects = miru.models.Anime.objects.all().order_by('-score')[:5]
         all_time_anime_data = miru.serializers.AnimeSerializer(all_time_anime_objects, many=True).data
 
         return rest_framework.response.Response({
