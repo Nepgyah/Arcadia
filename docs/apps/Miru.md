@@ -1,9 +1,8 @@
-## Naming
-見る -> Miru -> To See
-
 ## Overview
+- **Name**: 見る -> Miru -> To watch -> Watching anime
 - **Frontend route**: /miru/*
 - **Backend route**: /api/miru/*
+
 ## Features
 - **Anime library** - Browse/search anime by title, genre, etc
 - **Anime Details** - View metadata, characters, studio, etc
