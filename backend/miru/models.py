@@ -47,7 +47,8 @@ class Anime(models.Model):
     
     characters=models.ManyToManyField(Character, through='AnimeCharacter', related_name='animes', blank=True)
     genres=models.ManyToManyField(Genre, related_name='animes', blank=True)
-
+    related=models.ManyToManyField('self', through='AnimeRelation', symmetrical=False, related_name='related_anime', blank=True)
+    
     type=models.IntegerField(choices=MediaType.choices, default=MediaType.TV)
     studio=models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
     rating=models.IntegerField(choices=Rating.choices, default=Rating.G, blank=True)
@@ -55,6 +56,9 @@ class Anime(models.Model):
     users=models.IntegerField(default=0, blank=True)
     airing_start_date=models.DateField(null=True, blank=True)
     airing_end_date=models.DateField(null=True, blank=True)
+
+    class Meta:
+        ordering = ['-score']
 
     def __str__(self):
         return self.title
@@ -76,3 +80,17 @@ class AnimeCharacter(models.Model):
 
     def __str__(self):
         return f"{self.character} in {self.anime} as {self.get_role_display()} character"
+    
+class AnimeRelation(models.Model):
+
+    class Type(models.TextChoices):
+        PREQUEL = 'prequel', 'Prequel'
+        SEQUEL = 'sequel', 'Sequel'
+        SPINOFF = 'spinoff', 'Spin-off'
+        SIDE_STORY = 'side_story', 'Side Story'
+        ALTERNATIVE_VERSION = 'alternataive_version', 'Alternate'
+        OTHER = 'other',  'Other'
+
+    from_anime = models.ForeignKey('Anime', on_delete=models.CASCADE, related_name='related_to')
+    to_anime = models.ForeignKey('Anime', on_delete=models.CASCADE, related_name='related_from')
+    relation_type = models.CharField(choices=Type.choices, default=Type.OTHER, blank=True)
