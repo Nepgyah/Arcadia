@@ -1,5 +1,6 @@
 import '@/styles/public/pages/apps/shiru.scss';
 import Button from '@mui/material/Button'
+import Link from 'next/link';
 
 export default function Shiru() {
     return (
@@ -22,9 +23,11 @@ export default function Shiru() {
                             <p className='japanese'>アケーディアしる</p>
                             <h1>Stories from the Otaku-verse</h1>
                             <p className='main-text'>Discover fresh perspectives, guides, and stories from fans just like you—only on Shiru.</p>
-                            <Button variant="contained" color="primary">
-                                Explore On
-                            </Button>
+                            <Link href='/platform/shiru'>
+                                <Button variant="contained" color="primary">
+                                    Discover Otaku Knowledge
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </div>
