@@ -97,7 +97,7 @@ export default function DesktopHeader() {
                 <Button 
                     variant="contained" 
                     color="secondary"
-                    onClick={() => handleClick('/platform')}
+                    onClick={() => router.push('/platform')}
                 >
                     Platform
                 </Button>

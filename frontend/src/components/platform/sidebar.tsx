@@ -29,6 +29,7 @@ export default function Sidebar({ links }: { links: url[] }) {
             {
                 links.map((link, index) => (
                     <Button 
+                        color="white"
                         fullWidth 
                         key={index}
                         onClick={() => router.push(`/platform/${link.path}`)}
@@ -40,15 +41,15 @@ export default function Sidebar({ links }: { links: url[] }) {
             <Divider sx={{ backgroundColor: 'white'}} />
             {user?
                 <React.Fragment>
-                    <Button fullWidth onClick={() => router.push(`/platform/profile`)}>
+                    <Button color="white" fullWidth onClick={() => router.push(`/platform/profile`)}>
                         Profile
                     </Button>
-                    <Button fullWidth onClick={() => handleLogout()}>
+                    <Button color="white" fullWidth onClick={() => handleLogout()}>
                         Logout
                     </Button>
                 </React.Fragment>
             :
-                <Button fullWidth onClick={() => router.push('/platform/auth/login')}>
+                <Button color="white" fullWidth onClick={() => router.push('/platform/auth/login')}>
                     Login
                 </Button>
             }
