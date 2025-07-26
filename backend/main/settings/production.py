@@ -8,7 +8,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET")
 
 ALLOWED_HOSTS = [
     "arcadia-inky.vercel.app",
-    "faint-jeanne-team-d2x-e4d18676.koyeb.app/"
+    "faint-jeanne-team-d2x-e4d18676.koyeb.app"
 ]
 
 CORS_ALLOWED_ORIGINS = [
