@@ -9,6 +9,8 @@ import { useEffect, useState } from "react";
 import '@/styles/platform/pages/miru/anime-detail.scss';
 import { Anime } from "@/util/types/miru";
 import InfoItem from "@/components/platform/infoItem";
+import { Character } from "@/util/types/shared";
+import CharacterAvatar from "@/components/platform/characterAvatar";
 
 export default function AnimeDetails() {
     const params = useParams();
@@ -33,11 +35,11 @@ export default function AnimeDetails() {
                     <h2 className="app-font--miru border-bottom">Quick Access</h2>
                     <h2 className="app-font--miru border-bottom">Socials</h2>
                 </div>
-                <div className="page-content__right-column row-gap">
+                <div className="page-content__right-column row-gap row-gap--md">
                     <div id="primary">
-                        <div id="primary-left" className="divider divider--vertical padding-right--md row-gap">
+                        <div id="primary-left" className="divider divider--vertical padding-right--md row-gap row-gap--md">
                             <div id="overview">
-                                <div id="quick-stats" className="row-gap">
+                                <div id="quick-stats" className="row-gap row-gap--md">
                                     <div className="gray-container flex flex--small-gap">
                                         <InfoItem label="Season" value={anime?.season.season} />
                                         <InfoItem label="Type" value={anime?.type} />
@@ -59,7 +61,7 @@ export default function AnimeDetails() {
                                 <p>{anime?.summary}</p>
                             </div>
                         </div>
-                        <div id="primary-right" className="padding-left--md row-gap">
+                        <div id="primary-right" className="padding-left--md row-gap row-gap--md">
                             <div>
                                 <h2 className="app-font--miru border-bottom">Details</h2>
                                 <InfoItem label="Status" value={anime?.status} />
@@ -79,6 +81,14 @@ export default function AnimeDetails() {
                         </div>
                         <div id="characters" className="padding-left--md">
                             <h2 className="app-font--miru border-bottom">characters</h2>
+                            <div className="row-gap row-gap--md">
+                                {
+                                    anime?.characters &&
+                                    anime?.characters.map((character: Character, index: number) => (
+                                        <CharacterAvatar key={index} character={character} app='miru' />
+                                    ))
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>

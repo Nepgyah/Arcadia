@@ -11,6 +11,7 @@ export interface Anime {
         season: string,
         year: number
     },
+    characters: any[],
     status: string,
     type: string,
     studio: string,

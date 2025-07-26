@@ -38,6 +38,20 @@ p {
     &--kumitateru { background-color: $kumitateru-primary; }
 }
 
+.app-border {
+    &--miru { border-color: $miru-primary; }
+    &--yomu { border-color: $yomu-primary; }
+    &--asobu { border-color: $asobu-primary; }
+    &--kau { border-color: $kau-primary; }
+    &--tsunagu { border-color: $tsunagu-primary; }
+
+    &--iku { border-color: $iku-primary; }
+    &--kiku { border-color: $kiku-primary; }
+    &--hiku { border-color: $hiku-primary; }
+    &--shiru { border-color: $shiru-primary; }
+    &--kumitateru { border-color: $kumitateru-primary; }
+}
+
 .app-font {
     &--miru { color: $miru-primary; }
     &--yomu { color: $yomu-primary; }
@@ -50,19 +64,6 @@ p {
     &--hiku { color: $hiku-primary; }
     &--shiru { color: $shiru-primary; }
     &--kumitateru { color: $kumitateru-primary; }
-}
-
-.stat {
-    display: flex;
-    justify-content: space-between;
-    font-size: 16px;
-    &__label {
-
-    }
-
-    &__value {
-
-    }
 }
 
 .flex-grid {
@@ -83,10 +84,18 @@ p {
 }
 
 .row-gap {
-    >div {
-        margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+
+    &--xs {
+        row-gap: 14px;
+    }
+
+    &--md {
+        row-gap: 1.25rem;
     }
 }
+
 .divider {
     &--vertical {
         border-right: 1px solid #BBBBBB;
@@ -106,6 +115,8 @@ p {
     &--md { padding-left: .75rem; }
 }
 
+// BASE COMPONENTS
+
 .gray-container {
     background-color: #2C2D33;
     padding: 1rem;
@@ -122,6 +133,18 @@ p {
     }
 }
 
+.character-avatar {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+
+    .MuiAvatar-root {
+        border-width: 2px;
+        border-style: solid
+    }
+}
+
+// LAYOUT
 #platform-layout {
     min-height: 100dvh;
 
