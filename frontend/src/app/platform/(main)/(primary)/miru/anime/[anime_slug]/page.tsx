@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 
 import '@/styles/platform/pages/miru/anime-detail.scss';
 import { Anime } from "@/util/types/miru";
+import InfoItem from "@/components/platform/infoItem";
 
 export default function AnimeDetails() {
     const params = useParams();
@@ -38,9 +39,9 @@ export default function AnimeDetails() {
                             <div id="overview">
                                 <div id="quick-stats" className="row-gap">
                                     <div className="gray-container flex flex--small-gap">
-                                        <p className="text-label"><span className="label">Season:</span><span className="value"> {anime?.season.season}</span></p>
-                                        <p className="text-label"><span className="label">Type:</span><span className="value"> {anime?.type}</span></p>
-                                        <p className="text-label"><span className="label">Episodes:</span><span className="value"> {anime?.type}</span></p>
+                                        <InfoItem label="Season" value={anime?.season.season} />
+                                        <InfoItem label="Type" value={anime?.type} />
+                                        <InfoItem label="Episodes" value={anime?.type} />
                                     </div>
                                     <div id="score-tags">
                                         <div className="gray-container flex flex--small-gap">
@@ -61,14 +62,14 @@ export default function AnimeDetails() {
                         <div id="primary-right" className="padding-left--md row-gap">
                             <div>
                                 <h2 className="app-font--miru border-bottom">Details</h2>
-                                <p className="text-label"><span className="label">Status:</span><span className="value"> {anime?.status}</span></p>
-                                <p className="text-label"><span className="label">Start Date:</span><span className="value"> {anime?.airing_start_date}</span></p>
-                                <p className="text-label"><span className="label">End Date:</span><span className="value"> {anime?.airing_end_date}</span></p>
-                                <p className="text-label"><span className="label">Rating:</span><span className="value"> {anime?.rating}</span></p>
+                                <InfoItem label="Status" value={anime?.status} />
+                                <InfoItem label="Start Date" value={anime?.airing_start_date} />
+                                <InfoItem label="End Date" value={anime?.airing_end_date} />
+                                <InfoItem label="Rating" value={anime?.rating} />
                             </div>
                             <div>
                                 <h2 className="app-font--miru border-bottom">Production</h2>
-                                <p className="text-label"><span className="label">Studio:</span><span className="value"> {anime?.studio}</span></p>
+                                <InfoItem label="Studio" value={anime?.studio} />
                             </div>
                         </div>
                     </div>
