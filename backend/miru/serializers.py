@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import Anime, Season, Company
-from shared.serializers import CompanySerializer
+from shared.serializers import CompanySerializer, CharacterSerializer
 
 class SeasonSerializer(serializers.ModelSerializer):
     season = serializers.SerializerMethodField()
@@ -18,6 +18,7 @@ class AnimeSerializer(serializers.ModelSerializer):
     season = SeasonSerializer()
     type = serializers.SerializerMethodField()
     status = serializers.SerializerMethodField()
+    characters = CharacterSerializer(many=True, read_only=True)
     rating = serializers.SerializerMethodField()
     studio = serializers.SerializerMethodField()
 
@@ -26,10 +27,10 @@ class AnimeSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'slug',
             'title', 'title_ja', 'title_romaji','title_alternatives',
-            'summary',
-            'season', 'status', 'type',
-            'studio',
-            'score','users', 'rating',
+            'summary', 'season', 'status',
+            'characters', 'genres', 'related', 
+            'type', 'studio', 'rating',
+            'score','users', 
             'airing_start_date', 'airing_end_date'
         ]
 

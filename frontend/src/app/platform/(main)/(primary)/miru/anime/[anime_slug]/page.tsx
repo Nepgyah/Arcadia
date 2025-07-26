@@ -33,7 +33,7 @@ export default function AnimeDetails() {
                     <h2 className="app-font--miru border-bottom">Quick Access</h2>
                     <h2 className="app-font--miru border-bottom">Socials</h2>
                 </div>
-                <div className="page-content__right-column">
+                <div className="page-content__right-column row-gap">
                     <div id="primary">
                         <div id="primary-left" className="divider divider--vertical padding-right--md row-gap">
                             <div id="overview">
@@ -71,6 +71,14 @@ export default function AnimeDetails() {
                                 <h2 className="app-font--miru border-bottom">Production</h2>
                                 <InfoItem label="Studio" value={anime?.studio} />
                             </div>
+                        </div>
+                    </div>
+                    <div id="secondary">
+                        <div id="related" className="divider divider--vertical padding-right--md">
+                            <h2 className="app-font--miru border-bottom">Related Anime</h2>
+                        </div>
+                        <div id="characters" className="padding-left--md">
+                            <h2 className="app-font--miru border-bottom">characters</h2>
                         </div>
                     </div>
                 </div>
