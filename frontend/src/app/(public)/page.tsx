@@ -248,7 +248,7 @@ export default function Homepage() {
                                     <p className="section-main__description">Your all-in-one toolkit for tracking, streaming, gaming, and shopping. These flagship apps form the heart of your otaku experience.</p>
                                 </div>
                                 <FadeIn direction="left">
-                                    <a href="apps/miru">
+                                    <Link href="apps/miru">
                                         <div className="app-tile app-tile--vertical slide-right" id="miru">
                                             <div className="app-tile__image">
                                                 <Image fill src="/website/images/homepage/primary-apps/miru.jpg" alt="Anime girls watching togther" />
@@ -259,13 +259,13 @@ export default function Homepage() {
                                                 <p className="slogan">Explore the world of anime, one episode at a time</p>
                                             </div>
                                         </div>
-                                    </a>
+                                    </Link>
                                 </FadeIn>
                             </div>
                             <div id="primary-bottom-half">
                                 <div id="bottom-left">
                                     <FadeIn direction="right" delay={.4}>
-                                        <a href="apps/yomu">
+                                        <Link href="apps/yomu">
                                             <div className="app-tile app-tile--vertical" id="yomu">
                                                 <div className="app-tile__image">
                                                     <Image fill src="/website/images/homepage/primary-apps/yomu.jpg" alt="Smiling anime girl with book" />
@@ -276,10 +276,10 @@ export default function Homepage() {
                                                     <p className="slogan">Where words create worlds</p>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </Link>
                                     </FadeIn>
                                     <FadeIn direction="right" delay={.5} threshold={.5}>
-                                        <a href="apps/kau">
+                                        <Link href="apps/kau">
                                             <div className="app-tile" id="kau">
                                                 <div className="app-tile__image">
                                                     <Image fill src="/website/images/homepage/primary-apps/kau.jpg" alt="Blue asthetic shopping" />
@@ -290,12 +290,12 @@ export default function Homepage() {
                                                     <p className="slogan">From wish list to reality</p>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </Link>
                                     </FadeIn>
                                 </div>
                                 <div id="bottom-right">
                                     <FadeIn direction="left" delay={.4}>
-                                        <a href="apps/asobu">
+                                        <Link href="apps/asobu">
                                             <div className="app-tile" id="asobu">
                                                 <div className="app-tile__image">
                                                     <Image fill src="/website/images/homepage/primary-apps/asobu.jpg" alt="Gaming friends" />
@@ -306,10 +306,10 @@ export default function Homepage() {
                                                     <p className="slogan">From wish list to reality</p>
                                                 </div>
                                             </div>
-                                        </a>
+                                        </Link>
                                     </FadeIn>
                                     <FadeIn direction="left" delay={.5} threshold={.7}>
-                                        <a href="apps/tsunagu">
+                                        <Link href="apps/tsunagu">
                                             <div className="app-tile" id="tsunagu">
                                                 <div className="app-tile__text">
                                                     <p className="japanese">つなぐ</p>
@@ -320,7 +320,7 @@ export default function Homepage() {
                                                     <Image fill src="/website/images/homepage/primary-apps/tsunagu.jpg" alt="Anime guys hanging out" />
                                                 </div>
                                             </div>
-                                        </a>
+                                        </Link>
                                     </FadeIn>
                                 </div>
                             </div>
@@ -445,66 +445,76 @@ export default function Homepage() {
                             <div className="app-container">
                                 <div className="left-col">
                                     <FadeIn direction="right" delay={.1}>
-                                        <div className="app-tile" id="iku">
-                                            <div className="app-tile__text">
-                                                <p className="japanese">いく</p>
-                                                <h3 className="name">Iku</h3>
-                                                <p className="slogan">Go where the community goes</p>
+                                        <Link href='/apps/iku'>
+                                            <div className="app-tile" id="iku">
+                                                <div className="app-tile__text">
+                                                    <p className="japanese">いく</p>
+                                                    <h3 className="name">Iku</h3>
+                                                    <p className="slogan">Go where the community goes</p>
+                                                </div>
+                                                <div className="app-tile__image">
+                                                    <Image fill src="/website/images/homepage/secondary-apps/iku.jpg" alt="Exploring the anime universe" />
+                                                </div>
                                             </div>
-                                            <div className="app-tile__image">
-                                                <Image fill src="/website/images/homepage/secondary-apps/iku.jpg" alt="Exploring the anime universe" />
-                                            </div>
-                                        </div>
+                                        </Link>
                                     </FadeIn>
                                     <FadeIn direction="right" delay={.2} threshold={.7}>
-                                        <div className="app-tile" id="hiku">
-                                            <div className="app-tile__image">
-                                                <Image fill src="/website/images/homepage/secondary-apps/hiku.jpg" alt="Gamer girl" />
+                                        <Link href='/apps/hiku'>
+                                            <div className="app-tile" id="hiku">
+                                                <div className="app-tile__image">
+                                                    <Image fill src="/website/images/homepage/secondary-apps/hiku.jpg" alt="Gamer girl" />
+                                                </div>
+                                                <div className="app-tile__text">
+                                                    <p className="japanese">ひく</p>
+                                                    <h3 className="name">Hiku</h3>
+                                                    <p className="slogan">Pull Your Way To Victory</p>
+                                                </div>
                                             </div>
-                                            <div className="app-tile__text">
-                                                <p className="japanese">ひく</p>
-                                                <h3 className="name">Hiku</h3>
-                                                <p className="slogan">Pull Your Way To Victory</p>
-                                            </div>
-                                        </div>
+                                        </Link>
                                     </FadeIn>
                                 </div>
                                 <div className="right-col">
                                     <FadeIn direction="left" delay={.3}>
-                                        <div className="app-tile" id="shiru">
-                                            <div className="app-tile__image">
-                                                <Image fill src="/website/images/homepage/secondary-apps/shiru.jpg" alt="Hanging out at a dinner" />
+                                        <Link href='/apps/shiru'>
+                                            <div className="app-tile" id="shiru">
+                                                <div className="app-tile__image">
+                                                    <Image fill src="/website/images/homepage/secondary-apps/shiru.jpg" alt="Hanging out at a dinner" />
+                                                </div>
+                                                <div className="app-tile__text">
+                                                    <p className="japanese">しる</p>
+                                                    <h3 className="name">Shiru</h3>
+                                                    <p className="slogan">Explore, Learn, Share the Journey</p>
+                                                </div>
                                             </div>
-                                            <div className="app-tile__text">
-                                                <p className="japanese">しる</p>
-                                                <h3 className="name">Shiru</h3>
-                                                <p className="slogan">Explore, Learn, Share the Journey</p>
-                                            </div>
-                                        </div>
+                                        </Link>
                                     </FadeIn>
                                     <FadeIn direction="left" delay={.4}>
-                                        <div className="app-tile" id="kumitateru">
-                                            <div className="app-tile__image">
-                                                <Image fill src="/website/images/homepage/secondary-apps/kumitateru.jpg" alt="Building a PC" />
+                                        <Link href='/apps/kumitateru'>
+                                            <div className="app-tile" id="kumitateru">
+                                                <div className="app-tile__image">
+                                                    <Image fill src="/website/images/homepage/secondary-apps/kumitateru.jpg" alt="Building a PC" />
+                                                </div>
+                                                <div className="app-tile__text">
+                                                    <p className="japanese">くみたてる</p>
+                                                    <h3 className="name">Kumitateru</h3>
+                                                    <p className="slogan">Build Your Battle Station</p>
+                                                </div>
                                             </div>
-                                            <div className="app-tile__text">
-                                                <p className="japanese">くみたてる</p>
-                                                <h3 className="name">Kumitateru</h3>
-                                                <p className="slogan">Build Your Battle Station</p>
-                                            </div>
-                                        </div>
+                                        </Link>
                                     </FadeIn>
                                     <FadeIn direction="left" delay={.45}>
-                                        <div className="app-tile" id="kiku">
-                                            <div className="app-tile__text">
-                                                <p className="japanese">きく</p>
-                                                <h3 className="name">Kiku</h3>
-                                                <p className="slogan">Relax.<br />Focus.<br /> Create.</p>
+                                        <Link href='/apps/kiku'>
+                                            <div className="app-tile" id="kiku">
+                                                <div className="app-tile__text">
+                                                    <p className="japanese">きく</p>
+                                                    <h3 className="name">Kiku</h3>
+                                                    <p className="slogan">Relax.<br />Focus.<br /> Create.</p>
+                                                </div>
+                                                <div className="app-tile__image">
+                                                    <Image fill src="/website/images/homepage/secondary-apps/kiku.jpg" alt="Studying and listening to lofi" />
+                                                </div>
                                             </div>
-                                            <div className="app-tile__image">
-                                                <Image fill src="/website/images/homepage/secondary-apps/kiku.jpg" alt="Studying and listening to lofi" />
-                                            </div>
-                                        </div>
+                                        </Link>
                                     </FadeIn>
                                 </div>
                             </div>
