@@ -5,6 +5,7 @@ import IconButton from '@mui/material/IconButton'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import PinterestIcon from '@mui/icons-material/Pinterest';
+import Link from 'next/link';
 export default function Kau() {
 
     return (
@@ -28,9 +29,11 @@ export default function Kau() {
                         <img className='desktop-only' src="/website/images/apps/kau/hero/signature.png" alt="" />
                         <div className='cta-container'>
                             <p>Shop the latest anime merch, trendy apparel, and exclusive cosplay pieces.</p>
-                            <Button variant="contained" color="primary">
-                            Shop Now
-                            </Button>
+                            <Link href='/platform/kau'>
+                                <Button variant="contained" color="primary">
+                                    Shop Now
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                     <div className='desktop-only header-part-two'>
@@ -49,13 +52,13 @@ export default function Kau() {
                         </div>
                         <div className='socials'>
                             <div className='social-links'>
-                                <IconButton size='medium'>
+                                <IconButton size='medium' target='_blank' href='https://www.instagram.com/akaseakari_official/?hl=en'>
                                   <InstagramIcon fontSize='inherit' />
                                 </IconButton>
-                                <IconButton size='medium'>
+                                <IconButton size='medium' target='_blank' href='https://www.youtube.com/@aniplex'>
                                   <YouTubeIcon fontSize='inherit' />
                                 </IconButton>
-                                <IconButton size='medium'>
+                                <IconButton size='medium' target='_blank' href='https://jp.pinterest.com/ideas/marin-kitagawa/920377563547'>
                                   <PinterestIcon fontSize='inherit' />
                                 </IconButton>
                             </div>
