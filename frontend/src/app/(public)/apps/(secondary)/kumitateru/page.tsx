@@ -1,5 +1,6 @@
 import '@/styles/public/pages/apps/kumitateru.scss';
 import { Button } from '@mui/material';
+import Link from 'next/link';
 
 export default function Kumitateru() {
     return (
@@ -20,7 +21,9 @@ export default function Kumitateru() {
                             <p className='japanese'>アケーディアーくみたてる</p>
                             <h1>Build Your Battlestation</h1>
                             <p className='main-text'>From part-picking to perfect aesthetics, Kumitateru helps you design, customize, and optimize the rig of your dreams.</p>
-                            <Button variant='contained'>Build Today</Button>
+                            <Link href='/platform/kumitateru'>
+                                <Button variant='contained'>Build Your Beast Today</Button>
+                            </Link>
                         </div>
                     </div>
                     <div className='right-col'>

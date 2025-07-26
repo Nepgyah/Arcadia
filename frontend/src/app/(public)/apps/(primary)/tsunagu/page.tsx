@@ -1,5 +1,6 @@
 import '@/styles/public/pages/apps/tsunagu.scss';
 import { Button } from '@mui/material';
+import Link from 'next/link';
 
 export default function Tsunagu() {
 
@@ -19,9 +20,11 @@ export default function Tsunagu() {
                             <p className="japanese">アケーディアーつなぐ</p>
                             <h1>Arcadia’s Social Network</h1>
                             <p className="main-text">Post what you love. React how you feel with Arcadia Tsunagu. Your Otaku timeline starts here!</p>
-                            <Button variant="contained" color="primary">
-                                Get Your Chat On
-                            </Button>
+                            <Link href='/platform/tsunagu' >
+                                <Button variant="contained" color="primary">
+                                    Join The Conversation
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                     <div className='support-image'>

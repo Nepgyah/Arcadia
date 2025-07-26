@@ -1,5 +1,6 @@
 import '@/styles/public/pages/apps/iku.scss';
 import { Button } from '@mui/material';
+import Link from 'next/link';
 
 export default function Iku() {
     return (
@@ -12,7 +13,9 @@ export default function Iku() {
                             <p className='japanese'>アケーディアーいく</p>
                             <h1>Make Every Meetup A Adventure</h1>
                             <p className='main-text'>Never miss a con, collab, or watch party. Track, remind, and rally your crew with Iku: the ultimate event planner built for fans who live for the next big moment.</p>
-                            <Button variant='contained' color='primary'>Explore Today</Button>
+                            <Link href='/platform/iku'>
+                                <Button variant='contained' color='primary'>Find Your Next Event</Button>
+                            </Link>
                         </div>
                     </div>
                     <div className='hero-image'>

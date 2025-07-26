@@ -1,6 +1,7 @@
 import "@/styles/public/pages/apps/yomu.scss"
 import Image from "next/image"
 import Button from '@mui/material/Button'
+import Link from "next/link"
 
 export default function Yomu() {
 
@@ -30,12 +31,14 @@ export default function Yomu() {
                     </div>
                     <div className="center-content text-container">
                         <div className="hero__text">
-                            <p className="japanese">アケーディアーみる</p>
+                            <p className="japanese">アケーディアーよる</p>
                             <h1>Read, Track and Discover One Page At a Time</h1>
-                            <p className="main-text">Discover, manage and read mangas, light novels and manwhas and more with Arcadia Miru. Yomu is the place for all the readable otaku material.</p>
-                            <Button variant="contained" color="primary">
-                                Find Your Next Story
-                            </Button>
+                            <p className="main-text">Discover, manage and read mangas, light novels and manwhas and more. Arcadia Yomu is your home for all the readable otaku material.</p>
+                            <Link href="/platform/yomu">
+                                <Button variant="contained" color="primary">
+                                    Find Your Next Story
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </div>
