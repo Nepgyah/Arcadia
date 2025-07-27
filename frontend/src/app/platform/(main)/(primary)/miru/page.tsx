@@ -33,7 +33,13 @@ export default function MiruHome() {
                             {
                                 seasonalAnime &&
                                 seasonalAnime.map((anime: any, key: number) => (
-                                    <EntryCard key={key} app="miru" title={anime.title} clickLink={`/platform/miru/anime/${anime.slug}`} />
+                                    <EntryCard 
+                                        key={key} 
+                                        app="miru" 
+                                        title={anime.title} 
+                                        clickLink={`/platform/miru/anime/${anime.slug}`} 
+                                        imageLink={`/storage/miru/${anime.slug}.jpg`}
+                                    />
                                 ))
                             }
                         </div>
@@ -44,7 +50,13 @@ export default function MiruHome() {
                             {
                                 topAnime &&
                                 topAnime.map((anime: any, key: number) => (
-                                    <EntryCard key={key} app="miru" title={anime.title} clickLink={`/platform/miru/anime/${anime.slug}`} />
+                                    <EntryCard 
+                                        key={key} 
+                                        app="miru" 
+                                        title={anime.title} 
+                                        clickLink={`/platform/miru/anime/${anime.slug}`} 
+                                        imageLink={`/storage/miru/${anime.slug}.jpg`}
+                                    />
                                 ))
                             }
                         </div>

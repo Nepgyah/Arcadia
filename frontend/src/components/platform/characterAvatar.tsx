@@ -11,7 +11,12 @@ export default function CharacterAvatar (
 ) {
     return (
         <div className="character-avatar">
-            <Avatar sizes="lg" src={character.slug} alt={`${character.first_name}`} className={`app-border--${app}`} />
+            <Avatar
+                sx={{ width: '64px', height: '64px' }}
+                src={`/storage/characters/${character.slug}.jpg`} 
+                alt={`${character.first_name}`} 
+                className={`app-border--${app}`} 
+            />
             <p>{character.first_name} {character.last_name}</p>
         </div>
     )

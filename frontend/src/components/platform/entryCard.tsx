@@ -12,17 +12,24 @@ export default function EntryCard(
 ) {
     if (clickLink) {
         return (
-            <Link href={clickLink}>
                 <div className="entry-card">
-                    <img className="entry-card__image" src={imageLink ? imageLink : '/global/404-resource.jpg'} />
-                    <p className="entry-card__title">{title}</p>
+                    <Link href={clickLink}>
+                    <img 
+                        className="entry-card__image" 
+                        src={imageLink}
+                        onError={(e) => {
+                            e.currentTarget.onerror = null;
+                            e.currentTarget.src = '/global/404-resource.jpg'
+                        }} 
+                    />
+                    </Link>
+                    <Link href={clickLink} className="entry-card__title">{title}</Link>
                 </div>
-            </Link>
         )
     } else {
         return (
             <div className="entry-card">
-                <img className="entry-card__image" src={imageLink ? imageLink : '/global/404-resource.jpg'} />
+                <img className="entry-card__image" src={imageLink} />
                 <p className="entry-card__title">{title}</p>
             </div>
         )

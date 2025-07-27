@@ -34,7 +34,16 @@ export default function AnimeDetails() {
             </Breadcrumbs>
             <div id="page-miru-anime-detail" className="page-content page-content--two-col">
                 <div className="page-content__left-column">
-                    <img id="image" src="/global/404-resource.jpg" alt="" />
+                    <img 
+                        id="image" 
+                        className="media-image"
+                        src={`/storage/miru/${anime?.slug}.jpg`} 
+                        alt={anime?.title}
+                        onError={(e) => {
+                            e.currentTarget.onerror = null;
+                            e.currentTarget.src = '/global/404-resource.jpg'
+                        }} 
+                    />
                     <div>
                         <h2 className="app-font--miru border-bottom">Quick Access</h2>
                         <WIP />
@@ -113,6 +122,7 @@ export default function AnimeDetails() {
                                                 name={anime.name} 
                                                 relation={anime.relation} 
                                                 link={`/platform/miru/anime/${anime.slug}`}
+                                                imageLink={`/storage/miru/${anime.slug}.jpg`}
                                             />
                                         ))
                                     }
@@ -128,6 +138,7 @@ export default function AnimeDetails() {
                                                     name={anime.name} 
                                                     relation={anime.relation} 
                                                     link={`/platform/miru/anime/${anime.slug}`}
+                                                    imageLink={`/storage/miru/${anime.slug}.jpg`}
                                                 />
                                             ))
                                     }

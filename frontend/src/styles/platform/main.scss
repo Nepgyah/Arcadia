@@ -165,6 +165,10 @@ p {
 
         &__name {
             color: #939393;
+
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 }
@@ -175,7 +179,7 @@ p {
 
     .MuiAvatar-root {
         border-width: 2px;
-        border-style: solid
+        border-style: solid;
     }
 }
 
