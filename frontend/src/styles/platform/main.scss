@@ -15,6 +15,9 @@ p {
 
 .font {
 
+    &--xl {
+        font-size: 36px;
+    }
     &--lg {
         font-size: 24px;
     }
@@ -22,20 +25,24 @@ p {
     &--xs {
         font-size: 12px;
     }
+
+    &--bold {
+        font-weight: bold;
+    }
 }
 
 .app-bg {
-    &--miru { background-color: $miru-primary; }
-    &--yomu { background-color: $yomu-primary; }
-    &--asobu { background-color: $asobu-primary; }
-    &--kau { background-color: $kau-primary; }
-    &--tsunagu { background-color: $tsunagu-primary; }
+    &--miru { background-color: $miru-primary !important; }
+    &--yomu { background-color: $yomu-primary !important; }
+    &--asobu { background-color: $asobu-primary !important; }
+    &--kau { background-color: $kau-primary !important; }
+    &--tsunagu { background-color: $tsunagu-primary !important; }
 
-    &--iku { background-color: $iku-primary; }
-    &--kiku { background-color: $kiku-primary; }
-    &--hiku { background-color: $hiku-primary; }
-    &--shiru { background-color: $shiru-primary; }
-    &--kumitateru { background-color: $kumitateru-primary; }
+    &--iku { background-color: $iku-primary !important; }
+    &--kiku { background-color: $kiku-primary !important; }
+    &--hiku { background-color: $hiku-primary !important; }
+    &--shiru { background-color: $shiru-primary !important; }
+    &--kumitateru { background-color: $kumitateru-primary !important; }
 }
 
 .app-border {

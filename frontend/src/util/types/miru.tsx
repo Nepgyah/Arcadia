@@ -11,6 +11,7 @@ export interface Anime {
         season: string,
         year: number
     },
+    genres: string[],
     characters: any[],
     previous_anime: any[],
     next_anime: any[],

@@ -13,6 +13,7 @@ import { Character } from "@/util/types/shared";
 import CharacterAvatar from "@/components/platform/characterAvatar";
 import WIP from "@/components/platform/wip";
 import RelationCard from "@/components/platform/relationCard";
+import TagChip from "@/components/platform/chip";
 
 export default function AnimeDetails() {
     const params = useParams();
@@ -54,9 +55,22 @@ export default function AnimeDetails() {
                                         <InfoItem label="Episodes" value={'Added later'} />
                                     </div>
                                     <div id="score-tags">
-                                        <div className="gray-container flex flex--small-gap">
-                                            <p>{anime?.score}</p>
+                                        <div id="score" className="gray-container flex flex--small-gap">
+                                            <p className="font--xl font--bold">{anime?.score}</p>
                                             <p>{anime?.users} users</p>
+                                        </div>
+                                        <div id="genre">
+                                            <h2 className="app-font--miru border-bottom">Genre</h2>
+                                            <div className="genre-container">
+                                                {
+                                                    anime?.genres.length === 0 ?
+                                                        <p>No genre tags added</p>
+                                                    :
+                                                        anime?.genres.map((genre: any, index: number) => (
+                                                            <TagChip key={index} value={genre.name} app="miru"/>
+                                                        ))
+                                                }
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
