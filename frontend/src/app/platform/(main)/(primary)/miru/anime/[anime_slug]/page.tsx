@@ -11,6 +11,7 @@ import { Anime } from "@/util/types/miru";
 import InfoItem from "@/components/platform/infoItem";
 import { Character } from "@/util/types/shared";
 import CharacterAvatar from "@/components/platform/characterAvatar";
+import WIP from "@/components/platform/wip";
 
 export default function AnimeDetails() {
     const params = useParams();
@@ -32,8 +33,14 @@ export default function AnimeDetails() {
             <div id="page-miru-anime-detail" className="page-content page-content--two-col">
                 <div className="page-content__left-column">
                     <img id="image" src="/global/404-resource.jpg" alt="" />
-                    <h2 className="app-font--miru border-bottom">Quick Access</h2>
-                    <h2 className="app-font--miru border-bottom">Socials</h2>
+                    <div>
+                        <h2 className="app-font--miru border-bottom">Quick Access</h2>
+                        <WIP />
+                    </div>
+                    <div>
+                        <h2 className="app-font--miru border-bottom">Socials</h2>
+                        <WIP />
+                    </div>
                 </div>
                 <div className="page-content__right-column row-gap row-gap--md">
                     <div id="primary">
@@ -54,6 +61,7 @@ export default function AnimeDetails() {
                                 </div>
                                 <div id="promo-video">
                                     <h2 className="app-font--miru border-bottom">Promo Video</h2>
+                                    <WIP />
                                 </div>
                             </div>
                             <div id="summary">
