@@ -117,12 +117,14 @@ p {
 }
 .padding-right {
     &--sm { padding-right: .5rem; }
-    &--md { padding-right: .75rem;}
+    &--md { padding-right: .75rem; }
+    &--lg { padding-right: 1rem; }
 }
 
 .padding-left {
     &--small { padding-left: .5rem; }
     &--md { padding-left: .75rem; }
+    &--lg { padding-left: 1rem; }
 }
 
 // BASE COMPONENTS

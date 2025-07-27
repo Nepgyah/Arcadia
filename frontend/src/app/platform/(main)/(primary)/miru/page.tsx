@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import '@/styles/platform/pages/miru/home.scss';
 import EntryCard from "@/components/platform/entryCard";
 import { Breadcrumbs, Typography } from "@mui/material";
+import WIP from "@/components/platform/wip";
 
 export default function MiruHome() {
     const [isLoading, setIsLoading] = useState(true);
@@ -26,9 +27,9 @@ export default function MiruHome() {
                 <Typography>Home</Typography>
             </Breadcrumbs>
             <div id="page-miru-home"  className="page-content page-content--two-col page-content--reversed">
-                <div className="page-content__left-column">
+                <div className="page-content__left-column divider divider--vertical padding-right--lg">
                     <div id="seasonal">
-                        <h2 className="app-font--miru">This Season</h2>
+                        <h2 className="app-font--miru border-bottom">Current Season</h2>
                         <div className="flex-grid flex-grid--5">
                             {
                                 seasonalAnime &&
@@ -45,7 +46,7 @@ export default function MiruHome() {
                         </div>
                     </div>
                     <div id="all-time">
-                        <h2 className="app-font--miru">All Time</h2>
+                        <h2 className="app-font--miru border-bottom">All Time</h2>
                         <div className="flex-grid flex-grid--5">
                             {
                                 topAnime &&
@@ -62,7 +63,10 @@ export default function MiruHome() {
                         </div>
                     </div>
                 </div>
-                <div className="page-content__right-column"></div>
+                <div className="page-content__right-column">
+                    <h2 className="app-font--miru border-bottom">Details</h2>
+                    <WIP />
+                </div>
             </div>
         </React.Fragment>
     )
