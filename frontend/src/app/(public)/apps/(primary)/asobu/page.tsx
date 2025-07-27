@@ -1,5 +1,6 @@
 import '@/styles/public/pages/apps/asobu.scss';
 import { Button } from '@mui/material';
+import Link from 'next/link';
 
 export default function Asobu() {
 
@@ -18,9 +19,11 @@ export default function Asobu() {
                             <p className="japanese">アケーディアーあそぶ</p>
                             <h1>Gaming Adventures Begin Here</h1>
                             <p className="main-text">Discover hidden gems and mod up on current classics. Arcadia Asobu is the place for any gamer.</p>
-                            <Button variant="contained" color="primary">
-                                Game On
-                            </Button>
+                            <Link href='/platform/asobu'>
+                                <Button variant="contained" color="primary">
+                                    Find Your Next Classic
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                     <div></div>

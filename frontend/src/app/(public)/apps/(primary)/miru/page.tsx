@@ -1,6 +1,7 @@
 import Button from '@mui/material/Button';
 
 import "@/styles/public/pages/apps/miru.scss";
+import Link from 'next/link';
 
 export default function Miru() {
 
@@ -42,9 +43,11 @@ export default function Miru() {
                             <p className="japanese">アケーディアーみる</p>
                             <h1>Your Ultimate Anime Companion</h1>
                             <p className='main-text'>Watch, Track and Rate all your favorite (or trash) on a single platform with Arcadia Miru.</p>
-                            <Button variant="contained" color="primary">
-                                Dive Into Anime Today  
-                            </Button>
+                            <Link href="/platform/miru">
+                                <Button variant="contained" color="primary">
+                                    Dive Into Anime Today  
+                                </Button>
+                            </Link>
                         </div>
 
                         <div className="boxes">

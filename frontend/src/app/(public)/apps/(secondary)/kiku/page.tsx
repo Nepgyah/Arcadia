@@ -1,5 +1,6 @@
 import '@/styles/public/pages/apps/kiku.scss';
 import { Button } from '@mui/material';
+import Link from 'next/link';
 
 export default function Kiku() {
     return (
@@ -15,7 +16,9 @@ export default function Kiku() {
                             <p className='japanese'>アケーディアーきく</p>
                             <h1>A Soundtrack For Every Fan</h1>
                             <p className='main-text'>Immerse yourself in endless lo-fi beats, anime soundtracks, and curated playlists. Arcadia Kiku sets the mood for every moment.</p>
-                            <Button variant='contained'>Find Beats Today</Button>
+                            <Link href='/platform/kiku'>
+                                <Button variant='contained'>Find Banger Beats</Button>
+                            </Link>
                         </div>
                     </div>
                     <div className='image'>

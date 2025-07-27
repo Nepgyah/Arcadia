@@ -7,7 +7,7 @@
             display: flex;
             flex-direction: column;
             min-height: inherit;
-            
+
             #topics {
                 background-color: $arcadia-primary-one;
                 padding: 1rem;
@@ -18,9 +18,10 @@
                 .topic {
                     display: flex;
                     flex-direction: column;
+
                     div {
                         aspect-ratio: 1 / 1;
-                        max-height: 150px;
+                        height: 150px;
                         background-color: $shiru-primary;
                         padding: 8px;
 
@@ -41,7 +42,7 @@
 
             #hero-text {
                 position: relative;
-
+                
                 img {
                     position: absolute;
                     width: 100%;
@@ -54,9 +55,10 @@
                 }
 
                 .hero__text {
+                    margin: 2rem 0;
                     position: relative;
                     z-index: 3;
-                    width: 50%;
+                    width: 90%;
                 }
             }
         }
@@ -83,6 +85,12 @@
                             font-size: 1.5rem;
                         }
                     }
+                }
+            }
+            
+            #hero-text {
+                .hero__text {
+                    width: 50%;
                 }
             }
         }

@@ -13,9 +13,9 @@ export default function Hiku() {
     const [gacha, setGacha] = useState<string>('hsr')
     const gachaImage = useRef<HTMLDivElement>(null)
     useEffect(() => {
-        if (gachaImage.current) {
-            heroAnimation(gachaImage.current)
-        }
+        // if (gachaImage.current) {
+        //     heroAnimation(gachaImage.current)
+        // }
     }, [])
 
     const heroAnimation = (gachaImage: HTMLDivElement) => {
@@ -42,7 +42,7 @@ export default function Hiku() {
                         <p className='japanese'>アケーディアーひく</p>
                         <h1>Guide.<br />Gather.<br />Game.<br /></h1>
                         <p className='main-text'>The ultimate companion for every summon, spin, and pull. Hiku is here to help you reap your gatcha rewards.</p>
-                        <Button variant='contained'>Explore Today</Button>
+                        <Button variant='contained'>Master The Meta Today</Button>
                     </div>
                     <div id='gacha-slideshow' ref={gachaImage}>
                         <div id='gacha-image'>

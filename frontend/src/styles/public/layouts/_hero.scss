@@ -47,7 +47,9 @@
     &__text {
 
         &--white {
-            color: white;
+            p, h1 {
+                color: white;
+            }
         }
 
         &--center {
@@ -56,7 +58,6 @@
 
         .japanese {
             font-size: .75rem;
-            color: inherit;
         }
 
         h1 {

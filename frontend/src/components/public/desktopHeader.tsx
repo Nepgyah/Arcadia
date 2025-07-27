@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import AppIcon from "../appIcon";
 
+type openDropdownType = 'primary' | 'secondary' | 'd2x' | 'none';
+
 export default function DesktopHeader() {
 
     const router = useRouter();
@@ -20,6 +22,10 @@ export default function DesktopHeader() {
         d2xAnchor.current = document.getElementById('d2x-btn');
     }, []);
 
+    const handleClick = (link: string, handleFunc: (bool: boolean) => void) => {
+        router.push(link)
+        handleFunc(false)
+    }
     return (
         <div className='header__wrapper header__wrapper--desktop'>
             <div className='header__logo'>
@@ -29,12 +35,13 @@ export default function DesktopHeader() {
             </div>
             <div className='nav'>
                 <div>
-                    <Button className='nav__main' variant='text' onClick={() => router.push('/')}>
+                    <Button className='nav__main' variant='text' color="white" onClick={() => router.push('/')}>
                         Home
                     </Button>
                 </div>
                 <div>
                     <Button 
+                        variant='text' color="white"
                         className='nav__main' 
                         id='solutions-btn' 
                         onClick={() => setIsSolutionsOpen(true)}
@@ -49,23 +56,24 @@ export default function DesktopHeader() {
                         disableScrollLock
                     >
                         <div className="primary">
-                            <MenuItem onClick={() => router.push('/apps/miru')}><AppIcon app="miru" /><p>Miru</p></MenuItem>
-                            <MenuItem onClick={() => router.push('/apps/yomu')}><AppIcon app="yomu" /><p>Yomu</p></MenuItem>
-                            <MenuItem onClick={() => router.push('/apps/asobu')}><AppIcon app="asobu" /><p>Asobu</p></MenuItem>
-                            <MenuItem onClick={() => router.push('/apps/kau')}><AppIcon app="kau" /><p>Kau</p></MenuItem>
-                            <MenuItem onClick={() => router.push('/apps/tsunagu')}><AppIcon app="tsunagu" /><p>Tsunagu</p></MenuItem>
+                            <MenuItem onClick={() => handleClick('/apps/miru', setIsSolutionsOpen)}><AppIcon app="miru" /><p>Miru</p></MenuItem>
+                            <MenuItem onClick={() => handleClick('/apps/yomu', setIsSolutionsOpen)}><AppIcon app="yomu" /><p>Yomu</p></MenuItem>
+                            <MenuItem onClick={() => handleClick('/apps/asobu', setIsSolutionsOpen)}><AppIcon app="asobu" /><p>Asobu</p></MenuItem>
+                            <MenuItem onClick={() => handleClick('/apps/kau', setIsSolutionsOpen)}><AppIcon app="kau" /><p>Kau</p></MenuItem>
+                            <MenuItem onClick={() => handleClick('/apps/tsunagu', setIsSolutionsOpen)}><AppIcon app="tsunagu" /><p>Tsunagu</p></MenuItem>
                         </div>
                         <div className="secondary">
-                            <MenuItem onClick={() => router.push('/apps/iku')}><AppIcon app="iku" /><p>Iku</p></MenuItem>
-                            <MenuItem onClick={() => router.push('/apps/hiku')}><AppIcon app="hiku" /><p>Hiku</p></MenuItem>
-                            <MenuItem onClick={() => router.push('/apps/shiru')}><AppIcon app="shiru" /><p>Shiru</p></MenuItem>
-                            <MenuItem onClick={() => router.push('/apps/kumitateru')}><AppIcon app="kumitateru" /><p>Kumitateru</p></MenuItem>
-                            <MenuItem onClick={() => router.push('/apps/kiku')}><AppIcon app="kiku" /><p>Kiku</p></MenuItem>
+                            <MenuItem onClick={() => handleClick('/apps/iku', setIsSolutionsOpen)}><AppIcon app="iku" /><p>Iku</p></MenuItem>
+                            <MenuItem onClick={() => handleClick('/apps/hiku', setIsSolutionsOpen)}><AppIcon app="hiku" /><p>Hiku</p></MenuItem>
+                            <MenuItem onClick={() => handleClick('/apps/shiru', setIsSolutionsOpen)}><AppIcon app="shiru" /><p>Shiru</p></MenuItem>
+                            <MenuItem onClick={() => handleClick('/apps/kumitateru', setIsSolutionsOpen)}><AppIcon app="kumitateru" /><p>Kumitateru</p></MenuItem>
+                            <MenuItem onClick={() => handleClick('/apps/kiku', setIsSolutionsOpen)}><AppIcon app="kiku" /><p>Kiku</p></MenuItem>
                         </div>
                     </Menu>
                 </div>
                 <div>
                     <Button 
+                        variant='text' color="white"
                         className='nav__main' 
                         id='d2x-btn' 
                         onClick={() => setIsD2XOpen(true)}
@@ -79,9 +87,9 @@ export default function DesktopHeader() {
                         onClose={() => setIsD2XOpen(false)}
                         disableScrollLock
                     >
-                        <MenuItem onClick={() => router.push('/d2x/about-us')}>About Us</MenuItem>
-                        <MenuItem onClick={() => router.push('/d2x/team')}>Team</MenuItem>
-                        <MenuItem onClick={() => router.push('/d2x/careers')}>Careers</MenuItem>
+                        <MenuItem onClick={() => handleClick('/d2x/about-us', setIsD2XOpen)}>About Us</MenuItem>
+                        <MenuItem onClick={() => handleClick('/d2x/team', setIsD2XOpen)}>Team</MenuItem>
+                        <MenuItem onClick={() => handleClick('/d2x/careers', setIsD2XOpen)}>Careers</MenuItem>
                     </Menu>
                 </div>
             </div>
