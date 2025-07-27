@@ -3,7 +3,7 @@
 | ---------- | ------- |
 | Website    | 0.3     |
 | Profile    | 1       |
-| Miru       |         |
+| Miru       | 0.1     |
 | Yomu       |         |
 | Asobu      |         |
 | Kau        |         |

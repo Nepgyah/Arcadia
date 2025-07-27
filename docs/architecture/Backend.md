@@ -16,4 +16,3 @@
 		- **production.py** - production-only settings
 - **miru** - Miru app
 - **shared** - shared/connect models to other apps
-	- **utils** - Generic and reused methods

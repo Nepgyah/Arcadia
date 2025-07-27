@@ -1,20 +1,19 @@
-## Latest Release - Alpha v0.2.1 - Jul 21 2025
+## Latest Release - Alpha v0.3 - Aug XX 2025
 - API
-	-  Created **accounts** app
-	- Added profile endpoints
+	-  **Miru v.0.1**
+		- Added **Anime** model
+		- Added home endpoint
+		- Added detail endpoint
+	- Create **shared** app
+		- Added **Company** model
+		- Added **Character** model
+		- Added **Genre** model
 - Website
-	- Added hero sections for the following apps
-		- **Iku**
-		- **Kiku**
-		- **Hiku**
-		- **Kumitateru**
-		- **Shiru**
+	- Fixed website bugs and text
 - Platform
-	- Added simple placeholder for all apps
-	- Added **Profile** page
-- Dev
-	- Add backend API service
-
+	- **Miru**
+		- Home page content
+		- Detail page content
 ## Name
 Arcadia - Your Otaku Sanctuary
 
