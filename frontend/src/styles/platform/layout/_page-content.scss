@@ -1,6 +1,7 @@
 .page-content {
     min-height: 900px;
-
+    margin-top: 2rem;
+    min-width: 1200px;
     &--two-col {
 
     }
@@ -16,6 +17,10 @@
             grid-template-columns: 20% 80%;
         }
 
+        &--reversed {
+            grid-template-columns: 80% 20%;
+        }
+        
         &__left-column {
             margin-right: .5rem;
 
