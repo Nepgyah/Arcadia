@@ -70,6 +70,9 @@ p {
     display: grid;
     column-gap: 1rem;
 
+    &--2 {
+        grid-template-columns: 1fr 1fr;
+    }
     &--5 {
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     }
@@ -122,6 +125,10 @@ p {
     padding: 1rem;
 }
 
+.media-image {
+    border-radius: 5px;
+    box-shadow: $box-shadow-default;
+}
 .info-item {
     font-size: 16px;
 
@@ -133,6 +140,27 @@ p {
     }
 }
 
+.relation-card {
+    display: flex;
+
+    .image {
+        width: 90px;
+        height: 130px;
+        object-fit: fill;
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 8px;
+        padding-left: 12px;
+
+        &__name {
+            color: #939393;
+        }
+    }
+}
 .character-avatar {
     display: flex;
     align-items: center;

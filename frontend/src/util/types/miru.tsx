@@ -12,6 +12,8 @@ export interface Anime {
         year: number
     },
     characters: any[],
+    previous_anime: any[],
+    next_anime: any[],
     status: string,
     type: string,
     studio: string,

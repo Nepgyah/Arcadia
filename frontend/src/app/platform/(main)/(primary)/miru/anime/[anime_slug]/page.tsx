@@ -12,6 +12,7 @@ import InfoItem from "@/components/platform/infoItem";
 import { Character } from "@/util/types/shared";
 import CharacterAvatar from "@/components/platform/characterAvatar";
 import WIP from "@/components/platform/wip";
+import RelationCard from "@/components/platform/relationCard";
 
 export default function AnimeDetails() {
     const params = useParams();
@@ -50,7 +51,7 @@ export default function AnimeDetails() {
                                     <div className="gray-container flex flex--small-gap">
                                         <InfoItem label="Season" value={anime?.season.season} />
                                         <InfoItem label="Type" value={anime?.type} />
-                                        <InfoItem label="Episodes" value={anime?.type} />
+                                        <InfoItem label="Episodes" value={'Added later'} />
                                     </div>
                                     <div id="score-tags">
                                         <div className="gray-container flex flex--small-gap">
@@ -86,6 +87,38 @@ export default function AnimeDetails() {
                     <div id="secondary">
                         <div id="related" className="divider divider--vertical padding-right--md">
                             <h2 className="app-font--miru border-bottom">Related Anime</h2>
+                            <div className="flex-grid flex-grid--2">
+                                <div id="previous" className="row-gap row-gap--xs divider divider--vertical padding-right--md">
+                                    {
+                                        anime?.previous_anime.length === 0 ?
+                                        <p>No previous anime</p>
+                                        :
+                                        anime?.previous_anime.map((anime: any, index: number ) => (
+                                            <RelationCard 
+                                                key={index}
+                                                name={anime.name} 
+                                                relation={anime.relation} 
+                                                link={`/platform/miru/anime/${anime.slug}`}
+                                            />
+                                        ))
+                                    }
+                                </div>
+                                <div id="next" className="row-gap row-gap--xs">
+                                    {
+                                        anime?.next_anime.length === 0 ?
+                                            <p>No next anime</p>
+                                        :
+                                            anime?.next_anime.map((anime: any, index: number ) => (
+                                                <RelationCard 
+                                                    key={index}
+                                                    name={anime.name} 
+                                                    relation={anime.relation} 
+                                                    link={`/platform/miru/anime/${anime.slug}`}
+                                                />
+                                            ))
+                                    }
+                                </div>
+                            </div>
                         </div>
                         <div id="characters" className="padding-left--md">
                             <h2 className="app-font--miru border-bottom">characters</h2>
