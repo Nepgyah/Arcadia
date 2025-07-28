@@ -1,6 +1,6 @@
 export default function PageCaseStudy() {
     return (
-        <div id="page-resource-case-study">
+        <div id="page-resource-case-study" className="bg--pink-gradient">
             
             <section id="hero" className="hero">
                 <div className="hero__wrapper hero__wrapper--two-column">
@@ -10,6 +10,8 @@ export default function PageCaseStudy() {
                     </div>
                 </div>
             </section>
+
+            <section id="studies"></section>
         </div>
     )
 }
