@@ -1,0 +1,40 @@
+@use "../../../abstract/variables" as *;
+
+#page-resource-case-study {
+
+    .study-card {
+        border-radius: 15px;
+        overflow: hidden;
+        min-height: 475px;
+        box-shadow: $box-shadow-default;
+
+        &__image {
+            height: 50%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        &__text {
+            height: 50%;
+            background-color: #86486E;
+            padding: 1.5rem;
+
+            p {
+                font-size: 1.25rem;
+                font-weight: bold;
+                color: white;
+            }
+        }
+    }
+
+    .section-content--four-col {
+        row-gap: 2rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    #page-resource-case-study {
+
+    }
+}
