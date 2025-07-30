@@ -3,26 +3,28 @@ $section-margin-large: 10rem;
 $grid-row-gap: 2rem;
 $max-width: 85rem;
 
-// Text Colors
-$text-dark-primary: #3E3E42;
-$text-light-primary: #ffffff;
+$arcadia-colors: (
+    txt-dark: #3E3E42,
+    txt-light: #ffffff,
+    txt-light-alt: #FFF6E1,
+    arc-base: #505477,
+    arc-base-dark: #3F3E56,
+    arc-accent-light: #FFC2C2,
+    arc-accent: #C54B61,
+    arc-accent-dark: #3D1F34,
 
-// Main Arcadia
-$arc-base: #505477;
-$arc-base-dark: #3F3E56;
+    miru-base: #61CF93,
+    yomu-base: #979797,
+    asobu-base: #EE473D,
+    kau-base: #2692D3,
+    tsunagu-base: #FFCA3C,
 
-$arc-accent-light: #FFC2C2;
-$arc-accent: #86486E;
-$arc-accent-dark: #3D1F34;
-
-$arc-bg: #FFF6E1;
-
-$arcadia-primary-one: #505477;
-$arcadia-primary-one-dark: #3F3E56;
-$arcadia-primary-two: #86486E;
-$arcadia-primary-three: #3D1F34;
-$arcadia-secondary-one: #FFC2C2;
-$bg-body-light-primary: #FFF6E1;
+    iku-base: #483D8B,
+    shiru-base: #FFA468,
+    hiku-base: #F0D66A,
+    kumitateru-base: #61CF93,
+    kiku-base: #9370DB
+);
 
 // App colors
 $miru-primary: #61CF93;

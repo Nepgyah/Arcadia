@@ -11,7 +11,7 @@ export default function Kiku() {
                 <img id='sound-wave' className='hero__bg-element' src="/website/images/apps/kiku/hero/sound-wave.png" alt="" />
                 <img id='record' className='hero__bg-element' src="/website/images/apps/kiku/hero/record.png" alt="" />
                 <div className='hero__wrapper hero__wrapper--two-column'>
-                    <div className='center-content'>
+                    <div className='align-content align-content--center-vertical'>
                         <div className='hero__text hero__text--white'>
                             <p className='japanese'>アケーディアーきく</p>
                             <h1>A Soundtrack For Every Fan</h1>

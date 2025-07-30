@@ -20,7 +20,7 @@
             padding: 1.5rem;
 
             p {
-                font-size: 1.25rem;
+                font-size: 1rem;
                 font-weight: bold;
                 color: white;
             }
@@ -35,6 +35,12 @@
 @media only screen and (min-width: 768px) {
 
     #page-resource-case-study {
-
+        .study-card {
+            &__text {
+                p {
+                    font-size: 1.25rem;
+                }
+            }
+        }
     }
 }

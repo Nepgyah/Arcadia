@@ -4,12 +4,13 @@
 @forward "./abstract/";
 
 html {
-    background-color: $bg-body-light-primary;
+    background-color: map-get($arcadia-colors, txt-light-alt);
     font-size: 18px;
     scroll-behavior: smooth;
     scroll-padding-top: 3rem;
+
     body {
-        color: $text-dark-primary;
+        color: map-get($arcadia-colors, txt-dark);
         overflow-x: hidden;
         
         a {
@@ -29,10 +30,18 @@ html {
     }
 }
 
-.center-content {
+
+.align-content {
     display: flex;
-    justify-content: center;
-    align-items: center;
+
+    &--center-vertical {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &--center-horizontal {
+        justify-content: center;
+    }
 }
 
 .vertical-text {
@@ -40,6 +49,26 @@ html {
     text-orientation: upright;
 }
 
+// Content Display
+.grid-layout {
+    display: grid;
+
+    &--5-col {
+        grid-template-columns: 1fr;
+    }
+}
+
+.emp-underline {
+    position: relative;
+
+    span {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 2px;
+        left: 20%;
+    }
+}
 // Popups appear on the same level as the main content, thus
 // we need to target them at the top level :/
 #solutions-dropdown {
@@ -75,4 +104,13 @@ html {
     width: 100%;
     height: 100%;
     background-color: black;
+}
+
+@media (min-width: 768px) {
+    .grid-layout {
+
+        &--5-col {
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+    }
 }

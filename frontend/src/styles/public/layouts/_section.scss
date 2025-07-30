@@ -44,7 +44,7 @@
 
         &__main-title {
             font-size: 2rem;
-            color: $arcadia-primary-one;
+            color: map-get($arcadia-colors , arc-base );
         }
 
         &--center {

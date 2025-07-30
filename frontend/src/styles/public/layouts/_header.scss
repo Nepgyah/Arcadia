@@ -1,12 +1,12 @@
-@use '../..//abstract/variables' as *;
+@use '../../abstract/variables' as *;
 
 .header {
-    background-color: $arcadia-primary-one;
+    background-color: map-get($arcadia-colors , arc-base );
     position: fixed;
     z-index: 99;
     top: 0;
     width: 100dvw;
-    border-bottom: 1px solid $text-dark-primary;
+    border-bottom: 1px solid map-get($arcadia-colors, txt-dark);
 
     &__logo {
         height: 100%;
@@ -68,7 +68,7 @@
 .mobile-nav-drawer {
     .MuiPaper-root {
         padding: 20px;
-        background-color: $arcadia-primary-one;
+        background-color: map-get($arcadia-colors , arc-base );
 
         display: flex;
         flex-direction: column;
@@ -86,7 +86,7 @@
                 color: white;
 
                 &.dropdown-open {
-                    color: $arcadia-secondary-one;
+                    color: map-get($arcadia-colors , arc-accent );
                 }
             }
 
@@ -123,7 +123,7 @@
 #solutions-dropdown, #d2x-dropdown, #resource-dropdown {
     
     .MuiList-root {
-        background-color: $arcadia-primary-one-dark;
+        background-color: map-get($arcadia-colors, txt-dark);
 
         .MuiButtonBase-root {
             color: white;
