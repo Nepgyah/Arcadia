@@ -1,0 +1,25 @@
+$arcadia-colors: (
+    arc-base: #505477,
+    arc-base-dark: #3F3E56,
+    arc-accent-light: #FFC2C2,
+    arc-accent: #86486E,
+    arc-accent-dark: #3D1F34,
+
+    miru-primary: #61CF93,
+    yomu-primary: #979797,
+    asobu-primary: #EE473D,
+    kau-primary: #2692D3,
+    tsunagu-primary: #FFCA3C,
+
+    iku-primary: #483D8B,
+    shiru-primary: #FFA468,
+    hiku-primary: #F0D66A,
+    kumitateru-primary: #61CF93,
+    kiku-primary: #9370DB
+);
+
+@each $name, $color in $arcadia-colors {
+    .clr-#{$name} {
+        color: #{$color}
+    }
+}
