@@ -547,7 +547,7 @@ export default function Homepage() {
                                 <h2 className="section-main__main-title">What's Next For Arcadia</h2>
                                 <p>We’re just getting started with Project Arcadia! Here's a glimpse at what’s coming next.</p>
                             </div>
-                            <div className="goals grid-layout grid-layout--5-col">
+                            <div className="goals">
                                 <FadeIn direction="up" delay={0}>
                                     <div className="goal">
                                         <h3>Launching the Core Platform</h3>

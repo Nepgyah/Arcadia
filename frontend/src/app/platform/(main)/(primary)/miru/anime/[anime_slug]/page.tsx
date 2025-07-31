@@ -45,11 +45,11 @@ export default function AnimeDetails() {
                         }} 
                     />
                     <div>
-                        <h2 className="app-font--miru border-bottom">Quick Access</h2>
+                        <h2>Quick Access</h2>
                         <WIP />
                     </div>
                     <div>
-                        <h2 className="app-font--miru border-bottom">Socials</h2>
+                        <h2>Socials</h2>
                         <WIP />
                     </div>
                 </div>
@@ -65,11 +65,11 @@ export default function AnimeDetails() {
                                     </div>
                                     <div id="score-tags">
                                         <div id="score" className="gray-container flex flex--small-gap">
-                                            <p className="font--xl font--bold">{anime?.score}</p>
+                                            <p className="bold">{anime?.score}</p>
                                             <p>{anime?.users} users</p>
                                         </div>
                                         <div id="genre">
-                                            <h2 className="app-font--miru border-bottom">Genre</h2>
+                                            <h2>Genre</h2>
                                             <div className="genre-container">
                                                 {
                                                     anime?.genres.length === 0 ?
@@ -84,32 +84,32 @@ export default function AnimeDetails() {
                                     </div>
                                 </div>
                                 <div id="promo-video">
-                                    <h2 className="app-font--miru border-bottom">Promo Video</h2>
+                                    <h2>Promo Video</h2>
                                     <WIP />
                                 </div>
                             </div>
                             <div id="summary">
-                                <h2 className="app-font--miru border-bottom">Summary</h2>
+                                <h2>Summary</h2>
                                 <p>{anime?.summary}</p>
                             </div>
                         </div>
                         <div id="primary-right" className="padding-left--md row-gap row-gap--md">
                             <div>
-                                <h2 className="app-font--miru border-bottom">Details</h2>
+                                <h2>Details</h2>
                                 <InfoItem label="Status" value={anime?.status} />
                                 <InfoItem label="Start Date" value={anime?.airing_start_date} />
                                 <InfoItem label="End Date" value={anime?.airing_end_date} />
                                 <InfoItem label="Rating" value={anime?.rating} />
                             </div>
                             <div>
-                                <h2 className="app-font--miru border-bottom">Production</h2>
+                                <h2>Production</h2>
                                 <InfoItem label="Studio" value={anime?.studio} />
                             </div>
                         </div>
                     </div>
                     <div id="secondary">
                         <div id="related" className="divider divider--vertical padding-right--md">
-                            <h2 className="app-font--miru border-bottom">Related Anime</h2>
+                            <h2>Related Anime</h2>
                             <div className="flex-grid flex-grid--2">
                                 <div id="previous" className="row-gap row-gap--xs divider divider--vertical padding-right--md">
                                     {
@@ -146,7 +146,7 @@ export default function AnimeDetails() {
                             </div>
                         </div>
                         <div id="characters" className="padding-left--md">
-                            <h2 className="app-font--miru border-bottom">characters</h2>
+                            <h2>characters</h2>
                             <div className="row-gap row-gap--md">
                                 {
                                     anime?.characters &&

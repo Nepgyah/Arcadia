@@ -4,73 +4,14 @@
 h2 {
     font-size: 1.25rem;
     margin-bottom: 1rem;
+    border-bottom: 1px solid #bbbbbb;
 }
 
 p {
-    font-size: 14px;
+    font-size: .75rem;
 }
 .MuiTypography-root {
     color: white;
-}
-
-.font {
-
-    &--xl {
-        font-size: 36px;
-    }
-    &--lg {
-        font-size: 24px;
-    }
-
-    &--xs {
-        font-size: 12px;
-    }
-
-    &--bold {
-        font-weight: bold;
-    }
-}
-
-.app-bg {
-    &--miru { background-color: $miru-primary !important; }
-    &--yomu { background-color: $yomu-primary !important; }
-    &--asobu { background-color: $asobu-primary !important; }
-    &--kau { background-color: $kau-primary !important; }
-    &--tsunagu { background-color: $tsunagu-primary !important; }
-
-    &--iku { background-color: $iku-primary !important; }
-    &--kiku { background-color: $kiku-primary !important; }
-    &--hiku { background-color: $hiku-primary !important; }
-    &--shiru { background-color: $shiru-primary !important; }
-    &--kumitateru { background-color: $kumitateru-primary !important; }
-}
-
-.app-border {
-    &--miru { border-color: $miru-primary; }
-    &--yomu { border-color: $yomu-primary; }
-    &--asobu { border-color: $asobu-primary; }
-    &--kau { border-color: $kau-primary; }
-    &--tsunagu { border-color: $tsunagu-primary; }
-
-    &--iku { border-color: $iku-primary; }
-    &--kiku { border-color: $kiku-primary; }
-    &--hiku { border-color: $hiku-primary; }
-    &--shiru { border-color: $shiru-primary; }
-    &--kumitateru { border-color: $kumitateru-primary; }
-}
-
-.app-font {
-    &--miru { color: $miru-primary; }
-    &--yomu { color: $yomu-primary; }
-    &--asobu { color: $asobu-primary; }
-    &--kau { color: $kau-primary; }
-    &--tsunagu { color: $tsunagu-primary; }
-
-    &--iku { color: $iku-primary; }
-    &--kiku { color: $kiku-primary; }
-    &--hiku { color: $hiku-primary; }
-    &--shiru { color: $shiru-primary; }
-    &--kumitateru { color: $kumitateru-primary; }
 }
 
 .flex-grid {
@@ -112,9 +53,6 @@ p {
     }
 }
 
-.border-bottom {
-    border-bottom: 1px solid #bbbbbb;
-}
 .padding-right {
     &--sm { padding-right: .5rem; }
     &--md { padding-right: .75rem; }
@@ -229,5 +167,11 @@ p {
                 font-size: 1.5rem;
             }
         }
+    }
+}
+
+#miru-layout {
+    h2 {
+        color: map-get($arcadia-colors, miru-base )
     }
 }

@@ -597,7 +597,9 @@
         #roadmap {
 
             .goals {
-
+                display: grid;
+                row-gap: 1rem;
+                
                 .goal {
                     background-color: rgba(white, .7);
                     padding: 1.5rem;
@@ -1054,6 +1056,7 @@
 
             #roadmap {
                 .goals {
+                    grid-template-columns: repeat(5, 1fr);
 
                     .goal {
                         // background-color: rgba($color: #000000, $alpha: 0);

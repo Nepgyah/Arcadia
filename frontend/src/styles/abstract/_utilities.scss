@@ -11,3 +11,9 @@
         background-color: #{$color}
     }
 }
+
+@each $name, $size in $text-size{
+    .txt-#{$name} {
+        font-size: #{$size}
+    }
+}

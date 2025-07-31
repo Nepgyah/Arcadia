@@ -29,7 +29,7 @@ export default function MiruHome() {
             <div id="page-miru-home"  className="page-content page-content--two-col page-content--reversed">
                 <div className="page-content__left-column divider divider--vertical padding-right--lg">
                     <div id="seasonal">
-                        <h2 className="app-font--miru border-bottom">Current Season</h2>
+                        <h2>Current Season</h2>
                         <div className="flex-grid flex-grid--5">
                             {
                                 seasonalAnime &&
@@ -46,7 +46,7 @@ export default function MiruHome() {
                         </div>
                     </div>
                     <div id="all-time">
-                        <h2 className="app-font--miru border-bottom">All Time</h2>
+                        <h2>All Time</h2>
                         <div className="flex-grid flex-grid--5">
                             {
                                 topAnime &&

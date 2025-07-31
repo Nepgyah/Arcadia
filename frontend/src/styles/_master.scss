@@ -49,13 +49,8 @@ html {
     text-orientation: upright;
 }
 
-// Content Display
-.grid-layout {
-    display: grid;
-
-    &--5-col {
-        grid-template-columns: 1fr;
-    }
+.bold {
+    font-weight: bold;
 }
 
 .emp-underline {
@@ -69,6 +64,7 @@ html {
         left: 20%;
     }
 }
+
 // Popups appear on the same level as the main content, thus
 // we need to target them at the top level :/
 #solutions-dropdown {
@@ -104,13 +100,4 @@ html {
     width: 100%;
     height: 100%;
     background-color: black;
-}
-
-@media (min-width: 768px) {
-    .grid-layout {
-
-        &--5-col {
-            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        }
-    }
 }
