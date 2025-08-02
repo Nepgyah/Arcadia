@@ -27,6 +27,9 @@ export default function PageCaseStudy() {
 
             <section id="side-studies" className="section">
                 <div className="section__wrapper">
+                    <div className="section-main section-main--center">
+                        <h2 className="section-main__main-title">Other Success Stories</h2>
+                    </div>
                     <div className="section-content section-content--four-col">
                         <FadeIn direction="up" className="study-card" delay={.1} threshold={.1}>
                             <CaseStudyCard

@@ -9,7 +9,7 @@
             min-height: inherit;
 
             #topics {
-                background-color: $arcadia-primary-one;
+                background-color: map-get($arcadia-colors , arc-base );
                 padding: 1rem;
                 display: flex;
                 flex-wrap: wrap;
@@ -22,7 +22,7 @@
                     div {
                         aspect-ratio: 1 / 1;
                         height: 150px;
-                        background-color: $shiru-primary;
+                        background-color: map-get($arcadia-colors , shiru-base );
                         padding: 8px;
 
                         img {

@@ -45,12 +45,31 @@
         &__main-title {
             font-size: 2rem;
             color: map-get($arcadia-colors , arc-base );
+            width: fit-content;
+
+            span {
+                position: relative;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    bottom: -4px;
+                    left: 1rem;
+                    height: 2px;
+                    background-color: map-get($arcadia-colors, arc-accent );
+                    width: 100%;
+                }
+            }
         }
 
         &--center {
-            text-align: center;
             width: 75%;
             margin: 0 auto;
+
+            h2, p {
+                text-align: center;
+                margin: auto;
+            }
         }
 
         &--white {

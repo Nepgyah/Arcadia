@@ -74,7 +74,7 @@ h1, h2, h3, h4, p {
         content: '';
         height: 2px;
         width: 100%;
-        // background-color: map-get($arcadia-colors , arc-base );
+        background-color: map-get($arcadia-colors , arc-base );
         position: absolute;
         bottom: -5px;
         left: 14px;

@@ -42,6 +42,11 @@ html {
     &--center-horizontal {
         justify-content: center;
     }
+
+    &--center {
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .vertical-text {

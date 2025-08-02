@@ -15,7 +15,7 @@
             row-gap: 2rem;
 
             h1 {
-                color: $hiku-primary;
+                color: map-get($arcadia-colors , hiku-base );
             }
             
             #gacha-slideshow {
@@ -63,7 +63,7 @@
                     }
 
                     &__header {
-                        color: $hiku-primary;
+                        color: map-get($arcadia-colors , hiku-base );
                         font-weight: bold;
                     }
 

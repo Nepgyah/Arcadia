@@ -143,6 +143,9 @@ export default function Homepage() {
                                     <img src="/global/app-icons/kiku.svg" alt="Kiku icon" />
                                     <img src="/global/app-icons/shiru.svg" alt="Shiru icon" />
                                     <img src="/global/app-icons/kumitateru.svg" alt="Kumitateru icon" />
+                                    <img src="/global/app-icons/todokeru.svg" alt="Todokeru icon" />
+                                    <img src="/global/app-icons/manabu.svg" alt="Manabub icon" />
+                                    <img src="/global/app-icons/toshoukan.svg" alt="Toshoukan icon" />
                                 </div>
                             </div>
                         </div>
@@ -191,7 +194,7 @@ export default function Homepage() {
                         <div className="section__wrapper">
                             <div className="section-main section-main--white">
                                 <p className="section-main__mini-title">Partnership</p>
-                                <h2 className="section-main__main-title">Industry Leader Trust Arcadia</h2>
+                                <h2 className="section-main__main-title">Industry Leaders Trust Arcadia</h2>
                                 <p className="section-main__description">Anime Studios, Game Developers, and more collaborate with Arcadia to build something special.</p>
                             </div>
                             <div className="section-content section-content--flex">
@@ -245,7 +248,7 @@ export default function Homepage() {
                                 <div className="section-main section-main--white">
                                     <p className="section-main__mini-title">Arcadia's Primary Apps</p>
                                     <h2 className="section-main__main-title">Essentials for the Ultimate Otaku</h2>
-                                    <p className="section-main__description">Your all-in-one toolkit for tracking, streaming, gaming, and shopping. These flagship apps form the heart of your otaku experience.</p>
+                                    <p className="section-main__description">Your all-in-one toolkit for tracking, streaming, gaming, and shopping. These flagship apps form the heart of Arcadia. Pick one or pick-em-all, its your turn to customize your otaku experience.</p>
                                 </div>
                                 <FadeIn direction="left">
                                     <Link href="apps/miru">
@@ -440,7 +443,7 @@ export default function Homepage() {
                             <div className="section-main section-main--center">
                                 <p className="sectin-main__mini-title">Beyond the Essentials</p>
                                 <h2 className="section-main__main-title">The Arcadia Side Suite</h2>
-                                <p>These supplementary apps are smaller in scope, but big on impact. From planning events to diving into niche blogs and lo-fi vibes, the Arcadia side suites adds extra flavor to your fandom journey, because even side quests matter.</p>
+                                <p>These supplementary apps are smaller in scope, but big on impact. From planning events to diving into niche blogs and lo-fi vibes, the Arcadia side suites adds extra flavor to your fandom journey.</p>
                             </div>
                             <div className="app-container">
                                 <div className="left-col">
@@ -468,6 +471,20 @@ export default function Homepage() {
                                                     <p className="japanese">ひく</p>
                                                     <h3 className="name">Hiku</h3>
                                                     <p className="slogan">Pull Your Way To Victory</p>
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    </FadeIn>
+                                    <FadeIn direction="right" delay={.2} threshold={.7}>
+                                        <Link href='/apps/todokeru'>
+                                            <div className="app-tile bg-todokeru-base" id="todokeru">
+                                                <div className="app-tile__text">
+                                                    <p className="japanese">とどける</p>
+                                                    <h3 className="name">Todokeru</h3>
+                                                    <p className="slogan">From pixels to people, broadcast your story</p>
+                                                </div>
+                                                <div className="app-tile__image">
+                                                    <Image fill src="/website/images/homepage/secondary-apps/todokeru.png" alt="Gamer girl" />
                                                 </div>
                                             </div>
                                         </Link>
@@ -512,6 +529,20 @@ export default function Homepage() {
                                                 </div>
                                                 <div className="app-tile__image">
                                                     <Image fill src="/website/images/homepage/secondary-apps/kiku.jpg" alt="Studying and listening to lofi" />
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    </FadeIn>
+                                    <FadeIn direction="left" delay={.3}>
+                                        <Link href='/apps/shiru'>
+                                            <div className="app-tile bg-manabu-base" id="manabu">
+                                                <div className="app-tile__image">
+                                                    <Image fill src="/website/images/homepage/secondary-apps/manabu.png" alt="Hanging out at a dinner" />
+                                                </div>
+                                                <div className="app-tile__text">
+                                                    <p className="japanese">まなぶ</p>
+                                                    <h3 className="name">Manabu</h3>
+                                                    <p className="slogan">Achieve fluency through fandom</p>
                                                 </div>
                                             </div>
                                         </Link>

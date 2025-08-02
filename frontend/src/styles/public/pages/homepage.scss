@@ -117,7 +117,7 @@
         }
 
         &#hiku {
-            height: 343px;
+            height: 300px;
 
             .app-tile__image {
                 width: 50%;
@@ -125,6 +125,20 @@
 
             .app-tile__text {
                 width: 50%;
+            }
+        }
+
+        &#todokeru {
+            height: 250px;
+            flex-direction: row;
+            
+            .app-tile__image {
+                width: 55%;
+            }
+
+            .app-tile__text {
+                width: 45%;
+                color: white;
             }
         }
 
@@ -161,6 +175,18 @@
 
             .app-tile__text {
                 width: 50%;
+            }
+        }
+        &#manabu {
+            height: 205px;
+            
+            .app-tile__image {
+                width: 45%;
+            }
+
+            .app-tile__text {
+                width: 55%;
+                color: white;
             }
         }
     }
@@ -326,7 +352,12 @@
                     // background-color: $arcadia-primary-three;
 
                     display: grid;
-                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                    &.primary {
+                        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                    }
+                    &.secondary {
+                        grid-template-columns: 1fr 1fr 1fr 1fr;
+                    }
                     align-items: center;
                     gap: 1rem;
 
@@ -380,6 +411,10 @@
                     img {
                         height: 100%;
                     }
+                }
+
+                .secondary {
+                    background-color: #212231;
                 }
             }
         }

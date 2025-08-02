@@ -67,7 +67,7 @@
                     .value {
                         font-size: 5rem;
                         font-weight: bold;
-                        color: $arcadia-primary-one;
+                        color: map-get($arcadia-colors , arc-base );
                     }
                 }
             }
@@ -78,7 +78,7 @@
             z-index: 2;
             
             .section-content {
-                background-color: $arcadia-primary-one;
+                background-color: map-get($arcadia-colors , arc-base );
                 padding: 1.5rem;
                 border-radius: 15px;
                 box-shadow: $box-shadow-default;
@@ -98,7 +98,7 @@
 
                     div {
                         text-align: center;
-                        background-color: $arcadia-primary-one-dark;
+                        background-color:map-get($arcadia-colors , arc-base-dark );
                         flex-grow: 1;
                         color: white;
                         padding: 12px;
@@ -128,7 +128,7 @@
                 top: 50%;
                 left: 50%;
                 transform: translateX(-50%) translateY(-50%);
-                background-color: $arcadia-primary-one;
+                background-color: map-get($arcadia-colors , arc-base );
                 padding: 2rem;
                 border-radius: 15px;
             }
@@ -160,7 +160,7 @@
         .position {
             padding: 1rem;
             border-radius: 12px;
-            background-color: $arcadia-primary-one;
+            background-color: map-get($arcadia-colors , arc-base );
             box-shadow: $box-shadow-default;
             color: white;
 
@@ -173,7 +173,7 @@
                     display: flex;
 
                     .MuiSvgIcon-root {
-                        color: $arcadia-secondary-one;
+                        color: map-get($arcadia-colors , arc-accent );
                     }
                 }
             }

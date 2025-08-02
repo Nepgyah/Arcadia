@@ -4,7 +4,7 @@ import Sidebar from "@/components/platform/sidebar";
 import Topbar from "@/components/platform/topbar";
 import React from "react";
 
-import "@/styles/platform/main.scss";
+import "@/styles/platform/platform-main.scss";
 import { asobuNav, kauNav, mainboard, miruNav, tsunaguNav, yomuNav} from "@/data/urls";
 import { usePathname } from "next/navigation";
 
