@@ -534,7 +534,7 @@ export default function Homepage() {
                                         </Link>
                                     </FadeIn>
                                     <FadeIn direction="left" delay={.3}>
-                                        <Link href='/apps/shiru'>
+                                        <Link href='/apps/manabu'>
                                             <div className="app-tile bg-manabu-base" id="manabu">
                                                 <div className="app-tile__image">
                                                     <Image fill src="/website/images/homepage/secondary-apps/manabu.png" alt="Hanging out at a dinner" />

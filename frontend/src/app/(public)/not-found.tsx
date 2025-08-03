@@ -19,9 +19,9 @@ export default function PublicNotFound() {
                     <div></div>
                     <div className="section-main section-main--white">
                         <h2 className="section-main__main-title">
-                            Oops! This Page Is Under Construction
+                            Oops! Page Not Found
                         </h2>
-                        <p>This page is still under development. Stay tuned for the next episode! Next time on Arcadia the Animation!</p>
+                        <p>This wasn't part of Yuuka's calculations! Hopefuly we can figure it out before the rest of Seminar shows up!</p>
                         <Button variant="contained" onClick={() => router.push('/')}>Homepage</Button>
                     </div>
                 </div>
