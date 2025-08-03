@@ -29,6 +29,11 @@ export const kauNav: url[] = [
 export const tsunaguNav: url[] = [
     { name: "Tsungu Home", path: "/tsunagu"},
 ]
+
+export const kumitateruNav: url[] = [
+    { name: "Kumi Home", path: "/kumitateru"},
+    { name: "Build Lists", path: "/kumitateru/list"},
+]
 // export const asobuNav: url[] = [
 //     { name: "Asobu Home", path: "/asobu"},
 //     { name: "Game Shellf", path: "/asobu/list"},
