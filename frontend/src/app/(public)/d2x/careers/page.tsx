@@ -46,7 +46,7 @@ export default function D2XCareers() {
                             </FadeIn>
                             <FadeIn direction="left" className="section-main section-main--white">
                                 <p className="section-main__mini-title">Why Join Us</p>
-                                <h2 className="section-main__main-title">Turn Your Passion Into Purpose</h2>
+                                <h2 className="section-main__main-title">Turn Your <span>Passion Into Purpose</span></h2>
                                 <p>Whether you’re into anime, games, music, or tech, this is your chance to channel that love into meaningful work. Join a team that supports growth and believes that passion is the strongest foundation for innovation.</p>
                             </FadeIn>
                         </div>
@@ -62,7 +62,7 @@ export default function D2XCareers() {
                             <FadeIn direction="down">
                                 <div className="section-main">
                                     <p className="section-main__mini-title">Life At D2X</p>
-                                    <h2 className="section-main__main-title">Turn Your Passion Into Purpose</h2>
+                                    <h2 className="section-main__main-title">Next Level <span>Development</span></h2>
                                     <p>We focus on building a space where fandom, creativity and technology can come together. Flexible and chill where it counts, but serious when it comes to quality and impact. No template or molds to fill at D2X.
                                         <br /><br />Come as you are. Grow how you want. Let’s make something <b>unforgettable</b>.
                                     </p>
@@ -138,7 +138,7 @@ export default function D2XCareers() {
                 <div className="section__wrapper">
                     <div className="section-main section-main--half">
                         <p className="section-main__mini-title">Opporitunities</p>
-                        <h2 className="section-main__main-title">Choose Your D2X Path</h2>
+                        <h2 className="section-main__main-title">Your <span>D2X Path</span></h2>
                         <p>Working at D2X means being part of a mission-driven team that’s dedicated to building amazing experiences for fans. Whether you’re a developer, designer, writer, or community manager, your skills and ideas will help shape the future of our platform.</p>
                     </div>
                     <div className="section-content section-content--two-col">

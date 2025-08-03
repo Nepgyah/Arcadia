@@ -53,7 +53,7 @@
 
         #about {
             h3 {
-                color: $arcadia-primary-two;
+                color: map-get($arcadia-colors , arc-accent )
             }
         }
         #spirit {
@@ -64,8 +64,6 @@
 
                 .one { order: 1; }
                 .two { order: 2; }
-                // .three { order: 4; }
-                // .four { order: 3; }
                 .three { order: 3; }
                 .four { order: 4; }
                 .five {
@@ -73,8 +71,6 @@
                     order: 5;
                     display: none;
                 }
-                // .six { order: 7; }
-                // .seven { order: 6; }
                 .six { order: 7; }
                 .seven { order: 6; }
                 .eight { order: 9 }
@@ -111,7 +107,7 @@
                 .award {
                     max-width: 160px;
                     padding: 1rem;
-                    border: 2px solid $arcadia-primary-one;
+                    border: 2px solid map-get($arcadia-colors , arc-base );
                     height: 100%;
 
                     img {
@@ -120,7 +116,7 @@
                     }
 
                     p {
-                        color: $arcadia-primary-one;
+                        color: map-get($arcadia-colors , arc-base );
                         text-align: center;
                         margin-top: 1rem;
 

@@ -18,7 +18,7 @@ export default function Profile({user} : {user: any}) {
                         <Avatar className={`profile-pic profile-pic--color-${user.color_preset}`} src={user ? `/platform/auth/profile-pics/profile_${user?.picture_preset}.webp` : ''}/>
                         <div className="card__content">
                             <h2 className="name">{user?.username}</h2>
-                            <p className="font--xs">{user?.about}</p>
+                            <p>{user?.about}</p>
                             <Divider />
                             <div className="summary">
                                 <div className="stat">

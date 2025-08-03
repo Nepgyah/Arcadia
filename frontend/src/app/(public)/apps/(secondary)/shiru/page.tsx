@@ -16,7 +16,7 @@ export default function Shiru() {
                         <ShiruTopic topic='culture' text='Culture' />
                         <ShiruTopic topic='events' text='Events' />
                     </div>
-                    <div id='hero-text' className='center-content'>
+                    <div id='hero-text' className='align-content align-content--center'>
                         <img src="/website/images/apps/shiru/hero/retro-city.png" alt="Anime retro city" />
                         <div className='mask'></div>
                         <div className='blur-container hero__text'>

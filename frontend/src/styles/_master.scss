@@ -4,12 +4,13 @@
 @forward "./abstract/";
 
 html {
-    background-color: $bg-body-light-primary;
+    background-color: map-get($arcadia-colors, txt-light-alt);
     font-size: 18px;
     scroll-behavior: smooth;
     scroll-padding-top: 3rem;
+
     body {
-        color: $text-dark-primary;
+        color: map-get($arcadia-colors, txt-dark);
         overflow-x: hidden;
         
         a {
@@ -29,15 +30,44 @@ html {
     }
 }
 
-.center-content {
+
+.align-content {
     display: flex;
-    justify-content: center;
-    align-items: center;
+
+    &--center-vertical {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &--center-horizontal {
+        justify-content: center;
+    }
+
+    &--center {
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .vertical-text {
     writing-mode: vertical-rl;
     text-orientation: upright;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.emp-underline {
+    position: relative;
+
+    span {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 2px;
+        left: 20%;
+    }
 }
 
 // Popups appear on the same level as the main content, thus

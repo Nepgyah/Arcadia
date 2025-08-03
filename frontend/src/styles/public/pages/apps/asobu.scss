@@ -6,7 +6,6 @@
         background-color: #373952;
 
         &__text {
-            color: $arcadia-primary-one;
             background-color: rgba(white, .7);
             -webkit-backdrop-filter: blur(5px);
             backdrop-filter: blur(5px);
@@ -55,7 +54,7 @@
 
                 &#hero-arrow-2 {
                     left: 5%;
-                    background-color: $asobu-primary;
+                    background-color: map-get($arcadia-colors , asobu-base );
                     z-index: 2;
                 }
 

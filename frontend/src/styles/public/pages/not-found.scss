@@ -1,7 +1,7 @@
 @use "../../abstract/variables" as *;
 
 #page-not-found {
-    background-color: $arcadia-primary-one-dark;
+    background-color: map-get($arcadia-colors , arc-base-dark );
     overflow-y: hidden;
     .section {
         
@@ -13,7 +13,7 @@
 
         #angled {
             clip-path: polygon(0 0, 100% 0, 100% 35%, 0 45%);
-            background-color: $arcadia-primary-one-dark;
+            background-color: map-get($arcadia-colors , arc-base-dark );;
             height: 100%;
             width: 100%;
             z-index: 2;

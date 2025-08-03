@@ -2,18 +2,23 @@ export interface teamMember {
     firstName: string,
     lastName?: string,
     position: string,
-    url: string
+    url: string,
 }
 
+export interface realMember extends teamMember {
+    linkedin: string
+}
+export const leadershipSpecial: realMember[] = [
+    { firstName: "Miporin", position: "Co founder", url: "me.jpg", linkedin: 'https://www.linkedin.com/in/auston-pawell-9726581b1'},
+    { firstName: "Tommy", position: "Co founder", url: "tom-1.jpg", linkedin: 'https://www.linkedin.com/in/thomas-beckler-02bb19221'},
+    { firstName: "Jon", lastName: "Lühmann", position: "Chief Design Officer", url: "jon.jpg", linkedin: 'https://www.linkedin.com/in/jon-luehmann/'},
+]
 export const leadership: teamMember[] = [
-    { firstName: "Miporin", position: "Co founder", url: "me.jpg"},
-    { firstName: "Tommy", position: "Co founder", url: "tom-1.jpg"},
     { firstName: "Himeko", lastName: "Murata", position: "Chief Strategy Officer", url: "himeko.jpg"},
     { firstName: "Harmless wind", position: "Chief Technology Officer", url: "tom-2.jpg"},
     { firstName: "Groza", position: "Chief Operating Officer", url: "groza.jpg"},
     { firstName: "Yukong", position: "Chief Logistics Officer", url: "yukong.jpg"},
     { firstName: "Pheonix", lastName: "Wright", position: "Chief Legal Officer", url: "pheonix-wright.jpg"},
-    { firstName: "Jon", lastName: "Lühmann", position: "Chief Design Officer", url: "jon.jpg"},
     { firstName: "The", lastName: "Herta", position: "Chief Innovation Officer", url: "the-herta.jpg"},
     { firstName: "Jade", lastName: "", position: "Chief Financial Officer", url: "jade.jpg"},
     { firstName: "Fugue", lastName: "", position: "Chief Marketing Officer", url: "fugue.jpg"},

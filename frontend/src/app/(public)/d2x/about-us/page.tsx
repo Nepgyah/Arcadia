@@ -219,7 +219,7 @@ export default function AboutD2X() {
                                 <img src="/website/partners/gog.png" alt="GOG logo" />
                                 <img src="/website/partners/mangadex.png" alt="Mangadex logo" />
                             </div>
-                            <div className="center-content">
+                            <div className="align-content align-content--center-vertical">
                                 <div className="section-main blur-container">
                                     <p className="section-main__mini-title">Building Together</p>
                                     <h2 className="section-main__main-title">Power-Ups Through Partnerships</h2>

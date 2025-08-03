@@ -16,7 +16,7 @@
             box-shadow: $box-shadow-default;
 
             &--highlight {
-                border: 4px solid $arcadia-secondary-one;
+                border: 4px solid map-get($arcadia-colors , arc-accent );
             }
         }
 
@@ -25,11 +25,11 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            color: $arcadia-primary-one;
+            color: map-get($arcadia-colors , arc-base );
 
             .position {
                 margin-top: .5rem;
-                color: $text-dark-primary;
+                color: map-get($arcadia-colors , txt-dark)
             }
 
             &--white {
@@ -114,7 +114,7 @@
             }
 
             .left-col {
-                border-right: 2px solid rgba($arcadia-primary-one, .5);
+                border-right: 2px solid rgba(map-get($arcadia-colors , arc-base ), .5);
             }
 
             .right-col {
