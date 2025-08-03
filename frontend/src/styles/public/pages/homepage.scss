@@ -45,7 +45,6 @@
         }
 
         &#miru {
-            background-color: $miru-primary;
             height: 360px;
 
             .app-tile__image, .app-tile__text {
@@ -54,7 +53,6 @@
         }
 
         &#yomu {
-            background-color: $yomu-primary;
             height: 450px;
 
             .app-tile__image {
@@ -67,7 +65,6 @@
         }
 
         &#kau {
-            background-color: $kau-primary;
             height: 450px;
             flex-direction: column-reverse;
 
@@ -81,7 +78,6 @@
         }
 
         &#asobu {
-            background-color: $asobu-primary;
             height: 300px;
             flex-direction: column-reverse;
             
@@ -95,7 +91,6 @@
         }
 
         &#tsunagu {
-            background-color: $tsunagu-primary;
             height: 350px;
             flex-direction: row;
             
@@ -109,7 +104,6 @@
         }
 
         &#iku {
-            background-color: $iku-primary;
             height: 343px;
 
             .app-tile__image {
@@ -123,8 +117,7 @@
         }
 
         &#hiku {
-            background-color: $hiku-primary;
-            height: 343px;
+            height: 300px;
 
             .app-tile__image {
                 width: 50%;
@@ -135,8 +128,21 @@
             }
         }
 
+        &#todokeru {
+            height: 250px;
+            flex-direction: row;
+            
+            .app-tile__image {
+                width: 55%;
+            }
+
+            .app-tile__text {
+                width: 45%;
+                color: white;
+            }
+        }
+
         &#shiru {
-            background-color: $shiru-primary;
             height: 220px;
 
             .app-tile__image {
@@ -149,7 +155,6 @@
         }
 
         &#kumitateru {
-            background-color: $kumitateru-primary;
             height: 220px;
             
             .app-tile__image {
@@ -162,7 +167,6 @@
         }
 
         &#kiku {
-            background-color: $kiku-primary;
             height: 220px;
             
             .app-tile__image {
@@ -171,6 +175,18 @@
 
             .app-tile__text {
                 width: 50%;
+            }
+        }
+        &#manabu {
+            height: 205px;
+            
+            .app-tile__image {
+                width: 45%;
+            }
+
+            .app-tile__text {
+                width: 55%;
+                color: white;
             }
         }
     }
@@ -242,9 +258,7 @@
                             display: inline-table;
                             width: 90%;
                             border-radius: 5px;
-                            color: white;
                             padding: .25rem 1rem;
-                            background-color: #C54B61;
                         }
                     }
                 }
@@ -335,10 +349,15 @@
                     width: calc(65% - .5rem);
                     padding: 14px;
                     height: auto;
-                    background-color: $arcadia-primary-three;
+                    // background-color: $arcadia-primary-three;
 
                     display: grid;
-                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                    &.primary {
+                        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                    }
+                    &.secondary {
+                        grid-template-columns: 1fr 1fr 1fr 1fr;
+                    }
                     align-items: center;
                     gap: 1rem;
 
@@ -366,12 +385,10 @@
                 }
 
                 .slogan {
-                    background-color: #505477;
                     width: calc(65% - .5rem);
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    color: $bg-body-light-primary;
                     font-size: 1.5rem;
                     font-weight: bold;
                     text-align: center;
@@ -394,6 +411,10 @@
                     img {
                         height: 100%;
                     }
+                }
+
+                .secondary {
+                    background-color: #212231;
                 }
             }
         }
@@ -420,7 +441,7 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    background-color: $arcadia-primary-three;
+                    background-color: map-get($arcadia-colors, arc-accent-dark);
                     box-shadow: $box-shadow-default;
 
                 }
@@ -440,10 +461,10 @@
                 row-gap: 2rem;
                 
                 .feature {
-                    color: white;
+                    color: map-get($arcadia-colors, txt-light);
 
                     h3 {
-                        border-left: 2px solid $arcadia-secondary-one;
+                        border-left: 2px solid map-get($arcadia-colors , arc-accent );;
                         padding-left: 1rem;
                         margin-bottom: 1rem;
                     }
@@ -505,7 +526,6 @@
                     width: 70%;
                     height: 500px;
                     aspect-ratio: auto;
-                    background-color: $arcadia-primary-two;
                 }
 
                 img {
@@ -522,8 +542,8 @@
 
             .accordion {
                 .MuiAccordion-root {
-                    background-color: $arcadia-primary-one;
-                    color: white;
+                    background-color: map-get($arcadia-colors, arc-base);
+                    color: map-get($arcadia-colors, txt-light-alt)
                 }
             }
         }
@@ -531,7 +551,7 @@
         #steps {
 
             .section-content {
-                background-color: $arcadia-primary-one;
+                // background-color: $arcadia-primary-one;
                 padding: 1.5rem;
                 border-radius: 15px;
                 box-shadow: $box-shadow-default;
@@ -552,7 +572,7 @@
                     }
 
                     &__text {
-                        background-color: $arcadia-primary-one-dark;
+                        background-color: map-get($arcadia-colors, arc-base-dark);
                         flex-grow: 1;
                         color: white;
                         padding: 12px;
@@ -610,11 +630,11 @@
         }
 
         #roadmap {
+
             .goals {
                 display: grid;
-                grid-template-columns: 1fr;
-                row-gap: 2rem;
-
+                row-gap: 1rem;
+                
                 .goal {
                     background-color: rgba(white, .7);
                     padding: 1.5rem;
@@ -635,7 +655,7 @@
     #stories {
 
         .section-main {
-            background-color: rgba($arcadia-primary-three, .8);
+            background-color: rgba(map-get($arcadia-colors , arc-base-dark ), .8);
             color: white;
 
             &__main-title {
@@ -643,7 +663,7 @@
             }
         }
         .card {
-            background-color: $arcadia-primary-one;
+            background-color: map-get($arcadia-colors, arc-base );
             border-radius: 15px;
             overflow: hidden;
             box-shadow: $box-shadow-default;
@@ -815,7 +835,6 @@
             }
 
             &#tsunagu {
-                background-color: $tsunagu-primary;
                 height: 350px;
             }
         }
@@ -834,7 +853,7 @@
                         width: 80%;
                     }
 
-                    .partner {
+                    .partners {
                         border-radius: 0 15px 15px 0;
                     }
                 }
@@ -867,7 +886,7 @@
                     flex-direction: column;
                     justify-content: space-between;
                     align-items: center;
-                    color: $bg-body-light-primary;
+                    color: map-get($arcadia-colors , txt-light-alt );;
                     text-align: center;
 
                     div {
@@ -976,7 +995,6 @@
                     .offset-frame {
                         position: absolute;
                         z-index: 1;
-                        background-color: #ED5F77;
                         height: 550px;
                         width: 110%;
                         bottom: 20px;
@@ -1073,8 +1091,7 @@
 
             #roadmap {
                 .goals {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                    grid-template-columns: repeat(5, 1fr);
 
                     .goal {
                         // background-color: rgba($color: #000000, $alpha: 0);
@@ -1094,7 +1111,7 @@
                         svg {
                             width: 50%;
                             height: auto;
-                            color: $arcadia-primary-one-dark;
+                            color: map-get($arcadia-colors , arc-base-dark );
                         }
                     }
                 }

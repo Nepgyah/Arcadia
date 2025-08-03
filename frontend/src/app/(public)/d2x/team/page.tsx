@@ -1,4 +1,4 @@
-import { teamMember, leadership, appLeads, dev, design, finance, rnd, devops } from "@/data/team";
+import { teamMember, leadership, appLeads, dev, design, finance, rnd, devops, leadershipSpecial } from "@/data/team";
 
 import "@/styles/public/pages/d2x/team.scss";
 import { Tooltip } from "@mui/material";
@@ -26,6 +26,17 @@ export default function Team() {
                             <h2>Leadership</h2>
                         </div>
                         <div className="section-content full-width">
+                            {
+                                leadershipSpecial.map(member => (
+                                    <MemberCardLinkedIn 
+                                        key={member.firstName}
+                                        member={member}
+                                        division='leadership'
+                                        isWhite={true}
+                                        linkedin={member.linkedin}
+                                    />
+                                ))
+                            }
                             {
                                 leadership.map(member => (
                                     <MemberCard 
@@ -163,28 +174,13 @@ export default function Team() {
     )
 }
 
-function MemberCard({member, division, isWhite} : {member: teamMember, division: string, isWhite: boolean}) {
-
-    if (member.lastName == 'Lühmann') {
-        return (
-            <Tooltip arrow placement="top" title='Check out my linkedin!'>
-                <div className="card">
-                    <a href="https://www.linkedin.com/in/jon-luehmann/" target='_blank'>
-                        <img className="card__image card__image--highlight animation__hover-grow" src={`/website/images/d2x/team/${division}/${member.url}`} alt='Jon Lühmann' />
-                    </a>
-                    <div className={`card__text ${isWhite && 'card__text--white'}`}>
-                        <p className="name">
-                            <span className={`first-name ${!member.lastName && 'emphasis'}`}>{member.firstName}</span> {member.lastName && <span className="emphasis">{member.lastName}</span>}
-                            </p>
-                        <p className="position">{member.position}</p>
-                    </div>
-                </div>
-            </Tooltip>
-        )
-    } else {
-        return (
+function MemberCardLinkedIn({member, division, isWhite, linkedin = ''} : {member: teamMember, division: string, isWhite: boolean, linkedin: string}) {
+    return (
+        <Tooltip arrow placement="top" title='Check out my linkedin!'>
             <div className="card">
-                <img className="card__image" src={`/website/images/d2x/team/${division}/${member.url}`} alt={`Photo of ${member?.firstName} ${member.lastName != null ? member.lastName : ''}`} />
+                <a href={linkedin} target='_blank'>
+                    <img className="card__image card__image--highlight animation__hover-grow" src={`/website/images/d2x/team/${division}/${member.url}`} alt='Jon Lühmann' />
+                </a>
                 <div className={`card__text ${isWhite && 'card__text--white'}`}>
                     <p className="name">
                         <span className={`first-name ${!member.lastName && 'emphasis'}`}>{member.firstName}</span> {member.lastName && <span className="emphasis">{member.lastName}</span>}
@@ -192,6 +188,20 @@ function MemberCard({member, division, isWhite} : {member: teamMember, division:
                     <p className="position">{member.position}</p>
                 </div>
             </div>
-        )
-    }
+        </Tooltip>
+    )
+}
+function MemberCard({member, division, isWhite} : {member: teamMember, division: string, isWhite: boolean}) {
+
+    return (
+        <div className="card">
+            <img className="card__image" src={`/website/images/d2x/team/${division}/${member.url}`} alt={`Photo of ${member?.firstName} ${member.lastName != null ? member.lastName : ''}`} />
+            <div className={`card__text ${isWhite && 'card__text--white'}`}>
+                <p className="name">
+                    <span className={`first-name ${!member.lastName && 'emphasis'}`}>{member.firstName}</span> {member.lastName && <span className="emphasis">{member.lastName}</span>}
+                    </p>
+                <p className="position">{member.position}</p>
+            </div>
+        </div>
+    )
 }

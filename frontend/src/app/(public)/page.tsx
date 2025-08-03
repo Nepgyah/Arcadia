@@ -33,7 +33,7 @@ export default function Homepage() {
                         <div className="left-col">
                             <div className="hero-gradient"></div>
                             <div className="hero__text">
-                                <h1><span className="container"><span id="word" className="rotating-word">Stream.</span></span><br />Your Way.</h1>
+                                <h1><span className="container bg-arc-accent"><span id="word" className="rotating-word clr-txt-light">Stream.</span></span><br />Your Way.</h1>
                                 <p className="main-text">Arcadia is your home base for everything otaku. Where fans come together to celebrate what they love and find something new.</p>
                                 <div className="hero__button-container">
                                     <Link href='/platform'>
@@ -89,7 +89,7 @@ export default function Homepage() {
                                         </div>
                                     </a>
                                 </Tooltip>
-                                <div className="apps primary shadow-box">
+                                <div className="apps primary shadow-box bg-arc-base-dark">
                                     <img src="/global/app-icons/miru.svg" alt="Miru icon" />
                                     <img src="/global/app-icons/yomu.svg" alt="Yomu icon" />
                                     <img src="/global/app-icons/asobu.svg" alt="Asobu icon" />
@@ -106,7 +106,7 @@ export default function Homepage() {
                                 <div className="girl desktop-only">
                                     <img src="/website/images/homepage/hero/anime-girl-two.png" alt="" />
                                 </div>
-                                <div className="slogan shadow-box">
+                                <div className="slogan shadow-box bg-arc-base clr-txt-light-alt">
                                     Your Otaku Sanctuary
                                 </div>
                             </div>
@@ -143,6 +143,9 @@ export default function Homepage() {
                                     <img src="/global/app-icons/kiku.svg" alt="Kiku icon" />
                                     <img src="/global/app-icons/shiru.svg" alt="Shiru icon" />
                                     <img src="/global/app-icons/kumitateru.svg" alt="Kumitateru icon" />
+                                    <img src="/global/app-icons/todokeru.svg" alt="Todokeru icon" />
+                                    <img src="/global/app-icons/manabu.svg" alt="Manabub icon" />
+                                    <img src="/global/app-icons/toshoukan.svg" alt="Toshoukan icon" />
                                 </div>
                             </div>
                         </div>
@@ -150,7 +153,7 @@ export default function Homepage() {
 
                     <section id="features" className="section">
                         <div id="feature-image" className="desktop-only">
-                            <div className="offset-frame"></div>
+                            <div className="offset-frame bg-arc-accent"></div>
                             <Image
                                 className="responsive-image"
                                 width={298} 
@@ -191,7 +194,7 @@ export default function Homepage() {
                         <div className="section__wrapper">
                             <div className="section-main section-main--white">
                                 <p className="section-main__mini-title">Partnership</p>
-                                <h2 className="section-main__main-title">Industry Leader Trust Arcadia</h2>
+                                <h2 className="section-main__main-title">Industry Leaders Trust Arcadia</h2>
                                 <p className="section-main__description">Anime Studios, Game Developers, and more collaborate with Arcadia to build something special.</p>
                             </div>
                             <div className="section-content section-content--flex">
@@ -245,11 +248,11 @@ export default function Homepage() {
                                 <div className="section-main section-main--white">
                                     <p className="section-main__mini-title">Arcadia's Primary Apps</p>
                                     <h2 className="section-main__main-title">Essentials for the Ultimate Otaku</h2>
-                                    <p className="section-main__description">Your all-in-one toolkit for tracking, streaming, gaming, and shopping. These flagship apps form the heart of your otaku experience.</p>
+                                    <p className="section-main__description">Your all-in-one toolkit for tracking, streaming, gaming, and shopping. These flagship apps form the heart of Arcadia. Pick one or pick-em-all, its your turn to customize your otaku experience.</p>
                                 </div>
                                 <FadeIn direction="left">
                                     <Link href="apps/miru">
-                                        <div className="app-tile app-tile--vertical slide-right" id="miru">
+                                        <div className="app-tile app-tile--vertical slide-right bg-miru-base" id="miru">
                                             <div className="app-tile__image">
                                                 <Image fill src="/website/images/homepage/primary-apps/miru.jpg" alt="Anime girls watching togther" />
                                             </div>
@@ -266,7 +269,7 @@ export default function Homepage() {
                                 <div id="bottom-left">
                                     <FadeIn direction="right" delay={.4}>
                                         <Link href="apps/yomu">
-                                            <div className="app-tile app-tile--vertical" id="yomu">
+                                            <div className="app-tile app-tile--vertical bg-yomu-base" id="yomu">
                                                 <div className="app-tile__image">
                                                     <Image fill src="/website/images/homepage/primary-apps/yomu.jpg" alt="Smiling anime girl with book" />
                                                 </div>
@@ -280,7 +283,7 @@ export default function Homepage() {
                                     </FadeIn>
                                     <FadeIn direction="right" delay={.5} threshold={.5}>
                                         <Link href="apps/kau">
-                                            <div className="app-tile" id="kau">
+                                            <div className="app-tile bg-kau-base" id="kau">
                                                 <div className="app-tile__image">
                                                     <Image fill src="/website/images/homepage/primary-apps/kau.jpg" alt="Blue asthetic shopping" />
                                                 </div>
@@ -296,7 +299,7 @@ export default function Homepage() {
                                 <div id="bottom-right">
                                     <FadeIn direction="left" delay={.4}>
                                         <Link href="apps/asobu">
-                                            <div className="app-tile" id="asobu">
+                                            <div className="app-tile bg-asobu-base" id="asobu">
                                                 <div className="app-tile__image">
                                                     <Image fill src="/website/images/homepage/primary-apps/asobu.jpg" alt="Gaming friends" />
                                                 </div>
@@ -310,7 +313,7 @@ export default function Homepage() {
                                     </FadeIn>
                                     <FadeIn direction="left" delay={.5} threshold={.7}>
                                         <Link href="apps/tsunagu">
-                                            <div className="app-tile" id="tsunagu">
+                                            <div className="app-tile bg-tsunagu-base" id="tsunagu">
                                                 <div className="app-tile__text">
                                                     <p className="japanese">つなぐ</p>
                                                     <h3 className="name">Tsunagu</h3>
@@ -339,7 +342,7 @@ export default function Homepage() {
                             </div>
                             <div className="section-content section-content--two-col">
                                 <div className="image">
-                                    <div className="bg-box desktop-only"></div>
+                                    <div className="bg-box desktop-only bg-arc-accent-dark"></div>
                                     <Image height={500} width={500} className="responsive-image" src="/website/images/homepage/roots/game_developers.jpg" alt="D2X Platform Team"/>
                                 </div>
                                 <div className="accordion">
@@ -374,7 +377,7 @@ export default function Homepage() {
                                 <p className="section-main__mini-title">Easy Steps</p>
                                 <h2 className="section-main__main-title">Set up your Arcadia experience</h2>
                             </div>
-                            <div className="section-content section-content--four-col">
+                            <div className="section-content section-content--four-col bg-arc-base">
                                 <div className="step">
                                     <Image 
                                         className="responsive-image" 
@@ -440,13 +443,13 @@ export default function Homepage() {
                             <div className="section-main section-main--center">
                                 <p className="sectin-main__mini-title">Beyond the Essentials</p>
                                 <h2 className="section-main__main-title">The Arcadia Side Suite</h2>
-                                <p>These supplementary apps are smaller in scope, but big on impact. From planning events to diving into niche blogs and lo-fi vibes, the Arcadia side suites adds extra flavor to your fandom journey, because even side quests matter.</p>
+                                <p>These supplementary apps are smaller in scope, but big on impact. From planning events to diving into niche blogs and lo-fi vibes, the Arcadia side suites adds extra flavor to your fandom journey.</p>
                             </div>
                             <div className="app-container">
                                 <div className="left-col">
                                     <FadeIn direction="right" delay={.1}>
                                         <Link href='/apps/iku'>
-                                            <div className="app-tile" id="iku">
+                                            <div className="app-tile bg-iku-base" id="iku">
                                                 <div className="app-tile__text">
                                                     <p className="japanese">いく</p>
                                                     <h3 className="name">Iku</h3>
@@ -460,7 +463,7 @@ export default function Homepage() {
                                     </FadeIn>
                                     <FadeIn direction="right" delay={.2} threshold={.7}>
                                         <Link href='/apps/hiku'>
-                                            <div className="app-tile" id="hiku">
+                                            <div className="app-tile bg-hiku-base" id="hiku">
                                                 <div className="app-tile__image">
                                                     <Image fill src="/website/images/homepage/secondary-apps/hiku.jpg" alt="Gamer girl" />
                                                 </div>
@@ -472,11 +475,25 @@ export default function Homepage() {
                                             </div>
                                         </Link>
                                     </FadeIn>
+                                    <FadeIn direction="right" delay={.2} threshold={.7}>
+                                        <Link href='/apps/todokeru'>
+                                            <div className="app-tile bg-todokeru-base" id="todokeru">
+                                                <div className="app-tile__text">
+                                                    <p className="japanese">とどける</p>
+                                                    <h3 className="name">Todokeru</h3>
+                                                    <p className="slogan">From pixels to people, broadcast your story</p>
+                                                </div>
+                                                <div className="app-tile__image">
+                                                    <Image fill src="/website/images/homepage/secondary-apps/todokeru.png" alt="Gamer girl" />
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    </FadeIn>
                                 </div>
                                 <div className="right-col">
                                     <FadeIn direction="left" delay={.3}>
                                         <Link href='/apps/shiru'>
-                                            <div className="app-tile" id="shiru">
+                                            <div className="app-tile bg-shiru-base" id="shiru">
                                                 <div className="app-tile__image">
                                                     <Image fill src="/website/images/homepage/secondary-apps/shiru.jpg" alt="Hanging out at a dinner" />
                                                 </div>
@@ -490,7 +507,7 @@ export default function Homepage() {
                                     </FadeIn>
                                     <FadeIn direction="left" delay={.4}>
                                         <Link href='/apps/kumitateru'>
-                                            <div className="app-tile" id="kumitateru">
+                                            <div className="app-tile bg-kumitateru-base" id="kumitateru">
                                                 <div className="app-tile__image">
                                                     <Image fill src="/website/images/homepage/secondary-apps/kumitateru.jpg" alt="Building a PC" />
                                                 </div>
@@ -504,7 +521,7 @@ export default function Homepage() {
                                     </FadeIn>
                                     <FadeIn direction="left" delay={.45}>
                                         <Link href='/apps/kiku'>
-                                            <div className="app-tile" id="kiku">
+                                            <div className="app-tile bg-kiku-base" id="kiku">
                                                 <div className="app-tile__text">
                                                     <p className="japanese">きく</p>
                                                     <h3 className="name">Kiku</h3>
@@ -512,6 +529,20 @@ export default function Homepage() {
                                                 </div>
                                                 <div className="app-tile__image">
                                                     <Image fill src="/website/images/homepage/secondary-apps/kiku.jpg" alt="Studying and listening to lofi" />
+                                                </div>
+                                            </div>
+                                        </Link>
+                                    </FadeIn>
+                                    <FadeIn direction="left" delay={.3}>
+                                        <Link href='/apps/manabu'>
+                                            <div className="app-tile bg-manabu-base" id="manabu">
+                                                <div className="app-tile__image">
+                                                    <Image fill src="/website/images/homepage/secondary-apps/manabu.png" alt="Hanging out at a dinner" />
+                                                </div>
+                                                <div className="app-tile__text">
+                                                    <p className="japanese">まなぶ</p>
+                                                    <h3 className="name">Manabu</h3>
+                                                    <p className="slogan">Achieve fluency through fandom</p>
                                                 </div>
                                             </div>
                                         </Link>
@@ -658,7 +689,7 @@ export default function Homepage() {
                                 <p>Team Double Dragon was forged upon passion: passion for Esports and passion for doing things the right way and for the right things.</p>
                                 <p>What started with what-ifs and no technical skill, Arcadia began with two friends, countless fandom debates, and a dream to build the otaku platform we always wished existed. </p>
                             </div>
-                            <div className="center-content">
+                            <div className="align-content align-content--center-horizontal">
                                 <FadeIn direction="left" delay={.1}>
                                     <img src="/global/d2x.svg" alt="D2X Logo" />
                                 </FadeIn>

@@ -1,0 +1,19 @@
+@use './variables' as *;
+
+@each $name, $color in $arcadia-colors {
+    .clr-#{$name} {
+        color: #{$color}
+    }
+}
+
+@each $name, $color in $arcadia-colors {
+    .bg-#{$name} {
+        background-color: #{$color}
+    }
+}
+
+@each $name, $size in $text-size{
+    .txt-#{$name} {
+        font-size: #{$size}
+    }
+}

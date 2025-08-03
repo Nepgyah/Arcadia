@@ -1,0 +1,23 @@
+@use "../../../abstract/variables" as *;
+
+#page-resource-faq {
+
+    .section-content {
+        .questions {
+            >div {
+                margin-bottom: 3rem;
+            }
+        }
+        h3 {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid map-get($arcadia-colors, txt-dark );
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    #page-resource-faq {
+
+    }
+}

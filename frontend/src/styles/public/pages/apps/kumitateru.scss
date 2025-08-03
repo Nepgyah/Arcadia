@@ -3,7 +3,7 @@
 #page-apps-kumitateru {
     
     #hero {
-        background-color: $bg-body-light-primary;
+        background-color: map-get($arcadia-colors, txt-light-alt );
         .hero__wrapper {
             display: flex;
             flex-wrap: wrap;

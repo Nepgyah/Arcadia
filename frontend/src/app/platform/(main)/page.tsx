@@ -51,7 +51,7 @@ function GreetingImage() {
         return (
             <div className="greeting-image border-radius box-shadow">
                 <div className="bg-mask"></div>
-                <p className="font--lg">今日もいい天気ですね</p>
+                <p className="txt-l">今日もいい天気ですね</p>
                 <Image
                     className="greeting-image border-radius box-shadow"
                     src='/platform/main-dashboard/daytime.jpg'
@@ -65,7 +65,7 @@ function GreetingImage() {
         return (
             <div className="greeting-image border-radius box-shadow">
                 <div className="bg-mask"></div>
-                <p className="font--lg">お疲れ様でした</p>
+                <p className="txt-l">お疲れ様でした</p>
                 <Image
                     className="greeting-image border-radius box-shadow"
                     src='/platform/main-dashboard/afternoon.jpg'
@@ -94,7 +94,7 @@ function AppIcon({ app } : { app: app}) {
 
     return (
         <div className='app-icon-button'>
-            <div className={`icon app-bg--${app} animation__hover-grow`} onClick={() => router.push(`platform/${app}`)}>
+            <div className={`icon bg-${app}-base animation__hover-grow`} onClick={() => router.push(`platform/${app}`)}>
                 <Image
                     src={`/global/app-icons/${app}.svg`}
                     alt={`${app} icon`}
@@ -102,7 +102,7 @@ function AppIcon({ app } : { app: app}) {
                     width={36}
                 />
             </div>
-            <p>{app}</p>
+            <p className="txt-s bold">{app}</p>
         </div>
     )
 }

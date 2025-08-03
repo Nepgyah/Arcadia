@@ -29,7 +29,7 @@ export default function Yomu() {
                     <div className="hero-image">
                         <img src="/website/images/apps/yomu/hero/manga-panels.png" alt="manga-panels" />
                     </div>
-                    <div className="center-content text-container">
+                    <div className="align-content align-content--center-vertical">
                         <div className="hero__text">
                             <p className="japanese">アケーディアーよる</p>
                             <h1>Read, Track and Discover One Page At a Time</h1>

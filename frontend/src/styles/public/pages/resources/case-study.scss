@@ -1,0 +1,59 @@
+@use "../../../abstract/variables" as *;
+
+#page-resource-case-study {
+
+    #side-studies {
+        .section-content {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+            .study-card {
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: $box-shadow-default;
+                display: grid;
+                grid-template-rows: 1fr 1fr;
+
+                &__image {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                &__text {
+                    height: 100%;
+                    background-color: #86486E;
+                    padding: 1.5rem;
+
+                    p {
+                        font-size: 1rem;
+                        font-weight: bold;
+                        color: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    #page-resource-case-study {
+        
+        #side-studies {
+            .section-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 1rem;
+
+                .study-card {
+                    &__text {
+                        p {
+                            font-size: 1rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -9,7 +9,7 @@ import React from "react";
 import Link from "next/link";
 import AppIcon from "../appIcon";
 
-type openDropdownType = 'primary' | 'secondary' | 'd2x' | 'none';
+type openDropdownType = 'primary' | 'secondary' | 'd2x' | 'resource' | 'none';
 
 export default function MobileHeader() {
 
@@ -81,6 +81,12 @@ export default function MobileHeader() {
                         <Button onClick={() => handleClick('/d2x/about-us')}>About Us</Button>
                         <Button onClick={() => handleClick('/d2x/team')}>Team</Button>
                         <Button onClick={() => handleClick('/d2x/careers')}>Careers</Button>
+                    </Collapse>
+
+                    <Button onClick={() => setOpenDropdown('resource')} className={`${openDropdown === 'resource' && 'dropdown-open'}`}>Resources</Button>
+                    <Collapse in={openDropdown === 'resource'}>
+                        <Button onClick={() => handleClick('/resource/case-study')}>Case Studies</Button>
+                        <Button onClick={() => handleClick('/resource/faq')}>FAQ</Button>
                     </Collapse>
                 </nav>
                 <div className='header__cta'>

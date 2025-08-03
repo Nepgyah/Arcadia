@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import AppIcon from "../appIcon";
 
-type openDropdownType = 'primary' | 'secondary' | 'd2x' | 'none';
+type openDropdownType = 'primary' | 'secondary' | 'd2x' | 'resource' | 'none';
 
 export default function DesktopHeader() {
 
@@ -17,9 +17,13 @@ export default function DesktopHeader() {
     const [isD2XOpen, setIsD2XOpen] = useState(false);
     const d2xAnchor = useRef<HTMLElement | null>(null);
 
+    const [isResourceOpen, setsIsResourceOpen] = useState(false);
+    const resourceAnchor = useRef<HTMLElement | null>(null);
+
     useEffect(() => {
         solutionsAnchor.current = document.getElementById('solutions-btn');
         d2xAnchor.current = document.getElementById('d2x-btn');
+        resourceAnchor.current = document.getElementById('resource-btn')
     }, []);
 
     const handleClick = (link: string, handleFunc: (bool: boolean) => void) => {
@@ -90,6 +94,26 @@ export default function DesktopHeader() {
                         <MenuItem onClick={() => handleClick('/d2x/about-us', setIsD2XOpen)}>About Us</MenuItem>
                         <MenuItem onClick={() => handleClick('/d2x/team', setIsD2XOpen)}>Team</MenuItem>
                         <MenuItem onClick={() => handleClick('/d2x/careers', setIsD2XOpen)}>Careers</MenuItem>
+                    </Menu>
+                </div>
+                <div>
+                    <Button 
+                        variant='text' color="white"
+                        className='nav__main' 
+                        id='resource-btn' 
+                        onClick={() => setsIsResourceOpen(true)}
+                    >
+                        Resource
+                    </Button>
+                    <Menu
+                        id='resource-dropdown'
+                        anchorEl={resourceAnchor.current}
+                        open={isResourceOpen}
+                        onClose={() => setsIsResourceOpen(false)}
+                        disableScrollLock
+                    >
+                        <MenuItem onClick={() => handleClick('/resource/case-study', setsIsResourceOpen)}>Case Study</MenuItem>
+                        <MenuItem onClick={() => handleClick('/resource/faq', setsIsResourceOpen)}>FAQ</MenuItem>
                     </Menu>
                 </div>
             </div>
