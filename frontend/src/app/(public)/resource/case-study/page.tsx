@@ -30,7 +30,7 @@ export default function PageCaseStudy() {
                     <div className="section-main section-main--center">
                         <h2 className="section-main__main-title">Other Success Stories</h2>
                     </div>
-                    <div className="section-content section-content--four-col">
+                    <div className="section-content">
                         <FadeIn direction="up" className="study-card" delay={.1} threshold={.1}>
                             <CaseStudyCard
                                 header="Promoting A Festive Opportunity at Penacony’s Top College"

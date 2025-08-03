@@ -83,7 +83,7 @@
             flex-direction: column;
 
             .MuiButton-root {
-                color: white;
+                color: white !important;
 
                 &.dropdown-open {
                     color: map-get($arcadia-colors , arc-accent );
