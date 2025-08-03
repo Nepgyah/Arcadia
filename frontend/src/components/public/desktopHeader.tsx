@@ -113,6 +113,7 @@ export default function DesktopHeader() {
                         disableScrollLock
                     >
                         <MenuItem onClick={() => handleClick('/resource/case-study', setsIsResourceOpen)}>Case Study</MenuItem>
+                        <MenuItem onClick={() => handleClick('/resource/faq', setsIsResourceOpen)}>FAQ</MenuItem>
                     </Menu>
                 </div>
             </div>
