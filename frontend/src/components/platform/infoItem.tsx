@@ -3,7 +3,7 @@ export default function InfoItem(
     : 
     {
         label: string,
-        value?: string,
+        value?: any,
         unit?: string
     }
 ) {

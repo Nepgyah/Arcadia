@@ -10,19 +10,26 @@ from .models import (
 class CPUSerializer(serializers.ModelSerializer):
     manufacturer = serializers.SerializerMethodField()
     microarchitecture = serializers.SerializerMethodField()
+    socket_type = serializers.SerializerMethodField()
+
     class Meta:
         model=CPU
         fields= [
             'name',
             'manufacturer',
             'msrp',
-            'socket',
+            'socket_type',
+            'microarchitecture',
             'core_count',
             'thread_count',
             'core_clock',
             'boost_clock',
-            'microarchitecture',
-            'tdp'
+            'l2_cache',
+            'l3_cache',
+            'tdp',
+            'max_temp',
+            'is_unlocked',
+            'has_graphics'
         ]
     
     def get_manufacturer(self, obj):
@@ -33,10 +40,13 @@ class CPUSerializer(serializers.ModelSerializer):
     def get_microarchitecture(self, obj):
         return obj.microarchitecture.name
     
+    def get_socket_type(self, obj):
+        return obj.socket_type.name
+    
 class MotherboardSerializer(serializers.ModelSerializer):
     form_factor = serializers.SerializerMethodField()
     manufacturer = serializers.SerializerMethodField()
-    socket = serializers.SerializerMethodField()
+    socket_type = serializers.SerializerMethodField()
 
     class Meta:
         model=Motherboard
@@ -44,7 +54,7 @@ class MotherboardSerializer(serializers.ModelSerializer):
             'name',
             'manufacturer',
             'msrp',
-            'socket',
+            'socket_type',
             'form_factor',
             'memory_type',
             'memory_slots',
@@ -59,8 +69,8 @@ class MotherboardSerializer(serializers.ModelSerializer):
             return obj.manufacturer.name
         return None
     
-    def get_socket(self, obj):
-        return obj.socket.name
+    def get_socket_type(self, obj):
+        return obj.socket_type.name
     
 class GPUSerializer(serializers.ModelSerializer):
     manufacturer = serializers.SerializerMethodField()
@@ -71,12 +81,16 @@ class GPUSerializer(serializers.ModelSerializer):
             'name',
             'manufacturer',
             'msrp',
-            'vram',
-            'memory_clock',
             'core_clock',
             'boost_clock',
+            'vram',
+            'memory_type',
+            'memory_clock',
+            'memory_bus',
             'length',
-            'tdp'
+            'tdp',
+            'suggested_psu',
+            'slot_width'
         ]
     
     def get_manufacturer(self, obj):
@@ -86,7 +100,7 @@ class GPUSerializer(serializers.ModelSerializer):
     
 class RAMSerializer(serializers.ModelSerializer):
     manufacturer = serializers.SerializerMethodField()
-    
+
     class Meta:
         model=RAM
         fields= [
