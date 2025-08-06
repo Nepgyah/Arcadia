@@ -47,6 +47,7 @@ class MotherboardSerializer(serializers.ModelSerializer):
     form_factor = serializers.SerializerMethodField()
     manufacturer = serializers.SerializerMethodField()
     socket_type = serializers.SerializerMethodField()
+    memory_type = serializers.SerializerMethodField()
 
     class Meta:
         model=Motherboard
@@ -64,6 +65,9 @@ class MotherboardSerializer(serializers.ModelSerializer):
     def get_form_factor(self, obj):
         return obj.get_form_factor_display()
 
+    def get_memory_type(self, obj):
+        return obj.memory_type.name
+    
     def get_manufacturer(self, obj):
         if (obj.manufacturer):
             return obj.manufacturer.name
@@ -100,12 +104,14 @@ class GPUSerializer(serializers.ModelSerializer):
     
 class RAMSerializer(serializers.ModelSerializer):
     manufacturer = serializers.SerializerMethodField()
+    memory_type = serializers.SerializerMethodField()
 
     class Meta:
         model=RAM
         fields= [
             'name',
             'manufacturer',
+            'color',
             'msrp',
             'memory_type',
             'capacity',
@@ -117,3 +123,6 @@ class RAMSerializer(serializers.ModelSerializer):
         if (obj.manufacturer):
             return obj.manufacturer.name
         return None
+    
+    def get_memory_type(self, obj):
+        return obj.memory_type.name

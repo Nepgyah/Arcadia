@@ -32,3 +32,18 @@ export interface GPU extends Part {
     suggested_psu: number,
     slot_width: string
 }
+
+export interface Motherboard extends Part {
+    socket_type: string,
+    form_factor: string,
+    memory_type: string,
+    memory_slots: number,
+    max_memory: number
+}
+
+export interface RAM extends Part {
+    memory_type: string,
+    capacity: number,
+    modules: number,
+    speed: number
+}

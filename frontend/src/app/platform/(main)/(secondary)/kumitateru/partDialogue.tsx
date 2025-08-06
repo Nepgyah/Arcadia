@@ -2,7 +2,7 @@ import { Dialog, DialogContent, DialogTitle } from "@mui/material"
 
 import '@/styles/platform/components/partDetailDialog.scss';
 import InfoItem from "@/components/platform/infoItem";
-import { CPU, GPU } from "@/util/types/kumitateru";
+import { CPU, GPU, Motherboard, RAM } from "@/util/types/kumitateru";
 
 export default function PartDetailDialog(
     {
@@ -47,7 +47,7 @@ export default function PartDetailDialog(
                             partType == 'Motherboard' ?
                                 <MotherboardDetails mobo={entry} />
                             :
-                                <p>Ram</p>
+                                <RamDetails ram={entry} />
                         }
                     </div>
                 </div>
@@ -116,19 +116,38 @@ function GPUDetails({gpu} : {gpu: GPU}) {
     )
 }
 
-function MotherboardDetails({mobo} : {mobo: any}) {
+function MotherboardDetails({mobo} : {mobo: Motherboard}) {
     return (
         <>
             <h3>Specification</h3>
             <div className="layout-grid-2">
                 <div className="row-gap row-gap--xs">
                     <InfoItem label="Form Factor" value={mobo.form_factor} />
-                    <InfoItem label="Socket" value={mobo.socket} />
+                    <InfoItem label="Socket" value={mobo.socket_type} />
                 </div>
                 <div className="row-gap row-gap--xs">
                     <InfoItem label="Memory Type" value={mobo.memory_type} />
                     <InfoItem label="Memory Slots" value={mobo.memory_slots} />
                     <InfoItem label="Max Memory" value={mobo.max_memory} unit="GB" />
+                </div>
+            </div>
+            <h3>Miscellaneous</h3>
+        </>
+    )
+}
+
+function RamDetails({ram} : {ram: RAM}) {
+    return (
+        <>
+            <h3>Specification</h3>
+            <div className="layout-grid-2">
+                <div className="row-gap row-gap--xs">
+                    <InfoItem label="Kit" value={ram.capacity + ' X ' + ram.modules} unit="GB" />
+                    <InfoItem label="Speed" value={ram.speed} unit="MHz" />
+                    <InfoItem label="Type" value={ram.memory_type} />
+                </div>
+                <div className="row-gap row-gap--xs">
+        
                 </div>
             </div>
             <h3>Miscellaneous</h3>

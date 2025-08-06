@@ -121,7 +121,7 @@ function PartList(
         type,
         handleOpenDialog
     } : {
-        list: any,
+        list: any[],
         type: string,
         handleOpenDialog: (part: any, type: any) => void
     }) {
@@ -129,10 +129,18 @@ function PartList(
         <div className="part-list">
             {
                 list?
+                    list.length === 0 ?
+                        <p>No parts found</p>
+                    :
                     <ul>
                     {
                         list.map((entry: any, idx: number) => (
-                            <li key={entry.name} className="clickable" onClick={() => handleOpenDialog(entry, type)}>{entry.name}</li>
+                            <li key={entry.name}>
+                                <span
+                                    onClick={() => handleOpenDialog(entry, type)}
+                                    className="clickable">{entry.name}
+                                </span>
+                            </li>
                         ))
                     }
                     </ul>

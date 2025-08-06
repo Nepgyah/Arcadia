@@ -74,7 +74,7 @@ class RAM(Part):
     memory_type=models.ForeignKey(MemoryType, on_delete=models.SET_NULL, null=True, blank=True)
     capacity=models.IntegerField(null=True, blank=True)
     modules=models.IntegerField(null=False, blank=False, default=1, help_text='Number of sticks/modules')
-    speed=models.IntegerField(null=True, blank=True, help_text='MT/s')
+    speed=models.IntegerField(null=True, blank=True, help_text='MHz')
 
     def __str__(self):
         return self.name
