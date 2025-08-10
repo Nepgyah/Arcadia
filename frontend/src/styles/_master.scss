@@ -11,6 +11,7 @@ html {
 
     body {
         color: map-get($arcadia-colors, txt-dark);
+        background-color: map-get($arcadia-colors, txt-light-alt);
         overflow-x: hidden;
         
         a {
