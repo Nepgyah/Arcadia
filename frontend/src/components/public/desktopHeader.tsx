@@ -114,6 +114,7 @@ export default function DesktopHeader() {
                     >
                         <MenuItem onClick={() => handleClick('/resource/case-study', setsIsResourceOpen)}>Case Study</MenuItem>
                         <MenuItem onClick={() => handleClick('/resource/faq', setsIsResourceOpen)}>FAQ</MenuItem>
+                        <MenuItem onClick={() => handleClick('/resource/legal', setsIsResourceOpen)}>Legal</MenuItem>
                     </Menu>
                 </div>
             </div>
