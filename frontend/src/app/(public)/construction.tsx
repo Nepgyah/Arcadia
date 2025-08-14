@@ -5,25 +5,24 @@ import { useRouter } from "next/navigation";
 
 import "@/styles/public/pages/misc.scss";
 
-export default function PublicNotFound() {
+export default function PageConstruction() {
 
     const router = useRouter();
 
     return (
-        <div id="page-not-found">
-            
+        <div id="page-construction">
             <section className="section">
-                <img className="section__bg-element" id="yuuka" src="/website/images/404.jpg" alt="My Wife" />
+                <img className="section__bg-element" id="minori" src="/website/images/construction.webp" alt="Yasumori Minori" />
                 <div className="section__bg-element" id="angled"></div>
                 <div className="section__wrapper">
-                    <div></div>
                     <div className="section-main section-main--white">
                         <h2 className="section-main__main-title">
-                            Oops! Page Not Found
+                            Oops! This Page Is Under Construction
                         </h2>
-                        <p>This wasn't part of Yuuka's calculations! Hopefuly we can figure it out before the rest of Seminar shows up!</p>
+                        <p>Your browser has summoned this page from another world! But it seems like the summon ritual is incomplete. Please check back later!</p>
                         <Button variant="contained" onClick={() => router.push('/')}>Homepage</Button>
                     </div>
+                    <div></div>
                 </div>
             </section>
         </div>
