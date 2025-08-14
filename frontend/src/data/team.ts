@@ -41,8 +41,11 @@ export const appLeads: teamMember[] = [
 export const dev: teamMember[] = [
     { firstName: "Umiko", lastName: "Ahagon", position: "Principal Engineer", url: "umiko-ahagon.jpg"},
     { firstName: "Aiba", lastName: "Asagi", position: "Senior Engineer", url: "aiba-asagi.jpg"},
+    { firstName: "Himari", lastName: "Akeboshi", position: "Senior Engineer", url: "akeboshi-himari.jpg"},
     { firstName: "Tsubame", lastName: "Narumi", position: "Mid-Level Engineer", url: "tsubame-narumi.jpg"},
     { firstName: "Nene", lastName: "Sakura", position: "Mid-Level Engineer", url: "nene-sakura.jpg"},
+    { firstName: "Utaha", lastName: "Shiraishi", position: "Mid-Level Engineer", url: "shiraishi-utaha.jpg"},
+    { firstName: "Nekozuka", lastName: "Hibiki", position: "Mid-Level Engineer", url: "nekozuka-hibiki.jpg"},
     { firstName: "Momoi", lastName: "Saiba", position: "Junior Engineer", url: "momoi-saiba.jpg"},
     { firstName: "Midori", lastName: "Saiba", position: "Junior Engineer", url: "midori-saiba.jpg"},
     { firstName: "Yuzu", lastName: "Hanaoka", position: "Junior Engineer", url: "yuzu-hanaoka.jpg"},
@@ -63,6 +66,15 @@ export const finance: teamMember[] = [
     { firstName: "Oki", lastName: "Aoi", position: "Accounting Manager", url: "oki-aoi.jpg"},
     { firstName: "Yuuka", lastName: "Hayase", position: "Treasurer", url: "yuuka.jpg"},
     { firstName: "Ayane", lastName: "Okusora", position: "Investment Analyst", url: "ayane-okusora.jpg"},
+]
+
+export const marketing: teamMember[] = [
+    { firstName: "Fuyutsuki", position: "Marketing Director", url: "fuyutsuki.jpg"},
+    { firstName: "Himuro", position: "Prodcut Marketing Manager", url: "himuro.jpg"},
+    { firstName: "Saejima", position: "Outreach & Promotions", url: "saejima.jpg"},
+    { firstName: "Komori", position: "Social Media Manager", url: "komori.jpg"},
+    { firstName: "Otonashi", position: "Brand Strategist", url: "otonashi.jpg"},
+    { firstName: "Katori", position: "Event Manager", url: "katori.jpg"},
 ]
 
 export const rnd: teamMember[] = [
