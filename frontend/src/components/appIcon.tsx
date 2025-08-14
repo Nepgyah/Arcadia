@@ -10,7 +10,9 @@ type app =
     'hiku' | 
     'kiku' |
     'kumitateru' |
-    'shiru'
+    'shiru' |
+    'todokeru' |
+    'manabu'
 
 export default function appIcon({ app, size=36 } : { app: app, size?: number}) {
     return (

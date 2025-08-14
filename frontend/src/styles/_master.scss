@@ -75,10 +75,18 @@ html {
 // we need to target them at the top level :/
 #solutions-dropdown {
     .MuiPaper-root {
+        padding: .5rem;
+        background-color: map-get($arcadia-colors, arc-base-dark);
+
         ul {
             display: flex;
-
+            flex-direction: row;
+            
             .MuiButtonBase-root {
+                border-radius: 15px;
+                &:hover {
+                    background-color: map-get($arcadia-colors, arc-base );
+                }
                 img {
                     margin-right: .5rem;
                 }
@@ -86,7 +94,11 @@ html {
         }
         
         .secondary {
+            margin-left: .5rem;
+            padding-left: .5rem;
             border-left: 2px solid rgba(white, .2);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
         }
     }
 }

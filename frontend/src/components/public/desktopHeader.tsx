@@ -72,6 +72,8 @@ export default function DesktopHeader() {
                             <MenuItem onClick={() => handleClick('/apps/shiru', setIsSolutionsOpen)}><AppIcon app="shiru" /><p>Shiru</p></MenuItem>
                             <MenuItem onClick={() => handleClick('/apps/kumitateru', setIsSolutionsOpen)}><AppIcon app="kumitateru" /><p>Kumitateru</p></MenuItem>
                             <MenuItem onClick={() => handleClick('/apps/kiku', setIsSolutionsOpen)}><AppIcon app="kiku" /><p>Kiku</p></MenuItem>
+                            <MenuItem onClick={() => handleClick('/apps/todokeru', setIsSolutionsOpen)}><AppIcon app="todokeru" /><p>Todokeru</p></MenuItem>
+                            <MenuItem onClick={() => handleClick('/apps/manabu', setIsSolutionsOpen)}><AppIcon app="manabu" /><p>Manabu</p></MenuItem>
                         </div>
                     </Menu>
                 </div>

@@ -122,12 +122,32 @@
 
 #solutions-dropdown, #d2x-dropdown, #resource-dropdown {
     
-    .MuiList-root {
+    .MuiPaper-root {
+        padding: .5rem;
         background-color: map-get($arcadia-colors, arc-base-dark);
 
-        .MuiButtonBase-root {
-            color: white;
-            width: 100%;
-        }   
+        ul {
+            display: flex;
+
+            .MuiButtonBase-root {
+                border-radius: 15px;
+                color: white;
+                &:hover {
+                    background-color: map-get($arcadia-colors, arc-base );
+                }
+                img {
+                    margin-right: .5rem;
+                }
+            }
+        }
+    }
+}
+
+#d2x-dropdown, #resource-dropdown {
+    .MuiPaper-root {
+        ul {
+            display: flex;
+            flex-direction: column;
+        }
     }
 }

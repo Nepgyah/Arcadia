@@ -74,6 +74,12 @@ export default function MobileHeader() {
                         <Button onClick={() => handleClick('/apps/kiku')}>
                             <AppIcon app="kiku" size={28} /><p>Kiku</p>
                         </Button>
+                        <Button onClick={() => handleClick('/apps/todokeru')}>
+                            <AppIcon app="todokeru" size={28} /><p>Todokeru</p>
+                        </Button>
+                        <Button onClick={() => handleClick('/apps/manabu')}>
+                            <AppIcon app="manabu" size={28} /><p>Manabu</p>
+                        </Button>
                     </Collapse>
 
                     <Button onClick={() => setOpenDropdown('d2x')} className={`${openDropdown === 'd2x' && 'dropdown-open'}`}>D2X</Button>
