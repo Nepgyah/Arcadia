@@ -260,18 +260,6 @@ export default function Homepage() {
                                         orientation="vertical"
                                         order="image-first"
                                     />
-                                    {/* <Link href="apps/miru">
-                                        <div className="app-tile app-tile--vertical slide-right bg-miru-base" id="miru">
-                                            <div className="app-tile__image">
-                                                <Image fill src="/website/images/homepage/primary-apps/miru.jpg" alt="Anime girls watching togther" />
-                                            </div>
-                                            <div className="app-tile__text">
-                                                <p className="japanese">みる</p>
-                                                <h3 className="name">Miru</h3>
-                                                <p className="slogan">Explore the world of anime, one episode at a time</p>
-                                            </div>
-                                        </div>
-                                    </Link> */}
                                 </FadeIn>
                             </div>
                             <div id="primary-bottom-half">
@@ -322,18 +310,6 @@ export default function Homepage() {
                                             orientation="horizontal"
                                             order="text-first"
                                         />
-                                        {/* <Link href="apps/tsunagu">
-                                            <div className="app-tile bg-tsunagu-base" id="tsunagu">
-                                                <div className="app-tile__text">
-                                                    <p className="japanese">つなぐ</p>
-                                                    <h3 className="name">Tsunagu</h3>
-                                                    <p className="slogan">Join the conversation, shape the fandom</p>
-                                                </div>
-                                                <div className="app-tile__image">
-                                                    <Image fill src="/website/images/homepage/primary-apps/tsunagu.jpg" alt="Anime guys hanging out" />
-                                                </div>
-                                            </div>
-                                        </Link> */}
                                     </FadeIn>
                                 </div>
                             </div>
@@ -452,113 +428,102 @@ export default function Homepage() {
                         <div className="section__wrapper">
                             <div className="section-main section-main--center">
                                 <p className="sectin-main__mini-title">Beyond the Essentials</p>
-                                <h2 className="section-main__main-title">The Arcadia Side Suite</h2>
+                                <h2 className="section-main__main-title">Arcadia's Secondary Apps</h2>
                                 <p>These supplementary apps are smaller in scope, but big on impact. From planning events to diving into niche blogs and lo-fi vibes, the Arcadia side suites adds extra flavor to your fandom journey.</p>
                             </div>
-                            <div className="app-container">
-                                <div className="left-col">
-                                    <FadeIn direction="right" delay={.1}>
-                                        <Link href='/apps/iku'>
-                                            <div className="app-tile bg-iku-base" id="iku">
-                                                <div className="app-tile__text">
-                                                    <p className="japanese">いく</p>
-                                                    <h3 className="name">Iku</h3>
-                                                    <p className="slogan">Go where the community goes</p>
-                                                </div>
-                                                <div className="app-tile__image">
-                                                    <Image fill src="/website/images/homepage/secondary-apps/iku.jpg" alt="Exploring the anime universe" />
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    </FadeIn>
-                                    <FadeIn direction="right" delay={.2} threshold={.7}>
-                                        <Link href='/apps/hiku'>
-                                            <div className="app-tile bg-hiku-base" id="hiku">
-                                                <div className="app-tile__image">
-                                                    <Image fill src="/website/images/homepage/secondary-apps/hiku.jpg" alt="Gamer girl" />
-                                                </div>
-                                                <div className="app-tile__text">
-                                                    <p className="japanese">ひく</p>
-                                                    <h3 className="name">Hiku</h3>
-                                                    <p className="slogan">Pull Your Way To Victory</p>
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    </FadeIn>
-                                    <FadeIn direction="right" delay={.2} threshold={.7}>
-                                        <Link href='/apps/todokeru'>
-                                            <div className="app-tile bg-todokeru-base" id="todokeru">
-                                                <div className="app-tile__text">
-                                                    <p className="japanese">とどける</p>
-                                                    <h3 className="name">Todokeru</h3>
-                                                    <p className="slogan">From pixels to people, broadcast your story</p>
-                                                </div>
-                                                <div className="app-tile__image">
-                                                    <Image fill src="/website/images/homepage/secondary-apps/todokeru.png" alt="Gamer girl" />
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    </FadeIn>
-                                </div>
-                                <div className="right-col">
-                                    <FadeIn direction="left" delay={.3}>
-                                        <Link href='/apps/shiru'>
-                                            <div className="app-tile bg-shiru-base" id="shiru">
-                                                <div className="app-tile__image">
-                                                    <Image fill src="/website/images/homepage/secondary-apps/shiru.jpg" alt="Hanging out at a dinner" />
-                                                </div>
-                                                <div className="app-tile__text">
-                                                    <p className="japanese">しる</p>
-                                                    <h3 className="name">Shiru</h3>
-                                                    <p className="slogan">Explore, Learn, Share the Journey</p>
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    </FadeIn>
-                                    <FadeIn direction="left" delay={.4}>
-                                        <Link href='/apps/kumitateru'>
-                                            <div className="app-tile bg-kumitateru-base" id="kumitateru">
-                                                <div className="app-tile__image">
-                                                    <Image fill src="/website/images/homepage/secondary-apps/kumitateru.jpg" alt="Building a PC" />
-                                                </div>
-                                                <div className="app-tile__text">
-                                                    <p className="japanese">くみたてる</p>
-                                                    <h3 className="name">Kumitateru</h3>
-                                                    <p className="slogan">Build Your Battle Station</p>
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    </FadeIn>
-                                    <FadeIn direction="left" delay={.45}>
-                                        <Link href='/apps/kiku'>
-                                            <div className="app-tile bg-kiku-base" id="kiku">
-                                                <div className="app-tile__text">
-                                                    <p className="japanese">きく</p>
-                                                    <h3 className="name">Kiku</h3>
-                                                    <p className="slogan">Relax.<br />Focus.<br /> Create.</p>
-                                                </div>
-                                                <div className="app-tile__image">
-                                                    <Image fill src="/website/images/homepage/secondary-apps/kiku.jpg" alt="Studying and listening to lofi" />
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    </FadeIn>
-                                    <FadeIn direction="left" delay={.3}>
-                                        <Link href='/apps/manabu'>
-                                            <div className="app-tile bg-manabu-base" id="manabu">
-                                                <div className="app-tile__image">
-                                                    <Image fill src="/website/images/homepage/secondary-apps/manabu.png" alt="Hanging out at a dinner" />
-                                                </div>
-                                                <div className="app-tile__text">
-                                                    <p className="japanese">まなぶ</p>
-                                                    <h3 className="name">Manabu</h3>
-                                                    <p className="slogan">Achieve fluency through fandom</p>
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    </FadeIn>
+                            <div id="entertainment-hub">
+                                <h3 className="hub-name">The Entertainment Hub</h3>
+                                <div>
+                                    <AppTile 
+                                        app="kiku"
+                                        japanese="きく"
+                                        slogan="A Soundtrack for Every Fan"
+                                        imgLink="/website/images/homepage/secondary-apps/kiku.jpg"
+                                        imgAlt="Studying and listening to lofi"
+                                        orientation="horizontal"
+                                        order="text-first"
+                                    />
+                                    <AppTile 
+                                        app="todokeru"
+                                        japanese="とどける"
+                                        slogan="From Pixels To People"
+                                        imgLink="/website/images/homepage/secondary-apps/todokeru.png"
+                                        imgAlt="Gamer Girl"
+                                        orientation="horizontal"
+                                        order="text-first"
+                                        textWhite
+                                    />
+                                    <AppTile 
+                                        app="hiku"
+                                        japanese="ひく"
+                                        slogan="Guide. Gather. Game."
+                                        imgLink="/website/images/homepage/secondary-apps/hiku.jpg"
+                                        imgAlt="Anime girl playing on mobile"
+                                        orientation="horizontal"
+                                        order="image-first"                                        
+                                    />
+                                    <AppTile 
+                                        app="sagasu"
+                                        japanese="さがす"
+                                        slogan="Discover Your Anime Role"
+                                        imgLink="/website/images/homepage/secondary-apps/sagasu.jpg"
+                                        imgAlt="An anime adventure"
+                                        orientation="horizontal"
+                                        order="image-first"
+                                        textWhite                                      
+                                    />
                                 </div>
                             </div>
+                            <div className="section-content section-content--two-col">
+                                <div id="utility-hub">
+                                    <h3 className="hub-name">The Utility Hub</h3>
+                                    <div>
+                                        <AppTile 
+                                            app="kumitateru"
+                                            japanese="くみたてる"
+                                            slogan="Build Your Battlestation"
+                                            imgLink="/website/images/homepage/secondary-apps/kumitateru.jpg"
+                                            imgAlt="Anime girl building a PC"
+                                            orientation="vertical"
+                                            order="image-first"
+                                        />
+                                        <AppTile 
+                                            app="iku"
+                                            japanese="いく"
+                                            slogan="Make Every Meetup an Adventure"
+                                            imgLink="/website/images/homepage/secondary-apps/iku.jpg"
+                                            imgAlt="Explore the world"
+                                            orientation="vertical"
+                                            order="text-first"
+                                            textWhite
+                                        />
+                                    </div>
+                                </div>
+                                <div id="knowledge-hub">
+                                    <h3 className="hub-name">The Knowledge Hub</h3>
+                                    <div>
+                                        <AppTile 
+                                            app="shiru"
+                                            japanese="しる"
+                                            slogan="Stories from the Otaku-verse"
+                                            imgLink="/website/images/homepage/secondary-apps/shiru.jpg"
+                                            imgAlt="Hanging out at a cafe"
+                                            orientation="vertical"
+                                            order="image-first"
+                                        />
+                                        <AppTile 
+                                            app="manabu"
+                                            japanese="まなぶ"
+                                            slogan="Fluency Through Fandom"
+                                            imgLink="/website/images/homepage/secondary-apps/manabu.png"
+                                            imgAlt="Explore the world"
+                                            orientation="vertical"
+                                            order="text-first"
+                                            textWhite
+                                        />
+                                    </div>
+                                </div>
+                            </div>                            
                         </div>
                     </section>
 

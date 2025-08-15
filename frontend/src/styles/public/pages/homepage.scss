@@ -39,7 +39,7 @@
                 position: absolute;
                 bottom: 5%;
                 right: 5%;
-                font-size: 48px;
+                font-size: 2rem;
                 opacity: .2;
             }
 
@@ -79,193 +79,39 @@
             .app-card__image {width: 40%;}
             .app-card__text { width: 60%; }
         }
-    }
-    .app-tile {
-        border-radius: 10px;
-        box-shadow: $box-shadow-default;
-        display: flex;
-        overflow: hidden;
-        transition: transform .2s ease-in-out;
 
-        &:hover {
-            transform: scale(1.05);
-        }
-        &--vertical {
-            flex-direction: column;
-        }
-
-        &__image {
-            overflow: hidden;
-            position: relative;
-
-            img {
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
-            }
-        }
-
-        &__text {
-            padding: 1.5rem;
-            position: relative;
-
-            .japanese {
-                position: absolute;
-                bottom: 5%;
-                right: 5%;
-                font-size: 48px;
-                opacity: .2;
-            }
-
-            .name {
-                font-size: 1.5rem;
-            }
-        }
-
-        &#miru {
-            height: 360px;
-
-            .app-tile__image, .app-tile__text {
-                height: 50%;
-            }
-        }
-
-        &#yomu {
-            height: 450px;
-
-            .app-tile__image {
-                height: 65%;
-            }
-
-            .app-tile__text {
-                height: 35%;
-            }
-        }
-
-        &#kau {
-            height: 450px;
-            flex-direction: column-reverse;
-
-            .app-tile__image {
-                height: 60%;
-            }
-
-            .app-tile__text {
-                height: 40%;
-            }
-        }
-
-        &#asobu {
-            height: 300px;
-            flex-direction: column-reverse;
-            
-            .app-tile__image {
-                height: 45%;
-            }
-
-            .app-tile__text {
-                height: 55%;
-            }
-        }
-
-        &#tsunagu {
-            height: 350px;
-            flex-direction: row;
-            
-            .app-tile__image {
-                width: 55%;
-            }
-
-            .app-tile__text {
-                width: 45%;
-            }
-        }
-
-        &#iku {
-            height: 343px;
-
-            .app-tile__image {
-                width: 55%;
-            }
-
-            .app-tile__text {
-                width: 45%;
-                color: white;
-            }
-        }
-
-        &#hiku {
-            height: 300px;
-
-            .app-tile__image {
-                width: 50%;
-            }
-
-            .app-tile__text {
-                width: 50%;
-            }
-        }
-
-        &#todokeru {
-            height: 250px;
-            flex-direction: row;
-            
-            .app-tile__image {
-                width: 55%;
-            }
-
-            .app-tile__text {
-                width: 45%;
-                color: white;
-            }
-        }
-
-        &#shiru {
+        &#kiku, &#todokeru {
             height: 220px;
+            
+            .app-card__image { width: 55%; }
+            .app-card__text {width: 45%; }
+        }
 
-            .app-tile__image {
-                width: 40%;
-            }
+        &#hiku, &#sagasu {
+            height: 200px;
 
-            .app-tile__text {
-                width: 60%;
-            }
+            .app-card__image { width: 50%; }
+            .app-card__text { width: 50%; }
         }
 
         &#kumitateru {
-            height: 220px;
-            
-            .app-tile__image {
-                width: 35%;
-            }
-
-            .app-tile__text {
-                width: 65%;
-            }
+            .app-card__text { height: 50%; }
+            .app-card__image { height: 50%; }
         }
 
-        &#kiku {
-            height: 220px;
-            
-            .app-tile__image {
-                width: 50%;
-            }
-
-            .app-tile__text {
-                width: 50%;
-            }
+        &#iku {
+            .app-card__text { height: 60%; }
+            .app-card__image { height: 40%; }
         }
+
+        &#shiru {
+            .app-card__text { height: 45%; }
+            .app-card__image { height: 55%; }
+        }
+
         &#manabu {
-            height: 205px;
-            
-            .app-tile__image {
-                width: 45%;
-            }
-
-            .app-tile__text {
-                width: 55%;
-                color: white;
-            }
+            .app-card__text { height: 50%; }
+            .app-card__image { height: 50%; }
         }
     }
 
@@ -677,15 +523,14 @@
         }
         #secondary-app {
 
-            .app-container {
-
-                .left-col {
-                    display: flex;
-                    flex-direction: column;
-                    row-gap: 1.5rem;
+            #entertainment-hub, #utility-hub, #knowledge-hub {
+                .hub-name { 
+                    text-align: center; 
                     margin-bottom: 1.5rem;
+                    color: map-get($arcadia-colors, arc-base );
                 }
-                .right-col {
+
+                >div {
                     display: flex;
                     flex-direction: column;
                     row-gap: 1.5rem;
@@ -1148,16 +993,22 @@
 
             #secondary-app {
 
-                .app-container {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    column-gap: 1.5rem;
+                #entertainment-hub {
+                    >div {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        column-gap: 1.5rem;
+                    }
+                }
 
-                    .left-col {
-                        margin-bottom: 0;
+                #utility-hub, #knowledge-hub {
+                    >div {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        column-gap: 1.5rem;
 
-                        > div {
-                            flex-grow: 1;
+                        .app-card {
+                            height: 350px;
                         }
                     }
                 }
