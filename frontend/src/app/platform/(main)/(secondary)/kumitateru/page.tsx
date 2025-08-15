@@ -8,6 +8,7 @@ import WIP from "@/components/platform/wip";
 import PlusIcon from '@mui/icons-material/AddCircleOutline';
 
 import '@/styles/platform/pages/kumitateru/kumitateru.scss';
+import { PSU } from "@/util/types/kumitateru";
 
 export default function KumitateruHome() {
 
@@ -15,6 +16,7 @@ export default function KumitateruHome() {
     const [gpus, setGPUs] = useState<any>();
     const [motherboards, setMotherboards] = useState<any>();
     const [memory, setMemory] = useState<any>();
+    const [psu, setPsu] = useState<any>()
 
     const [currentPart, setCurrentPart] = useState(null);
     const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -27,6 +29,7 @@ export default function KumitateruHome() {
             setGPUs(res.gpus)
             setMotherboards(res.motherboards)
             setMemory(res.ram)
+            setPsu(res.psu)
         })
     }, [])
 
@@ -89,7 +92,7 @@ export default function KumitateruHome() {
                     </div>
                     <div>
                         <h2>Power Supply</h2>
-                        <WIP />
+                        <PartList list={psu} handleOpenDialog={handleOpenDialog} type="PSU" />
                     </div>
                 </div>
                 <div id="row-three" className="layout-grid-4">

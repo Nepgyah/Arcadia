@@ -2,7 +2,7 @@ import { Dialog, DialogContent, DialogTitle } from "@mui/material"
 
 import '@/styles/platform/components/partDetailDialog.scss';
 import InfoItem from "@/components/platform/infoItem";
-import { CPU, GPU, Motherboard, RAM } from "@/util/types/kumitateru";
+import { CPU, GPU, Motherboard, PSU, RAM } from "@/util/types/kumitateru";
 
 export default function PartDetailDialog(
     {
@@ -12,7 +12,7 @@ export default function PartDetailDialog(
         handleClose
     } : {
         entry: any,
-        partType: 'CPU' | 'GPU' | 'RAM' | 'Motherboard',
+        partType: 'CPU' | 'GPU' | 'RAM' | 'Motherboard' | 'PSU',
         isOpen: boolean,
         handleClose: () => void
     }
@@ -47,7 +47,13 @@ export default function PartDetailDialog(
                             partType == 'Motherboard' ?
                                 <MotherboardDetails mobo={entry} />
                             :
+                            partType == 'RAM' ?
                                 <RamDetails ram={entry} />
+                            :
+                            partType == 'PSU' ?
+                                <PSUDetails psu={entry} />
+                            :
+                                'Error loading part details'
                         }
                     </div>
                 </div>
@@ -150,7 +156,45 @@ function RamDetails({ram} : {ram: RAM}) {
         
                 </div>
             </div>
-            <h3>Miscellaneous</h3>
+        </>
+    )
+}
+
+function PSUDetails({psu} : {psu: PSU}) {
+    return (
+        <>
+            <div className="layout-grid-2">
+                <div className="row-gap row-gap--xs">
+                    <h3>Specification</h3>  
+                    <InfoItem label="Wattage" value={psu.wattage} unit="Watts" />
+                    <InfoItem label="80 Watt Efficient" value={psu.efficiency} />
+                    <InfoItem label="Type" value={psu.type} />
+                </div>
+                <div className="row-gap row-gap--xs">
+                    <h3>Customization</h3>  
+                    <InfoItem label="Modular" value={psu.is_modular ? 'Yes' : 'No'} />
+                    <InfoItem label="Zero RPM" value={psu.has_zero_rpm ? 'Yes' : 'No'} />
+                </div>
+            </div>
+            <div className="row-gap row-gap--xs">
+                <h3>Cables</h3>
+                <div className="layout-grid-2">
+                    <div className="row-gap row-gap--xs">
+                        <InfoItem label="8 Pin Connectors" value={psu.connector_8_pin_count} />
+                        <InfoItem label="6 + 2 Pin Connectors" value={psu.connector_6_2_pin_count} />
+                        <InfoItem label="6 Pin Connectors" value={psu.connector_6_pin_count} />
+                    </div>
+                    <div className="row-gap row-gap--xs">
+                        <InfoItem label="Molex Connectors" value={psu.connector_4_molex_count} />
+                        <InfoItem label="Sata Connectors" value={psu.connector_sata_count} />
+                    </div>
+                </div>
+            </div>
+            <div className="row-gap row-gap--xs">
+                <h3>Miscellaneous</h3>
+                <InfoItem label="Dimensions" value={(psu.length ? psu.length : 'N/A') + ' mm X ' + (psu.width ? psu.width : 'N/A') + ' mm X ' + (psu.height ? psu.height : 'N/A') + ' mm'} />
+                <InfoItem label="Weight" value={psu.weight} unit="kg"/>
+            </div>
         </>
     )
 }

@@ -47,3 +47,27 @@ export interface RAM extends Part {
     modules: number,
     speed: number
 }
+
+export interface PSU extends Part {
+    wattage: number,
+    efficiency: string,
+    type: string,
+    is_modular: boolean,
+    has_zero_rpm: boolean,
+    weight: number,
+    length: number,
+    width: number,
+    height: number,
+    connector_8_pin_count: number,
+    connector_6_2_pin_count: number,
+    connector_6_pin_count: number,
+    connector_4_molex_count: number,
+    connector_sata_count: number
+}
+
+export interface CPUCooler extends Part {
+    type: string,
+    height: number,
+    has_fans: boolean,
+    radiator_size: number
+}

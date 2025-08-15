@@ -11,11 +11,12 @@ class Part(models.Model):
     class Color(models.IntegerChoices):
         OTHER = 0, 'Other'
         BLACK = 1, 'Black'
-        WHITE = 2, 'White'
-        RED = 3, 'Red'
-        BLUE = 4, 'Blue'
-        YELLOW = 5, 'Yellow'
-        GREEN = 6, 'Green'
+        SILVER = 2, 'Silver'
+        WHITE = 3, 'White'
+        RED = 4, 'Red'
+        BLUE = 5, 'Blue'
+        YELLOW = 6, 'Yellow'
+        GREEN = 7, 'Green'
 
     name=models.CharField(max_length=255)
     manufacturer=models.ForeignKey(Manufacturer, on_delete=models.SET_NULL, null=True, blank=True)
@@ -72,6 +73,8 @@ class RAM(Part):
     capacity=models.IntegerField(null=True, blank=True)
     modules=models.IntegerField(null=False, blank=False, default=1, help_text='Number of sticks/modules')
     speed=models.IntegerField(null=True, blank=True, help_text='MHz')
+    has_heat_spreader=models.BooleanField(default=False)
+    tested_voltage=models.FloatField(default=1.00)
 
 class Chipset(models.Model):
     name = models.CharField(max_length=100)
@@ -91,10 +94,18 @@ class Motherboard(Part):
     form_factor=models.IntegerField(choices=FormFactor.choices, default=FormFactor.ATX, null=False, blank=False)
     chipset=models.ForeignKey(Chipset, on_delete=models.SET_NULL, null=True, blank=True)
     memory_type=models.ForeignKey(MemoryType, on_delete=models.SET_NULL, null=True, blank=True)
-    memory_slots=models.IntegerField()
-    max_memory=models.IntegerField()
-    m2_slots=models.IntegerField()
-    sata_slots=models.IntegerField()
+    memory_slots=models.IntegerField(default=1)
+    max_memory=models.IntegerField(default=1, help_text='GB')
+    pcie_x16_slots=models.IntegerField(default=0)
+    pcie_x1_slots=models.IntegerField(default=0)
+    m2_slots=models.IntegerField(default=0)
+    sata_slots=models.IntegerField(default=0)
+    usb_2_headers=models.IntegerField(default=0)
+    usb_3_headers=models.IntegerField(default=0)
+    does_support_raid=models.BooleanField(default=False)
+    does_support_ecc=models.BooleanField(default=False)
+    does_support_multi_gpu=models.BooleanField(default=False)
+    does_support_ethernet=models.BooleanField(default=False)
 
 class GPUMemoryType(models.Model):
     name=models.CharField(max_length=20, null=False, blank=False)
@@ -120,6 +131,9 @@ class GPU(Part):
     tdp=models.IntegerField(null=True, blank=True, help_text="Watts")
     suggested_psu=models.IntegerField(null=True, blank=True, help_text="Watts")
     slot_width=models.IntegerField(choices=SlotWidth.choices, default=SlotWidth.DUAL)
+    dvi_port_count=models.IntegerField(default=0)
+    hdmi_port_count=models.IntegerField(default=0)
+    dp_port_count=models.IntegerField(default=0)
     
 class PSU(Part):
 
@@ -138,15 +152,26 @@ class PSU(Part):
     type = models.IntegerField(choices=PSUType.choices, default=PSUType.ATX, help_text='Defaults to ATX')
     is_modular = models.BooleanField()
     has_zero_rpm = models.BooleanField()
-    weight = models.FloatField(help_text='kg')
-    length = models.IntegerField()
-    width = models.IntegerField()
-    height = models.IntegerField()
-    connector_8_pin_count = models.IntegerField(default=0)
-    connector_6_2_pin_count = models.IntegerField(default=0)
-    connector_6_pin_count = models.IntegerField(default=0)
-    connector_4_molex_count = models.IntegerField(default=0)
-    connector_sata_count = models.IntegerField(default=0)
+    weight = models.FloatField(help_text='kg', null=True, blank=True)
+    length = models.IntegerField(null=True, blank=True, help_text='mm')
+    width = models.IntegerField(null=True, blank=True, help_text='mm')
+    height = models.IntegerField(null=True, blank=True, help_text='mm')
+    
+    # Motherboard
+    connector_atx_24_pin_count = models.BooleanField(default=0, help_text='Always included for motherboard power')
+    connector_eps_8_pin_count = models.IntegerField(default=0, help_text='8-pin EPS (CPU power) connectors')
+    connector_eps_4_pin_count = models.IntegerField(default=0, help_text='4-pin EPS (CPU power) connectors')
+
+    # GPU
+    connector_pcie_6_pin_count = models.IntegerField(default=0, help_text='6-pin PCIe connectors')
+    connector_pcie_6_2_pin_count = models.IntegerField(default=0, help_text='6+2-pin PCIe connectors')
+    connector_pcie_8_pin_count = models.IntegerField(default=0, help_text='Dedicated 8-pin PCIe connectors (rare)')
+    connector_12vhpwr_count = models.IntegerField(default=0, help_text='12VHPWR 16-pin connectors for PCIe Gen 5 GPUs')
+
+    # Drives & Peripherals
+    connector_sata_count = models.IntegerField(default=0, help_text='SATA power connectors')
+    connector_molex_4_pin_count = models.IntegerField(default=0, help_text='4-pin Molex connectors')
+    connector_floppy_count = models.IntegerField(default=0, help_text='Floppy/Berg connectors (legacy)')
 
 class CPUCooler(Part):
     

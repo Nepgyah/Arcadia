@@ -4,7 +4,9 @@ from .models import (
     CPU,
     RAM,
     Motherboard,
-    GPU
+    GPU,
+    PSU,
+    CPUCooler
 )
 
 class CPUSerializer(serializers.ModelSerializer):
@@ -126,3 +128,68 @@ class RAMSerializer(serializers.ModelSerializer):
     
     def get_memory_type(self, obj):
         return obj.memory_type.name
+
+class PSUSerializer(serializers.ModelSerializer):
+    manufacturer = serializers.SerializerMethodField()
+    efficiency = serializers.SerializerMethodField()
+    type = serializers.SerializerMethodField()
+
+    class Meta:
+        model=PSU
+        fields= [
+            'name',
+            'manufacturer',
+            'color',
+            'msrp',
+            'wattage',
+            'efficiency',
+            'type',
+            'is_modular',
+            'has_zero_rpm',
+            'weight',
+            'length',
+            'width',
+            'height',
+            'connector_8_pin_count',
+            'connector_6_2_pin_count',
+            'connector_6_pin_count',
+            'connector_4_molex_count',
+            'connector_sata_count'
+        ]
+
+        
+    def get_manufacturer(self, obj):
+        if (obj.manufacturer):
+            return obj.manufacturer.name
+        return None
+    
+    def get_type(self, obj):
+        return obj.get_type_display()
+
+    def get_efficiency(self, obj):
+        return obj.get_efficiency_display()
+    
+class CPUCoolerSerializer(serializers.ModelSerializer):
+    manufacturer = serializers.SerializerMethodField()
+    type = serializers.SerializerMethodField()
+
+    class Meta:
+        model=CPUCooler
+        fields = [
+            'name',
+            'manufacturer',
+            'color',
+            'msrp',
+            'type',
+            'height',
+            'has_fans',
+            'radiator_size'
+        ]
+
+    def get_manufacturer(self, obj):
+        if (obj.manufacturer):
+            return obj.manufacturer.name
+        return None
+    
+    def get_type(self, obj):
+        return obj.get_type_display()

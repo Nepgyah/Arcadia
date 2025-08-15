@@ -9,7 +9,9 @@ from .models import (
     GPU,
     Manufacturer,
     Chipset,
-    GPUMemoryType
+    GPUMemoryType,
+    PSU,
+    CPUCooler
 )
 # Register your models here.
 
@@ -23,3 +25,5 @@ admin.site.register(Motherboard)
 admin.site.register(GPU)
 admin.site.register(Chipset)
 admin.site.register(GPUMemoryType)
+admin.site.register(PSU)
+admin.site.register(CPUCooler)
