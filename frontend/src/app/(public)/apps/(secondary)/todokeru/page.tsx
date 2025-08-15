@@ -24,7 +24,7 @@ export default function Todokeru() {
                     <div id="content-creators">
                         <div className="cc-box shadow-box">
                             <div className='cc-box__text'>
-                                <p className='txt-xl'>Saba</p>
+                                <p>Saba</p>
                                 <a href="https://www.youtube.com/@SamekoSaba" target='_blank'>
                                     <Button variant='outlined' color='white'>
                                         Watch Now
@@ -35,7 +35,7 @@ export default function Todokeru() {
                         </div>
                         <div className="cc-box shadow-box">
                             <div className='cc-box__text'>
-                                <p className='txt-xl'>Yuuki <br />Sakuna</p>
+                                <p>Yuuki <br />Sakuna</p>
                                 <a href="https://www.youtube.com/@結城さくな" target='_blank'>
                                     <Button variant='outlined' color='white'>
                                         Watch Now
@@ -46,7 +46,7 @@ export default function Todokeru() {
                         </div>
                         <div className="cc-box shadow-box">
                             <div className='cc-box__text'>
-                                <p className='txt-xl'>Guinafen</p>
+                                <p>Guinafen</p>
                                 <a href="https://www.youtube.com/watch?v=U7xKaEoGVpE" target='_blank'>
                                     <Button variant='outlined' color='white'>
                                         Watch Now
@@ -57,7 +57,7 @@ export default function Todokeru() {
                         </div>
                         <div className="cc-box shadow-box">
                             <div className='cc-box__text'>
-                                <p className='txt-xl'>Hyacine</p>
+                                <p>Hyacine</p>
                                 <a href="https://www.youtube.com/watch?v=GhJOJxHZ20E" target='_blank'>
                                     <Button variant='outlined' color='white'>
                                         Watch Now
