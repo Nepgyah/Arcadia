@@ -40,7 +40,7 @@ export default function MobileHeader() {
                     <Collapse in={openDropdown === 'primary'} className="apps">
                         {
                             PrimaryAppUrls.map((url) => (
-                                <Button onClick={() => handleClick(url.path)}>
+                                <Button key={url.name} onClick={() => handleClick(url.path)}>
                                     <AppIcon app={url.name} size={28} /><p>{url.name}</p>
                                 </Button>
                             ))   
@@ -51,7 +51,7 @@ export default function MobileHeader() {
                     <Collapse in={openDropdown === 'secondary'} className="apps">
                         {
                             SecondaryAppUrls.map((url) => (
-                                <Button onClick={() => handleClick(url.path)}>
+                                <Button key={url.name} onClick={() => handleClick(url.path)}>
                                     <AppIcon app={url.name} size={28} /><p>{url.name}</p>
                                 </Button>
                             ))
@@ -62,7 +62,7 @@ export default function MobileHeader() {
                     <Collapse in={openDropdown === 'd2x'}>
                         {
                             D2XUrls.map((url) => (
-                                <Button onClick={() => handleClick(url.path)}>{url.name}</Button>
+                                <Button key={url.name} onClick={() => handleClick(url.path)}>{url.name}</Button>
                             ))
                         }
                     </Collapse>
@@ -71,7 +71,7 @@ export default function MobileHeader() {
                     <Collapse in={openDropdown === 'resource'}>
                         {
                             ResourceUrls.map((url) => (
-                                <Button onClick={() => handleClick(url.path)}>{url.name}</Button>
+                                <Button key={url.name} onClick={() => handleClick(url.path)}>{url.name}</Button>
                             ))
                         }
                     </Collapse>

@@ -63,7 +63,7 @@ export default function DesktopHeader() {
                         <div className="primary">
                             {
                                 PrimaryAppUrls.map((url) => (
-                                    <MenuItem onClick={() => handleClick(url.path, setIsSolutionsOpen)}>
+                                    <MenuItem key={url.name} onClick={() => handleClick(url.path, setIsSolutionsOpen)}>
                                         <AppIcon app={url.name} />
                                         <p>{url.name}</p>
                                     </MenuItem>
@@ -73,7 +73,7 @@ export default function DesktopHeader() {
                         <div className="secondary">
                             {
                                 SecondaryAppUrls.map((url) => (
-                                    <MenuItem onClick={() => handleClick(url.path, setIsSolutionsOpen)}>
+                                    <MenuItem key={url.name} onClick={() => handleClick(url.path, setIsSolutionsOpen)}>
                                         <AppIcon app={url.name} />
                                         <p>{url.name}</p>
                                     </MenuItem>
@@ -100,7 +100,7 @@ export default function DesktopHeader() {
                     >
                         {
                             D2XUrls.map((url) => (
-                                <MenuItem onClick={() => handleClick(url.path, setIsD2XOpen)}>{url.name}</MenuItem>
+                                <MenuItem key={url.name} onClick={() => handleClick(url.path, setIsD2XOpen)}>{url.name}</MenuItem>
                             ))
                         }
                     </Menu>
