@@ -14,7 +14,7 @@ type app =
     'todokeru' |
     'manabu'
 
-export default function appIcon({ app, size=36 } : { app: app, size?: number}) {
+export default function appIcon({ app, size=36 } : { app: app | string, size?: number}) {
     return (
         <Image
             src={`/global/app-icons/${app}.svg`}
