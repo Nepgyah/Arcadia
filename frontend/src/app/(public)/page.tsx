@@ -144,8 +144,8 @@ export default function Homepage() {
                                     <img src="/global/app-icons/shiru.svg" alt="Shiru icon" />
                                     <img src="/global/app-icons/kumitateru.svg" alt="Kumitateru icon" />
                                     <img src="/global/app-icons/todokeru.svg" alt="Todokeru icon" />
-                                    <img src="/global/app-icons/manabu.svg" alt="Manabub icon" />
-                                    <img src="/global/app-icons/toshoukan.svg" alt="Toshoukan icon" />
+                                    <img src="/global/app-icons/manabu.svg" alt="Manabu icon" />
+                                    <img src="/global/app-icons/sagasu.svg" alt="Sagasu icon" />
                                 </div>
                             </div>
                         </div>
@@ -529,7 +529,7 @@ export default function Homepage() {
 
                     <section id="middle-cta" className="section">
                         <div className="section__wrapper">
-                            <div className="section-main">
+                            <div className="section-main section-main--center">
                                 <h2 className="section-main__main-title">Your Otaku World is Waiting</h2>
                                 <p>Stop browsing. Start belonging. Step into your otaku world today.</p>
                                 <div className="button-container button-container--center">
@@ -545,10 +545,14 @@ export default function Homepage() {
                             </div>
                         </div>
                     </section>
+                </div>
+
+                <div id="roadmap-story">
+                    <img id="branch" className="section__bg-element desktop-only" src="/website/images/homepage/stories/blooming-branches.png" alt="Blooming branches" />
 
                     <section id="roadmap" className="section">
                         <div className="section__wrapper">
-                            <div className="section-main blur-container">
+                            <div className="section-main">
                                 <p className="section-main__mini-title">The Journey Ahead</p>
                                 <h2 className="section-main__main-title">What's Next For Arcadia</h2>
                                 <p>We’re just getting started with Project Arcadia! Here's a glimpse at what’s coming next.</p>
@@ -557,7 +561,7 @@ export default function Homepage() {
                                 <FadeIn direction="up" delay={0}>
                                     <div className="goal">
                                         <h3>Launching the Core Platform</h3>
-                                        <p>We're starting with the essentials: Arcadia's primary apps, account setup, personalization, and easy data import from other platforms.</p>
+                                        <p>We're starting with the essentials: The base functionality of several apps and a profile to wrap them together.</p>
                                     </div>
                                 </FadeIn>
                                 <div className="icon desktop-only">
@@ -565,8 +569,8 @@ export default function Homepage() {
                                 </div>
                                 <FadeIn direction="up" delay={.2}>
                                 <div className="goal">
-                                    <h3>Expanding the Ecosystem</h3>
-                                    <p>Next, we’ll roll out the full website, secondary apps, and new features that bring the community and platform to life.</p>
+                                    <h3>Expanding the Arcadia Library</h3>
+                                    <p>Next, we will start to populate the database. Making sure that which ever app you're using, its up to date with all the latest information.</p>
                                 </div>
                                 </FadeIn>
                                 <div className="icon desktop-only">
@@ -574,84 +578,83 @@ export default function Homepage() {
                                 </div>
                                 <FadeIn direction="up" delay={.4}>
                                 <div className="goal">
-                                    <h3>Introducing the Anime Archetypes Quiz</h3>
-                                    <p>To wrap it up: A fun, personalized quiz that matches you with an anime-inspired archetype.</p>
+                                    <h3>Going for Mobile and Desktop</h3>
+                                    <p>To wrap it up: We will start development of the Arcadia phone and desktop apps. No matter what device, you got the power of Arcadia at your fingertips.</p>
                                 </div>
                                 </FadeIn>
                             </div>
                         </div>
                     </section>
-                </div>
 
-                <section id="stories" className="section">
-                    <img id="branch" className="section__bg-element desktop-only" src="/website/images/homepage/stories/blooming-branches.png" alt="Blooming branches" />
-                    <img id="sand-mtn" className="section__bg-element desktop-only" src="/website/images/homepage/stories/sand-mountain.png" alt="Mountain" />
-                    <img id="gate-mtn" className="section__bg-element" src="/website/images/homepage/stories/mountain-with-gate.png" alt="Mountain with a gate" />
+                    <section id="story" className="section">
+                        <img id="sand-mtn" className="section__bg-element desktop-only" src="/website/images/homepage/stories/sand-mountain.png" alt="Mountain" />
+                        <img id="gate-mtn" className="section__bg-element" src="/website/images/homepage/stories/mountain-with-gate.png" alt="Mountain with a gate" />
 
-                    <div className="section__wrapper">
-                        <div className="section-main section-main--center blur-container">
-                            <p className="section-main__mini-title">Otaku's Agree</p>
-                            <h2 className="section-main__main-title">Arcadia Is a Must For Fanatics</h2>
-                        </div>
-                        <div className="section-content">
-                            <FadeIn id="jamal" direction="right" delay={.1}>
-                                <div className="card">
-                                    <img className="card__image" src="/website/images/homepage/stories/jamal-williams.jpg" alt="Jamal Williams" />
-                                    <div className="card__text">
-                                        <p className="name">Jamal Williams</p>
-                                        <p className="job">NFL Running Back</p>
-                                        <p>Look, I don’t just like anime—I live it. If I’m not on the field, I’m grinding through One Piece, rewatching Naruto, or catching up on the latest heat. And Arcadia? Man, this is like the ultimate training ground for otaku. Everything you need—tracking, merch, community—all in one place? That’s straight-up elite!"</p>
-                                        <p>"Most places just don’t get it. But Arcadia is built different—built by real fans, for real fans. Whether you’re arguing over the best anime arcs, supporting indie creators, or just looking for a crew that gets your passion, this is the spot. No fillers, just pure fire. Believe it!</p>
+                        <div className="section__wrapper">
+                            <div className="section-main section-main--center">
+                                <p className="section-main__mini-title">Otaku's Agree</p>
+                                <h2 className="section-main__main-title">Arcadia Is a Must For Fanatics</h2>
+                            </div>
+                            <div className="section-content">
+                                <FadeIn id="jamal" direction="right" delay={.1}>
+                                    <div className="card">
+                                        <img className="card__image" src="/website/images/homepage/stories/jamal-williams.jpg" alt="Jamal Williams" />
+                                        <div className="card__text">
+                                            <p className="name">Jamal Williams</p>
+                                            <p className="job">NFL Running Back</p>
+                                            <p>Look, I don’t just like anime—I live it. If I’m not on the field, I’m grinding through One Piece, rewatching Naruto, or catching up on the latest heat. And Arcadia? Man, this is like the ultimate training ground for otaku. Everything you need—tracking, merch, community—all in one place? That’s straight-up elite!"</p>
+                                            <p>"Most places just don’t get it. But Arcadia is built different—built by real fans, for real fans. Whether you’re arguing over the best anime arcs, supporting indie creators, or just looking for a crew that gets your passion, this is the spot. No fillers, just pure fire. Believe it!</p>
+                                        </div>
                                     </div>
+                                </FadeIn>
+                                <div className="col">
+                                    <FadeIn direction="down" delay={.1}>
+                                        <div className="card">
+                                            <img className="card__image" src="/website/images/homepage/stories/snoop.jpg" alt="Snoop Dog" />
+                                            <div className="card__text">
+                                                <p className="name">Snoop Dog</p>
+                                                <p className="job">Rapper</p>
+                                                <p>Man, Arcadia got that real anime energy. If you ain’t on Arcadia yet, you slippin’.</p>
+                                            </div>
+                                        </div>
+                                    </FadeIn>
+                                    <FadeIn direction="up" delay={.1}>
+                                        <div className="card">
+                                            <img className="card__image" src="/website/images/homepage/stories/keanu.webp" alt="Keanu Reaves" />
+                                            <div className="card__text">
+                                                <p className="name">Keanu Reaves</p>
+                                                <p className="job">Actor</p>
+                                                <p>I’ve been a fan of anime for years, and Arcadia feels like the ultimate place for fans. Whether you’re into classics or discovering new gems, this platform has something for everyone.</p>
+                                            </div>
+                                        </div>
+                                    </FadeIn>
                                 </div>
-                            </FadeIn>
-                            <div className="col">
-                                <FadeIn direction="down" delay={.1}>
-                                    <div className="card">
-                                        <img className="card__image" src="/website/images/homepage/stories/snoop.jpg" alt="Snoop Dog" />
-                                        <div className="card__text">
-                                            <p className="name">Snoop Dog</p>
-                                            <p className="job">Rapper</p>
-                                            <p>Man, Arcadia got that real anime energy. If you ain’t on Arcadia yet, you slippin’.</p>
+                                <div className="col">
+                                    <FadeIn direction="left" delay={.1}>
+                                        <div className="card">
+                                            <img className="card__image" src="/website/images/homepage/stories/ariana.jpg" alt="Ariana Grande" />
+                                            <div className="card__text">
+                                                <p className="name">Ariana Grande</p>
+                                                <p className="job">Singer</p>
+                                                <p>I’ve been obsessed with anime forever, and Arcadia is like a dream come true for fans. Whether you’re binging old favorites or finding new series to fall in love with, it’s all here. </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </FadeIn>
-                                <FadeIn direction="up" delay={.1}>
-                                    <div className="card">
-                                        <img className="card__image" src="/website/images/homepage/stories/keanu.webp" alt="Keanu Reaves" />
-                                        <div className="card__text">
-                                            <p className="name">Keanu Reaves</p>
-                                            <p className="job">Actor</p>
-                                            <p>I’ve been a fan of anime for years, and Arcadia feels like the ultimate place for fans. Whether you’re into classics or discovering new gems, this platform has something for everyone.</p>
+                                    </FadeIn>
+                                    <FadeIn direction="left" delay={.2}>
+                                        <div className="card">
+                                            <img className="card__image" src="/website/images/homepage/stories/fox.png" alt="DeAaron Fox" />
+                                            <div className="card__text">
+                                                <p className="name">DeAaron Fox</p>
+                                                <p className="job">NBA Point Guard</p>
+                                                <p>Just like in basketball, it’s all about having the right squad—Arcadia is that squad for anime fans.</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </FadeIn>
-                            </div>
-                            <div className="col">
-                                <FadeIn direction="left" delay={.1}>
-                                    <div className="card">
-                                        <img className="card__image" src="/website/images/homepage/stories/ariana.jpg" alt="Ariana Grande" />
-                                        <div className="card__text">
-                                            <p className="name">Ariana Grande</p>
-                                            <p className="job">Singer</p>
-                                            <p>I’ve been obsessed with anime forever, and Arcadia is like a dream come true for fans. Whether you’re binging old favorites or finding new series to fall in love with, it’s all here. </p>
-                                        </div>
-                                    </div>
-                                </FadeIn>
-                                <FadeIn direction="left" delay={.2}>
-                                    <div className="card">
-                                        <img className="card__image" src="/website/images/homepage/stories/fox.png" alt="DeAaron Fox" />
-                                        <div className="card__text">
-                                            <p className="name">DeAaron Fox</p>
-                                            <p className="job">NBA Point Guard</p>
-                                            <p>Just like in basketball, it’s all about having the right squad—Arcadia is that squad for anime fans.</p>
-                                        </div>
-                                    </div>
-                                </FadeIn>
+                                    </FadeIn>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                </div>
 
                 <section id="d2x" className="section">
                     <p id="double" className="section__bg-element vertical-text desktop-only">DOUBLE</p>

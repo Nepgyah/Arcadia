@@ -32,7 +32,7 @@
         }
 
         &__text {
-            padding: 1.5rem;
+            padding: 1rem;
             position: relative;
 
             .japanese {
@@ -95,21 +95,26 @@
         }
 
         &#kumitateru {
+            height: 300px;
+
             .app-card__text { height: 50%; }
             .app-card__image { height: 50%; }
         }
 
         &#iku {
+            height: 300px;
             .app-card__text { height: 60%; }
             .app-card__image { height: 40%; }
         }
 
         &#shiru {
+            height: 275px;
             .app-card__text { height: 45%; }
             .app-card__image { height: 55%; }
         }
 
         &#manabu {
+            height: 275px;
             .app-card__text { height: 50%; }
             .app-card__image { height: 50%; }
         }
@@ -551,6 +556,14 @@
                 margin: auto;
             }
         }
+    }
+
+    #roadmap-story {
+        position: relative;
+        #branch {
+            right: 0;
+            top: 10px;
+        }
 
         #roadmap {
 
@@ -559,84 +572,71 @@
                 row-gap: 1rem;
                 
                 .goal {
-                    background-color: rgba(white, .7);
+                    background-color: map-get($arcadia-colors , arc-base-dark );
                     padding: 1.5rem;
                     -webkit-backdrop-filter: blur(5px);
                     backdrop-filter: blur(5px);
                     border-radius: 15px;
                     box-shadow: $box-shadow-default;
                     height: 100%;
-                    
+                    color: white;
+
                     h3 {
                         margin-bottom: 1.5rem;
                     }
                 }
             }
         }
-    }
 
-    #stories {
+        #story {
+            .card {
+                background-color: map-get($arcadia-colors, arc-base );
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: $box-shadow-default;
 
-        .section-main {
-            background-color: rgba(map-get($arcadia-colors , arc-base-dark ), .8);
-            color: white;
-
-            &__main-title {
-                color: white;
-            }
-        }
-        .card {
-            background-color: map-get($arcadia-colors, arc-base );
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: $box-shadow-default;
-
-            &__image {
-                height: 150px;
-                width: 100%;
-                object-fit: cover;
-            }
-
-            &__text {
-                padding: 1rem;
-                color: white;
-
-                .name {
-                    font-weight: bold;
-                    font-size: 2rem;
-                    margin-bottom: 0;
+                &__image {
+                    height: 150px;
+                    width: 100%;
+                    object-fit: cover;
                 }
 
-                .job {
-                    font-size: .75rem;
-                    margin-bottom: 1rem;
+                &__text {
+                    padding: 1rem;
+                    color: white;
+
+                    .name {
+                        font-weight: bold;
+                        font-size: 2rem;
+                        margin-bottom: 0;
+                    }
+
+                    .job {
+                        font-size: .75rem;
+                        margin-bottom: 1rem;
+                    }
                 }
             }
-        }
 
-        #branch {
-            right: 0;
-            top: 10px;
-        }
+            #sand-mtn {
+                bottom: 0;
+                left: 0;
+            }
 
-        #sand-mtn {
-            bottom: 0;
-            left: 0;
-        }
+            #gate-mtn {
+                right: 0;
+                bottom: 0;
+            }
 
-        #gate-mtn {
-            right: 0;
-            bottom: 0;
-        }
+            .section-content {
+                display: flex;
+                flex-direction: column;
+                row-gap: 1rem;
 
-        .section-content {
-            display: flex;
-            flex-direction: column;
-            row-gap: 1rem;
-
-            .col {
-                >div {
-                    margin-bottom: 1rem;
+                .col {
+                    >div {
+                        margin-bottom: 1rem;
+                    }
                 }
             }
         }
@@ -1015,18 +1015,17 @@
             }
 
             #middle-cta {
-                padding: 10rem 0;
+                text-align: center;
             }
+        }
+
+        #roadmap-story {
 
             #roadmap {
                 .goals {
                     grid-template-columns: repeat(5, 1fr);
 
                     .goal {
-                        // background-color: rgba($color: #000000, $alpha: 0);
-                        // -webkit-backdrop-filter: none;
-                        // backdrop-filter: none;
-
                         h3 {
                             margin-bottom: 1.5rem;
                         }
@@ -1045,26 +1044,26 @@
                     }
                 }
             }
-        }
+            
+            #story {
+                .section-content {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    column-gap: 1.5rem;
 
-        #stories {
-            .section-content {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                column-gap: 1.5rem;
-
-                #jamal {
-                    .card {
-                        height: 100%;
+                    #jamal {
+                        .card {
+                            height: 100%;
+                        }
                     }
-                }
 
-                .col {
-                    >div {
-                        margin-bottom: 0;
+                    .col {
+                        >div {
+                            margin-bottom: 0;
 
-                        &:first-of-type {
-                            margin-bottom: 1rem;
+                            &:first-of-type {
+                                margin-bottom: 1rem;
+                            }
                         }
                     }
                 }
