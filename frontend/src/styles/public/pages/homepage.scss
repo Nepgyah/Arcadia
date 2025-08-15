@@ -2,6 +2,84 @@
 
 #page-homepage {
 
+    .app-card {
+        border-radius: 10px;
+        box-shadow: $box-shadow-default;
+        display: flex;
+        overflow: hidden;
+        transition: transform .2s ease-in-out;
+
+        &:hover { transform: scale(1.05); }
+
+        &--vertical { flex-direction: column; }
+        &--text-first {
+            .app-card__image {
+                order: 2;
+            }
+            .app-card__text {
+                order: 1;
+            }
+        }
+        &__image {
+            overflow: hidden;
+            position: relative;
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &__text {
+            padding: 1.5rem;
+            position: relative;
+
+            .japanese {
+                position: absolute;
+                bottom: 5%;
+                right: 5%;
+                font-size: 48px;
+                opacity: .2;
+            }
+
+            .name {
+                font-size: 1.5rem;
+                text-transform: capitalize;
+            }
+        }
+
+        &#miru {
+            height: 360px;
+            .app-card__image, .app-card__text { height: 50%; }
+        }
+
+        &#yomu {
+            height: 300px;
+
+            .app-card__image { width: 40%; }
+            .app-card__text { width: 60%; }
+        }
+
+        &#kau {
+            height: 240px;
+            .app-card__image { width: 55%; }
+            .app-card__text { width: 45%; }
+        }
+
+        &#asobu {
+            height: 240px;
+            
+            .app-card__image { width: 45%; }
+            .app-card__text { width: 55%; }
+        }
+
+        &#tsunagu {
+            height: 300px;
+            .app-card__image {width: 40%;}
+            .app-card__text { width: 60%; }
+        }
+    }
     .app-tile {
         border-radius: 10px;
         box-shadow: $box-shadow-default;

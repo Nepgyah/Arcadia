@@ -251,7 +251,16 @@ export default function Homepage() {
                                     <p className="section-main__description">Your all-in-one toolkit for tracking, streaming, gaming, and shopping. These flagship apps form the heart of Arcadia. Pick one or pick-em-all, its your turn to customize your otaku experience.</p>
                                 </div>
                                 <FadeIn direction="left">
-                                    <Link href="apps/miru">
+                                    <AppTile 
+                                        app="miru"
+                                        japanese="みる"
+                                        slogan="Your Ultimate Anime Companion"
+                                        imgLink="/website/images/homepage/primary-apps/miru.jpg"
+                                        imgAlt="Anime girls watching togther"
+                                        orientation="vertical"
+                                        order="image-first"
+                                    />
+                                    {/* <Link href="apps/miru">
                                         <div className="app-tile app-tile--vertical slide-right bg-miru-base" id="miru">
                                             <div className="app-tile__image">
                                                 <Image fill src="/website/images/homepage/primary-apps/miru.jpg" alt="Anime girls watching togther" />
@@ -262,57 +271,58 @@ export default function Homepage() {
                                                 <p className="slogan">Explore the world of anime, one episode at a time</p>
                                             </div>
                                         </div>
-                                    </Link>
+                                    </Link> */}
                                 </FadeIn>
                             </div>
                             <div id="primary-bottom-half">
                                 <div id="bottom-left">
                                     <FadeIn direction="right" delay={.4}>
-                                        <Link href="apps/yomu">
-                                            <div className="app-tile app-tile--vertical bg-yomu-base" id="yomu">
-                                                <div className="app-tile__image">
-                                                    <Image fill src="/website/images/homepage/primary-apps/yomu.jpg" alt="Smiling anime girl with book" />
-                                                </div>
-                                                <div className="app-tile__text">
-                                                    <p className="japanese">よむ</p>
-                                                    <h3 className="name">Yomu</h3>
-                                                    <p className="slogan">Where words create worlds</p>
-                                                </div>
-                                            </div>
-                                        </Link>
+                                        <AppTile 
+                                            app="yomu"
+                                            japanese="よむ"
+                                            slogan="Where words create worlds"
+                                            imgLink="/website/images/homepage/primary-apps/yomu.jpg"
+                                            imgAlt="Anime girl with a book"
+                                            orientation="horizontal"
+                                            order="image-first"
+                                        />
                                     </FadeIn>
                                     <FadeIn direction="right" delay={.5} threshold={.5}>
-                                        <Link href="apps/kau">
-                                            <div className="app-tile bg-kau-base" id="kau">
-                                                <div className="app-tile__image">
-                                                    <Image fill src="/website/images/homepage/primary-apps/kau.jpg" alt="Blue asthetic shopping" />
-                                                </div>
-                                                <div className="app-tile__text">
-                                                    <p className="japanese">かう</p>
-                                                    <h3 className="name">Kau</h3>
-                                                    <p className="slogan">From wish list to reality</p>
-                                                </div>
-                                            </div>
-                                        </Link>
+                                        <AppTile 
+                                            app="kau"
+                                            japanese="かう"
+                                            slogan="Cosplay Streetwear and Otaku Goods"
+                                            imgLink="/website/images/homepage/primary-apps/kau.jpg"
+                                            imgAlt="Anime girl shopping"
+                                            orientation="horizontal"
+                                            order="text-first"
+                                        />
                                     </FadeIn>
                                 </div>
                                 <div id="bottom-right">
                                     <FadeIn direction="left" delay={.4}>
-                                        <Link href="apps/asobu">
-                                            <div className="app-tile bg-asobu-base" id="asobu">
-                                                <div className="app-tile__image">
-                                                    <Image fill src="/website/images/homepage/primary-apps/asobu.jpg" alt="Gaming friends" />
-                                                </div>
-                                                <div className="app-tile__text">
-                                                    <p className="japanese">あそぶ</p>
-                                                    <h3 className="name">Asobu</h3>
-                                                    <p className="slogan">From wish list to reality</p>
-                                                </div>
-                                            </div>
-                                        </Link>
+                                        <AppTile 
+                                            app="asobu"
+                                            japanese="あそぶ"
+                                            slogan="Games Worth Playing. Stories worth sharing"
+                                            imgLink="/website/images/homepage/primary-apps/asobu.jpg"
+                                            imgAlt="Gamer Friends"
+                                            orientation="horizontal"
+                                            order="image-first"
+                                            textWhite
+                                        />
                                     </FadeIn>
                                     <FadeIn direction="left" delay={.5} threshold={.7}>
-                                        <Link href="apps/tsunagu">
+                                        <AppTile 
+                                            app="tsunagu"
+                                            japanese="つなぐ"
+                                            slogan="Arcadia's Social Network"
+                                            imgLink="/website/images/homepage/primary-apps/tsunagu.jpg"
+                                            imgAlt="Anime guys hanging out"
+                                            orientation="horizontal"
+                                            order="text-first"
+                                        />
+                                        {/* <Link href="apps/tsunagu">
                                             <div className="app-tile bg-tsunagu-base" id="tsunagu">
                                                 <div className="app-tile__text">
                                                     <p className="japanese">つなぐ</p>
@@ -323,7 +333,7 @@ export default function Homepage() {
                                                     <Image fill src="/website/images/homepage/primary-apps/tsunagu.jpg" alt="Anime guys hanging out" />
                                                 </div>
                                             </div>
-                                        </Link>
+                                        </Link> */}
                                     </FadeIn>
                                 </div>
                             </div>
@@ -741,5 +751,37 @@ export default function Homepage() {
 
                 <Script src="/website/js/homepage.js" />
             </div>
+    )
+}
+
+function AppTile(
+    { app, japanese, slogan, imgLink, imgAlt, orientation, order, textWhite=false } : {
+        app: string,
+        japanese: string,
+        slogan: string,
+        imgLink: string,
+        imgAlt: string,
+        orientation: 'vertical' | 'horizontal',
+        order: 'image-first' | 'text-first'
+        textWhite?: boolean
+    }
+) {
+    return  (
+        <Link href={`/apps/${app}`}>
+            <div id={`${app}`} className={`app-card app-card--${orientation} app-card--${order} bg-${app}-base`}>
+                <div className="app-card__image">
+                    <Image 
+                        fill 
+                        src={imgLink} 
+                        alt={imgAlt} 
+                    />
+                </div>
+                <div className={`app-card__text ${textWhite && "clr-txt-light"}`}>
+                    <p className="japanese">{japanese}</p>
+                    <h3 className="name">{app}</h3>
+                    <p className="slogan">{slogan}</p>
+                </div>
+            </div>
+        </Link>
     )
 }
