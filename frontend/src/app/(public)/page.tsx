@@ -195,7 +195,7 @@ export default function Homepage() {
                             <div className="section-main section-main--white">
                                 <p className="section-main__mini-title">Partnership</p>
                                 <h2 className="section-main__main-title">Industry Leaders Trust Arcadia</h2>
-                                <p className="section-main__description">Anime Studios, Game Developers, and more collaborate with Arcadia to build something special.</p>
+                                <p className="section-main__description">Anime Studios, Game Developers, and more collaborate with Arcadia to build something special. <b>Names used here are purely fictional for Arcadia/D2X world building. These companies do not sponsor or endorse Arcadia.</b></p>
                             </div>
                             <div className="section-content section-content--flex">
                                 <FadeIn direction="up" delay={.1}>
@@ -594,6 +594,7 @@ export default function Homepage() {
                             <div className="section-main section-main--center">
                                 <p className="section-main__mini-title">Otaku's Agree</p>
                                 <h2 className="section-main__main-title">Arcadia Is a Must For Fanatics</h2>
+                                <p>Names used here are purely fictional for Arcadia/D2X world building. These people do not sponsor or endorse Arcadia.</p>
                             </div>
                             <div className="section-content">
                                 <FadeIn id="jamal" direction="right" delay={.1}>
