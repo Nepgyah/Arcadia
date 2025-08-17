@@ -144,8 +144,8 @@ export default function Homepage() {
                                     <img src="/global/app-icons/shiru.svg" alt="Shiru icon" />
                                     <img src="/global/app-icons/kumitateru.svg" alt="Kumitateru icon" />
                                     <img src="/global/app-icons/todokeru.svg" alt="Todokeru icon" />
-                                    <img src="/global/app-icons/manabu.svg" alt="Manabub icon" />
-                                    <img src="/global/app-icons/toshoukan.svg" alt="Toshoukan icon" />
+                                    <img src="/global/app-icons/manabu.svg" alt="Manabu icon" />
+                                    <img src="/global/app-icons/sagasu.svg" alt="Sagasu icon" />
                                 </div>
                             </div>
                         </div>
@@ -195,7 +195,7 @@ export default function Homepage() {
                             <div className="section-main section-main--white">
                                 <p className="section-main__mini-title">Partnership</p>
                                 <h2 className="section-main__main-title">Industry Leaders Trust Arcadia</h2>
-                                <p className="section-main__description">Anime Studios, Game Developers, and more collaborate with Arcadia to build something special.</p>
+                                <p className="section-main__description">Anime Studios, Game Developers, and more collaborate with Arcadia to build something special. <b>Names used here are purely fictional for Arcadia/D2X world building. These companies do not sponsor or endorse Arcadia.</b></p>
                             </div>
                             <div className="section-content section-content--flex">
                                 <FadeIn direction="up" delay={.1}>
@@ -251,79 +251,65 @@ export default function Homepage() {
                                     <p className="section-main__description">Your all-in-one toolkit for tracking, streaming, gaming, and shopping. These flagship apps form the heart of Arcadia. Pick one or pick-em-all, its your turn to customize your otaku experience.</p>
                                 </div>
                                 <FadeIn direction="left">
-                                    <Link href="apps/miru">
-                                        <div className="app-tile app-tile--vertical slide-right bg-miru-base" id="miru">
-                                            <div className="app-tile__image">
-                                                <Image fill src="/website/images/homepage/primary-apps/miru.jpg" alt="Anime girls watching togther" />
-                                            </div>
-                                            <div className="app-tile__text">
-                                                <p className="japanese">みる</p>
-                                                <h3 className="name">Miru</h3>
-                                                <p className="slogan">Explore the world of anime, one episode at a time</p>
-                                            </div>
-                                        </div>
-                                    </Link>
+                                    <AppTile 
+                                        app="miru"
+                                        japanese="みる"
+                                        slogan="Your Ultimate Anime Companion"
+                                        imgLink="/website/images/homepage/primary-apps/miru.jpg"
+                                        imgAlt="Anime girls watching togther"
+                                        orientation="vertical"
+                                        order="image-first"
+                                    />
                                 </FadeIn>
                             </div>
                             <div id="primary-bottom-half">
                                 <div id="bottom-left">
                                     <FadeIn direction="right" delay={.4}>
-                                        <Link href="apps/yomu">
-                                            <div className="app-tile app-tile--vertical bg-yomu-base" id="yomu">
-                                                <div className="app-tile__image">
-                                                    <Image fill src="/website/images/homepage/primary-apps/yomu.jpg" alt="Smiling anime girl with book" />
-                                                </div>
-                                                <div className="app-tile__text">
-                                                    <p className="japanese">よむ</p>
-                                                    <h3 className="name">Yomu</h3>
-                                                    <p className="slogan">Where words create worlds</p>
-                                                </div>
-                                            </div>
-                                        </Link>
+                                        <AppTile 
+                                            app="yomu"
+                                            japanese="よむ"
+                                            slogan="Where words create worlds"
+                                            imgLink="/website/images/homepage/primary-apps/yomu.jpg"
+                                            imgAlt="Anime girl with a book"
+                                            orientation="horizontal"
+                                            order="image-first"
+                                        />
                                     </FadeIn>
                                     <FadeIn direction="right" delay={.5} threshold={.5}>
-                                        <Link href="apps/kau">
-                                            <div className="app-tile bg-kau-base" id="kau">
-                                                <div className="app-tile__image">
-                                                    <Image fill src="/website/images/homepage/primary-apps/kau.jpg" alt="Blue asthetic shopping" />
-                                                </div>
-                                                <div className="app-tile__text">
-                                                    <p className="japanese">かう</p>
-                                                    <h3 className="name">Kau</h3>
-                                                    <p className="slogan">From wish list to reality</p>
-                                                </div>
-                                            </div>
-                                        </Link>
+                                        <AppTile 
+                                            app="kau"
+                                            japanese="かう"
+                                            slogan="Cosplay Streetwear and Otaku Goods"
+                                            imgLink="/website/images/homepage/primary-apps/kau.jpg"
+                                            imgAlt="Anime girl shopping"
+                                            orientation="horizontal"
+                                            order="text-first"
+                                        />
                                     </FadeIn>
                                 </div>
                                 <div id="bottom-right">
                                     <FadeIn direction="left" delay={.4}>
-                                        <Link href="apps/asobu">
-                                            <div className="app-tile bg-asobu-base" id="asobu">
-                                                <div className="app-tile__image">
-                                                    <Image fill src="/website/images/homepage/primary-apps/asobu.jpg" alt="Gaming friends" />
-                                                </div>
-                                                <div className="app-tile__text">
-                                                    <p className="japanese">あそぶ</p>
-                                                    <h3 className="name">Asobu</h3>
-                                                    <p className="slogan">From wish list to reality</p>
-                                                </div>
-                                            </div>
-                                        </Link>
+                                        <AppTile 
+                                            app="asobu"
+                                            japanese="あそぶ"
+                                            slogan="Games Worth Playing. Stories worth sharing"
+                                            imgLink="/website/images/homepage/primary-apps/asobu.jpg"
+                                            imgAlt="Gamer Friends"
+                                            orientation="horizontal"
+                                            order="image-first"
+                                            textWhite
+                                        />
                                     </FadeIn>
                                     <FadeIn direction="left" delay={.5} threshold={.7}>
-                                        <Link href="apps/tsunagu">
-                                            <div className="app-tile bg-tsunagu-base" id="tsunagu">
-                                                <div className="app-tile__text">
-                                                    <p className="japanese">つなぐ</p>
-                                                    <h3 className="name">Tsunagu</h3>
-                                                    <p className="slogan">Join the conversation, shape the fandom</p>
-                                                </div>
-                                                <div className="app-tile__image">
-                                                    <Image fill src="/website/images/homepage/primary-apps/tsunagu.jpg" alt="Anime guys hanging out" />
-                                                </div>
-                                            </div>
-                                        </Link>
+                                        <AppTile 
+                                            app="tsunagu"
+                                            japanese="つなぐ"
+                                            slogan="Arcadia's Social Network"
+                                            imgLink="/website/images/homepage/primary-apps/tsunagu.jpg"
+                                            imgAlt="Anime guys hanging out"
+                                            orientation="horizontal"
+                                            order="text-first"
+                                        />
                                     </FadeIn>
                                 </div>
                             </div>
@@ -442,119 +428,109 @@ export default function Homepage() {
                         <div className="section__wrapper">
                             <div className="section-main section-main--center">
                                 <p className="sectin-main__mini-title">Beyond the Essentials</p>
-                                <h2 className="section-main__main-title">The Arcadia Side Suite</h2>
+                                <h2 className="section-main__main-title">Arcadia's Secondary Apps</h2>
                                 <p>These supplementary apps are smaller in scope, but big on impact. From planning events to diving into niche blogs and lo-fi vibes, the Arcadia side suites adds extra flavor to your fandom journey.</p>
                             </div>
-                            <div className="app-container">
-                                <div className="left-col">
-                                    <FadeIn direction="right" delay={.1}>
-                                        <Link href='/apps/iku'>
-                                            <div className="app-tile bg-iku-base" id="iku">
-                                                <div className="app-tile__text">
-                                                    <p className="japanese">いく</p>
-                                                    <h3 className="name">Iku</h3>
-                                                    <p className="slogan">Go where the community goes</p>
-                                                </div>
-                                                <div className="app-tile__image">
-                                                    <Image fill src="/website/images/homepage/secondary-apps/iku.jpg" alt="Exploring the anime universe" />
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    </FadeIn>
-                                    <FadeIn direction="right" delay={.2} threshold={.7}>
-                                        <Link href='/apps/hiku'>
-                                            <div className="app-tile bg-hiku-base" id="hiku">
-                                                <div className="app-tile__image">
-                                                    <Image fill src="/website/images/homepage/secondary-apps/hiku.jpg" alt="Gamer girl" />
-                                                </div>
-                                                <div className="app-tile__text">
-                                                    <p className="japanese">ひく</p>
-                                                    <h3 className="name">Hiku</h3>
-                                                    <p className="slogan">Pull Your Way To Victory</p>
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    </FadeIn>
-                                    <FadeIn direction="right" delay={.2} threshold={.7}>
-                                        <Link href='/apps/todokeru'>
-                                            <div className="app-tile bg-todokeru-base" id="todokeru">
-                                                <div className="app-tile__text">
-                                                    <p className="japanese">とどける</p>
-                                                    <h3 className="name">Todokeru</h3>
-                                                    <p className="slogan">From pixels to people, broadcast your story</p>
-                                                </div>
-                                                <div className="app-tile__image">
-                                                    <Image fill src="/website/images/homepage/secondary-apps/todokeru.png" alt="Gamer girl" />
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    </FadeIn>
-                                </div>
-                                <div className="right-col">
-                                    <FadeIn direction="left" delay={.3}>
-                                        <Link href='/apps/shiru'>
-                                            <div className="app-tile bg-shiru-base" id="shiru">
-                                                <div className="app-tile__image">
-                                                    <Image fill src="/website/images/homepage/secondary-apps/shiru.jpg" alt="Hanging out at a dinner" />
-                                                </div>
-                                                <div className="app-tile__text">
-                                                    <p className="japanese">しる</p>
-                                                    <h3 className="name">Shiru</h3>
-                                                    <p className="slogan">Explore, Learn, Share the Journey</p>
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    </FadeIn>
-                                    <FadeIn direction="left" delay={.4}>
-                                        <Link href='/apps/kumitateru'>
-                                            <div className="app-tile bg-kumitateru-base" id="kumitateru">
-                                                <div className="app-tile__image">
-                                                    <Image fill src="/website/images/homepage/secondary-apps/kumitateru.jpg" alt="Building a PC" />
-                                                </div>
-                                                <div className="app-tile__text">
-                                                    <p className="japanese">くみたてる</p>
-                                                    <h3 className="name">Kumitateru</h3>
-                                                    <p className="slogan">Build Your Battle Station</p>
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    </FadeIn>
-                                    <FadeIn direction="left" delay={.45}>
-                                        <Link href='/apps/kiku'>
-                                            <div className="app-tile bg-kiku-base" id="kiku">
-                                                <div className="app-tile__text">
-                                                    <p className="japanese">きく</p>
-                                                    <h3 className="name">Kiku</h3>
-                                                    <p className="slogan">Relax.<br />Focus.<br /> Create.</p>
-                                                </div>
-                                                <div className="app-tile__image">
-                                                    <Image fill src="/website/images/homepage/secondary-apps/kiku.jpg" alt="Studying and listening to lofi" />
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    </FadeIn>
-                                    <FadeIn direction="left" delay={.3}>
-                                        <Link href='/apps/manabu'>
-                                            <div className="app-tile bg-manabu-base" id="manabu">
-                                                <div className="app-tile__image">
-                                                    <Image fill src="/website/images/homepage/secondary-apps/manabu.png" alt="Hanging out at a dinner" />
-                                                </div>
-                                                <div className="app-tile__text">
-                                                    <p className="japanese">まなぶ</p>
-                                                    <h3 className="name">Manabu</h3>
-                                                    <p className="slogan">Achieve fluency through fandom</p>
-                                                </div>
-                                            </div>
-                                        </Link>
-                                    </FadeIn>
+                            <div id="entertainment-hub">
+                                <h3 className="hub-name">The Entertainment Hub</h3>
+                                <div>
+                                    <AppTile 
+                                        app="kiku"
+                                        japanese="きく"
+                                        slogan="A Soundtrack for Every Fan"
+                                        imgLink="/website/images/homepage/secondary-apps/kiku.jpg"
+                                        imgAlt="Studying and listening to lofi"
+                                        orientation="horizontal"
+                                        order="text-first"
+                                        textWhite
+                                    />
+                                    <AppTile 
+                                        app="todokeru"
+                                        japanese="とどける"
+                                        slogan="From Pixels To People"
+                                        imgLink="/website/images/homepage/secondary-apps/todokeru.png"
+                                        imgAlt="Gamer Girl"
+                                        orientation="horizontal"
+                                        order="text-first"
+                                        textWhite
+                                    />
+                                    <AppTile 
+                                        app="hiku"
+                                        japanese="ひく"
+                                        slogan="Guide. Gather. Game."
+                                        imgLink="/website/images/homepage/secondary-apps/hiku.jpg"
+                                        imgAlt="Anime girl playing on mobile"
+                                        orientation="horizontal"
+                                        order="image-first"                                        
+                                    />
+                                    <AppTile 
+                                        app="sagasu"
+                                        japanese="さがす"
+                                        slogan="Discover Your Anime Role"
+                                        imgLink="/website/images/homepage/secondary-apps/sagasu.jpg"
+                                        imgAlt="An anime adventure"
+                                        orientation="horizontal"
+                                        order="image-first"
+                                        textWhite                                      
+                                    />
                                 </div>
                             </div>
+                            <div className="section-content section-content--two-col">
+                                <div id="utility-hub">
+                                    <h3 className="hub-name blur-container">The Utility Hub</h3>
+                                    <div>
+                                        <AppTile 
+                                            app="kumitateru"
+                                            japanese="くみたてる"
+                                            slogan="Build Your Battlestation"
+                                            imgLink="/website/images/homepage/secondary-apps/kumitateru.jpg"
+                                            imgAlt="Anime girl building a PC"
+                                            orientation="vertical"
+                                            order="image-first"
+                                        />
+                                        <AppTile 
+                                            app="iku"
+                                            japanese="いく"
+                                            slogan="Make Every Meetup an Adventure"
+                                            imgLink="/website/images/homepage/secondary-apps/iku.jpg"
+                                            imgAlt="Explore the world"
+                                            orientation="vertical"
+                                            order="text-first"
+                                            textWhite
+                                        />
+                                    </div>
+                                </div>
+                                <div id="knowledge-hub">
+                                    <h3 className="hub-name blur-container">The Knowledge Hub</h3>
+                                    <div>
+                                        <AppTile 
+                                            app="shiru"
+                                            japanese="しる"
+                                            slogan="Stories from the Otaku-verse"
+                                            imgLink="/website/images/homepage/secondary-apps/shiru.jpg"
+                                            imgAlt="Hanging out at a cafe"
+                                            orientation="vertical"
+                                            order="image-first"
+                                        />
+                                        <AppTile 
+                                            app="manabu"
+                                            japanese="まなぶ"
+                                            slogan="Fluency Through Fandom"
+                                            imgLink="/website/images/homepage/secondary-apps/manabu.png"
+                                            imgAlt="Explore the world"
+                                            orientation="vertical"
+                                            order="text-first"
+                                            textWhite
+                                        />
+                                    </div>
+                                </div>
+                            </div>                            
                         </div>
                     </section>
 
                     <section id="middle-cta" className="section">
                         <div className="section__wrapper">
-                            <div className="section-main">
+                            <div className="section-main section-main--center">
                                 <h2 className="section-main__main-title">Your Otaku World is Waiting</h2>
                                 <p>Stop browsing. Start belonging. Step into your otaku world today.</p>
                                 <div className="button-container button-container--center">
@@ -570,10 +546,14 @@ export default function Homepage() {
                             </div>
                         </div>
                     </section>
+                </div>
+
+                <div id="roadmap-story">
+                    <img id="branch" className="section__bg-element desktop-only" src="/website/images/homepage/stories/blooming-branches.png" alt="Blooming branches" />
 
                     <section id="roadmap" className="section">
                         <div className="section__wrapper">
-                            <div className="section-main blur-container">
+                            <div className="section-main">
                                 <p className="section-main__mini-title">The Journey Ahead</p>
                                 <h2 className="section-main__main-title">What's Next For Arcadia</h2>
                                 <p>We’re just getting started with Project Arcadia! Here's a glimpse at what’s coming next.</p>
@@ -582,7 +562,7 @@ export default function Homepage() {
                                 <FadeIn direction="up" delay={0}>
                                     <div className="goal">
                                         <h3>Launching the Core Platform</h3>
-                                        <p>We're starting with the essentials: Arcadia's primary apps, account setup, personalization, and easy data import from other platforms.</p>
+                                        <p>We're starting with the essentials: The base functionality of several apps and a profile to wrap them together.</p>
                                     </div>
                                 </FadeIn>
                                 <div className="icon desktop-only">
@@ -590,8 +570,8 @@ export default function Homepage() {
                                 </div>
                                 <FadeIn direction="up" delay={.2}>
                                 <div className="goal">
-                                    <h3>Expanding the Ecosystem</h3>
-                                    <p>Next, we’ll roll out the full website, secondary apps, and new features that bring the community and platform to life.</p>
+                                    <h3>Expanding the Arcadia Library</h3>
+                                    <p>Next, we will start to populate the database. Making sure that which ever app you're using, its up to date with all the latest information.</p>
                                 </div>
                                 </FadeIn>
                                 <div className="icon desktop-only">
@@ -599,84 +579,84 @@ export default function Homepage() {
                                 </div>
                                 <FadeIn direction="up" delay={.4}>
                                 <div className="goal">
-                                    <h3>Introducing the Anime Archetypes Quiz</h3>
-                                    <p>To wrap it up: A fun, personalized quiz that matches you with an anime-inspired archetype.</p>
+                                    <h3>Going for Mobile and Desktop</h3>
+                                    <p>To wrap it up: We will start development of the Arcadia phone and desktop apps. No matter what device, you got the power of Arcadia at your fingertips.</p>
                                 </div>
                                 </FadeIn>
                             </div>
                         </div>
                     </section>
-                </div>
 
-                <section id="stories" className="section">
-                    <img id="branch" className="section__bg-element desktop-only" src="/website/images/homepage/stories/blooming-branches.png" alt="Blooming branches" />
-                    <img id="sand-mtn" className="section__bg-element desktop-only" src="/website/images/homepage/stories/sand-mountain.png" alt="Mountain" />
-                    <img id="gate-mtn" className="section__bg-element" src="/website/images/homepage/stories/mountain-with-gate.png" alt="Mountain with a gate" />
+                    <section id="story" className="section">
+                        <img id="sand-mtn" className="section__bg-element desktop-only" src="/website/images/homepage/stories/sand-mountain.png" alt="Mountain" />
+                        <img id="gate-mtn" className="section__bg-element" src="/website/images/homepage/stories/mountain-with-gate.png" alt="Mountain with a gate" />
 
-                    <div className="section__wrapper">
-                        <div className="section-main section-main--center blur-container">
-                            <p className="section-main__mini-title">Otaku's Agree</p>
-                            <h2 className="section-main__main-title">Arcadia Is a Must For Fanatics</h2>
-                        </div>
-                        <div className="section-content">
-                            <FadeIn id="jamal" direction="right" delay={.1}>
-                                <div className="card">
-                                    <img className="card__image" src="/website/images/homepage/stories/jamal-williams.jpg" alt="Jamal Williams" />
-                                    <div className="card__text">
-                                        <p className="name">Jamal Williams</p>
-                                        <p className="job">NFL Running Back</p>
-                                        <p>Look, I don’t just like anime—I live it. If I’m not on the field, I’m grinding through One Piece, rewatching Naruto, or catching up on the latest heat. And Arcadia? Man, this is like the ultimate training ground for otaku. Everything you need—tracking, merch, community—all in one place? That’s straight-up elite!"</p>
-                                        <p>"Most places just don’t get it. But Arcadia is built different—built by real fans, for real fans. Whether you’re arguing over the best anime arcs, supporting indie creators, or just looking for a crew that gets your passion, this is the spot. No fillers, just pure fire. Believe it!</p>
+                        <div className="section__wrapper">
+                            <div className="section-main section-main--center">
+                                <p className="section-main__mini-title">Otaku's Agree</p>
+                                <h2 className="section-main__main-title">Arcadia Is a Must For Fanatics</h2>
+                                <p>Names used here are purely fictional for Arcadia/D2X world building. These people do not sponsor or endorse Arcadia.</p>
+                            </div>
+                            <div className="section-content">
+                                <FadeIn id="jamal" direction="right" delay={.1}>
+                                    <div className="card">
+                                        <img className="card__image" src="/website/images/homepage/stories/jamal-williams.jpg" alt="Jamal Williams" />
+                                        <div className="card__text">
+                                            <p className="name">Jamal Williams</p>
+                                            <p className="job">NFL Running Back</p>
+                                            <p>Look, I don’t just like anime—I live it. If I’m not on the field, I’m grinding through One Piece, rewatching Naruto, or catching up on the latest heat. And Arcadia? Man, this is like the ultimate training ground for otaku. Everything you need—tracking, merch, community—all in one place? That’s straight-up elite!"</p>
+                                            <p>"Most places just don’t get it. But Arcadia is built different—built by real fans, for real fans. Whether you’re arguing over the best anime arcs, supporting indie creators, or just looking for a crew that gets your passion, this is the spot. No fillers, just pure fire. Believe it!</p>
+                                        </div>
                                     </div>
+                                </FadeIn>
+                                <div className="col">
+                                    <FadeIn direction="down" delay={.1}>
+                                        <div className="card">
+                                            <img className="card__image" src="/website/images/homepage/stories/snoop.jpg" alt="Snoop Dog" />
+                                            <div className="card__text">
+                                                <p className="name">Snoop Dog</p>
+                                                <p className="job">Rapper</p>
+                                                <p>Man, Arcadia got that real anime energy. If you ain’t on Arcadia yet, you slippin’.</p>
+                                            </div>
+                                        </div>
+                                    </FadeIn>
+                                    <FadeIn direction="up" delay={.1}>
+                                        <div className="card">
+                                            <img className="card__image" src="/website/images/homepage/stories/keanu.webp" alt="Keanu Reaves" />
+                                            <div className="card__text">
+                                                <p className="name">Keanu Reaves</p>
+                                                <p className="job">Actor</p>
+                                                <p>I’ve been a fan of anime for years, and Arcadia feels like the ultimate place for fans. Whether you’re into classics or discovering new gems, this platform has something for everyone.</p>
+                                            </div>
+                                        </div>
+                                    </FadeIn>
                                 </div>
-                            </FadeIn>
-                            <div className="col">
-                                <FadeIn direction="down" delay={.1}>
-                                    <div className="card">
-                                        <img className="card__image" src="/website/images/homepage/stories/snoop.jpg" alt="Snoop Dog" />
-                                        <div className="card__text">
-                                            <p className="name">Snoop Dog</p>
-                                            <p className="job">Rapper</p>
-                                            <p>Man, Arcadia got that real anime energy. If you ain’t on Arcadia yet, you slippin’.</p>
+                                <div className="col">
+                                    <FadeIn direction="left" delay={.1}>
+                                        <div className="card">
+                                            <img className="card__image" src="/website/images/homepage/stories/ariana.jpg" alt="Ariana Grande" />
+                                            <div className="card__text">
+                                                <p className="name">Ariana Grande</p>
+                                                <p className="job">Singer</p>
+                                                <p>I’ve been obsessed with anime forever, and Arcadia is like a dream come true for fans. Whether you’re binging old favorites or finding new series to fall in love with, it’s all here. </p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </FadeIn>
-                                <FadeIn direction="up" delay={.1}>
-                                    <div className="card">
-                                        <img className="card__image" src="/website/images/homepage/stories/keanu.webp" alt="Keanu Reaves" />
-                                        <div className="card__text">
-                                            <p className="name">Keanu Reaves</p>
-                                            <p className="job">Actor</p>
-                                            <p>I’ve been a fan of anime for years, and Arcadia feels like the ultimate place for fans. Whether you’re into classics or discovering new gems, this platform has something for everyone.</p>
+                                    </FadeIn>
+                                    <FadeIn direction="left" delay={.2}>
+                                        <div className="card">
+                                            <img className="card__image" src="/website/images/homepage/stories/fox.png" alt="DeAaron Fox" />
+                                            <div className="card__text">
+                                                <p className="name">DeAaron Fox</p>
+                                                <p className="job">NBA Point Guard</p>
+                                                <p>Just like in basketball, it’s all about having the right squad—Arcadia is that squad for anime fans.</p>
+                                            </div>
                                         </div>
-                                    </div>
-                                </FadeIn>
-                            </div>
-                            <div className="col">
-                                <FadeIn direction="left" delay={.1}>
-                                    <div className="card">
-                                        <img className="card__image" src="/website/images/homepage/stories/ariana.jpg" alt="Ariana Grande" />
-                                        <div className="card__text">
-                                            <p className="name">Ariana Grande</p>
-                                            <p className="job">Singer</p>
-                                            <p>I’ve been obsessed with anime forever, and Arcadia is like a dream come true for fans. Whether you’re binging old favorites or finding new series to fall in love with, it’s all here. </p>
-                                        </div>
-                                    </div>
-                                </FadeIn>
-                                <FadeIn direction="left" delay={.2}>
-                                    <div className="card">
-                                        <img className="card__image" src="/website/images/homepage/stories/fox.png" alt="DeAaron Fox" />
-                                        <div className="card__text">
-                                            <p className="name">DeAaron Fox</p>
-                                            <p className="job">NBA Point Guard</p>
-                                            <p>Just like in basketball, it’s all about having the right squad—Arcadia is that squad for anime fans.</p>
-                                        </div>
-                                    </div>
-                                </FadeIn>
+                                    </FadeIn>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                </div>
 
                 <section id="d2x" className="section">
                     <p id="double" className="section__bg-element vertical-text desktop-only">DOUBLE</p>
@@ -741,5 +721,37 @@ export default function Homepage() {
 
                 <Script src="/website/js/homepage.js" />
             </div>
+    )
+}
+
+function AppTile(
+    { app, japanese, slogan, imgLink, imgAlt, orientation, order, textWhite=false } : {
+        app: string,
+        japanese: string,
+        slogan: string,
+        imgLink: string,
+        imgAlt: string,
+        orientation: 'vertical' | 'horizontal',
+        order: 'image-first' | 'text-first'
+        textWhite?: boolean
+    }
+) {
+    return  (
+        <Link href={`/apps/${app}`}>
+            <div id={`${app}`} className={`app-card app-card--${orientation} app-card--${order} bg-${app}-base`}>
+                <div className="app-card__image">
+                    <Image 
+                        fill 
+                        src={imgLink} 
+                        alt={imgAlt} 
+                    />
+                </div>
+                <div className={`app-card__text ${textWhite && "clr-txt-light"}`}>
+                    <p className="japanese">{japanese}</p>
+                    <h3 className="name">{app}</h3>
+                    <p className="slogan">{slogan}</p>
+                </div>
+            </div>
+        </Link>
     )
 }

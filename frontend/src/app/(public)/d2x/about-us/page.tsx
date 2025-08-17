@@ -224,6 +224,7 @@ export default function AboutD2X() {
                                     <p className="section-main__mini-title">Building Together</p>
                                     <h2 className="section-main__main-title">Power-Ups Through Partnerships</h2>
                                     <p>At Team Double Dragon (D2X), we believe that great things are never built alone. Arcadia exists today not just because of our vision, but because of the incredible partnerships we've forged along the way. With their help, we’ve been able to create a platform that truly serves the anime, manga, and gaming communities.</p>
+                                    <p><b>Names used here are purely fictional for Arcadia/D2X world building. These companies do not sponsor or endorse Arcadia.</b></p>
                                 </div>
                             </div>
                         </div>

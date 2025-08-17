@@ -1,4 +1,4 @@
-import { teamMember, leadership, appLeads, dev, design, finance, rnd, devops, leadershipSpecial } from "@/data/team";
+import { teamMember, leadership, appLeads, dev, design, finance, rnd, devops, leadershipSpecial, marketing } from "@/data/team";
 
 import "@/styles/public/pages/d2x/team.scss";
 import { Tooltip } from "@mui/material";
@@ -76,42 +76,25 @@ export default function Team() {
                 <section className="section" id="platform">
                     <div className="section__wrapper">
                         <div className="section-main section-main--center">
-                            <h2>Platform</h2>
+                            <h2>Tech Team</h2>
                         </div>
-                        <div className="section-content two-col">
-                            <div className="left-col">
-                                <h3>Dev</h3>
-                                <div className="col-container">
-                                {
-                                    dev.map(member => (
-                                        <MemberCard 
-                                            key={member.firstName} 
-                                            member={member}
-                                            division="platform" 
-                                            isWhite={false}
-                                        />
-                                    ))
-                                }
-                                </div>
-                            </div>
-                            <div className="right-col">
-                                <h3>UX / UI</h3>
-                                <div className="col-container">
-                                {
-                                    design.map(member => (
-                                        <MemberCard 
-                                            key={member.firstName} 
-                                            member={member}
-                                            division="design" 
-                                            isWhite={false}
-                                        />
-                                    ))
-                                }
-                                </div>
+                        <div className="section-content">
+                            <h3>Platform / Dev Team</h3>
+                            <div className="full-width">
+                            {
+                                dev.map(member => (
+                                    <MemberCard 
+                                        key={member.firstName} 
+                                        member={member}
+                                        division="platform" 
+                                        isWhite={false}
+                                    />
+                                ))
+                            }
                             </div>
                         </div>             
                         <div className="section-content" id="dev-ops">
-                            <h3>Dev Ops</h3>
+                            <h3>Dev Ops / Cybersecurity</h3>
                             <div className="full-width">
                             {
                                 devops.map(member => (
@@ -127,7 +110,46 @@ export default function Team() {
                         </div>
                     </div>
                 </section>
+                <section id="design" className="section">
+                    <div className="section__wrapper">
+                        <div className="section-main section-main--center">
+                            <h2>Design Team</h2>
+                        </div>
+                        <div className="section-content full-width">
+                            {
+                                design.map(member => (
+                                    <MemberCard 
+                                        key={member.firstName} 
+                                        member={member}
+                                        division="design" 
+                                        isWhite={false}
+                                    />
+                                ))
+                            }
+                        </div>
+                    </div>
+                </section>
             </div>
+
+            <section className="section" id="marketing">
+                <div className="section__wrapper">
+                    <div className="section-main section-main--center">
+                        <h2>Marketing / PR</h2>
+                    </div>
+                    <div className="section-content full-width">
+                        {
+                            marketing.map(member => (
+                                <MemberCard 
+                                    key={member.firstName} 
+                                    member={member}
+                                    division="marketing" 
+                                    isWhite={false}
+                                />
+                            ))
+                        }
+                    </div>
+                </div>
+            </section>
 
             <div id="finance-rnd">
                 <section className="section" id="finance">

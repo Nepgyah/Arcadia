@@ -1,0 +1,140 @@
+@use '../../../abstract/variables' as *;
+
+#page-apps-todokeru {
+
+    .hero {
+        background: linear-gradient(to bottom, #59304d, #2F324b);
+
+        #ribbon {
+            width: 100%;
+            bottom: 15%;
+        }
+        #hero-main {
+            background-color: #971868;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+
+            .hero__text {
+                padding: 1.5rem;
+            }
+
+            #hero-images {
+                position: relative;
+                width: 100%;
+                min-height: 300px;
+
+                img {
+                    height: 300px;
+                    position: absolute;
+                }
+
+                #ai-hoshino {
+                    bottom: -10%;
+                    z-index: 3;
+                }
+
+                #toyama-kasumi {
+                    left: 20%;
+                    bottom: -10%;
+                    z-index: 2;
+                }
+
+                #sakurako { 
+                    right: -20%;
+                    bottom: 0%;
+                    z-index: 3;
+                }
+            }
+        }
+
+        #content-creators {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+
+            .cc-box {
+                overflow: hidden;
+                background: #650E44;
+                display: flex;
+                flex-direction: column;
+                height: 290px;
+
+                &__text {
+                    padding: 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    row-gap: 1rem;
+                    justify-content: flex-end;
+                    height: 50%;
+
+                    p {
+                        color: white;
+                        font-weight: bold;
+                    }
+                    
+                    button {
+                        border-color: white;
+                        color: white;
+                    }
+                }
+
+                &__image {
+                    height: 50%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    #page-apps-todokeru {
+        .hero {
+            background: linear-gradient(to bottom, #59304d, #2F324b);
+
+            #hero-main {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 2rem;
+
+                #hero-images {
+                    img { height: 100%; }
+
+                    #toyama-kasumi {
+                        left: 50%;
+                        bottom: -10%;
+                        transform: translateX(-50%);
+                        z-index: 2;
+                    }
+
+                    #sakurako { 
+                        right: 0%;
+                    }
+                }
+            }
+
+            #content-creators {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+
+                .cc-box {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    height: 200px;
+
+                    &__text {
+                        height: inherit;
+                    }
+
+                    &__image {
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -4,6 +4,7 @@ import { Button, Menu, MenuItem } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import AppIcon from "../appIcon";
+import { D2XUrls, PrimaryAppUrls, ResourceUrls, SecondaryAppUrls } from "@/data/publicWebsiteUrls";
 
 type openDropdownType = 'primary' | 'secondary' | 'd2x' | 'resource' | 'none';
 
@@ -60,18 +61,24 @@ export default function DesktopHeader() {
                         disableScrollLock
                     >
                         <div className="primary">
-                            <MenuItem onClick={() => handleClick('/apps/miru', setIsSolutionsOpen)}><AppIcon app="miru" /><p>Miru</p></MenuItem>
-                            <MenuItem onClick={() => handleClick('/apps/yomu', setIsSolutionsOpen)}><AppIcon app="yomu" /><p>Yomu</p></MenuItem>
-                            <MenuItem onClick={() => handleClick('/apps/asobu', setIsSolutionsOpen)}><AppIcon app="asobu" /><p>Asobu</p></MenuItem>
-                            <MenuItem onClick={() => handleClick('/apps/kau', setIsSolutionsOpen)}><AppIcon app="kau" /><p>Kau</p></MenuItem>
-                            <MenuItem onClick={() => handleClick('/apps/tsunagu', setIsSolutionsOpen)}><AppIcon app="tsunagu" /><p>Tsunagu</p></MenuItem>
+                            {
+                                PrimaryAppUrls.map((url) => (
+                                    <MenuItem key={url.name} onClick={() => handleClick(url.path, setIsSolutionsOpen)}>
+                                        <AppIcon app={url.name} />
+                                        <p>{url.name}</p>
+                                    </MenuItem>
+                                ))
+                            }
                         </div>
                         <div className="secondary">
-                            <MenuItem onClick={() => handleClick('/apps/iku', setIsSolutionsOpen)}><AppIcon app="iku" /><p>Iku</p></MenuItem>
-                            <MenuItem onClick={() => handleClick('/apps/hiku', setIsSolutionsOpen)}><AppIcon app="hiku" /><p>Hiku</p></MenuItem>
-                            <MenuItem onClick={() => handleClick('/apps/shiru', setIsSolutionsOpen)}><AppIcon app="shiru" /><p>Shiru</p></MenuItem>
-                            <MenuItem onClick={() => handleClick('/apps/kumitateru', setIsSolutionsOpen)}><AppIcon app="kumitateru" /><p>Kumitateru</p></MenuItem>
-                            <MenuItem onClick={() => handleClick('/apps/kiku', setIsSolutionsOpen)}><AppIcon app="kiku" /><p>Kiku</p></MenuItem>
+                            {
+                                SecondaryAppUrls.map((url) => (
+                                    <MenuItem key={url.name} onClick={() => handleClick(url.path, setIsSolutionsOpen)}>
+                                        <AppIcon app={url.name} />
+                                        <p>{url.name}</p>
+                                    </MenuItem>
+                                ))
+                            }
                         </div>
                     </Menu>
                 </div>
@@ -91,9 +98,11 @@ export default function DesktopHeader() {
                         onClose={() => setIsD2XOpen(false)}
                         disableScrollLock
                     >
-                        <MenuItem onClick={() => handleClick('/d2x/about-us', setIsD2XOpen)}>About Us</MenuItem>
-                        <MenuItem onClick={() => handleClick('/d2x/team', setIsD2XOpen)}>Team</MenuItem>
-                        <MenuItem onClick={() => handleClick('/d2x/careers', setIsD2XOpen)}>Careers</MenuItem>
+                        {
+                            D2XUrls.map((url) => (
+                                <MenuItem key={url.name} onClick={() => handleClick(url.path, setIsD2XOpen)}>{url.name}</MenuItem>
+                            ))
+                        }
                     </Menu>
                 </div>
                 <div>
@@ -112,8 +121,11 @@ export default function DesktopHeader() {
                         onClose={() => setsIsResourceOpen(false)}
                         disableScrollLock
                     >
-                        <MenuItem onClick={() => handleClick('/resource/case-study', setsIsResourceOpen)}>Case Study</MenuItem>
-                        <MenuItem onClick={() => handleClick('/resource/faq', setsIsResourceOpen)}>FAQ</MenuItem>
+                        {
+                            ResourceUrls.map((url) => (
+                                <MenuItem onClick={() => handleClick(url.path, setsIsResourceOpen)}>{url.name}</MenuItem>
+                            ))
+                        }
                     </Menu>
                 </div>
             </div>

@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="footer__left-col">
             <div className="summary">
               <img src="/global/logo_white.svg" alt="Arcadia Logo" />
-              <p>Arcadia is a pretend platform created by a passion for web development. Thanks for stopping by!</p>
+              <p>Arcadia is a pretend platform created by a passion for web development. Thanks for stopping by! *Non company logos are either of license free or ai-generated.</p>
             </div>
             <HealthCheck />
           </div>

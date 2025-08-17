@@ -1,0 +1,89 @@
+@use "../../abstract/variables" as *;
+
+#page-not-found {
+    background-color: map-get($arcadia-colors , arc-base-dark );
+    overflow-y: hidden;
+
+    .section {
+        
+        #yuuka {
+            z-index: 1;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        #angled {
+            background-color: map-get($arcadia-colors , arc-base-dark );
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+        }
+
+        &__wrapper {
+            min-height: 80dvh;
+        }
+    }
+}
+
+#page-construction {
+    background-color: map-get($arcadia-colors , arc-base-dark );
+    overflow-y: hidden;
+
+    .section {
+        #angled {
+            background-color: map-get($arcadia-colors , arc-base-dark );
+            height: 100%;
+            width: 100%;
+            z-index: 2;
+        }
+        &__wrapper {
+            min-height: 80dvh;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    #page-not-found {
+
+        .section {
+            padding: 0;
+
+            #angled {
+                clip-path: polygon(40% 0, 100% 0, 100% 100%, 50% 100%);
+            }
+            .section__wrapper {
+                display: grid;
+                grid-template-columns: 60% 40%;
+
+                .section-main {
+                    justify-content: center;
+                }
+            }
+        }
+    }
+
+    #page-construction {
+
+        .section {
+            padding: 0;
+
+            #angled {
+                clip-path: polygon(0 0, 40% 0, 50% 100%, 0% 100%);
+            }
+
+            #minori {
+                right: 0;
+                height: 100%;
+            }
+            .section__wrapper {
+                display: grid;
+                grid-template-columns: 40% 60%;
+
+                .section-main {
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}

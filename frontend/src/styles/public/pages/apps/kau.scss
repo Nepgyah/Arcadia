@@ -30,7 +30,7 @@
                 border-radius: 12px;
                 width: 150px;
                 height: 150px;
-                background-color: $arcadia-primary-one;
+                background-color: map-get($arcadia-colors, arc-base );
                 overflow: hidden;
 
                 img {
@@ -53,7 +53,7 @@
                 justify-content: space-around;
             }
             .MuiButtonBase-root {
-                background-color: $arcadia-primary-one;
+                background-color: map-get($arcadia-colors, arc-base );
                 
                 color: white;
             }

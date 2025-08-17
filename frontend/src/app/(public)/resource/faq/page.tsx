@@ -18,16 +18,16 @@ export default function PageFAQ() {
                             <div className="question-group">
                                 <h3>General</h3>
                                 {
-                                    General.map((qa: QA, index: Number) => (
-                                        <FAQAccordion question={qa.question} answer={qa.answer} />
+                                    General.map((qa: QA, index: any) => (
+                                        <FAQAccordion key={index} question={qa.question} answer={qa.answer} />
                                     ))
                                 }
                             </div>
                             <div className="question-group">
                                 <h3>Account</h3>
                                 {
-                                    Account.map((qa: QA, index: Number) => (
-                                        <FAQAccordion question={qa.question} answer={qa.answer} />
+                                    Account.map((qa: QA, index: any) => (
+                                        <FAQAccordion key={index} question={qa.question} answer={qa.answer} />
                                     ))
                                 }
                             </div>
@@ -41,7 +41,7 @@ export default function PageFAQ() {
 
 function FAQAccordion(faq: QA) {
     return (
-        <Accordion className="arc-accordion">
+        <Accordion className="arc-accordion" key={faq.key}>
           <AccordionSummary
             expandIcon={<ExpandMore />}
             aria-label="Expand"

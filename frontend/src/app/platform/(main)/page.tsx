@@ -32,6 +32,9 @@ export default function HomeDashboard() {
                             <AppIcon app='kumitateru' />
                             <AppIcon app='shiru' />
                             <AppIcon app='kiku' />
+                            <AppIcon app='todokeru' />
+                            <AppIcon app='manabu' />
+                            <AppIcon app='sagasu' />
                         </div>
                     </div>
                 </div>
@@ -87,7 +90,10 @@ type app =
     'hiku' | 
     'kiku' |
     'kumitateru' |
-    'shiru'
+    'shiru' |
+    'manabu' |
+    'todokeru' |
+    'sagasu'
 
 function AppIcon({ app } : { app: app}) {
     const router = useRouter();

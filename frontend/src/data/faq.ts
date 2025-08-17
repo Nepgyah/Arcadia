@@ -1,6 +1,7 @@
 export interface QA {
     question: string,
-    answer: string
+    answer: string,
+    key?: string
 }
 
 export const General: QA[] = [

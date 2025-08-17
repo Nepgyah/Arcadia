@@ -38,7 +38,7 @@
                     color: white;
 
                     span {
-                        color: $tsunagu-primary;
+                        color: map-get($arcadia-colors, tsunagu-base )
                     }
                 }
             }

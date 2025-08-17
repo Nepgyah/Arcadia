@@ -2,20 +2,24 @@
 
 #page-homepage {
 
-    .app-tile {
+    .app-card {
         border-radius: 10px;
         box-shadow: $box-shadow-default;
         display: flex;
         overflow: hidden;
         transition: transform .2s ease-in-out;
 
-        &:hover {
-            transform: scale(1.05);
-        }
-        &--vertical {
-            flex-direction: column;
-        }
+        &:hover { transform: scale(1.05); }
 
+        &--vertical { flex-direction: column; }
+        &--text-first {
+            .app-card__image {
+                order: 2;
+            }
+            .app-card__text {
+                order: 1;
+            }
+        }
         &__image {
             overflow: hidden;
             position: relative;
@@ -28,166 +32,91 @@
         }
 
         &__text {
-            padding: 1.5rem;
+            padding: 1rem;
             position: relative;
 
             .japanese {
                 position: absolute;
                 bottom: 5%;
                 right: 5%;
-                font-size: 48px;
+                font-size: 2rem;
                 opacity: .2;
             }
 
             .name {
                 font-size: 1.5rem;
+                text-transform: capitalize;
             }
         }
 
         &#miru {
             height: 360px;
-
-            .app-tile__image, .app-tile__text {
-                height: 50%;
-            }
+            .app-card__image, .app-card__text { height: 50%; }
         }
 
         &#yomu {
-            height: 450px;
+            height: 260px;
 
-            .app-tile__image {
-                height: 65%;
-            }
-
-            .app-tile__text {
-                height: 35%;
-            }
+            .app-card__image { width: 40%; }
+            .app-card__text { width: 60%; }
         }
 
         &#kau {
-            height: 450px;
-            flex-direction: column-reverse;
-
-            .app-tile__image {
-                height: 60%;
-            }
-
-            .app-tile__text {
-                height: 40%;
-            }
+            height: 220px;
+            .app-card__image { width: 55%; }
+            .app-card__text { width: 45%; }
         }
 
         &#asobu {
-            height: 300px;
-            flex-direction: column-reverse;
+            height: 220px;
             
-            .app-tile__image {
-                height: 45%;
-            }
-
-            .app-tile__text {
-                height: 55%;
-            }
+            .app-card__image { width: 45%; }
+            .app-card__text { width: 55%; }
         }
 
         &#tsunagu {
-            height: 350px;
-            flex-direction: row;
-            
-            .app-tile__image {
-                width: 55%;
-            }
-
-            .app-tile__text {
-                width: 45%;
-            }
+            height: 260px;
+            .app-card__image {width: 40%;}
+            .app-card__text { width: 60%; }
         }
 
-        &#iku {
-            height: 343px;
-
-            .app-tile__image {
-                width: 55%;
-            }
-
-            .app-tile__text {
-                width: 45%;
-                color: white;
-            }
-        }
-
-        &#hiku {
-            height: 300px;
-
-            .app-tile__image {
-                width: 50%;
-            }
-
-            .app-tile__text {
-                width: 50%;
-            }
-        }
-
-        &#todokeru {
-            height: 250px;
-            flex-direction: row;
-            
-            .app-tile__image {
-                width: 55%;
-            }
-
-            .app-tile__text {
-                width: 45%;
-                color: white;
-            }
-        }
-
-        &#shiru {
+        &#kiku, &#todokeru {
             height: 220px;
+            
+            .app-card__image { width: 55%; }
+            .app-card__text {width: 45%; }
+        }
 
-            .app-tile__image {
-                width: 40%;
-            }
+        &#hiku, &#sagasu {
+            height: 200px;
 
-            .app-tile__text {
-                width: 60%;
-            }
+            .app-card__image { width: 50%; }
+            .app-card__text { width: 50%; }
         }
 
         &#kumitateru {
-            height: 220px;
-            
-            .app-tile__image {
-                width: 35%;
-            }
+            height: 300px;
 
-            .app-tile__text {
-                width: 65%;
-            }
+            .app-card__text { height: 50%; }
+            .app-card__image { height: 50%; }
         }
 
-        &#kiku {
-            height: 220px;
-            
-            .app-tile__image {
-                width: 50%;
-            }
-
-            .app-tile__text {
-                width: 50%;
-            }
+        &#iku {
+            height: 300px;
+            .app-card__text { height: 60%; }
+            .app-card__image { height: 40%; }
         }
+
+        &#shiru {
+            height: 275px;
+            .app-card__text { height: 45%; }
+            .app-card__image { height: 55%; }
+        }
+
         &#manabu {
-            height: 205px;
-            
-            .app-tile__image {
-                width: 45%;
-            }
-
-            .app-tile__text {
-                width: 55%;
-                color: white;
-            }
+            height: 275px;
+            .app-card__text { height: 50%; }
+            .app-card__image { height: 50%; }
         }
     }
 
@@ -599,15 +528,14 @@
         }
         #secondary-app {
 
-            .app-container {
-
-                .left-col {
-                    display: flex;
-                    flex-direction: column;
-                    row-gap: 1.5rem;
+            #entertainment-hub, #utility-hub, #knowledge-hub {
+                .hub-name { 
+                    text-align: center; 
                     margin-bottom: 1.5rem;
+                    color: map-get($arcadia-colors, arc-base );
                 }
-                .right-col {
+
+                >div {
                     display: flex;
                     flex-direction: column;
                     row-gap: 1.5rem;
@@ -628,6 +556,14 @@
                 margin: auto;
             }
         }
+    }
+
+    #roadmap-story {
+        position: relative;
+        #branch {
+            right: 0;
+            top: 10px;
+        }
 
         #roadmap {
 
@@ -636,84 +572,71 @@
                 row-gap: 1rem;
                 
                 .goal {
-                    background-color: rgba(white, .7);
+                    background-color: map-get($arcadia-colors , arc-base-dark );
                     padding: 1.5rem;
                     -webkit-backdrop-filter: blur(5px);
                     backdrop-filter: blur(5px);
                     border-radius: 15px;
                     box-shadow: $box-shadow-default;
                     height: 100%;
-                    
+                    color: white;
+
                     h3 {
                         margin-bottom: 1.5rem;
                     }
                 }
             }
         }
-    }
 
-    #stories {
+        #story {
+            .card {
+                background-color: map-get($arcadia-colors, arc-base );
+                border-radius: 15px;
+                overflow: hidden;
+                box-shadow: $box-shadow-default;
 
-        .section-main {
-            background-color: rgba(map-get($arcadia-colors , arc-base-dark ), .8);
-            color: white;
-
-            &__main-title {
-                color: white;
-            }
-        }
-        .card {
-            background-color: map-get($arcadia-colors, arc-base );
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: $box-shadow-default;
-
-            &__image {
-                height: 150px;
-                width: 100%;
-                object-fit: cover;
-            }
-
-            &__text {
-                padding: 1rem;
-                color: white;
-
-                .name {
-                    font-weight: bold;
-                    font-size: 2rem;
-                    margin-bottom: 0;
+                &__image {
+                    height: 150px;
+                    width: 100%;
+                    object-fit: cover;
                 }
 
-                .job {
-                    font-size: .75rem;
-                    margin-bottom: 1rem;
+                &__text {
+                    padding: 1rem;
+                    color: white;
+
+                    .name {
+                        font-weight: bold;
+                        font-size: 2rem;
+                        margin-bottom: 0;
+                    }
+
+                    .job {
+                        font-size: .75rem;
+                        margin-bottom: 1rem;
+                    }
                 }
             }
-        }
 
-        #branch {
-            right: 0;
-            top: 10px;
-        }
+            #sand-mtn {
+                bottom: 0;
+                left: 0;
+            }
 
-        #sand-mtn {
-            bottom: 0;
-            left: 0;
-        }
+            #gate-mtn {
+                right: 0;
+                bottom: 0;
+            }
 
-        #gate-mtn {
-            right: 0;
-            bottom: 0;
-        }
+            .section-content {
+                display: flex;
+                flex-direction: column;
+                row-gap: 1rem;
 
-        .section-content {
-            display: flex;
-            flex-direction: column;
-            row-gap: 1rem;
-
-            .col {
-                >div {
-                    margin-bottom: 1rem;
+                .col {
+                    >div {
+                        margin-bottom: 1rem;
+                    }
                 }
             }
         }
@@ -782,60 +705,13 @@
 @media only screen and (min-width: 768px) {
 
     #page-homepage {
-        .app-tile {
-
-            &#miru {
-                height: 350px;
-
-                .app-tile__image, .app-tile__text {
-                    height: 50%;
-                }
-            }
-
-            &#yomu {
-                height: 350px;
-
-                .app-tile__image {
-                    height: 50%;
-                }
-
-                .app-tile__text {
-                    height: 50%;
-                }
-            }
-
-            &#kau {
-                height: 250px;
-                flex-direction: row-reverse;
-
-                .app-tile__image {
-                    height: 100%;
-                    width: 40%;
-                }
-
-                .app-tile__text {
-                    height: 100%;
-                    width: 60%;
-                }
-            }
-
-            &#asobu {
-                height: 250px;
-                flex-direction: row;
+        .app-card {
+            &__text {
+                padding: 1.5rem;
                 
-                .app-tile__image {
-                    height: 100%;
-                    width: 45%;
+                .name {
+                    font-size: 2rem;
                 }
-
-                .app-tile__text {
-                    height: 100%;
-                    width: 55%;
-                }
-            }
-
-            &#tsunagu {
-                height: 350px;
             }
         }
 
@@ -1070,34 +946,39 @@
 
             #secondary-app {
 
-                .app-container {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    column-gap: 1.5rem;
+                #entertainment-hub {
+                    >div {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        column-gap: 1.5rem;
+                    }
+                }
 
-                    .left-col {
-                        margin-bottom: 0;
+                #utility-hub, #knowledge-hub {
+                    >div {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr;
+                        column-gap: 1.5rem;
 
-                        > div {
-                            flex-grow: 1;
+                        .app-card {
+                            height: 350px;
                         }
                     }
                 }
             }
 
             #middle-cta {
-                padding: 10rem 0;
+                text-align: center;
             }
+        }
+
+        #roadmap-story {
 
             #roadmap {
                 .goals {
                     grid-template-columns: repeat(5, 1fr);
 
                     .goal {
-                        // background-color: rgba($color: #000000, $alpha: 0);
-                        // -webkit-backdrop-filter: none;
-                        // backdrop-filter: none;
-
                         h3 {
                             margin-bottom: 1.5rem;
                         }
@@ -1116,26 +997,26 @@
                     }
                 }
             }
-        }
+            
+            #story {
+                .section-content {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    column-gap: 1.5rem;
 
-        #stories {
-            .section-content {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                column-gap: 1.5rem;
-
-                #jamal {
-                    .card {
-                        height: 100%;
+                    #jamal {
+                        .card {
+                            height: 100%;
+                        }
                     }
-                }
 
-                .col {
-                    >div {
-                        margin-bottom: 0;
+                    .col {
+                        >div {
+                            margin-bottom: 0;
 
-                        &:first-of-type {
-                            margin-bottom: 1rem;
+                            &:first-of-type {
+                                margin-bottom: 1rem;
+                            }
                         }
                     }
                 }
