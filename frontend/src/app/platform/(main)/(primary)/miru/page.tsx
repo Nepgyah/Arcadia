@@ -24,13 +24,14 @@ export default function MiruHome() {
     return (
         <React.Fragment>
             <Breadcrumbs>
+                <Typography>Miru</Typography>
                 <Typography>Home</Typography>
             </Breadcrumbs>
             <div id="page-miru-home"  className="page-content page-content--two-col page-content--reversed">
                 <div className="page-content__left-column divider divider--vertical padding-right--lg">
                     <div id="seasonal">
                         <h2>Current Season</h2>
-                        <div className="flex-grid flex-grid--5">
+                        <div className="layout-grid-5">
                             {
                                 seasonalAnime &&
                                 seasonalAnime.map((anime: any, key: number) => (
@@ -47,7 +48,7 @@ export default function MiruHome() {
                     </div>
                     <div id="all-time">
                         <h2>All Time</h2>
-                        <div className="flex-grid flex-grid--5">
+                        <div className="layout-grid-5">
                             {
                                 topAnime &&
                                 topAnime.map((anime: any, key: number) => (

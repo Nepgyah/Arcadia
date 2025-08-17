@@ -110,7 +110,7 @@ export default function AnimeDetails() {
                     <div id="secondary">
                         <div id="related" className="divider divider--vertical padding-right--md">
                             <h2>Related Anime</h2>
-                            <div className="flex-grid flex-grid--2">
+                            <div className="layout-grid-2">
                                 <div id="previous" className="row-gap row-gap--xs divider divider--vertical padding-right--md">
                                     {
                                         anime?.previous_anime.length === 0 ?
