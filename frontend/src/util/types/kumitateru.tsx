@@ -36,9 +36,20 @@ export interface GPU extends Part {
 export interface Motherboard extends Part {
     socket_type: string,
     form_factor: string,
+    chipset: string,
     memory_type: string,
     memory_slots: number,
-    max_memory: number
+    max_memory: number,
+    pcie_x16_slots: number,
+    pcie_x1_slots: number,
+    m2_slots: number,
+    sata_slots: number,
+    usb_2_headers: number,
+    usb_3_headers: number,
+    does_support_raid: boolean,
+    does_support_ecc: boolean,
+    does_support_multi_gpu: boolean,
+    does_support_ethernet: boolean,
 }
 
 export interface RAM extends Part {

@@ -29,8 +29,8 @@ export default function PartDetailDialog(
             <DialogContent>
                 <div>
                     <div className="left row-gap row-gap--md">
-                        <h3>Summary</h3>
                         <div className="row-gap row-gap--xs">
+                            <h3>Summary</h3>
                             <InfoItem label="Manufacturer" value={entry?.manufacturer}/>
                             <InfoItem label="Color" value={entry?.color ? entry.color : 'N/A'} />
                             <InfoItem label="Msrp" value={entry?.msrp} unit="$" />
@@ -111,7 +111,7 @@ function GPUDetails({gpu} : {gpu: GPU}) {
             <div className="row-gap row-gap--xs">
                 <h3>Power</h3>
                 <InfoItem label="TDP" value={gpu.tdp} unit="Watts"/>
-                    <InfoItem label="Suggested PSU" value={gpu.suggested_psu} unit="Watts"/>
+                <InfoItem label="Suggested PSU" value={gpu.suggested_psu} unit="Watts"/>
             </div>
             <div className="row-gap row-gap--xs">
                 <h3>Miscellaneous</h3>
@@ -125,19 +125,43 @@ function GPUDetails({gpu} : {gpu: GPU}) {
 function MotherboardDetails({mobo} : {mobo: Motherboard}) {
     return (
         <>
-            <h3>Specification</h3>
-            <div className="layout-grid-2">
-                <div className="row-gap row-gap--xs">
-                    <InfoItem label="Form Factor" value={mobo.form_factor} />
-                    <InfoItem label="Socket" value={mobo.socket_type} />
-                </div>
-                <div className="row-gap row-gap--xs">
-                    <InfoItem label="Memory Type" value={mobo.memory_type} />
-                    <InfoItem label="Memory Slots" value={mobo.memory_slots} />
-                    <InfoItem label="Max Memory" value={mobo.max_memory} unit="GB" />
+            <div className="row-gap row-gap--xs">
+                <h3>Specification</h3>
+                <div className="layout-grid-2">
+                    <div className="row-gap row-gap--xs">
+                        <InfoItem label="Form Factor" value={mobo.form_factor} />
+                        <InfoItem label="Socket" value={mobo.socket_type} />
+                    </div>
+                    <div className="row-gap row-gap--xs">
+                        <InfoItem label="Memory Type" value={mobo.memory_type} />
+                        <InfoItem label="Memory Slots" value={mobo.memory_slots} />
+                        <InfoItem label="Max Memory" value={mobo.max_memory} unit="GB" />
+                    </div>
                 </div>
             </div>
-            <h3>Miscellaneous</h3>
+            <div className="row-gap row-gap--xs">
+                <h3>Connections</h3>
+                <div className="layout-grid-2">
+                    <div className="row-gap row-gap--xs">
+                        <InfoItem label="PCIE x16 Slots" value={mobo.pcie_x16_slots} />
+                        <InfoItem label="PCIE x1 Slots" value={mobo.pcie_x1_slots} />
+                        <InfoItem label="M.2 Slots" value={mobo.m2_slots} />
+                        <InfoItem label="SATA Ports" value={mobo.sata_slots} />
+                    </div>
+                    <div className="row-gap row-gap--xs">
+                        <InfoItem label="USB 2.X Headers" value={mobo.usb_2_headers} />
+                        <InfoItem label="USB 3.x Headers" value={mobo.usb_3_headers} />
+                    </div>
+                </div>
+                
+            </div>
+             <div className="row-gap row-gap--xs">
+                <h3>Support</h3>
+                <InfoItem label="RAID Support" value={mobo.does_support_raid ? 'Yes' : 'No'} />
+                <InfoItem label="Multi GPU Support" value={mobo.does_support_multi_gpu ? 'Yes' : 'No'} />
+                <InfoItem label="ECC Suport" value={mobo.does_support_ecc ? 'Yes' : 'No'} />
+                <InfoItem label="Ethernet Connection" value={mobo.does_support_ethernet ? 'Yes' : 'No'} />
+            </div>
         </>
     )
 }

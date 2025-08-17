@@ -61,7 +61,17 @@ class MotherboardSerializer(serializers.ModelSerializer):
             'form_factor',
             'memory_type',
             'memory_slots',
-            'max_memory'
+            'max_memory',
+            'pcie_x16_slots',
+            'pcie_x1_slots',
+            'm2_slots',
+            'sata_slots',
+            'usb_2_headers',
+            'usb_3_headers',
+            'does_support_raid',
+            'does_support_ecc',
+            'does_support_multi_gpu',
+            'does_support_ethernet',
         ]
 
     def get_form_factor(self, obj):
