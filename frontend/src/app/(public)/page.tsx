@@ -442,6 +442,7 @@ export default function Homepage() {
                                         imgAlt="Studying and listening to lofi"
                                         orientation="horizontal"
                                         order="text-first"
+                                        textWhite
                                     />
                                     <AppTile 
                                         app="todokeru"
@@ -476,7 +477,7 @@ export default function Homepage() {
                             </div>
                             <div className="section-content section-content--two-col">
                                 <div id="utility-hub">
-                                    <h3 className="hub-name">The Utility Hub</h3>
+                                    <h3 className="hub-name blur-container">The Utility Hub</h3>
                                     <div>
                                         <AppTile 
                                             app="kumitateru"
@@ -500,7 +501,7 @@ export default function Homepage() {
                                     </div>
                                 </div>
                                 <div id="knowledge-hub">
-                                    <h3 className="hub-name">The Knowledge Hub</h3>
+                                    <h3 className="hub-name blur-container">The Knowledge Hub</h3>
                                     <div>
                                         <AppTile 
                                             app="shiru"

@@ -55,27 +55,27 @@
         }
 
         &#yomu {
-            height: 300px;
+            height: 260px;
 
             .app-card__image { width: 40%; }
             .app-card__text { width: 60%; }
         }
 
         &#kau {
-            height: 240px;
+            height: 220px;
             .app-card__image { width: 55%; }
             .app-card__text { width: 45%; }
         }
 
         &#asobu {
-            height: 240px;
+            height: 220px;
             
             .app-card__image { width: 45%; }
             .app-card__text { width: 55%; }
         }
 
         &#tsunagu {
-            height: 300px;
+            height: 260px;
             .app-card__image {width: 40%;}
             .app-card__text { width: 60%; }
         }
@@ -705,60 +705,13 @@
 @media only screen and (min-width: 768px) {
 
     #page-homepage {
-        .app-tile {
-
-            &#miru {
-                height: 350px;
-
-                .app-tile__image, .app-tile__text {
-                    height: 50%;
-                }
-            }
-
-            &#yomu {
-                height: 350px;
-
-                .app-tile__image {
-                    height: 50%;
-                }
-
-                .app-tile__text {
-                    height: 50%;
-                }
-            }
-
-            &#kau {
-                height: 250px;
-                flex-direction: row-reverse;
-
-                .app-tile__image {
-                    height: 100%;
-                    width: 40%;
-                }
-
-                .app-tile__text {
-                    height: 100%;
-                    width: 60%;
-                }
-            }
-
-            &#asobu {
-                height: 250px;
-                flex-direction: row;
+        .app-card {
+            &__text {
+                padding: 1.5rem;
                 
-                .app-tile__image {
-                    height: 100%;
-                    width: 45%;
+                .name {
+                    font-size: 2rem;
                 }
-
-                .app-tile__text {
-                    height: 100%;
-                    width: 55%;
-                }
-            }
-
-            &#tsunagu {
-                height: 350px;
             }
         }
 
