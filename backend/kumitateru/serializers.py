@@ -106,7 +106,10 @@ class GPUSerializer(serializers.ModelSerializer):
             'length',
             'tdp',
             'suggested_psu',
-            'slot_width'
+            'slot_width',
+            'dvi_port_count',
+            'hdmi_port_count',
+            'dp_port_count'
         ]
     
     def get_manufacturer(self, obj):
@@ -160,14 +163,18 @@ class PSUSerializer(serializers.ModelSerializer):
             'length',
             'width',
             'height',
-            'connector_8_pin_count',
-            'connector_6_2_pin_count',
-            'connector_6_pin_count',
-            'connector_4_molex_count',
-            'connector_sata_count'
+            'connector_atx_24_pin_count',
+            'connector_eps_8_pin_count',
+            'connector_eps_4_pin_count',
+            'connector_pcie_6_pin_count',
+            'connector_pcie_6_2_pin_count',
+            'connector_pcie_8_pin_count',
+            'connector_12vhpwr_count',
+            'connector_sata_count',
+            'connector_molex_4_pin_count',
+            'connector_floppy_count',
         ]
 
-        
     def get_manufacturer(self, obj):
         if (obj.manufacturer):
             return obj.manufacturer.name

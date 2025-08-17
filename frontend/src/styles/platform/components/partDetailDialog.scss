@@ -16,6 +16,18 @@
         >div {
             display: grid;
             grid-template-columns: 1fr 3fr;
+            
+            .left {
+                padding-right: 1rem;
+                border-right: 1px solid rgba(#bbbbbb, .5);
+            }
+            .right {
+                padding-left: 1rem;
+            }
+            h3 {
+                color: map-get($arcadia-colors, kumitateru-base );
+                border-bottom: 1px solid rgba(#bbbbbb, .5);
+            }
         }
     }
 }

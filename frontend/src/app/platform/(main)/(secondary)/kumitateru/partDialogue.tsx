@@ -102,21 +102,25 @@ function GPUDetails({gpu} : {gpu: GPU}) {
                 <div className="row-gap row-gap--xs">
                     <InfoItem label="Core Clock" value={gpu.core_clock} unit="MHz"/>
                     <InfoItem label="Boost Clock" value={gpu.boost_clock} unit="MHz"/>
+
                 </div>
                 <div className="row-gap row-gap--xs">
                     <InfoItem label="VRAM" value={gpu.vram} unit="GB"/>
                     <InfoItem label="Memory Clock" value={gpu.memory_clock} unit="GB/s"/>
                 </div>
             </div>
-            <div className="row-gap row-gap--xs">
-                <h3>Power</h3>
-                <InfoItem label="TDP" value={gpu.tdp} unit="Watts"/>
-                <InfoItem label="Suggested PSU" value={gpu.suggested_psu} unit="Watts"/>
-            </div>
-            <div className="row-gap row-gap--xs">
-                <h3>Miscellaneous</h3>
-                <InfoItem label="Length" value={gpu.length} unit="mm"/>
-                <InfoItem label="Slot Width" value={gpu.slot_width} />
+            <div className="layout-grid-2">
+                <div className="row-gap row-gap--xs">
+                    <h3>Connection</h3>
+                    <InfoItem label="Display Ports" value={gpu.dp_port_count} />
+                    <InfoItem label="HDMI" value={gpu.hdmi_port_count} />
+                    <InfoItem label="DVI" value={gpu.dvi_port_count} />
+                </div>
+                <div className="row-gap row-gap--xs">
+                    <h3>Dimensions</h3>
+                    <InfoItem label="Length" value={gpu.length} unit="mm"/>
+                    <InfoItem label="Slot Width" value={gpu.slot_width} />
+                </div>
             </div>
         </>
     )
@@ -204,13 +208,18 @@ function PSUDetails({psu} : {psu: PSU}) {
                 <h3>Cables</h3>
                 <div className="layout-grid-2">
                     <div className="row-gap row-gap--xs">
-                        <InfoItem label="8 Pin Connectors" value={psu.connector_8_pin_count} />
-                        <InfoItem label="6 + 2 Pin Connectors" value={psu.connector_6_2_pin_count} />
-                        <InfoItem label="6 Pin Connectors" value={psu.connector_6_pin_count} />
+                        <InfoItem label="ATX 24 Pin" value={psu.connector_atx_24_pin_count ? '1' : '0'} />
+                        <InfoItem label="EPS 8 Pin" value={psu.connector_eps_8_pin_count} />
+                        <InfoItem label="EPS 4 Pin" value={psu.connector_eps_8_pin_count} />
+                        <InfoItem label="PCIE 6 Pin" value={psu.connector_pcie_6_pin_count} />
+                        <InfoItem label="PCIE 6 + 2 Pin" value={psu.connector_pcie_6_2_pin_count} />
+                        <InfoItem label="PCIE 8 Pin" value={psu.connector_pcie_8_pin_count} />
+                        <InfoItem label="12vhpwr" value={psu.connector_12vhpwr_count} />
                     </div>
                     <div className="row-gap row-gap--xs">
-                        <InfoItem label="Molex Connectors" value={psu.connector_4_molex_count} />
+                        <InfoItem label="Molex Connectors" value={psu.connector_molex_4_pin_count} />
                         <InfoItem label="Sata Connectors" value={psu.connector_sata_count} />
+                        <InfoItem label="Floppy Connectors" value={psu.connector_floppy_count} />
                     </div>
                 </div>
             </div>

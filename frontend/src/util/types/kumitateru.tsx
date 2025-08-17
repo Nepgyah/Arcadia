@@ -30,7 +30,10 @@ export interface GPU extends Part {
     length: number,
     tdp: number,
     suggested_psu: number,
-    slot_width: string
+    slot_width: string,
+    dvi_port_count: number,
+    hdmi_port_count: number,
+    dp_port_count: number
 }
 
 export interface Motherboard extends Part {
@@ -69,11 +72,16 @@ export interface PSU extends Part {
     length: number,
     width: number,
     height: number,
-    connector_8_pin_count: number,
-    connector_6_2_pin_count: number,
-    connector_6_pin_count: number,
-    connector_4_molex_count: number,
-    connector_sata_count: number
+    connector_atx_24_pin_count: boolean,
+    connector_eps_8_pin_count: number,
+    connector_eps_4_pin_count: number,
+    connector_pcie_6_pin_count: number,
+    connector_pcie_6_2_pin_count: number,
+    connector_pcie_8_pin_count: number,
+    connector_12vhpwr_count: number,
+    connector_sata_count: number,
+    connector_molex_4_pin_count: number,
+    connector_floppy_count: number,
 }
 
 export interface CPUCooler extends Part {

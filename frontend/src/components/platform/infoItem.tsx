@@ -9,7 +9,7 @@ export default function InfoItem(
 ) {
     return (
         <p className='info-item'>
-            <span className="label">{label}</span>: <span className="value">{value} {unit}</span>
+            <span className="label">{label}</span>: <span className="value">{value !== null ? value : 'N/A'} {value ? unit : ''}</span>
         </p>
     )
 }
