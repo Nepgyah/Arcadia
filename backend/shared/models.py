@@ -6,7 +6,7 @@ class Media(models.Model):
     title = models.CharField(max_length=255)
     score = models.FloatField(default=0.0)
     users = models.IntegerField(default=0)
-    slug = models.SlugField(blank=True)
+    slug = models.SlugField(unique=True, blank=True)
     summary=models.TextField(default='A synopsis will be written later')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
