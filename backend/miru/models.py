@@ -1,5 +1,5 @@
 from django.db import models
-from shared.models import Character, Company, Genre
+from shared.models import Character, Company, Genre, Media
 from django.utils.text import slugify
 
 class Season(models.Model):
@@ -16,7 +16,7 @@ class Season(models.Model):
     def __str__(self):
         return f"{self.get_season_display()} {self.year}"
     
-class Anime(models.Model):
+class Anime(Media):
 
     class MediaType(models.IntegerChoices):
         TV = 0, 'Tv'
@@ -36,12 +36,9 @@ class Anime(models.Model):
         PG_13 = 2, 'Teens 13 or older'
         R = 3, '17+ (Violence/Profanity)'
 
-    title=models.CharField(max_length=255, null=False, blank=False)
     title_ja=models.CharField(max_length=255, null=True, blank=True)
     title_romaji=models.CharField(max_length=255, null=True, blank=True)
     title_alternatives=models.JSONField(default=list, blank=True)
-    slug=models.SlugField(unique=True, null=False, blank=True)
-    summary=models.TextField(default='A synopsis will be written later', blank=True)
     season=models.ForeignKey(Season, on_delete=models.SET_NULL, null=True, blank=True)
     status=models.IntegerField(choices=Status.choices, default=Status.NOT_AIRED)
     
@@ -52,8 +49,6 @@ class Anime(models.Model):
     type=models.IntegerField(choices=MediaType.choices, default=MediaType.TV)
     studio=models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
     rating=models.IntegerField(choices=Rating.choices, default=Rating.G, blank=True)
-    score=models.FloatField(default=0.0, blank=True)
-    users=models.IntegerField(default=0, blank=True)
     airing_start_date=models.DateField(null=True, blank=True)
     airing_end_date=models.DateField(null=True, blank=True)
 
@@ -62,11 +57,6 @@ class Anime(models.Model):
 
     def __str__(self):
         return self.title
-    
-    def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
-
-        super().save(*args, **kwargs)
 
 class AnimeCharacter(models.Model):
 
