@@ -131,7 +131,9 @@ class RAMSerializer(serializers.ModelSerializer):
             'memory_type',
             'capacity',
             'modules',
-            'speed'
+            'speed',
+            'has_heat_spreader',
+            'tested_voltage'
         ]
 
     def get_manufacturer(self, obj):

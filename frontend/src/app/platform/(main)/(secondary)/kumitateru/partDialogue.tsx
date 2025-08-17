@@ -181,7 +181,8 @@ function RamDetails({ram} : {ram: RAM}) {
                     <InfoItem label="Type" value={ram.memory_type} />
                 </div>
                 <div className="row-gap row-gap--xs">
-        
+                    <InfoItem label="Stable Voltage" value={ram.tested_voltage} unit="volts" />
+                    <InfoItem label="Has Heat Spreader" value={ram.has_heat_spreader ? 'Yes' : 'No'} />
                 </div>
             </div>
         </>

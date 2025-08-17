@@ -59,7 +59,9 @@ export interface RAM extends Part {
     memory_type: string,
     capacity: number,
     modules: number,
-    speed: number
+    speed: number,
+    has_heat_spreader: boolean,
+    tested_voltage: number
 }
 
 export interface PSU extends Part {
