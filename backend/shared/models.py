@@ -13,7 +13,8 @@ class Media(models.Model):
 
     class Meta:
         abstract = True
-
+        ordering = ['-score']
+        
     def __str__(self):
         return self.title
     
