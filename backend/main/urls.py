@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/account/', include('accounts.urls')),
     path('api/miru/', include('miru.urls')),
+    path('api/yomu/', include('yomu.urls')),
     path('api/kumitateru/', include('kumitateru.urls'))
 ]

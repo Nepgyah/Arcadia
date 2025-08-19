@@ -13,8 +13,10 @@
     &__title {
         font-size: 14px;
 
-        &:hover {
-            text-decoration: underline;
+        &--hoverable {
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 }

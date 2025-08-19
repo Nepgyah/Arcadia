@@ -1,5 +1,5 @@
 from django.db import models
-from shared.models import Character, Genre, Media
+from shared.models import Character, Company, Genre, Media
 
 class Author(models.Model):
     name=models.CharField(max_length=255, null=False, blank=False)
@@ -31,6 +31,7 @@ class Work(Media):
 
     type = models.CharField(choices=WorkType.choices, default=WorkType.MANGA, blank=True)
     authors = models.ManyToManyField(Author, through='WorkAuthor', related_name='works', blank=True)
+    publisher=models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
     publishing_start_date = models.DateField(null=True, blank=True)
     publishing_end_date = models.DateField(null=True, blank=True)
 
