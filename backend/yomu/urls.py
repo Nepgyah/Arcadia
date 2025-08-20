@@ -5,4 +5,5 @@ app_name = 'yomu'
 
 urlpatterns = [
     path('home/', views.HomeView.as_view() ,name='yomu-home'),
+    path('work/<slug:slug>/', views.WorkDetailView.as_view(), name='work-details')
 ]

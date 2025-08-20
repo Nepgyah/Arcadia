@@ -14,3 +14,12 @@ class HomeView(rest_framework.views.APIView):
             'trending': trending_work_data
         })
     
+class WorkDetailView(rest_framework.views.APIView):
+
+    def get(self, request, slug=None):
+        try:
+            work = yomu.models.Work.objects(slug=slug)
+            work_data = yomu.serializers.WorkSerializer(work).data
+            return rest_framework.response.Response(work_data)
+        except yomu.models.Work.DoesNotExist():
+            return rest_framework.response.Response({}, status=rest_framework.status.HTTP_404_NOT_FOUND)
