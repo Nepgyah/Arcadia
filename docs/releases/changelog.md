@@ -1,18 +1,34 @@
 ## App Version Tracker
 | App        | Version |
 | ---------- | ------- |
-| Website    | 0.3     |
+| Website    | 0.4     |
 | Profile    | 1       |
 | Miru       | 0.1     |
-| Yomu       |         |
+| Yomu       | 0.1     |
 | Asobu      |         |
 | Kau        |         |
 | Iku        |         |
 | Kiku       |         |
-| Kumitateru |         |
+| Kumitateru | 0.1     |
 | Hiku       |         |
 | Shiru      |         |
-## Alpha v0.2.1 - Jul 21 2025
+## Alpha v0.4 - Jul 27 2025
+- API
+	-  **Miru v.0.1**
+		- Added **Anime** model
+		- Added home endpoint
+		- Added detail endpoint
+	- Create **shared** app
+		- Added **Company** model
+		- Added **Character** model
+		- Added **Genre** model
+- Website
+	- Fixed website bugs and text
+- Platform
+	- **Miru**
+		- Home page content
+		- Detail page content
+## Alpha v0.3 - Jul 17 2025
 - API
 	-  Created **accounts** app
 	- Added profile endpoints

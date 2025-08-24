@@ -1,19 +1,48 @@
-## Latest Release - Alpha v0.3 - Aug XX 2025
+## Latest Release - Alpha v0.5 - Aug 31 2025
 - API
-	-  **Miru v.0.1**
-		- Added **Anime** model
+	-  **Yomu
+		- The following models have been added
+			- Author
+			- Work
+			- WorkAuthor
+			- WorkCharacter
+			- WorkRelation
 		- Added home endpoint
 		- Added detail endpoint
-	- Create **shared** app
-		- Added **Company** model
-		- Added **Character** model
-		- Added **Genre** model
+	- **Kumitateru**
+		- The following models have been added
+			- Manufacturer
+			- Part
+			- Socket
+			- Microarchitecture
+			- CPU
+			- MemoryType
+			- RAM
+			- Chipset
+			- Motherboard
+			- GPUMemoryType
+			- GPU
+			- PSU
+			- CPUCooler
+		- Added home endpoint
+	- **Shared**
+		- Main models have option to inherit from **Media** model
+			- acquire standard fields such as title, slug, score and user
+			- acquire basic to string function
 - Website
-	- Fixed website bugs and text
+	- Added cast study page
+	- Added FAQ page
+	- Added Legal Page
+	- Added **Todokeru** landing
+	- Added **WIP** error page
+	- Added more members to team page
 - Platform
-	- **Miru**
-		- Home page content
-		- Detail page content
+	- **Yomu**
+		- Added homepage
+		- Added detail page
+	- **Kumitateru**
+		- Added homepage
+		- Added
 ## Name
 Arcadia - Your Otaku Sanctuary
 
@@ -37,13 +66,13 @@ Here are the planned apps, a short description as well as real life equivalents.
 **Hiku** - Gacha game guide ( Prydwen, Game8 )  
 **Shiru** - Blog and Articles ( AnimeNewsNetwork )
 **Todokeru** - Videos and Streaming ( Youtube, Twitch )
-
+**Sagasu** - Fun quizzes and tests ( Sporacle )
+**Manabu** - Language learning ( Wanikani )
 ## Installation
 
 ### Requirements
 - Python3
 - NodeJS
-
 ### Steps
 1. Setup virtual environment
     1. `py -m venv .venv`
