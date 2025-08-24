@@ -18,7 +18,7 @@ class WorkDetailView(rest_framework.views.APIView):
 
     def get(self, request, slug=None):
         try:
-            work = yomu.models.Work.objects(slug=slug)
+            work = yomu.models.Work.objects.get(slug=slug)
             work_data = yomu.serializers.WorkSerializer(work).data
             return rest_framework.response.Response(work_data)
         except yomu.models.Work.DoesNotExist():
