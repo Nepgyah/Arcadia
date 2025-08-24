@@ -13,18 +13,6 @@ class SeasonSerializer(serializers.ModelSerializer):
 
     def get_season(self, obj):
         return obj.get_season_display()
-
-class PreviousAnimeSerializer(serializers.ModelSerializer):
-    anime = serializers.SerializerMethodField()
-
-    class Meta:
-        model = AnimeRelation
-        fields = [ 'anime', 'relation_type' ]
-
-    def get_anime(self, obj):
-        bruh = ''
-        print(obj.from_anime)
-        return bruh
     
 class AnimeSerializer(serializers.ModelSerializer):
     season = SeasonSerializer()

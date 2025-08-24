@@ -1,0 +1,48 @@
+@use "../../../abstract/variables" as *;
+
+#page-yomu-work-detail {
+
+    #image {
+        height: 400px;
+    }
+
+    #primary {
+        display: grid;
+        grid-template-columns: 3.5fr 1fr;
+
+        #primary-left {
+
+            #overview {
+                display: grid;
+                grid-template-columns: 2fr 1fr;
+                column-gap: 1rem;
+
+                #score-tags {
+                    display: grid;
+                    grid-template-columns: 1fr 2fr;
+                    column-gap: 1rem;
+                    
+                    #score {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+
+                    #genre {
+                        .genre-container {
+                            display: flex;
+                            flex-wrap: wrap;
+                        }
+                    }
+                }
+            }
+
+            
+        }
+    }
+    
+    #secondary {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+}

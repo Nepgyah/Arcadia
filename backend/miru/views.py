@@ -24,6 +24,6 @@ class AnimeDetailView(rest_framework.views.APIView):
         try:
             anime=miru.models.Anime.objects.get(slug=slug)
             anime_data = miru.serializers.AnimeSerializer(anime).data
+            return rest_framework.response.Response(anime_data)
         except miru.models.Anime.DoesNotExist():
             return rest_framework.response.Response({}, status=rest_framework.status.HTTP_404_NOT_FOUND)
-        return rest_framework.response.Response(anime_data)

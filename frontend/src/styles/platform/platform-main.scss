@@ -193,13 +193,19 @@ p {
 }
 
 #miru-layout {
-    h2 {
+    h2, .MuiBreadcrumbs-separator {
         color: map-get($arcadia-colors, miru-base )
     }
 }
 
 #kumitateru-layout {
-    h2 {
+    h2, .MuiBreadcrumbs-separator {
         color: map-get($arcadia-colors, kumitateru-base )
+    }
+}
+
+#yomu-layout {
+    h2, .MuiBreadcrumbs-separator {
+        color: map-get($arcadia-colors, yomu-base )
     }
 }
