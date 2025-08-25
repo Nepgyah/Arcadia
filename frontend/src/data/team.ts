@@ -11,6 +11,7 @@ export interface realMember extends teamMember {
 export const leadershipSpecial: realMember[] = [
     { firstName: "Miporin", position: "Co founder", url: "me.jpg", linkedin: 'https://www.linkedin.com/in/auston-pawell-9726581b1'},
     { firstName: "Tommy", position: "Co founder", url: "tom-1.jpg", linkedin: 'https://www.linkedin.com/in/thomas-beckler-02bb19221'},
+    { firstName: "Darkstar",  position: "Chief Culinary Officer", url: "darkstar.jpg", linkedin: 'https://www.linkedin.com/in/matthew-mcclimans-8451462b3'},
     { firstName: "Jon", lastName: "Lühmann", position: "Chief Design Officer", url: "jon.jpg", linkedin: 'https://www.linkedin.com/in/jon-luehmann/'},
 ]
 export const leadership: teamMember[] = [
@@ -93,5 +94,14 @@ export const devops: teamMember[] = [
     { firstName: "Otose", lastName: "Kotama", position: "Security Analyst", url: "otose-kotama.jpg"},
     { firstName: "Omagari", lastName: "Hare", position: "SOC Engineer", url: "omagari-hare.jpg"},
     { firstName: "Konuri", lastName: "Maki", position: "Network Security", url: "konuri-maki.jpg"},
+]
+
+export const culinary: teamMember[] = [
+    { firstName: "Yukihira", lastName: 'Soma', position: "Sous Chef", url: "yukihira-soma.jpg"},
+    { firstName: "Nakiri", lastName: 'Erina', position: "Soucier", url: "erina-nakiri.jpg"},
+    { firstName: "Nakiri", lastName: 'Alice', position: "Poissonnier", url: "alice-nakiri.png"},
+    { firstName: "Hisako", lastName: 'Arato', position: "Boulanger", url: "hisako-arato.jpg"},
+    { firstName: "Tadakoro", lastName: 'Megumi', position: "Friturier", url: "megumi-tadakoro.jpg"},
+    { firstName: "Miko", lastName: 'Ikumi', position: "Grillardin", url: "mito-ikumi.jpg"},
 ]
 

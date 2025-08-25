@@ -1,4 +1,4 @@
-import { teamMember, leadership, appLeads, dev, design, finance, rnd, devops, leadershipSpecial, marketing } from "@/data/team";
+import { teamMember, leadership, appLeads, dev, design, finance, rnd, devops, leadershipSpecial, marketing, culinary } from "@/data/team";
 
 import "@/styles/public/pages/d2x/team.scss";
 import { Tooltip } from "@mui/material";
@@ -131,30 +131,30 @@ export default function Team() {
                 </section>
             </div>
 
-            <section className="section" id="marketing">
-                <div className="section__wrapper">
-                    <div className="section-main section-main--center">
-                        <h2>Marketing / PR</h2>
+            <div id="marketing-finance">
+                <section className="section" id="marketing">
+                    <div className="section__wrapper">
+                        <div className="section-main section-main--center">
+                            <h2>Marketing / PR</h2>
+                        </div>
+                        <div className="section-content full-width">
+                            {
+                                marketing.map(member => (
+                                    <MemberCard 
+                                        key={member.firstName} 
+                                        member={member}
+                                        division="marketing" 
+                                        isWhite={false}
+                                    />
+                                ))
+                            }
+                        </div>
                     </div>
-                    <div className="section-content full-width">
-                        {
-                            marketing.map(member => (
-                                <MemberCard 
-                                    key={member.firstName} 
-                                    member={member}
-                                    division="marketing" 
-                                    isWhite={false}
-                                />
-                            ))
-                        }
-                    </div>
-                </div>
-            </section>
-
-            <div id="finance-rnd">
+                </section>
+                
                 <section className="section" id="finance">
                     <div className="section__wrapper">
-                        <div className="section-main section-main--center section-main--white">
+                        <div className="section-main section-main--center">
                             <h2>Finance</h2>
                         </div>
                         <div className="section-content full-width">
@@ -164,14 +164,16 @@ export default function Team() {
                                         key={member.firstName} 
                                         member={member}
                                         division="finance" 
-                                        isWhite
+                                        isWhite={false}
                                     />
                                 ))
                             }
                         </div>
                     </div>
                 </section>
+            </div>
 
+            <div id="rnd-culinary">
                 <section className="section" id="rnd">
                     <div className="section__wrapper">
                         <div className="section-main section-main--center section-main--white">
@@ -184,6 +186,26 @@ export default function Team() {
                                         key={member.firstName} 
                                         member={member}
                                         division="rnd" 
+                                        isWhite
+                                    />
+                                ))
+                            }
+                        </div>
+                    </div>
+                </section>
+
+                <section className="section" id="finance">
+                    <div className="section__wrapper">
+                        <div className="section-main section-main--center section-main--white">
+                            <h2>Culinary</h2>
+                        </div>
+                        <div className="section-content full-width">
+                            {
+                                culinary.map(member => (
+                                    <MemberCard 
+                                        key={member.lastName} 
+                                        member={member}
+                                        division="culinary" 
                                         isWhite
                                     />
                                 ))
