@@ -1,5 +1,6 @@
 from django.db import models
-from shared.models import Character, Company, Genre, Media
+from shared.models import Company, Genre, Media
+from characters.models import Character
 
 class Author(models.Model):
     name=models.CharField(max_length=255, null=False, blank=False)

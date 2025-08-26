@@ -1,5 +1,6 @@
 from django.db import models
-from shared.models import Character, Company, Genre, Media
+from shared.models import Company, Genre, Media
+from characters.models import Character
 from django.utils.text import slugify
 
 class Season(models.Model):

@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Anime, Season, Company, AnimeRelation
-from shared.serializers import CompanySerializer, CharacterSerializer, GenreSerializer
+from shared.serializers import CompanySerializer, GenreSerializer
+from characters.serializers import CharacterSerializer
 
 class SeasonSerializer(serializers.ModelSerializer):
     season = serializers.SerializerMethodField()
