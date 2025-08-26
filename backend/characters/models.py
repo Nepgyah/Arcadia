@@ -1,5 +1,5 @@
 from django.db import models
-from utils import unique_slugify
+from utils.unique_slugify import unique_slugify
 
 class Talent(models.Model):
     first_name=models.CharField(max_length=150)
@@ -15,7 +15,7 @@ class Talent(models.Model):
             full_name = f"{self.first_name} {self.last_name}".strip()
             self.slug = unique_slugify(self, full_name)
         super().save(*args, **kwargs)
-        
+
 class Character(models.Model):
     first_name=models.CharField(max_length=150, blank=False)
     last_name=models.CharField(max_length=150, null=True, blank=True)
