@@ -5,13 +5,12 @@ class Franchise(models.Model):
     
     name = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, blank=True)
-    description = models.TextField(default='A summary will be written later.')
     
     def __str__(self):
         return self.name
     
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
+        self.slug = slugify(self.name)
         super().save(*args, **kwargs)
 
 class Media(models.Model):
