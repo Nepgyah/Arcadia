@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'miru',
     'yomu',
     'kumitateru',
+    'characters',
     'shared',
     'corsheaders',
     'django.contrib.admin',

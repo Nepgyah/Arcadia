@@ -1,5 +1,6 @@
 from django.db import models
-from shared.models import Character, Company, Genre, Media
+from shared.models import Company, Franchise, Genre, Media
+from characters.models import Character
 from django.utils.text import slugify
 
 class Season(models.Model):
@@ -51,6 +52,8 @@ class Anime(Media):
     rating=models.IntegerField(choices=Rating.choices, default=Rating.G, blank=True)
     airing_start_date=models.DateField(null=True, blank=True)
     airing_end_date=models.DateField(null=True, blank=True)
+
+    franchise=models.ForeignKey(Franchise, on_delete=models.SET_NULL, null=True, blank=True)
 
     class Meta:
         ordering = ['-score']
