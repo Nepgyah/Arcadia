@@ -43,13 +43,16 @@ export const dev: teamMember[] = [
     { firstName: "Umiko", lastName: "Ahagon", position: "Principal Engineer", url: "umiko-ahagon.jpg"},
     { firstName: "Aiba", lastName: "Asagi", position: "Senior Engineer", url: "aiba-asagi.jpg"},
     { firstName: "Himari", lastName: "Akeboshi", position: "Senior Engineer", url: "akeboshi-himari.jpg"},
-    { firstName: "Tsubame", lastName: "Narumi", position: "Mid-Level Engineer", url: "tsubame-narumi.jpg"},
-    { firstName: "Nene", lastName: "Sakura", position: "Mid-Level Engineer", url: "nene-sakura.jpg"},
-    { firstName: "Utaha", lastName: "Shiraishi", position: "Mid-Level Engineer", url: "shiraishi-utaha.jpg"},
-    { firstName: "Nekozuka", lastName: "Hibiki", position: "Mid-Level Engineer", url: "nekozuka-hibiki.jpg"},
-    { firstName: "Momoi", lastName: "Saiba", position: "Junior Engineer", url: "momoi-saiba.jpg"},
-    { firstName: "Midori", lastName: "Saiba", position: "Junior Engineer", url: "midori-saiba.jpg"},
-    { firstName: "Yuzu", lastName: "Hanaoka", position: "Junior Engineer", url: "yuzu-hanaoka.jpg"},
+    { firstName: "Tsubame", lastName: "Narumi", position: "Mid-Level Frontend Engineer", url: "tsubame-narumi.jpg"},
+    { firstName: "Nene", lastName: "Sakura", position: "Mid-Level Frontend Engineer", url: "nene-sakura.jpg"},
+    { firstName: "Utaha", lastName: "Shiraishi", position: "Mid-Level Backend Engineer", url: "shiraishi-utaha.jpg"},
+    { firstName: "Hibiki", lastName: "Nekozuka", position: "Mid-Level Backend Engineer", url: "nekozuka-hibiki.jpg"},
+    { firstName: "Momoi", lastName: "Saiba", position: "Junior Frontend Engineer", url: "momoi-saiba.jpg"},
+    { firstName: "Midori", lastName: "Saiba", position: "Junior Backend Engineer", url: "midori-saiba.jpg"},
+    { firstName: "Yuzu", lastName: "Hanaoka", position: "Junior Backend Engineer", url: "yuzu-hanaoka.jpg"},
+    { firstName: "Mai", lastName: "Nekota", position: "Junior Frontend Engineer", url: "mai-nekota.jpg"},
+    { firstName: "Taki", lastName: "Momose", position: "Junior Backend Engineer", url: "taki-momose.jpg"},
+    { firstName: "Aoi", lastName: "Hiyoshi", position: "Junior Backend Engineer", url: "aoi-hiyoshi.jpg"},
 ]
 
 export const design: teamMember[] = [
@@ -57,16 +60,17 @@ export const design: teamMember[] = [
     { firstName: "Kou", lastName: "Yagami", position: "Senior Designer", url: "kou-yagami.jpg"},
     { firstName: "Yun", lastName: "Iijima", position: "Senior Designer", url: "yun-iijima.jpg"},
     { firstName: "Hifumi", lastName: "Takimoto", position: "Senior Designer", url: "hifumi-takimoto.jpg"},
+    { firstName: "Hotaru", lastName: "Hoshikawa", position: "Junior Designer", url: "hotaru-hoshikawa.jpg"},
     { firstName: "Aoba", lastName: "Suzukaze", position: "Junior Designer", url: "aoba-suzukaze.jpg"},
     { firstName: "Momiji", lastName: "Mochizuki", position: "Junior Designer", url: "momiji-mochizuki.jpg"},
+    { firstName: "Sagiri", lastName: "Izumi", position: "Junior Designer", url: "sagiri-izumi.jpg"},
 ]
 
 export const finance: teamMember[] = [
-    { firstName: "Topaz", position: "Finance Director", url: "topaz.jpg"},
+    { firstName: "Ningguang", position: "Finance Director", url: "ningguang.jpg"},
+    { firstName: "Topaz", position: "Treasurer", url: "topaz.jpg"},
     { firstName: "Aventurine", position: "Asset Manager", url: "aventurine.jpg"},
-    { firstName: "Oki", lastName: "Aoi", position: "Accounting Manager", url: "oki-aoi.jpg"},
-    { firstName: "Yuuka", lastName: "Hayase", position: "Treasurer", url: "yuuka.jpg"},
-    { firstName: "Ayane", lastName: "Okusora", position: "Investment Analyst", url: "ayane-okusora.jpg"},
+    { firstName: "Oki", lastName: "Aoi", position: "Accounting Manager", url: "oki-aoi.jpg"}
 ]
 
 export const marketing: teamMember[] = [
@@ -97,11 +101,40 @@ export const devops: teamMember[] = [
 ]
 
 export const culinary: teamMember[] = [
-    { firstName: "Yukihira", lastName: 'Soma', position: "Sous Chef", url: "yukihira-soma.jpg"},
-    { firstName: "Nakiri", lastName: 'Erina', position: "Soucier", url: "erina-nakiri.jpg"},
-    { firstName: "Nakiri", lastName: 'Alice', position: "Poissonnier", url: "alice-nakiri.png"},
-    { firstName: "Hisako", lastName: 'Arato', position: "Boulanger", url: "hisako-arato.jpg"},
-    { firstName: "Tadakoro", lastName: 'Megumi', position: "Friturier", url: "megumi-tadakoro.jpg"},
-    { firstName: "Miko", lastName: 'Ikumi', position: "Grillardin", url: "mito-ikumi.jpg"},
+    { firstName: "Yukihira", lastName: 'Soma', position: "Chef de Cuisine", url: "yukihira-soma.jpg"},
+    { firstName: "Escoffier", position: "Sous Chef", url: "escoffier.jpg"},
+    { firstName: "Nakiri", lastName: 'Erina', position: "Saucier Chef", url: "erina-nakiri.jpg"},
+    { firstName: "Nakiri", lastName: 'Alice', position: "Patissier", url: "alice-nakiri.png"},
+    { firstName: "Xiangling", position: "Grillardin Chef", url: "xiangling.jpg"},
+    { firstName: "Hisako", lastName: 'Arato', position: "Poissonier Chef", url: "hisako-arato.jpg"},
+    { firstName: "Tadakoro", lastName: 'Megumi', position: "Entremetier", url: "megumi-tadakoro.jpg"},
+    { firstName: "Miko", lastName: 'Ikumi', position: "Boucher Chef", url: "mito-ikumi.jpg"},
+    { firstName: "Fuuka", lastName: 'Aikiyo', position: "Commis Chef", url: "fuuka-aikiyo.webp"},
+    { firstName: "Juri", lastName: 'Ushimaki', position: "Commis Chef", url: "juri-ushimaki.jpg"},
+    { firstName: "Haruna", lastName: 'Kurodate', position: "Commis Chef", url: "haruna-kurodate.webp"},
+    { firstName: "Junko", lastName: 'Akashi', position: "Commis Chef", url: "junko-akashi.webp"},
+    { firstName: "Izumi", lastName: 'Shishidou', position: "Commis Chef", url: "izumi-shishidou.webp"},
+    { firstName: "Akari", lastName: 'Wanibuchi', position: "Commis Chef", url: "akari-wanibuchi.webp"},
 ]
 
+export const hr: teamMember[] = [
+    { firstName: "FuoFuo", position: "Recruiter", url: "fuofuo.jpg"},
+    { firstName: "Qingque", position: "Recruiter", url: "qingque.jpg"},
+    { firstName: "Bennett", position: "Recruiter", url: "qingque.jpg"},
+]
+
+export const contentCreators: teamMember[] = [
+    { firstName: "Robin", position: "Artist", url: "robin.jpg"},
+    { firstName: "Guinafen", position: "Streamer", url: "guinafen.jpg"},
+    { firstName: "Hyacine", position: "Idol", url: "hyacine.jpg"},
+    { firstName: "Barbara", position: "Idol", url: "barbara.jpg"},
+    { firstName: "March 7th", position: "Photographer", url: "march.jpg"},
+    { firstName: "Marin", lastName: "Kitagawa", position: "Model", url: "marin-kitagawa.jpg"},
+]
+
+export const administration: teamMember[] = [
+    { firstName: "Yuuka", lastName: "Hayase", position: "Executive Assistant", url: "yuuka.jpg"},
+    { firstName: "Noa", lastName: "Ushio", position: "Executive Assistant", url: "ayane-okusora.jpg"},
+    { firstName: "Ayane", lastName: "Okusora", position: "Administrative Assistant", url: "ayane-okusora.jpg"},
+    { firstName: "Kayoko", lastName: "Onikata", position: "Administrative Assistant", url: "ayane-okusora.jpg"},
+]
