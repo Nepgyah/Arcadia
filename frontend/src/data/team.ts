@@ -41,18 +41,18 @@ export const appLeads: teamMember[] = [
 
 export const dev: teamMember[] = [
     { firstName: "Umiko", lastName: "Ahagon", position: "Principal Engineer", url: "umiko-ahagon.jpg"},
-    { firstName: "Aiba", lastName: "Asagi", position: "Senior Engineer", url: "aiba-asagi.jpg"},
-    { firstName: "Himari", lastName: "Akeboshi", position: "Senior Engineer", url: "akeboshi-himari.jpg"},
+    { firstName: "Himari", lastName: "Akeboshi", position: "Principal Engineer", url: "akeboshi-himari.jpg"},
+    { firstName: "Aiba", lastName: "Asagi", position: "Senior Backend Engineer", url: "aiba-asagi.jpg"},
+    { firstName: "Hibiki", lastName: "Nekozuka", position: "Senior Frontend Engineer", url: "nekozuka-hibiki.jpg"},
+    { firstName: "Utaha", lastName: "Shiraishi", position: "Senior Backend Engineer", url: "shiraishi-utaha.jpg"},
     { firstName: "Tsubame", lastName: "Narumi", position: "Mid-Level Frontend Engineer", url: "tsubame-narumi.jpg"},
-    { firstName: "Nene", lastName: "Sakura", position: "Mid-Level Frontend Engineer", url: "nene-sakura.jpg"},
-    { firstName: "Utaha", lastName: "Shiraishi", position: "Mid-Level Backend Engineer", url: "shiraishi-utaha.jpg"},
-    { firstName: "Hibiki", lastName: "Nekozuka", position: "Mid-Level Backend Engineer", url: "nekozuka-hibiki.jpg"},
+    { firstName: "Mai", lastName: "Nekota", position: "Mid-Level Frontend Engineer", url: "mai-nekota.jpg"},
+    { firstName: "Taki", lastName: "Momose", position: "Mid-Level Backend Engineer", url: "taki-momose.jpg"},
+    { firstName: "Aoi", lastName: "Hiyoshi", position: "Mid-Level Backend Engineer", url: "aoi-hiyoshi.jpg"},
+    { firstName: "Nene", lastName: "Sakura", position: "Mid-Level Backend Engineer", url: "nene-sakura.jpg"},
     { firstName: "Momoi", lastName: "Saiba", position: "Junior Frontend Engineer", url: "momoi-saiba.jpg"},
     { firstName: "Midori", lastName: "Saiba", position: "Junior Backend Engineer", url: "midori-saiba.jpg"},
     { firstName: "Yuzu", lastName: "Hanaoka", position: "Junior Backend Engineer", url: "yuzu-hanaoka.jpg"},
-    { firstName: "Mai", lastName: "Nekota", position: "Junior Frontend Engineer", url: "mai-nekota.jpg"},
-    { firstName: "Taki", lastName: "Momose", position: "Junior Backend Engineer", url: "taki-momose.jpg"},
-    { firstName: "Aoi", lastName: "Hiyoshi", position: "Junior Backend Engineer", url: "aoi-hiyoshi.jpg"},
 ]
 
 export const design: teamMember[] = [
@@ -118,9 +118,8 @@ export const culinary: teamMember[] = [
 ]
 
 export const hr: teamMember[] = [
-    { firstName: "FuoFuo", position: "Recruiter", url: "fuofuo.jpg"},
-    { firstName: "Qingque", position: "Recruiter", url: "qingque.jpg"},
-    { firstName: "Bennett", position: "Recruiter", url: "qingque.jpg"},
+    { firstName: "HuoHuo", position: "Recruiter", url: "huohuo.jpg"},
+    { firstName: "Qingque", position: "Recruiter", url: "qingque.jpg"}
 ]
 
 export const contentCreators: teamMember[] = [
@@ -134,7 +133,7 @@ export const contentCreators: teamMember[] = [
 
 export const administration: teamMember[] = [
     { firstName: "Yuuka", lastName: "Hayase", position: "Executive Assistant", url: "yuuka.jpg"},
-    { firstName: "Noa", lastName: "Ushio", position: "Executive Assistant", url: "ayane-okusora.jpg"},
+    { firstName: "Noa", lastName: "Ushio", position: "Executive Assistant", url: "noa-ushio.jpg"},
     { firstName: "Ayane", lastName: "Okusora", position: "Administrative Assistant", url: "ayane-okusora.jpg"},
-    { firstName: "Kayoko", lastName: "Onikata", position: "Administrative Assistant", url: "ayane-okusora.jpg"},
+    { firstName: "Kayoko", lastName: "Onikata", position: "Administrative Assistant", url: "kayoko-onikata.jpg"},
 ]

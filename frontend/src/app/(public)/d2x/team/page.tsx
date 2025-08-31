@@ -1,4 +1,4 @@
-import { teamMember, leadership, appLeads, dev, design, finance, rnd, devops, leadershipSpecial, marketing, culinary } from "@/data/team";
+import { teamMember, leadership, appLeads, dev, design, finance, rnd, devops, leadershipSpecial, marketing, culinary, contentCreators, administration, hr } from "@/data/team";
 
 import "@/styles/public/pages/d2x/team.scss";
 import { Tooltip } from "@mui/material";
@@ -63,6 +63,26 @@ export default function Team() {
                                         key={member.firstName} 
                                         member={member}
                                         division="app-leads" 
+                                        isWhite
+                                    />
+                                ))
+                            }
+                        </div>
+                    </div>
+                </section>
+
+                <section className="section" id="admin">
+                    <div className="section__wrapper">
+                        <div className="section-main section-main--center section-main--white">
+                            <h2>Administration</h2>
+                        </div>
+                        <div className="section-content full-width">
+                            {
+                                administration.map(member => (
+                                    <MemberCard 
+                                        key={member.firstName} 
+                                        member={member}
+                                        division="admin" 
                                         isWhite
                                     />
                                 ))
@@ -173,6 +193,27 @@ export default function Team() {
                 </section>
             </div>
 
+            <div id="cc">
+                <section className="section" id="cc">
+                    <div className="section__wrapper">
+                        <div className="section-main section-main--center section-main--white">
+                            <h2>Content Creators</h2>
+                        </div>
+                        <div className="section-content full-width">
+                            {
+                                contentCreators.map(member => (
+                                    <MemberCard 
+                                        key={member.firstName} 
+                                        member={member}
+                                        division="cc" 
+                                        isWhite
+                                    />
+                                ))
+                            }
+                        </div>
+                    </div>
+                </section>
+            </div>
             <div id="rnd-culinary">
                 <section className="section" id="rnd">
                     <div className="section__wrapper">
@@ -203,9 +244,28 @@ export default function Team() {
                             {
                                 culinary.map(member => (
                                     <MemberCard 
-                                        key={member.lastName} 
+                                        key={`${member.firstName}-${member.lastName}`} 
                                         member={member}
                                         division="culinary" 
+                                        isWhite
+                                    />
+                                ))
+                            }
+                        </div>
+                    </div>
+                </section>
+                <section className="section" id="hr">
+                    <div className="section__wrapper">
+                        <div className="section-main section-main--center section-main--white">
+                            <h2>HR</h2>
+                        </div>
+                        <div className="section-content full-width">
+                            {
+                                hr.map(member => (
+                                    <MemberCard 
+                                        key={member.firstName} 
+                                        member={member}
+                                        division="hr" 
                                         isWhite
                                     />
                                 ))
