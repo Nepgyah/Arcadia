@@ -49,7 +49,7 @@ class Game(Media):
     is_on_pc = models.BooleanField(default=False)
 
     release_date = models.DateField(null=True, blank=True)
-    franchise=models.ForeignKey(Franchise, on_delete=models.SET_NULL, null=True, blank=True)
+    franchise = models.ForeignKey(Franchise, on_delete=models.SET_NULL, null=True, blank=True)
 
 class GameCharacter(models.Model):
 
