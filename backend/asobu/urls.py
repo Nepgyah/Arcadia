@@ -5,4 +5,5 @@ app_name = 'asobu'
 
 urlpatterns = [
     path('home/', views.HomeView.as_view(), name='asobu-home'),
-]
+    path('game/<int:game_id>/', views.GameDetailView.as_view(), name='game-details'),
+ ]
