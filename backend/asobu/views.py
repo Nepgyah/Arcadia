@@ -7,11 +7,16 @@ from asobu.serializers import GameSerializer
 class HomeView(rest_framework.views.APIView):
 
     def get(self, request):
-        latest_games = asobu.models.Game.objects.all()
+        latest_games = asobu.models.Game.objects.all().order_by('release_date')[:5]
         latest_game_data = GameSerializer(latest_games, many=True).data
+        
+        top_rated_games = asobu.models.Game.objects.all().order_by('-score')[:5]
+        top_rated_games_data = GameSerializer(top_rated_games, many=True).data
 
+        # all_time_games = asobu.models.Game.objects.all(
         return rest_framework.response.Response({
-            'games': latest_game_data
+            'latest_games': latest_game_data,
+            'top_rated_games' : top_rated_games_data
         }, status=rest_framework.status.HTTP_200_OK)
 
 class GameDetailView(rest_framework.views.APIView):

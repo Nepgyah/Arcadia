@@ -9,12 +9,14 @@ import { useEffect, useState } from "react";
 export default function AsobuHome() {
 
     const [isLoading, setIsLoading] = useState(true);
-    const [gameList, setGameList] = useState([]);
+    const [latestGames, setLatestGames] = useState([]);
+    const [allTimeGames, setAllTimeGames] = useState([])
 
     useEffect(() => {
         apiGET<any>('asobu/home/')
         .then((res) => {
-            setGameList(res.games)
+            setLatestGames(res.latest_games);
+            setAllTimeGames(res.top_rated_games)
         })
     }, [])
     
@@ -26,12 +28,30 @@ export default function AsobuHome() {
             </Breadcrumbs>
             <div id="page-asobu-home"  className="page-content page-content--two-col page-content--reversed">
                 <div className="page-content__left-column divider divider--vertical padding-right--lg">
-                    <div id="seasonal">
+                    <div id="latest">
                         <h2>Latest Games</h2>
                         <div className="layout-grid-5">
                             {
-                                gameList &&
-                                gameList.map((game: any, key: number) => (
+                                latestGames &&
+                                latestGames.map((game: any, key: number) => (
+                                    <EntryCard 
+                                        key={key} 
+                                        app="asbou" 
+                                        title={game.title} 
+                                        clickLink={`/platform/asobu/game/${game.slug}`} 
+                                        imageLink={`/storage/asobu/${game.slug}.jpg`}
+                                    />
+                                ))
+                            }
+                        </div>
+                    </div>
+
+                    <div id="rated">
+                        <h2>Top Games All Time</h2>
+                        <div className="layout-grid-5">
+                            {
+                                allTimeGames &&
+                                allTimeGames.map((game: any, key: number) => (
                                     <EntryCard 
                                         key={key} 
                                         app="asbou" 
