@@ -20,9 +20,9 @@ class HomeView(rest_framework.views.APIView):
 
 class AnimeDetailView(rest_framework.views.APIView):
 
-    def get(self, request, slug=None):
+    def get(self, request, id=None):
         try:
-            anime=miru.models.Anime.objects.get(slug=slug)
+            anime=miru.models.Anime.objects.get(id=id)
             anime_data = miru.serializers.AnimeSerializer(anime).data
             return rest_framework.response.Response(anime_data)
         except miru.models.Anime.DoesNotExist():

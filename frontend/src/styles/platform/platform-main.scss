@@ -148,11 +148,13 @@ p {
 // LAYOUT
 #platform-layout {
     min-height: 100dvh;
-
+    max-width: 100%;
+    background-color: $platform-bg-1;
+    overflow: auto;
+    
     #platform-second-layout {
         display: grid;
         grid-template-columns: 150px 1fr;
-        height: calc(100dvh - 3.5rem);
 
         #platform-sidebar {
             height: 100%;
@@ -162,8 +164,8 @@ p {
             padding: 1rem;
             color: white;
             flex-grow: 1;
-            background-color: $platform-bg-1;
-            overflow-y: scroll;
+            width: 1400px;
+            margin: auto;
 
             .card {
                 background-color: #36373D;

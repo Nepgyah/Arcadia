@@ -16,7 +16,7 @@ class SeasonSerializer(serializers.ModelSerializer):
         return obj.get_season_display()
     
 class AnimeSerializer(serializers.ModelSerializer):
-    season = SeasonSerializer()
+    season = serializers.SerializerMethodField()
     type = serializers.SerializerMethodField()
     status = serializers.SerializerMethodField()
     characters = CharacterSerializer(many=True, read_only=True)
@@ -38,12 +38,19 @@ class AnimeSerializer(serializers.ModelSerializer):
             'airing_start_date', 'airing_end_date'
         ]
 
+    def get_season(self, obj):
+        if obj.season:
+            return str(obj.season)
+        else:
+            return 'N/A'
+        
     def get_previous_anime(self, obj):
         previous_anime_result = AnimeRelation.objects.filter(to_anime=obj)
         previous_anime_data = []
         for anime in previous_anime_result:
             previous_anime_data.append(
                 {
+                    'id': anime.from_anime.id,
                     'name': anime.from_anime.title,
                     'slug': anime.from_anime.slug,
                     'relation': anime.get_relation_type_display()
@@ -57,6 +64,7 @@ class AnimeSerializer(serializers.ModelSerializer):
         for anime in next_anime_result:
             next_anime_data.append(
                 {
+                    'id': anime.to_anime.id,
                     'name': anime.to_anime.title,
                     'slug': anime.to_anime.slug,
                     'relation': anime.get_relation_type_display()

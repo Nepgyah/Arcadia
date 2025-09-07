@@ -39,8 +39,8 @@ export default function MiruHome() {
                                         key={key} 
                                         app="miru" 
                                         title={anime.title} 
-                                        clickLink={`/platform/miru/anime/${anime.slug}`} 
-                                        imageLink={`/storage/miru/${anime.slug}.jpg`}
+                                        clickLink={`/platform/miru/anime/${anime.id}/${anime.slug}`} 
+                                        imageLink={`/storage/miru/${anime.id}.jpg`}
                                     />
                                 ))
                             }
@@ -56,8 +56,8 @@ export default function MiruHome() {
                                         key={key} 
                                         app="miru" 
                                         title={anime.title} 
-                                        clickLink={`/platform/miru/anime/${anime.slug}`} 
-                                        imageLink={`/storage/miru/${anime.slug}.jpg`}
+                                        clickLink={`/platform/miru/anime/${anime.id}/${anime.slug}`} 
+                                        imageLink={`/storage/miru/${anime.id}.jpg`}
                                     />
                                 ))
                             }

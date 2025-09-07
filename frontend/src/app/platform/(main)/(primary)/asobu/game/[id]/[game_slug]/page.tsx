@@ -15,30 +15,43 @@ import WIP from "@/components/platform/wip";
 import RelationCard from "@/components/platform/relationCard";
 import TagChip from "@/components/platform/chip";
 
-export default function AnimeDetails() {
+export default function GameDetails() {
     const params = useParams();
-    const [anime, setAnime] = useState<Anime>()
+    const [game, setGame] = useState<any>()
+    const [developers, setDevelopers] = useState<any>(null)
+    const [publishers, setPublishers] = useState<any>(null)
 
     useEffect(() => {
-        apiGET<Anime>(`miru/anime/${params.anime_slug}/`)
+        apiGET<any>(`asobu/game/${params.id}/`)
         .then((res) => {
-            setAnime(res)
+            setGame(res)
+            let devList = ''
+            let pubList = ''
+            res.developers.forEach((dev : any) => {
+                devList += ` ${dev.name}`
+            })
+            setDevelopers(devList)
+
+            res.publishers.forEach((pub : any) => {
+                pubList += ` ${pub.name}`
+            })
+            setPublishers(pubList)
         })
     }, [])
 
     return (
         <React.Fragment>
             <Breadcrumbs>
-                <Typography>Anime</Typography>
-                <Typography>{anime?.title}</Typography>
+                <Typography>Game</Typography>
+                <Typography>{game?.title}</Typography>
             </Breadcrumbs>
             <div id="page-miru-anime-detail" className="page-content page-content--two-col">
                 <div className="page-content__left-column">
                     <img 
                         id="image" 
                         className="media-image"
-                        src={`/storage/miru/${anime?.slug}.jpg`} 
-                        alt={anime?.title}
+                        src={`/storage/asobu/${game?.id}.jpg`} 
+                        alt={game?.title}
                         onError={(e) => {
                             e.currentTarget.onerror = null;
                             e.currentTarget.src = '/global/404-resource.jpg'
@@ -59,24 +72,24 @@ export default function AnimeDetails() {
                             <div id="overview">
                                 <div id="quick-stats" className="row-gap row-gap--md">
                                     <div className="gray-container flex flex--small-gap">
-                                        <InfoItem label="Season" value={anime?.season.season} />
-                                        <InfoItem label="Type" value={anime?.type} />
-                                        <InfoItem label="Episodes" value={'Added later'} />
+                                        <InfoItem label="Status" value={game?.status} />
+                                        <InfoItem label="ESRB" value={game?.esrb_rating} />
+                                        <InfoItem label="PEGI" value={game?.pegi_rating} />
                                     </div>
                                     <div id="score-tags">
                                         <div id="score" className="gray-container flex flex--small-gap">
-                                            <p className="bold">{anime?.score}</p>
-                                            <p>{anime?.users} users</p>
+                                            <p className="bold">{game?.score}</p>
+                                            <p>{game?.users} users</p>
                                         </div>
                                         <div id="genre">
-                                            <h2>Genre</h2>
+                                            <h2>Genres</h2>
                                             <div className="genre-container">
                                                 {
-                                                    anime?.genres.length === 0 ?
+                                                    game?.genres.length === 0 ?
                                                         <p>No genre tags added</p>
                                                     :
-                                                        anime?.genres.map((genre: any, index: number) => (
-                                                            <TagChip key={index} value={genre.name} app="miru"/>
+                                                        game?.genres.map((genre: any, index: number) => (
+                                                            <TagChip key={index} value={genre.name} app="asobu"/>
                                                         ))
                                                 }
                                             </div>
@@ -90,57 +103,59 @@ export default function AnimeDetails() {
                             </div>
                             <div id="summary">
                                 <h2>Summary</h2>
-                                <p>{anime?.summary}</p>
+                                <p>{game?.summary}</p>
                             </div>
                         </div>
                         <div id="primary-right" className="padding-left--md row-gap row-gap--md">
                             <div>
                                 <h2>Details</h2>
-                                <InfoItem label="Status" value={anime?.status} />
-                                <InfoItem label="Start Date" value={anime?.airing_start_date} />
-                                <InfoItem label="End Date" value={anime?.airing_end_date} />
-                                <InfoItem label="Rating" value={anime?.rating} />
+                                <InfoItem label="Campaign" value={game ? game.has_campaign_mode ? 'Yes' : 'No' : 'Loading'} />
+                                <InfoItem label="PvP" value={game ? game.has_pvp_mode ? 'Yes' : 'No' : 'Loading'} />
+                                <InfoItem label="PvE" value={game ? game.has_pve_mode ? 'Yes' : 'No' : 'Loading'} />
+                                <InfoItem label="On PC" value={game ? game.is_on_pc ? 'Yes' : 'No' : 'Loading'} />
+                                <InfoItem label="On Console" value={game ? game.is_on_console ? 'Yes' : 'No' : 'Loading'} />
                             </div>
                             <div>
                                 <h2>Production</h2>
-                                <InfoItem label="Studio" value={anime?.studio} />
+                                <InfoItem label="Developers" value={developers} />
+                                <InfoItem label="Publishers" value={publishers} />
                             </div>
                         </div>
                     </div>
                     <div id="secondary">
                         <div id="related" className="divider divider--vertical padding-right--md">
-                            <h2>Related Anime</h2>
+                            <h2>Related Games</h2>
                             <div className="layout-grid-2">
                                 <div id="previous" className="row-gap row-gap--xs divider divider--vertical padding-right--md">
                                     {
-                                        anime?.previous_anime.length === 0 ?
-                                        <p>No previous anime</p>
+                                        game?.previous_games.length === 0 ?
+                                            <p>No previous games</p>
                                         :
-                                        anime?.previous_anime.map((anime: any, index: number ) => (
+                                        game?.previous_games.map((game: any, index: number ) => (
                                             <RelationCard 
                                                 key={index}
-                                                name={anime.name} 
-                                                relation={anime.relation} 
-                                                link={`/platform/miru/anime/${anime.slug}`}
-                                                imageLink={`/storage/miru/${anime.slug}.jpg`}
+                                                name={game.name} 
+                                                relation={game.relation} 
+                                                link={`/platform/asobu/game/${game.id}/${game.slug}`}
+                                                imageLink={`/storage/asobu/${game.id}.jpg`}
                                             />
                                         ))
                                     }
                                 </div>
                                 <div id="next" className="row-gap row-gap--xs">
                                     {
-                                        anime?.next_anime.length === 0 ?
-                                            <p>No next anime</p>
+                                        game?.next_games.length === 0 ?
+                                            <p>No next games</p>
                                         :
-                                            anime?.next_anime.map((anime: any, index: number ) => (
-                                                <RelationCard 
-                                                    key={index}
-                                                    name={anime.name} 
-                                                    relation={anime.relation} 
-                                                    link={`/platform/miru/anime/${anime.slug}`}
-                                                    imageLink={`/storage/miru/${anime.slug}.jpg`}
-                                                />
-                                            ))
+                                        game?.next_games.map((game: any, index: number ) => (
+                                            <RelationCard 
+                                                key={index}
+                                                name={game.name} 
+                                                relation={game.relation} 
+                                                link={`/platform/asobu/game/${game.id}/${game.slug}`}
+                                                imageLink={`/storage/asobu/${game.id}.jpg`}
+                                            />
+                                        ))
                                     }
                                 </div>
                             </div>
@@ -149,8 +164,8 @@ export default function AnimeDetails() {
                             <h2>characters</h2>
                             <div className="row-gap row-gap--md">
                                 {
-                                    anime?.characters &&
-                                    anime?.characters.map((character: Character, index: number) => (
+                                    game?.characters &&
+                                    game?.characters.map((character: Character, index: number) => (
                                         <CharacterAvatar key={index} character={character} app='miru' />
                                     ))
                                 }

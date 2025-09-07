@@ -18,7 +18,7 @@ export default function WorkDetails() {
     const [work, setWork] = useState<any>();
 
     useEffect(() => {
-        apiGET<any>(`yomu/work/${params.work_slug}/`)
+        apiGET<any>(`yomu/work/${params.id}/`)
         .then((res) => {
             setWork(res)
         })
@@ -36,7 +36,7 @@ export default function WorkDetails() {
                     <img 
                         id="image" 
                         className="media-image"
-                        src={`/storage/yomu/${work?.slug}.jpg`} 
+                        src={`/storage/yomu/${work?.id}.jpg`} 
                         alt={work?.title}
                         onError={(e) => {
                             e.currentTarget.onerror = null;

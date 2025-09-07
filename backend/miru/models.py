@@ -77,8 +77,7 @@ class AnimeCharacter(models.Model):
 class AnimeRelation(models.Model):
 
     class Type(models.TextChoices):
-        PREQUEL = 'prequel', 'Prequel'
-        SEQUEL = 'sequel', 'Sequel'
+        SERIES_ENTRY = 'series_entry', 'Series Entry'
         SPINOFF = 'spinoff', 'Spin-off'
         SIDE_STORY = 'side_story', 'Side Story'
         ALTERNATIVE_VERSION = 'alternataive_version', 'Alternate'

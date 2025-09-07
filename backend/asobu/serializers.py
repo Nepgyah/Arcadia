@@ -50,6 +50,7 @@ class GameSerializer(serializers.ModelSerializer):
 
             previous_game_data.append(
                 {
+                    'id': game.from_game.id,
                     'name': game.from_game.title,
                     'slug': game.from_game.slug,
                     'relation': relation
@@ -67,6 +68,7 @@ class GameSerializer(serializers.ModelSerializer):
                 relation = game.get_relation_type_display()
             next_game_data.append(
                 {
+                    'id': game.to_game.id,
                     'name': game.to_game.title,
                     'slug': game.to_game.slug,
                     'relation': relation
