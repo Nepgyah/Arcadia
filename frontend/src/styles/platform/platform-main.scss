@@ -198,6 +198,12 @@ p {
     }
 }
 
+#asobu-layout {
+    h2, .MuiBreadcrumbs-separator {
+        color: map-get($arcadia-colors, asobu-base )
+    }
+}
+
 #kumitateru-layout {
     h2, .MuiBreadcrumbs-separator {
         color: map-get($arcadia-colors, kumitateru-base )
