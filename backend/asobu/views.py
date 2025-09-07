@@ -16,9 +16,9 @@ class HomeView(rest_framework.views.APIView):
 
 class GameDetailView(rest_framework.views.APIView):
 
-    def get(self, request, game_id=-1):
+    def get(self, request, slug=None):
         try:
-            game = asobu.models.Game.objects.get(id=game_id)
+            game = asobu.models.Game.objects.get(slug=slug)
             game_data = GameSerializer(game, many=False).data
             return rest_framework.response.Response(game_data)
         except asobu.models.Game.DoesNotExist():

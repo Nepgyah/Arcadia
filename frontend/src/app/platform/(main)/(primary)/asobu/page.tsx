@@ -36,8 +36,8 @@ export default function AsobuHome() {
                                         key={key} 
                                         app="asbou" 
                                         title={game.title} 
-                                        clickLink={`/platform/miru/anime/${game.slug}`} 
-                                        imageLink={`/storage/miru/${game.slug}.jpg`}
+                                        clickLink={`/platform/asobu/game/${game.slug}`} 
+                                        imageLink={`/storage/asobu/${game.slug}.jpg`}
                                     />
                                 ))
                             }

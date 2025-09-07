@@ -68,8 +68,7 @@ class GameCharacter(models.Model):
 class GameRelation(models.Model):
 
     class Type(models.TextChoices):
-        PREQUEL = 'prequel', 'Prequel'
-        SEQUEL = 'sequel', 'Sequel'
+        SERIES_ENTRY = 'series_entry', 'Series Entry'
         SPINOFF = 'spinoff', 'Spin-off'
         SIDE_STORY = 'side_story', 'Side Story'
         ALTERNATIVE_VERSION = 'alternative_version', 'Alternate'
@@ -83,7 +82,7 @@ class GameRelation(models.Model):
         constraints = [
             models.UniqueConstraint(fields=['from_game', 'to_game', 'relation_type'], name='unique_game_relation')
         ]
-
+    
 class DLC(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, blank=True)
