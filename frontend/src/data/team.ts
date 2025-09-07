@@ -37,12 +37,16 @@ export const appLeads: teamMember[] = [
     { firstName: "Bucko", position: "Iku Lead", url: "bucko.jpg"},
     { firstName: "Solari", position: "Hiku Lead", url: "solaris.jpg"},
     { firstName: "Serval", position: "Kiku Lead", url: "serval.jpg"},
+    { firstName: "Komi", lastName: "Shouko", position: "Sagasu Lead", url: "komi-san.jpg"},
+    { firstName: "Ruby", lastName: "Hoshino", position: "Todokeru", url: "ruby.jpg"},
+    { firstName: "El Condor", lastName: "Pasa", position: "Manabu Lead", url: "el-condor-pasa.jpg"},
 ]
 
 export const dev: teamMember[] = [
     { firstName: "Umiko", lastName: "Ahagon", position: "Principal Engineer", url: "umiko-ahagon.jpg"},
     { firstName: "Himari", lastName: "Akeboshi", position: "Principal Engineer", url: "akeboshi-himari.jpg"},
-    { firstName: "Aiba", lastName: "Asagi", position: "Senior Backend Engineer", url: "aiba-asagi.jpg"},
+    { firstName: "Aiba", lastName: "Asagi", position: "Senior Full-Stack Engineer", url: "aiba-asagi.jpg"},
+    { firstName: "Kobayashi", position: "Senior Full-Stack Engineer", url: "kobayashi.jpg"},
     { firstName: "Hibiki", lastName: "Nekozuka", position: "Senior Frontend Engineer", url: "nekozuka-hibiki.jpg"},
     { firstName: "Utaha", lastName: "Shiraishi", position: "Senior Backend Engineer", url: "shiraishi-utaha.jpg"},
     { firstName: "Tsubame", lastName: "Narumi", position: "Mid-Level Frontend Engineer", url: "tsubame-narumi.jpg"},
@@ -50,9 +54,9 @@ export const dev: teamMember[] = [
     { firstName: "Taki", lastName: "Momose", position: "Mid-Level Backend Engineer", url: "taki-momose.jpg"},
     { firstName: "Aoi", lastName: "Hiyoshi", position: "Mid-Level Backend Engineer", url: "aoi-hiyoshi.jpg"},
     { firstName: "Nene", lastName: "Sakura", position: "Mid-Level Backend Engineer", url: "nene-sakura.jpg"},
+    { firstName: "Yuzu", lastName: "Hanaoka", position: "Junior Full-Stack Engineer", url: "yuzu-hanaoka.jpg"},
     { firstName: "Momoi", lastName: "Saiba", position: "Junior Frontend Engineer", url: "momoi-saiba.jpg"},
     { firstName: "Midori", lastName: "Saiba", position: "Junior Backend Engineer", url: "midori-saiba.jpg"},
-    { firstName: "Yuzu", lastName: "Hanaoka", position: "Junior Backend Engineer", url: "yuzu-hanaoka.jpg"},
 ]
 
 export const design: teamMember[] = [
