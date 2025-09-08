@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     'miru',
     'yomu',
     'kumitateru',
+    'tsunagu',
     'characters',
     'shared',
     'corsheaders',
