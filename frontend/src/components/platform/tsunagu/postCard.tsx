@@ -18,7 +18,7 @@ export default function PostCard(
                 <div className="post-card__footer">
                     <div className="votes-comments flex flex--small-gap">
                         <p><span>Votes:</span> {post.vote_score}</p>
-                        <p><span>Comments:</span>  {}</p>
+                        <p><span>Comments:</span> {post.comment_count}</p>
                     </div>
                     <p className="date">{new Date(post.created_at).toDateString()}</p>
                 </div>

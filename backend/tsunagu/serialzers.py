@@ -35,15 +35,15 @@ class CommentSerializer(serializers.ModelSerializer):
         }
     
     def get_replies(self, obj):
-        # get all direct replies to this comment
+        # Recursive call for replies on replies
         children = obj.replies.all()
-        # recursively call the same serializer
         return CommentSerializer(children, many=True, context=self.context).data
 
 class PostSerializer(serializers.ModelSerializer):
     user = serializers.SerializerMethodField()
     community = serializers.SerializerMethodField()
     comments = serializers.SerializerMethodField()
+    comment_count = serializers.SerializerMethodField()
 
     class Meta:
         model = Post
@@ -52,6 +52,7 @@ class PostSerializer(serializers.ModelSerializer):
             'user', 
             'title', 
             'content', 
+            'comment_count',
             'comments', 
             'community', 
             'vote_score', 
@@ -72,6 +73,9 @@ class PostSerializer(serializers.ModelSerializer):
             'title': obj.community.title,
             'slug': obj.community.slug
         }
+    
+    def get_comment_count(self, obj):
+        return Comment.objects.filter(post=obj).count()
     
     def get_comments(self, obj):
         top_level_comments = obj.comments.filter(parent=None)
