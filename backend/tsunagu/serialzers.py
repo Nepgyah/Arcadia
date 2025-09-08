@@ -13,14 +13,44 @@ class CommunitySerializer(serializers.ModelSerializer):
             'owner',
             'created_at'
         ]
+
+class CommentSerializer(serializers.ModelSerializer):
+    replies = serializers.SerializerMethodField()
+    user = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Comment
+        fields = ["id", "user", "content", "created_at", "replies"]
+
+    def get_user(self, obj):
+        return {
+            'id': obj.user.id,
+            'username': obj.user.username
+        }
+    
+    def get_replies(self, obj):
+        # get all direct replies to this comment
+        children = obj.replies.all()
+        # recursively call the same serializer
+        return CommentSerializer(children, many=True, context=self.context).data
+
 class PostSerializer(serializers.ModelSerializer):
     user = serializers.SerializerMethodField()
     community = serializers.SerializerMethodField()
+    comments = serializers.SerializerMethodField()
 
     class Meta:
         model = Post
         fields = [
-            'id', 'user', 'title', 'content', 'community', 'vote_score', 'created_at', 'updated_at'
+            'id', 
+            'user', 
+            'title', 
+            'content', 
+            'comments', 
+            'community', 
+            'vote_score', 
+            'created_at', 
+            'updated_at'
         ]
 
     def get_user(self, obj):
@@ -36,3 +66,8 @@ class PostSerializer(serializers.ModelSerializer):
             'title': obj.community.title,
             'slug': obj.community.slug
         }
+    
+    def get_comments(self, obj):
+        top_level_comments = obj.comments.filter(parent=None)
+        comment_data = CommentSerializer(top_level_comments, many=True, read_only=True, context=self.context).data
+        return comment_data
