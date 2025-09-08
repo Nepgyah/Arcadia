@@ -1,16 +1,5 @@
 @use '../../abstract/variables' as *;
 
-#post-detail {
-    
-    #comment-container {
-        > div {
-            background-color: $platform-bg-2;
-            padding: .5rem;
-            border-radius: 12px;
-        }
-    }
-}
-
 .comment-block {
     position: relative;
 
@@ -50,5 +39,27 @@
 
     &__upload-date {
         opacity: .75;
+    }
+}
+
+#community-details {
+    .MuiAvatar-root {
+        width: 90px;
+        height: 90px;
+        border: 2px solid white;
+    }
+
+    #community-name {
+
+    }
+}
+#post-detail {
+    
+    #comment-container {
+        > div {
+            background-color: $platform-bg-2;
+            padding: .5rem;
+            border-radius: 12px;
+        }
     }
 }

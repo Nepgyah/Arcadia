@@ -18,6 +18,9 @@ class Community(models.Model):
     def __str__(self):
         return self.title
     
+    def get_posts(self):
+        return Post.objects.filter(community=self).count()
+    
 class Post(models.Model):
     user = models.ForeignKey(accounts.models.User, on_delete=models.CASCADE, null=False)
     title = models.CharField(max_length=255)

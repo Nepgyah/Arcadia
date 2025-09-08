@@ -1,7 +1,7 @@
 'use client';
 
 import { apiGET } from "@/util/api/api";
-import { Breadcrumbs, Typography } from "@mui/material";
+import { Avatar, Breadcrumbs, Typography } from "@mui/material";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
@@ -29,10 +29,23 @@ export default function TsunaguCircleLayout({children} : {children: React.ReactN
             <div className="page-content__left-column divider divider--vertical padding-right--lg">
                 {children}
             </div>
-            <div className="page-content__right-column">
+            <div id="community-details" className="page-content__right-column">
                 <h2 className="app-font--miru border-bottom">Community Details</h2>
-                <p>{community?.title}</p>
-                <p>{community?.description}</p>
+                <div className="row-gap row-gap--md">
+                    <div id="community-overview" className="row-gap row-gap--xs">
+                        <Avatar src={`/storage/tsunagu/${community?.id}.jpg`} />
+                        <p id="community-name" className="txt-m">{community?.title}</p>
+                        <p>{community?.description}</p>
+                    </div>
+                    <div id="community-stats">
+                        <h3>Statistics</h3>
+                        <div>
+                            <p>Members: <span>N/A</span></p>
+                            <p>Posts: <span>{community?.posts}</span></p>
+                            <p>Created: <span>{new Date(community?.created_at).toDateString()}</span></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </React.Fragment>

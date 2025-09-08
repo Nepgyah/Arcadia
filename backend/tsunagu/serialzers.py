@@ -4,16 +4,22 @@ from shared.serializers import CompanySerializer, GenreSerializer
 from characters.serializers import CharacterSerializer
 
 class CommunitySerializer(serializers.ModelSerializer):
+    posts = serializers.SerializerMethodField()
 
     class Meta:
         model = Community
         fields = [
+            'id',
             'title',
             'description',
             'owner',
+            'posts',
             'created_at'
         ]
 
+    def get_posts(self, obj):
+        return obj.get_posts()
+    
 class CommentSerializer(serializers.ModelSerializer):
     replies = serializers.SerializerMethodField()
     user = serializers.SerializerMethodField()
