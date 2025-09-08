@@ -23,7 +23,7 @@ export default function TsunaguHome() {
     return (
         <React.Fragment>
             <Breadcrumbs>
-                <Typography>Asobu</Typography>
+                <Typography>Tsunagu</Typography>
                 <Typography>Home</Typography>
             </Breadcrumbs>
             <div id="page-asobu-home"  className="page-content page-content--two-col page-content--reversed">
@@ -34,7 +34,11 @@ export default function TsunaguHome() {
                             {
                                 latestPosts ?
                                     latestPosts.map((post: any, idx: number) => (
-                                        <PostCard post={post} key={idx} />
+                                        <PostCard 
+                                            post={post} 
+                                            link={`tsunagu/circle/${post.community.id}/${post.community.slug}/${post.id}`}
+                                            key={idx} 
+                                        />
                                     ))
                                 :
                                     'Loading'

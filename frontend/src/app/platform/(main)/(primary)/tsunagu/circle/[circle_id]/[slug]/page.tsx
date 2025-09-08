@@ -1,0 +1,36 @@
+'use client';
+
+import PostCard from "@/components/platform/tsunagu/postCard";
+import { apiGET } from "@/util/api/api";
+import { Breadcrumbs, Typography } from "@mui/material";
+import { useParams } from "next/navigation";
+import React, { useEffect, useState } from "react";
+
+export default function TsunaguCommunityPage() {
+    const params = useParams();
+    const [posts, setPosts] = useState<any>([])
+
+    useEffect(() => {
+            apiGET<any>(`tsunagu/community/${params.circle_id}/posts/`)
+            .then((res) => {
+                setPosts(res)
+            })
+        }, [])
+
+    return (
+        <div id="post-list" className="row-gap row-gap--md">
+            {
+                posts ?
+                    posts.map((post: any, idx: number) => (
+                        <PostCard
+                            post={post}
+                            link={`${params.slug}/${post.id}`}
+                            key={idx}
+                         />
+                    ))
+                :
+                    'Loading'
+            }
+        </div>
+    )
+}

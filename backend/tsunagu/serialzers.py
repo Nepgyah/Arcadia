@@ -3,7 +3,16 @@ from .models import Community, Post, Comment
 from shared.serializers import CompanySerializer, GenreSerializer
 from characters.serializers import CharacterSerializer
 
+class CommunitySerializer(serializers.ModelSerializer):
 
+    class Meta:
+        model = Community
+        fields = [
+            'title',
+            'description',
+            'owner',
+            'created_at'
+        ]
 class PostSerializer(serializers.ModelSerializer):
     user = serializers.SerializerMethodField()
     community = serializers.SerializerMethodField()
@@ -11,7 +20,7 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = [
-            'user', 'title', 'content', 'community', 'vote_score', 'created_at', 'updated_at'
+            'id', 'user', 'title', 'content', 'community', 'vote_score', 'created_at', 'updated_at'
         ]
 
     def get_user(self, obj):
@@ -24,5 +33,6 @@ class PostSerializer(serializers.ModelSerializer):
     def get_community(self, obj):
         return {
             'id': obj.community.id,
-            'title': obj.community.title
+            'title': obj.community.title,
+            'slug': obj.community.slug
         }
