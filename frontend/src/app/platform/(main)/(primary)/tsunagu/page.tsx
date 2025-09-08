@@ -5,17 +5,18 @@ import { apiGET } from "@/util/api/api";
 import { useEffect, useState } from "react";
 import React from "react";
 import { useUser } from "@/util/wrappers/userContext";
+import PostCard from "@/components/platform/tsunagu/postCard";
 
 export default function TsunaguHome() {
     const { user } = useUser()
     
-    const [trendingPosts, setTrendingPosts] = useState([])
+    const [latestPosts, setLatestPosts] = useState([])
     const [userCommunities, setUserCommunities] = useState([])
 
     useEffect(() => {
         apiGET<any>('tsunagu/home/')
         .then((res) => {
-            setTrendingPosts(res.trending_posts);
+            setLatestPosts(res.latest_posts);
         })
     }, [])
     
@@ -29,8 +30,15 @@ export default function TsunaguHome() {
                 <div className="page-content__left-column divider divider--vertical padding-right--lg">
                     <div id="latest">
                         <h2>Trending</h2>
-                        <div className="layout-grid-1">
-                            Posts
+                        <div className="row-gap row-gap--md">
+                            {
+                                latestPosts ?
+                                    latestPosts.map((post: any, idx: number) => (
+                                        <PostCard post={post} key={idx} />
+                                    ))
+                                :
+                                    'Loading'
+                            }
                         </div>
                     </div>
                 </div>
@@ -40,7 +48,7 @@ export default function TsunaguHome() {
                         user ?
                             'Your Communities'
                         :
-                            'Login to view your communities'
+                            'No Communities Found'
                     }
                 </div>
             </div>
