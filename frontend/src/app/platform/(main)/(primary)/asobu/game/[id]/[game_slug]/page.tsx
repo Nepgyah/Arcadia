@@ -14,25 +14,26 @@ import CharacterAvatar from "@/components/platform/characterAvatar";
 import WIP from "@/components/platform/wip";
 import RelationCard from "@/components/platform/relationCard";
 import TagChip from "@/components/platform/chip";
+import { Company, Game } from "@/util/types/asobu";
 
 export default function GameDetails() {
     const params = useParams();
-    const [game, setGame] = useState<any>()
-    const [developers, setDevelopers] = useState<any>(null)
-    const [publishers, setPublishers] = useState<any>(null)
+    const [game, setGame] = useState<Game>()
+    const [developers, setDevelopers] = useState<string>()
+    const [publishers, setPublishers] = useState<string>()
 
     useEffect(() => {
-        apiGET<any>(`asobu/game/${params.id}/`)
+        apiGET<Game>(`asobu/game/${params.id}/`)
         .then((res) => {
             setGame(res)
             let devList = ''
             let pubList = ''
-            res.developers.forEach((dev : any) => {
+            res.developers.forEach((dev : Company) => {
                 devList += ` ${dev.name}`
             })
             setDevelopers(devList)
 
-            res.publishers.forEach((pub : any) => {
+            res.publishers.forEach((pub : Company) => {
                 pubList += ` ${pub.name}`
             })
             setPublishers(pubList)

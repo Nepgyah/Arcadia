@@ -2,18 +2,23 @@
 import EntryCard from "@/components/platform/entryCard";
 import WIP from "@/components/platform/wip";
 import { apiGET } from "@/util/api/api";
+import { Game } from "@/util/types/asobu";
 import { Breadcrumbs, Typography } from "@mui/material";
 import React from "react";
 import { useEffect, useState } from "react";
 
+interface APIProps {
+    latest_games: Game[],
+    top_rated_games: Game[]
+}
 export default function AsobuHome() {
 
     const [isLoading, setIsLoading] = useState(true);
-    const [latestGames, setLatestGames] = useState([]);
-    const [allTimeGames, setAllTimeGames] = useState([])
+    const [latestGames, setLatestGames] = useState<Game[]>([]);
+    const [allTimeGames, setAllTimeGames] = useState<Game[]>([])
 
     useEffect(() => {
-        apiGET<any>('asobu/home/')
+        apiGET<APIProps>('asobu/home/')
         .then((res) => {
             setLatestGames(res.latest_games);
             setAllTimeGames(res.top_rated_games)
@@ -33,7 +38,7 @@ export default function AsobuHome() {
                         <div className="layout-grid-5">
                             {
                                 latestGames &&
-                                latestGames.map((game: any, key: number) => (
+                                latestGames.map((game: Game, key: number) => (
                                     <EntryCard 
                                         key={key} 
                                         app="asbou" 
@@ -51,7 +56,7 @@ export default function AsobuHome() {
                         <div className="layout-grid-5">
                             {
                                 allTimeGames &&
-                                allTimeGames.map((game: any, key: number) => (
+                                allTimeGames.map((game: Game, key: number) => (
                                     <EntryCard 
                                         key={key} 
                                         app="asbou" 
