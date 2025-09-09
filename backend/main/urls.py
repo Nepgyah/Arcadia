@@ -23,5 +23,6 @@ urlpatterns = [
     path('api/asobu/', include('asobu.urls')),
     path('api/miru/', include('miru.urls')),
     path('api/yomu/', include('yomu.urls')),
-    path('api/kumitateru/', include('kumitateru.urls'))
+    path('api/kumitateru/', include('kumitateru.urls')),
+    path('api/tsunagu/', include('tsunagu.urls'))
 ]

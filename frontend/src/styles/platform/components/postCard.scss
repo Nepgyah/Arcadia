@@ -1,0 +1,25 @@
+@use '../../abstract/variables' as *;
+
+.post-card {
+    padding: 1rem;
+    border-radius: 12px;
+    background-color: $platform-bg-2;
+
+    &__community, &__content {
+        margin-bottom: 1.25rem;
+    }
+    &__title {
+        
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        .votes-comments {
+
+        }
+        .date {
+            opacity: .75;
+        }
+    }
+}

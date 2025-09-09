@@ -7,6 +7,13 @@ h2 {
     border-bottom: 1px solid #bbbbbb;
 }
 
+.MuiTypography-root {
+    a {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
 p {
     font-size: .75rem;
 }
@@ -209,6 +216,12 @@ p {
 #kumitateru-layout {
     h2, .MuiBreadcrumbs-separator {
         color: map-get($arcadia-colors, kumitateru-base )
+    }
+}
+
+#tsunagu-layout {
+    h2, .MuiBreadcrumbs-separator {
+        color: map-get($arcadia-colors, tsunagu-base )
     }
 }
 
