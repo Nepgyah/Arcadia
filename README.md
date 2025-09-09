@@ -1,48 +1,34 @@
 ## Latest Release - Alpha v0.5 - Aug 31 2025
 - API
-	-  **Yomu
+	-  **Asobu**
 		- The following models have been added
-			- Author
-			- Work
-			- WorkAuthor
-			- WorkCharacter
-			- WorkRelation
+			- Company
+			- Game
+			- DLC
 		- Added home endpoint
 		- Added detail endpoint
-	- **Kumitateru**
+	- **Tsunagu**
 		- The following models have been added
-			- Manufacturer
-			- Part
-			- Socket
-			- Microarchitecture
-			- CPU
-			- MemoryType
-			- RAM
-			- Chipset
-			- Motherboard
-			- GPUMemoryType
-			- GPU
-			- PSU
-			- CPUCooler
+			- Community
+			- Post
+			- Comment
 		- Added home endpoint
+		- Added community detail endpoint
+		- Added post detail endpoint
 	- **Shared**
-		- Main models have option to inherit from **Media** model
-			- acquire standard fields such as title, slug, score and user
-			- acquire basic to string function
+		- The following models have been added
+			- Franchise
+			- Media
+		- Extracted `Character` and `Talent` models out of shared
+		- 
+	- Updated current views to receive object id instead of slug
+	- Added `Franchise` key to several models
 - Website
-	- Added cast study page
-	- Added FAQ page
-	- Added Legal Page
-	- Added **Todokeru** landing
-	- Added **WIP** error page
-	- Added more members to team page
+	- Added esports page
+	- Updated team page
 - Platform
-	- **Yomu**
-		- Added homepage
-		- Added detail page
-	- **Kumitateru**
-		- Added homepage
-		- Added
+	- Adjusted styling
+	- Updated API calls to send object id instead of slug
 ## Name
 Arcadia - Your Otaku Sanctuary
 
