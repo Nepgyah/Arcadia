@@ -1,8 +1,10 @@
+import { Comment } from "@/util/types/tsunagu"
+
 export default function CommentCard(
     {
         comment, depth = 0
     } : {
-        comment: any,
+        comment: Comment,
         depth: number
     }
 ) {
@@ -23,7 +25,7 @@ export default function CommentCard(
             {/* render replies recursively */}
             {comment.replies.length > 0 && (
                 <div>
-                {comment.replies.map((reply: any) => (
+                {comment.replies.map((reply: Comment) => (
                     <CommentCard key={reply.id} comment={reply} depth={depth + 1} />
                 ))}
                 </div>

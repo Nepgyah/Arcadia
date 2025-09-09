@@ -3,19 +3,19 @@
 import CommentCard from "@/components/platform/tsunagu/commentTree";
 import PostCard from "@/components/platform/tsunagu/postCard";
 import { apiGET } from "@/util/api/api";
+import { Comment, Post } from "@/util/types/tsunagu";
 import { Breadcrumbs, Typography } from "@mui/material";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
 export default function TsunaguPostPage() {
     const params = useParams();
-    const [post, setPost] = useState<any>()
+    const [post, setPost] = useState<Post>()
 
     useEffect(() => {
-            apiGET<any>(`tsunagu/community/${params.circle_id}/post/${params.post_id}`)
+            apiGET<Post>(`tsunagu/community/${params.circle_id}/post/${params.post_id}`)
             .then((res) => {
                 setPost(res)
-                console.log(res.comments)
             })
         }, [])
 
@@ -29,7 +29,7 @@ export default function TsunaguPostPage() {
                 <div id="comment-container" className="row-gap row-gap--md">
                     {
                         post ? 
-                            post.comments.map((comment: any) => (
+                            post.comments.map((comment: Comment) => (
                             <CommentCard key={comment.id} depth={0} comment={comment} />
                         ))
                         :

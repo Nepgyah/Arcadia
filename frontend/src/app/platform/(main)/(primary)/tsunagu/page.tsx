@@ -6,11 +6,12 @@ import { useEffect, useState } from "react";
 import React from "react";
 import { useUser } from "@/util/wrappers/userContext";
 import PostCard from "@/components/platform/tsunagu/postCard";
+import { Post } from "@/util/types/tsunagu";
 
 export default function TsunaguHome() {
     const { user } = useUser()
     
-    const [latestPosts, setLatestPosts] = useState([])
+    const [latestPosts, setLatestPosts] = useState<Post[]>([])
     const [userCommunities, setUserCommunities] = useState([])
 
     useEffect(() => {
