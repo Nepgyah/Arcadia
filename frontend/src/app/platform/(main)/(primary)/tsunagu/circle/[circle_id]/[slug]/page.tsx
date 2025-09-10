@@ -1,11 +1,10 @@
 'use client';
 
-import PostCard from "@/components/platform/tsunagu/postCard";
-import { apiGET } from "@/util/api/api";
-import { Post } from "@/util/types/tsunagu";
-import { Breadcrumbs, Typography } from "@mui/material";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import PostCard from "@/components/platform/tsunagu/postCard";
+import { apiGET } from "@/util/api/api";
+import { Post } from "@/types/tsunagu";
 
 export default function TsunaguCommunityPage() {
     const params = useParams();

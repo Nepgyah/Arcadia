@@ -1,11 +1,10 @@
 'use client';
-import { apiGET } from "@/util/api/api";
-import React from "react";
-import { useEffect, useState } from "react";
 
-import '@/styles/platform/pages/miru/home.scss';
-import EntryCard from "@/components/platform/entryCard";
+import React, { useEffect, useState } from "react";
 import { Breadcrumbs, Typography } from "@mui/material";
+
+import { apiGET } from "@/util/api/api";
+import EntryCard from "@/components/platform/entryCard";
 import WIP from "@/components/platform/wip";
 
 export default function MiruHome() {

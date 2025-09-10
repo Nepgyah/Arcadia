@@ -1,20 +1,20 @@
 'use client';
 
-import { apiGET } from "@/util/api/api";
-import { Breadcrumbs, Typography } from "@mui/material";
 import { useParams } from "next/navigation";
 import React from "react";
 import { useEffect, useState } from "react";
 
-import '@/styles/platform/pages/miru/anime-detail.scss';
-import { Anime } from "@/util/types/miru";
-import InfoItem from "@/components/platform/infoItem";
-import { Character } from "@/util/types/shared";
+import { Breadcrumbs, Typography } from "@mui/material";
+
+import { apiGET } from "@/util/api/api";
 import CharacterAvatar from "@/components/platform/characterAvatar";
-import WIP from "@/components/platform/wip";
+import InfoItem from "@/components/platform/infoItem";
 import RelationCard from "@/components/platform/relationCard";
 import TagChip from "@/components/platform/chip";
-import { Company, Game } from "@/util/types/asobu";
+import WIP from "@/components/platform/wip";
+
+import { Character } from "@/types/shared";
+import { Company, Game } from "@/types/asobu";
 
 export default function GameDetails() {
     const params = useParams();
@@ -46,7 +46,7 @@ export default function GameDetails() {
                 <Typography>Game</Typography>
                 <Typography>{game?.title}</Typography>
             </Breadcrumbs>
-            <div id="page-miru-anime-detail" className="page-content page-content--two-col">
+            <div className="media-detail page-content page-content--two-col">
                 <div className="page-content__left-column">
                     <img 
                         id="image" 
@@ -67,24 +67,24 @@ export default function GameDetails() {
                         <WIP />
                     </div>
                 </div>
-                <div className="page-content__right-column row-gap row-gap--md">
+                <div id="right-column" className="page-content__right-column row-gap row-gap--md">
                     <div id="primary">
-                        <div id="primary-left" className="divider divider--vertical padding-right--md row-gap row-gap--md">
-                            <div id="overview">
-                                <div id="quick-stats" className="row-gap row-gap--md">
-                                    <div className="gray-container flex flex--small-gap">
+                        <div id="overview" className="divider divider--vertical padding-right--md row-gap row-gap--md">
+                            <div id="at-a-glance">
+                                <div className="row-gap row-gap--md">
+                                    <div id="quick-stats" className="gray-container flex flex--small-gap">
                                         <InfoItem label="Status" value={game?.status} />
                                         <InfoItem label="ESRB" value={game?.esrb_rating} />
                                         <InfoItem label="PEGI" value={game?.pegi_rating} />
                                     </div>
-                                    <div id="score-tags">
-                                        <div id="score" className="gray-container flex flex--small-gap">
+                                    <div id="metrics">
+                                        <div id="arcadia-score" className="gray-container flex flex--small-gap">
                                             <p className="bold">{game?.score}</p>
                                             <p>{game?.users} users</p>
                                         </div>
-                                        <div id="genre">
+                                        <div id="tags">
                                             <h2>Genres</h2>
-                                            <div className="genre-container">
+                                            <div>
                                                 {
                                                     game?.genres.length === 0 ?
                                                         <p>No genre tags added</p>
@@ -124,10 +124,10 @@ export default function GameDetails() {
                         </div>
                     </div>
                     <div id="secondary">
-                        <div id="related" className="divider divider--vertical padding-right--md">
+                        <div id="relations" className="divider divider--vertical padding-right--md">
                             <h2>Related Games</h2>
-                            <div className="layout-grid-2">
-                                <div id="previous" className="row-gap row-gap--xs divider divider--vertical padding-right--md">
+                            <div>
+                                <div id="previous" className="row-gap row-gap--xs">
                                     {
                                         game?.previous_games.length === 0 ?
                                             <p>No previous games</p>
@@ -162,7 +162,7 @@ export default function GameDetails() {
                             </div>
                         </div>
                         <div id="characters" className="padding-left--md">
-                            <h2>characters</h2>
+                            <h2>Characters</h2>
                             <div className="row-gap row-gap--md">
                                 {
                                     game?.characters &&

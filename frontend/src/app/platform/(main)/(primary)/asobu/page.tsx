@@ -1,11 +1,12 @@
 'use client';
-import EntryCard from "@/components/platform/entryCard";
-import WIP from "@/components/platform/wip";
-import { apiGET } from "@/util/api/api";
-import { Game } from "@/util/types/asobu";
-import { Breadcrumbs, Typography } from "@mui/material";
+
 import React from "react";
 import { useEffect, useState } from "react";
+import { Breadcrumbs, Typography } from "@mui/material";
+import WIP from "@/components/platform/wip";
+import EntryCard from "@/components/platform/entryCard";
+import { apiGET } from "@/util/api/api";
+import { Game } from "@/types/asobu";
 
 interface APIProps {
     latest_games: Game[],

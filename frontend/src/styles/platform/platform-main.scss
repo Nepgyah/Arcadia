@@ -200,33 +200,3 @@ p {
         }
     }
 }
-
-#miru-layout {
-    h2, .MuiBreadcrumbs-separator {
-        color: map-get($arcadia-colors, miru-base )
-    }
-}
-
-#asobu-layout {
-    h2, .MuiBreadcrumbs-separator {
-        color: map-get($arcadia-colors, asobu-base )
-    }
-}
-
-#kumitateru-layout {
-    h2, .MuiBreadcrumbs-separator {
-        color: map-get($arcadia-colors, kumitateru-base )
-    }
-}
-
-#tsunagu-layout {
-    h2, .MuiBreadcrumbs-separator {
-        color: map-get($arcadia-colors, tsunagu-base )
-    }
-}
-
-#yomu-layout {
-    h2, .MuiBreadcrumbs-separator {
-        color: map-get($arcadia-colors, yomu-base )
-    }
-}

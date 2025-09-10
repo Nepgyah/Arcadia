@@ -1,12 +1,15 @@
 'use client';
 
-import { Breadcrumbs, Typography } from "@mui/material";
-import { apiGET } from "@/util/api/api";
-import { useEffect, useState } from "react";
 import React from "react";
-import { useUser } from "@/util/wrappers/userContext";
+import { useEffect, useState } from "react";
+
+import { Breadcrumbs, Typography } from "@mui/material";
+
+import { apiGET } from "@/util/api/api";
 import PostCard from "@/components/platform/tsunagu/postCard";
-import { Post } from "@/util/types/tsunagu";
+import { useUser } from "@/util/wrappers/userContext";
+
+import { Post } from "@/types/tsunagu";
 
 export default function TsunaguHome() {
     const { user } = useUser()
