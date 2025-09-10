@@ -1,7 +1,7 @@
 'use client';
 
 import { apiGET } from "@/util/api/api";
-import { Community } from "@/util/types/tsunagu";
+import { Community } from "@/types/tsunagu";
 import { Avatar, Breadcrumbs, Typography } from "@mui/material";
 import Link from "next/link";
 import { useParams } from "next/navigation";

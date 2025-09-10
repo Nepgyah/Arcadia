@@ -6,12 +6,12 @@ import { useParams } from "next/navigation";
 import React from "react";
 import { useEffect, useState } from "react";
 import InfoItem from "@/components/platform/infoItem";
-import { Character } from "@/util/types/shared";
+import { Character } from "@/types/shared";
 import CharacterAvatar from "@/components/platform/characterAvatar";
 import WIP from "@/components/platform/wip";
 import RelationCard from "@/components/platform/relationCard";
 import TagChip from "@/components/platform/chip";
-import { Company, Game } from "@/util/types/asobu";
+import { Company, Game } from "@/types/asobu";
 
 export default function GameDetails() {
     const params = useParams();

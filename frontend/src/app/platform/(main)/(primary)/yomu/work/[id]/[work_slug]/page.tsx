@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 
 import InfoItem from "@/components/platform/infoItem";
 import TagChip from "@/components/platform/chip";
-import { Character } from "@/util/types/shared";
+import { Character } from "@/types/shared";
 import CharacterAvatar from "@/components/platform/characterAvatar";
 
 export default function WorkDetails() {

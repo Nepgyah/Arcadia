@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import React from "react";
 import { useUser } from "@/util/wrappers/userContext";
 import PostCard from "@/components/platform/tsunagu/postCard";
-import { Post } from "@/util/types/tsunagu";
+import { Post } from "@/types/tsunagu";
 
 export default function TsunaguHome() {
     const { user } = useUser()

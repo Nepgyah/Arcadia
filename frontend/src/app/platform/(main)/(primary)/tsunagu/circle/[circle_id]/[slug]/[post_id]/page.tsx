@@ -3,7 +3,7 @@
 import CommentCard from "@/components/platform/tsunagu/commentTree";
 import PostCard from "@/components/platform/tsunagu/postCard";
 import { apiGET } from "@/util/api/api";
-import { Comment, Post } from "@/util/types/tsunagu";
+import { Comment, Post } from "@/types/tsunagu";
 import { Breadcrumbs, Typography } from "@mui/material";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
