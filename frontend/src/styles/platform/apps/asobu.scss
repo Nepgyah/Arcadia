@@ -1,0 +1,7 @@
+@use '../../abstract/variables' as *;
+
+#asobu-app {
+    h2, .MuiBreadcrumbs-separator {
+        color: map-get($arcadia-colors, asobu-base )
+    }
+}
