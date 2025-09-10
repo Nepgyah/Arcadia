@@ -5,8 +5,6 @@ import { Breadcrumbs, Typography } from "@mui/material";
 import { useParams } from "next/navigation";
 import React from "react";
 import { useEffect, useState } from "react";
-
-import '@/styles/platform/pages/miru/anime-detail.scss';
 import { Anime } from "@/util/types/miru";
 import InfoItem from "@/components/platform/infoItem";
 import { Character } from "@/util/types/shared";
@@ -32,8 +30,8 @@ export default function AnimeDetails() {
                 <Typography>Anime</Typography>
                 <Typography>{anime?.title}</Typography>
             </Breadcrumbs>
-            <div id="page-miru-anime-detail" className="page-content page-content--two-col">
-                <div className="page-content__left-column">
+            <div className="media-detail page-content page-content--two-col">
+                <div id="left-column" className="page-content__left-column left-column">
                     <img 
                         id="image" 
                         className="media-image"
@@ -53,24 +51,24 @@ export default function AnimeDetails() {
                         <WIP />
                     </div>
                 </div>
-                <div className="page-content__right-column row-gap row-gap--md">
+                <div id="right-column" className="page-content__right-column row-gap row-gap--md">
                     <div id="primary">
-                        <div id="primary-left" className="divider divider--vertical padding-right--md row-gap row-gap--md">
-                            <div id="overview">
-                                <div id="quick-stats" className="row-gap row-gap--md">
-                                    <div className="gray-container flex flex--small-gap">
+                        <div id="overview" className="divider divider--vertical padding-right--md row-gap row-gap--md">
+                            <div id="at-a-glance">
+                                <div className="row-gap row-gap--md">
+                                    <div id="quick-stats" className="gray-container flex flex--small-gap">
                                         <InfoItem label="Season" value={anime ? anime.season ? anime.season : 'N/A' : 'Not announced'} />
                                         <InfoItem label="Type" value={anime?.type} />
                                         <InfoItem label="Episodes" value={'Added later'} />
                                     </div>
-                                    <div id="score-tags">
-                                        <div id="score" className="gray-container flex flex--small-gap">
+                                    <div id="metrics">
+                                        <div id="arcadia-score" className="gray-container flex flex--small-gap">
                                             <p className="bold">{anime?.score}</p>
                                             <p>{anime?.users} users</p>
                                         </div>
-                                        <div id="genre">
+                                        <div id="tags">
                                             <h2>Genre</h2>
-                                            <div className="genre-container">
+                                            <div>
                                                 {
                                                     anime?.genres.length === 0 ?
                                                         <p>No genre tags added</p>
@@ -93,7 +91,7 @@ export default function AnimeDetails() {
                                 <p>{anime?.summary}</p>
                             </div>
                         </div>
-                        <div id="primary-right" className="padding-left--md row-gap row-gap--md">
+                        <div id="primary-right" className="misc padding-left--md row-gap row-gap--md">
                             <div>
                                 <h2>Details</h2>
                                 <InfoItem label="Status" value={anime?.status} />
@@ -108,10 +106,10 @@ export default function AnimeDetails() {
                         </div>
                     </div>
                     <div id="secondary">
-                        <div id="related" className="divider divider--vertical padding-right--md">
+                        <div id="relations" className="divider divider--vertical padding-right--md">
                             <h2>Related Anime</h2>
-                            <div className="layout-grid-2">
-                                <div id="previous" className="row-gap row-gap--xs divider divider--vertical padding-right--md">
+                            <div>
+                                <div id="previous" className="row-gap row-gap--xs">
                                     {
                                         anime?.previous_anime.length === 0 ?
                                         <p>No previous anime</p>
@@ -145,8 +143,8 @@ export default function AnimeDetails() {
                                 </div>
                             </div>
                         </div>
-                        <div id="characters" className="padding-left--md">
-                            <h2>characters</h2>
+                        <div id="characters">
+                            <h2>Characters</h2>
                             <div className="row-gap row-gap--md">
                                 {
                                     anime?.characters &&

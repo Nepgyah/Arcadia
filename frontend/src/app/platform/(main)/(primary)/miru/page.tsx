@@ -2,8 +2,6 @@
 import { apiGET } from "@/util/api/api";
 import React from "react";
 import { useEffect, useState } from "react";
-
-import '@/styles/platform/pages/miru/home.scss';
 import EntryCard from "@/components/platform/entryCard";
 import { Breadcrumbs, Typography } from "@mui/material";
 import WIP from "@/components/platform/wip";

@@ -201,12 +201,6 @@ p {
     }
 }
 
-#miru-layout {
-    h2, .MuiBreadcrumbs-separator {
-        color: map-get($arcadia-colors, miru-base )
-    }
-}
-
 #asobu-layout {
     h2, .MuiBreadcrumbs-separator {
         color: map-get($arcadia-colors, asobu-base )

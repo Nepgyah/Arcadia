@@ -1,0 +1,7 @@
+@use '../../abstract/variables' as *;
+
+#miru-layout {
+    h2, .MuiBreadcrumbs-separator {
+        color: map-get($arcadia-colors, miru-base )
+    }
+}

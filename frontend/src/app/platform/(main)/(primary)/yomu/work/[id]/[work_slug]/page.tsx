@@ -7,7 +7,6 @@ import { useParams } from "next/navigation";
 import React from "react";
 import { useEffect, useState } from "react";
 
-import '@/styles/platform/pages/yomu/work-detail.scss';
 import InfoItem from "@/components/platform/infoItem";
 import TagChip from "@/components/platform/chip";
 import { Character } from "@/util/types/shared";
@@ -31,8 +30,8 @@ export default function WorkDetails() {
                 <Typography>Work</Typography>
                 <Typography>{work?.title}</Typography>
             </Breadcrumbs>
-            <div id="page-yomu-work-detail" className="page-content page-content--two-col">
-                <div className="page-content__left-column">
+            <div className="media-detail page-content page-content--two-col">
+                <div id="left-column" className="page-content__left-column left-column">
                     <img 
                         id="image" 
                         className="media-image"
@@ -52,24 +51,24 @@ export default function WorkDetails() {
                         <WIP />
                     </div>
                 </div>
-                <div className="page-content__right-column row-gap row-gap--md">
+                <div id="right-column" className="page-content__right-column row-gap row-gap--md">
                     <div id="primary">
-                        <div id="primary-left" className="divider divider--vertical padding-right--md row-gap row-gap--md">
-                            <div id="overview">
+                        <div id="overview" className="divider divider--vertical padding-right--md row-gap row-gap--md">
+                            <div id="at-a-glance">
                                 <div id="quick-stats" className="row-gap row-gap--md">
                                     <div className="gray-container flex flex--small-gap">
                                         <InfoItem label="Type" value={work?.type} />
                                         <InfoItem label="Volumes" value={work?.total_volumes} />
                                         <InfoItem label="Chapters" value={work?.total_chapters} />
                                     </div>
-                                    <div id="score-tags">
-                                        <div id="score" className="gray-container flex flex--small-gap">
+                                    <div id="metrics">
+                                        <div id="arcadia-score" className="gray-container flex flex--small-gap">
                                             <p className="bold clr-yomu-base txt-xxl">{work?.score}</p>
                                             <p>{work?.users} users</p>
                                         </div>
-                                        <div id="genre">
+                                        <div id="tags">
                                             <h2>Genre</h2>
-                                            <div className="genre-container">
+                                            <div>
                                                 {
                                                     work?.genres.length === 0 ?
                                                         <p>No genre tags added</p>
@@ -115,10 +114,10 @@ export default function WorkDetails() {
                         </div>
                     </div>
                     <div id="secondary">
-                        <div id="related" className="divider divider--vertical padding-right--md">
+                        <div id="relations" className="divider divider--vertical padding-right--md">
                             <h2>Related Manga</h2>
-                            <div className="layout-grid-2">
-                                <div id="previous" className="row-gap row-gap--xs divider divider--vertical padding-right--md">
+                            <div>
+                                <div id="previous" className="row-gap row-gap--xs">
                                     {/* {
                                         anime?.previous_anime.length === 0 ?
                                         <p>No previous anime</p>
