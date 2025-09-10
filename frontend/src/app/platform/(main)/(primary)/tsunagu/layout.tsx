@@ -1,5 +1,5 @@
 // Layout to apply asobu color scheming
-import '@/styles/platform/pages/tsunagu.scss';
+import '@/styles/platform/apps/tsunagu.scss';
 
 export default function TsunaguLayout({children} : {children: React.ReactNode}) {
     return (
