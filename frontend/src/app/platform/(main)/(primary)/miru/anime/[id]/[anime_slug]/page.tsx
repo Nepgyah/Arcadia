@@ -1,17 +1,20 @@
 'use client';
 
-import { apiGET } from "@/util/api/api";
-import { Breadcrumbs, Typography } from "@mui/material";
 import { useParams } from "next/navigation";
+
 import React from "react";
 import { useEffect, useState } from "react";
-import { Anime } from "@/types/miru";
-import InfoItem from "@/components/platform/infoItem";
-import { Character } from "@/types/shared";
+import { Breadcrumbs, Typography } from "@mui/material";
+import { apiGET } from "@/util/api/api";
+
 import CharacterAvatar from "@/components/platform/characterAvatar";
-import WIP from "@/components/platform/wip";
+import InfoItem from "@/components/platform/infoItem";
 import RelationCard from "@/components/platform/relationCard";
 import TagChip from "@/components/platform/chip";
+import WIP from "@/components/platform/wip";
+
+import { Anime } from "@/types/miru";
+import { Character } from "@/types/shared";
 
 export default function AnimeDetails() {
     const params = useParams();

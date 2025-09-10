@@ -1,12 +1,10 @@
 'use client';
 
-import CommentCard from "@/components/platform/tsunagu/commentTree";
-import PostCard from "@/components/platform/tsunagu/postCard";
+import React, { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 import { apiGET } from "@/util/api/api";
 import { Comment, Post } from "@/types/tsunagu";
-import { Breadcrumbs, Typography } from "@mui/material";
-import { useParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import CommentCard from "@/components/platform/tsunagu/commentTree";
 
 export default function TsunaguPostPage() {
     const params = useParams();

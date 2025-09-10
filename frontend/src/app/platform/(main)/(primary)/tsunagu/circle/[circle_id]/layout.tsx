@@ -1,11 +1,11 @@
 'use client';
 
-import { apiGET } from "@/util/api/api";
-import { Community } from "@/types/tsunagu";
-import { Avatar, Breadcrumbs, Typography } from "@mui/material";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { Avatar, Breadcrumbs, Typography } from "@mui/material";
+import { apiGET } from "@/util/api/api";
+import { Community } from "@/types/tsunagu";
 
 // Layout to display permenant circle information
 export default function TsunaguCircleLayout({children} : {children: React.ReactNode}) {
