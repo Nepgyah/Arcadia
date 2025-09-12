@@ -1,6 +1,7 @@
 @use "../../abstract/variables" as *;
 
 .entry-card {
+    width: 200px;
     &__image {
         border-radius: 5px;
         box-shadow: $box-shadow-default;

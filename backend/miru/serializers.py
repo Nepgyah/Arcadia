@@ -28,15 +28,7 @@ class AnimeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model=Anime
-        fields = [
-            'id', 'slug',
-            'title', 'title_ja', 'title_romaji','title_alternatives',
-            'summary', 'season', 'status',
-            'characters', 'genres', 'previous_anime', 'next_anime',
-            'type', 'studio', 'rating',
-            'score','users', 
-            'airing_start_date', 'airing_end_date'
-        ]
+        fields = "__all__"
 
     def get_season(self, obj):
         if obj.season:
@@ -83,3 +75,10 @@ class AnimeSerializer(serializers.ModelSerializer):
     
     def get_status(self, obj):
         return obj.get_status_display()
+        
+
+class AnimeListeSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Anime
+        fields = [ 'id', 'title', 'slug', 'rating', 'users']
