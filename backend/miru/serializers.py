@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import Anime, Season, Company, AnimeRelation
-from shared.serializers import CompanySerializer, GenreSerializer
+from shared.serializers import FranchiseSerializer, GenreSerializer
 from characters.serializers import CharacterSerializer
 
 class SeasonSerializer(serializers.ModelSerializer):
@@ -78,7 +78,12 @@ class AnimeSerializer(serializers.ModelSerializer):
         
 
 class AnimeListeSerializer(serializers.ModelSerializer):
+    franchise = FranchiseSerializer(read_only=True)
+    status = serializers.SerializerMethodField()
 
     class Meta:
         model = Anime
-        fields = [ 'id', 'title', 'slug', 'rating', 'users']
+        fields = [ 'id', 'title', 'slug', 'score', 'status', 'summary', 'rating', 'users', 'franchise']
+
+    def get_status(self, obj):
+        return obj.get_status_display()
