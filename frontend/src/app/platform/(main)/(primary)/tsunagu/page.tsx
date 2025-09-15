@@ -30,34 +30,36 @@ export default function TsunaguHome() {
                 <Typography>Tsunagu</Typography>
                 <Typography>Home</Typography>
             </Breadcrumbs>
-            <div id="page-asobu-home"  className="page-content page-content--two-col page-content--reversed">
-                <div className="page-content__left-column divider divider--vertical padding-right--lg">
-                    <div id="latest">
-                        <h2>Trending</h2>
-                        <div className="row-gap row-gap--md">
-                            {
-                                latestPosts ?
-                                    latestPosts.map((post: any, idx: number) => (
-                                        <PostCard 
-                                            post={post} 
-                                            link={`tsunagu/circle/${post.community.id}/${post.community.slug}/${post.id}`}
-                                            key={idx} 
-                                        />
-                                    ))
-                                :
-                                    'Loading'
-                            }
+            <div id="page-asobu-home"  className="page-content">
+                <div className="two-col-section two-col-section--uneven-reverse">
+                    <div className="vertical-divider-right p-right-xl">
+                        <div id="latest">
+                            <h2>Trending</h2>
+                            <div className="row-gap-md">
+                                {
+                                    latestPosts ?
+                                        latestPosts.map((post: any, idx: number) => (
+                                            <PostCard 
+                                                post={post} 
+                                                link={`tsunagu/circle/${post.community.id}/${post.community.slug}/${post.id}`}
+                                                key={idx} 
+                                            />
+                                        ))
+                                    :
+                                        'Loading'
+                                }
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div className="page-content__right-column">
-                    <h2 className="app-font--miru border-bottom">Your Communities</h2>
-                    {
-                        user ?
-                            'Your Communities'
-                        :
-                            'No Communities Found'
-                    }
+                    <div>
+                        <h2 className="app-font--miru border-bottom">Your Communities</h2>
+                        {
+                            user ?
+                                'Your Communities'
+                            :
+                                'No Communities Found'
+                        }
+                    </div>
                 </div>
             </div>
         </React.Fragment>

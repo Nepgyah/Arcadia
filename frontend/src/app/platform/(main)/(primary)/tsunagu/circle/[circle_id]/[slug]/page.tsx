@@ -18,7 +18,7 @@ export default function TsunaguCommunityPage() {
         }, [])
 
     return (
-        <div id="post-list" className="row-gap row-gap--md">
+        <div id="post-list" className="row-gap-md">
             {
                 posts ?
                     posts.map((post: Post, idx: number) => (

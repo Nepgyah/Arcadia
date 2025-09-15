@@ -1,4 +1,4 @@
-import { Comment } from "@/util/types/tsunagu"
+import { Comment } from "@/types/tsunagu"
 
 export default function CommentCard(
     {
@@ -10,13 +10,13 @@ export default function CommentCard(
 ) {
     return (
         <div className="comment-group" style={{ marginLeft: depth * 40 }}>
-            <div className="comment-block padding-left--small">
+            <div className="comment-block p-left-xs">
                 <div className={`${depth != 0 ? 'depth-arrows' : 'hide'}`}>
                     <div className="vertical-line"></div>
                     <div className="horizontal-line"></div>
                 </div>
                 <p className="comment-block__username txt-xs">{comment.user.username}</p>
-                <p className="comment-block__content txt-m">{comment.content}</p>
+                <p className="comment-block__content txt-md">{comment.content}</p>
                 <small className="comment-block__upload-date txt-xs">
                 {new Date(comment.created_at).toLocaleString()}
                 </small>
