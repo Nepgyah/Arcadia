@@ -58,7 +58,7 @@ export default function MiruHome() {
                 <div className="two-col-section two-col-section--uneven">
                     <div>
                         <h2>Search Settings</h2>
-                        <div className="row-gap row-gap--md">
+                        <div className="row-gap-md">
                             <TextField 
                                 id="search-title" 
                                 label="Search Title" 
@@ -114,9 +114,9 @@ export default function MiruHome() {
                             </Button>
                         </div>
                     </div>
-                    <div id="seasonal" className="">
+                    <div id="seasonal" className="vertical-divider-left p-left-xl">
                         <Pagination onChange={goToPage} page={currentPage} count={pageCount} />
-                        <div className="layout-grid-3 m-top-m">
+                        <div className="layout-grid-3 m-top-md">
                             {
                                 animeList &&
                                 animeList.map((anime: Anime, key: number) => (

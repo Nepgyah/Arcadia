@@ -26,20 +26,19 @@
 }
 
 .row-gap {
-    
     &-s {
         display: flex;
         flex-direction: column;
         row-gap: 14px;
     }
 
-    &--md {
+    &-md {
         display: flex;
         flex-direction: column;
         row-gap: 1rem;
     }
 
-    &--lg {
+    &-lg {
         display: flex;
         flex-direction: column;
         row-gap: 2rem;
@@ -47,7 +46,6 @@
 }
 
 // Typography
-
 p {
     font-size: .75rem;
 }
@@ -90,10 +88,11 @@ h2 {
 }
 
 // Misc
-.divider {
-    &--vertical {
-        border-right: 1px solid #BBBBBB;
-    }
+.vertical-divider { 
+
+    &-left { border-left: 1px solid #BBBBBB; }
+    
+    &-right { border-right: 1px solid #BBBBBB; }
 }
 
 // BASE COMPONENTS

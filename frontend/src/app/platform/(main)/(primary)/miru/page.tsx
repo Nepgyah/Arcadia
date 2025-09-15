@@ -26,47 +26,50 @@ export default function MiruHome() {
                 <Typography>Miru</Typography>
                 <Typography>Home</Typography>
             </Breadcrumbs>
-            <div id="page-miru-home"  className="page-content page-content--two-col page-content--reversed">
-                <div className="page-content__left-column divider divider--vertical padding-right--lg">
-                    <div id="seasonal">
-                        <h2>Current Season</h2>
-                        <div className="layout-grid-5">
-                            {
-                                seasonalAnime &&
-                                seasonalAnime.map((anime: any, key: number) => (
-                                    <EntryCard 
-                                        key={key} 
-                                        app="miru" 
-                                        title={anime.title} 
-                                        clickLink={`/platform/miru/anime/${anime.id}/${anime.slug}`} 
-                                        imageLink={`/storage/miru/${anime.id}.jpg`}
-                                    />
-                                ))
-                            }
+            <div id="page-miru-home"  className="page-content">
+                <div className="two-col-section two-col-section--uneven-reverse">
+                    <div className="row-gap-md">
+                        <div id="seasonal">
+                            <h2>Current Season</h2>
+                            <div className="layout-grid-5">
+                                {
+                                    seasonalAnime &&
+                                    seasonalAnime.map((anime: any, key: number) => (
+                                        <EntryCard 
+                                            key={key} 
+                                            app="miru" 
+                                            title={anime.title} 
+                                            clickLink={`/platform/miru/anime/${anime.id}/${anime.slug}`} 
+                                            imageLink={`/storage/miru/${anime.id}.jpg`}
+                                        />
+                                    ))
+                                }
+                            </div>
+                        </div>
+                        <div id="all-time">
+                            <h2>All Time</h2>
+                            <div className="layout-grid-5">
+                                {
+                                    topAnime &&
+                                    topAnime.map((anime: any, key: number) => (
+                                        <EntryCard 
+                                            key={key} 
+                                            app="miru" 
+                                            title={anime.title} 
+                                            clickLink={`/platform/miru/anime/${anime.id}/${anime.slug}`} 
+                                            imageLink={`/storage/miru/${anime.id}.jpg`}
+                                        />
+                                    ))
+                                }
+                            </div>
                         </div>
                     </div>
-                    <div id="all-time">
-                        <h2>All Time</h2>
-                        <div className="layout-grid-5">
-                            {
-                                topAnime &&
-                                topAnime.map((anime: any, key: number) => (
-                                    <EntryCard 
-                                        key={key} 
-                                        app="miru" 
-                                        title={anime.title} 
-                                        clickLink={`/platform/miru/anime/${anime.id}/${anime.slug}`} 
-                                        imageLink={`/storage/miru/${anime.id}.jpg`}
-                                    />
-                                ))
-                            }
-                        </div>
+                    <div className="vertical-divider-left p-left-xl">
+                        <h2 className="app-font--miru border-bottom">Friend Activity</h2>
+                        <WIP />
                     </div>
                 </div>
-                <div className="page-content__right-column">
-                    <h2 className="app-font--miru border-bottom">Details</h2>
-                    <WIP />
-                </div>
+
             </div>
         </React.Fragment>
     )

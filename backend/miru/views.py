@@ -51,7 +51,7 @@ class AnimeSearchView(rest_framework.views.APIView):
         if search:
             anime_queryset = anime_queryset.filter(title__icontains=search)
 
-        paginator = Paginator(anime_queryset, 2)
+        paginator = Paginator(anime_queryset, 3)
         page_obj = paginator.get_page(page)
 
         anime_data = miru.serializers.AnimeListeSerializer(page_obj, many=True).data
