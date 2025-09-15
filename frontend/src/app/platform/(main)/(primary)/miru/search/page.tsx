@@ -54,81 +54,82 @@ export default function MiruHome() {
                 <Typography>Miru</Typography>
                 <Typography>Search</Typography>
             </Breadcrumbs>
-            <div id="page-miru-all-time"  className="page-content page-content--two-col">
-                <div>
-                    <TextField 
-                        id="search-title" 
-                        label="Search Title" 
-                        variant="standard"
-                        value={search}
-                        onChange={(e) => setSearch(e.target.value)}
-                    />
-                </div>
-                <div><Pagination onChange={goToPage} page={currentPage} count={pageCount} /></div>
-                <div className="filtering page-content__left-column left-column">
-                    <h2>Filters</h2>
-                    <FormControl variant="standard">
-                        <InputLabel id="demo-simple-select-standard-label">Airing Status</InputLabel>
-                        <Select
-                            id="airing-status"
-                            value={airingStatus}
-                            onChange={(e) => setAiringStatus(e.target.value)}
-                            label="Airing Status"
-                        >
-                        <MenuItem value={-1} disabled>Select status</MenuItem>
-                        <MenuItem value={0}>Not Yet Aired</MenuItem>
-                        <MenuItem value={1}>Airing</MenuItem>
-                        <MenuItem value={2}>Finished Airing</MenuItem>
-                        </Select>
-                    </FormControl>
+            <div id="page-miru-all-time"  className="page-content">
+                <div className="two-col-section two-col-section--uneven">
+                    <div>
+                        <h2>Search Settings</h2>
+                        <div className="row-gap row-gap--md">
+                            <TextField 
+                                id="search-title" 
+                                label="Search Title" 
+                                variant="standard"
+                                value={search}
+                                onChange={(e) => setSearch(e.target.value)}
+                            />
+                            <FormControl variant="standard">
+                                <InputLabel id="demo-simple-select-standard-label">Airing Status</InputLabel>
+                                <Select
+                                    id="airing-status"
+                                    value={airingStatus}
+                                    onChange={(e) => setAiringStatus(e.target.value)}
+                                    label="Airing Status"
+                                >
+                                <MenuItem value={-1} disabled>Select status</MenuItem>
+                                <MenuItem value={0}>Not Yet Aired</MenuItem>
+                                <MenuItem value={1}>Airing</MenuItem>
+                                <MenuItem value={2}>Finished Airing</MenuItem>
+                                </Select>
+                            </FormControl>
 
-                    <FormControl variant="standard">
-                        <InputLabel id="demo-simple-select-standard-label">Type</InputLabel>
-                        <Select
-                            id="media-type"
-                            value={animeType}
-                            onChange={(e) => setAnimeType(e.target.value)}
-                            label="media-type"
-                        >
-                        <MenuItem value={-1} disabled>Select type</MenuItem>
-                        <MenuItem value={0}>Tv</MenuItem>
-                        <MenuItem value={1}>Movie</MenuItem>
-                        <MenuItem value={2}>OVA</MenuItem>
-                        <MenuItem value={3}>ONA</MenuItem>
-                        <MenuItem value={4}>Web</MenuItem>
-                        </Select>
-                    </FormControl>
+                            <FormControl variant="standard">
+                                <InputLabel id="demo-simple-select-standard-label">Type</InputLabel>
+                                <Select
+                                    id="media-type"
+                                    value={animeType}
+                                    onChange={(e) => setAnimeType(e.target.value)}
+                                    label="media-type"
+                                >
+                                <MenuItem value={-1} disabled>Select type</MenuItem>
+                                <MenuItem value={0}>Tv</MenuItem>
+                                <MenuItem value={1}>Movie</MenuItem>
+                                <MenuItem value={2}>OVA</MenuItem>
+                                <MenuItem value={3}>ONA</MenuItem>
+                                <MenuItem value={4}>Web</MenuItem>
+                                </Select>
+                            </FormControl>
 
-                    <Button 
-                        variant="contained" 
-                        className="bg-miru-base clr-txt-dark"
-                        onClick={() => APICall(1)}
-                    >
-                        Filter
-                    </Button>
-                    <Button
-                        variant="text"
-                        color="white"
-                        onClick={() => resetFilters()}
-                    >
-                        Reset
-                    </Button>
-                </div>
-                <div id="seasonal" className="page-content__right-column row-gap row-gap--md">
-                    <h2>Results</h2>
-                    <div className="layout-grid-3">
-                        {
-                            animeList &&
-                            animeList.map((anime: Anime, key: number) => (
-                                <DetailMediaCard 
-                                    key={key}
-                                    app="miru"
-                                    media={anime}
-                                    link={`/platform/miru/anime/${anime.id}/${anime.slug}`}
-                                    status={anime.status}
-                                />
-                            ))
-                        }
+                            <Button 
+                                variant="contained" 
+                                className="bg-miru-base clr-txt-dark"
+                                onClick={() => APICall(1)}
+                            >
+                                Filter
+                            </Button>
+                            <Button
+                                variant="text"
+                                color="white"
+                                onClick={() => resetFilters()}
+                            >
+                                Reset
+                            </Button>
+                        </div>
+                    </div>
+                    <div id="seasonal" className="">
+                        <Pagination onChange={goToPage} page={currentPage} count={pageCount} />
+                        <div className="layout-grid-3">
+                            {
+                                animeList &&
+                                animeList.map((anime: Anime, key: number) => (
+                                    <DetailMediaCard 
+                                        key={key}
+                                        app="miru"
+                                        media={anime}
+                                        link={`/platform/miru/anime/${anime.id}/${anime.slug}`}
+                                        status={anime.status}
+                                    />
+                                ))
+                            }
+                        </div>
                     </div>
                 </div>
             </div>

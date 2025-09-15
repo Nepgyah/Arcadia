@@ -67,7 +67,7 @@ p {
 .row-gap {
     display: flex;
     flex-direction: column;
-
+    
     &--xs {
         row-gap: 14px;
     }
@@ -75,6 +75,7 @@ p {
     &--md {
         row-gap: 1.25rem;
     }
+
     &--lg {
         row-gap: 2rem;
     }
@@ -100,6 +101,16 @@ p {
 
 // BASE COMPONENTS
 
+.search-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .MuiFormControl-root {
+        display: flex;
+        
+    }
+}
 .gray-container {
     background-color: #2C2D33;
     padding: 1rem;

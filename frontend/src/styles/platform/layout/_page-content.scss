@@ -2,8 +2,23 @@
     // min-height: 900px;
     margin-top: 2rem;
     min-width: 1200px;
-    &--two-col {
+    min-height: 100dvh;
 
+    > div {
+        margin-bottom: 1rem;
+    }
+
+    .two-col-section {
+        display: grid;
+        column-gap: 1rem;
+
+        &--uneven {
+            grid-template-columns: 20% 80%;
+        }
+
+        &--uneven-reverse {
+            grid-template-columns: 80% 20%;
+        }
     }
 }
 
