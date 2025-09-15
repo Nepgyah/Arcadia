@@ -53,3 +53,12 @@ $box-shadow-default: 0px 4px 4px rgba(#000000, .25);
 // Platform colors
 $platform-bg-1: #23242A;
 $platform-bg-2: #1C1D1F;
+
+// Platform spacings
+$platform-spacing: (
+    xs: .5rem,
+    s:  .75rem,
+    m:  1rem,
+    l:  1.5rem,
+    xl: 2rem
+);

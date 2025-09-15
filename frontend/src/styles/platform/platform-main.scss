@@ -1,39 +1,8 @@
 @use "../abstract/variables" as *;
 @forward "./layout/index";
 
-h2 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #bbbbbb;
-}
-
-.MuiFormLabel-root  {
-    color: rgba(white, .5) !important;
-}
-
-.MuiTypography-root {
-    a {
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-}
-p {
-    font-size: .75rem;
-}
-
-.clickable {
-    cursor: pointer;
-    &:hover {
-        text-decoration: underline;
-    }
-}
-.MuiTypography-root {
-    color: white;
-}
-
+// Content Organization
 .layout-grid {
-
     &-2 {
         display: grid;
         gap: 1rem;
@@ -56,6 +25,62 @@ p {
     }
 }
 
+.row-gap {
+    
+    &-s {
+        display: flex;
+        flex-direction: column;
+        row-gap: 14px;
+    }
+
+    &--md {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+
+    &--lg {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+}
+
+// Typography
+
+p {
+    font-size: .75rem;
+}
+
+h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #bbbbbb;
+}
+
+// MuiOverrides
+.MuiFormLabel-root  {
+    color: rgba(white, .5) !important;
+}
+
+.MuiTypography-root {
+    a {
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.clickable {
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+.MuiTypography-root {
+    color: white;
+}
+
 .flex {
     display: flex;
 
@@ -64,53 +89,14 @@ p {
     }
 }
 
-.row-gap {
-    display: flex;
-    flex-direction: column;
-    
-    &--xs {
-        row-gap: 14px;
-    }
-
-    &--md {
-        row-gap: 1.25rem;
-    }
-
-    &--lg {
-        row-gap: 2rem;
-    }
-}
-
+// Misc
 .divider {
     &--vertical {
         border-right: 1px solid #BBBBBB;
     }
 }
 
-.padding-right {
-    &--sm { padding-right: .5rem; }
-    &--md { padding-right: .75rem; }
-    &--lg { padding-right: 1rem; }
-}
-
-.padding-left {
-    &--small { padding-left: .5rem; }
-    &--md { padding-left: .75rem; }
-    &--lg { padding-left: 1rem; }
-}
-
 // BASE COMPONENTS
-
-.search-pagination {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-
-    .MuiFormControl-root {
-        display: flex;
-        
-    }
-}
 .gray-container {
     background-color: #2C2D33;
     padding: 1rem;
@@ -120,6 +106,7 @@ p {
     border-radius: 5px;
     box-shadow: $box-shadow-default;
 }
+
 .info-item {
     font-size: 16px;
 
@@ -156,6 +143,7 @@ p {
         }
     }
 }
+
 .character-avatar {
     display: flex;
     align-items: center;

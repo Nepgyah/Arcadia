@@ -116,7 +116,7 @@ export default function MiruHome() {
                     </div>
                     <div id="seasonal" className="">
                         <Pagination onChange={goToPage} page={currentPage} count={pageCount} />
-                        <div className="layout-grid-3">
+                        <div className="layout-grid-3 m-top-m">
                             {
                                 animeList &&
                                 animeList.map((anime: Anime, key: number) => (
