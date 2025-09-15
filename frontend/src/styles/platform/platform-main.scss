@@ -95,6 +95,15 @@ h2 {
     &-right { border-right: 1px solid #BBBBBB; }
 }
 
+.border-radius {
+    &-s {
+        border-radius: 5px;
+    }
+    &-md {
+        border-radius: 15px;
+    }
+}
+
 // BASE COMPONENTS
 .gray-container {
     background-color: #2C2D33;
