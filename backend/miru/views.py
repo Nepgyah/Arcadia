@@ -18,6 +18,7 @@ class HomeView(rest_framework.views.APIView):
         all_time_anime_data = miru.serializers.AnimeSerializer(all_time_anime_objects, many=True).data
 
         return rest_framework.response.Response({
+            'season_name': str(latest_season),
             'seasonal': seasonal_anime_data,
             'top': all_time_anime_data
         }, status=rest_framework.status.HTTP_200_OK)

@@ -9,14 +9,16 @@ import WIP from "@/components/platform/wip";
 
 export default function MiruHome() {
     const [isLoading, setIsLoading] = useState(true);
-    const [seasonalAnime, setSeasonalAnime] = useState([])
-    const [topAnime, setTopAnime] = useState([])
+    const [seasonalAnime, setSeasonalAnime] = useState([]);
+    const [topAnime, setTopAnime] = useState([]);
+    const [seasonName, setSeasonName] = useState<string>('N/A');
 
     useEffect(() => {
         apiGET<any>('miru/home/')
         .then((res) => {
             setSeasonalAnime(res.seasonal)
             setTopAnime(res.top)
+            setSeasonName(res.season_name)
         })
     }, [])
 
@@ -30,7 +32,7 @@ export default function MiruHome() {
                 <div className="two-col-section two-col-section--uneven-reverse">
                     <div className="row-gap-md">
                         <div id="seasonal">
-                            <h2>Current Season</h2>
+                            <h2>Latest Season - {seasonName}</h2>
                             <div className="layout-grid-5">
                                 {
                                     seasonalAnime &&
