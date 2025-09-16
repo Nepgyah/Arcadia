@@ -55,9 +55,14 @@ class AnimeSearchView(rest_framework.views.APIView):
         paginator = Paginator(anime_queryset, 3)
         page_obj = paginator.get_page(page)
 
-        anime_data = miru.serializers.AnimeListeSerializer(page_obj, many=True).data
+        anime_data = miru.serializers.AnimeLiteSerializer(page_obj, many=True).data
 
         return rest_framework.response.Response({
             'animes': anime_data,
             'page_count': paginator.num_pages
         }, status=rest_framework.status.HTTP_200_OK)
+    
+class AnimeAllTimeView(rest_framework.generics.ListAPIView):
+    queryset = miru.models.Anime.objects.all()
+    serializer_class = miru.serializers.AnimeLiteSerializer
+    pagination_class = utils.pagination.MediumResultSetPagination

@@ -77,7 +77,7 @@ class AnimeSerializer(serializers.ModelSerializer):
         return obj.get_status_display()
         
 
-class AnimeListeSerializer(serializers.ModelSerializer):
+class AnimeLiteSerializer(serializers.ModelSerializer):
     franchise = FranchiseSerializer(read_only=True)
     status = serializers.SerializerMethodField()
 
