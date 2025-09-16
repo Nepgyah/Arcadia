@@ -45,6 +45,26 @@
     }
 }
 
+.col-gap {
+    &-s {
+        display: flex;
+        flex-direction: row;
+        column-gap: 14px;
+    }
+
+    &-md {
+        display: flex;
+        flex-direction: row;
+        column-gap: 1rem;
+    }
+
+    &-lg {
+        display: flex;
+        flex-direction: row;
+        column-gap: 2rem;
+    }
+}
+    
 // Typography
 p {
     font-size: .75rem;
@@ -77,14 +97,6 @@ h2 {
 }
 .MuiTypography-root {
     color: white;
-}
-
-.flex {
-    display: flex;
-
-    &--small-gap {
-        column-gap: 12px;
-    }
 }
 
 // Misc
@@ -175,7 +187,7 @@ h2 {
         grid-template-columns: 150px 1fr;
 
         #platform-sidebar {
-            height: 100%;
+            min-height: 100dvh;
         }
 
         #platform-content {

@@ -60,13 +60,13 @@ export default function AnimeDetails() {
                             <div id="overview" className="vertical-divider-right p-right-md row-gap-md">
                                 <div id="at-a-glance">
                                     <div>
-                                        <div id="quick-stats" className="gray-container flex flex--small-gap m-bottom-md">
+                                        <div id="quick-stats" className="gray-container col-gap-s m-bottom-md">
                                             <InfoItem label="Season" value={anime ? anime.season ? anime.season : 'N/A' : 'Not announced'} />
                                             <InfoItem label="Type" value={anime?.type} />
                                             <InfoItem label="Episodes" value={'Added later'} />
                                         </div>
                                         <div id="metrics">
-                                            <div id="arcadia-score" className="gray-container flex flex--small-gap">
+                                            <div id="arcadia-score" className="gray-container">
                                                 <p className="bold">{anime?.score}</p>
                                                 <p>{anime?.users} users</p>
                                             </div>

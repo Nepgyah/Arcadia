@@ -73,7 +73,7 @@ export default function GameDetails() {
                             <div id="overview" className="vertical-divider-right p-right-md row-gap-md">
                                 <div id="at-a-glance">
                                     <div className="row-gap-md">
-                                        <div id="quick-stats" className="gray-container flex flex--small-gap">
+                                        <div id="quick-stats" className="gray-container col-gap-s">
                                             <InfoItem label="Status" value={game?.status} />
                                             <InfoItem label="ESRB" value={game?.esrb_rating} />
                                             <InfoItem label="PEGI" value={game?.pegi_rating} />
