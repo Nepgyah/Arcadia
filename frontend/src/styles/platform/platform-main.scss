@@ -76,6 +76,12 @@ h2 {
     border-bottom: 1px solid #bbbbbb;
 }
 
+.clickable {
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
 // MuiOverrides
 .MuiFormLabel-root  {
     color: rgba(white, .5) !important;
@@ -89,12 +95,27 @@ h2 {
     }
 }
 
-.clickable {
-    cursor: pointer;
-    &:hover {
-        text-decoration: underline;
+.MuiPagination-ul {
+    .MuiPaginationItem-page {
+        color: white;
     }
 }
+
+.MuiList-root {
+    background-color: $platform-bg-1;
+    color: white;
+
+    .MuiButtonBase-root {
+        width: 100%;
+    }
+}
+
+.MuiFormControl-root {
+    > .MuiInputBase-root {
+        color: white;
+    }
+}
+
 .MuiTypography-root {
     color: white;
 }

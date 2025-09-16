@@ -4,4 +4,16 @@
     h2, .MuiBreadcrumbs-separator {
         color: map-get($arcadia-colors, miru-base )
     }
+
+    .MuiPagination-ul {
+        .MuiPaginationItem-previousNext {
+            color: map-get($arcadia-colors, miru-base )
+        }
+        
+        .MuiButtonBase-root {
+            &.Mui-selected {
+                background-color: map-get($arcadia-colors, miru-base )
+            }
+        }
+    }
 }

@@ -15,7 +15,7 @@ export default function DetailMediaCard (
     return (
         <div className="detail-card">
             <div className={`detail-card__title align-content align-content--center clr-${app}-base`}>
-                <Link href={link}>
+                <Link href={link} className="clickable">
                     {media.title}
                 </Link>
             </div>
