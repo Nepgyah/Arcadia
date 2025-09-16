@@ -18,13 +18,13 @@ export default function TsunaguPostPage() {
         }, [])
 
     return (
-        <div id="post-detail" className="row-gap row-gap--md">
+        <div id="post-detail" className="row-gap-md">
             <p className="post-title txt-l bold">{post?.title}</p>
             <p className="post-content">{post?.content}</p>
 
-            <div id="comments">
+            <div id="comments" className="m-top-xl">
                 <h2>Ripples</h2>
-                <div id="comment-container" className="row-gap row-gap--md">
+                <div id="comment-container" className="row-gap-md">
                     {
                         post ? 
                             post.comments.map((comment: Comment) => (

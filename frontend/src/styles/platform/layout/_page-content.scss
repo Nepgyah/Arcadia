@@ -10,43 +10,14 @@
 
     .two-col-section {
         display: grid;
-        column-gap: 1rem;
+        column-gap: 2rem;
 
         &--uneven {
-            grid-template-columns: 20% 80%;
+            grid-template-columns: 1fr 4fr;
         }
 
         &--uneven-reverse {
-            grid-template-columns: 80% 20%;
-        }
-    }
-}
-
-@media only screen and (min-width: 768px) {
-
-    .page-content {
-        // min-height: 900px;
-
-        &--two-col {
-            display: grid;
-            grid-template-columns: 20% 80%;
-            column-gap: 1rem;
-        }
-
-        &--reversed {
-            grid-template-columns: 80% 20%;
-        }
-        
-        &__left-column {
-            // margin-right: .5rem;
-            min-height: 900px;
-            display: flex;
-            flex-direction: column;
-            row-gap: 1rem;
-        }
-
-        &__right-column {
-            // margin-left: .5rem;
+            grid-template-columns: 4fr 1fr;
         }
     }
 }
