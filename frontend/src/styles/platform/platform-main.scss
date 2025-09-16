@@ -74,6 +74,11 @@ h2 {
     font-size: 1.25rem;
     margin-bottom: 1rem;
     border-bottom: 1px solid #bbbbbb;
+
+    &.border-bottom-none {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
 }
 
 .clickable {
@@ -82,6 +87,7 @@ h2 {
         text-decoration: underline;
     }
 }
+
 // MuiOverrides
 .MuiFormLabel-root  {
     color: rgba(white, .5) !important;
@@ -193,6 +199,19 @@ h2 {
     .MuiAvatar-root {
         border-width: 2px;
         border-style: solid;
+    }
+}
+
+.linked-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #bbbbbb;
+    margin-bottom: 1rem;
+
+    a {
+        font-size: .75rem;
+        opacity: .75;
     }
 }
 

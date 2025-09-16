@@ -6,6 +6,7 @@ import { Breadcrumbs, Typography } from "@mui/material";
 import { apiGET } from "@/util/api/api";
 import EntryCard from "@/components/platform/entryCard";
 import WIP from "@/components/platform/wip";
+import LinkedHeader from "@/components/platform/linkedHeader";
 
 export default function MiruHome() {
     const [isLoading, setIsLoading] = useState(true);
@@ -32,7 +33,7 @@ export default function MiruHome() {
                 <div className="two-col-section two-col-section--uneven-reverse">
                     <div className="row-gap-md">
                         <div id="seasonal">
-                            <h2>Latest Season - {seasonName}</h2>
+                            <LinkedHeader title={`Latest Season - ${seasonName}`} link="/" linkText="See more"/>
                             <div className="layout-grid-5">
                                 {
                                     seasonalAnime &&
@@ -49,7 +50,7 @@ export default function MiruHome() {
                             </div>
                         </div>
                         <div id="all-time">
-                            <h2>All Time</h2>
+                            <LinkedHeader title={`Latest Season - ${seasonName}`} link="miru/all-time" linkText="See more"/>
                             <div className="layout-grid-5">
                                 {
                                     topAnime &&

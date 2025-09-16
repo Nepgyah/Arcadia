@@ -54,7 +54,7 @@ export default function MiruHome() {
                 <Typography>Miru</Typography>
                 <Typography>Search</Typography>
             </Breadcrumbs>
-            <div id="page-miru-all-time"  className="page-content">
+            <div id="page-miru-search"  className="page-content">
                 <div className="two-col-section two-col-section--uneven">
                     <div>
                         <h2>Search Settings</h2>
