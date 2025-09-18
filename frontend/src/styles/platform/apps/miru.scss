@@ -16,4 +16,25 @@
             }
         }
     }
+
+    .MuiTableContainer-root {
+        background-color: $platform-bg-1;
+        .MuiTableHead-root {
+            .MuiTableCell-root {
+                font-weight: bold;
+                background-color: map-get($arcadia-colors, miru-base );
+            }
+        }
+
+        .MuiTableBody-root {
+            .MuiTableCell-root {
+
+                &.bold {
+                    font-weight: bold;
+                }
+                color: white;
+                border-bottom: 1px solid rgba(#bbbbbb, .5);
+            }
+        }
+    }
 }
