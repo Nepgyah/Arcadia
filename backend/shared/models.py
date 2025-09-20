@@ -6,6 +6,12 @@ class Franchise(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, blank=True)
     
+    website = models.URLField(blank=True, null=True)
+    twitter = models.URLField(blank=True, null=True)
+    instagram = models.URLField(blank=True, null=True)
+    youtube = models.URLField(blank=True, null=True)
+    reddit = models.URLField(blank=True, null=True)
+    
     def __str__(self):
         return self.name
     
