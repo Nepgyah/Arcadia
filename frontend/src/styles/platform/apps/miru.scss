@@ -9,7 +9,6 @@
         .MuiPaginationItem-previousNext {
             color: map-get($arcadia-colors, miru-base )
         }
-        
         .MuiButtonBase-root {
             &.Mui-selected {
                 background-color: map-get($arcadia-colors, miru-base )
@@ -18,23 +17,28 @@
     }
 
     .MuiTableContainer-root {
-        background-color: $platform-bg-1;
         .MuiTableHead-root {
             .MuiTableCell-root {
-                font-weight: bold;
                 background-color: map-get($arcadia-colors, miru-base );
             }
         }
-
-        .MuiTableBody-root {
-            .MuiTableCell-root {
-
-                &.bold {
-                    font-weight: bold;
-                }
-                color: white;
-                border-bottom: 1px solid rgba(#bbbbbb, .5);
+    }
+    .MuiTabs-root  {
+        .MuiButtonBase-root {
+            color: map-get($arcadia-colors, txt-fadded );
+            &.Mui-selected {
+                color: map-get($arcadia-colors, miru-base )
             }
+        }
+
+        .MuiTabs-indicator {
+            background-color: map-get($arcadia-colors, miru-base );
+        }
+    }
+
+    #page-miru-search {
+        #seasonal {
+            width: 1123px;
         }
     }
 }

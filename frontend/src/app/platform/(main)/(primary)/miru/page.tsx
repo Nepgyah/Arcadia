@@ -33,7 +33,7 @@ export default function MiruHome() {
                 <div className="two-col-section two-col-section--uneven-reverse">
                     <div className="row-gap-md">
                         <div id="seasonal">
-                            <LinkedHeader title={`Latest Season - ${seasonName}`} link="/" linkText="See more"/>
+                            <LinkedHeader title={`Latest Season - ${seasonName}`} link="miru/seasonal" linkText="See more"/>
                             <div className="layout-grid-5">
                                 {
                                     seasonalAnime &&
@@ -50,7 +50,7 @@ export default function MiruHome() {
                             </div>
                         </div>
                         <div id="all-time">
-                            <LinkedHeader title={`Latest Season - ${seasonName}`} link="miru/all-time" linkText="See more"/>
+                            <LinkedHeader title="All Time" link="miru/all-time" linkText="See more"/>
                             <div className="layout-grid-5">
                                 {
                                     topAnime &&

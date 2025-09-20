@@ -63,7 +63,8 @@ class AnimeSearchView(rest_framework.views.APIView):
         }, status=rest_framework.status.HTTP_200_OK)
     
 class AnimeAllTimeView(rest_framework.views.APIView):
-     def get(self, request):
+     
+    def get(self, request):
         page = request.query_params.get('page', 1)
 
         anime_queryset = miru.models.Anime.objects.all()
@@ -75,3 +76,31 @@ class AnimeAllTimeView(rest_framework.views.APIView):
             'animes': anime_data,
             'page_count': paginator.num_pages
         }, status=rest_framework.status.HTTP_200_OK)
+     
+class AnimeSeasonView(rest_framework.views.APIView):
+
+    def get(self, request):
+        seasonCode = int(request.query_params.get('season', -1))
+        year = int(request.query_params.get('year', -1))
+    
+        if (seasonCode == -1 & year == -1): 
+            season_query = miru.models.Season.objects.all().first()
+            seasonal_anime_objects = miru.models.Anime.objects.filter(season=season_query)
+            seasonal_anime_data = miru.serializers.AnimeLiteSerializer(seasonal_anime_objects, many=True).data
+
+        else:
+            try:
+                season_query = miru.models.Season.objects.get(season=seasonCode, year=year)
+            except miru.models.Season.DoesNotExist:
+                return rest_framework.response.Response({
+                    'message': 'Season not found'
+                })
+            
+            seasonal_anime_objects = miru.models.Anime.objects.filter(season=season_query)
+            seasonal_anime_data = miru.serializers.AnimeLiteSerializer(seasonal_anime_objects, many=True).data
+
+        return rest_framework.response.Response({
+            'animes': seasonal_anime_data,
+            'season_code': season_query.season,
+            'year': season_query.year
+        })

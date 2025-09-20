@@ -8,6 +8,7 @@ $arcadia-colors: (
     txt-dark: #3E3E42,
     txt-light: #ffffff,
     txt-light-alt: #FFF6E1,
+    txt-fadded: rgba(#bbbbbb, .5),
     arc-base: #505477,
     arc-base-dark: #3F3E56,
     arc-accent-light: #FFC2C2,
@@ -53,7 +54,6 @@ $box-shadow-default: 0px 4px 4px rgba(#000000, .25);
 // Platform colors
 $platform-bg-1: #23242A;
 $platform-bg-2: #1C1D1F;
-
 // Platform spacings
 $platform-spacing: (
     xs: .5rem,

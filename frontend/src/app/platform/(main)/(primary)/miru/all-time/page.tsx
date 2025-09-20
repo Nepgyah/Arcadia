@@ -53,21 +53,24 @@ export default function MiruAllTime() {
                 />
 
                 <TableContainer component={Paper}>
-                    <Table stickyHeader aria-label="anime table">
+                    <Table className="arcadia-table" stickyHeader aria-label="anime table">
                         <TableHead>
                             <TableRow>
-                                <TableCell width={"10%"}>Ranking</TableCell>
-                                <TableCell >Title</TableCell>
+                                <TableCell width={"5%"}>Rank</TableCell>
+                                <TableCell>Title</TableCell>
                                 <TableCell width={"10%"}>Rating</TableCell>
                                 <TableCell width={"10%"}>Users</TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
                             {
-                                animeList.map((anime: any, idx: number) => (
+                                animeList.map((anime: Anime, idx: number) => (
                                     <TableRow key={idx}>
                                         <TableCell>{(((currentPage - 1) * MAX_PER_PAGE) + (idx) ) + 1}</TableCell>
-                                        <TableCell className="bold">
+                                        <TableCell className="bold image-title">
+                                            <Link href={`/platform/miru/anime/${anime.id}/${anime.slug}`}>
+                                                <img className="image" src={`/storage/miru/${anime.id}.jpg`} alt={anime.title} />
+                                            </Link>
                                             <Link className="clickable" href={`/platform/miru/anime/${anime.id}/${anime.slug}`}>
                                                 {anime.title}
                                             </Link>

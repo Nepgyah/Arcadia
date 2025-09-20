@@ -30,6 +30,7 @@ export default function MiruHome() {
         .then((res) => {
             setAnimeList(res.animes)
             setPageCount(res.page_count)
+            setCurrentPage(page)
         })
     }
 
@@ -52,11 +53,11 @@ export default function MiruHome() {
         <React.Fragment>
             <Breadcrumbs>
                 <Typography>Miru</Typography>
-                <Typography>Search</Typography>
+                <Typography>Search Anime</Typography>
             </Breadcrumbs>
             <div id="page-miru-search"  className="page-content">
                 <div className="two-col-section two-col-section--uneven">
-                    <div>
+                    <div id="filters">
                         <h2>Search Settings</h2>
                         <div className="row-gap-md">
                             <TextField 
