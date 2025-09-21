@@ -6,8 +6,6 @@ export interface url {
 
 export const mainboard: url[] = [
     { name: "Home", path: ""},
-    // { name: "Profile", path: "/profile"},
-    // { name: "Settings", path: "/settings"}
 ]
 
 export const miruNav: url[] = [
