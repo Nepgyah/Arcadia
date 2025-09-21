@@ -1,3 +1,5 @@
+import { Franchise } from "./franchise"
+
 export interface Anime {
     id: number,
     slug: string,
@@ -22,5 +24,6 @@ export interface Anime {
     users: number,
     rating: string,
     airing_start_date: string,
-    airing_end_date: string
+    airing_end_date: string,
+    franchise: Franchise
 }

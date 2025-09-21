@@ -1,10 +1,131 @@
 @use "../abstract/variables" as *;
 @forward "./layout/index";
 
+// Content Organization
+.layout-grid {
+    &-2 {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(2, 1fr)
+    }
+    &-3 {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(3, 1fr)
+    }
+    &-4 {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(4, 1fr)
+    }
+    &-5 {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(5, 1fr)
+    }
+}
+
+.row-gap {
+    &-s {
+        display: flex;
+        flex-direction: column;
+        row-gap: 14px;
+    }
+
+    &-md {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
+
+    &-lg {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+    }
+}
+
+.col-gap {
+    &-s {
+        display: flex;
+        flex-direction: row;
+        column-gap: 14px;
+    }
+
+    &-md {
+        display: flex;
+        flex-direction: row;
+        column-gap: 1rem;
+    }
+
+    &-lg {
+        display: flex;
+        flex-direction: row;
+        column-gap: 2rem;
+    }
+}
+    
+// Typography
+p {
+    font-size: .75rem;
+}
+
 h2 {
     font-size: 1.25rem;
     margin-bottom: 1rem;
     border-bottom: 1px solid #bbbbbb;
+
+    &.border-bottom-none {
+        border-bottom: none;
+        margin-bottom: 0;
+    }
+}
+
+.clickable {
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+// MuiOverrides
+
+.arcadia-table {
+    background-color: $platform-bg-1;
+
+    .MuiTableCell-root {
+        padding: 4px 1rem;
+    }
+
+    .MuiTableHead-root {
+        .MuiTableCell-root {
+            font-weight: bold;
+        }
+
+    }
+    
+    .MuiTableBody-root {
+        .image-title {
+            display: flex;
+            align-items: center;
+            column-gap: 1rem;
+            img {
+                height: 70px;
+                width: 50px;
+            }
+        }
+        .MuiTableCell-root {
+            &.bold {
+                font-weight: bold;
+            }
+            color: white;
+            border-bottom: 1px solid rgba(#bbbbbb, .5);
+        }
+    }
+}
+
+.MuiFormLabel-root  {
+    color: rgba(white, .5) !important;
 }
 
 .MuiTypography-root {
@@ -14,87 +135,72 @@ h2 {
         }
     }
 }
-p {
-    font-size: .75rem;
-}
 
-.clickable {
-    cursor: pointer;
-    &:hover {
-        text-decoration: underline;
+.MuiPagination-ul {
+    .MuiPaginationItem-page {
+        color: white;
     }
 }
+
+.MuiList-root {
+    background-color: $platform-bg-1;
+    color: white;
+
+    .MuiButtonBase-root {
+        width: 100%;
+    }
+}
+
+.MuiFormControl-root {
+    > .MuiInputBase-root {
+        color: white;
+    }
+}
+
 .MuiTypography-root {
     color: white;
 }
 
-.layout-grid {
+// Misc
+.vertical-divider { 
 
-    &-2 {
-        display: grid;
-        column-gap: 1rem;
-        grid-template-columns: repeat(2, 1fr)
-    }
-    &-3 {
-        display: grid;
-        column-gap: 1rem;
-        grid-template-columns: repeat(3, 1fr)
-    }
-    &-4 {
-        display: grid;
-        column-gap: 1rem;
-        grid-template-columns: repeat(4, 1fr)
-    }
-    &-5 {
-        display: grid;
-        column-gap: 1rem;
-        grid-template-columns: repeat(5, 1fr)
-    }
+    &-left { border-left: 1px solid #BBBBBB; }
+    
+    &-right { border-right: 1px solid #BBBBBB; }
 }
 
-.flex {
-    display: flex;
-
-    &--small-gap {
-        column-gap: 12px;
+.border-radius {
+    &-s {
+        border-radius: 5px;
     }
-}
-
-.row-gap {
-    display: flex;
-    flex-direction: column;
-
-    &--xs {
-        row-gap: 14px;
+    &-md {
+        border-radius: 15px;
     }
-
-    &--md {
-        row-gap: 1.25rem;
-    }
-    &--lg {
-        row-gap: 2rem;
-    }
-}
-
-.divider {
-    &--vertical {
-        border-right: 1px solid #BBBBBB;
-    }
-}
-
-.padding-right {
-    &--sm { padding-right: .5rem; }
-    &--md { padding-right: .75rem; }
-    &--lg { padding-right: 1rem; }
-}
-
-.padding-left {
-    &--small { padding-left: .5rem; }
-    &--md { padding-left: .75rem; }
-    &--lg { padding-left: 1rem; }
 }
 
 // BASE COMPONENTS
+
+.social-media-link {
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+
+    .MuiSvgIcon-root {
+        background-color: $platform-bg-2;
+        width: 44px;
+        height: 44px;
+        padding: .5rem;
+        border-radius: 44px;
+
+        &.twitter-icon {
+            color: map-get($arcadia-colors , kau-base);
+        }
+
+        &.youtube-icon {
+            color: map-get($arcadia-colors , asobu-base);
+        }
+    }
+}
 
 .gray-container {
     background-color: #2C2D33;
@@ -105,6 +211,7 @@ p {
     border-radius: 5px;
     box-shadow: $box-shadow-default;
 }
+
 .info-item {
     font-size: 16px;
 
@@ -141,6 +248,7 @@ p {
         }
     }
 }
+
 .character-avatar {
     display: flex;
     align-items: center;
@@ -149,6 +257,19 @@ p {
     .MuiAvatar-root {
         border-width: 2px;
         border-style: solid;
+    }
+}
+
+.linked-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #bbbbbb;
+    margin-bottom: 1rem;
+
+    a {
+        font-size: .75rem;
+        opacity: .75;
     }
 }
 
@@ -164,6 +285,7 @@ p {
         grid-template-columns: 150px 1fr;
 
         #platform-sidebar {
+            min-height: 100dvh;
             height: 100%;
         }
 

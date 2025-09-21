@@ -1,14 +1,15 @@
 from rest_framework import serializers
 from .models import Franchise, Genre, Company
 
-class FranchiseSerializer(serializers.Serializer):
+class FranchiseSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Franchise
         fields = [
             'id', 
             'name', 
-            'slug'
+            'slug',
+            'socials'
         ]
         
 class CompanySerializer(serializers.Serializer):

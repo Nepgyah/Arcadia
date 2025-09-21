@@ -3,7 +3,7 @@
 | ---------- | ------- |
 | Website    | 0.4     |
 | Profile    | 1       |
-| Miru       | 0.1     |
+| Miru       | 0.2     |
 | Yomu       | 0.1     |
 | Asobu      | 0.1     |
 | Tsunagu    | 0.1     |
@@ -13,6 +13,7 @@
 | Kumitateru | 0.1     |
 | Hiku       |         |
 | Shiru      |         |
+
 ## Alpha v0.5 - Aug 31 2025
 - API
 	-  **Yomu

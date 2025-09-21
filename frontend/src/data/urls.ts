@@ -6,12 +6,13 @@ export interface url {
 
 export const mainboard: url[] = [
     { name: "Home", path: ""},
-    // { name: "Profile", path: "/profile"},
-    // { name: "Settings", path: "/settings"}
 ]
 
 export const miruNav: url[] = [
     { name: "Miru Home", path: "/miru"},
+    { name: "Search", path: "/miru/search"},
+    { name: "All Time", path: "/miru/all-time"},
+    { name: "Seasonal", path: "/miru/seasonal"},
 ]
 
 export const yomuNav: url[] = [

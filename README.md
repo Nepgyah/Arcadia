@@ -1,12 +1,15 @@
-## Latest Release - Alpha v0.5 - Aug 31 2025
+## Latest Release - Alpha v0.6 - Aug 31 2025
 - API
+	- **Miru**
+		- Added search endpoint
+		- Added seasonal endpoint
 	-  **Asobu**
 		- The following models have been added
 			- Company
 			- Game
 			- DLC
 		- Added home endpoint
-		- Added detail endpoint
+		- Added detail endpoint [[docs/releases/changelog]]
 	- **Tsunagu**
 		- The following models have been added
 			- Community
@@ -20,15 +23,19 @@
 			- Franchise
 			- Media
 		- Extracted `Character` and `Talent` models out of shared
-		- 
 	- Updated current views to receive object id instead of slug
 	- Added `Franchise` key to several models
+		- Added socials to franchise model
 - Website
 	- Added esports page
 	- Updated team page
 - Platform
-	- Adjusted styling
+	- Adjusted overall styling
 	- Updated API calls to send object id instead of slug
+	- Updated sidebar menu to highlight current page
+	- **Miru**
+		- Added global search page
+		- Added yearly/seasonal page
 ## Name
 Arcadia - Your Otaku Sanctuary
 

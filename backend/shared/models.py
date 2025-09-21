@@ -6,6 +6,8 @@ class Franchise(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField(unique=True, blank=True)
     
+    socials = models.JSONField(null=True, blank=True)
+    
     def __str__(self):
         return self.name
     

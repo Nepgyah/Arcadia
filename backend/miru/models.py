@@ -14,6 +14,9 @@ class Season(models.Model):
     season=models.IntegerField(choices=Type.choices, null=True, blank=True)
     year=models.IntegerField(default=2000, blank=True)
 
+    class Meta:
+        ordering = ['-year']
+    
     def __str__(self):
         return f"{self.get_season_display()} {self.year}"
     
