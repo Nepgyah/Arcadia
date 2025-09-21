@@ -16,7 +16,7 @@ export interface navInfo {
 export default function MainLayout({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
 
-    const getNav = () => {
+    const getNav = (): navInfo => {
         if (pathname.startsWith('/platform/miru')) return { 'app': 'miru', 'links': miruNav};
         if (pathname.startsWith('/platform/yomu')) return { 'app': 'yomu', 'links': yomuNav};
         if (pathname.startsWith('/platform/asobu')) return { 'app': 'asobu', 'links': asobuNav};
