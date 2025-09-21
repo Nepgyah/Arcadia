@@ -179,6 +179,29 @@ h2 {
 }
 
 // BASE COMPONENTS
+
+.social-media-link {
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+
+    .MuiSvgIcon-root {
+        background-color: $platform-bg-2;
+        width: 44px;
+        height: 44px;
+        padding: .5rem;
+        border-radius: 44px;
+
+        &.twitter-icon {
+            color: map-get($arcadia-colors , kau-base);
+        }
+
+        &.youtube-icon {
+            color: map-get($arcadia-colors , asobu-base);
+        }
+    }
+}
+
 .gray-container {
     background-color: #2C2D33;
     padding: 1rem;

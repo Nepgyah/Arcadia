@@ -15,6 +15,7 @@ import WIP from "@/components/platform/wip";
 
 import { Anime } from "@/types/miru";
 import { Character } from "@/types/shared";
+import SocialMediaLink from "@/components/platform/socialMediaLink";
 
 export default function AnimeDetails() {
     const params = useParams();
@@ -52,7 +53,23 @@ export default function AnimeDetails() {
                         </div>
                         <div>
                             <h2>Socials</h2>
-                            <WIP />
+                            <div className="row-gap-s">
+                                {
+                                    anime?.franchise.socials.website && <SocialMediaLink type="website" social={anime.franchise.socials.website} />
+                                }
+                                {
+                                    anime?.franchise.socials.twitter && <SocialMediaLink type="twitter" social={anime.franchise.socials.twitter} />
+                                }
+                                {
+                                    anime?.franchise.socials.youtube && <SocialMediaLink type="youtube" social={anime.franchise.socials.youtube} />
+                                }
+                                {
+                                    anime?.franchise.socials.reddit && <SocialMediaLink type="reddit" social={anime.franchise.socials.reddit} />
+                                }
+                                {
+                                    anime?.franchise.socials.instagram && <SocialMediaLink type="instagram" social={anime.franchise.socials.instagram} />
+                                }
+                            </div>
                         </div>
                     </div>
                     <div id="right-column" className="page-content__right-column row-gap row-gap-md">

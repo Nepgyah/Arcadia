@@ -25,7 +25,8 @@ class AnimeSerializer(serializers.ModelSerializer):
     studio = serializers.SerializerMethodField()
     previous_anime = serializers.SerializerMethodField()
     next_anime = serializers.SerializerMethodField()
-
+    franchise = FranchiseSerializer(read_only=True)
+    
     class Meta:
         model=Anime
         fields = "__all__"

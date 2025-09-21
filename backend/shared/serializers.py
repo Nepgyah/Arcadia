@@ -8,7 +8,8 @@ class FranchiseSerializer(serializers.ModelSerializer):
         fields = [
             'id', 
             'name', 
-            'slug'
+            'slug',
+            'socials'
         ]
         
 class CompanySerializer(serializers.Serializer):
