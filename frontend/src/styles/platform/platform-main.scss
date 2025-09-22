@@ -157,10 +157,6 @@ h2 {
     }
 }
 
-.MuiTypography-root {
-    color: white;
-}
-
 // Misc
 .vertical-divider { 
 
@@ -296,6 +292,9 @@ h2 {
             width: 1400px;
             margin: auto;
 
+            .MuiTypography-root {
+                color: white;
+            }
             .card {
                 background-color: #36373D;
                 border-radius: 12px;
