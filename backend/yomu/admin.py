@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Author, Work, WorkRelation, WorkCharacter, WorkAuthor
+from .models import Author, Work, WorkRelation, WorkCharacter, WorkAuthor, Publisher
 
 # Register your models here.
 class WorkAuthorInline(admin.TabularInline):
@@ -26,3 +26,5 @@ class WorkAdmin(admin.ModelAdmin):
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
     search_fields = ['name']
+    
+admin.site.register(Publisher)
