@@ -25,7 +25,8 @@ export default function YomuAllTime() {
 
     const goToPage = (e: React.ChangeEvent<unknown>, page: number) => {
         if (page !== currentPage) {
-            apiGET<any>(`yomu/work/all-time/`)
+            setCurrentPage(page)
+            apiGET<any>(`yomu/work/all-time/?page=${page}`)
             .then((res) => {
                 setWorkList(res.works)
                 setPageCount(res.page_count)
