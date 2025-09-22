@@ -18,14 +18,15 @@ class WorkSerializer(serializers.ModelSerializer):
     authors = serializers.SerializerMethodField()
     genres = GenreSerializer(many=True, read_only=True)
     type = serializers.SerializerMethodField()
-
+    franchise = FranchiseSerializer(read_only=True)
+    
     class Meta:
         model=Work
         fields=[
             'id', 'slug', 'title', 'score', 'users', 'summary',
             'title_alternatives', 'status', 'characters', 'genres', 'type',
             'total_volumes', 'total_chapters',
-            'authors', 'publishing_start_date', 'publishing_end_date'
+            'authors', 'publishing_start_date', 'publishing_end_date', 'franchise'
         ]
 
     def get_authors(self, obj):

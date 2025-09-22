@@ -12,6 +12,7 @@ import TagChip from "@/components/platform/chip";
 import { Character } from "@/types/shared";
 import CharacterAvatar from "@/components/platform/characterAvatar";
 import { Work } from "@/types/yomu";
+import SocialMediaLink from "@/components/platform/socialMediaLink";
 
 export default function WorkDetails() {
     const params = useParams();
@@ -50,7 +51,23 @@ export default function WorkDetails() {
                         </div>
                         <div>
                             <h2>Socials</h2>
-                            <WIP />
+                            <div className="row-gap-s">
+                                {
+                                    work?.franchise?.socials.website && <SocialMediaLink type="website" social={work.franchise.socials.website} />
+                                }
+                                {
+                                    work?.franchise?.socials.twitter && <SocialMediaLink type="twitter" social={work.franchise.socials.twitter} />
+                                }
+                                {
+                                    work?.franchise?.socials.youtube && <SocialMediaLink type="youtube" social={work.franchise.socials.youtube} />
+                                }
+                                {
+                                    work?.franchise?.socials.reddit && <SocialMediaLink type="reddit" social={work.franchise.socials.reddit} />
+                                }
+                                {
+                                    work?.franchise?.socials.instagram && <SocialMediaLink type="instagram" social={work.franchise.socials.instagram} />
+                                }
+                            </div>
                         </div>
                     </div>
                     <div id="right-column" className="row-gap-md">
