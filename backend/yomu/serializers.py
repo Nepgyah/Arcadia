@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import Work, Author
-from shared.serializers import CompanySerializer, GenreSerializer
+from shared.serializers import CompanySerializer, FranchiseSerializer, GenreSerializer
 from characters.serializers import CharacterSerializer
 
 class AuthorSerializer(serializers.ModelSerializer):
@@ -34,3 +34,13 @@ class WorkSerializer(serializers.ModelSerializer):
     def get_type(self, obj):
         return obj.get_type_display()
     
+class WorkLiteSerializer(serializers.ModelSerializer):
+    franchise = FranchiseSerializer(read_only=True)
+    status = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Work
+        fields = [ 'id', 'title', 'slug', 'score', 'status', 'summary', 'rating', 'users', 'franchise']
+
+    def get_status(self, obj):
+        return obj.get_status_display()
