@@ -1,16 +1,16 @@
 'use client';
 
-import { Work } from "@/types/yomu";
-import { apiGET } from "@/util/api/api";
-import { Breadcrumbs, Link, Pagination, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
 import React from "react";
 import { useEffect, useState } from "react";
+import { Breadcrumbs, Link, Pagination, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
+
+import { Work } from "@/types/yomu";
+import { apiGET } from "@/util/api/api";
 
 const MAX_PER_PAGE = 4;
 
 export default function YomuAllTime() {
 
-    const [page, setPage] = useState();
     const [pageCount, setPageCount] = useState<number>(1);
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [workList, setWorkList] = useState<Work[]>([]);
@@ -37,7 +37,7 @@ export default function YomuAllTime() {
     return (
         <React.Fragment>
             <Breadcrumbs>
-                <Typography>Work</Typography>
+                <Typography>Yomu</Typography>
                 <Typography>All-Time</Typography>
             </Breadcrumbs>
             <div id="page-work-all-time" className="page-content">

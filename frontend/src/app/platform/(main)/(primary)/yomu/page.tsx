@@ -1,6 +1,7 @@
 'use client';
 
 import EntryCard from "@/components/platform/entryCard";
+import LinkedHeader from "@/components/platform/linkedHeader";
 import WIP from "@/components/platform/wip";
 import { apiGET } from "@/util/api/api";
 import { Breadcrumbs, Typography } from "@mui/material";
@@ -27,7 +28,7 @@ export default function YomuHome() {
                 <div className="two-col-section two-col-section--uneven-reverse">
                     <div className="">
                         <div id="trending">
-                            <h2>Trending</h2>
+                            <LinkedHeader title="All-Time" link="yomu/all-time" linkText="See more"/>
                             <div className="layout-grid-5">
                                 {
                                     trendingYomu &&
