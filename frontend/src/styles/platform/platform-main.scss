@@ -208,6 +208,17 @@ h2 {
     box-shadow: $box-shadow-default;
 }
 
+.staff-entry {
+    &__name {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    &__role {
+        font-size: 16px;
+        color: #939393;
+    }
+}
 .info-item {
     font-size: 16px;
 

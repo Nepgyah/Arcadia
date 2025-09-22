@@ -11,10 +11,11 @@ import InfoItem from "@/components/platform/infoItem";
 import TagChip from "@/components/platform/chip";
 import { Character } from "@/types/shared";
 import CharacterAvatar from "@/components/platform/characterAvatar";
+import { Work } from "@/types/yomu";
 
 export default function WorkDetails() {
     const params = useParams();
-    const [work, setWork] = useState<any>();
+    const [work, setWork] = useState<Work>();
 
     useEffect(() => {
         apiGET<any>(`yomu/work/${params.id}/`)
@@ -101,16 +102,12 @@ export default function WorkDetails() {
                                 <div>
                                     <h2>Details</h2>
                                     <InfoItem label="Status" value={work?.status} />
-                                    <InfoItem label="Publishing Start" value={work?.airing_start_date ? work.airing_start_date : 'N/A' } />
-                                    <InfoItem label="Publishing End" value={work?.airing_end_date ? work.airing_end_date : 'N/A'} />
+                                    <InfoItem label="Publishing Start" value={work?.publishing_start_date ? work.publishing_start_date : 'N/A' } />
+                                    <InfoItem label="Publishing End" value={work?.publishing_end_date ? work.publishing_end_date : 'N/A'} />
                                 </div>
                                 <div>
                                     <h2>Production</h2>
-                                    <InfoItem label="Authors" value={
-                                        work?.authors.map((author: any) => (
-                                            author.name
-                                        ))
-                                    } />
+                                    <WIP />
                                 </div>
                             </div>
                         </div>
@@ -161,6 +158,20 @@ export default function WorkDetails() {
                                             <CharacterAvatar key={index} character={character} app='yomu' />
                                         ))
                                     }
+                                </div>
+                            </div>
+                            <div id="authors" className="p-right-md">
+                                <h2>Authors</h2>
+                                <div className="row-gap-md">
+                                {
+                                    work?.authors &&
+                                        work?.authors.map((author: any, idx: number) => (
+                                            <div className="staff-entry">
+                                                <p className="staff-entry__name">{author.name}</p>
+                                                <p className="staff-entry__role">{author.role}</p>
+                                            </div>
+                                        ))
+                                }
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Work, Author
+from .models import Work, Author, WorkAuthor
 from shared.serializers import CompanySerializer, FranchiseSerializer, GenreSerializer
 from characters.serializers import CharacterSerializer
 
@@ -15,7 +15,7 @@ class WorkSerializer(serializers.ModelSerializer):
 
     characters = CharacterSerializer(many=True, read_only=True)
     status = serializers.SerializerMethodField()
-    authors = AuthorSerializer(many=True, read_only=True)
+    authors = serializers.SerializerMethodField()
     genres = GenreSerializer(many=True, read_only=True)
     type = serializers.SerializerMethodField()
 
@@ -27,6 +27,16 @@ class WorkSerializer(serializers.ModelSerializer):
             'total_volumes', 'total_chapters',
             'authors', 'publishing_start_date', 'publishing_end_date'
         ]
+
+    def get_authors(self, obj):
+        related_authors_query = WorkAuthor.objects.filter(work=obj)
+        authors = []
+        for author_relation in related_authors_query:
+            authors.append({
+                'name': author_relation.author.name,
+                'role': author_relation.get_role_display()
+            })
+        return authors
 
     def get_status(self, obj):
         return obj.get_status_display()

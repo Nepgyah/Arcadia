@@ -13,5 +13,11 @@ export interface Work extends Media {
     publisher: any,
     publishing_start_date: string,
     publishing_end_date: string,
-    franchise: Franchise
+    franchise: Franchise,
+    authors: [
+        {
+            name: string,
+            role: string
+        }
+    ]
 }
