@@ -32,7 +32,7 @@ class WorkSearchVIew(rest_framework.views.APIView):
         page = request.query_params.get('page', 1)
         search = request.query_params.get('search', None)
         status = int(request.query_params.get('status', -1))
-        type = int(request.query_params.get('type', None))
+        type = request.query_params.get('type', '')
 
         work_query_set = yomu.models.Work.objects.all()
         
@@ -51,7 +51,7 @@ class WorkSearchVIew(rest_framework.views.APIView):
         work_data = yomu.serializers.WorkLiteSerializer(page_obj, many=True).data
 
         return rest_framework.response.Response({
-            'work': work_data,
+            'works': work_data,
             'page_count': paginator.num_pages
         }, status=rest_framework.status.HTTP_200_OK)
     

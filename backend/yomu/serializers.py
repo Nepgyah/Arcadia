@@ -50,7 +50,11 @@ class WorkSerializer(serializers.ModelSerializer):
     
 class WorkLiteSerializer(serializers.ModelSerializer):
     franchise = FranchiseSerializer(read_only=True)
+    status = serializers.SerializerMethodField()
 
     class Meta:
         model = Work
         fields = [ 'id', 'title', 'slug', 'score', 'status', 'summary', 'users', 'franchise']
+
+    def get_status(self, obj):
+        return obj.get_status_display()
