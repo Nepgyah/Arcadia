@@ -1,7 +1,10 @@
 from rest_framework import serializers
 from .models import Work, Author, WorkAuthor
-from shared.serializers import CompanySerializer, FranchiseSerializer, GenreSerializer
 from characters.serializers import CharacterSerializer
+from shared.serializers import (
+    FranchiseSerializer, 
+    GenreSerializer
+)
 
 class AuthorSerializer(serializers.ModelSerializer):
 

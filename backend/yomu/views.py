@@ -14,7 +14,7 @@ class HomeView(rest_framework.views.APIView):
 
         return rest_framework.response.Response({
             'trending': trending_work_data
-        })
+        }, rest_framework.status.HTTP_200_OK)
     
 class WorkDetailView(rest_framework.views.APIView):
 
