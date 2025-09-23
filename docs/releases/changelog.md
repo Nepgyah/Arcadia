@@ -4,7 +4,7 @@
 | Website    | 0.4     |
 | Profile    | 1       |
 | Miru       | 0.2     |
-| Yomu       | 0.1     |
+| Yomu       | 0.2     |
 | Asobu      | 0.1     |
 | Tsunagu    | 0.1     |
 | Kau        |         |

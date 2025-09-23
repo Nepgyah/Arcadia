@@ -31,7 +31,7 @@
 	- Updated current views to receive object id instead of slug
 	- Added `Franchise` key to several models
 		- Added socials to franchise model
-- Website
+- **Website v0.4**
 	- Added esports page
 	- Updated team page
 - Platform
