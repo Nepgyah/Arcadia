@@ -53,19 +53,19 @@ export default function WorkDetails() {
                             <h2>Socials</h2>
                             <div className="row-gap-s">
                                 {
-                                    work?.franchise?.socials.website && <SocialMediaLink type="website" social={work.franchise.socials.website} />
+                                    work?.franchise?.socials?.website && <SocialMediaLink type="website" social={work.franchise.socials.website} />
                                 }
                                 {
-                                    work?.franchise?.socials.twitter && <SocialMediaLink type="twitter" social={work.franchise.socials.twitter} />
+                                    work?.franchise?.socials?.twitter && <SocialMediaLink type="twitter" social={work.franchise.socials.twitter} />
                                 }
                                 {
-                                    work?.franchise?.socials.youtube && <SocialMediaLink type="youtube" social={work.franchise.socials.youtube} />
+                                    work?.franchise?.socials?.youtube && <SocialMediaLink type="youtube" social={work.franchise.socials.youtube} />
                                 }
                                 {
-                                    work?.franchise?.socials.reddit && <SocialMediaLink type="reddit" social={work.franchise.socials.reddit} />
+                                    work?.franchise?.socials?.reddit && <SocialMediaLink type="reddit" social={work.franchise.socials.reddit} />
                                 }
                                 {
-                                    work?.franchise?.socials.instagram && <SocialMediaLink type="instagram" social={work.franchise.socials.instagram} />
+                                    work?.franchise?.socials?.instagram && <SocialMediaLink type="instagram" social={work.franchise.socials.instagram} />
                                 }
                             </div>
                         </div>
@@ -183,7 +183,7 @@ export default function WorkDetails() {
                                 {
                                     work?.authors &&
                                         work?.authors.map((author: any, idx: number) => (
-                                            <div className="staff-entry">
+                                            <div className="staff-entry" key={idx}>
                                                 <p className="staff-entry__name">{author.name}</p>
                                                 <p className="staff-entry__role">{author.role}</p>
                                             </div>
