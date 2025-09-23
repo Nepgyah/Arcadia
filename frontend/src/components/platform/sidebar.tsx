@@ -1,19 +1,21 @@
 'use client';
 
+import { navInfo } from "@/app/platform/(main)/layout";
 import { url } from "@/data/urls"
 import "@/styles/platform/components/sideNav.scss"
 import { useApi } from "@/util/api/api";
 import { useUser } from "@/util/wrappers/userContext";
 import { Button, Divider } from "@mui/material"
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 
-export default function Sidebar({ links }: { links: url[] }) {
+export default function Sidebar({ navObj }: { navObj: navInfo }) {
     const {
         user,
         setUser
     } = useUser()
 
+    const pathname = usePathname();
     const { apiPOST } = useApi()
     const router = useRouter();
 
@@ -24,19 +26,32 @@ export default function Sidebar({ links }: { links: url[] }) {
             router.push('/platform')
         })
     }
+
+    const isActive = (linkPath: string) => {
+        const fullPath = `/platform${linkPath}`;
+        if (linkPath === `/${navObj.app}`) {
+            return pathname === fullPath;
+        }
+        return pathname === fullPath || pathname.startsWith(fullPath + "/");
+    };
+
     return (
         <div id="platform-sidebar">
             {
-                links.map((link, index) => (
-                    <Button 
+                navObj.links.map((link, index) => {
+                    const active = isActive(link.path)
+                    return (
+                    <Button
                         color="white"
+                        className={`${active ? `clr-${navObj.app}-base` : ''}`}
                         fullWidth 
                         key={index}
                         onClick={() => router.push(`/platform/${link.path}`)}
                     >
                         {link.name}
                     </Button>
-                ))
+                    )
+                })
             }
             <Divider sx={{ backgroundColor: 'white'}} />
             {user?

@@ -3,15 +3,61 @@
 | ---------- | ------- |
 | Website    | 0.4     |
 | Profile    | 1       |
-| Miru       | 0.1     |
-| Yomu       | 0.1     |
-| Asobu      |         |
+| Miru       | 0.2     |
+| Yomu       | 0.2     |
+| Asobu      | 0.1     |
+| Tsunagu    | 0.1     |
 | Kau        |         |
 | Iku        |         |
 | Kiku       |         |
 | Kumitateru | 0.1     |
 | Hiku       |         |
 | Shiru      |         |
+
+## Alpha v0.5 - Aug 31 2025
+- API
+	-  **Yomu
+		- The following models have been added
+			- Author
+			- Work
+			- WorkAuthor
+			- WorkCharacter
+			- WorkRelation
+		- Added home endpoint
+		- Added detail endpoint
+	- **Kumitateru**
+		- The following models have been added
+			- Manufacturer
+			- Part
+			- Socket
+			- Microarchitecture
+			- CPU
+			- MemoryType
+			- RAM
+			- Chipset
+			- Motherboard
+			- GPUMemoryType
+			- GPU
+			- PSU
+			- CPUCooler
+		- Added home endpoint
+	- **Shared**
+		- Main models have option to inherit from **Media** model
+			- acquire standard fields such as title, slug, score and user
+			- acquire basic to string function
+- Website
+	- Added cast study page
+	- Added FAQ page
+	- Added Legal Page
+	- Added **Todokeru** landing
+	- Added **WIP** error page
+	- Added more members to team page
+- Platform
+	- **Yomu**
+		- Added homepage
+		- Added detail page
+	- **Kumitateru**
+		- Added homepage
 ## Alpha v0.4 - Jul 27 2025
 - API
 	-  **Miru v.0.1**

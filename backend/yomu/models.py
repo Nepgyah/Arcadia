@@ -1,8 +1,17 @@
 from django.db import models
-from shared.models import Character, Company, Genre, Media
+from shared.models import Company, Franchise, Genre, Media
+from characters.models import Character
 
+class Publisher(Company):
+
+    def __str__(self):
+        return f"{self.name}"
+    
 class Author(models.Model):
     name=models.CharField(max_length=255, null=False, blank=False)
+
+    def __str__(self):
+        return f"{self.name}"
 
 class WorkType(models.TextChoices):
     MANGA = 'manga', 'Manga'
@@ -31,9 +40,11 @@ class Work(Media):
 
     type = models.CharField(choices=WorkType.choices, default=WorkType.MANGA, blank=True)
     authors = models.ManyToManyField(Author, through='WorkAuthor', related_name='works', blank=True)
-    publisher=models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
+    publisher=models.ForeignKey(Publisher, on_delete=models.SET_NULL, null=True, blank=True)
     publishing_start_date = models.DateField(null=True, blank=True)
     publishing_end_date = models.DateField(null=True, blank=True)
+
+    franchise=models.ForeignKey(Franchise, on_delete=models.SET_NULL, null=True, blank=True)
 
 class WorkAuthor(models.Model):
 

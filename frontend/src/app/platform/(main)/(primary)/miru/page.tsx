@@ -1,23 +1,25 @@
 'use client';
-import { apiGET } from "@/util/api/api";
-import React from "react";
-import { useEffect, useState } from "react";
 
-import '@/styles/platform/pages/miru/home.scss';
-import EntryCard from "@/components/platform/entryCard";
+import React, { useEffect, useState } from "react";
 import { Breadcrumbs, Typography } from "@mui/material";
+
+import { apiGET } from "@/util/api/api";
+import EntryCard from "@/components/platform/entryCard";
 import WIP from "@/components/platform/wip";
+import LinkedHeader from "@/components/platform/linkedHeader";
 
 export default function MiruHome() {
     const [isLoading, setIsLoading] = useState(true);
-    const [seasonalAnime, setSeasonalAnime] = useState([])
-    const [topAnime, setTopAnime] = useState([])
+    const [seasonalAnime, setSeasonalAnime] = useState([]);
+    const [topAnime, setTopAnime] = useState([]);
+    const [seasonName, setSeasonName] = useState<string>('N/A');
 
     useEffect(() => {
         apiGET<any>('miru/home/')
         .then((res) => {
             setSeasonalAnime(res.seasonal)
             setTopAnime(res.top)
+            setSeasonName(res.season_name)
         })
     }, [])
 
@@ -27,47 +29,50 @@ export default function MiruHome() {
                 <Typography>Miru</Typography>
                 <Typography>Home</Typography>
             </Breadcrumbs>
-            <div id="page-miru-home"  className="page-content page-content--two-col page-content--reversed">
-                <div className="page-content__left-column divider divider--vertical padding-right--lg">
-                    <div id="seasonal">
-                        <h2>Current Season</h2>
-                        <div className="layout-grid-5">
-                            {
-                                seasonalAnime &&
-                                seasonalAnime.map((anime: any, key: number) => (
-                                    <EntryCard 
-                                        key={key} 
-                                        app="miru" 
-                                        title={anime.title} 
-                                        clickLink={`/platform/miru/anime/${anime.slug}`} 
-                                        imageLink={`/storage/miru/${anime.slug}.jpg`}
-                                    />
-                                ))
-                            }
+            <div id="page-miru-home"  className="page-content">
+                <div className="two-col-section two-col-section--uneven-reverse">
+                    <div className="row-gap-md">
+                        <div id="seasonal">
+                            <LinkedHeader title={`Latest Season - ${seasonName}`} link="miru/seasonal" linkText="See more"/>
+                            <div className="layout-grid-5">
+                                {
+                                    seasonalAnime &&
+                                    seasonalAnime.map((anime: any, key: number) => (
+                                        <EntryCard 
+                                            key={key} 
+                                            app="miru" 
+                                            title={anime.title} 
+                                            clickLink={`/platform/miru/anime/${anime.id}/${anime.slug}`} 
+                                            imageLink={`/storage/miru/${anime.id}.jpg`}
+                                        />
+                                    ))
+                                }
+                            </div>
+                        </div>
+                        <div id="all-time">
+                            <LinkedHeader title="All Time" link="miru/all-time" linkText="See more"/>
+                            <div className="layout-grid-5">
+                                {
+                                    topAnime &&
+                                    topAnime.map((anime: any, key: number) => (
+                                        <EntryCard 
+                                            key={key} 
+                                            app="miru" 
+                                            title={anime.title} 
+                                            clickLink={`/platform/miru/anime/${anime.id}/${anime.slug}`} 
+                                            imageLink={`/storage/miru/${anime.id}.jpg`}
+                                        />
+                                    ))
+                                }
+                            </div>
                         </div>
                     </div>
-                    <div id="all-time">
-                        <h2>All Time</h2>
-                        <div className="layout-grid-5">
-                            {
-                                topAnime &&
-                                topAnime.map((anime: any, key: number) => (
-                                    <EntryCard 
-                                        key={key} 
-                                        app="miru" 
-                                        title={anime.title} 
-                                        clickLink={`/platform/miru/anime/${anime.slug}`} 
-                                        imageLink={`/storage/miru/${anime.slug}.jpg`}
-                                    />
-                                ))
-                            }
-                        </div>
+                    <div className="vertical-divider-left p-left-xl">
+                        <h2 className="app-font--miru border-bottom">Friend Activity</h2>
+                        <WIP />
                     </div>
                 </div>
-                <div className="page-content__right-column">
-                    <h2 className="app-font--miru border-bottom">Details</h2>
-                    <WIP />
-                </div>
+
             </div>
         </React.Fragment>
     )

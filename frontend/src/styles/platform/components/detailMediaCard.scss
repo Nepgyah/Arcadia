@@ -1,0 +1,42 @@
+@use '../../abstract/variables' as *;
+
+.detail-card {
+    width: 350px;
+    background-color: #2C2D33;
+    border-radius: 5px;
+    box-shadow: $box-shadow-default;
+    
+    &__title {
+        padding: 1rem;
+        font-size: .9rem;
+        height: 60px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    &__stats, &__misc {
+        display: flex;
+        justify-content: space-evenly;
+        font-size: .75rem;
+        background-color: $platform-bg-2;
+        padding: .5rem;
+    }
+
+    &__main {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        height: 225px;
+
+        .image {
+            height: inherit;
+            width: 100%;
+            object-fit: cover;
+        }
+        .summary {
+            height: inherit;
+            overflow-y: auto;
+            font-size: .75rem;
+            padding: .5rem;
+        }
+    }
+}

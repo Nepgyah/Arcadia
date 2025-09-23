@@ -8,6 +8,7 @@ $arcadia-colors: (
     txt-dark: #3E3E42,
     txt-light: #ffffff,
     txt-light-alt: #FFF6E1,
+    txt-fadded: rgba(#bbbbbb, .5),
     arc-base: #505477,
     arc-base-dark: #3F3E56,
     arc-accent-light: #FFC2C2,
@@ -40,6 +41,7 @@ $gradient-vertical-one: linear-gradient(to bottom, #59304D, #2F324B);
 $text-size: (
     xs: .75rem,
     s: .88rem,
+    md: 1rem,
     l: 1.5rem,
     xl: 2rem,
     xxl: 2.5rem
@@ -52,3 +54,11 @@ $box-shadow-default: 0px 4px 4px rgba(#000000, .25);
 // Platform colors
 $platform-bg-1: #23242A;
 $platform-bg-2: #1C1D1F;
+// Platform spacings
+$platform-spacing: (
+    xs: .5rem,
+    s:  .75rem,
+    md:  1rem,
+    l:  1.5rem,
+    xl: 2rem
+);

@@ -1,48 +1,43 @@
-## Latest Release - Alpha v0.5 - Aug 31 2025
+## Latest Release - Alpha v0.6 - Aug 31 2025
 - API
-	-  **Yomu
+	- **Yomu v0.2**
+		- Added all time endpoint and page
+		- Added search endpoint and page
+		- Added internal model for yomu related companies
+	- **Miru v0.2**
+		- Added search endpoint and page
+		- Added seasonal endpoint and page
+		- Added internal model for miru related companies
+	-  **Asobu v0.1**
 		- The following models have been added
-			- Author
-			- Work
-			- WorkAuthor
-			- WorkCharacter
-			- WorkRelation
+			- Company
+			- Game
+			- DLC
 		- Added home endpoint
-		- Added detail endpoint
-	- **Kumitateru**
+		- Added detail endpoint [[docs/releases/changelog]]
+	- **Tsunagu v0.1**
 		- The following models have been added
-			- Manufacturer
-			- Part
-			- Socket
-			- Microarchitecture
-			- CPU
-			- MemoryType
-			- RAM
-			- Chipset
-			- Motherboard
-			- GPUMemoryType
-			- GPU
-			- PSU
-			- CPUCooler
+			- Community
+			- Post
+			- Comment
 		- Added home endpoint
+		- Added community detail endpoint
+		- Added post detail endpoint
 	- **Shared**
-		- Main models have option to inherit from **Media** model
-			- acquire standard fields such as title, slug, score and user
-			- acquire basic to string function
-- Website
-	- Added cast study page
-	- Added FAQ page
-	- Added Legal Page
-	- Added **Todokeru** landing
-	- Added **WIP** error page
-	- Added more members to team page
+		- The following models have been added
+			- Franchise
+			- Media
+		- Extracted `Character` and `Talent` models out of shared
+	- Updated current views to receive object id instead of slug
+	- Added `Franchise` key to several models
+		- Added socials to franchise model
+- **Website v0.4**
+	- Added esports page
+	- Updated team page
 - Platform
-	- **Yomu**
-		- Added homepage
-		- Added detail page
-	- **Kumitateru**
-		- Added homepage
-		- Added
+	- Adjusted overall styling
+	- Updated API calls to send object id instead of slug
+	- Updated sidebar menu to highlight current page
 ## Name
 Arcadia - Your Otaku Sanctuary
 

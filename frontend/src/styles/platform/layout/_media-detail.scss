@@ -1,0 +1,92 @@
+@use '../../abstract/variables' as *;
+
+.media-detail {
+
+    #right-column {
+
+        #primary {
+            display: grid;
+            grid-template-columns: 3.5fr 1fr;
+
+            #overview {
+
+                #at-a-glance {
+                    display: grid;
+                    grid-template-columns: 2fr 1fr;
+                    column-gap: 1rem;
+
+                    #quick-status {
+
+                    }
+
+                    #metrics {
+                        display: grid;
+                        grid-template-columns: 1fr 2fr;
+                        column-gap: 1rem;
+
+                        #arcadia-score {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+
+                            p {
+
+                                &:first-child {
+                                    font-size: map-get($text-size, xl);
+                                }
+                            }
+                        }
+
+                        #tags {
+                            > div {
+                                display: flex;
+                                flex-wrap: wrap;
+                                gap: .5rem;
+                            }
+                        }
+                    }
+                }
+
+                #summary {
+                    min-height: 200px;
+                }
+            }
+
+            .misc {
+
+            }
+        }
+
+        #secondary {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+
+            #relations {
+                > div {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    column-gap: 1rem;
+
+                    #previous {
+
+                        &:first-child {
+                            border-right: 1px solid #BBBBBB;
+                            padding-right: .75rem;
+                        }
+                    }
+                }
+            }
+
+            #characters {
+                padding-left: .75rem;
+            }
+        }
+    }
+
+    #left-column {
+        #image {
+            height: 350px;
+            object-fit: cover;
+        }
+    }
+}

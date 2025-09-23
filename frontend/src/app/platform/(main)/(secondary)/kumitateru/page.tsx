@@ -7,9 +7,6 @@ import PartDetailDialog from "./partDialogue";
 import WIP from "@/components/platform/wip";
 import PlusIcon from '@mui/icons-material/AddCircleOutline';
 
-import '@/styles/platform/pages/kumitateru/kumitateru.scss';
-import { PSU } from "@/util/types/kumitateru";
-
 export default function KumitateruHome() {
 
     const [cpus, setCPUs] = useState<any>();
@@ -45,7 +42,7 @@ export default function KumitateruHome() {
                 <Typography>Kumitateru</Typography>
                 <Typography>Home</Typography>
             </Breadcrumbs>
-            <div id="page-miru-home" className="page-content row-gap row-gap--lg">
+            <div id="page-home" className="page-content row-gap row-gap--lg">
                 <div id="row-one" className="layout-grid-2">
                     <div>
                         <h2>Your Builds</h2>

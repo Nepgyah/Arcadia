@@ -1,7 +1,13 @@
 from django.db import models
-from shared.models import Character, Company, Genre, Media
+from shared.models import Company, Franchise, Genre, Media
+from characters.models import Character
 from django.utils.text import slugify
 
+class Studio(Company):
+
+    def __str__(self):
+        return f"{self.name}"
+    
 class Season(models.Model):
 
     class Type(models.IntegerChoices):
@@ -13,6 +19,9 @@ class Season(models.Model):
     season=models.IntegerField(choices=Type.choices, null=True, blank=True)
     year=models.IntegerField(default=2000, blank=True)
 
+    class Meta:
+        ordering = ['-year']
+    
     def __str__(self):
         return f"{self.get_season_display()} {self.year}"
     
@@ -47,10 +56,12 @@ class Anime(Media):
     related=models.ManyToManyField('self', through='AnimeRelation', symmetrical=False, related_name='related_anime', blank=True)
     
     type=models.IntegerField(choices=MediaType.choices, default=MediaType.TV)
-    studio=models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
+    studio=models.ForeignKey(Studio, on_delete=models.SET_NULL, null=True, blank=True)
     rating=models.IntegerField(choices=Rating.choices, default=Rating.G, blank=True)
     airing_start_date=models.DateField(null=True, blank=True)
     airing_end_date=models.DateField(null=True, blank=True)
+
+    franchise=models.ForeignKey(Franchise, on_delete=models.SET_NULL, null=True, blank=True)
 
     class Meta:
         ordering = ['-score']
@@ -74,8 +85,7 @@ class AnimeCharacter(models.Model):
 class AnimeRelation(models.Model):
 
     class Type(models.TextChoices):
-        PREQUEL = 'prequel', 'Prequel'
-        SEQUEL = 'sequel', 'Sequel'
+        SERIES_ENTRY = 'series_entry', 'Series Entry'
         SPINOFF = 'spinoff', 'Spin-off'
         SIDE_STORY = 'side_story', 'Side Story'
         ALTERNATIVE_VERSION = 'alternataive_version', 'Alternate'

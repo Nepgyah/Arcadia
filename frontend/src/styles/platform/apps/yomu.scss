@@ -1,0 +1,13 @@
+@use '../../abstract/variables' as *;
+
+#yomu-app {
+    h2, .MuiBreadcrumbs-separator {
+        color: map-get($arcadia-colors, yomu-base )
+    }
+
+    #page-yomu-search {
+        #results {
+            width: 1123px;
+        }
+    }
+}

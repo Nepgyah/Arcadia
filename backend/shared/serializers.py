@@ -1,17 +1,22 @@
 from rest_framework import serializers
-from .models import Genre, Company, Character
+from .models import Franchise, Genre, Company
 
+class FranchiseSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Franchise
+        fields = [
+            'id', 
+            'name', 
+            'slug',
+            'socials'
+        ]
+        
 class CompanySerializer(serializers.Serializer):
 
     class Meta:
         model=Company
         fields = [ 'name' ]
-
-class CharacterSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model=Character
-        fields= [ 'first_name', 'last_name', 'nickname', 'slug' ]
 
 class GenreSerializer(serializers.ModelSerializer):
 

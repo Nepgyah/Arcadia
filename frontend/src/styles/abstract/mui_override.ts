@@ -22,12 +22,22 @@ const theme = createTheme({
     secondary: { main: '#FFC2C2' },
   },
   components: {
-     MuiButton: {
-      styleOverrides: {
-        root: {
-          // general overrides
-        },
+      MuiSelect: {
+        variants: [
+          {
+            props: { variant: 'standard'},
+            style: {
+              color: '#ffffff'
+            }
+          }
+        ]
       },
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            // general overrides
+          },
+        },
       variants: [
         {
           props: { color: 'secondary' },

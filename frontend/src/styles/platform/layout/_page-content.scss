@@ -1,36 +1,23 @@
 .page-content {
-    min-height: 900px;
+    // min-height: 900px;
     margin-top: 2rem;
     min-width: 1200px;
-    &--two-col {
+    min-height: 100dvh;
 
+    > div {
+        margin-bottom: 1rem;
     }
-}
 
-@media only screen and (min-width: 768px) {
+    .two-col-section {
+        display: grid;
+        column-gap: 2rem;
 
-    .page-content {
-        min-height: 900px;
-
-        &--two-col {
-            display: grid;
-            grid-template-columns: 20% 80%;
+        &--uneven {
+            grid-template-columns: 1fr 4fr;
         }
 
-        &--reversed {
-            grid-template-columns: 80% 20%;
-        }
-        
-        &__left-column {
-            margin-right: .5rem;
-
-            display: flex;
-            flex-direction: column;
-            row-gap: 1rem;
-        }
-
-        &__right-column {
-            margin-left: .5rem;
+        &--uneven-reverse {
+            grid-template-columns: 4fr 1fr;
         }
     }
 }
