@@ -1,4 +1,4 @@
-import { App } from "@/util/types/shared";
+import { App } from "@/types/shared";
 import { Chip } from "@mui/material";
 
 export default function TagChip({

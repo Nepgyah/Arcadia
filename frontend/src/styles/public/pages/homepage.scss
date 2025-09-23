@@ -1,4 +1,5 @@
 @use '../../abstract/variables' as *;
+@use "sass:map";
 
 #page-homepage {
 
@@ -370,7 +371,7 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    background-color: map-get($arcadia-colors, arc-accent-dark);
+                    background-color: map.get($arcadia-colors, arc-accent-dark);
                     box-shadow: $box-shadow-default;
 
                 }
@@ -390,10 +391,10 @@
                 row-gap: 2rem;
                 
                 .feature {
-                    color: map-get($arcadia-colors, txt-light);
+                    color: map.get($arcadia-colors, txt-light);
 
                     h3 {
-                        border-left: 2px solid map-get($arcadia-colors , arc-accent );;
+                        border-left: 2px solid map.get($arcadia-colors , arc-accent );;
                         padding-left: 1rem;
                         margin-bottom: 1rem;
                     }
@@ -471,8 +472,8 @@
 
             .accordion {
                 .MuiAccordion-root {
-                    background-color: map-get($arcadia-colors, arc-base);
-                    color: map-get($arcadia-colors, txt-light-alt)
+                    background-color: map.get($arcadia-colors, arc-base);
+                    color: map.get($arcadia-colors, txt-light-alt)
                 }
             }
         }
@@ -501,7 +502,7 @@
                     }
 
                     &__text {
-                        background-color: map-get($arcadia-colors, arc-base-dark);
+                        background-color: map.get($arcadia-colors, arc-base-dark);
                         flex-grow: 1;
                         color: white;
                         padding: 12px;
@@ -532,7 +533,7 @@
                 .hub-name { 
                     text-align: center; 
                     margin-bottom: 1.5rem;
-                    color: map-get($arcadia-colors, arc-base );
+                    color: map.get($arcadia-colors, arc-base );
                 }
 
                 >div {
@@ -572,7 +573,7 @@
                 row-gap: 1rem;
                 
                 .goal {
-                    background-color: map-get($arcadia-colors , arc-base-dark );
+                    background-color: map.get($arcadia-colors , arc-base-dark );
                     padding: 1.5rem;
                     -webkit-backdrop-filter: blur(5px);
                     backdrop-filter: blur(5px);
@@ -590,7 +591,7 @@
 
         #story {
             .card {
-                background-color: map-get($arcadia-colors, arc-base );
+                background-color: map.get($arcadia-colors, arc-base );
                 border-radius: 15px;
                 overflow: hidden;
                 box-shadow: $box-shadow-default;
@@ -762,7 +763,7 @@
                     flex-direction: column;
                     justify-content: space-between;
                     align-items: center;
-                    color: map-get($arcadia-colors , txt-light-alt );;
+                    color: map.get($arcadia-colors , txt-light-alt );;
                     text-align: center;
 
                     div {
@@ -992,7 +993,7 @@
                         svg {
                             width: 50%;
                             height: auto;
-                            color: map-get($arcadia-colors , arc-base-dark );
+                            color: map.get($arcadia-colors , arc-base-dark );
                         }
                     }
                 }

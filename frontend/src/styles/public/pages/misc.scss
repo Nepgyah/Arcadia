@@ -1,7 +1,8 @@
 @use "../../abstract/variables" as *;
+@use "sass:map";
 
 #page-not-found {
-    background-color: map-get($arcadia-colors , arc-base-dark );
+    background-color: map.get($arcadia-colors , arc-base-dark );
     overflow-y: hidden;
 
     .section {
@@ -13,7 +14,7 @@
         }
 
         #angled {
-            background-color: map-get($arcadia-colors , arc-base-dark );
+            background-color: map.get($arcadia-colors , arc-base-dark );
             height: 100%;
             width: 100%;
             z-index: 2;
@@ -26,12 +27,12 @@
 }
 
 #page-construction {
-    background-color: map-get($arcadia-colors , arc-base-dark );
+    background-color: map.get($arcadia-colors , arc-base-dark );
     overflow-y: hidden;
 
     .section {
         #angled {
-            background-color: map-get($arcadia-colors , arc-base-dark );
+            background-color: map.get($arcadia-colors , arc-base-dark );
             height: 100%;
             width: 100%;
             z-index: 2;

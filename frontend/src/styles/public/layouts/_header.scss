@@ -1,12 +1,13 @@
 @use '../../abstract/variables' as *;
+@use "sass:map";
 
 .header {
-    background-color: map-get($arcadia-colors , arc-base );
+    background-color: map.get($arcadia-colors , arc-base );
     position: fixed;
     z-index: 99;
     top: 0;
     width: 100dvw;
-    border-bottom: 1px solid map-get($arcadia-colors, txt-dark);
+    border-bottom: 1px solid map.get($arcadia-colors, txt-dark);
 
     &__logo {
         height: 100%;
@@ -68,7 +69,7 @@
 .mobile-nav-drawer {
     .MuiPaper-root {
         padding: 20px;
-        background-color: map-get($arcadia-colors , arc-base );
+        background-color: map.get($arcadia-colors , arc-base );
 
         display: flex;
         flex-direction: column;
@@ -86,7 +87,7 @@
                 color: white !important;
 
                 &.dropdown-open {
-                    color: map-get($arcadia-colors , arc-accent );
+                    color: map.get($arcadia-colors , arc-accent );
                 }
             }
 
@@ -124,7 +125,7 @@
     
     .MuiPaper-root {
         padding: .5rem;
-        background-color: map-get($arcadia-colors, arc-base-dark);
+        background-color: map.get($arcadia-colors, arc-base-dark);
 
         ul {
             display: flex;
@@ -133,7 +134,7 @@
                 border-radius: 15px;
                 color: white;
                 &:hover {
-                    background-color: map-get($arcadia-colors, arc-base );
+                    background-color: map.get($arcadia-colors, arc-base );
                 }
                 img {
                     margin-right: .5rem;

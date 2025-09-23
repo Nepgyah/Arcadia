@@ -1,6 +1,6 @@
 @use "../abstract/variables" as *;
 @forward "./layout/index";
-
+@use "sass:map";
 // Content Organization
 .layout-grid {
     &-2 {
@@ -66,20 +66,6 @@
 }
     
 // Typography
-p {
-    font-size: .75rem;
-}
-
-h2 {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    border-bottom: 1px solid #bbbbbb;
-
-    &.border-bottom-none {
-        border-bottom: none;
-        margin-bottom: 0;
-    }
-}
 
 .clickable {
     cursor: pointer;
@@ -189,11 +175,11 @@ h2 {
         border-radius: 44px;
 
         &.twitter-icon {
-            color: map-get($arcadia-colors , kau-base);
+            color: map.get($arcadia-colors , kau-base);
         }
 
         &.youtube-icon {
-            color: map-get($arcadia-colors , asobu-base);
+            color: map.get($arcadia-colors , asobu-base);
         }
     }
 }
@@ -303,6 +289,20 @@ h2 {
             width: 1400px;
             margin: auto;
 
+            p {
+                font-size: .75rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
+                border-bottom: 1px solid #bbbbbb;
+
+                &.border-bottom-none {
+                    border-bottom: none;
+                    margin-bottom: 0;
+                }
+            }
             .MuiTypography-root {
                 color: white;
             }

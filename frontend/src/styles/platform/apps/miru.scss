@@ -1,17 +1,18 @@
 @use '../../abstract/variables' as *;
+@use "sass:map";
 
 #miru-layout {
     h2, .MuiBreadcrumbs-separator {
-        color: map-get($arcadia-colors, miru-base )
+        color: map.get($arcadia-colors, miru-base )
     }
 
     .MuiPagination-ul {
         .MuiPaginationItem-previousNext {
-            color: map-get($arcadia-colors, miru-base )
+            color: map.get($arcadia-colors, miru-base )
         }
         .MuiButtonBase-root {
             &.Mui-selected {
-                background-color: map-get($arcadia-colors, miru-base )
+                background-color: map.get($arcadia-colors, miru-base )
             }
         }
     }
@@ -19,20 +20,20 @@
     .MuiTableContainer-root {
         .MuiTableHead-root {
             .MuiTableCell-root {
-                background-color: map-get($arcadia-colors, miru-base );
+                background-color: map.get($arcadia-colors, miru-base );
             }
         }
     }
     .MuiTabs-root  {
         .MuiButtonBase-root {
-            color: map-get($arcadia-colors, txt-fadded );
+            color: map.get($arcadia-colors, txt-fadded );
             &.Mui-selected {
-                color: map-get($arcadia-colors, miru-base )
+                color: map.get($arcadia-colors, miru-base )
             }
         }
 
         .MuiTabs-indicator {
-            background-color: map-get($arcadia-colors, miru-base );
+            background-color: map.get($arcadia-colors, miru-base );
         }
     }
 

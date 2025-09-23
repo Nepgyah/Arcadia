@@ -1,9 +1,10 @@
 @use '../../../abstract/variables' as *;
+@use "sass:map";
 
 #page-apps-kumitateru {
     
     #hero {
-        background-color: map-get($arcadia-colors, txt-light-alt );
+        background-color: map.get($arcadia-colors, txt-light-alt );
         .hero__wrapper {
             display: flex;
             flex-wrap: wrap;

@@ -1,4 +1,6 @@
 @use "../abstract/variables" as *;
+@use "sass:map";
+
 #auth-layout {
     .auth-wrapper {
         display: grid;
@@ -24,7 +26,7 @@
             h1 {
                 text-align: center;
                 font-size: 4rem;
-                color: map-get($arcadia-colors, arc-base);
+                color: map.get($arcadia-colors, arc-base);
                 margin-bottom: 4rem;
             }
 

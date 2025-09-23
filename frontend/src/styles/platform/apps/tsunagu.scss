@@ -1,8 +1,9 @@
 @use '../../abstract/variables' as *;
+@use "sass:map";
 
 #tsunagu-layout {
     h2, .MuiBreadcrumbs-separator {
-        color: map-get($arcadia-colors, tsunagu-base )
+        color: map.get($arcadia-colors, tsunagu-base )
     }
     
     .comment-block {

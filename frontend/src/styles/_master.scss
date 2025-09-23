@@ -2,16 +2,16 @@
 @use  "./abstract/variables" as *;
 @forward './base/';
 @forward "./abstract/";
-
+@use "sass:map";
 html {
-    background-color: map-get($arcadia-colors, txt-light-alt);
+    background-color: map.get($arcadia-colors, txt-light-alt);
     font-size: 18px;
     scroll-behavior: smooth;
     scroll-padding-top: 3rem;
 
     body {
-        color: map-get($arcadia-colors, txt-dark);
-        background-color: map-get($arcadia-colors, txt-light-alt);
+        color: map.get($arcadia-colors, txt-dark);
+        background-color: map.get($arcadia-colors, txt-light-alt);
         overflow-x: hidden;
         
         a {
@@ -76,7 +76,7 @@ html {
 #solutions-dropdown {
     .MuiPaper-root {
         padding: .5rem;
-        background-color: map-get($arcadia-colors, arc-base-dark);
+        background-color: map.get($arcadia-colors, arc-base-dark);
 
         ul {
             display: flex;
@@ -85,7 +85,7 @@ html {
             .MuiButtonBase-root {
                 border-radius: 15px;
                 &:hover {
-                    background-color: map-get($arcadia-colors, arc-base );
+                    background-color: map.get($arcadia-colors, arc-base );
                 }
                 img {
                     margin-right: .5rem;

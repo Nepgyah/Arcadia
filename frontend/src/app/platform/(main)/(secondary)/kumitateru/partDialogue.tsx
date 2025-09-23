@@ -2,7 +2,7 @@ import { Dialog, DialogContent, DialogTitle } from "@mui/material"
 
 import '@/styles/platform/components/partDetailDialog.scss';
 import InfoItem from "@/components/platform/infoItem";
-import { CPU, GPU, Motherboard, PSU, RAM } from "@/util/types/kumitateru";
+import { CPU, GPU, Motherboard, PSU, RAM } from "@/types/kumitateru";
 
 export default function PartDetailDialog(
     {

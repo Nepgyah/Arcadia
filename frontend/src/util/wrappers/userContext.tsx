@@ -3,7 +3,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { apiGET } from "../api/api";
 import { useSnackbar } from "@/util/wrappers/snackbarProvider";
-import { User } from "../types/account";
+import { User } from "@/types/account";
 
 type UserContextType = {
     user: User | null;

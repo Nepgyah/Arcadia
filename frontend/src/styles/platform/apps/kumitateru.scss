@@ -1,8 +1,9 @@
 @use '../../abstract/variables' as *;
+@use "sass:map";
 
 #kumitateru-app {
     h2, .MuiBreadcrumbs-separator {
-        color: map-get($arcadia-colors, kumitateru-base )
+        color: map.get($arcadia-colors, kumitateru-base )
     }
     
     #page-home {
@@ -17,15 +18,15 @@
                 height: 48px;
             }
             &:nth-child(1) {
-                background-color: rgba(map-get($arcadia-colors, kumitateru-base), 1.0);
+                background-color: rgba(map.get($arcadia-colors, kumitateru-base), 1.0);
             }
 
             &:nth-child(2) {
-                background-color: rgba(map-get($arcadia-colors, kumitateru-base), .7);
+                background-color: rgba(map.get($arcadia-colors, kumitateru-base), .7);
             }
 
             &:nth-child(3) {
-                background-color: rgba(map-get($arcadia-colors, kumitateru-base), .5);
+                background-color: rgba(map.get($arcadia-colors, kumitateru-base), .5);
             }
         }
     }

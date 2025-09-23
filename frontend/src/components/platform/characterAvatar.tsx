@@ -1,4 +1,4 @@
-import { App, Character } from "@/util/types/shared"
+import { App, Character } from "@/types/shared"
 import { Avatar } from "@mui/material"
 
 export default function CharacterAvatar (

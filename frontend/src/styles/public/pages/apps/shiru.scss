@@ -1,4 +1,5 @@
 @use '../../../abstract/variables' as *;
+@use "sass:map";
 
 #page-apps-shiru {
 
@@ -9,7 +10,7 @@
             min-height: inherit;
 
             #topics {
-                background-color: map-get($arcadia-colors , arc-base );
+                background-color: map.get($arcadia-colors , arc-base );
                 padding: 1rem;
                 display: flex;
                 flex-wrap: wrap;
@@ -22,7 +23,7 @@
                     div {
                         aspect-ratio: 1 / 1;
                         height: 150px;
-                        background-color: map-get($arcadia-colors , shiru-base );
+                        background-color: map.get($arcadia-colors , shiru-base );
                         padding: 8px;
 
                         img {
