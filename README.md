@@ -1,5 +1,5 @@
-## Latest Release - Alpha v0.6 - Aug 31 2025
-- API
+## Latest Release - Alpha v0.6 - Sep 23 2025
+- Apps
 	- **Yomu v0.2**
 		- Added all time endpoint and page
 		- Added search endpoint and page
