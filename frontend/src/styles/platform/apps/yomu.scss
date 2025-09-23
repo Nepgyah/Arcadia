@@ -4,4 +4,10 @@
     h2, .MuiBreadcrumbs-separator {
         color: map-get($arcadia-colors, yomu-base )
     }
+
+    #page-yomu-search {
+        #results {
+            width: 1123px;
+        }
+    }
 }

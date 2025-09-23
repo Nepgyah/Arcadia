@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Season, Anime, AnimeCharacter, AnimeRelation
+from .models import Season, Anime, AnimeCharacter, AnimeRelation, Studio
 
 # Register your models here.
 class AnimeCharacterInline(admin.TabularInline):
@@ -19,3 +19,4 @@ class AnimeAdmin(admin.ModelAdmin):
     search_fields = ['title']
 
 admin.site.register(Season)
+admin.site.register(Studio)

@@ -157,10 +157,6 @@ h2 {
     }
 }
 
-.MuiTypography-root {
-    color: white;
-}
-
 // Misc
 .vertical-divider { 
 
@@ -212,6 +208,17 @@ h2 {
     box-shadow: $box-shadow-default;
 }
 
+.staff-entry {
+    &__name {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    &__role {
+        font-size: 16px;
+        color: #939393;
+    }
+}
 .info-item {
     font-size: 16px;
 
@@ -296,6 +303,9 @@ h2 {
             width: 1400px;
             margin: auto;
 
+            .MuiTypography-root {
+                color: white;
+            }
             .card {
                 background-color: #36373D;
                 border-radius: 12px;

@@ -17,6 +17,8 @@ export const miruNav: url[] = [
 
 export const yomuNav: url[] = [
     { name: "Yomu Home", path: "/yomu"},
+    { name: "Search", path: "/yomu/search"},
+    { name: "All Time", path: "/yomu/all-time"},
 ]
 
 export const asobuNav: url[] = [

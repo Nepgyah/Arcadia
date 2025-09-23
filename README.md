@@ -1,16 +1,21 @@
 ## Latest Release - Alpha v0.6 - Aug 31 2025
 - API
-	- **Miru**
-		- Added search endpoint
-		- Added seasonal endpoint
-	-  **Asobu**
+	- **Yomu v0.2**
+		- Added all time endpoint and page
+		- Added search endpoint and page
+		- Added internal model for yomu related companies
+	- **Miru v0.2**
+		- Added search endpoint and page
+		- Added seasonal endpoint and page
+		- Added internal model for miru related companies
+	-  **Asobu v0.1**
 		- The following models have been added
 			- Company
 			- Game
 			- DLC
 		- Added home endpoint
 		- Added detail endpoint [[docs/releases/changelog]]
-	- **Tsunagu**
+	- **Tsunagu v0.1**
 		- The following models have been added
 			- Community
 			- Post
@@ -33,9 +38,6 @@
 	- Adjusted overall styling
 	- Updated API calls to send object id instead of slug
 	- Updated sidebar menu to highlight current page
-	- **Miru**
-		- Added global search page
-		- Added yearly/seasonal page
 ## Name
 Arcadia - Your Otaku Sanctuary
 

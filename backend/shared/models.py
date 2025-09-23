@@ -43,9 +43,16 @@ class Company(models.Model):
     name=models.CharField(max_length=150, null=False, blank=False)
     slug=models.SlugField(unique=True, blank=True)
 
+    class Meta:
+        abstract = True
+
     def __str__(self):
         return f"{self.name}"
     
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
+
 class Genre(models.Model):
     name=models.CharField(max_length=150)
 

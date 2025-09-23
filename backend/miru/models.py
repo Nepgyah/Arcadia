@@ -3,6 +3,11 @@ from shared.models import Company, Franchise, Genre, Media
 from characters.models import Character
 from django.utils.text import slugify
 
+class Studio(Company):
+
+    def __str__(self):
+        return f"{self.name}"
+    
 class Season(models.Model):
 
     class Type(models.IntegerChoices):
@@ -51,7 +56,7 @@ class Anime(Media):
     related=models.ManyToManyField('self', through='AnimeRelation', symmetrical=False, related_name='related_anime', blank=True)
     
     type=models.IntegerField(choices=MediaType.choices, default=MediaType.TV)
-    studio=models.ForeignKey(Company, on_delete=models.SET_NULL, null=True, blank=True)
+    studio=models.ForeignKey(Studio, on_delete=models.SET_NULL, null=True, blank=True)
     rating=models.IntegerField(choices=Rating.choices, default=Rating.G, blank=True)
     airing_start_date=models.DateField(null=True, blank=True)
     airing_end_date=models.DateField(null=True, blank=True)
