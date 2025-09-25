@@ -22,9 +22,9 @@ export default function DesktopHeader() {
         <div className="desktop">
             <div className="misc">
                 <div className="wrapper">
-                    <Link href='/'>FAQ</Link>
+                    {/* <Link href='/'>FAQ</Link>
                     <Link href='/'>Contact Us</Link>
-                    <Link href='/'>Legal</Link>
+                    <Link href='/'>Legal</Link> */}
                 </div>
             </div>
             <div className="main-content">

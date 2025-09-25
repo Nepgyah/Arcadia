@@ -17,10 +17,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-    color: white;
+    color: inherit;
     text-decoration: none;
 
     &:hover {
         text-decoration: underline;
     }
+}
+
+.temp-landing {
+    text-align: center;
+    max-width: $max-width;
+    margin: auto;   
 }
