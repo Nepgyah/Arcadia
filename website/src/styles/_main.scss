@@ -1,0 +1,17 @@
+@forward './components/';
+@forward './layout/';
+@forward './base/';
+@use './base/variables' as *;
+@use "sass:map";
+
+html {
+    body {
+        background-color: map.get($colors, txt-light-alt) !important;
+        font-size: 18px;
+        font-family: 'Noto Sans JP';
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Noto Serif JP';
+}
