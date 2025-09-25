@@ -15,7 +15,7 @@ export default function HeaderLayout() {
   }, []);
 
   return (
-    <header className="header">
+    <header id="arcadia-header">
       {isMobile ? <MobileHeader /> : <DesktopHeader />}
     </header>
   );
