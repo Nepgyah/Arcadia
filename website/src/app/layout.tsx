@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 
 import "@/styles/_main.scss";
 import { CssBaseline } from "@mui/material";
+import ThemeWrapper from "@/components/themeWrapper";
 
 export const metadata: Metadata = {
   title: "Arcadia - Your Otaku Sanctuary",
@@ -17,13 +18,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <CssBaseline>
-        <body>
-          <HeaderLayout />
-          {children}
-          <Footer />
-        </body>
-      </CssBaseline>
+      <ThemeWrapper>
+        <CssBaseline>
+          <body>
+            <HeaderLayout />
+            {children}
+            <Footer />
+          </body>
+        </CssBaseline>
+      </ThemeWrapper>
     </html>
   );
 }

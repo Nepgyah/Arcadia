@@ -1,0 +1,75 @@
+// Layouts
+$max-width: 85rem;
+
+$colors: (
+    txt-dark: #3E3E42,
+    txt-dark-emp: #FFE57C,
+    txt-light: #ffffff,
+    txt-light-alt: #FFF6E1,
+    txt-fadded: rgba(#bbbbbb, .5),
+
+    arc-primary-light: #7379A9,
+    arc-primary: #505477,
+    arc-primary-dark: #373952,
+
+    arc-secondary-light: #80456E,
+    arc-secondary: #59304D,
+    arc-secondary-dark: #3D1F34,
+
+    arc-tertiary-light: #D67897,
+    arc-tertiary: #ED5F77,
+    arc-tertiary-dark: #C54B61,
+
+    arc-base: #505477,
+    arc-base-dark: #3F3E56,
+    arc-accent-light: #FFC2C2,
+    arc-accent: #C54B61,
+    arc-accent-dark: #3D1F34,
+
+    miru-base: #61CF93,
+    miru-dark: #438C64,
+
+    yomu-base: #979797,
+    yomu-dark: #797B7A,
+
+    asobu-base: #EE473D,
+    asobu-dark: #BA372F,
+
+    kau-base: #2692D3,
+    kau-dark: #1F75A9,
+
+    tsunagu-base: #FFCA3C,
+    tsunagu-dark: #D5A932,
+
+    kiku-base: #9370DB,
+    kiku-dark: #795AB8,
+
+    todokeru-base: #971868,
+    todokeru-dark: #7B1254,
+
+    hiku-base: #F0D66A,
+    hiku-dark: #C4AF57,
+
+    sagasu-base: #3C60AF,
+    sagasu-dark: #314E8E,
+
+    kumitateru-base: #BD4648,
+    kumitateru-dark: #933436,
+
+    iku-base: #483D8B,
+    iku-dark: #382F71,
+
+    shiru-base: #FFA468,
+    shiru-dark: #E48A4F,
+
+    manabu-base: #8D5C42,
+    manabu-dark: #704a36
+);
+
+$arcadia-gradient-vertical: linear-gradient(to bottom, #505477, #2F324B);
+$gradient-lightpnk-darkpnk-vertical: linear-gradient(to bottom, #EACCD2, #E2647D);
+$gradient-pink-blue-horizontal: linear-gradient(to right, #FFC8DD, #A2D2FF);
+$gradient-orange-pink-vertical: linear-gradient(to bottom, #FFD7BA, #FFA7A1);
+$gradient-vertical-one: linear-gradient(to bottom, #59304D, #2F324B);
+
+$box-shadow-default: 0px 4px 4px rgba(#000000, .25);

@@ -1,0 +1,61 @@
+@use '../abstract/variables' as *;
+@use "sass:map";
+
+.section {
+    padding: 5rem 0;
+    position: relative;
+
+    &__bg-element {
+        position: absolute;
+        z-index: 1;
+    }
+
+    &__wrapper {
+        position: relative;
+        z-index: 2;
+        max-width: $max-width;
+        padding: 0 20px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        row-gap: 5rem;
+    }
+
+    .section-main {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+        
+        &--white {
+            color: white;
+        }
+
+        &--center {
+            text-align: center;
+            width: 75%;
+            margin: auto;
+        }
+
+        .MuiButton-root {
+            width: fit-content;
+        }
+        
+
+        &__mini-title {
+            font-size: .80rem;
+        }
+
+        &__header {
+            font-size: 2rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .section-main {
+        &--shorten {
+            width: 50%;
+        }
+    }
+}

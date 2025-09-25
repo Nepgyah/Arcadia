@@ -1,0 +1,40 @@
+.center {
+    &-vertical {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &-horizontal {
+        display: flex;
+        justify-content: center;
+    }
+
+    &-both {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: column;
+
+    &--spacing-md {
+        row-gap: 2rem;
+    }
+
+    &--spacing-lg {
+        row-gap: 4rem;
+    }
+
+    &--evenly {
+        justify-content: space-between;
+    }
+
+    &--end {
+        justify-content: flex-end;
+    }
+}

@@ -1,0 +1,32 @@
+@use '../abstract/variables' as *;
+@use "sass:map";
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .grid {
+        display: grid;
+        column-gap: 2rem;
+
+        &--2-col-uneven {
+            grid-template-columns: 2fr 1fr;
+        }
+
+        &--2-col-uneven-reverse {
+            grid-template-columns: 1fr 2fr;
+        }
+
+        &--2-col {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        &--3-col {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+}

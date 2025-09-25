@@ -1,4 +1,4 @@
-const words = ["Stream.", "Read.", "Game.", "Collect.", "Connect."];
+const words = ["Stream.", "Read.", "Game.", "Shop.", "Connect.", "Listen.", "Pull.", "Watch.", "Discover.", "Build.", "Travel.", "Share.", "Learn."];
 let index = 0;
 const span = document.getElementById("word");
 

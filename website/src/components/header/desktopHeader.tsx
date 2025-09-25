@@ -1,3 +1,4 @@
+import { Button } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/navigation"
 import { useEffect, useRef, useState } from "react";
@@ -17,6 +18,10 @@ export default function DesktopHeader() {
     const [isResourceOpen, setsIsResourceOpen] = useState(false);
     const resourceAnchor = useRef<HTMLElement | null>(null);
 
+    const handleClick = (link: string, handleFunc: (bool: boolean) => void) => {
+        router.push(link)
+        handleFunc(false)
+    }
 
     return (
         <div className="desktop">
@@ -29,9 +34,27 @@ export default function DesktopHeader() {
             </div>
             <div className="main-content">
                 <div className='logo'>
-                    <a href="/">
-                        <img src="/logo/logo_white.svg" alt="Alter" />
-                    </a>
+                    <Link href="/">
+                        <img src="/logo/logo_white.svg" alt="Arcadia Logo - White Text" />
+                    </Link>
+                </div>
+                <nav className="navigation">
+                    <div>
+                        <Button variant="text" color="white" onClick={() => router.push('/')}>Home</Button>
+                    </div>
+                    {/* <div>
+                        <Button variant="text" color="white">Apps</Button>
+                    </div>
+                    <div>
+                        <Button variant="text" color="white">D2X</Button>
+                    </div>
+                    <div>
+                        <Button variant="text" color="white">Resources</Button>
+                    </div> */}
+                </nav>
+                <div className="cta-buttons">
+                    <Button variant="contained" color="secondary">Platform</Button>
+                    <Button variant="text" color="white">Create Account</Button>
                 </div>
             </div>
         </div>
