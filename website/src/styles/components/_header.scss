@@ -1,0 +1,46 @@
+@use '../base/variables' as *;
+@use "sass:map";
+
+#arcadia-header {
+    background-color: map.get($colors , arc-base );
+    z-index: 99;
+    top: 0;
+    width: 100dvw;
+
+    .logo {
+        height: 100%;
+
+        img {
+            height: 100%;
+        }
+    }
+
+    .mobile {
+
+    }
+
+    .desktop {
+
+        .misc {
+            background-color: map.get($colors , arc-base-dark);
+            height: 2rem;
+
+            .wrapper {
+                max-width: $max-width;
+                margin: auto;
+                height: 100%;
+                font-size: .80rem;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                column-gap: 1rem;
+            }
+        }
+        .main-content {
+            max-width: $max-width;
+            margin: auto;
+            height: 5rem;
+            padding: 20px;
+        }
+    }
+}
