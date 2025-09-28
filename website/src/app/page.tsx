@@ -5,8 +5,9 @@ import '@/styles/pages/_homepage.scss'
 import Script from "next/script";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { useState } from "react";
+import FadeIn from "@/components/fadeIn";
 
-const websiteUrl = process.env.NEXT_WEBSITE_URL;
+const platformURL = process.env.NEXT_PLATFORM_URL;
 
 export default function Home() {
 
@@ -59,6 +60,8 @@ export default function Home() {
       </section>
 
       <section id="features" className="section bg-arc-secondary">
+        <img id="sakura-tree" className="desktop-only section__bg-element" src="/pages/homepage/sakura-tree.png" alt="Sakura Tree" />
+        <img id="features-broken-circle" className="desktop-only section__bg-element" src="/bg-assets/broken-circle.svg" alt="Broken circle" />
         <div className="section__wrapper">
           <div className="section-main section-main--white">
             <p className="section-main__mini-title">Introducing Arcadia</p>
@@ -209,48 +212,58 @@ export default function Home() {
                     <Button variant="contained">Try Out Now</Button>
                   </div>
               </div>
+              <FadeIn direction="left">
               <div id="miru-tile" className="app-tile bg-miru-base">
-                <h3 className="app-tile__name">Miru - みる [見る]</h3>
-                <p className="app-tile__slogan">Explore the world of anime, One episode at a time</p>
+                  <h3 className="app-tile__name">Miru - みる [見る]</h3>
+                  <p className="app-tile__slogan">Explore the world of anime, One episode at a time</p>
 
-                <div className="app-tile__bg-circle bg-miru-dark"></div>
-                <img className="app-tile__mascots" src="/pages/homepage/miru-app-mascots.png" alt="" />
-              </div>
+                  <div className="app-tile__bg-circle bg-miru-dark"></div>
+                  <img className="app-tile__mascots" src="/pages/homepage/miru-app-mascots.png" alt="" />
+                </div>  
+              </FadeIn>
             </div>
 
             <div id="other-primary">
               <div>
-                <div id="yomu-tile" className="app-tile bg-yomu-base">
-                  <h3 className="app-tile__name">Yomu - よる [読む]</h3>
-                  <p className="app-tile__slogan">Read, Track and Discover One Page At a Time</p>
+                <FadeIn direction="right" delay={.4}>
+                  <div id="yomu-tile" className="app-tile bg-yomu-base">
+                    <h3 className="app-tile__name">Yomu - よる [読む]</h3>
+                    <p className="app-tile__slogan">Read, Track and Discover One Page At a Time</p>
 
-                  <div className="app-tile__bg-circle bg-yomu-dark"></div>
-                  <img className="app-tile__mascots" src="/pages/homepage/yomu-mascots.png" alt="" />
-                </div>
-                <div id="kau-tile" className="app-tile bg-kau-base clr-txt-light">
-                  <h3 className="app-tile__name">Kau - かう [買う]</h3>
-                  <p className="app-tile__slogan">Cosplay, Streetwear, and Otaku Goods</p>
+                    <div className="app-tile__bg-circle bg-yomu-dark"></div>
+                    <img className="app-tile__mascots" src="/pages/homepage/yomu-mascots.png" alt="" />
+                  </div>
+                </FadeIn>
+                <FadeIn direction="right" delay={.5} threshold={.5}>
+                  <div id="kau-tile" className="app-tile bg-kau-base clr-txt-light">
+                    <h3 className="app-tile__name">Kau - かう [買う]</h3>
+                    <p className="app-tile__slogan">Cosplay, Streetwear, and Otaku Goods</p>
 
-                  <div className="app-tile__bg-circle bg-kau-dark"></div>
-                  <img className="app-tile__mascots" src="/pages/homepage/kau-mascots.png" alt="" />
-                </div>
+                    <div className="app-tile__bg-circle bg-kau-dark"></div>
+                    <img className="app-tile__mascots" src="/pages/homepage/kau-mascots.png" alt="" />
+                  </div>
+                </FadeIn>
               </div>
 
               <div>
-                <div id="asobu-tile" className="app-tile bg-asobu-base clr-txt-light">
-                  <h3 className="app-tile__name">Asobu - あそぶ [遊ぶ]</h3>
-                  <p className="app-tile__slogan">Gaming Adventures Begin Here</p>
+                <FadeIn direction="left" delay={.4}>
+                  <div id="asobu-tile" className="app-tile bg-asobu-base clr-txt-light">
+                    <h3 className="app-tile__name">Asobu - あそぶ [遊ぶ]</h3>
+                    <p className="app-tile__slogan">Gaming Adventures Begin Here</p>
 
-                  <div className="app-tile__bg-circle bg-asobu-dark"></div>
-                  <img className="app-tile__mascots" src="/pages/homepage/asobu-mascots.png" alt="" />
-                </div>
-                <div id="tsunagu-tile" className="app-tile bg-tsunagu-base">
-                  <h3 className="app-tile__name">Tsunagu - つなぐ [繋ぐ]</h3>
-                  <p className="app-tile__slogan">Arcadia’s Social Network</p>
+                    <div className="app-tile__bg-circle bg-asobu-dark"></div>
+                    <img className="app-tile__mascots" src="/pages/homepage/asobu-mascots.png" alt="" />
+                  </div>
+                </FadeIn>
+                <FadeIn direction="left" delay={.5} threshold={.7}>
+                  <div id="tsunagu-tile" className="app-tile bg-tsunagu-base">
+                    <h3 className="app-tile__name">Tsunagu - つなぐ [繋ぐ]</h3>
+                    <p className="app-tile__slogan">Arcadia’s Social Network</p>
 
-                  <div className="app-tile__bg-circle bg-tsunagu-dark"></div>
-                  <img className="app-tile__mascots" src="/pages/homepage/tsunagu-mascots.png" alt="" />
-                </div>
+                    <div className="app-tile__bg-circle bg-tsunagu-dark"></div>
+                    <img className="app-tile__mascots" src="/pages/homepage/tsunagu-mascots.png" alt="" />
+                  </div>
+                </FadeIn>
               </div>
             </div>
           </div>
@@ -402,6 +415,31 @@ export default function Home() {
           </div>
         </div>
 
+      </section>
+
+      <section id="middle-cta" className="section gradient-tertiary">
+        <img id="anime-lines" className="section__bg-element" src="/pages/homepage/lines.png" alt="Action anime lines" />
+        <FadeIn id="pointing-girl-1" className="desktop-only section__bg-element" direction="right">
+          <img src="/pages/homepage/pointing-girl-1.png" alt="Pointing anime girl" />
+        </FadeIn>
+        <FadeIn id="pointing-girl-2" className="desktop-only section__bg-element" direction="right" delay={.4}>
+          <img src="/pages/homepage/pointing-girl-2.png" alt="Pointing anime girl" />
+        </FadeIn>
+        <div className="section__wrapper">
+          <div className="grid grid--2-col">
+            <div></div>
+            <div className="center-both">
+              <div className="section-main section-main--shorten">
+                <p className="section-main__mini-title">Join Arcadia</p>
+                <h2 className="section-main__header">Your Otaku World Awaits</h2>
+                <p>Stop Browsing. Start Belonging. Step into your otaku sanctuary today.</p>
+                <Button variant="contained">
+                  Join Now
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
       <Script src="/js/homepage.js" />
     </div>

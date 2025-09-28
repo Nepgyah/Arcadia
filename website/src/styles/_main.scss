@@ -7,6 +7,9 @@
 
 html {
     font-size: 18px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+    
     body {
         background-color: map.get($colors, txt-light-alt) !important;
         font-family: 'Noto Sans JP';
@@ -52,6 +55,10 @@ a {
     background: linear-gradient(to bottom, #59304D, #2F324B);
 }
 
+.gradient-tertiary {
+    background: linear-gradient(to bottom, #FFBDAD, #EC9296);
+}
+
 // Misc
 .temp-landing {
     text-align: center;
@@ -62,4 +69,22 @@ a {
 .svg-icon {
     width: 36px;
     height: 36px;
+}
+
+.desktop-only {
+    display: none;
+}
+
+.mobile-only {
+    display: block;
+}
+
+@media only screen and (min-width: 768px) {
+    .desktop-only {
+        display: block;
+    }
+
+    .mobile-only {
+        display: none;
+    }
 }

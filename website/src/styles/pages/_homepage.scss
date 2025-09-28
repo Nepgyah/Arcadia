@@ -352,6 +352,26 @@
         }
     }
 
+    #middle-cta {
+        overflow-y: hidden;
+        #anime-lines {
+            z-index: 1;
+            top: 0;
+            height: 100%;
+        }
+        
+        #pointing-girl-1 {
+            bottom: 0;
+            left: 20%;
+            z-index: 2;
+        }
+
+        #pointing-girl-2 {
+            bottom: 0;
+            left: 5%;
+            z-index: 3;
+        }
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -386,6 +406,16 @@
         }
     }
 
+        #features {
+            #sakura-tree {
+                right: 0;
+                top: -20px;
+            }
+
+            #features-broken-circle {
+                bottom: 0;
+            }
+        }
         #tagline {
             h2 {
                 font-size: 90px;
@@ -393,6 +423,7 @@
         }
 
         #collab {
+
             .grid--2-col {
                 column-gap: 4rem;
             }
