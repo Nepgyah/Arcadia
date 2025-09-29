@@ -65,7 +65,7 @@ export default function Home() {
         <div className="section__wrapper">
           <div className="section-main section-main--white">
             <p className="section-main__mini-title">Introducing Arcadia</p>
-            <h2 className="section-main__header">Project Arcadia: <br />The Flagship <span className="clr-txt-dark-emp">Otaku Platform</span></h2>
+            <h2 className="section-main__title">Project Arcadia: <br />The Flagship <span className="clr-txt-dark-emp">Otaku Platform</span></h2>
           </div>
           <div className="grid grid--3-col clr-txt-light">
             <div className="flex-row flex-row--spacing-md">
@@ -192,7 +192,7 @@ export default function Home() {
               <div className="center-both">
                 <div className="section-main section-main--white">
                   <p className="section-main__mini-title">Partners of Arcadia</p>
-                  <h2 className="section-main__header">Industry Leaders <span className="clr-txt-dark-emp">Collab</span> With Arcadia</h2>
+                  <h2 className="section-main__title">Industry Leaders <span className="clr-txt-dark-emp">Collab</span> With Arcadia</h2>
                   <p>Anime Studios, Game Developers, and more collaborate with Arcadia to build something special</p>
                   <p><b>Names used here are purely fictional for Arcadia/D2X world building. These companies do not sponsor or endorse Arcadia.</b></p>
                 </div>
@@ -207,7 +207,7 @@ export default function Home() {
               <div className="section-main">
                 <div className="section-main section-main--white">
                     <p className="section-main__mini-title">Primary Apps</p>
-                    <h2 className="section-main__header">Essentials for the <br /><span className="clr-txt-dark-emp">Ultimate</span> Otaku</h2>
+                    <h2 className="section-main__title">Essentials for the <br /><span className="clr-txt-dark-emp">Ultimate</span> Otaku</h2>
                     <p>Your all-in-one toolkit for tracking, streaming, gaming, and shopping. These flagship apps form the heart of your ultimate otaku experience.</p>
                     <Button variant="contained">Try Out Now</Button>
                   </div>
@@ -323,7 +323,7 @@ export default function Home() {
         <div className="section__wrapper">
           <div className="section-main section-main--shorten section-main--white">
             <p className="section-main__mini-title">Beyond The Essentials</p>
-            <h2 className="section-main__header">Arcadia's Secondary App</h2>
+            <h2 className="section-main__title">Arcadia's Secondary App</h2>
             <p>These supplementary apps are smaller in scope, but big on impact. From planning events to diving into niche blogs and lo-fi vibes, the Arcadia side suites adds extra flavor to your fandom journey.</p>
           </div>
 
@@ -431,12 +431,95 @@ export default function Home() {
             <div className="center-both">
               <div className="section-main section-main--shorten">
                 <p className="section-main__mini-title">Join Arcadia</p>
-                <h2 className="section-main__header">Your Otaku World Awaits</h2>
+                <h2 className="section-main__title">Your Otaku World Awaits</h2>
                 <p>Stop Browsing. Start Belonging. Step into your otaku sanctuary today.</p>
                 <Button variant="contained">
                   Join Now
                 </Button>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="tech" className="section">
+        <img id="tech-pink-lines-1" className="desktop-only section__bg-element" src="/bg-assets/pink-lines-1.svg" alt="Pink Lines" />
+        <img id="tech-pink-lines-2" className="desktop-only section__bg-element" src="/bg-assets/pink-lines-2.svg" alt="Pink Lines" />
+        <div className="section__wrapper">
+          <div className="grid grid--2-col">
+            <div className="section-main">
+              <p className="section-main__mini-title">App Ecosystem</p>
+              <h2 className="section-main__title">Modern Technologies Define Arcadia</h2>
+              <p>Arcadia is being built with the most famous and trusted technologies on the market. The result: a robust and modern platform that hosts the best Otaku ecosystem there is.</p>
+              <Button variant="contained">Explore The Repo</Button>
+            </div>
+            <div id="stack">
+              <div className="stack-icon center-both">
+                <img src="/pages/homepage/stack/next.png" alt="Next Js" />
+              </div>
+              <div className="stack-icon center-both">
+                <img src="/pages/homepage/stack/mui.png" alt="MUI" />
+              </div>
+              <div className="stack-icon center-both">
+                <img src="/pages/homepage/stack/redux.png" alt="Redux" />
+              </div>
+              <div className="stack-icon center-both">
+                <img src="/pages/homepage/stack/python.png" alt="Python" />
+              </div>
+              <div className="stack-icon center-both">
+                <img src="/pages/homepage/stack/django.png" alt="Django" />
+              </div>
+              <div className="stack-icon center-both">
+                <img src="/pages/homepage/stack/postgres.png" alt="Postgres" />
+              </div>
+            </div>
+          </div>
+
+          <div id="tech-features">
+            <div className="grid grid--4-col">
+              <div className="desktop-only"></div>
+              <div className="feature">
+                <div className="feature__icon bg-arc-tertiary">
+                  <img className="svg-icon" src="/icons/bow-arrow-icon.svg" alt="" />
+                </div>
+                <div className="feature__text">
+                  <h3 className="header">Distinct Division</h3>
+                  <p>Arcadia is split into major subfolders, making debugging, and deployment straightforward with isolation.</p>
+                </div>
+              </div>
+              <div className="desktop-only"></div>
+              <div className="feature">
+                <div className="feature__icon bg-arc-tertiary">
+                  <img className="svg-icon" src="/icons/bow-arrow-icon.svg" alt="" />
+                </div>
+                <div className="feature__text">
+                  <h3 className="header">API-First Architecture</h3>
+                  <p>A Django Rest Framework allows ease of API development and opens the pathway for both mobile and desktop development.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="grid grid--4-col">
+              <div className="feature">
+                <div className="feature__icon bg-arc-tertiary">
+                  <img className="svg-icon" src="/icons/bow-arrow-icon.svg" alt="" />
+                </div>
+                <div className="feature__text">
+                  <h3 className="header">Seemless Deployment</h3>
+                  <p>Use of Vercel (Frontend) and Koyeb (Backend + DB) allow for ease of scaling and deployment as Arcadia grows</p>
+                </div>
+              </div>
+              <div className="desktop-only"></div>
+              <div className="feature">
+                <div className="feature__icon bg-arc-tertiary">
+                  <img className="svg-icon" src="/icons/bow-arrow-icon.svg" alt="" />
+                </div>
+                <div className="feature__text">
+                  <h3 className="header">Unified Styling</h3>
+                  <p>With MUI and best SCSS practices, Arcadia’s design is consistent and visually functional.</p>
+                </div>
+              </div>
+              <div ></div>
             </div>
           </div>
         </div>

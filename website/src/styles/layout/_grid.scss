@@ -28,5 +28,9 @@
         &--3-col {
             grid-template-columns: 1fr 1fr 1fr;
         }
+
+        &--4-col {
+            grid-template-columns: repeat(4, 1fr);
+        }
     }
 }

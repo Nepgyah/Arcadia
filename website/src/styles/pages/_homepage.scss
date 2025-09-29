@@ -372,6 +372,35 @@
             z-index: 3;
         }
     }
+
+    #tech {
+        #stack {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            justify-items: center;
+
+            .stack-icon {
+                background-color: map.get($colors, arc-primary);
+                width: 90px;
+                height: 90px;
+                box-shadow: $box-shadow-default;
+                border-radius: 24px;
+                padding: 1.5rem;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+
+        #tech-features {
+            >div:nth-child(1) {
+                margin-bottom: 2rem;
+            }
+        }
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -459,7 +488,6 @@
             }
             .grid--3-col {
                 row-gap: 4rem;
-                
             }
         }
 
@@ -467,6 +495,30 @@
 
             .MuiTabPanel-root {
                 min-height: 524px;
+            }
+        }
+
+        #tech {
+
+            #tech-pink-lines-1 {
+                top: 55%;
+            }
+
+            #tech-pink-lines-2 {
+                bottom: 15%;
+                right: 0;
+            }
+
+            #stack {
+                gap: 2.5rem;
+
+                .stack-icon {
+                    width: 150px;
+                    height: 150px;
+                }
+            }
+            .section-main {
+                width: 75%;
             }
         }
     }
