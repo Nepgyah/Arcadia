@@ -288,6 +288,24 @@
                 height: 120px;
                 background-color: map.get($colors, arc-secondary-dark);
             }
+
+            #content-label, #platform-label {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                img {
+                    height: 48px;
+                    width: 36px;
+                }
+
+            }
+            
+            #platform-label {
+                img {
+                    transform: rotate(180deg);
+                }
+            }
         }
     }
 

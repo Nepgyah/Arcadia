@@ -165,9 +165,15 @@ export default function Home() {
                   <img src="/partners/yostar-white.svg" alt="Yostar Logo" />
                 </div>
 
-                <div>Content Contributors</div>
+                <div id="content-label">
+                  <p className="clr-txt-light">Content Contributors</p>
+                  <img src="/icons/pixel-arrow.png" alt="Pixelated Arrow" />
+                </div>
                 <div></div>
-                <div>Platform Contributors</div>
+                <div id="platform-label">
+                  <img src="/icons/pixel-arrow.png" alt="Pixelated Arrow" />
+                  <p className="clr-txt-light">Platform Contributors</p>
+                </div>
 
                 <div className="company">
                   <img src="/partners/crunchyroll-white.svg" alt="Crunchyroll Logo" />
