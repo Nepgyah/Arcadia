@@ -45,16 +45,16 @@ export default function Home() {
       <section id="tagline" className="section bg-arc-secondary">
         <div className="section__wrapper">
           <div className="grid grid--2-col-uneven">
-            <div>
+            <FadeIn direction="right">
               <img src="/pages/homepage/gacha-games-1.png" alt="Honkai Star Rail and CyGames" />
-            </div>
+            </FadeIn>
             <div className="center-both clr-txt-light"><h2>Your Otaku</h2></div>
           </div>
           <div className="grid grid--2-col">
             <div className="center-both clr-txt-dark-emp"><h2>Sanctuary</h2></div>
-            <div>
+            <FadeIn direction="left">
               <img src="/pages/homepage/blue-archive.png" alt="Abydos students from Blue Archive" />
-            </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -194,7 +194,7 @@ export default function Home() {
                   <p className="section-main__mini-title">Partners of Arcadia</p>
                   <h2 className="section-main__title">Industry Leaders <span className="clr-txt-dark-emp">Collab</span> With Arcadia</h2>
                   <p>Anime Studios, Game Developers, and more collaborate with Arcadia to build something special</p>
-                  <p><b>Names used here are purely fictional for Arcadia/D2X world building. These companies do not sponsor or endorse Arcadia.</b></p>
+                  <p><b>Names used here are purely for Arcadia/D2X world building. These companies do not sponsor or endorse Arcadia.</b></p>
                 </div>
               </div>
             </div>
@@ -279,42 +279,54 @@ export default function Home() {
           </div>
 
           <div id="review-container" className="grid grid--3-col">
-            <ReviewCard 
-              image="/pages/homepage/testimony/aoba.jpg"
-              statement="Arcadia allowed me to find my dream games from my favorite company. When I heard they were partnering up, I couldnt let the opporitunity slip. Thank you Team Arcadia!"
-              name="Aoba"
-              role="Desinger"
-            />
-            <ReviewCard 
-              image="/pages/homepage/testimony/lebron.jpg"
-              statement="LeArcadia is signature, just like my taco tuesdays. I’ve used Tsunagu and Shiru to finally understand what Bronny meant by “Diamond on Siege”."
-              name="LeBron"
-              role="LeGoat"
-            />
-            <ReviewCard 
-              image="/pages/homepage/testimony/keanu.png"
-              statement="I’ve been a fan of anime for years, and Arcadia feels like the ultimate place for fans. Their app Asobu makes modding games a breeze."
-              name="Keanu"
-              role="Actor"
-            />
-            <ReviewCard 
-              image="/pages/homepage/testimony/ariana.png"
-              statement="I’ve been obsessed with anime forever, and Arcadia is like a dream come true. I can watch my favorites and connect with passionate fans."
-              name="Ariana"
-              role="Actor"
-            />
-            <ReviewCard 
-              image="/pages/homepage/testimony/dearron.png"
-              statement="Just like in basketball, it’s all about having the right squad and Arcadia is that squad for anime fans and more."
-              name="DeAaron"
-              role="NBA Player"
-            />
-            <ReviewCard 
-              image="/pages/homepage/testimony/jamal.png"
-              statement="This is like the ultimate training ground for otakus. Everything you need: tracking, merch, community. All in one place."
-              name="Jamal"
-              role="NFL Player"
-            />
+            <FadeIn direction="right">
+              <ReviewCard 
+                image="/pages/homepage/testimony/aoba.jpg"
+                statement="Arcadia allowed me to find my dream games from my favorite company. When I heard they were partnering up, I couldnt let the opporitunity slip. Thank you Team Arcadia!"
+                name="Aoba"
+                role="Desinger"
+              />
+            </FadeIn>
+            <FadeIn direction="down">
+              <ReviewCard 
+                image="/pages/homepage/testimony/lebron.jpg"
+                statement="LeArcadia is signature, just like my taco tuesdays. I’ve used Tsunagu and Shiru to finally understand what Bronny meant by “Diamond on Siege”."
+                name="LeBron"
+                role="LeGoat"
+              />
+            </FadeIn>
+            <FadeIn direction="left">
+              <ReviewCard 
+                image="/pages/homepage/testimony/keanu.png"
+                statement="I’ve been a fan of anime for years, and Arcadia feels like the ultimate place for fans. Their app Asobu makes modding games a breeze."
+                name="Keanu"
+                role="Actor"
+              />
+            </FadeIn>
+            <FadeIn direction="right">
+              <ReviewCard 
+                image="/pages/homepage/testimony/ariana.png"
+                statement="I’ve been obsessed with anime forever, and Arcadia is like a dream come true. I can watch my favorites and connect with passionate fans."
+                name="Ariana"
+                role="Actor"
+              />
+            </FadeIn>
+            <FadeIn direction="up">
+              <ReviewCard 
+                image="/pages/homepage/testimony/dearron.png"
+                statement="Just like in basketball, it’s all about having the right squad and Arcadia is that squad for anime fans and more."
+                name="DeAaron"
+                role="NBA Player"
+              />
+            </FadeIn>
+            <FadeIn direction="left">
+              <ReviewCard 
+                image="/pages/homepage/testimony/jamal.png"
+                statement="This is like the ultimate training ground for otakus. Everything you need: tracking, merch, community. All in one place."
+                name="Jamal"
+                role="NFL Player"
+              />
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -478,48 +490,100 @@ export default function Home() {
           <div id="tech-features">
             <div className="grid grid--4-col">
               <div className="desktop-only"></div>
-              <div className="feature">
-                <div className="feature__icon bg-arc-tertiary">
-                  <img className="svg-icon" src="/icons/bow-arrow-icon.svg" alt="" />
+              <FadeIn direction="down">
+                <div className="feature">
+                  <div className="feature__icon bg-arc-tertiary">
+                    <img className="svg-icon" src="/icons/bow-arrow-icon.svg" alt="" />
+                  </div>
+                  <div className="feature__text">
+                    <h3 className="header">Distinct Division</h3>
+                    <p>Arcadia is split into major subfolders, making debugging, and deployment straightforward with isolation.</p>
+                  </div>
                 </div>
-                <div className="feature__text">
-                  <h3 className="header">Distinct Division</h3>
-                  <p>Arcadia is split into major subfolders, making debugging, and deployment straightforward with isolation.</p>
-                </div>
-              </div>
+              </FadeIn>
               <div className="desktop-only"></div>
-              <div className="feature">
-                <div className="feature__icon bg-arc-tertiary">
-                  <img className="svg-icon" src="/icons/bow-arrow-icon.svg" alt="" />
+              <FadeIn direction="down" delay={.3}>
+                <div className="feature">
+                  <div className="feature__icon bg-arc-tertiary">
+                    <img className="svg-icon" src="/icons/bow-arrow-icon.svg" alt="" />
+                  </div>
+                  <div className="feature__text">
+                    <h3 className="header">API-First Architecture</h3>
+                    <p>A Django Rest Framework allows ease of API development and opens the pathway for both mobile and desktop development.</p>
+                  </div>
                 </div>
-                <div className="feature__text">
-                  <h3 className="header">API-First Architecture</h3>
-                  <p>A Django Rest Framework allows ease of API development and opens the pathway for both mobile and desktop development.</p>
-                </div>
-              </div>
+              </FadeIn>
             </div>
 
             <div className="grid grid--4-col">
-              <div className="feature">
-                <div className="feature__icon bg-arc-tertiary">
-                  <img className="svg-icon" src="/icons/bow-arrow-icon.svg" alt="" />
+              <FadeIn direction="up">
+                <div className="feature">
+                  <div className="feature__icon bg-arc-tertiary">
+                    <img className="svg-icon" src="/icons/bow-arrow-icon.svg" alt="" />
+                  </div>
+                  <div className="feature__text">
+                    <h3 className="header">Seemless Deployment</h3>
+                    <p>Use of Vercel (Frontend) and Koyeb (Backend + DB) allow for ease of scaling and deployment as Arcadia grows</p>
+                  </div>
                 </div>
-                <div className="feature__text">
-                  <h3 className="header">Seemless Deployment</h3>
-                  <p>Use of Vercel (Frontend) and Koyeb (Backend + DB) allow for ease of scaling and deployment as Arcadia grows</p>
-                </div>
-              </div>
+              </FadeIn>
               <div className="desktop-only"></div>
-              <div className="feature">
-                <div className="feature__icon bg-arc-tertiary">
-                  <img className="svg-icon" src="/icons/bow-arrow-icon.svg" alt="" />
-                </div>
-                <div className="feature__text">
-                  <h3 className="header">Unified Styling</h3>
-                  <p>With MUI and best SCSS practices, Arcadia’s design is consistent and visually functional.</p>
-                </div>
+              <FadeIn direction="up" delay={.4}>
+                <div className="feature">
+                  <div className="feature__icon bg-arc-tertiary">
+                    <img className="svg-icon" src="/icons/bow-arrow-icon.svg" alt="" />
+                  </div>
+                  <div className="feature__text">
+                    <h3 className="header">Unified Styling</h3>
+                    <p>With MUI and best SCSS practices, Arcadia’s design is consistent and visually functional.</p>
+                  </div>
               </div>
+              </FadeIn>
               <div ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="d2x" className="section gradient-d2x">
+        <div className="section__wrapper">
+          <div className="grid grid--2-col">
+            <div className="section-main">
+              <p className="section-main__mini-title">Who We Are</p>
+              <h2 className="section-main__title">Born From Fandom, Forged With Passion</h2>
+              <p>Team Double Dragon was forged upon passion: passion for Esports and passion for doing things the right way and for the right things. </p>
+              <p>What started with what-ifs and no technical skill, Arcadia began with two friends, countless fandom debates, and a dream to build the otaku platform we always wished existed. </p>
+            </div>
+            <div className="center-both">
+              <FadeIn direction="left">
+                <div id="d2x-logo">
+                  <img src="/logo/d2x.svg" alt="Team Double Dragon" />
+                </div>
+              </FadeIn>
+            </div>
+          </div>
+          
+          <div className="grid grid--2-col">
+            <div id="d2x-stats" className="grid grid--2-col">
+              <div className="bg-arc-secondary clr-txt-light">
+                <h3>50+</h3>
+                <p>Team Members</p>
+              </div>
+              <div className="bg-arc-secondary clr-txt-light">
+                <h3>2016</h3>
+                <p>Founded</p>
+              </div>
+            </div>
+            <div id="d2x-leaders" className="grid grid--3-col">
+              <FadeIn direction="up">
+              <img src="/pages/homepage/d2x/himeko.png" alt="Himeko Murata" />
+              </FadeIn>
+              <FadeIn direction="up" delay={.3}>
+                <img src="/pages/homepage/d2x/anime-me.png" alt="Anime me" />
+              </FadeIn>
+              <FadeIn direction="up" delay={.4}> 
+                <img src="/pages/homepage/d2x/anime-tommy.png" alt="Anime tommy" />
+              </FadeIn>
             </div>
           </div>
         </div>

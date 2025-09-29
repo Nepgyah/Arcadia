@@ -13,6 +13,10 @@
         display: grid;
         column-gap: 2rem;
 
+        &--gap-sm {
+            column-gap: 1rem;
+        }
+        
         &--2-col-uneven {
             grid-template-columns: 2fr 1fr;
         }
