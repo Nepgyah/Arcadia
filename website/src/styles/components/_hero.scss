@@ -4,6 +4,7 @@
 .hero {
     min-height: 100dvh;
     position: relative;
+    margin-top: 5rem;
 
     &--mini {
         min-height: 50dvh;
@@ -65,7 +66,8 @@
 
     .hero {
         min-height: 860px;
-
+        margin-top: 7rem;
+        
         &--mini {
             min-height: 50dvh;
         }

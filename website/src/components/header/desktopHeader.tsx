@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import { useEffect, useRef, useState } from "react";
 import AppIcon from "../appIcon";
 
+const PLATFORM_URL = process.env.NEXT_PLATFORM_URL
 type dropdownCategory = 'primary' | 'secondary' | 'd2x' | 'resource' | 'none';
 
 export default function DesktopHeader() {
@@ -35,6 +36,7 @@ export default function DesktopHeader() {
         <div className="desktop">
             <div className="misc">
                 <div className="wrapper">
+                    <p>We are slowly migrating previous created pages. Thank you for your understanding.</p>
                     {/* <Link href='/'>FAQ</Link>
                     <Link href='/'>Contact Us</Link>
                     <Link href='/'>Legal</Link> */}
@@ -97,7 +99,9 @@ export default function DesktopHeader() {
                     </div> */}
                 </nav>
                 <div className="cta-buttons">
+                    <a href={PLATFORM_URL} target="_blank">
                     <Button variant="contained" color="secondary">To Apps</Button>
+                    </a>
                     {/* <Button variant="text" color="white">Create Account</Button> */}
                 </div>
             </div>

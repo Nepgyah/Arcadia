@@ -469,7 +469,9 @@ export default function Home() {
               <p className="section-main__mini-title">App Ecosystem</p>
               <h2 className="section-main__title">Modern Technologies Define Arcadia</h2>
               <p>Arcadia is being built with the most famous and trusted technologies on the market. The result: a robust and modern platform that hosts the best Otaku ecosystem there is.</p>
-              <Button variant="contained">Explore The Repo</Button>
+              <a href="https://github.com/Nepgyah/Arcadia" target="_blank">
+                <Button variant="contained">Explore The Repo</Button>
+              </a>
             </div>
             <div id="stack">
               <div className="stack-icon center-both">
