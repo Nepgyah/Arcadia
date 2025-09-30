@@ -5,7 +5,7 @@ import { useRef, useState } from "react";
 
 import BurgerIcon from '@mui/icons-material/LunchDining';
 import React from "react";
-import { D2XUrls, PrimaryAppUrls, ResourceUrls, SecondaryAppUrls } from "@/lib/data/paths";
+import { D2XUrls, PrimaryAppUrls, ResourceUrls, SecondaryAppUrls } from "@/lib/data/urls";
 import AppIcon from "../appIcon";
 
 type openDropdownType = 'primary' | 'secondary' | 'd2x' | 'resource' | 'none';

@@ -17,7 +17,7 @@ type app =
 export default function appIcon({ app, size=36 } : { app: app | string, size?: number}) {
     return (
         <Image
-            src={`/global/app-icons/${app}.svg`}
+            src={`/icons/apps/${app}.svg`}
             alt={`${app}`}
             width={size}
             height={size}
