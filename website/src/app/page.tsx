@@ -219,7 +219,7 @@ export default function Home() {
                   </div>
               </div>
               <FadeIn direction="left">
-              <div id="miru-tile" className="app-tile bg-miru-base">
+                <div id="miru-tile" className="app-tile bg-miru-base animation__hover-grow">
                   <h3 className="app-tile__name">Miru - みる [見る]</h3>
                   <p className="app-tile__slogan">Explore the world of anime, One episode at a time</p>
 
@@ -232,7 +232,7 @@ export default function Home() {
             <div id="other-primary">
               <div>
                 <FadeIn direction="right" delay={.4}>
-                  <div id="yomu-tile" className="app-tile bg-yomu-base">
+                  <div id="yomu-tile" className="app-tile bg-yomu-base animation__hover-grow">
                     <h3 className="app-tile__name">Yomu - よる [読む]</h3>
                     <p className="app-tile__slogan">Read, Track and Discover One Page At a Time</p>
 
@@ -241,7 +241,7 @@ export default function Home() {
                   </div>
                 </FadeIn>
                 <FadeIn direction="right" delay={.5} threshold={.5}>
-                  <div id="kau-tile" className="app-tile bg-kau-base clr-txt-light">
+                  <div id="kau-tile" className="app-tile bg-kau-base clr-txt-light animation__hover-grow">
                     <h3 className="app-tile__name">Kau - かう [買う]</h3>
                     <p className="app-tile__slogan">Cosplay, Streetwear, and Otaku Goods</p>
 
@@ -253,7 +253,7 @@ export default function Home() {
 
               <div>
                 <FadeIn direction="left" delay={.4}>
-                  <div id="asobu-tile" className="app-tile bg-asobu-base clr-txt-light">
+                  <div id="asobu-tile" className="app-tile bg-asobu-base clr-txt-light animation__hover-grow">
                     <h3 className="app-tile__name">Asobu - あそぶ [遊ぶ]</h3>
                     <p className="app-tile__slogan">Gaming Adventures Begin Here</p>
 
@@ -262,7 +262,7 @@ export default function Home() {
                   </div>
                 </FadeIn>
                 <FadeIn direction="left" delay={.5} threshold={.7}>
-                  <div id="tsunagu-tile" className="app-tile bg-tsunagu-base">
+                  <div id="tsunagu-tile" className="app-tile bg-tsunagu-base animation__hover-grow">
                     <h3 className="app-tile__name">Tsunagu - つなぐ [繋ぐ]</h3>
                     <p className="app-tile__slogan">Arcadia’s Social Network</p>
 
@@ -356,7 +356,7 @@ export default function Home() {
               </Box>
               <TabPanel value="1">
                 <div className="grid grid--2-col">
-                  <div id="kiku-tile" className="app-tile bg-kiku-base">
+                  <div id="kiku-tile" className="app-tile bg-kiku-base animation__hover-grow">
                     <h3 className="app-tile__name">Kiku - きく [聞く]</h3>
                     <p className="app-tile__slogan">A Soundtrack For Every Fan</p>
 
@@ -364,7 +364,7 @@ export default function Home() {
                     <img className="app-tile__mascots" src="/pages/homepage/kiku-mascots.png" alt="" />
                   </div>
 
-                  <div id="todokeru-tile" className="app-tile bg-todokeru-base clr-txt-light">
+                  <div id="todokeru-tile" className="app-tile bg-todokeru-base clr-txt-light animation__hover-grow">
                     <h3 className="app-tile__name">Todokeru - とどける [届ける]</h3>
                     <p className="app-tile__slogan">From Pixels, To People</p>
 
@@ -372,7 +372,7 @@ export default function Home() {
                     <img className="app-tile__mascots" src="/pages/homepage/todokeru-mascots.png" alt="" />
                   </div>
 
-                  <div id="hiku-tile" className="app-tile bg-hiku-base">
+                  <div id="hiku-tile" className="app-tile bg-hiku-base animation__hover-grow">
                     <h3 className="app-tile__name">Hiku - ひく [引く]</h3>
                     <p className="app-tile__slogan">Guide. Gather. Game</p>
 
@@ -380,7 +380,7 @@ export default function Home() {
                     <img className="app-tile__mascots" src="/pages/homepage/hiku-mascots.png" alt="" />
                   </div>
                   
-                  <div id="sagasu-tile" className="app-tile bg-sagasu-base clr-txt-light">
+                  <div id="sagasu-tile" className="app-tile bg-sagasu-base clr-txt-light animation__hover-grow">
                     <h3 className="app-tile__name">Sagasu - さがす [探す]</h3>
                     <p className="app-tile__slogan">Test Your Fandom Knowledge</p>
 
@@ -392,7 +392,7 @@ export default function Home() {
 
               <TabPanel value="2">
                 <div className="grid grid--2-col">
-                  <div id="kumitateru-tile" className="app-tile bg-kumitateru-base clr-txt-light">
+                  <div id="kumitateru-tile" className="app-tile bg-kumitateru-base clr-txt-light animation__hover-grow">
                     <h3 className="app-tile__name">Kumitateru - <br />くみたてる [組み立てる]</h3>
                     <p className="app-tile__slogan">Build Your Battle Station</p>
 
@@ -400,7 +400,7 @@ export default function Home() {
                     <img className="app-tile__mascots" src="/pages/homepage/kumitateru-mascots.png" alt="" />
                   </div>
 
-                  <div id="iku-tile" className="app-tile bg-iku-base clr-txt-light">
+                  <div id="iku-tile" className="app-tile bg-iku-base clr-txt-light animation__hover-grow">
                     <h3 className="app-tile__name">Iku - いく [行く]</h3>
                     <p className="app-tile__slogan">Make Every Meetup A Adventure</p>
 
@@ -412,7 +412,7 @@ export default function Home() {
 
               <TabPanel value="3">
                 <div className="grid grid--2-col">
-                  <div id="manabu-tile" className="app-tile bg-manabu-base clr-txt-light">
+                  <div id="manabu-tile" className="app-tile bg-manabu-base clr-txt-light animation__hover-grow">
                     <h3 className="app-tile__name">Manabu - <br />まなぶ [学ぶ]</h3>
                     <p className="app-tile__slogan">Fluency Through Fandom</p>
 
@@ -420,7 +420,7 @@ export default function Home() {
                     <img className="app-tile__mascots" src="/pages/homepage/manabu-mascots.png" alt="" />
                   </div>
 
-                  <div id="shiru-tile" className="app-tile bg-shiru-base">
+                  <div id="shiru-tile" className="app-tile bg-shiru-base animation__hover-grow">
                     <h3 className="app-tile__name">Shiru - しる [知る]</h3>
                     <p className="app-tile__slogan">Stories from the Otaku-verse</p>
 
