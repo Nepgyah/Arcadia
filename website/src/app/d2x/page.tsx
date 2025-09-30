@@ -54,7 +54,7 @@ export default function D2XTeam() {
                 <section id='leads' className='section'>
                     <div className='section__wrapper'>
                         <div className='section-main section-main--center'>
-                            <h2>Leadership</h2>
+                            <h2>App Leads</h2>
                         </div>
                         <div className='grid grid--5-col'>
                             {
@@ -96,7 +96,7 @@ export default function D2XTeam() {
                 <section className="section">
                     <div className="section__wrapper">
                         <div className="section-main section-main--center">
-                            <h3>Tech Team</h3>
+                            <h2>Tech Team</h2>
                         </div>
                         <div className="section-main section-main--center">
                             <h3>Platform</h3>
@@ -160,7 +160,7 @@ export default function D2XTeam() {
             <section className="section">
                 <div className="section__wrapper">
                     <div className="section-main section-main--center">
-                        <h3>Marketing / PR Team</h3>
+                        <h2>Marketing / PR Team</h2>
                     </div>
                     <div className='grid grid--5-col'>
                         {
@@ -180,7 +180,7 @@ export default function D2XTeam() {
             <section className="section">
                 <div className="section__wrapper">
                     <div className="section-main section-main--center">
-                        <h3>Finance Team</h3>
+                        <h2>Finance Team</h2>
                     </div>
                     <div className='grid grid--5-col'>
                         {
@@ -201,7 +201,7 @@ export default function D2XTeam() {
                 <section className="section">
                     <div className="section__wrapper">
                         <div className="section-main section-main--center">
-                            <h3>Content Creation Team</h3>
+                            <h2>Content Creation Team</h2>
                         </div>
                         <div className='grid grid--5-col'>
                             {
@@ -221,7 +221,7 @@ export default function D2XTeam() {
                 <section className="section">
                     <div className="section__wrapper">
                         <div className="section-main section-main--center">
-                            <h3>Reserach & Development Team</h3>
+                            <h2>Reserach & Development Team</h2>
                         </div>
                         <div className='grid grid--5-col'>
                             {
@@ -242,7 +242,7 @@ export default function D2XTeam() {
             <section className="section">
                 <div className="section__wrapper">
                     <div className="section-main section-main--center">
-                        <h3>Culinary Team</h3>
+                        <h2>Culinary Team</h2>
                     </div>
                     <div className='grid grid--5-col'>
                         {
@@ -262,7 +262,7 @@ export default function D2XTeam() {
             <section className="section">
                 <div className="section__wrapper">
                     <div className="section-main section-main--center">
-                        <h3>Human Relations Team</h3>
+                        <h2>Human Relations Team</h2>
                     </div>
                     <div className='grid grid--5-col'>
                         {
