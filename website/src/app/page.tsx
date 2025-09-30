@@ -152,7 +152,7 @@ export default function Home() {
                   <img src="/partners/nexon-white.png" alt="Nexon Games Logo" />
                 </div>
                 <div className="company">
-                  <img src="/partners/aniplex-white.svg" alt="Aniplex Logo" />
+                  <img src="/partners/from-soft.png" alt="From Software Logo" />
                 </div>
 
                 <div className="company">
@@ -176,23 +176,23 @@ export default function Home() {
                 </div>
 
                 <div className="company">
-                  <img src="/partners/crunchyroll-white.svg" alt="Crunchyroll Logo" />
+                  <img src="/partners/pony-canyon.svg" alt="Pony Canyon Logo" />
                 </div>
                 <div className="company">
-                  <img src="/partners/nexon-white.png" alt="Nexon Games Logo" />
+                  <img src="/partners/jc-staff.png" alt="JC Staff Logo" />
                 </div>
                 <div className="company">
-                  <img src="/partners/aniplex-white.svg" alt="Aniplex Logo" />
+                  <img src="/partners/myanimelist.svg" alt="MyAnimeList Logo" />
                 </div>
 
                 <div className="company">
-                  <img src="/partners/square-enix-white.svg" alt="Square Enix Logo" />
+                  <img src="/partners/aniplex-white.svg" alt="Aniplex Logo" />
                 </div>
                 <div className="company">
-                  <img src="/partners/hoyoverse-white.png" alt="Hoyoverse Logo" />
+                  <img src="/partners/ryu-ga-gotoku_white.svg" alt="Ryu Ga Gotoku Studio Logo" />
                 </div>
                 <div className="company">
-                  <img src="/partners/yostar-white.svg" alt="Yostar Logo" />
+                  <img src="/partners/a1-pictures.png" alt="A1 Logo" />
                 </div>
               </div>
               <div className="center-both">
@@ -215,7 +215,9 @@ export default function Home() {
                     <p className="section-main__mini-title">Primary Apps</p>
                     <h2 className="section-main__title">Essentials for the <br /><span className="clr-txt-dark-emp">Ultimate</span> Otaku</h2>
                     <p>Your all-in-one toolkit for tracking, streaming, gaming, and shopping. These flagship apps form the heart of your ultimate otaku experience.</p>
-                    <Button variant="contained">Try Out Now</Button>
+                    <a href="https://arcadia-inky.vercel.app" target="_blank">
+                      <Button variant="contained">Try Out Now</Button>
+                    </a>
                   </div>
               </div>
               <FadeIn direction="left">
