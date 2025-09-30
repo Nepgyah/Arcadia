@@ -17,7 +17,6 @@
 
     .mobile {
         height: 5rem;
-
         .wrapper {
             max-width: $max-width;
             margin: auto;
@@ -25,7 +24,7 @@
             height: 100%;
             font-size: .80rem;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             column-gap: 1rem;
         }
@@ -75,6 +74,63 @@
                 display: flex;
                 justify-content: flex-end;
                 column-gap: 1rem;
+            }
+        }
+    }
+}
+
+.mobile-nav-drawer {
+    .MuiPaper-root {
+        padding: 20px;
+        background-color: map.get($colors , arc-base );
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+
+        .header__logo {
+            img {
+                width: 150px;
+            }
+        }
+
+        .nav {
+            display: flex;
+            flex-direction: column;
+
+            .MuiButton-root {
+                color: white !important;
+
+                &.dropdown-open {
+                    color: map.get($colors , arc-accent );
+                }
+            }
+
+            .MuiCollapse-root {
+                padding-left: 20px;
+                color: white;
+                
+                &.apps {
+                    .MuiButtonBase-root {
+                        display: flex;
+                        justify-content: flex-start;
+                        column-gap: .5rem;
+                        width: 100%;
+                    }
+                }
+                .MuiCollapse-wrapperInner {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+        .header__cta {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+
+            .MuiButton-root {
+                width: 100%;
             }
         }
     }
