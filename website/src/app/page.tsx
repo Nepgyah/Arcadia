@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div id="page-homepage">
 
-      <div id="hero" className="hero">
+      <section id="hero" className="hero">
         <img className="hero__bg-image" src="/pages/homepage/anime-world.png" alt="Anime world" />
         <div className="hero-gradient"></div>
         <div className="hero__wrapper">
@@ -40,7 +40,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <section id="tagline" className="section bg-arc-secondary">
         <div className="section__wrapper">

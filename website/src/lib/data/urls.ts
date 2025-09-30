@@ -4,24 +4,24 @@ interface Url {
 }
 
 export const PrimaryAppUrls: Url[] = [
-    { name: 'miru', path: '/apps/miru'},
-    { name: 'yomu', path: '/apps/yomu'},
-    { name: 'asobu', path: '/apps/asobu'},
-    { name: 'kau', path: '/apps/kau'},
-    { name: 'tsunagu', path: '/apps/tsunagu'},
+    { name: 'miru', path: '/miru'},
+    { name: 'yomu', path: '/yomu'},
+    { name: 'asobu', path: '/asobu'},
+    { name: 'kau', path: '/kau'},
+    { name: 'tsunagu', path: '/tsunagu'},
 ]
 
 export const SecondaryAppUrls: Url[] = [
-    { name: 'kiku', path: '/apps/kiku'},
-    { name: 'todokeru', path: '/apps/todokeru'},
-    { name: 'hiku', path: '/apps/hiku'},
-    { name: 'sagasu', path: '/apps/sagasu'},
+    { name: 'kiku', path: '/kiku'},
+    { name: 'todokeru', path: '/todokeru'},
+    { name: 'hiku', path: '/hiku'},
+    { name: 'sagasu', path: '/sagasu'},
 
-    { name: 'kumitateru', path: '/apps/kumitateru'},
-    { name: 'iku', path: '/apps/iku'},
+    { name: 'kumitateru', path: '/kumitateru'},
+    { name: 'iku', path: '/iku'},
 
-    { name: 'shiru', path: '/apps/shiru'},
-    { name: 'manabu', path: '/apps/manabu'},
+    { name: 'shiru', path: '/shiru'},
+    { name: 'manabu', path: '/manabu'},
 ]
 
 export const D2XUrls: Url[] = [

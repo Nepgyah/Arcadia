@@ -25,7 +25,7 @@ export default function DesktopHeader() {
         d2xAnchor.current = document.getElementById('d2x-btn');
         resourceAnchor.current = document.getElementById('resource-btn')
     }, []);
-    
+
     const handleClick = (link: string, handleFunc: (bool: boolean) => void) => {
         router.push(link)
         handleFunc(false)
@@ -50,7 +50,7 @@ export default function DesktopHeader() {
                     <div>
                         <Button variant="text" color="white" onClick={() => router.push('/')}>Home</Button>
                     </div>
-                    <div>
+                    {/* <div>
                         <Button 
                             variant="text" 
                             color="white"
@@ -88,17 +88,17 @@ export default function DesktopHeader() {
                             }
                         </div>
                     </Menu>
-                    </div>
+                    </div> */}
                     <div>
-                        <Button variant="text" color="white">D2X</Button>
+                        <Button variant="text" color="white" onClick={() => router.push('/d2x')}>D2X</Button>
                     </div>
-                    <div>
+                    {/* <div>
                         <Button variant="text" color="white">Resources</Button>
-                    </div>
+                    </div> */}
                 </nav>
                 <div className="cta-buttons">
-                    <Button variant="contained" color="secondary">Platform</Button>
-                    <Button variant="text" color="white">Create Account</Button>
+                    <Button variant="contained" color="secondary">To Apps</Button>
+                    {/* <Button variant="text" color="white">Create Account</Button> */}
                 </div>
             </div>
         </div>

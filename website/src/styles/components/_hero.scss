@@ -5,6 +5,10 @@
     min-height: 100dvh;
     position: relative;
 
+    &--mini {
+        min-height: 50dvh;
+    }
+
     &__bg-image {
         position: absolute;
         z-index: 1;
@@ -44,6 +48,10 @@
         flex-direction: column;
         row-gap: 2rem;
         color: map.get($colors, arc-base);
+
+        &--center {
+            text-align: center;
+        }
     }
 
     &__cta-container {
@@ -57,6 +65,10 @@
 
     .hero {
         min-height: 860px;
+
+        &--mini {
+            min-height: 50dvh;
+        }
 
         &__layout {
             display: flex;

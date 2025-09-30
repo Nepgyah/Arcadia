@@ -1,0 +1,60 @@
+@use '../../abstract/variables' as *;
+@use "sass:map";
+
+#page-d2x-team {
+
+    .card {
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        
+        &__image {
+            height: 250px;
+            width: 250px;
+            object-fit: cover;
+            margin-bottom: .5rem;
+            border-radius: 5px;
+            box-shadow: $box-shadow-default;
+
+            &--highlight {
+                border: 4px solid map.get($colors , arc-accent );
+            }
+        }
+
+        &__text {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            color: map.get($colors , arc-base );
+
+            .position {
+                margin-top: .5rem;
+                color: map.get($colors , txt-dark)
+            }
+
+            &--white {
+                color: white;
+
+                .position {
+                    color: white;
+                }
+            }
+
+            .first-name {
+                font-size: .75rem;
+            }
+
+            .emphasis {
+                font-weight: bold;
+                font-size: 1.5rem;
+            }
+        }
+    }
+
+    #hero {
+        .hero__mask {
+            opacity: .7;
+        }
+    }
+}
