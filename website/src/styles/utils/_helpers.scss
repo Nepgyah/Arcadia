@@ -1,0 +1,49 @@
+@use '../abstract/variables' as *;
+
+@each $name, $color in $colors {
+    .clr-#{$name} {
+        color: #{$color} !important
+    }
+}
+
+@each $name, $color in $colors {
+    .bg-#{$name} {
+        background-color: #{$color} !important
+    }
+}
+
+// @each $name, $size in $text-size{
+//     .txt-#{$name} {
+//         font-size: #{$size}
+//     }
+// }
+
+// @each $name, $size in $platform-spacing {
+//     .p-top-#{$name} {
+//         padding-top: #{$size}
+//     }
+//     .p-right-#{$name} {
+//         padding-right: #{$size}
+//     }
+//     .p-bottom-#{$name} {
+//         padding-bottom: #{$size}
+//     }
+//     .p-left-#{$name} {
+//         padding-left: #{$size}
+//     }
+// }
+
+// @each $name, $size in $platform-spacing {
+//     .m-top-#{$name} {
+//         margin-top: #{$size}
+//     }
+//     .m-right-#{$name} {
+//         margin-right: #{$size}
+//     }
+//     .m-bottom-#{$name} {
+//         margin-bottom: #{$size}
+//     }
+//     .m-left-#{$name} {
+//         margin-left: #{$size}
+//     }
+// }

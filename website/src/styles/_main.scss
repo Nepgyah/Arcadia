@@ -1,19 +1,44 @@
 @forward './components/';
 @forward './layout/';
 @forward './base/';
-@use './base/variables' as *;
+@forward './utils/';
+@use './abstract/variables' as *;
 @use "sass:map";
 
 html {
+    font-size: 18px;
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+    
     body {
         background-color: map.get($colors, txt-light-alt) !important;
-        font-size: 18px;
         font-family: 'Noto Sans JP';
+        color: map.get($colors, txt-dark);
+    }
+
+    // MUI Overrides
+    .MuiButtonBase-root {
+        font-weight: bold;
+        text-transform: capitalize;
+        font-size: 1rem;
     }
 }
 
+// Typography
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Noto Serif JP';
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
 }
 
 a {
@@ -25,8 +50,45 @@ a {
     }
 }
 
+// Backgrounds
+.gradient-secondary-primary {
+    background: linear-gradient(to bottom, #59304D, #2F324B);
+}
+
+.gradient-tertiary {
+    background: linear-gradient(to bottom, #FFBDAD, #EC9296);
+}
+
+.gradient-d2x {
+    background: linear-gradient(to right, #FFC8DD, #A2D2FF);
+}
+
+// Misc
 .temp-landing {
     text-align: center;
     max-width: $max-width;
     margin: auto;   
+}
+
+.svg-icon {
+    width: 36px;
+    height: 36px;
+}
+
+.desktop-only {
+    display: none;
+}
+
+.mobile-only {
+    display: block;
+}
+
+@media only screen and (min-width: 768px) {
+    .desktop-only {
+        display: block;
+    }
+
+    .mobile-only {
+        display: none;
+    }
 }

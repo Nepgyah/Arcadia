@@ -1,0 +1,86 @@
+@use '../abstract/variables' as *;
+@use "sass:map";
+
+.hero {
+    min-height: 100dvh;
+    position: relative;
+    margin-top: 5rem;
+
+    &--mini {
+        min-height: 50dvh;
+    }
+
+    &__bg-image {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__mask {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+    }
+
+    &__wrapper {
+        position: relative;
+        z-index: 2;
+        max-width: $max-width;
+        padding: 5rem 20px;
+        margin: auto;
+        min-height: inherit;
+    }
+
+    &__layout {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__main-text {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2rem;
+        color: map.get($colors, arc-base);
+
+        &--center {
+            text-align: center;
+        }
+    }
+
+    &__cta-container {
+        display: flex;
+        justify-content: flex-start;
+        column-gap: 1rem;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .hero {
+        min-height: 860px;
+        margin-top: 7rem;
+        
+        &--mini {
+            min-height: 50dvh;
+        }
+
+        &__layout {
+            display: flex;
+            flex-direction: column;
+        
+            &--two-col {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 2rem;
+            }
+        }
+    }
+}
