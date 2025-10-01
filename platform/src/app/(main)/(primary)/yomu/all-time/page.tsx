@@ -65,10 +65,10 @@ export default function YomuAllTime() {
                                     <TableRow key={idx}>
                                         <TableCell>{(((currentPage - 1) * MAX_PER_PAGE) + (idx) ) + 1}</TableCell>
                                         <TableCell className="bold image-title">
-                                            <Link href={`/platform/yomu/work/${work.id}/${work.slug}`}>
+                                            <Link href={`/yomu/work/${work.id}/${work.slug}`}>
                                                 <img className="image" src={`/storage/yomu/${work.id}.jpg`} alt={work.title} />
                                             </Link>
-                                            <Link className="clickable" href={`/platform/yomu/work/${work.id}/${work.slug}`}>
+                                            <Link className="clickable" href={`/yomu/work/${work.id}/${work.slug}`}>
                                                 {work.title}
                                             </Link>
                                         </TableCell>

@@ -139,7 +139,7 @@ export default function AnimeDetails() {
                                                     key={index}
                                                     name={anime.name} 
                                                     relation={anime.relation} 
-                                                    link={`/platform/miru/anime/${anime.id}/${anime.slug}`}
+                                                    link={`/miru/anime/${anime.id}/${anime.slug}`}
                                                     imageLink={`/storage/miru/${anime.id}.jpg`}
                                                 />
                                             ))
@@ -155,7 +155,7 @@ export default function AnimeDetails() {
                                                         key={index}
                                                         name={anime.name} 
                                                         relation={anime.relation} 
-                                                        link={`/platform/miru/anime/${anime.id}/${anime.slug}`}
+                                                        link={`/miru/anime/${anime.id}/${anime.slug}`}
                                                         imageLink={`/storage/miru/${anime.id}.jpg`}
                                                     />
                                                 ))
