@@ -59,6 +59,14 @@ export default function AboutUs() {
     return (
         <div ref={skyContainer} id="page-d2x-about">
 
+            <img id="group-left" src="/pages/d2x/about/left-group.svg" alt="" />
+            <img id="group-right" src="/pages/d2x/about/right-tower.svg" alt="" />
+            <img id="mountain" src="/pages/d2x/about/mountain.svg" alt="" />
+            <img ref={cloudOne} id="cloud-1" className="clouds" src="/pages/d2x/about/bg/cloud-1.svg" alt="" />
+            <img ref={cloudTwo} id="cloud-2" className="clouds" src="/pages/d2x/about/bg/cloud-2.svg" alt="" />
+            <img ref={cloudThree} id="cloud-3" className="clouds" src="/pages/d2x/about/bg/cloud-3.svg" alt="" />
+            <img ref={cloudFour} id="cloud-4" className="clouds" src="/pages/d2x/about/bg/cloud-4.svg" alt="" />
+
             <div id="scroller">
                 <section id="hero" className="hero">
                     <div className="hero__wrapper">
@@ -72,25 +80,25 @@ export default function AboutUs() {
                 <section id="spirit" className="section">
                     <div className="section__wrapper">
                         <div className="grid grid--3-col">
-                            <div className="blur-container one center-both">
-                                <h3>Built By Fans, For Fans</h3>
+                            <div className="blur-container one center-both border-radius--sm">
+                                <h3 className='clr-arc-tertiary-dark'>Built By Fans, For Fans</h3>
                                 <p>Every decision we make, every feature we build, is made with the fans of gaming, and otaku culture in mind.</p>
                             </div>
                             <img className="two border-radius--md box-shadow" src="/pages/d2x/about/spirit/donut-girls.jpg" alt="" />
-                            <div className="blur-container three center-both">
-                                <h3>Stay True, Stay Weird</h3>
+                            <div className="blur-container three center-both border-radius--sm">
+                                <h3 className='clr-arc-tertiary-dark'>Stay True, Stay Weird</h3>
                                 <p>Arcadia has <i>something</i> for <i>someone</i>. We embrace what makes us (and you) different. The fandom thrives when we celebrate the niche and the nerdy.</p>
                             </div>
                             <img className="four border-radius--md box-shadow" src="/pages/d2x/about/spirit/game-office.jpg" alt="" />
-                            <div className="five center-both"><h2>The Spirit of Team Double Dragon</h2></div>
+                            <div className="five center-both border-radius--sm"><h2>The Spirit of Team Double Dragon</h2></div>
                             <img className="six border-radius--md box-shadow" src="/pages/d2x/about/spirit/product-team.webp" alt="" />
-                            <div className="blur-container seven center-both">
-                                <h3>Community Is Everything</h3>
+                            <div className="blur-container seven center-both border-radius--sm">
+                                <h3 className='clr-arc-tertiary-dark'>Community Is Everything</h3>
                                 <p>Fandoms thrive because of the people in them, and we believe D2X should be the same, building a space for fans to connect, create, and share what they love.</p>
                             </div>
                             <img className="eight border-radius--md box-shadow" src="/pages/d2x/about/spirit/marketing-team.webp" alt="" />
-                            <div className="blur-container nine center-both">
-                                <h3>Play Without Limits</h3>
+                            <div className="blur-container nine center-both border-radius--sm">
+                                <h3 className='clr-arc-tertiary-dark'>Play Without Limits</h3>
                                 <p>We don’t believe in creative ceilings. Whether it’s building bold new features or embracing the absurd, we chase ideas with childlike curiosity and pro-level execution. Arcadia is our playground and everyone’s invited.</p>
                             </div>
                         </div>
@@ -164,7 +172,7 @@ export default function AboutUs() {
                 <section id='quote-two' className='section'>
                     <div className='section__wrapper'>
                         <Quote
-                            className="border-radius--md box-shadow"
+                            className="border-radius--md box-shadow clr-txt-light"
                             miniTitle='Message From Our CC'
                             header='Bringing the Hype, One Stream at a Time!'
                             quoteOne='"At D2X, I get to do what I love: entertain, connect, and bring the hype to the fans who live and breathe anime, games, and manga. Every time I stream or create content, I’m not just sharing my passion; I’m building something bigger. Our community is everything to us! It’s about those moments of excitement, that sense of belonging, and that spark of joy we bring to fans worldwide.'

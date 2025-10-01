@@ -1,10 +1,59 @@
 #page-d2x-about {
+    position: relative;
+    overflow: hidden;
+    min-height: calc(100dvh - 5rem);
+    // height: 750px;
+    background: linear-gradient(to bottom, #7EBCED, #F1E3E7, #FBEDE8);
 
+    .clouds {
+        position: absolute;
+    }
+
+    #group-left, #group-right, #mountain {
+        position: absolute;
+        bottom: -1px;
+        pointer-events: none;
+        user-select: none;
+        z-index: 3;
+    }
+
+    #group-left {
+        left: 0;
+        z-index: 2;
+        bottom: -100px;
+        left: -60px;
+    }
+
+    #group-right {
+        right: 0;
+        z-index: 2;
+    }
+
+    #mountain {
+        width: 100%;
+        z-index: 1;
+        bottom: -70px;
+    }
+
+    #scroller {
+        height: 100dvh;
+        overflow-y: scroll;
+        position: relative;
+        z-index: 3;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
     #spirit {
 
         .grid {
             div {
                 text-align: center;
+
+                h3 {
+                    margin-bottom: 1rem;
+                }
             }
         }
         img {
