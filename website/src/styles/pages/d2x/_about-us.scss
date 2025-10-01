@@ -1,0 +1,68 @@
+#page-d2x-about {
+
+    #spirit {
+
+        .grid {
+            div {
+                text-align: center;
+            }
+        }
+        img {
+            border-radius: 24px;
+
+        }
+    }
+
+    #quote-one {
+        .user-quote {
+            background: linear-gradient(to right, #483D8B, #9370DB);
+        }
+    }
+
+    #awards {
+
+        .award {
+            height: 100%;
+            border: 2px solid;
+            padding: 1rem;
+            text-align: center;
+
+            img {
+                max-height: 100px;
+                margin: auto;
+                margin-bottom: 1rem;
+            }
+
+            &__name {
+                font-weight: bold;
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            &__description {
+                font-size: .9rem;
+            }
+        }
+    }
+
+    #quote-two {
+        .user-quote {
+            background: linear-gradient(to right, #F6A875, #E63946);
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #page-d2x-about {
+        
+        #awards {
+            .award {
+                
+
+                &_name {
+                    font-size: 1.25rem;
+                }
+            }
+        }
+    }
+}
