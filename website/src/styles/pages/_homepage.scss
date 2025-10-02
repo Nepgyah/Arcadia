@@ -287,6 +287,11 @@
                 box-shadow: $box-shadow-default;
                 height: 120px;
                 background-color: map.get($colors, arc-secondary-dark);
+
+                img {
+                    max-height: 64px;
+                    width: auto;
+                }
             }
 
             #content-label, #platform-label {

@@ -45,7 +45,7 @@ export default function AsobuHome() {
                                             key={key} 
                                             app="asbou" 
                                             title={game.title} 
-                                            clickLink={`/platform/asobu/game/${game.id}/${game.slug}`} 
+                                            clickLink={`/asobu/game/${game.id}/${game.slug}`} 
                                             imageLink={`/storage/asobu/${game.id}.jpg`}
                                         />
                                     ))
@@ -63,7 +63,7 @@ export default function AsobuHome() {
                                             key={key} 
                                             app="asbou" 
                                             title={game.title} 
-                                            clickLink={`/platform/asobu/game/${game.id}/${game.slug}`} 
+                                            clickLink={`/asobu/game/${game.id}/${game.slug}`} 
                                             imageLink={`/storage/asobu/${game.id}.jpg`}
                                         />
                                     ))

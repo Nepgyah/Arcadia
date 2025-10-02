@@ -126,7 +126,7 @@ export default function YomuSearch() {
                                         key={key}
                                         app="yomu"
                                         media={work}
-                                        link={`/platform/yomu/work/${work.id}/${work.slug}`}
+                                        link={`/yomu/work/${work.id}/${work.slug}`}
                                         status={work.status}
                                     />
                                 ))
