@@ -3,6 +3,8 @@ import ArcFeature from '@/components/feature';
 import ArcStat from '@/components/stat';
 import '@/styles/pages/d2x/_careers.scss';
 
+import LocationIcon from '@mui/icons-material/Place';
+
 export default function Careers() {
 
     return (
@@ -54,85 +56,166 @@ export default function Careers() {
                 </section>
             </div>
 
-            <section id='life' className='section'>
-                <div className='section__wrapper'>
-                    <div className='grid grid--3-col'>
-                        <FadeIn direction="right" className="center-vertical image">
-                            <img src="/pages/d2x/careers/d2x-happy-times.png" alt="Happy times at d2x" />
-                        </FadeIn>
-                        <div>
-                            <div className='section-main'>
-                                <p className='section-main__mini-title'>Life At D2X</p>
-                                <h2 className='section-main__title'>Trailblaze While Enjoying The Journey</h2>
-                                <p>We focus on building a space where fandom, creativity and technology can come together. Flexible and chill where it counts, but serious when it comes to quality and impact. </p>
-                                <p>No template or molds to fill at D2X. Come as you are. Grow how you want. Let’s make something unforgettable.</p>
+            <div id='life-benefits'>
+                <img id='pink-swoosh' src="/bg-assets/abstract-vertical-swoosh.png" alt="Swoosh" />
+                <section id='life' className='section'>
+                    <div className='section__wrapper'>
+                        <div className='grid grid--3-col'>
+                            <FadeIn direction="right" className="center-vertical image">
+                                <img src="/pages/d2x/careers/d2x-happy-times.png" alt="Happy times at d2x" />
+                            </FadeIn>
+                            <div>
+                                <div className='section-main'>
+                                    <p className='section-main__mini-title'>Life At D2X</p>
+                                    <h2 className='section-main__title'>Trailblaze While Enjoying The Journey</h2>
+                                    <p>We focus on building a space where fandom, creativity and technology can come together. Flexible and chill where it counts, but serious when it comes to quality and impact. </p>
+                                    <p>No template or molds to fill at D2X. Come as you are. Grow how you want. Let’s make something unforgettable.</p>
+                                </div>
+                            </div>
+                            <div id='stats'>
+                                <ArcStat value={50} duration={2.5} addPlus label='Team Members' />
+                                <ArcStat value={8} duration={2} delay={.3} label='Office Locations' />
+                                <ArcStat value={10} duration={1.5} delay={.4} addPlus label='Ongoing Projects' />
                             </div>
                         </div>
-                        <div id='stats'>
-                            <ArcStat value={50} duration={2.5} addPlus label='Team Members' />
-                            <ArcStat value={8} duration={2} delay={.3} label='Office Locations' />
-                            <ArcStat value={10} duration={1.5} delay={.4} addPlus label='Ongoing Projects' />
+                        <div className='grid grid--3-col'>
+                            <ArcFeature 
+                                icon='league'
+                                header='Cross Department ARAM Tourneys'
+                                description='Jumble up the variables and see who is the Faker of D2X. Once a month, we have ARAM tournaments with all our summoners to find out which depertment is supreme!'
+                            />
+                            <ArcFeature 
+                                icon='karaoke'
+                                header='Karaoke Nights'
+                                description='Conjure up your best Kiryu Kazuma, sing the latest idol jam or request a city pop classic. These are the moments to unwind or let it all out.'
+                            />
+                            <ArcFeature 
+                                icon='mario-kart'
+                                header='Obligatory Mario Kart Tournament'
+                                description='Everyone says they are the best at Mario Kart, but we host tournaments from time to time to truly findout who can actually stay on rainbow road.'
+                            />
                         </div>
                     </div>
-                    <div className='grid grid--3-col'>
-                        <ArcFeature 
-                            icon='league'
-                            header='Cross Department ARAM Tourneys'
-                            description='Jumble up the variables and see who is the Faker of D2X. Once a month, we have ARAM tournaments with all our summoners to find out which depertment is supreme!'
-                        />
-                        <ArcFeature 
-                            icon='karaoke'
-                            header='Karaoke Nights'
-                            description='Conjure up your best Kiryu Kazuma, sing the latest idol jam or request a city pop classic. These are the moments to unwind or let it all out.'
-                        />
-                        <ArcFeature 
-                            icon='mario-kart'
-                            header='Obligatory Mario Kart Tournament'
-                            description='Everyone says they are the best at Mario Kart, but we host tournaments from time to time to truly findout who can actually stay on rainbow road.'
-                        />
-                    </div>
-                </div>
-            </section>
-            
-            <section id='benefits' className='section'>
-                <div className='section__wrapper'>
-                    <div className='section-main'>
-                        <p className='section-main__mini-title'>Fueling Passion</p>
-                        <h2 className='section-main__title'>Discover Your D2X Buffs</h2>
-                        <p className='mobile-only'>Whether you stay with us for your whole career or take depart on a new journey after one year, our goal is the same: to make your time at D2X a meaningful chapter. A chapter that leaves a mark of skill growth, treasured memories and unforgettable connections.</p>
-                    </div>
+                </section>
+                
+                <section id='benefits' className='section'>
+                    <div className='section__wrapper'>
+                        <div className='section-main'>
+                            <p className='section-main__mini-title'>Fueling Passion</p>
+                            <h2 className='section-main__title'>Discover Your D2X Buffs</h2>
+                            <p className='mobile-only'>Whether you stay with us for your whole career or take depart on a new journey after one year, our goal is the same: to make your time at D2X a meaningful chapter. A chapter that leaves a mark of skill growth, treasured memories and unforgettable connections.</p>
+                        </div>
 
-                    <div className='grid grid--2-col-uneven-reverse'>
-                        <div id='benefits-left-col'>
-                            <img className='desktop-only' src="/bg-assets/abstract-cloud.png" alt="Abstract Cloud" />
-                            <p className='desktop-only'>Whether you stay with us for your whole career or take depart on a new journey after one year, our goal is the same: to make your time at D2X a meaningful chapter. A chapter that leaves a mark of skill growth, treasured memories and unforgettable connections.</p>
-                        </div>
-                        <div className='buffs'>
-                            <div className='buffs__image'>
-                                <img src="/pages/d2x/careers/groza.png" alt="Groza from Girls Frontline 2" />
+                        <div className='grid grid--2-col-uneven-reverse'>
+                            <div id='benefits-left-col'>
+                                <img className='desktop-only' src="/bg-assets/abstract-cloud.png" alt="Abstract Cloud" />
+                                <p className='desktop-only'>Whether you stay with us for your whole career or take depart on a new journey after one year, our goal is the same: to make your time at D2X a meaningful chapter. A chapter that leaves a mark of skill growth, treasured memories and unforgettable connections.</p>
                             </div>
-                            <div className='buffs__text center-vertical flex-row flex-row--spacing-sm'>
-                                <h3>Flexible Hours</h3>
-                                <p>Work on what schedule fits your life outside D2X. We value your time offline when the day is done.</p>
-                            </div>
-                            <div className='buffs__image'>
-                                <img src="/pages/d2x/careers/qingque.png" alt="qingque from Honkai Star Rail" />
-                            </div>
-                            <div className='buffs__text flex-row flex-row--spacing-sm'>
-                                <h3>Community Connections</h3>
-                                <p>Whenever D2X is invited, you are too. Whether it be anime conventions or esports events, the trip is on the house!</p>
-                            </div>
-                            <div className='buffs__image'>
-                                <img src="/pages/d2x/careers/rumi.png" alt="Rumi from Blue Archive" />
-                            </div>
-                            <div className='buffs__text flex-row flex-row--spacing-sm'>
-                                <h3>Personal Growth</h3>
-                                <p>We invest in courses and tools to help our team level up. D2X is here to mine all the diamonds in the rough.</p>
+                            <div className='buffs'>
+                                <div className='buffs__image'>
+                                    <img src="/pages/d2x/careers/groza.png" alt="Groza from Girls Frontline 2" />
+                                </div>
+                                <div className='buffs__text center-vertical flex-row flex-row--spacing-sm'>
+                                    <h3>Flexible Hours</h3>
+                                    <p>Work on what schedule fits your life outside D2X. We value your time offline when the day is done.</p>
+                                </div>
+                                <div className='buffs__image'>
+                                    <img src="/pages/d2x/careers/qingque.png" alt="qingque from Honkai Star Rail" />
+                                </div>
+                                <div className='buffs__text flex-row flex-row--spacing-sm'>
+                                    <h3>Community Connections</h3>
+                                    <p>Whenever D2X is invited, you are too. Whether it be anime conventions or esports events, the trip is on the house!</p>
+                                </div>
+                                <div className='buffs__image'>
+                                    <img src="/pages/d2x/careers/rumi.png" alt="Rumi from Blue Archive" />
+                                </div>
+                                <div className='buffs__text flex-row flex-row--spacing-sm'>
+                                    <h3>Personal Growth</h3>
+                                    <p>We invest in courses and tools to help our team level up. D2X is here to mine all the diamonds in the rough.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </section>
+            </div>
+
+            <section id='positions' className='section gradient-secondary-primary'>
+                <div className='section__wrapper'>
+                    <div className='section-main section-main--center section-main--white'>
+                        <p className='section-main__mini-title'>Positions</p>
+                        <h2 className='section-main__title'>Your D2X Paths</h2>
+                        <p>Working at D2X means being part of a mission-driven team that’s dedicated to building amazing experiences for all. Whether you’re a developer, designer, writer, or community manager, your skills and ideas will help shape the future of our platform.</p>
+                    </div>
+                    <div className='grid grid--2-col'>
+                        <FadeIn direction="up" delay={.1}>
+                            <PositionCard 
+                                title='Lawyer'
+                                location='Fontaine'
+                                description="Support d2x’s expansion in Fontaine by handling contracts, intellectual property, and trade negotiations within the city’s high-tech legal landscape. You’ll ensure our innovations and partnerships stay compliant and protected, navigating both traditional statutes and cutting-edge tech regulations. Sharp legal skills and a strategic mind required to keep D2X ahead in the game."
+                            />
+                        </FadeIn>
+                        <FadeIn direction="up" delay={.2}>
+                            <PositionCard 
+                                title='UI/UX Designer'
+                                location='Akihabara'
+                                description="Design menus, HUDs, and interfaces that feel as good as they look. Work closely with artists and devs to craft playful, intuitive user experiences that bring our anime-inspired games to life."
+                            />
+                        </FadeIn>
+                        <FadeIn direction="up" delay={.3}>
+                            <PositionCard 
+                                title='Data Analyst'
+                                location='Herta Space Station'
+                                description="Join the sharpest minds in the galaxy and help decode anomalies across the stars. You'll sift through massive datasets from expeditions, simulations, and Simulated Universe trials to uncover patterns, optimize research, and maybe impress Herta (unlikely, but dream big). Curiosity required. Sleep optional."
+                            />
+                        </FadeIn>
+                        <FadeIn direction="up" delay={.4}>
+                            <PositionCard 
+                                title='Talent Manager'
+                                location='Penacony'
+                                description="Keep the show on track and the Stellaron Hunters off her schedule. As Robin’s manager, you’ll juggle concerts, press tours, fashion consults, and the occasional galactic emergency, all while making sure her mic is on and her tea is the right temperature. Grace under pressure required. Dramatic fans expected."
+                            />
+                        </FadeIn>
+                        <FadeIn direction="up" delay={.5} threshold={.3}>
+                            <PositionCard 
+                                title='Café Assistant'
+                                location='Elmo'
+                                description="Help Springfield keep the coffee flowing and Makiatto from rewiring the espresso machine (again). As our official liaison between d2x and the café, you'll juggle drink orders, light logistics, and the occasional firefight drill. Must love caffeine, chaos, and charming android coworkers."
+                            />
+                        </FadeIn>
+                        <FadeIn direction="up" delay={.6} threshold={.3}>
+                            <PositionCard 
+                                title='GSC Part Time Sensei'
+                                location='Kivotos'
+                                description="Coordinate projects across academies, manage timelines that somehow involve literal rocket science, and keep your team focused even during surprise Neru raids. You'll be the glue holding it all together — assuming the room doesn't blow up first. Experience with teens, tech, and tactical ops preferred."
+                            />
+                        </FadeIn>
+                    </div>
                 </div>
             </section>
+        </div>
+    )
+}
+
+function PositionCard(
+    {
+        title, location, description
+    } : {
+        title: string,
+        location: string,
+        description: string
+    }
+) {
+
+    return (
+        <div className='position-card clr-txt-light border-radius--md box-shadow'>
+            <div>
+                <p className='position-card__title'>{title}</p>
+                <div>
+                    <p className='position-card__location'>{location}</p>
+                    <LocationIcon />
+                </div>
+            </div>
+            <p className='position-card__description'>{description}</p>
         </div>
     )
 }
