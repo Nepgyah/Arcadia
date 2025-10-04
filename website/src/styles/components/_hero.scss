@@ -50,6 +50,9 @@
         row-gap: 2rem;
         color: map.get($colors, arc-base);
 
+        h1 {
+            font-size: 3rem;
+        }
         &--center {
             text-align: center;
         }
@@ -72,6 +75,19 @@
             min-height: 50dvh;
         }
 
+        &__main-text {
+            h1 {
+                &.xl {
+                    font-size: 4rem;
+                }
+
+                font-size: 3rem;
+            }
+
+            &--shorten {
+                width: 75%;
+            }
+        }
         &__layout {
             display: flex;
             flex-direction: column;

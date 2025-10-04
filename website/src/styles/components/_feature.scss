@@ -1,0 +1,23 @@
+.arc-feature {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+
+    &__icon {
+        width: 48px;
+        height: 48px;
+        padding: .5rem;
+        border-radius: 5px;
+        margin-left: .5rem;
+    }
+
+    &__header {
+        border-left: 2px solid;
+        padding-left: .5rem;
+        font-size: 1.25rem;
+    }
+
+    &__text {
+        padding-left: .5rem;
+    }    
+}

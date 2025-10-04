@@ -28,7 +28,7 @@ export default function Sidebar({ navObj }: { navObj: navInfo }) {
     }
 
     const isActive = (linkPath: string) => {
-        const fullPath = `/platform${linkPath}`;
+        const fullPath = `${linkPath}`;
         if (linkPath === `/${navObj.app}`) {
             return pathname === fullPath;
         }
@@ -46,7 +46,7 @@ export default function Sidebar({ navObj }: { navObj: navInfo }) {
                         className={`${active ? `clr-${navObj.app}-base` : ''}`}
                         fullWidth 
                         key={index}
-                        onClick={() => router.push(`/platform/${link.path}`)}
+                        onClick={() => router.push(`${link.path}`)}
                     >
                         {link.name}
                     </Button>

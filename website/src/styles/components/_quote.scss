@@ -1,0 +1,45 @@
+.user-quote {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+    padding: 1rem;
+    &.text-first {
+
+    }
+
+    &__image {
+        order: 1;
+    }
+
+    .section-main {
+        order: 2;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .user-quote {
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+
+        &__image {
+            img {
+                margin: auto;
+                max-height: 400px;
+            }
+        }
+
+        &.image-second {
+            grid-template-columns: 1.5fr 1fr;
+
+            .user-quote__image {
+                order: 2;
+            }
+
+            .section-main {
+                order: 1;
+            }
+        }
+
+    }
+}

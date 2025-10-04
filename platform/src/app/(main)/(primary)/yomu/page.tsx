@@ -37,7 +37,7 @@ export default function YomuHome() {
                                             key={key} 
                                             app="yomu" 
                                             title={work.title} 
-                                            clickLink={`/platform/yomu/work/${work.id}/${work.slug}`} 
+                                            clickLink={`/yomu/work/${work.id}/${work.slug}`} 
                                             imageLink={`/storage/yomu/${work.id}.jpg`}
                                         />
                                     ))

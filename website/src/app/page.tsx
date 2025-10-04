@@ -6,6 +6,7 @@ import Script from "next/script";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { useState } from "react";
 import FadeIn from "@/components/fadeIn";
+import ArcFeature from "@/components/feature";
 
 const platformURL = process.env.NEXT_PLATFORM_URL;
 
@@ -23,7 +24,7 @@ export default function Home() {
           <div className="hero__layout hero__layout--two-col">
             <div>
               <div className="hero__main-text">
-                <h1><span className="container bg-arc-accent"><span id="word" className="rotating-word clr-txt-light">Stream.</span></span><br />Your Way.</h1>
+                <h1 className="xl"><span className="container bg-arc-accent"><span id="word" className="rotating-word clr-txt-light">Stream.</span></span><br />Your Way.</h1>
                 <p>Arcadia is your home base for everything otaku. Where fans come together to celebrate what they love and find something new.</p>
                 <div className="hero__cta-container">
                     <Button variant="contained" color="primary">
@@ -69,71 +70,54 @@ export default function Home() {
           </div>
           <div className="grid grid--3-col clr-txt-light">
             <div className="flex-row flex-row--spacing-md">
-              <div className="feature">
-                <div className="feature__icon bg-arc-tertiary">
-                  <img className="svg-icon" src="/icons/people-icon.svg" alt="" />
-                </div>
-                <div className="feature__text">
-                  <h3 className="header">All-In-One Solution</h3>
-                  <p>Arcadia combines anime tracking, manga reading, gaming, merch shopping.</p>
-                </div>
-              </div>
+              <ArcFeature 
+                icon="diamond"
+                header="All-In-One Solution"
+                description="Arcadia combines anime tracking, manga reading, gaming, merch shopping."
+                color="arc-tertiary"
+              />
 
-              <div className="feature">
-                <div className="feature__icon bg-arc-tertiary">
-                  <img className="svg-icon" src="/icons/bow-arrow-icon.svg" alt="" />
-                </div>
-                <div className="feature__text">
-                  <h3 className="header">Fans Over Everything</h3>
-                  <p>Arcadia combines anime tracking, manga reading, gaming, merch shopping.</p>
-                </div>
-              </div>
+              <ArcFeature 
+                icon="lock"
+                header="Direct Connections"
+                description="Offical partners with studios to bring authentic experience."
+                color="arc-tertiary"
+              />
 
+              
             </div>
 
             <div className="flex-row flex-row--spacing-lg">
-              <div className="feature">
-                <div className="feature__icon bg-arc-tertiary">
-                  <img className="svg-icon" src="/icons/bow-arrow-icon.svg" alt="" />
-                </div>
-                <div className="feature__text">
-                  <h3 className="header">Fans Over Everything</h3>
-                  <p>Arcadia combines anime tracking, manga reading, gaming, merch shopping.</p>
-                </div>
-              </div>
+              <ArcFeature 
+                icon="people"
+                header="Fans Over Everything"
+                description="Listening to the most important voice: yours."
+                color="arc-tertiary"
+              />
               <div className="center-horizontal">
                 <img src="/logo/logo-image-only.png" alt="Arcadia Icon" />
               </div>
-              <div className="feature">
-                <div className="feature__icon bg-arc-tertiary">
-                  <img className="svg-icon" src="/icons/bow-arrow-icon.svg" alt="" />
-                </div>
-                <div className="feature__text">
-                  <h3 className="header">Fans Over Everything</h3>
-                  <p>Arcadia combines anime tracking, manga reading, gaming, merch shopping.</p>
-                </div>
-              </div>
+              <ArcFeature 
+                icon="heart"
+                header="Passion Prevails"
+                description="Created by fans and driven by passion and curiosity."
+                color="arc-tertiary"
+              />
             </div>
 
             <div className="flex-row flex-row--spacing-md flex-row--end">
-              <div className="feature">
-                <div className="feature__icon bg-arc-tertiary">
-                  <img className="svg-icon" src="/icons/bow-arrow-icon.svg" alt="" />
-                </div>
-                <div className="feature__text">
-                  <h3 className="header">Fans Over Everything</h3>
-                  <p>Arcadia combines anime tracking, manga reading, gaming, merch shopping.</p>
-                </div>
-              </div>
-              <div className="feature">
-                <div className="feature__icon bg-arc-tertiary">
-                  <img className="svg-icon" src="/icons/bow-arrow-icon.svg" alt="" />
-                </div>
-                <div className="feature__text">
-                  <h3 className="header">Fans Over Everything</h3>
-                  <p>Arcadia combines anime tracking, manga reading, gaming, merch shopping.</p>
-                </div>
-              </div>
+              <ArcFeature 
+                icon="growth"
+                header="Always Improving"
+                description="Always new features, QOL improvements and bug fixes with every patch."
+                color="arc-tertiary"
+              />
+              <ArcFeature 
+                icon="clock"
+                header="Future-Ready"
+                description="Built with modern frameworks to adapt to whatever comes next."
+                color="arc-tertiary"
+              />
             </div>
 
           </div>
@@ -152,7 +136,7 @@ export default function Home() {
                   <img src="/partners/nexon-white.png" alt="Nexon Games Logo" />
                 </div>
                 <div className="company">
-                  <img src="/partners/aniplex-white.svg" alt="Aniplex Logo" />
+                  <img src="/partners/from-soft.png" alt="From Software Logo" />
                 </div>
 
                 <div className="company">
@@ -176,23 +160,23 @@ export default function Home() {
                 </div>
 
                 <div className="company">
-                  <img src="/partners/crunchyroll-white.svg" alt="Crunchyroll Logo" />
+                  <img src="/partners/pony-canyon.svg" alt="Pony Canyon Logo" />
                 </div>
                 <div className="company">
-                  <img src="/partners/nexon-white.png" alt="Nexon Games Logo" />
+                  <img src="/partners/jc-staff.png" alt="JC Staff Logo" />
                 </div>
                 <div className="company">
-                  <img src="/partners/aniplex-white.svg" alt="Aniplex Logo" />
+                  <img src="/partners/myanimelist.svg" alt="MyAnimeList Logo" />
                 </div>
 
                 <div className="company">
-                  <img src="/partners/square-enix-white.svg" alt="Square Enix Logo" />
+                  <img src="/partners/aniplex-white.svg" alt="Aniplex Logo" />
                 </div>
                 <div className="company">
-                  <img src="/partners/hoyoverse-white.png" alt="Hoyoverse Logo" />
+                  <img src="/partners/ryu-ga-gotoku_white.svg" alt="Ryu Ga Gotoku Studio Logo" />
                 </div>
                 <div className="company">
-                  <img src="/partners/yostar-white.svg" alt="Yostar Logo" />
+                  <img src="/partners/a1-pictures.png" alt="A1 Logo" />
                 </div>
               </div>
               <div className="center-both">
@@ -215,7 +199,9 @@ export default function Home() {
                     <p className="section-main__mini-title">Primary Apps</p>
                     <h2 className="section-main__title">Essentials for the <br /><span className="clr-txt-dark-emp">Ultimate</span> Otaku</h2>
                     <p>Your all-in-one toolkit for tracking, streaming, gaming, and shopping. These flagship apps form the heart of your ultimate otaku experience.</p>
-                    <Button variant="contained">Try Out Now</Button>
+                    <a href="https://arcadia-inky.vercel.app" target="_blank">
+                      <Button variant="contained">Try Out Now</Button>
+                    </a>
                   </div>
               </div>
               <FadeIn direction="left">
@@ -468,7 +454,7 @@ export default function Home() {
             <div className="section-main">
               <p className="section-main__mini-title">App Ecosystem</p>
               <h2 className="section-main__title">Modern Technologies Define Arcadia</h2>
-              <p>Arcadia is being built with the most famous and trusted technologies on the market. The result: a robust and modern platform that hosts the best Otaku ecosystem there is.</p>
+              <p>Arcadia is being built with the most famous and trusted technologies on the market. The result: a robust, scalable and modern platform that hosts the best Otaku ecosystem there is.</p>
               <a href="https://github.com/Nepgyah/Arcadia" target="_blank">
                 <Button variant="contained">Explore The Repo</Button>
               </a>
@@ -499,53 +485,41 @@ export default function Home() {
             <div className="grid grid--4-col">
               <div className="desktop-only"></div>
               <FadeIn direction="down">
-                <div className="feature">
-                  <div className="feature__icon bg-arc-tertiary">
-                    <img className="svg-icon" src="/icons/bow-arrow-icon.svg" alt="" />
-                  </div>
-                  <div className="feature__text">
-                    <h3 className="header">Distinct Division</h3>
-                    <p>Arcadia is split into major subfolders, making debugging, and deployment straightforward with isolation.</p>
-                  </div>
-                </div>
+                <ArcFeature 
+                  icon="curve"
+                  header="Distinct Division"
+                  description="Arcadia is split into major subfolders, making debugging, and deployment straightforward with isolation."
+                  color="arc-tertiary"
+                />
               </FadeIn>
               <div className="desktop-only"></div>
               <FadeIn direction="down" delay={.3}>
-                <div className="feature">
-                  <div className="feature__icon bg-arc-tertiary">
-                    <img className="svg-icon" src="/icons/bow-arrow-icon.svg" alt="" />
-                  </div>
-                  <div className="feature__text">
-                    <h3 className="header">API-First Architecture</h3>
-                    <p>A Django Rest Framework allows ease of API development and opens the pathway for both mobile and desktop development.</p>
-                  </div>
-                </div>
+                <ArcFeature 
+                  icon="code"
+                  header="API-First Architecture"
+                  description="A Django Rest Framework allows ease of API development and opens the pathway for both mobile and desktop development."
+                  color="arc-tertiary"
+                />
               </FadeIn>
             </div>
 
             <div className="grid grid--4-col">
               <FadeIn direction="up">
-                <div className="feature">
-                  <div className="feature__icon bg-arc-tertiary">
-                    <img className="svg-icon" src="/icons/bow-arrow-icon.svg" alt="" />
-                  </div>
-                  <div className="feature__text">
-                    <h3 className="header">Seemless Deployment</h3>
-                    <p>Use of Vercel (Frontend) and Koyeb (Backend + DB) allow for ease of scaling and deployment as Arcadia grows</p>
-                  </div>
-                </div>
+                <ArcFeature 
+                  icon="share"
+                  header="Seamless Deployment"
+                  description="Use of vercel and Koyeb creates a scalable and simple deployment of all Arcadia branches."
+                  color="arc-tertiary"
+                />
               </FadeIn>
               <div className="desktop-only"></div>
               <FadeIn direction="up" delay={.4}>
-                <div className="feature">
-                  <div className="feature__icon bg-arc-tertiary">
-                    <img className="svg-icon" src="/icons/bow-arrow-icon.svg" alt="" />
-                  </div>
-                  <div className="feature__text">
-                    <h3 className="header">Unified Styling</h3>
-                    <p>With MUI and best SCSS practices, Arcadia’s design is consistent and visually functional.</p>
-                  </div>
-              </div>
+                <ArcFeature 
+                  icon="shine"
+                  header="Unified Stylings"
+                  description="With MUI and best SCSS practices, Arcadia’s design is consistent and visually functional."
+                  color="arc-tertiary"
+                />
               </FadeIn>
               <div ></div>
             </div>

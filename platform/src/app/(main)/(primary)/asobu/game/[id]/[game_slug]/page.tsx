@@ -138,7 +138,7 @@ export default function GameDetails() {
                                                     key={index}
                                                     name={game.name} 
                                                     relation={game.relation} 
-                                                    link={`/platform/asobu/game/${game.id}/${game.slug}`}
+                                                    link={`/asobu/game/${game.id}/${game.slug}`}
                                                     imageLink={`/storage/asobu/${game.id}.jpg`}
                                                 />
                                             ))
@@ -154,7 +154,7 @@ export default function GameDetails() {
                                                     key={index}
                                                     name={game.name} 
                                                     relation={game.relation} 
-                                                    link={`/platform/asobu/game/${game.id}/${game.slug}`}
+                                                    link={`/asobu/game/${game.id}/${game.slug}`}
                                                     imageLink={`/storage/asobu/${game.id}.jpg`}
                                                 />
                                             ))

@@ -1,4 +1,4 @@
-import { PrimaryAppUrls, SecondaryAppUrls } from "@/lib/data/urls";
+import { D2XUrls, PrimaryAppUrls, SecondaryAppUrls } from "@/lib/data/urls";
 import { Button, Menu, MenuItem } from "@mui/material";
 import Link from "next/link";
 import { useRouter } from "next/navigation"
@@ -92,14 +92,34 @@ export default function DesktopHeader() {
                     </Menu>
                     </div> */}
                     <div>
-                        <Button variant="text" color="white" onClick={() => router.push('/d2x')}>D2X</Button>
+                        <Button 
+                            variant='text' color="white"
+                            className='nav__main' 
+                            id='d2x-btn' 
+                            onClick={() => setIsD2XOpen(true)}
+                        >
+                            D2X
+                        </Button>
+                        <Menu
+                            id='d2x-dropdown'
+                            anchorEl={d2xAnchor.current}
+                            open={isD2XOpen}
+                            onClose={() => setIsD2XOpen(false)}
+                            disableScrollLock
+                        >
+                            {
+                                D2XUrls.map((url) => (
+                                    <MenuItem key={url.name} onClick={() => handleClick(url.path, setIsD2XOpen)}>{url.name}</MenuItem>
+                                ))
+                            }
+                        </Menu>
                     </div>
                     {/* <div>
                         <Button variant="text" color="white">Resources</Button>
                     </div> */}
                 </nav>
                 <div className="cta-buttons">
-                    <a href={PLATFORM_URL} target="_blank">
+                    <a href='https://arcadia-inky.vercel.app' target="_blank">
                     <Button variant="contained" color="secondary">To Apps</Button>
                     </a>
                     {/* <Button variant="text" color="white">Create Account</Button> */}
