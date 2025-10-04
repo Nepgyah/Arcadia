@@ -28,7 +28,7 @@ export const D2XUrls: Url[] = [
     { name: 'About Us', path: '/d2x/about-us'},
     { name: 'Team', path: '/d2x/team'},
     { name: 'Careers', path: '/d2x/careers'},
-    { name: 'Esports', path: '/d2x/esports'},
+    // { name: 'Esports', path: '/d2x/esports'},
 ]
 
 export const ResourceUrls: Url[] = [
