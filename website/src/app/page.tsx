@@ -24,7 +24,7 @@ export default function Home() {
           <div className="hero__layout hero__layout--two-col">
             <div>
               <div className="hero__main-text">
-                <h1><span className="container bg-arc-accent"><span id="word" className="rotating-word clr-txt-light">Stream.</span></span><br />Your Way.</h1>
+                <h1 className="xl"><span className="container bg-arc-accent"><span id="word" className="rotating-word clr-txt-light">Stream.</span></span><br />Your Way.</h1>
                 <p>Arcadia is your home base for everything otaku. Where fans come together to celebrate what they love and find something new.</p>
                 <div className="hero__cta-container">
                     <Button variant="contained" color="primary">

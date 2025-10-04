@@ -77,7 +77,15 @@
 
         &__main-text {
             h1 {
-                font-size: 4rem;
+                &.xl {
+                    font-size: 4rem;
+                }
+
+                font-size: 3rem;
+            }
+
+            &--shorten {
+                width: 75%;
             }
         }
         &__layout {

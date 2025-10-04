@@ -80,24 +80,24 @@ export default function AboutUs() {
                 <section id="spirit" className="section">
                     <div className="section__wrapper">
                         <div className="grid grid--3-col">
-                            <div className="blur-container one center-both border-radius--sm">
+                            <div className="blur-container one center-both border-radius--lg">
                                 <h3 className='clr-arc-tertiary-dark'>Built By Fans, For Fans</h3>
                                 <p>Every decision we make, every feature we build, is made with the fans of gaming, and otaku culture in mind.</p>
                             </div>
                             <img className="two border-radius--md box-shadow" src="/pages/d2x/about/spirit/donut-girls.jpg" alt="" />
-                            <div className="blur-container three center-both border-radius--sm">
+                            <div className="blur-container three center-both border-radius--lg">
                                 <h3 className='clr-arc-tertiary-dark'>Stay True, Stay Weird</h3>
                                 <p>Arcadia has <i>something</i> for <i>someone</i>. We embrace what makes us (and you) different. The fandom thrives when we celebrate the niche and the nerdy.</p>
                             </div>
                             <img className="four border-radius--md box-shadow" src="/pages/d2x/about/spirit/game-office.jpg" alt="" />
                             <div className="five center-both border-radius--sm"><h2>The Spirit of Team Double Dragon</h2></div>
                             <img className="six border-radius--md box-shadow" src="/pages/d2x/about/spirit/product-team.webp" alt="" />
-                            <div className="blur-container seven center-both border-radius--sm">
+                            <div className="blur-container seven center-both border-radius--lg">
                                 <h3 className='clr-arc-tertiary-dark'>Community Is Everything</h3>
                                 <p>Fandoms thrive because of the people in them, and we believe D2X should be the same, building a space for fans to connect, create, and share what they love.</p>
                             </div>
                             <img className="eight border-radius--md box-shadow" src="/pages/d2x/about/spirit/marketing-team.webp" alt="" />
-                            <div className="blur-container nine center-both border-radius--sm">
+                            <div className="blur-container nine center-both border-radius--lg">
                                 <h3 className='clr-arc-tertiary-dark'>Play Without Limits</h3>
                                 <p>We don’t believe in creative ceilings. Whether it’s building bold new features or embracing the absurd, we chase ideas with childlike curiosity and pro-level execution. Arcadia is our playground and everyone’s invited.</p>
                             </div>
