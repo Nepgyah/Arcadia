@@ -12,6 +12,12 @@
     }
 }
 
+@each $name, $color in $colors {
+    .border-#{$name} {
+        border-color: #{$color} 
+    }
+}
+
 // @each $name, $size in $text-size{
 //     .txt-#{$name} {
 //         font-size: #{$size}

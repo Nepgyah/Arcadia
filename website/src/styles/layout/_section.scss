@@ -26,6 +26,14 @@
         flex-direction: column;
         row-gap: 2rem;
 
+        &--white {
+            color: white;
+
+            .section-main__title {
+                color: white;
+            }
+        }
+
         &--center {
             text-align: center;
             width: 75%;
@@ -42,12 +50,10 @@
         }
 
         &__title {
+            color: map.get($colors, arc-base);
             font-size: 2rem;
         }
 
-        &--white {
-            color: white;
-        }
     }
 }
 

@@ -1,0 +1,15 @@
+.arc-stat {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 2rem;
+
+    &__value {
+        font-size: 5rem;
+    }
+
+    &__label {
+        font-weight: bold;
+        width: 150px;
+    }
+}

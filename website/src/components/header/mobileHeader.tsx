@@ -23,6 +23,7 @@ export default function MobileHeader() {
     const handleClick = (route: string) => {
         setIsOpen(false)
         router.push(route)
+        setOpenDropdown('none')
     }
 
     return (
@@ -58,8 +59,8 @@ export default function MobileHeader() {
                         }
                     </Collapse> */}
 
-                    <Button onClick={() => handleClick('/d2x')} className={`${openDropdown === 'd2x' && 'dropdown-open'}`}>D2X</Button>
-                    {/* <Collapse in={openDropdown === 'd2x'}>
+                    <Button onClick={() => setOpenDropdown('d2x')} className={`${openDropdown === 'd2x' && 'dropdown-open'}`}>D2X</Button>
+                    <Collapse in={openDropdown === 'd2x'}>
                         {
                             D2XUrls.map((url) => (
                                 <Button key={url.name} onClick={() => handleClick(url.path)}>{url.name}</Button>
@@ -67,7 +68,7 @@ export default function MobileHeader() {
                         }
                     </Collapse>
 
-                    <Button onClick={() => setOpenDropdown('resource')} className={`${openDropdown === 'resource' && 'dropdown-open'}`}>Resources</Button>
+                    {/* <Button onClick={() => setOpenDropdown('resource')} className={`${openDropdown === 'resource' && 'dropdown-open'}`}>Resources</Button>
                     <Collapse in={openDropdown === 'resource'}>
                         {
                             ResourceUrls.map((url) => (
