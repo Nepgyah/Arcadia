@@ -21,21 +21,21 @@ export default function HomeDashboard() {
                                 <AppIcon app='miru' />
                                 <AppIcon app='yomu' />
                                 <AppIcon app='asobu' />
-                                <AppIcon app='kau' />
+                                {/* <AppIcon app='kau' /> */}
                                 <AppIcon app='tsunagu' />
                             </div>
                         </div>
                         <div className="app-navigation card">
                             <h3>Secondary Apps</h3>
                             <div className="container">
-                                <AppIcon app='iku' />
-                                <AppIcon app='hiku' />
+                                {/* <AppIcon app='iku' />
+                                <AppIcon app='hiku' /> */}
                                 <AppIcon app='kumitateru' />
-                                <AppIcon app='shiru' />
+                                {/* <AppIcon app='shiru' />
                                 <AppIcon app='kiku' />
                                 <AppIcon app='todokeru' />
                                 <AppIcon app='manabu' />
-                                <AppIcon app='sagasu' />
+                                <AppIcon app='sagasu' /> */}
                             </div>
                         </div>
                     </div>
