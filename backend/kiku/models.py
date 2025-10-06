@@ -31,6 +31,21 @@ class Producer(Company):
 
     def __str__(self):
         return f"{self.name}"
+    
+# DEV NOTE:
+# - This model is the one that gets added to playlists.
+# - Viewing the song prioritizes showing the album to its single and then albums its in ordered by release date
+class Song(models.Model):
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    title = models.CharField(max_length=150, null=False, blank=False)
+    artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
+    featured_artists = models.ManyToManyField(Artist, related_name='featured_songs', blank=True)
+    genre = models.ManyToManyField(Genre, related_name='songs', blank=True)
+    plays = models.IntegerField(default=0, blank=0)
+    
+    def __str__(self):
+        return f"{self.title}"
 
 class Album(models.Model):
 
@@ -48,18 +63,24 @@ class Album(models.Model):
     producer = models.ForeignKey(Producer, on_delete=models.SET_NULL, null=True, blank=True)
     type = models.IntegerField(choices=Type, default=Type.SINGLE, blank=True)
     release_date=models.DateField(null=True, blank=True)
+    songs = models.ManyToManyField(
+        'Song', 
+        through='AlbumSong', 
+        related_name='albums',
+        blank=True
+    )
 
     def __str__(self):
         return f"{self.title}"
     
-class Song(models.Model):
+class AlbumSong(models.Model):
+    album = models.ForeignKey(Album, on_delete=models.CASCADE)
+    song = models.ForeignKey('Song', on_delete=models.CASCADE)
+    track_number = models.PositiveIntegerField(default=1)
 
-    album = models.ForeignKey(Album, on_delete=models.CASCADE, related_name='songs', null=True)
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    title = models.CharField(max_length=150, null=False, blank=False)
-    featured_artists = models.ManyToManyField(Artist, related_name='featured_songs', blank=True)
-    genre = models.ManyToManyField(Genre, related_name='songs', blank=True)
-    plays = models.IntegerField(default=0, blank=0)
-    
+    class Meta:
+        unique_together = ('album', 'track_number')
+        ordering = ['track_number']
+
     def __str__(self):
-        return f"{self.title}"
+        return f"{self.track_number}. {self.song.title} ({self.album.title})"
