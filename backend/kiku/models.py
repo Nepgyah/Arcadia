@@ -2,8 +2,24 @@ import uuid
 
 from django.db import models
 from shared.models import Company
-from characters.models import Talent
+from characters.models import Talent, Character, VoiceActor
 
+class Artist(Talent):
+    name = models.CharField(max_length=150)
+    character = models.OneToOneField(
+        Character, on_delete=models.SET_NULL, null=True, blank=True, related_name='artist_profile'
+    )
+    voice_actor_profile = models.OneToOneField(
+        VoiceActor, on_delete=models.SET_NULL, null=True, blank=True, related_name='artist_profile'
+    )
+
+    class Meta:
+        verbose_name_plural = "Artists"
+
+    @property
+    def display_name(self):
+        return self.name
+    
 class Genre(models.Model):
 
     name = models.CharField(max_length=50, null=False, blank=False)
@@ -28,7 +44,7 @@ class Album(models.Model):
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=150, null=False, blank=False)
-    artists = models.ManyToManyField(Talent, related_name='albums')
+    artists = models.ManyToManyField(Artist, related_name='albums')
     producer = models.ForeignKey(Producer, on_delete=models.SET_NULL, null=True, blank=True)
     type = models.IntegerField(choices=Type, default=Type.SINGLE, blank=True)
     release_date=models.DateField(null=True, blank=True)
@@ -41,7 +57,7 @@ class Song(models.Model):
     album = models.ForeignKey(Album, on_delete=models.CASCADE, related_name='songs', null=True)
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=150, null=False, blank=False)
-    featured_artists = models.ManyToManyField(Talent, related_name='featured_songs', blank=True)
+    featured_artists = models.ManyToManyField(Artist, related_name='featured_songs', blank=True)
     genre = models.ManyToManyField(Genre, related_name='songs', blank=True)
     plays = models.IntegerField(default=0, blank=0)
     

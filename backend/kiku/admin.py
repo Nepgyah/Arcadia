@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Genre, Producer, Album, Song
+from .models import Genre, Producer, Album, Song, Artist
 
 # Register your models here.
 class SongInline(admin.TabularInline):
@@ -15,6 +15,7 @@ class AlbumAdmin(admin.ModelAdmin):
     list_filter = ('type', 'release_date')
     inlines = [SongInline]  # attach the inline here
 
+admin.site.register(Artist)
 admin.site.register(Song)
 admin.site.register(Genre)
 admin.site.register(Producer)

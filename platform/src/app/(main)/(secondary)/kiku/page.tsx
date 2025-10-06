@@ -28,22 +28,28 @@ export default function MiruHome() {
                 <Typography>Home</Typography>
             </Breadcrumbs>
             <div id="page-kiku-home"  className="page-content">
-                <div className="two-col-section two-col-section--uneven-reverse">
-                    <div className="row-gap-md">
-                        <div id="seasonal">
-                            <LinkedHeader title='Trending Music' link="" linkText="See more"/>
-                            <div className="layout-grid-5">
-                                {
-                                }
-                            </div>
-                        </div>
-                        <div id="all-time">
-                            
+                <div id="kiku-spotlight"></div>
+                <div className="layout-grid-3">
+                    <div>
+                        <LinkedHeader title='Top Songs This Month' link="" linkText="See more"/>
+                        <div  className="row-gap-md">
+                            {
+                            }
                         </div>
                     </div>
-                    <div className="vertical-divider-left p-left-xl">
-                        <h2 className="app-font--miru border-bottom">Friend Activity</h2>
-                        <WIP />
+                    <div>
+                        <LinkedHeader title='Top Albums This Month' link="" linkText="See more"/>
+                        <div  className="row-gap-md">
+                            {
+                            }
+                        </div>
+                    </div>
+                    <div>
+                        <LinkedHeader title='Top Artists This Month' link="" linkText="See more"/>
+                        <div  className="row-gap-md">
+                            {
+                            }
+                        </div>
                     </div>
                 </div>
 
