@@ -31,9 +31,9 @@ export default function HomeDashboard() {
                                 {/* <AppIcon app='iku' />
                                 <AppIcon app='hiku' /> */}
                                 <AppIcon app='kumitateru' />
-                                {/* <AppIcon app='shiru' />
+                                {/* <AppIcon app='shiru' /> */}
                                 <AppIcon app='kiku' />
-                                <AppIcon app='todokeru' />
+                                {/* <AppIcon app='todokeru' />
                                 <AppIcon app='manabu' />
                                 <AppIcon app='sagasu' /> */}
                             </div>

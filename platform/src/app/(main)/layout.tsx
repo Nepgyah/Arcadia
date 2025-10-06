@@ -5,7 +5,7 @@ import Topbar from "@/components/platform/topbar";
 import React from "react";
 
 import "@/styles/platform/platform-main.scss";
-import { asobuNav, kauNav, kumitateruNav, mainboard, miruNav, tsunaguNav, url, yomuNav} from "@/data/urls";
+import { asobuNav, kauNav, kikuNav, kumitateruNav, mainboard, miruNav, tsunaguNav, url, yomuNav} from "@/data/urls";
 import { usePathname } from "next/navigation";
 import { App } from "@/types/shared";
 
@@ -20,6 +20,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
         if (pathname.startsWith('/miru')) return { 'app': 'miru', 'links': miruNav};
         if (pathname.startsWith('/yomu')) return { 'app': 'yomu', 'links': yomuNav};
         if (pathname.startsWith('/asobu')) return { 'app': 'asobu', 'links': asobuNav};
+        if (pathname.startsWith('/kiku')) return { 'app': 'kiku', 'links': kikuNav};
         if (pathname.startsWith('/kau')) return { 'app': 'kau', 'links': kauNav};
         if (pathname.startsWith('/tsunagu')) return { 'app': 'tsunagu', 'links': tsunaguNav};
         if (pathname.startsWith('/kumitateru')) return { 'app': 'kumitateru', 'links': kumitateruNav};
