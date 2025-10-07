@@ -1,0 +1,21 @@
+@use "../../abstract/variables" as *;
+@use "sass:map";
+
+#page-resource-case-study {
+
+    #other-studies {
+
+        #cases-container {
+            >div {
+                min-height: 420px;
+            }
+        }
+        .MuiCard-root {
+            height: 100%;
+            background-color: map.get($colors, arc-base);
+            .MuiCardMedia-root {
+                height: 250px;
+            }
+        }
+    }
+}
