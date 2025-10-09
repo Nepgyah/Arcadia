@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'accounts',
     'asobu',
     'miru',
+    'kiku',
     'yomu',
     'kumitateru',
     'tsunagu',
