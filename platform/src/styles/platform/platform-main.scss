@@ -151,6 +151,13 @@
     &-right { border-right: 1px solid #BBBBBB; }
 }
 
+.row-divider {
+
+    >div {
+        border-bottom:  1px solid rgba( #bbbbbb, .5);
+    }
+}
+
 .border-radius {
     &-s {
         border-radius: 5px;

@@ -1,0 +1,17 @@
+.center-both {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.center-horizontally {
+    width: fit-content;
+    margin: auto;
+}

@@ -41,7 +41,7 @@ class Song(models.Model):
     title = models.CharField(max_length=150, null=False, blank=False)
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
     featured_artists = models.ManyToManyField(Artist, related_name='featured_songs', blank=True)
-    genre = models.ManyToManyField(Genre, related_name='songs', blank=True)
+    genre = models.ForeignKey(Genre, related_name='songs', on_delete=models.SET_NULL, null=True, blank=True)
     plays = models.IntegerField(default=0, blank=0)
     
     def __str__(self):
@@ -59,10 +59,11 @@ class Album(models.Model):
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=150, null=False, blank=False)
-    artists = models.ManyToManyField(Artist, related_name='albums')
+    artist = models.ForeignKey(Artist, related_name='albums', on_delete=models.CASCADE)
     producer = models.ForeignKey(Producer, on_delete=models.SET_NULL, null=True, blank=True)
     type = models.IntegerField(choices=Type, default=Type.SINGLE, blank=True)
     release_date=models.DateField(null=True, blank=True)
+    plays = models.IntegerField(default=0, blank=0)
     songs = models.ManyToManyField(
         'Song', 
         through='AlbumSong', 

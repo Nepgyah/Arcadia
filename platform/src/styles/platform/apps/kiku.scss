@@ -37,9 +37,132 @@
         }
     }
 
-    #page-kiku-search {
-        #seasonal {
-            width: 1123px;
+    #page-kiku-home {
+        
+        #spotlight {
+            height: 300px;
+
+            #artist-spotlight {
+                overflow: hidden;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                height: 100%;
+                background-color: $platform-bg-2;
+                border-radius: 1.5rem;
+                
+                #artist-text {
+                    padding: 2rem;
+
+                    p {
+                        &:first-of-type {
+                            font-size: 1.5rem;
+                            font-weight: bold;
+                            margin-bottom: 1rem;
+                        }
+                    }
+                }
+                #artist-image {
+                    width: 100%;
+                    height: 100%;
+                    position: relative;
+
+                    img {
+                        position: relative;
+                        z-index: 1;
+                    }
+                    .mask {
+                        width: 100%;
+                        height: 100%;
+                        z-index: 2;
+                        position: absolute;
+                        background: linear-gradient(to right, rgba(#1C1D21, 100), rgba(#1C1D21, 0));
+                    }
+                }
+            }
+        }
+    }
+
+    #album-details {
+        
+        .main-card {
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            height: 100%;
+            background-color: $platform-bg-2;
+            border-radius: 1.5rem;
+
+            &__text {
+                padding: 2rem;
+
+                p {
+                   &:first-of-type {
+                        font-size: 2rem !important;
+                        font-weight: bold;
+                   }
+                }
+            }
+
+            &__image {
+                width: 100%;
+                height: 100%;
+                position: relative;
+
+                img {
+                    position: relative;
+                    z-index: 1;
+                }
+                .mask {
+                    width: 100%;
+                    height: 100%;
+                    z-index: 2;
+                    position: absolute;
+                    background: linear-gradient(to right, rgba(#1C1D21, 100), rgba(#1C1D21, 0));
+                }
+            }
+        }
+
+        .sub-card {
+            overflow: hidden;
+            padding: 2rem;
+            background-color: $platform-bg-2;
+            border-radius: 1.5rem;
+            display: flex;
+            flex-direction: column;
+
+            &__title {
+                font-size: 2rem !important;
+            }
+
+            &__details {
+                flex-grow: 1;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                align-items: center;
+                column-gap: 1rem;
+
+                img {
+                    width: 100%;
+                    aspect-ratio: 1 / 1;
+                 
+                    border-radius: 18px;
+                }
+            }
+        }
+    }
+    .kiku-card {
+        display: flex;
+        column-gap: .5rem;
+        align-items: center;
+        padding: 1rem;
+
+        &__image {
+            height: 90px;
+            width: 90px;
+        }
+
+        &__subTitle {
+            opacity: .5;
         }
     }
 }

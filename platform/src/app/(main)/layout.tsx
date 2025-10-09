@@ -5,6 +5,7 @@ import Topbar from "@/components/platform/topbar";
 import React from "react";
 
 import "@/styles/platform/platform-main.scss";
+import "@/styles/_main.scss";
 import { asobuNav, kauNav, kikuNav, kumitateruNav, mainboard, miruNav, tsunaguNav, url, yomuNav} from "@/data/urls";
 import { usePathname } from "next/navigation";
 import { App } from "@/types/shared";
