@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from graphene_django.views import GraphQLView
+from .schema import schema
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,5 +27,7 @@ urlpatterns = [
     path('api/yomu/', include('yomu.urls')),
     path('api/kumitateru/', include('kumitateru.urls')),
     path('api/kiku/', include('kiku.urls')),
-    path('api/tsunagu/', include('tsunagu.urls'))
+    path('api/tsunagu/', include('tsunagu.urls')),
+
+    path('graphql/', GraphQLView.as_view(graphiql=True, schema=schema))
 ]
