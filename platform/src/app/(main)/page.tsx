@@ -1,21 +1,23 @@
 'use client';
 
-import { useSnackbar } from "@/util/wrappers/snackbarProvider"
 import React from "react"
 import Image from 'next/image'
 
-import '@/styles/platform/pages/main-dashboard.scss';
+import '@/styles/pages/_main-dashboard.scss';
 import { useRouter } from "next/navigation";
+import { Breadcrumbs, Typography } from "@mui/material";
 
 export default function HomeDashboard() {
 
     return (
         <React.Fragment>
-            <h1>Home</h1>
+            <Breadcrumbs>
+                <Typography>Home</Typography>
+            </Breadcrumbs>
             <div id="page-main-dashboard" className="page-content">
-                <div className="two-col-section two-col-section--uneven">
-                    <div>
-                        <div className="app-navigation card m-bottom-md">
+                <div id="layout">
+                    <div id="navigation">
+                        <div className="app-navigation p-a-md m-b-lg bg-platform-dark border-radius-md box-shadow">
                             <h3>Primary Apps</h3>
                             <div className="container">
                                 <AppIcon app='miru' />
@@ -25,7 +27,7 @@ export default function HomeDashboard() {
                                 <AppIcon app='tsunagu' />
                             </div>
                         </div>
-                        <div className="app-navigation card">
+                        <div className="app-navigation  p-a-md bg-platform-dark border-radius-md box-shadow">
                             <h3>Secondary Apps</h3>
                             <div className="container">
                                 {/* <AppIcon app='iku' />
@@ -69,7 +71,7 @@ function GreetingImage() {
         return (
             <div className="greeting-image border-radius-md box-shadow">
                 <div className="bg-mask"></div>
-                <p className="txt-l">お疲れ様でした</p>
+                <p className="txt-lg">お疲れ様でした!</p>
                 <Image
                     className="greeting-image box-shadow"
                     src='/platform/main-dashboard/afternoon.jpg'
@@ -100,7 +102,7 @@ function AppIcon({ app } : { app: app}) {
     const router = useRouter();
 
     return (
-        <div className='app-icon-button'>
+        <div className='app-icon-button clickable'>
             <div className={`icon bg-${app}-base animation__hover-grow`} onClick={() => router.push(`${app}`)}>
                 <Image
                     src={`/global/app-icons/${app}.svg`}

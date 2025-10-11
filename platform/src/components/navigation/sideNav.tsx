@@ -2,14 +2,13 @@
 
 import { navInfo } from "@/app/(main)/layout";
 import { url } from "@/data/urls"
-import "@/styles/platform/components/sideNav.scss"
 import { useApi } from "@/util/api/api";
 import { useUser } from "@/util/wrappers/userContext";
 import { Button, Divider } from "@mui/material"
 import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 
-export default function Sidebar({ navObj }: { navObj: navInfo }) {
+export default function SideNav({ navObj }: { navObj: navInfo }) {
     const {
         user,
         setUser

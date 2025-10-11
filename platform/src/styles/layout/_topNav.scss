@@ -1,8 +1,9 @@
-@use '../../abstract/variables' as *;
+@use '../utils/variables' as *;
+@use "sass:map";
 
 #platform-header {
     height: 3.5rem;
-    background-color: $platform-bg-2;
+    background-color: map.get($colors, platform-dark);
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #33343A;

@@ -4,7 +4,6 @@ import Link from "next/link";
 
 import AppsIcon from '@mui/icons-material/Apps';
 
-import "@/styles/platform/components/topNav.scss";
 import { Avatar, IconButton, Menu, MenuItem, Tooltip } from "@mui/material";
 import { useUser } from "@/util/wrappers/userContext";
 import { useEffect, useRef, useState } from "react";
@@ -13,7 +12,7 @@ import { useApi } from "@/util/api/api";
 
 type openStatus = 'app' | 'profile' | 'none';
 
-export default function Topbar() {
+export default function TopNav() {
     const {
         user, setUser, userLoading
     } = useUser()

@@ -1,0 +1,38 @@
+// BORDER RADIUS
+.border-radius-sm {
+    border-radius: 5px;    
+}
+
+.border-radius-md {
+    border-radius: 16px;
+}
+
+.border-radius-lg {
+    border-radius: 24;
+}
+
+.box-shadow {
+    box-shadow: 0px 4px 4px rgba(#000000, .25);
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+// POSITIONING
+
+.center-vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.center-horizontal {
+    margin: auto;
+}
+
+.center-both {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,3 +1,43 @@
+@forward 'base';
 @forward 'layout';
 @forward 'utils';
 @forward 'layout';
+@use './utils/variables' as *;
+@use "sass:map";
+
+html {
+    font-size: 18px;
+
+    body {
+
+        #platform-layout {
+            min-height: 100dvh;
+            max-width: 100%;
+            background-color: map.get($colors, platform-base);
+
+            #platform-second-layout {
+                display: grid;
+                grid-template-columns: 150px 1fr;
+
+                #platform-sidebar {
+                    min-height: 100dvh;
+                    height: 100%;
+                }
+
+                #platform-content {
+                    padding: 1rem;
+                    color: white;
+                    flex-grow: 1;
+
+                    .MuiTypography-root {
+                        color: white;
+                    }
+
+                    .MuiBreadcrumbs-root {
+                        margin-bottom: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,14 +1,12 @@
 'use client';
-
-import Sidebar from "@/components/platform/sidebar";
-import Topbar from "@/components/platform/topbar";
 import React from "react";
 
-import "@/styles/platform/platform-main.scss";
 import "@/styles/_main.scss";
 import { asobuNav, kauNav, kikuNav, kumitateruNav, mainboard, miruNav, tsunaguNav, url, yomuNav} from "@/data/urls";
 import { usePathname } from "next/navigation";
 import { App } from "@/types/shared";
+import TopNav from "@/components/navigation/topNav";
+import SideNav from "@/components/navigation/sideNav";
 
 export interface navInfo {
     'app': App,
@@ -32,9 +30,9 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
   const nav = getNav();
     return (
         <div id="platform-layout">
-            <Topbar />
+            <TopNav />
             <div id="platform-second-layout">
-                <Sidebar navObj={nav} />
+                <SideNav navObj={nav} />
                 <div id="platform-content">
                     {children}
                 </div>
