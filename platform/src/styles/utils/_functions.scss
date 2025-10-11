@@ -1,0 +1,57 @@
+@use './variables' as *;
+
+@each $name, $color in $colors {
+    .clr-#{$name} {
+        color: #{$color} !important
+    }
+
+    .bg-#{$name} {
+        background-color: #{$color} !important
+    }
+
+    .border-#{$name} {
+        border-color: #{$color} 
+    }
+}
+
+@each $name, $size in $text-size {
+    .txt-#{$name} {
+        font-size: $size;
+    }
+}
+
+@each $name, $spacing in $text-size {
+    .p-l-#{$name} {
+        padding-left: $spacing;
+    }
+    .p-r-#{$name} {
+        padding-right: $spacing;
+    }
+    .p-t-#{$name} {
+        padding-top: $spacing;
+    }
+    .p-b-#{$name} {
+        padding-bottom: $spacing;
+    }
+    .p-a-#{$name} {
+       padding: $spacing;
+    }
+}
+
+@each $name, $spacing in $text-size {
+    .m-l-#{$name} {
+        margin-left: $spacing;
+    }
+    .m-r-#{$name} {
+        margin-right: $spacing;
+    }
+    .m-t-#{$name} {
+        margin-top: $spacing;
+    }
+    .m-b-#{$name} {
+        margin-bottom: $spacing;
+    }
+    .m-a-#{$name} {
+       margin: $spacing;
+    }
+}
