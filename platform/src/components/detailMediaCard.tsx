@@ -1,8 +1,6 @@
 import { App } from "@/types/shared";
 import Link from "next/link";
 
-import '@/styles/platform/components/detailMediaCard.scss';
-
 export default function DetailMediaCard (
     { app, media, link, status } : 
     {
@@ -13,7 +11,7 @@ export default function DetailMediaCard (
     }
 ) {
     return (
-        <div className="detail-card">
+        <div className="detail-card border-radius-sm">
             <div className={`detail-card__title align-content align-content--center clr-${app}-base`}>
                 <Link href={link} className="clickable">
                     {media.title}

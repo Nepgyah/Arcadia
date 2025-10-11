@@ -5,7 +5,7 @@ import { Breadcrumbs, Button, FormControl, InputLabel, MenuItem, Pagination, Sel
 
 import { apiGET } from "@/util/api/api";
 import { Anime } from "@/types/miru";
-import DetailMediaCard from "@/components/platform/detailMediaCard";
+import DetailMediaCard from "@/components/detailMediaCard";
 import { Work } from "@/types/yomu";
 
 export default function YomuSearch() {
