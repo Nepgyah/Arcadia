@@ -2,6 +2,7 @@
 @forward 'layout';
 @forward 'utils';
 @forward 'layout';
+@forward 'components';
 @use './utils/variables' as *;
 @use "sass:map";
 

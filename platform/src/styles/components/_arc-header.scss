@@ -1,0 +1,13 @@
+.arc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid rgba(#bbbbbb, .5);
+    margin-bottom: 1rem;
+
+    a {
+        font-size: .9rem;
+        color: white;
+        opacity: .5;
+    }
+}

@@ -4,9 +4,12 @@ import React, { useEffect, useState } from "react";
 import { Breadcrumbs, Typography } from "@mui/material";
 
 import { apiGET } from "@/util/api/api";
-import EntryCard from "@/components/platform/entryCard";
+import EntryCard from "@/components/entryCard";
 import WIP from "@/components/platform/wip";
 import LinkedHeader from "@/components/platform/linkedHeader";
+
+import '@/styles/pages/miru/_home.scss';
+import ArcHeader from "@/components/arcHeader";
 
 export default function MiruHome() {
     const [isLoading, setIsLoading] = useState(true);
@@ -29,12 +32,12 @@ export default function MiruHome() {
                 <Typography>Miru</Typography>
                 <Typography>Home</Typography>
             </Breadcrumbs>
-            <div id="page-miru-home"  className="page-content">
-                <div className="two-col-section two-col-section--uneven-reverse">
-                    <div className="row-gap-md">
+            <div id="page-miru-home">
+                <div className="grid grid--side-col">
+                    <div className="flex-row flex-row--gap-md">
                         <div id="seasonal">
-                            <LinkedHeader title={`Latest Season - ${seasonName}`} link="miru/seasonal" linkText="See more"/>
-                            <div className="layout-grid-5">
+                            <ArcHeader title={`Latest Season - ${seasonName}`} link="miru/seasonal" linkText="See more" />
+                            <div className="flex-col flex-col--gap-sm">
                                 {
                                     seasonalAnime &&
                                     seasonalAnime.map((anime: any, key: number) => (
@@ -50,8 +53,8 @@ export default function MiruHome() {
                             </div>
                         </div>
                         <div id="all-time">
-                            <LinkedHeader title="All Time" link="miru/all-time" linkText="See more"/>
-                            <div className="layout-grid-5">
+                            <ArcHeader title="All Time" link="miru/all-time" linkText="See more" />
+                            <div className="flex-col flex-col--gap-sm">
                                 {
                                     topAnime &&
                                     topAnime.map((anime: any, key: number) => (
@@ -67,7 +70,7 @@ export default function MiruHome() {
                             </div>
                         </div>
                     </div>
-                    <div className="vertical-divider-left p-left-xl">
+                    <div className="side-col">
                         <h2 className="app-font--miru border-bottom">Friend Activity</h2>
                         <WIP />
                     </div>

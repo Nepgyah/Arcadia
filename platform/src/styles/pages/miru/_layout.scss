@@ -1,0 +1,8 @@
+@use '../../utils/variables' as *;
+@use "sass:map";
+
+#miru-layout {
+    h2, h3, h4 {
+        color: map.get($colors, miru-base);
+    }
+}

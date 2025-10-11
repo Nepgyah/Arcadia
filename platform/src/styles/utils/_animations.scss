@@ -10,7 +10,7 @@
     }
 
     &__hover-grow {
-        transition: scale .1s ease-in-out;
+        transition: transform .1s ease-in-out;
 
         &:hover {
             transform: scale(1.05);

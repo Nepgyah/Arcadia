@@ -1,0 +1,24 @@
+@use '../utils/variables' as *;
+@use "sass:map";
+
+.media-card {
+    flex: 0 0 200px;
+
+    &__image {
+        height: 300px;
+        overflow: hidden;
+        margin-bottom: 1rem;
+        object-fit: cover;
+    }
+
+    a {
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__title {
+        color: white;
+    }
+}

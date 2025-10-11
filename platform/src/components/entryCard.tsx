@@ -12,10 +12,10 @@ export default function EntryCard(
 ) {
     if (clickLink) {
         return (
-                <div className="entry-card">
+                <div className="media-card">
                     <Link href={clickLink}>
                     <img 
-                        className="entry-card__image" 
+                        className="media-card__image animation__hover-grow box-shadow border-radius-sm" 
                         src={imageLink}
                         onError={(e) => {
                             e.currentTarget.onerror = null;
@@ -23,21 +23,21 @@ export default function EntryCard(
                         }} 
                     />
                     </Link>
-                    <Link href={clickLink} className="entry-card__title entry-card__title--hoverable">{title}</Link>
+                    <Link href={clickLink} className="media-card__title media-card__title--hoverable">{title}</Link>
                 </div>
         )
     } else {
         return (
-            <div className="entry-card">
+            <div className="media-card">
                 <img 
-                    className="entry-card__image" 
+                    className="media-card__image" 
                     src={imageLink}
                     onError={(e) => {
                         e.currentTarget.onerror = null;
                         e.currentTarget.src = '/global/404-resource.jpg'
                     }} 
                 />
-                <p className="entry-card__title">{title}</p>
+                <p className="media-card__title">{title}</p>
             </div>
         )
     }

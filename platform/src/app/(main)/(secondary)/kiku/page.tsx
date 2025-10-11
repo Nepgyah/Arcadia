@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { Breadcrumbs, Typography } from "@mui/material";
 
 import {  GraphQL } from "@/util/api/api";
-import EntryCard from "@/components/platform/entryCard";
+import EntryCard from "@/components/entryCard";
 import WIP from "@/components/platform/wip";
 import LinkedHeader from "@/components/platform/linkedHeader";
 import KikuCard from "./components/kikuCard";

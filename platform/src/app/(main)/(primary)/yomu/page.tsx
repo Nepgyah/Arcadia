@@ -1,6 +1,6 @@
 'use client';
 
-import EntryCard from "@/components/platform/entryCard";
+import EntryCard from "@/components/entryCard";
 import LinkedHeader from "@/components/platform/linkedHeader";
 import WIP from "@/components/platform/wip";
 import { apiGET } from "@/util/api/api";

@@ -1,16 +1,32 @@
 .grid {
-    display: grid;
-    column-gap: 1.5rem;
-
-    &--2-col {
-        grid-template-columns: repeat(2, 1fr);
+    >div {
+        margin-bottom: 2rem;
     }
+}
 
-    &--3-col {
-        grid-template-columns: repeat(3, 1fr);
-    }
+@media only screen and (min-width: 992px) {
+    .grid {
+        display: grid;
+        column-gap: 1.5rem;
 
-    &--4-col {
-        grid-template-columns: repeat(4, 1fr);
+        &--2-col {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &--3-col {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        &--4-col {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        &--5-col {
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        &--side-col {
+            grid-template-columns: 1fr 300px;
+        }
     }
 }

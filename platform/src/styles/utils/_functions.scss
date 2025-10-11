@@ -1,4 +1,6 @@
 @use './variables' as *;
+@use "sass:map";
+@use "sass:string";
 
 @each $name, $color in $colors {
     .clr-#{$name} {
@@ -20,6 +22,7 @@
     }
 }
 
+// Spacings
 @each $name, $spacing in $text-size {
     .p-l-#{$name} {
         padding-left: $spacing;
