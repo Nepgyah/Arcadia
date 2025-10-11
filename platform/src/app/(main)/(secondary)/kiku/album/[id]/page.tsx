@@ -1,6 +1,6 @@
 'use client';
 
-import { apiGET } from "@/util/api/api"
+import { apiGET, GraphQL } from "@/util/api/api"
 import { Breadcrumbs, Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
 import { useParams } from "next/navigation"
 import React, { useState } from "react";
@@ -13,9 +13,25 @@ export default function AlbumDetails() {
     const [album, setAlbum] = useState<any>()
 
     useEffect(() => {
-        apiGET<any>(`kiku/album/${params.id}/`)
+        const query = `
+            query {
+                albumById(id: "${params.id}") {
+                    id,
+                    title,
+                    songs {
+                    title,
+                    plays
+                    },
+                    artist {
+                    id,
+                    name
+                    }
+                }
+            }
+        `
+        GraphQL<any>(query)
         .then((res) => {
-            setAlbum(res.album)
+            setAlbum(res.data.albumById)
         })
     }, [])
         

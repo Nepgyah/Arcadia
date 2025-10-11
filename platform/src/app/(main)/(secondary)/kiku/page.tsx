@@ -3,11 +3,42 @@
 import React, { useEffect, useState } from "react";
 import { Breadcrumbs, Typography } from "@mui/material";
 
-import { apiGET } from "@/util/api/api";
+import {  GraphQL } from "@/util/api/api";
 import EntryCard from "@/components/platform/entryCard";
 import WIP from "@/components/platform/wip";
 import LinkedHeader from "@/components/platform/linkedHeader";
 import KikuCard from "./components/kikuCard";
+
+const query = `
+    query {
+        topSongs(count: 5){
+            id,
+            title,
+            artist {
+            name
+            }
+            album {
+            id
+            }
+        },
+        topAlbums(count: 5) {
+            id,
+            title,
+            artist {
+            name
+            }
+        },
+        featuredArtist {
+            id,
+            name,
+            bio
+        },
+        topArtists(count: 5) {
+            id,
+            name
+        }
+    }
+`;
 
 export default function MiruHome() {
     const [isLoading, setIsLoading] = useState(true);
@@ -18,12 +49,13 @@ export default function MiruHome() {
     const [topArtists, setTopArtists] = useState<any[]>([])
 
     useEffect(() => {
-        apiGET<any>('kiku/home/')
+        console.log('call')
+        GraphQL<any>(query, { limit: 5})
         .then((res) => {
-            setFeaturedArtist(res.featured_artist)
-            setTopSongs(res.top_songs)
-            setTopAlbums(res.top_albums)
-            setTopArtists(res.top_artists)
+            setTopSongs(res.data.topSongs);
+            setTopAlbums(res.data.topAlbums);
+            setTopArtists(res.data.topArtists)
+            setFeaturedArtist(res.data.featuredArtist);
         })
     }, [])
 
@@ -58,11 +90,11 @@ export default function MiruHome() {
                                 topSongs?.map((song: any, idx: number) => (
                                     <KikuCard 
                                         number={idx + 1}
-                                        id={song.id}
+                                        id={song.album.id}
                                         title={song.title}
                                         subTitle={song.artist.name}
-                                        type="song"
-                                        mainLink={`/kiku/album/${song.album}`}
+                                        type="album"
+                                        mainLink={`/kiku/album/${song.album.id}`}
                                     />
                                 ))
                             }
