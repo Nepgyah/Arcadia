@@ -15,6 +15,7 @@ export default function KikuCard(
         subLink?: string,
     }
 ) {
+    console.log(id)
     return (
         <div className="kiku-card">
             { number && <p>{number}</p>}
