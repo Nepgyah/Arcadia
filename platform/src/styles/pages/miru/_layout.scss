@@ -2,7 +2,11 @@
 @use "sass:map";
 
 #miru-layout {
-    h2, h3, h4 {
-        color: map.get($colors, miru-base);
+
+    .arc-header {
+        border-bottom-color: map.get($colors, miru-base);
+        .box {
+            background-color: map.get($colors, miru-base);
+        }
     }
 }

@@ -9,6 +9,9 @@
         display: grid;
         column-gap: 1.5rem;
 
+        >div {
+            margin-bottom: 0;
+        }
         &--2-col {
             grid-template-columns: repeat(2, 1fr);
         }
@@ -29,14 +32,21 @@
             grid-template-columns: 1fr 300px;
         }
 
+        &--side-col-reverse {
+            grid-template-columns: 300px 1fr;
+        }
+
         &--filter-col {
-            display: grid;
 
             >div {
                 &:first-child() {
                     margin-bottom: 2rem;
                 }
             }
+        }
+
+        &--feature-combo {
+            grid-template-columns: 1.25fr 1fr;
         }
     }
 }

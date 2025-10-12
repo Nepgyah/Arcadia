@@ -33,6 +33,12 @@
 }
 
 // MISC
+
+.page-content {
+    > div {
+        margin-bottom: 2rem;
+    }
+}
 .clickable {
     cursor: pointer;
 }

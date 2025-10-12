@@ -1,3 +1,4 @@
+import { App } from "@/types/shared";
 import Link from "next/link";
 
 export default function ArcHeader(
@@ -6,12 +7,15 @@ export default function ArcHeader(
     } : {
         title: string,
         link?: string,
-        linkText: string
+        linkText?: string
     }
 ) {
     return (
         <div className="arc-header">
-            <h2>{title}</h2>
+            <div>
+                <div className='box'></div>
+                <h2>{title}</h2>
+            </div>
             {
                 link && <Link href={link}>{linkText}</Link>
             }
