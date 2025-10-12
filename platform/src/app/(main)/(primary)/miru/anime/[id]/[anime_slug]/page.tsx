@@ -5,10 +5,10 @@ import { useParams } from "next/navigation";
 import React from "react";
 import { useEffect, useState } from "react";
 import { Breadcrumbs, Typography } from "@mui/material";
-import { apiGET } from "@/util/api/api";
+import { apiGET, GraphQL } from "@/util/api/api";
 
 import CharacterAvatar from "@/components/platform/characterAvatar";
-import InfoItem from "@/components/platform/infoItem";
+import InfoItem from "@/components/infoItem";
 import RelationCard from "@/components/platform/relationCard";
 import TagChip from "@/components/platform/chip";
 import WIP from "@/components/platform/wip";
@@ -18,15 +18,65 @@ import { Character } from "@/types/shared";
 import SocialMediaLink from "@/components/platform/socialMediaLink";
 import MediaFeatureCard from "@/components/mediaFeatureCard";
 import ArcHeader from "@/components/arcHeader";
+import CharacterCard from "@/components/characterCard";
+
+import '@/styles/pages/miru/_detail.scss';
 
 export default function AnimeDetails() {
     const params = useParams();
     const [anime, setAnime] = useState<Anime>()
 
     useEffect(() => {
-        apiGET<Anime>(`miru/anime/${params.id}/`)
+        const query = 
+        `
+            query {
+                animeById(id: ${params.id}) {
+                    id,
+                    title,
+                    score,
+                    users,
+                    slug,
+                    summary,
+                    season,
+                    status,
+                    characters {
+                    character {
+                        id,
+                        firstName,
+                        lastName,
+                        playedBy {
+                            id,
+                            firstName,
+                            lastName
+                        }
+                    },
+                    role
+                    },
+                    previousAnime {
+                        relationType
+                        fromAnime {
+                            title
+                        }
+                    },
+                    nextAnime {
+                    relationType
+                    fromAnime {
+                        title
+                    }
+                    },
+                    type,
+                    studio {
+                    name
+                    },
+                    rating,
+                    airingStartDate,
+                    airingEndDate
+                }
+            }
+        `
+        GraphQL<any>(query)
         .then((res) => {
-            setAnime(res)
+            setAnime(res.data.animeById)
         })
     }, [])
 
@@ -68,19 +118,30 @@ export default function AnimeDetails() {
                         <div id="misc">
                             <ArcHeader title="Misc" />
                             <div className="flex-row flex-row--gap-sm">
-                                <p>status</p>
-                                <p>episode</p>
-                                <p>rating</p>
+                                <InfoItem label="Status" value={anime?.status} />
+                                <InfoItem label="Start Date" value={anime?.airingStartDate} />
+                                <InfoItem label="End Date" value={anime?.airingEndDate} />
+                                <InfoItem label="Studio" value={anime?.studio.name} />
                             </div>
                         </div>
                     </div>
                     <div className="flex-row flex-row--gap-md">
                         <div id="characters">
                             <ArcHeader title="Characters" />
-                            <div className="flex-row flex-row--gap-sm">
-                                <p>status</p>
-                                <p>episode</p>
-                                <p>rating</p>
+                            <div id="characters-container" className="flex-col flex-col--gap-sm">
+                                {
+                                    anime?.characters.map((character: any, idx: number) => (
+                                        <CharacterCard 
+                                            key={idx}
+                                            characterId={character.character.id}
+                                            characterName={`${character.character.firstName} ${character.character.lastName ? character.character.lastName : ''}`}
+                                            characterDescription={character.role}
+                                            voiceActorId={character.character.playedBy?.id}
+                                            voiceActorName={character.character.playedBy?.firstName}
+                                            voiceActorDescription='Japanese'
+                                        />
+                                    ))
+                                }
                             </div>
                         </div>
                         <div id="anime-flow">

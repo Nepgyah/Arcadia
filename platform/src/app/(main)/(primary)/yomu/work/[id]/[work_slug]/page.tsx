@@ -7,7 +7,7 @@ import { useParams } from "next/navigation";
 import React from "react";
 import { useEffect, useState } from "react";
 
-import InfoItem from "@/components/platform/infoItem";
+import InfoItem from "@/components/infoItem";
 import TagChip from "@/components/platform/chip";
 import { Character } from "@/types/shared";
 import CharacterAvatar from "@/components/platform/characterAvatar";

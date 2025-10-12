@@ -1,0 +1,30 @@
+#page-miru-detail {
+    #characters-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #page-miru-detail {
+        #characters-container {
+            grid-template-columns: 1fr
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #page-miru-detail {
+        #characters-container {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    #page-miru-detail {
+        #characters-container {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+}

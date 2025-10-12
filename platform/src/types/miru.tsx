@@ -4,9 +4,6 @@ export interface Anime {
     id: number,
     slug: string,
     title: string,
-    title_ja: string,
-    title_romaji: string,
-    title_alternatives: string[],
     summary: string,
     season: {
         id: number,
@@ -15,15 +12,17 @@ export interface Anime {
     },
     genres: string[],
     characters: any[],
-    previous_anime: any[],
-    next_anime: any[],
+    previousAnime: any[],
+    nextAnime: any[],
     status: string,
     type: string,
-    studio: string,
+    studio: {
+        name: string
+    },
     score: number,
     users: number,
     rating: string,
-    airing_start_date: string,
-    airing_end_date: string,
+    airingStartDate: string,
+    airingEndDate: string,
     franchise: Franchise
 }

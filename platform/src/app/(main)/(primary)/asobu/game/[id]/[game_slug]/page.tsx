@@ -8,7 +8,7 @@ import { Breadcrumbs, Typography } from "@mui/material";
 
 import { apiGET } from "@/util/api/api";
 import CharacterAvatar from "@/components/platform/characterAvatar";
-import InfoItem from "@/components/platform/infoItem";
+import InfoItem from "@/components/infoItem";
 import RelationCard from "@/components/platform/relationCard";
 import TagChip from "@/components/platform/chip";
 import WIP from "@/components/platform/wip";
