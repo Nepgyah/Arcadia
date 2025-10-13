@@ -12,7 +12,7 @@ import { useApi } from "@/util/api/api";
 
 type openStatus = 'app' | 'profile' | 'none';
 
-export default function TopNav() {
+export default function DesktopTopNav() {
     const {
         user, setUser, userLoading
     } = useUser()
@@ -46,7 +46,7 @@ export default function TopNav() {
         })
     }
     return (
-        <div id="platform-header">
+        <div id="platform-header" className="desktop-header">
             <div className="logo">
                 <Link href="/">
                     <img src="/global/logo_white.svg" alt="Alter" />

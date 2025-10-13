@@ -1,4 +1,4 @@
-import { colors } from '@mui/material';
+import { capitalize, colors } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 import { PaletteColorOptions } from '@mui/material/styles';
 
@@ -35,7 +35,8 @@ const theme = createTheme({
       MuiButton: {
         styleOverrides: {
           root: {
-            // general overrides
+            textTransform: 'capitalize',
+            fontWeight: 'bold'
           },
         },
       variants: [

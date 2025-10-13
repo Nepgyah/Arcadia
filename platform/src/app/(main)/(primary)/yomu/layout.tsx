@@ -1,5 +1,5 @@
 // Layout to apply yomu color scheming
-import '@/styles/platform/apps/yomu.scss';
+// import '@/styles/platform/apps/yomu.scss';
 
 export default function YomuLayout({children} : {children: React.ReactNode}) {
     return (

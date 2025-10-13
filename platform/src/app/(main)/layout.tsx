@@ -1,20 +1,27 @@
 'use client';
-import React from "react";
+import React, { useEffect } from "react";
 
-import "@/styles/_main.scss";
 import { asobuNav, kauNav, kikuNav, kumitateruNav, mainboard, miruNav, tsunaguNav, url, yomuNav} from "@/data/urls";
 import { usePathname } from "next/navigation";
 import { App } from "@/types/shared";
-import TopNav from "@/components/navigation/topNav";
 import SideNav from "@/components/navigation/sideNav";
+import { useMediaQuery, useTheme } from "@mui/material";
+import DesktopTopNav from "@/components/navigation/topNav/desktopTopNav";
+
+import "@/styles/_main.scss";
+import MobileTopNav from "@/components/navigation/topNav/mobileTopNav";
 
 export interface navInfo {
     'app': App,
     'links': url[]
 }
+
 export default function MainLayout({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
 
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+    
     const getNav = (): navInfo => {
         if (pathname.startsWith('/miru')) return { 'app': 'miru', 'links': miruNav};
         if (pathname.startsWith('/yomu')) return { 'app': 'yomu', 'links': yomuNav};
@@ -28,11 +35,12 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
     };
 
   const nav = getNav();
+
     return (
         <div id="platform-layout">
-            <TopNav />
+            {isMobile ? <MobileTopNav navObj={nav} /> : <DesktopTopNav />}
             <div id="platform-second-layout">
-                <SideNav navObj={nav} />
+                {!isMobile && <SideNav navObj={nav} />}
                 <div id="platform-content">
                     {children}
                 </div>

@@ -8,24 +8,75 @@
     justify-content: space-between;
     border-bottom: 1px solid #33343A;
 
-    .logo {
-        padding: .5rem;
-        width: 150px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-right: 1px solid #33343A;
-    }
+    &.mobile-header {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        padding: 0 20px;
 
-    .links {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        row-gap: 1rem;
-        padding-right: 20px;
-
-        .MuiSvgIcon-root {
-            color: white;
+        #burger {
+            .MuiButtonBase-root {
+                justify-content: start;
+                color: white;
+            }
         }
+        .logo {
+            padding: .5rem;
+            width: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+
+        #profile {
+            .MuiButtonBase-root {
+                justify-content: end;
+                color: white;
+            }
+        }
+    }
+    &.desktop-header {
+        .logo {
+            padding: .5rem;
+            width: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid #33343A;
+        }
+    
+        .links {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            row-gap: 1rem;
+            padding-right: 20px;
+    
+            .MuiSvgIcon-root {
+                color: white;
+            }
+        }
+    }
+}
+
+.mobile-nav-drawer {
+    .MuiPaper-root {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+#left-mobile-drawer {
+    .MuiPaper-root {
+        width: 250px;
+        background-color: map.get($colors, platform-base);
+    }
+}
+
+#right-mobile-drawer {
+    .MuiPaper-root {
+        width: 250px;
+        background-color: map.get($colors, platform-base);
     }
 }

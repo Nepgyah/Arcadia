@@ -17,8 +17,7 @@ html {
             background-color: map.get($colors, platform-base);
 
             #platform-second-layout {
-                display: grid;
-                grid-template-columns: 150px 1fr;
+                display: block;
 
                 #platform-sidebar {
                     min-height: 100dvh;
@@ -39,6 +38,19 @@ html {
                     .MuiBreadcrumbs-root {
                         margin-bottom: 2rem;
                     }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    html {
+        body {
+            #platform-layout {
+                #platform-second-layout {
+                    display: grid;
+                    grid-template-columns: 150px 1fr;
                 }
             }
         }
