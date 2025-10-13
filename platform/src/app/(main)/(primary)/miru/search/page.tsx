@@ -8,6 +8,7 @@ import { Anime } from "@/types/miru";
 import DetailMediaCard from "@/components/detailMediaCard";
 
 import '@/styles/pages/miru/_search.scss';
+import ArcHeader from "@/components/arcHeader";
 
 export default function MiruHome() {
     const [animeList, setAnimeList] = useState<Anime[]>([])
@@ -60,7 +61,7 @@ export default function MiruHome() {
             <div id="page-miru-search">
                 <div className="grid grid--filter-col">
                     <div>
-                        <h2>Search Settings</h2>
+                        <ArcHeader title="Search / Filter" />
                         <div className="flex-row flex-row--gap-md">
                             <TextField 
                                 id="search-title" 

@@ -9,4 +9,20 @@
             background-color: map.get($colors, miru-base);
         }
     }
+
+    .MuiPagination-ul {
+        .MuiPaginationItem-previousNext {
+            color: map.get($colors, miru-base);
+        }
+
+        .MuiPaginationItem-page {
+            color: white;
+
+            &.Mui-selected  {
+                background-color: map.get($colors, miru-base);
+                color: map.get($colors, txt-dark);
+                font-weight: bold;
+            }
+        }
+    }
 }

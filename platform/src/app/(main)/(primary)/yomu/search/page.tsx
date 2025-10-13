@@ -7,6 +7,7 @@ import { apiGET } from "@/util/api/api";
 import { Anime } from "@/types/miru";
 import DetailMediaCard from "@/components/detailMediaCard";
 import { Work } from "@/types/yomu";
+import ArcHeader from "@/components/arcHeader";
 
 export default function YomuSearch() {
     const [workList, setWorkList] = useState<Work[]>([])
@@ -59,7 +60,7 @@ export default function YomuSearch() {
             <div id="page-yomu-search"  className="page-content">
                 <div className="two-col-section two-col-section--uneven">
                     <div id="filters">
-                        <h2>Search Settings</h2>
+                        <ArcHeader title="Search / Filter" />
                         <div className="row-gap-md">
                             <TextField 
                                 id="search-title" 

@@ -59,3 +59,13 @@
     margin-left: 1.5rem;
     border-left: 2px solid rgba(#bbbbbb, .5);
 }
+
+// MUI SCSS OVERRIDING
+.MuiFormLabel-root {
+    color: white !important;
+    opacity: .5;
+}
+
+.MuiPagination-root {
+    margin-bottom: 1rem;
+}

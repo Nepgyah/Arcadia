@@ -2,7 +2,7 @@
 @use 'sass:map';
 
 .detail-card {
-    flex: 0 0 350px;
+    flex: 0 0 325px;
     background-color: #2C2D33;
     
     &__title {
@@ -14,7 +14,7 @@
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        width: 350px;
+        width: 325px;
     }
 
     &__stats, &__misc {
