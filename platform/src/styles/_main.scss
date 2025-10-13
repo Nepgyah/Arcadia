@@ -7,7 +7,7 @@
 @use "sass:map";
 
 html {
-    font-size: 18px;
+    font-size: 16px;
 
     body {
 
@@ -46,6 +46,8 @@ html {
 
 @media only screen and (min-width: 900px) {
     html {
+        font-size: 18px;
+
         body {
             #platform-layout {
                 #platform-second-layout {
