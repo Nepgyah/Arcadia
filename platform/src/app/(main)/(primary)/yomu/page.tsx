@@ -1,5 +1,6 @@
 'use client';
 
+import ArcHeader from "@/components/arcHeader";
 import EntryCard from "@/components/entryCard";
 import LinkedHeader from "@/components/platform/linkedHeader";
 import WIP from "@/components/platform/wip";
@@ -24,18 +25,18 @@ export default function YomuHome() {
                 <Typography>Yomu</Typography>
                 <Typography>Home</Typography>
             </Breadcrumbs>
-            <div id="page-yomu-home" className="page-content">
-                <div className="two-col-section two-col-section--uneven-reverse">
-                    <div className="">
+            <div id="page-yomu-home">
+                <div className="grid grid--side-col">
+                    <div className="flex-row flex-row--gap-md">
                         <div id="trending">
-                            <LinkedHeader title="All-Time" link="yomu/all-time" linkText="See more"/>
-                            <div className="layout-grid-5">
+                            <ArcHeader title="Trending" />
+                            <div className="flex-col flex-col--gap-sm">
                                 {
                                     trendingYomu &&
                                     trendingYomu.map((work: any, key: number) => (
                                         <EntryCard 
                                             key={key} 
-                                            app="yomu" 
+                                            app="miru" 
                                             title={work.title} 
                                             clickLink={`/yomu/work/${work.id}/${work.slug}`} 
                                             imageLink={`/storage/yomu/${work.id}.jpg`}
@@ -45,8 +46,8 @@ export default function YomuHome() {
                             </div>
                         </div>
                     </div>
-                    <div className="vertical-divider-left p-left-xl">
-                        <h2 className="border-bottom">Friend Activity</h2>
+                    <div className="side-col">
+                        <h2 className="app-font--yomu border-bottom">Friend Activity</h2>
                         <WIP />
                     </div>
                 </div>

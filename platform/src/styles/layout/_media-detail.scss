@@ -1,4 +1,4 @@
-#page-miru-detail {
+#page-media-detail {
     #characters-container {
         display: flex;
         flex-direction: column;
@@ -10,7 +10,7 @@
 }
 
 @media only screen and (min-width: 640px) {
-    #page-miru-detail {
+    #page-media-detail {
         #characters-container {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -25,7 +25,7 @@
 }
 
 @media only screen and (min-width: 992px) {
-    #page-miru-detail {
+    #page-media-detail {
         #characters-container {
             display: grid;
             grid-template-columns: 1fr;
@@ -38,7 +38,7 @@
 }
 
 @media only screen and (min-width: 1200px) {
-    #page-miru-detail {
+    #page-media-detail {
         #characters-container {
             grid-template-columns: 1fr 1fr;
         }
@@ -46,7 +46,7 @@
 }
 
 @media only screen and (min-width: 1440px) {
-    #page-miru-detail {
+    #page-media-detail {
         #characters-container {
             grid-template-columns: 1fr 1fr 1fr;
         }

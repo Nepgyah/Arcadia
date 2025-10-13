@@ -20,7 +20,7 @@ import MediaFeatureCard from "@/components/mediaFeatureCard";
 import ArcHeader from "@/components/arcHeader";
 import CharacterCard from "@/components/characterCard";
 
-import '@/styles/pages/miru/_detail.scss';
+import '@/styles/layout/_media-detail.scss';
 import MediaFlowCard from "@/components/mediaFlowCard";
 import SocialMediaCard from "@/components/socialMediaCard";
 
@@ -97,7 +97,7 @@ export default function AnimeDetails() {
                 <Typography>Anime</Typography>
                 <Typography>{anime?.title}</Typography>
             </Breadcrumbs>
-            <div id="page-miru-detail" className="page-content">
+            <div id="page-media-detail" className="page-content">
                 <div className="grid grid--feature-combo">
                     <MediaFeatureCard
                         title={anime ? anime.title : 'Anime Name'}
@@ -115,9 +115,7 @@ export default function AnimeDetails() {
                         <div id="quick-access">
                             <ArcHeader title="Quick Access" />
                             <div className="flex-row flex-row--gap-sm">
-                                <p>status</p>
-                                <p>episode</p>
-                                <p>rating</p>
+                                <WIP />
                             </div>
                         </div>
                         <div id="socials">

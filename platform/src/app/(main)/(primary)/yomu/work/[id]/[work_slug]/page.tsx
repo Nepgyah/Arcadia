@@ -1,194 +1,220 @@
 'use client';
 
-import WIP from "@/components/platform/wip";
-import { apiGET } from "@/util/api/api";
-import { Breadcrumbs, Typography } from "@mui/material";
 import { useParams } from "next/navigation";
+
 import React from "react";
 import { useEffect, useState } from "react";
-
+import { Breadcrumbs, Typography } from "@mui/material";
+import { GraphQL } from "@/util/api/api";
 import InfoItem from "@/components/infoItem";
-import TagChip from "@/components/platform/chip";
-import { Character } from "@/types/shared";
-import CharacterAvatar from "@/components/platform/characterAvatar";
-import { Work } from "@/types/yomu";
-import SocialMediaLink from "@/components/platform/socialMediaLink";
+import WIP from "@/components/platform/wip";
+import MediaFeatureCard from "@/components/mediaFeatureCard";
+import ArcHeader from "@/components/arcHeader";
+import CharacterCard from "@/components/characterCard";
 
-export default function WorkDetails() {
+import '@/styles/layout/_media-detail.scss';
+import MediaFlowCard from "@/components/mediaFlowCard";
+import SocialMediaCard from "@/components/socialMediaCard";
+
+export default function WorkDetail() {
     const params = useParams();
-    const [work, setWork] = useState<Work>();
+    const [work, setWork] = useState<any>()
 
     useEffect(() => {
-        apiGET<any>(`yomu/work/${params.id}/`)
+        const query = 
+        `
+            query {
+                workById(id: ${params.id}) {
+                id,
+                slug,
+                title,
+                score,
+                summary,
+                rating,
+                franchise {
+                    id,
+                    name,
+                    socials
+                },
+                status,
+                characters {
+                    character {
+                        id,
+                        firstName,
+                        lastName
+                    }
+                },
+                totalVolumes,
+                totalChapters,
+                type,
+                authors {
+                    author {
+                        name
+                    },
+                    
+                },
+                publisher {
+                    name
+                },
+                publishingStartDate,
+                publishingEndDate,
+                previousWork {
+                    toWork {
+                        id,
+                        title
+                    },
+                    relationType
+                },
+                nextWork {
+                    toWork {
+                        id,
+                        title
+                    },
+                    relationType
+                    }
+                }
+            }
+        `
+        GraphQL<any>(query)
         .then((res) => {
-            setWork(res)
+            setWork(res.data.workById)
         })
     }, [])
 
     return (
         <React.Fragment>
             <Breadcrumbs>
-                <Typography>Yomu</Typography>
-                <Typography>Work</Typography>
+                <Typography>Anime</Typography>
                 <Typography>{work?.title}</Typography>
             </Breadcrumbs>
-            <div className="media-detail page-content">
-                <div className="two-col-section two-col-section--uneven">
-                    <div id="left-column" className="row-gap-md">
-                        <img 
-                            id="image" 
-                            className="media-image"
-                            src={`/storage/yomu/${work?.id}.jpg`} 
-                            alt={work?.title}
-                            onError={(e) => {
-                                e.currentTarget.onerror = null;
-                                e.currentTarget.src = '/global/404-resource.jpg'
-                            }} 
-                        />
-                        <div>
-                            <h2>Quick Access</h2>
-                            <WIP />
+            <div id="page-media-detail" className="page-content">
+                <div className="grid grid--feature-combo">
+                    <MediaFeatureCard
+                        title={work ? work.title : 'work Name'}
+                        description={work ? work.summary : 'Summary'}
+                        score={work ? work.score : 0.0}
+                        app="miru"
+                        image={`/storage/yomu/${work?.id}.jpg`}
+                     />
+                    <div id="latest-episode" className="border-radius-md bg-platform-dark box-shadow p-a-lg">
+                        <WIP />
+                    </div>
+                </div>
+                <div className="grid grid--side-col-reverse">
+                    <div className="flex-row flex-row--gap-md">
+                        <div id="quick-access">
+                            <ArcHeader title="Quick Access" />
+                            <div className="flex-row flex-row--gap-sm">
+                                <WIP />
+                            </div>
                         </div>
-                        <div>
-                            <h2>Socials</h2>
-                            <div className="row-gap-s">
+                        <div id="socials">
+                            <ArcHeader title="Socials" />
+                            <div id="socials-container" className="flex-row flex-row--gap-sm">
                                 {
-                                    work?.franchise?.socials?.website && <SocialMediaLink type="website" social={work.franchise.socials.website} />
+                                    work?.franchise.socials?.website &&
+                                    <SocialMediaCard 
+                                        type="website"
+                                        social={work?.franchise.socials.website}
+                                    />
                                 }
                                 {
-                                    work?.franchise?.socials?.twitter && <SocialMediaLink type="twitter" social={work.franchise.socials.twitter} />
+                                    work?.franchise.socials?.youtube &&
+                                    <SocialMediaCard 
+                                        type="youtube"
+                                        social={work?.franchise.socials.youtube}
+                                    />
                                 }
                                 {
-                                    work?.franchise?.socials?.youtube && <SocialMediaLink type="youtube" social={work.franchise.socials.youtube} />
+                                    work?.franchise.socials?.reddit &&
+                                    <SocialMediaCard 
+                                        type="reddit"
+                                        social={work?.franchise.socials.reddit}
+                                    />
                                 }
                                 {
-                                    work?.franchise?.socials?.reddit && <SocialMediaLink type="reddit" social={work.franchise.socials.reddit} />
+                                    work?.franchise.socials?.twitter &&
+                                    <SocialMediaCard 
+                                        type="twitter"
+                                        social={work?.franchise.socials.twitter}
+                                    />
                                 }
                                 {
-                                    work?.franchise?.socials?.instagram && <SocialMediaLink type="instagram" social={work.franchise.socials.instagram} />
+                                    work?.franchise.socials?.instagram &&
+                                    <SocialMediaCard 
+                                        type="instagram"
+                                        social={work?.franchise.socials.instagram}
+                                    />
                                 }
+                            </div>
+                        </div>
+                        <div id="misc">
+                            <ArcHeader title="Misc" />
+                            <div className="flex-row flex-row--gap-sm">
+                                <InfoItem label="Type" value={work?.type} />
+                                <InfoItem label="Status" value={work?.status} />
+                                <InfoItem label="Start Date" value={work?.publishingStartDate} />
+                                <InfoItem label="End Date" value={work?.publishingEndDate} />
+                                <InfoItem label="Studio" value={work?.studio?.name} />
+
                             </div>
                         </div>
                     </div>
-                    <div id="right-column" className="row-gap-md">
-                        <div id="primary">
-                            <div id="overview" className="vertical-divider-right p-right-md row-gap-md">
-                                <div id="at-a-glance">
-                                    <div id="quick-stats" className="m-bottom-md">
-                                        <div className="gray-container col-gap-s m-bottom-md">
-                                            <InfoItem label="Type" value={work?.type} />
-                                            <InfoItem label="Volumes" value={work?.total_volumes} />
-                                            <InfoItem label="Chapters" value={work?.total_chapters} />
-                                        </div>
-                                        <div id="metrics">
-                                            <div id="arcadia-score" className="gray-container">
-                                                <p className="bold clr-yomu-base txt-xxl">{work?.score}</p>
-                                                <p>{work?.users} users</p>
-                                            </div>
-                                            <div id="tags">
-                                                <h2>Genre</h2>
-                                                <div>
-                                                    {
-                                                        work?.genres.length === 0 ?
-                                                            <p>No genre tags added</p>
-                                                        :
-                                                            work?.genres.map((genre: any, index: number) => (
-                                                                <TagChip 
-                                                                    key={index} 
-                                                                    value={genre.name} 
-                                                                    app="yomu"
-                                                                    whiteText={true}
-                                                                />
-                                                            ))
-                                                    }
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="promo-video">
-                                        <h2>Promo Video</h2>
-                                        <WIP />
-                                    </div>
-                                </div>
-                                <div id="summary">
-                                    <h2>Summary</h2>
-                                    <p>{work?.summary}</p>
-                                </div>
-                            </div>
-                            <div id="primary-right" className="misc p-left-md row-gap-md">
-                                <div>
-                                    <h2>Details</h2>
-                                    <InfoItem label="Status" value={work?.status} />
-                                    <InfoItem label="Publishing Start" value={work?.publishing_start_date ? work.publishing_start_date : 'N/A' } />
-                                    <InfoItem label="Publishing End" value={work?.publishing_end_date ? work.publishing_end_date : 'N/A'} />
-                                </div>
-                                <div>
-                                    <h2>Production</h2>
-                                    <WIP />
-                                </div>
+                    <div className="flex-row flex-row--gap-md">
+                        <div id="characters">
+                            <ArcHeader title="Characters" />
+                            <div id="characters-container" className="flex-col flex-col--gap-sm">
+                                {
+                                    work?.characters.map((character: any, idx: number) => (
+                                        <CharacterCard 
+                                            key={idx}
+                                            characterId={character.character.id}
+                                            characterName={`${character.character.firstName} ${character.character.lastName ? character.character.lastName : ''}`}
+                                            characterDescription={character.role}
+                                            voiceActorId={character.character.playedBy?.id}
+                                            voiceActorName={character.character.playedBy ? `${character.character.playedBy.firstName} ${character.character.playedBy.lastName ? character.character.playedBy.lastName : ''}` : 'Unknown'}
+                                            voiceActorDescription='Japanese'
+                                        />
+                                    ))
+                                }
                             </div>
                         </div>
-                        <div id="secondary">
-                            <div id="relations" className="vertical-divider-right p-right-md">
-                                <h2>Related Manga</h2>
-                                <div>
-                                    <div id="previous" className="row-gap row-gap--xs">
-                                        {/* {
-                                            anime?.previous_anime.length === 0 ?
-                                            <p>No previous anime</p>
-                                            :
-                                            anime?.previous_anime.map((anime: any, index: number ) => (
-                                                <RelationCard 
-                                                    key={index}
-                                                    name={anime.name} 
-                                                    relation={anime.relation} 
-                                                    link={`/platform/miru/anime/${anime.slug}`}
-                                                    imageLink={`/storage/miru/${anime.slug}.jpg`}
-                                                />
-                                            ))
-                                        } */}
-                                    </div>
-                                    <div id="next" className="row-gap row-gap--xs">
-                                        {/* {
-                                            anime?.next_anime.length === 0 ?
-                                                <p>No next anime</p>
-                                            :
-                                                anime?.next_anime.map((anime: any, index: number ) => (
-                                                    <RelationCard 
-                                                        key={index}
-                                                        name={anime.name} 
-                                                        relation={anime.relation} 
-                                                        link={`/platform/miru/anime/${anime.slug}`}
-                                                        imageLink={`/storage/miru/${anime.slug}.jpg`}
-                                                    />
-                                                ))
-                                        } */}
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="characters">
-                                <h2>Characters</h2>
-                                <div className="row-gap-md">
-                                    {
-                                        work?.characters &&
-                                        work?.characters.map((character: Character, index: number) => (
-                                            <CharacterAvatar key={index} character={character} app='yomu' />
-                                        ))
-                                    }
-                                </div>
-                            </div>
-                            <div id="authors" className="p-right-md">
-                                <h2>Authors</h2>
-                                <div className="row-gap-md">
+                        <div id="work-flow">
+                            <ArcHeader title="Work Flow" />
+                            <div className="grid grid--2-col">
                                 {
-                                    work?.authors &&
-                                        work?.authors.map((author: any, idx: number) => (
-                                            <div className="staff-entry" key={idx}>
-                                                <p className="staff-entry__name">{author.name}</p>
-                                                <p className="staff-entry__role">{author.role}</p>
-                                            </div>
-                                        ))
+                                    work?.previousWork ?
+                                        <MediaFlowCard 
+                                            image={`/storage/miru/${work?.previousWork.fromwork.id}.jpg`}
+                                            relation="Prequel"
+                                            mediaName={work ? work?.previousWork.fromwork.title : 'Loading'}
+                                            mediaLink={`/miru/work/${work?.previousWork.fromwork.id}/${work?.previouswork.fromwork.slug}`}              
+                                        />
+                                    :
+                                        <p>No Previous work</p>
                                 }
+                                {
+                                    work?.nextWork ?
+                                        <MediaFlowCard 
+                                            image={`/storage/miru/${work?.nextWork.towork.id}.jpg`}
+                                            relation="Prequel"
+                                            mediaName={work ? work?.nextWork.towork.title : 'Loading'}
+                                            mediaLink={`/miru/work/${work?.nextWork.towork.id}/${work?.nextWork.towork.slug}`}              
+                                        />
+                                    :
+                                        <p>No Previous work</p>
+                                }
+                            </div>
+                        </div>
+                        <div id="themes">
+                            <div className="grid grid--2-col">
+                                <div>
+                                    <ArcHeader title="Openings" />
+                                    <WIP />
+                                </div>
+                                <div>
+                                    <ArcHeader title="Endings" />
+                                    <WIP />
                                 </div>
                             </div>
                         </div>
