@@ -1,3 +1,6 @@
+@use '../utils/variables' as *;
+@use "sass:map";
+
 // BORDER RADIUS
 .border-radius-sm {
     border-radius: 5px;    

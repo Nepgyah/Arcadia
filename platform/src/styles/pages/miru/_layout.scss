@@ -10,6 +10,13 @@
         }
     }
 
+    .arc-table {
+        .MuiTableHead-root {
+            .MuiTableCell-root {
+                background-color: map.get($colors, miru-base);
+            }
+        }
+    }
     .MuiPagination-ul {
         .MuiPaginationItem-previousNext {
             color: map.get($colors, miru-base);

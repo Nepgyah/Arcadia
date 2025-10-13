@@ -107,7 +107,7 @@ export default function AnimeDetails() {
                         image={`/storage/miru/${anime?.id}.jpg`}
                      />
                     <div id="latest-episode" className="border-radius-md bg-platform-dark box-shadow p-a-lg">
-                        <p className="clr-txt-light"><WIP /></p>
+                        <WIP />
                     </div>
                 </div>
                 <div className="grid grid--side-col-reverse">
@@ -124,28 +124,28 @@ export default function AnimeDetails() {
                             <ArcHeader title="Socials" />
                             <div id="socials-container" className="flex-row flex-row--gap-sm">
                                 {
-                                    anime?.franchise.socials.website &&
+                                    anime?.franchise.socials?.website &&
                                     <SocialMediaCard 
                                         type="website"
                                         social={anime?.franchise.socials.website}
                                     />
                                 }
                                 {
-                                    anime?.franchise.socials.youtube &&
+                                    anime?.franchise.socials?.youtube &&
                                     <SocialMediaCard 
                                         type="youtube"
                                         social={anime?.franchise.socials.youtube}
                                     />
                                 }
                                 {
-                                    anime?.franchise.socials.reddit &&
+                                    anime?.franchise.socials?.reddit &&
                                     <SocialMediaCard 
                                         type="reddit"
                                         social={anime?.franchise.socials.reddit}
                                     />
                                 }
                                 {
-                                    anime?.franchise.socials.twitter &&
+                                    anime?.franchise.socials?.twitter &&
                                     <SocialMediaCard 
                                         type="twitter"
                                         social={anime?.franchise.socials.twitter}
@@ -161,7 +161,7 @@ export default function AnimeDetails() {
                                 <InfoItem label="Status" value={anime?.status} />
                                 <InfoItem label="Start Date" value={anime?.airingStartDate} />
                                 <InfoItem label="End Date" value={anime?.airingEndDate} />
-                                <InfoItem label="Studio" value={anime?.studio.name} />
+                                <InfoItem label="Studio" value={anime?.studio?.name} />
 
                             </div>
                         </div>
@@ -178,7 +178,7 @@ export default function AnimeDetails() {
                                             characterName={`${character.character.firstName} ${character.character.lastName ? character.character.lastName : ''}`}
                                             characterDescription={character.role}
                                             voiceActorId={character.character.playedBy?.id}
-                                            voiceActorName={character.character.playedBy ? character.character.playedBy.firstName : 'Unknown'}
+                                            voiceActorName={character.character.playedBy ? `${character.character.playedBy.firstName} ${character.character.playedBy.lastName ? character.character.playedBy.lastName : ''}` : 'Unknown'}
                                             voiceActorDescription='Japanese'
                                         />
                                     ))

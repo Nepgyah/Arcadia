@@ -16,7 +16,7 @@ export default function MediaFeatureCard(
             <div className="text p-a-sm">
                 <h2 className={`media-feature-card__title clr-${app}-base`}>{title}</h2>
                 <p className="media-feature-card__description txt-sm">{description}</p>
-               <p className={`media-feature-card__score clr-${app}-base`}>{score}</p>
+               <p className={`media-feature-card__score`}>Score: <span className={`clr-${app}-base`}>{score}</span> / 10</p>
             </div>
             <div className="media-feature-card__image">
                 <div className="mask"></div>
