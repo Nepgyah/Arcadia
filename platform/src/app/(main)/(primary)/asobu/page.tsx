@@ -3,7 +3,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { Breadcrumbs, Typography } from "@mui/material";
-import WIP from "@/components/platform/wip";
+import WIP from "@/components/wip";
 import EntryCard from "@/components/entryCard";
 import { apiGET } from "@/util/api/api";
 import { Game } from "@/types/asobu";

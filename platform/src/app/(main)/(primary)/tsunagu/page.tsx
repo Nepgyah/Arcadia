@@ -6,10 +6,10 @@ import { useEffect, useState } from "react";
 import { Breadcrumbs, Typography } from "@mui/material";
 
 import { apiGET } from "@/util/api/api";
-import PostCard from "@/components/platform/tsunagu/postCard";
 import { useUser } from "@/util/wrappers/userContext";
 
 import { Post } from "@/types/tsunagu";
+import PostCard from "@/components/apps/tsunagu/postCard";
 
 export default function TsunaguHome() {
     const { user } = useUser()

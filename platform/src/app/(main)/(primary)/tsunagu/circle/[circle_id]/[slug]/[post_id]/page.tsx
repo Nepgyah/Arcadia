@@ -4,7 +4,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { apiGET } from "@/util/api/api";
 import { Comment, Post } from "@/types/tsunagu";
-import CommentCard from "@/components/platform/tsunagu/commentTree";
+import CommentCard from "@/components/apps/tsunagu/commentTree";
 
 export default function TsunaguPostPage() {
     const params = useParams();

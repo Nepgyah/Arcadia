@@ -4,7 +4,7 @@ import { Breadcrumbs, IconButton, Tooltip, Typography } from "@mui/material";
 import { useEffect, useState } from "react"
 import React from "react";
 import PartDetailDialog from "./partDialogue";
-import WIP from "@/components/platform/wip";
+import WIP from "@/components/wip";
 import PlusIcon from '@mui/icons-material/AddCircleOutline';
 
 export default function KumitateruHome() {

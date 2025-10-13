@@ -1,4 +1,4 @@
-import "@/styles/platform/components/postCard.scss";
+// import "@/styles/platform/components/postCard.scss";
 import Link from "next/link";
 
 export default function PostCard( 

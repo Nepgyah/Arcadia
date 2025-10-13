@@ -1,20 +1,20 @@
 'use client';
 
-import { useParams } from "next/navigation";
-
 import React from "react";
+import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Breadcrumbs, Typography } from "@mui/material";
 import { GraphQL } from "@/util/api/api";
+
 import InfoItem from "@/components/infoItem";
-import WIP from "@/components/platform/wip";
+import WIP from "@/components/wip";
 import MediaFeatureCard from "@/components/mediaFeatureCard";
 import ArcHeader from "@/components/arcHeader";
 import CharacterCard from "@/components/characterCard";
-
-import '@/styles/layout/_media-detail.scss';
 import MediaFlowCard from "@/components/mediaFlowCard";
 import SocialMediaCard from "@/components/socialMediaCard";
+
+import '@/styles/layout/_media-detail.scss';
 
 export default function WorkDetail() {
     const params = useParams();

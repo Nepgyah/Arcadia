@@ -5,24 +5,18 @@ import { useParams } from "next/navigation";
 import React from "react";
 import { useEffect, useState } from "react";
 import { Breadcrumbs, Typography } from "@mui/material";
-import { apiGET, GraphQL } from "@/util/api/api";
+import { GraphQL } from "@/util/api/api";
 
-import CharacterAvatar from "@/components/platform/characterAvatar";
 import InfoItem from "@/components/infoItem";
-import RelationCard from "@/components/platform/relationCard";
-import TagChip from "@/components/platform/chip";
-import WIP from "@/components/platform/wip";
-
-import { Anime } from "@/types/miru";
-import { Character } from "@/types/shared";
-import SocialMediaLink from "@/components/platform/socialMediaLink";
+import WIP from "@/components/wip";
 import MediaFeatureCard from "@/components/mediaFeatureCard";
 import ArcHeader from "@/components/arcHeader";
 import CharacterCard from "@/components/characterCard";
-
-import '@/styles/layout/_media-detail.scss';
 import MediaFlowCard from "@/components/mediaFlowCard";
 import SocialMediaCard from "@/components/socialMediaCard";
+
+import { Anime } from "@/types/miru";
+import '@/styles/layout/_media-detail.scss';
 
 export default function AnimeDetails() {
     const params = useParams();
