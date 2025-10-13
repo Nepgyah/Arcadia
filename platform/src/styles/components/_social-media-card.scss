@@ -1,0 +1,42 @@
+.social-media-card {
+    height: 46px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    &--website {
+        div {
+            background-color: #505477;
+        }
+    }
+
+    &--reddit {
+        div {
+            background-color: #FF5700;
+        }
+    }
+
+    &--youtube {
+        div {
+            background-color: #C4302B;
+        }
+    }
+
+    &--twitter {
+        div {
+            background-color: #00ACEE;
+        }
+    }
+
+    &--instagram {
+        div {
+            background-color: #833ab4;
+        }
+    }
+
+    div {
+        height: 100%;
+        margin-right: 1rem;
+        width: 46px;
+    }
+}

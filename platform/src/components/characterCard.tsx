@@ -17,7 +17,14 @@ export default function CharacterCard(
 ) {
     return (
         <div className="character-card bg-platform-dark border-radius-sm box-shadow">
-            <img className="2d" src={`/storage/characters/${characterId}.jpg`} />
+            <img 
+                className="2d" 
+                src={`/storage/characters/${characterId}.jpg`}
+                onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = '/global/404-resource.jpg'
+                }} 
+            />
             <div className="text">
                 <div className="character">
                     <p className="main">{characterName}</p>
@@ -28,7 +35,14 @@ export default function CharacterCard(
                     <p className="secondary">{voiceActorDescription}</p>
                 </div>
             </div>
-            <img className="3d" src={`/storage/voice-actors/${voiceActorId}.jpg`} />
+            <img 
+                className="3d" 
+                src={`/storage/voice-actors/${voiceActorId}.jpg`} 
+                onError={(e) => {
+                    e.currentTarget.onerror = null;
+                    e.currentTarget.src = '/global/404-resource.jpg'
+                }} 
+            />
         </div>
     )
 }

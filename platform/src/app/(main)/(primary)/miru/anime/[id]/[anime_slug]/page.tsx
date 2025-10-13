@@ -21,6 +21,8 @@ import ArcHeader from "@/components/arcHeader";
 import CharacterCard from "@/components/characterCard";
 
 import '@/styles/pages/miru/_detail.scss';
+import MediaFlowCard from "@/components/mediaFlowCard";
+import SocialMediaCard from "@/components/socialMediaCard";
 
 export default function AnimeDetails() {
     const params = useParams();
@@ -33,6 +35,11 @@ export default function AnimeDetails() {
                 animeById(id: ${params.id}) {
                     id,
                     title,
+                    franchise {
+                        id,
+                        name,
+                        socials
+                    },
                     score,
                     users,
                     slug,
@@ -55,14 +62,18 @@ export default function AnimeDetails() {
                     previousAnime {
                         relationType
                         fromAnime {
+                            id,
+                            slug,
                             title
                         }
                     },
                     nextAnime {
-                    relationType
-                    fromAnime {
-                        title
-                    }
+                        relationType
+                        toAnime {
+                            id,
+                            slug,
+                            title
+                        }
                     },
                     type,
                     studio {
@@ -110,18 +121,46 @@ export default function AnimeDetails() {
                         <div id="socials">
                             <ArcHeader title="Socials" />
                             <div className="flex-row flex-row--gap-sm">
-                                <p>status</p>
-                                <p>episode</p>
-                                <p>rating</p>
+                                {
+                                    anime?.franchise.socials.website &&
+                                    <SocialMediaCard 
+                                        type="website"
+                                        social={anime?.franchise.socials.website}
+                                    />
+                                }
+                                {
+                                    anime?.franchise.socials.youtube &&
+                                    <SocialMediaCard 
+                                        type="youtube"
+                                        social={anime?.franchise.socials.youtube}
+                                    />
+                                }
+                                {
+                                    anime?.franchise.socials.reddit &&
+                                    <SocialMediaCard 
+                                        type="reddit"
+                                        social={anime?.franchise.socials.reddit}
+                                    />
+                                }
+                                {
+                                    anime?.franchise.socials.twitter &&
+                                    <SocialMediaCard 
+                                        type="twitter"
+                                        social={anime?.franchise.socials.twitter}
+                                    />
+                                }
                             </div>
                         </div>
                         <div id="misc">
                             <ArcHeader title="Misc" />
                             <div className="flex-row flex-row--gap-sm">
+                                <InfoItem label="Season" value={anime?.season} />
+                                <InfoItem label="Type" value={anime?.type} />
                                 <InfoItem label="Status" value={anime?.status} />
                                 <InfoItem label="Start Date" value={anime?.airingStartDate} />
                                 <InfoItem label="End Date" value={anime?.airingEndDate} />
                                 <InfoItem label="Studio" value={anime?.studio.name} />
+
                             </div>
                         </div>
                     </div>
@@ -137,7 +176,7 @@ export default function AnimeDetails() {
                                             characterName={`${character.character.firstName} ${character.character.lastName ? character.character.lastName : ''}`}
                                             characterDescription={character.role}
                                             voiceActorId={character.character.playedBy?.id}
-                                            voiceActorName={character.character.playedBy?.firstName}
+                                            voiceActorName={character.character.playedBy ? character.character.playedBy.firstName : 'Unknown'}
                                             voiceActorDescription='Japanese'
                                         />
                                     ))
@@ -146,29 +185,40 @@ export default function AnimeDetails() {
                         </div>
                         <div id="anime-flow">
                             <ArcHeader title="Anime Flow" />
-                            <div className="flex-row flex-row--gap-sm">
-                                <p>status</p>
-                                <p>episode</p>
-                                <p>rating</p>
+                            <div className="grid grid--2-col">
+                                {
+                                    anime?.previousAnime ?
+                                        <MediaFlowCard 
+                                            image={`/storage/miru/${anime?.previousAnime.fromAnime.id}.jpg`}
+                                            relation="Prequel"
+                                            mediaName={anime ? anime?.previousAnime.fromAnime.title : 'Loading'}
+                                            mediaLink={`/miru/anime/${anime?.previousAnime.fromAnime.id}/${anime?.previousAnime.fromAnime.slug}`}              
+                                        />
+                                    :
+                                        <p>No Previous Anime</p>
+                                }
+                                {
+                                    anime?.nextAnime ?
+                                        <MediaFlowCard 
+                                            image={`/storage/miru/${anime?.nextAnime.toAnime.id}.jpg`}
+                                            relation="Prequel"
+                                            mediaName={anime ? anime?.nextAnime.toAnime.title : 'Loading'}
+                                            mediaLink={`/miru/anime/${anime?.nextAnime.toAnime.id}/${anime?.nextAnime.toAnime.slug}`}              
+                                        />
+                                    :
+                                        <p>No Previous Anime</p>
+                                }
                             </div>
                         </div>
                         <div id="themes">
                             <div className="grid grid--2-col">
                                 <div>
                                     <ArcHeader title="Openings" />
-                                    <div className="flex-row flex-row--gap-sm">
-                                        <p>status</p>
-                                        <p>episode</p>
-                                        <p>rating</p>
-                                    </div>
+                                    <WIP />
                                 </div>
                                 <div>
                                     <ArcHeader title="Endings" />
-                                    <div className="flex-row flex-row--gap-sm">
-                                        <p>status</p>
-                                        <p>episode</p>
-                                        <p>rating</p>
-                                    </div>
+                                    <WIP />
                                 </div>
                             </div>
                         </div>

@@ -1,0 +1,19 @@
+.media-flow-card {
+    display: flex;
+    align-items: center;
+
+    img {
+        height: 200px;
+        width: 125px;
+        object-fit: cover;
+        flex-shrink: 0;
+    }
+
+    .text {
+        padding-left: 1rem;
+        a {
+            opacity: .5;
+            font-weight: 300;
+        }
+    }
+}

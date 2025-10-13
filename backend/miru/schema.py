@@ -12,6 +12,10 @@ from characters.schema import (
     CharacterType
 )
 
+from shared.models import Franchise
+from shared.schema import (
+    FranchiseType
+)
     
 class StudioType(DjangoObjectType):
     class Meta:
@@ -36,17 +40,21 @@ class AnimeCharacterType(DjangoObjectType):
         return self.get_role_display()
 
 class AnimeType(DjangoObjectType):
+    franchise = graphene.Field(FranchiseType)
     status = graphene.String()
     type = graphene.String()
     rating = graphene.String()
     characters = graphene.List(AnimeCharacterType)
-    previous_anime = graphene.List(lambda: AnimeRelationType)
-    next_anime = graphene.List(lambda: AnimeRelationType)
+    previous_anime = graphene.Field(lambda: AnimeRelationType)
+    next_anime = graphene.Field(lambda: AnimeRelationType)
     season = graphene.String()
 
     class Meta:
         model = Anime
         fields = "__all__"
+    
+    def resolve_franchise(self, info):
+        return Franchise.objects.get(id=self.franchise.id)
     
     def resolve_rating(self, info):
         return self.get_rating_display()
@@ -67,10 +75,10 @@ class AnimeType(DjangoObjectType):
         return AnimeCharacter.objects.filter(anime=self)
     
     def resolve_previous_anime(self, info):
-        return AnimeRelation.objects.filter(to_anime=self)
+        return AnimeRelation.objects.filter(to_anime=self, relation_type=AnimeRelation.Type.SERIES_ENTRY).first()
     
     def resolve_next_anime(self, info):
-        return AnimeRelation.objects.filter(from_anime=self)
+        return AnimeRelation.objects.filter(from_anime=self, relation_type=AnimeRelation.Type.SERIES_ENTRY).first()
     
 class AnimeRelationType(DjangoObjectType):
     from_anime = graphene.Field(lambda: AnimeType)

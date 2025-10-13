@@ -12,8 +12,22 @@ export interface Anime {
     },
     genres: string[],
     characters: any[],
-    previousAnime: any[],
-    nextAnime: any[],
+    previousAnime: {
+        relationType: string,
+        fromAnime: {
+            id: number,
+            title: string,
+            slug: string
+        },
+    },
+    nextAnime: {
+        relationType: string,
+        toAnime: {
+            id: number,
+            title: string,
+            slug: string
+        }
+    },
     status: string,
     type: string,
     studio: {
