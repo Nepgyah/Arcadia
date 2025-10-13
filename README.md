@@ -43,11 +43,8 @@ Here are the planned apps, a short description as well as real life equivalents.
 **Kumitateru** - PC guide and builder ( PcPartPicker )  
 **Hiku** - Gacha game guide ( Prydwen, Game8 )  
 **Shiru** - Blog and Articles ( AnimeNewsNetwork )
-
 **Todokeru** - Videos and Streaming ( Youtube, Twitch )
-
 **Sagasu** - Fun quizzes and tests ( Sporacle )
-
 **Manabu** - Language learning ( Wanikani )
 ## Installation
 
