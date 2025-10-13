@@ -15,6 +15,12 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
         }
+
+        #socials-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 1rem;
+        }
     }
 }
 
@@ -23,6 +29,10 @@
         #characters-container {
             display: grid;
             grid-template-columns: 1fr;
+        }
+
+        #socials-container {
+        display: flex;
         }
     }
 }

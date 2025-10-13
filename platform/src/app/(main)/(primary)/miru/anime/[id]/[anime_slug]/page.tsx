@@ -106,7 +106,9 @@ export default function AnimeDetails() {
                         app="miru"
                         image={`/storage/miru/${anime?.id}.jpg`}
                      />
-                    <div>right</div>
+                    <div id="latest-episode" className="border-radius-md bg-platform-dark box-shadow p-a-lg">
+                        <p className="clr-txt-light"><WIP /></p>
+                    </div>
                 </div>
                 <div className="grid grid--side-col-reverse">
                     <div className="flex-row flex-row--gap-md">
@@ -120,7 +122,7 @@ export default function AnimeDetails() {
                         </div>
                         <div id="socials">
                             <ArcHeader title="Socials" />
-                            <div className="flex-row flex-row--gap-sm">
+                            <div id="socials-container" className="flex-row flex-row--gap-sm">
                                 {
                                     anime?.franchise.socials.website &&
                                     <SocialMediaCard 
