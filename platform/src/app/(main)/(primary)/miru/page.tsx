@@ -6,7 +6,6 @@ import { Breadcrumbs, Typography } from "@mui/material";
 import { apiGET } from "@/util/api/api";
 import EntryCard from "@/components/entryCard";
 import WIP from "@/components/wip";
-import LinkedHeader from "@/components/platform/linkedHeader";
 
 import '@/styles/pages/miru/_home.scss';
 import ArcHeader from "@/components/arcHeader";

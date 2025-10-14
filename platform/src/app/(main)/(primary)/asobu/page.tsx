@@ -7,6 +7,7 @@ import WIP from "@/components/wip";
 import EntryCard from "@/components/entryCard";
 import { apiGET } from "@/util/api/api";
 import { Game } from "@/types/asobu";
+import ArcHeader from "@/components/arcHeader";
 
 interface APIProps {
     latest_games: Game[],
@@ -32,18 +33,18 @@ export default function AsobuHome() {
                 <Typography>Asobu</Typography>
                 <Typography>Home</Typography>
             </Breadcrumbs>
-            <div id="page-asobu-home"  className="page-content">
-                <div className="two-col-section two-col-section--uneven-reverse">
-                    <div className="row-gap-md">
-                        <div id="latest">
-                            <h2>Latest Games</h2>
-                            <div className="layout-grid-5">
+            <div id="page-miru-home">
+                <div className="grid grid--side-col">
+                    <div className="flex-row flex-row--gap-md">
+                        <div id="seasonal">
+                            <ArcHeader title={'Latest'} />
+                            <div className="flex-col flex-col--gap-sm">
                                 {
                                     latestGames &&
-                                    latestGames.map((game: Game, key: number) => (
+                                    latestGames.map((game: any, key: number) => (
                                         <EntryCard 
                                             key={key} 
-                                            app="asbou" 
+                                            app="asobu" 
                                             title={game.title} 
                                             clickLink={`/asobu/game/${game.id}/${game.slug}`} 
                                             imageLink={`/storage/asobu/${game.id}.jpg`}
@@ -52,16 +53,15 @@ export default function AsobuHome() {
                                 }
                             </div>
                         </div>
-
-                        <div id="rated">
-                            <h2>Top Games All Time</h2>
-                            <div className="layout-grid-5">
+                        <div id="all-time">
+                            <ArcHeader title="All Time"/>
+                            <div className="flex-col flex-col--gap-sm">
                                 {
                                     allTimeGames &&
-                                    allTimeGames.map((game: Game, key: number) => (
+                                    allTimeGames.map((game: any, key: number) => (
                                         <EntryCard 
                                             key={key} 
-                                            app="asbou" 
+                                            app="asobu" 
                                             title={game.title} 
                                             clickLink={`/asobu/game/${game.id}/${game.slug}`} 
                                             imageLink={`/storage/asobu/${game.id}.jpg`}
@@ -70,13 +70,13 @@ export default function AsobuHome() {
                                 }
                             </div>
                         </div>
-                        
                     </div>
-                    <div className="vertical-divider-left p-left-xl">
-                        <h2 className="app-font--miru border-bottom">Details</h2>
+                    <div className="side-col">
+                        <h2 className="app-font--miru border-bottom">Friend Activity</h2>
                         <WIP />
                     </div>
                 </div>
+
             </div>
         </React.Fragment>
     )

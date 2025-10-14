@@ -1,42 +1,89 @@
 'use client';
 
 import { useParams } from "next/navigation";
+
 import React from "react";
 import { useEffect, useState } from "react";
-
 import { Breadcrumbs, Typography } from "@mui/material";
+import { GraphQL } from "@/util/api/api";
 
-import { apiGET } from "@/util/api/api";
-import CharacterAvatar from "@/components/platform/characterAvatar";
 import InfoItem from "@/components/infoItem";
-import RelationCard from "@/components/platform/relationCard";
-import TagChip from "@/components/platform/chip";
 import WIP from "@/components/wip";
+import MediaFeatureCard from "@/components/mediaFeatureCard";
+import ArcHeader from "@/components/arcHeader";
+import CharacterCard from "@/components/characterCard";
+import MediaFlowCard from "@/components/mediaFlowCard";
+import SocialMediaCard from "@/components/socialMediaCard";
 
-import { Character } from "@/types/shared";
-import { Company, Game } from "@/types/asobu";
+import { Anime } from "@/types/miru";
+import '@/styles/layout/_media-detail.scss';
 
-export default function GameDetails() {
+export default function GameDetail() {
     const params = useParams();
-    const [game, setGame] = useState<Game>()
-    const [developers, setDevelopers] = useState<string>()
-    const [publishers, setPublishers] = useState<string>()
+    const [game, setGame] = useState<any>()
 
     useEffect(() => {
-        apiGET<Game>(`asobu/game/${params.id}/`)
+        const query = 
+        `
+           query {
+            gameById(id: ${params.id}) {
+                id,
+                slug,
+                summary,
+                title,
+                score,
+                status,
+                esrbRating,
+                pegiRating,
+                previousGame {
+                    fromGame {
+                        id,
+                        title,
+                        slug
+                    }
+                },
+                nextGame {
+                    toGame {
+                        id,
+                        title,
+                        slug
+                    }
+                },
+                characters {
+                    character {
+                        id,
+                        firstName,
+                        lastName,
+                        playedBy {
+                            id,
+                            firstName,
+                            lastName
+                        }
+                    }
+                },
+                developers {
+                    name
+                },
+                publishers {
+                    name
+                },
+                hasCampaignMode,
+                hasPvpMode,
+                hasPveMode,
+                isOnConsole,
+                isOnPc,
+                releaseDate,
+                franchise {
+                    id,
+                    name,
+                    socials
+                }
+            }
+        }
+        `
+        GraphQL<any>(query)
         .then((res) => {
-            setGame(res)
-            let devList = ''
-            let pubList = ''
-            res.developers.forEach((dev : Company) => {
-                devList += ` ${dev.name}`
-            })
-            setDevelopers(devList)
-
-            res.publishers.forEach((pub : Company) => {
-                pubList += ` ${pub.name}`
-            })
-            setPublishers(pubList)
+            setGame(res.data.gameById)
         })
     }, [])
 
@@ -46,131 +93,128 @@ export default function GameDetails() {
                 <Typography>Game</Typography>
                 <Typography>{game?.title}</Typography>
             </Breadcrumbs>
-            <div className="media-detail page-content">
-                <div className="two-col-section two-col-section--uneven">
-                    <div id="left-column" className="row-gap-md">
-                        <img 
-                            id="image" 
-                            className="media-image"
-                            src={`/storage/asobu/${game?.id}.jpg`} 
-                            alt={game?.title}
-                            onError={(e) => {
-                                e.currentTarget.onerror = null;
-                                e.currentTarget.src = '/global/404-resource.jpg'
-                            }} 
-                        />
-                        <div>
-                            <h2>Quick Access</h2>
-                            <WIP />
+            <div id="page-media-detail" className="page-content">
+                <div className="grid grid--feature-combo">
+                    <MediaFeatureCard
+                        title={game ? game.title : 'Game Name'}
+                        description={game ? game.summary : 'Summary'}
+                        score={game ? game.score : 0.0}
+                        app="asobu"
+                        image={`/storage/asobu/${game?.id}.jpg`}
+                     />
+                    <div id="latest-episode" className="border-radius-md bg-platform-dark box-shadow p-a-lg">
+                        <WIP />
+                    </div>
+                </div>
+                <div className="grid grid--side-col-reverse">
+                    <div className="flex-row flex-row--gap-md">
+                        <div id="quick-access">
+                            <ArcHeader title="Quick Access" />
+                            <div className="flex-row flex-row--gap-sm">
+                                <WIP />
+                            </div>
                         </div>
-                        <div>
-                            <h2>Socials</h2>
-                            <WIP />
+                        <div id="socials">
+                            <ArcHeader title="Socials" />
+                            <div id="socials-container" className="flex-row flex-row--gap-sm">
+                                {
+                                    game?.franchise.socials?.website &&
+                                    <SocialMediaCard 
+                                        type="website"
+                                        social={game?.franchise.socials.website}
+                                    />
+                                }
+                                {
+                                    game?.franchise.socials?.youtube &&
+                                    <SocialMediaCard 
+                                        type="youtube"
+                                        social={game?.franchise.socials.youtube}
+                                    />
+                                }
+                                {
+                                    game?.franchise.socials?.reddit &&
+                                    <SocialMediaCard 
+                                        type="reddit"
+                                        social={game?.franchise.socials.reddit}
+                                    />
+                                }
+                                {
+                                    game?.franchise.socials?.twitter &&
+                                    <SocialMediaCard 
+                                        type="twitter"
+                                        social={game?.franchise.socials.twitter}
+                                    />
+                                }
+                            </div>
+                        </div>
+                        <div id="misc">
+                            <ArcHeader title="Misc" />
+                            <div className="flex-row flex-row--gap-sm">
+                                <InfoItem label="Status" value={game?.status} />
+                                <InfoItem label="Release Date" value={game?.releaseDate} />
+                                <InfoItem label="ESRB Rating" value={game?.esrbRating} />
+                                <InfoItem label="PEGI Rating" value={game?.pegiRating} />
+                                <InfoItem label="Campaign Mode" value={game?.hasCampaignMode ? 'Yes' : 'No'} />
+                                <InfoItem label="PVP Mode" value={game?.hasPvpMode ? 'Yes' : 'No'} />
+                                <InfoItem label="PVE Mode" value={game?.hasPveMode ? 'Yes' : 'No'} />
+                            </div>
                         </div>
                     </div>
-                    <div id="right-column" className="row-gap-md">
-                        <div id="primary">
-                            <div id="overview" className="vertical-divider-right p-right-md row-gap-md">
-                                <div id="at-a-glance">
-                                    <div className="row-gap-md">
-                                        <div id="quick-stats" className="gray-container col-gap-s">
-                                            <InfoItem label="Status" value={game?.status} />
-                                            <InfoItem label="ESRB" value={game?.esrb_rating} />
-                                            <InfoItem label="PEGI" value={game?.pegi_rating} />
-                                        </div>
-                                        <div id="metrics">
-                                            <div id="arcadia-score" className="gray-container flex flex--small-gap">
-                                                <p className="bold">{game?.score}</p>
-                                                <p>{game?.users} users</p>
-                                            </div>
-                                            <div id="tags">
-                                                <h2>Genres</h2>
-                                                <div>
-                                                    {
-                                                        game?.genres.length === 0 ?
-                                                            <p>No genre tags added</p>
-                                                        :
-                                                            game?.genres.map((genre: any, index: number) => (
-                                                                <TagChip key={index} value={genre.name} app="asobu"/>
-                                                            ))
-                                                    }
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="promo-video">
-                                        <h2>Promo Video</h2>
-                                        <WIP />
-                                    </div>
-                                </div>
-                                <div id="summary">
-                                    <h2>Summary</h2>
-                                    <p>{game?.summary}</p>
-                                </div>
-                            </div>
-                            <div id="primary-right" className="p-left-md row-gap-md">
-                                <div>
-                                    <h2>Details</h2>
-                                    <InfoItem label="Campaign" value={game ? game.has_campaign_mode ? 'Yes' : 'No' : 'Loading'} />
-                                    <InfoItem label="PvP" value={game ? game.has_pvp_mode ? 'Yes' : 'No' : 'Loading'} />
-                                    <InfoItem label="PvE" value={game ? game.has_pve_mode ? 'Yes' : 'No' : 'Loading'} />
-                                    <InfoItem label="On PC" value={game ? game.is_on_pc ? 'Yes' : 'No' : 'Loading'} />
-                                    <InfoItem label="On Console" value={game ? game.is_on_console ? 'Yes' : 'No' : 'Loading'} />
-                                </div>
-                                <div>
-                                    <h2>Production</h2>
-                                    <InfoItem label="Developers" value={developers} />
-                                    <InfoItem label="Publishers" value={publishers} />
-                                </div>
+                    <div className="flex-row flex-row--gap-md">
+                        <div id="characters">
+                            <ArcHeader title="Characters" />
+                            <div id="characters-container" className="flex-col flex-col--gap-sm">
+                                {
+                                    game?.characters.map((character: any, idx: number) => (
+                                        <CharacterCard 
+                                            key={idx}
+                                            characterId={character.character.id}
+                                            characterName={`${character.character.firstName} ${character.character.lastName ? character.character.lastName : ''}`}
+                                            characterDescription={character.role}
+                                            voiceActorId={character.character.playedBy?.id}
+                                            voiceActorName={character.character.playedBy ? `${character.character.playedBy.firstName} ${character.character.playedBy.lastName ? character.character.playedBy.lastName : ''}` : 'Unknown'}
+                                            voiceActorDescription='Japanese'
+                                        />
+                                    ))
+                                }
                             </div>
                         </div>
-                        <div id="secondary">
-                            <div id="relations" className="vertical-divider-right p-right-md">
-                                <h2>Related Games</h2>
-                                <div>
-                                    <div id="previous" className="row-gap-md">
-                                        {
-                                            game?.previous_games.length === 0 ?
-                                                <p>No previous games</p>
-                                            :
-                                            game?.previous_games.map((game: any, index: number ) => (
-                                                <RelationCard 
-                                                    key={index}
-                                                    name={game.name} 
-                                                    relation={game.relation} 
-                                                    link={`/asobu/game/${game.id}/${game.slug}`}
-                                                    imageLink={`/storage/asobu/${game.id}.jpg`}
-                                                />
-                                            ))
-                                        }
-                                    </div>
-                                    <div id="next" className="row-gap row-gap--xs">
-                                        {
-                                            game?.next_games.length === 0 ?
-                                                <p>No next games</p>
-                                            :
-                                            game?.next_games.map((game: any, index: number ) => (
-                                                <RelationCard 
-                                                    key={index}
-                                                    name={game.name} 
-                                                    relation={game.relation} 
-                                                    link={`/asobu/game/${game.id}/${game.slug}`}
-                                                    imageLink={`/storage/asobu/${game.id}.jpg`}
-                                                />
-                                            ))
-                                        }
-                                    </div>
-                                </div>
+                        <div id="game-flow">
+                            <ArcHeader title="Game Flow" />
+                            <div className="grid grid--2-col">
+                                {
+                                    game?.previousGame ?
+                                        <MediaFlowCard 
+                                            image={`/storage/asobu/${game?.previousGame.fromGame.id}.jpg`}
+                                            relation="Prequel"
+                                            mediaName={game ? game?.previousGame.fromGame.title : 'Loading'}
+                                            mediaLink={`/asobu/game/${game?.previousGame.fromGame.id}/${game?.previousGame.fromGame.slug}`}              
+                                        />
+                                    :
+                                        <p>No Previous Game</p>
+                                }
+                                {
+                                    game?.nextGame ?
+                                        <MediaFlowCard 
+                                            image={`/storage/asobu/${game?.nextGame.toGame.id}.jpg`}
+                                            relation="Sequel"
+                                            mediaName={game ? game?.nextGame.toGame.title : 'Loading'}
+                                            mediaLink={`/asobu/game/${game?.nextGame.toGame.id}/${game?.nextGame.toGame.slug}`}              
+                                        />
+                                    :
+                                        <p>No Previous Game</p>
+                                }
                             </div>
-                            <div id="characters">
-                                <h2>Characters</h2>
-                                <div className="row-gap-md">
-                                    {
-                                        game?.characters &&
-                                        game?.characters.map((character: Character, index: number) => (
-                                            <CharacterAvatar key={index} character={character} app='miru' />
-                                        ))
-                                    }
+                        </div>
+                        <div id="themes">
+                            <div className="grid grid--2-col">
+                                <div>
+                                    <ArcHeader title="Openings" />
+                                    <WIP />
+                                </div>
+                                <div>
+                                    <ArcHeader title="Endings" />
+                                    <WIP />
                                 </div>
                             </div>
                         </div>

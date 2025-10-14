@@ -31,8 +31,8 @@ class GameType(DjangoObjectType):
     esrb_rating = graphene.String()
     pegi_rating = graphene.String()
     franchise = graphene.Field(FranchiseType)
-    previous_game = graphene.Field(lambda: GameType)
-    next_game = graphene.Field(lambda: GameType)
+    previous_game = graphene.Field(lambda: GameRelationType)
+    next_game = graphene.Field(lambda: GameRelationType)
     characters = graphene.List(GameCharacterType)
 
     class Meta:
@@ -52,10 +52,10 @@ class GameType(DjangoObjectType):
         return Franchise.objects.get(id=self.franchise.id)
     
     def resolve_previous_game(self, info):
-        return asobu.models.GameRelation.get(to_game=self, relation_type=asobu.models.GameRelation.Type.SERIES_ENTRY)
+        return asobu.models.GameRelation.objects.get(to_game=self, relation_type=asobu.models.GameRelation.Type.SERIES_ENTRY)
     
     def resolve_next_game(self, info):
-        return asobu.models.GameRelation.get(to_game=self, relation_type=asobu.models.GameRelation.Type.SERIES_ENTRY)
+        return asobu.models.GameRelation.objects.get(from_game=self, relation_type=asobu.models.GameRelation.Type.SERIES_ENTRY)
     
     def resolve_characters(self, info):
         return asobu.models.GameCharacter.objects.filter(game=self)

@@ -6,8 +6,8 @@ import { Breadcrumbs, Typography } from "@mui/material";
 import {  GraphQL } from "@/util/api/api";
 import EntryCard from "@/components/entryCard";
 import WIP from "@/components/wip";
-import LinkedHeader from "@/components/platform/linkedHeader";
 import KikuCard from "./components/kikuCard";
+import ArcHeader from "@/components/arcHeader";
 
 const query = `
     query {
@@ -84,7 +84,7 @@ export default function MiruHome() {
                 </div>
                 <div className="layout-grid-3">
                     <div>
-                        <LinkedHeader title='Top Songs This Month' link="" linkText="See more"/>
+                        <ArcHeader title='Top Songs This Month' />
                         <div  className="row-gap-sm row-divider">
                             {
                                 topSongs?.map((song: any, idx: number) => (
@@ -101,7 +101,7 @@ export default function MiruHome() {
                         </div>
                     </div>
                     <div>
-                        <LinkedHeader title='Top Albums This Month' link="" linkText="See more"/>
+                        <ArcHeader title='Top Albums This Month' />
                         <div className="row-gap-sm row-divider">
                             {
                                 topAlbums?.map((album: any, idx: number) => (
@@ -119,7 +119,7 @@ export default function MiruHome() {
                         </div>
                     </div>
                     <div>
-                        <LinkedHeader title='Top Artists This Month' link="" linkText="See more"/>
+                        <ArcHeader title='Top Artists This Month' />
                         <div className="row-gap-sm row-divider">
                             {
                                 topArtists?.map((artist: any, idx: number) => (
