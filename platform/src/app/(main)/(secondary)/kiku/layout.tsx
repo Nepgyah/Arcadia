@@ -1,5 +1,6 @@
 // Layout to apply miru color scheming
-// import '@/styles/platform/apps/kiku.scss';
+import '@/styles/pages/kiku/_layout.scss';
+
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {

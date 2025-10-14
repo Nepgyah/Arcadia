@@ -1,13 +1,13 @@
 'use client';
 
 import React, { useEffect, useState } from "react";
-import { Breadcrumbs, Typography } from "@mui/material";
+import { Breadcrumbs, Typography, Button } from "@mui/material";
 
 import {  GraphQL } from "@/util/api/api";
-import EntryCard from "@/components/entryCard";
-import WIP from "@/components/wip";
 import KikuCard from "./components/kikuCard";
 import ArcHeader from "@/components/arcHeader";
+
+import '@/styles/pages/kiku/_home.scss';
 
 const query = `
     query {
@@ -62,27 +62,31 @@ export default function MiruHome() {
     return (
         <React.Fragment>
             <Breadcrumbs>
-                <Typography>Miru</Typography>
+                <Typography>Kiku</Typography>
                 <Typography>Home</Typography>
             </Breadcrumbs>
             <div id="page-kiku-home"  className="page-content">
-                <div id="spotlight" className="grid grid--2-col-offset">
-                    <div id="artist-spotlight" className="box-shadow">
-                        <div id="artist-text">
-                            <p>{featuredArtist?.name}</p>
-                            <p>{featuredArtist?.bio}</p>
+                <div id="spotlight" className="grid grid--2-col">
+                    <div id="artist-spotlight" className="box-shadow bg-platform-dark border-radius-md">
+                        <div id="artist-text" className="p-a-sm">
+                            <h2 className="clr-kiku-base txt-xl">Artist Spotlight</h2>
+                            <p className="txt-lg">{featuredArtist?.name}</p>
+                            <p className="txt-xs">{featuredArtist?.bio}</p>
                         </div>
                         <div id="artist-image">
                             <div className="mask"></div>
                             <img src={`/storage/kiku/artist/${featuredArtist?.id}.jpg`} alt="" />
+                            <Button variant="contained" color="primary">
+                                Discover {featuredArtist?.name}
+                            </Button>
                         </div>
                     
                     </div>
                     <div id="album-spotlight">
-                        
+                        spotlight
                     </div>
                 </div>
-                <div className="layout-grid-3">
+                <div className="grid grid--3-col">
                     <div>
                         <ArcHeader title='Top Songs This Month' />
                         <div  className="row-gap-sm row-divider">

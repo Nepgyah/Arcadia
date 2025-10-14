@@ -1,0 +1,52 @@
+@use '../../utils/variables' as *;
+@use "sass:map";
+
+#page-kiku-home {
+    #artist-spotlight {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        overflow: hidden;
+        height: 325px;
+
+        h2 {
+            margin-bottom: 0;
+        }
+
+        p {
+            &:first-of-type {
+                font-weight: 700;
+                margin-bottom: 1rem;
+            }
+            &:last-of-type {
+                opacity: .5;
+            }
+        }
+
+        #artist-image {
+            position: relative;
+
+            .mask {
+                position: absolute;
+                z-index: 2;
+                background: linear-gradient(to right, rgba(map.get($colors, platform-dark), 1), rgba(map.get($colors, platform-dark), 0));
+                height: 100%;
+                width: 100%;
+            }
+
+            img {
+                position: relative;
+                z-index: 1;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+            
+            .MuiButton-root {
+                position: absolute;
+                z-index: 3;
+                bottom: .5rem;
+                right: .5rem;
+            }
+        }
+    }
+}
