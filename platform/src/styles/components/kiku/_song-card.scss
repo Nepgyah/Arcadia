@@ -8,9 +8,14 @@
     &__image {
         height: 120px;
         width: 120px;
+        flex-shrink: 1;
     }
 
     &__subtitle {
         opacity: .5;
+    }
+
+    > div {
+        flex-shrink: 3;
     }
 }

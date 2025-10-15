@@ -38,6 +38,7 @@ class SongType(DjangoObjectType):
     
 class Query(graphene.ObjectType):
     featured_artist = graphene.Field(ArtistType)
+    featured_album = graphene.Field(AlbumType)
 
     all_songs = graphene.List(SongType)
     all_artists = graphene.List(ArtistType)
@@ -49,6 +50,13 @@ class Query(graphene.ObjectType):
     artist_by_id = graphene.Field(ArtistType, id=graphene.Int(required=True))
     album_by_id = graphene.Field(AlbumType, id=graphene.UUID(required=True))
 
+    # Featured
+    def resolve_featured_artist(root, info):
+        return Artist.objects.first()
+    
+    def resolve_featured_album(root, info):
+        return Album.objects.filter(artist=Artist.objects.first()).first()
+    
     # Songs
     def resolve_all_songs(root, info):
         return Song.objects.all()
@@ -63,8 +71,6 @@ class Query(graphene.ObjectType):
     def resolve_artist_by_id(root, info, id):
         return Artist.objects.get(id=id)
     
-    def resolve_featured_artist(root, info):
-        return Artist.objects.first()
     
     def resolve_top_artists(root, info, count):
         return Artist.objects.all()[:count]

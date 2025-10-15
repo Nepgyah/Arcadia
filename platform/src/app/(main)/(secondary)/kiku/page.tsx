@@ -1,5 +1,3 @@
-'use client';
-
 import React, { useEffect, useState } from "react";
 import { Breadcrumbs, Typography, Button } from "@mui/material";
 
@@ -36,28 +34,17 @@ const query = `
         topArtists(count: 5) {
             id,
             name
+        },
+        featuredAlbum {
+            id,
+            title
         }
     }
 `;
 
-export default function MiruHome() {
-    const [isLoading, setIsLoading] = useState(true);
-
-    const [featuredArtist, setFeaturedArtist] = useState<any>()
-    const [topSongs, setTopSongs] = useState<any[]>([])
-    const [topAlbums, setTopAlbums] = useState<any[]>([])
-    const [topArtists, setTopArtists] = useState<any[]>([])
-
-    useEffect(() => {
-        console.log('call')
-        GraphQL<any>(query, { limit: 5})
-        .then((res) => {
-            setTopSongs(res.data.topSongs);
-            setTopAlbums(res.data.topAlbums);
-            setTopArtists(res.data.topArtists)
-            setFeaturedArtist(res.data.featuredArtist);
-        })
-    }, [])
+export default async function MiruHome() {
+    const res = await GraphQL<any>(query, { limit: 5});
+    const { featuredArtist, featuredAlbum, topSongs, topAlbums, topArtists } = res.data;
 
     return (
         <React.Fragment>
@@ -66,7 +53,7 @@ export default function MiruHome() {
                 <Typography>Home</Typography>
             </Breadcrumbs>
             <div id="page-kiku-home"  className="page-content">
-                <div id="spotlight" className="grid grid--2-col">
+                <div id="spotlight" className="grid">
                     <div id="artist-spotlight" className="box-shadow bg-platform-dark border-radius-md">
                         <div id="artist-text" className="p-a-sm">
                             <h2 className="clr-kiku-base txt-xl">Artist Spotlight</h2>
@@ -82,14 +69,23 @@ export default function MiruHome() {
                         </div>
                     
                     </div>
-                    <div id="album-spotlight">
-                        spotlight
+                    <div id="album-spotlight" className="box-shadow p-a-sm bg-platform-dark border-radius-md">
+                        <h2 className="txt-lg">{featuredArtist.name}'s <span className="clr-kiku-base">Featured Album</span></h2>
+                        <div>
+                            <img src={`/storage/kiku/album/${featuredAlbum?.id}.jpg`} alt="" />
+                            <div>
+                                <p className="txt-lg">{featuredAlbum.title}</p>
+                                <Button variant="contained" color="primary">
+                                    Stream Now
+                                </Button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div className="grid grid--3-col">
+                <div id="top-kiku" className="grid grid--3-col">
                     <div>
                         <ArcHeader title='Top Songs This Month' />
-                        <div  className="row-gap-sm row-divider">
+                        <div  className="flex-row flex-row--gap-sm row-divider">
                             {
                                 topSongs?.map((song: any, idx: number) => (
                                     <KikuCard 
@@ -106,7 +102,7 @@ export default function MiruHome() {
                     </div>
                     <div>
                         <ArcHeader title='Top Albums This Month' />
-                        <div className="row-gap-sm row-divider">
+                        <div className="flex-row flex-row--gap-sm row-divider">
                             {
                                 topAlbums?.map((album: any, idx: number) => (
                                     <KikuCard 
@@ -124,7 +120,7 @@ export default function MiruHome() {
                     </div>
                     <div>
                         <ArcHeader title='Top Artists This Month' />
-                        <div className="row-gap-sm row-divider">
+                        <div className="flex-row flex-row--gap-sm row-divider">
                             {
                                 topArtists?.map((artist: any, idx: number) => (
                                     <KikuCard 
