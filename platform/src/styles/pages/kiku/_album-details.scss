@@ -1,0 +1,122 @@
+@use '../../utils/variables' as *;
+@use "sass:map";
+
+#page-kiku-album-details {
+    #header {
+
+        #album-summary {
+            img {
+                width:  50%;
+                height: 50%;
+                margin: auto;
+            }
+
+            .text {
+                margin-top: 1rem;
+                text-align: center;
+            }
+        }
+
+        #artist-summary {
+            img {
+                width:  50%;
+                height: 50%;
+                margin: auto;
+            }
+
+            .text {
+                margin-top: 1rem;
+                text-align: center;
+
+                p {
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #page-kiku-album-details {
+        #header {
+            height: 325px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 1rem;
+
+            #album-summary {
+                position: relative;
+                padding: 0;
+                height: inherit;
+
+                img {
+                    position: relative;
+                    z-index: 1;
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+
+                .mask {
+                    position: absolute;
+                    top: 0;
+                    z-index: 2;
+                    height: 100%;
+                    width: 100%;
+                    background-color: rgba(#000000, $alpha: .75);
+                }
+
+                .text {
+                    position: absolute;
+                    z-index: 3;
+                    bottom: 1rem;
+                    left: 1rem;
+                }
+            }
+
+            #artist-summary {
+                position: relative;
+                padding: 0;
+                height: inherit;
+
+                img {
+                    position: relative;
+                    z-index: 1;
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+
+                .mask {
+                    position: absolute;
+                    top: 0;
+                    z-index: 2;
+                    height: 100%;
+                    width: 100%;
+                    background-color: rgba(#000000, $alpha: .75);
+                }
+
+                .text {
+                    position: absolute;
+                    z-index: 3;
+                    bottom: 1rem;
+                    left: 50%;
+                    transform: translateX(-50%);
+
+                    p {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #page-kiku-album-details {
+        #header {
+            height: 400px;
+            grid-template-columns: 1.5fr 1fr;
+        }
+    }
+}

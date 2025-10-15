@@ -16,6 +16,11 @@
                 background-color: map.get($colors, kiku-base);
             }
         }
+        .MuiTableBody-root {
+            .MuiTableCell-root {
+                padding: 1rem;
+            }
+        }
     }
     
     .MuiButton-root {

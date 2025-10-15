@@ -89,6 +89,7 @@ export default async function MiruHome() {
                             {
                                 topSongs?.map((song: any, idx: number) => (
                                     <KikuCard 
+                                        key={idx}
                                         number={idx + 1}
                                         id={song.album.id}
                                         title={song.title}
@@ -106,6 +107,7 @@ export default async function MiruHome() {
                             {
                                 topAlbums?.map((album: any, idx: number) => (
                                     <KikuCard 
+                                        key={idx}
                                         number={idx + 1}
                                         id={album.id}
                                         title={album.title}
@@ -124,6 +126,7 @@ export default async function MiruHome() {
                             {
                                 topArtists?.map((artist: any, idx: number) => (
                                     <KikuCard 
+                                        key={idx}
                                         number={idx + 1}
                                         id={artist.id}
                                         title={artist.name}

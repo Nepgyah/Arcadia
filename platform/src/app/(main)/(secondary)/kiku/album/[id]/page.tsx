@@ -6,6 +6,9 @@ import { useParams } from "next/navigation"
 import React, { useState } from "react";
 import { useEffect } from "react"
 
+import '@/styles/pages/kiku/_album-details.scss';
+import ArcHeader from "@/components/arcHeader";
+
 export default function AlbumDetails() {
 
     const params = useParams()
@@ -42,32 +45,29 @@ export default function AlbumDetails() {
                 <Typography>Album</Typography>
                 <Typography>{album?.title}</Typography>
             </Breadcrumbs>
-            <div id="album-details" className="page-content">
-                <div className="grid grid--2-col-offset">
-                    <div className="main-card">
-                        <div className="main-card__text center-vertical">
-                            <p>{album?.title}</p>
+            <div id="page-kiku-album-details" className="page-content">
+                <div id="header" className="grid grid--2-col-offset">
+                    <div id="album-summary" className="p-a-sm bg-platform-dark box-shadow">
+                        <img className="border-radius-sm box-shadow" src={`/storage/kiku/album/${album?.id}.jpg`} alt="" />
+                        <div className="mask"></div>
+                        <div className="text">
+                            <p className="txt-lg"><b>{album?.title}</b></p>
                             <p>{album?.type}</p>
                         </div>
-                        <div className="main-card__image">
-                            <div className="mask"></div>
-                            <img src={`/storage/kiku/album/${album?.id}.jpg`} alt="" />
-                        </div>
                     </div>
-                    <div className="sub-card">
-                        <p className="sub-card__title">{album?.artist.name}</p>
-                        <div className="sub-card__details">
-                            <img className="box-shadow" src={`/storage/kiku/artist/${album?.artist.id}.jpg`} alt={album?.artist.name} />
-                            <div>
-                                <Button variant="contained">See Details</Button>
-                            </div>
+                    <div id="artist-summary" className="p-a-sm bg-platform-dark box-shadow">
+                        <img className="border-radius-sm box-shadow" src={`/storage/kiku/artist/${album?.artist.id}.jpg`} alt={album?.artist.name} />
+                        <div className="mask"></div>
+                        <div className="text">
+                            <p>{album?.artist.name}</p>
+                            <Button variant="contained">Discover {album?.artist.name}</Button>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <h2>Tracklist</h2>
-                    <TableContainer component={Paper}>
-                        <Table className="arcadia-table">
+                    <ArcHeader title="Tracklist" />
+                    <TableContainer className="box-shadow border-radius-sm">
+                        <Table className="arc-table">
                             <TableHead>
                                 <TableRow>
                                     <TableCell width={"5%"}>#</TableCell>
