@@ -7,12 +7,15 @@ from .models import (
     Artist
 )
 
-
 class AlbumType(DjangoObjectType):
+    type = graphene.String()
+
     class Meta:
         model = Album
         fields = "__all__"
 
+    def resolve_type(self, info):
+        return self.get_type_display()
     
 class ArtistType(DjangoObjectType):
     class Meta:

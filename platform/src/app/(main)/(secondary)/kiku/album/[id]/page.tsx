@@ -21,13 +21,14 @@ export default function AlbumDetails() {
                 albumById(id: "${params.id}") {
                     id,
                     title,
+                    type,
                     songs {
-                    title,
-                    plays
+                        title,
+                        plays
                     },
                     artist {
-                    id,
-                    name
+                        id,
+                        name
                     }
                 }
             }
@@ -41,23 +42,21 @@ export default function AlbumDetails() {
     return (
         <React.Fragment>
             <Breadcrumbs>
-                <Typography>Miru</Typography>
+                <Typography>Kiku</Typography>
                 <Typography>Album</Typography>
-                <Typography>{album?.title}</Typography>
+                <Typography className="clr-kiku-base"><b>{album?.title}</b></Typography>
             </Breadcrumbs>
             <div id="page-kiku-album-details" className="page-content">
                 <div id="header" className="grid grid--2-col-offset">
-                    <div id="album-summary" className="p-a-sm bg-platform-dark box-shadow">
+                    <div id="album-summary" className="p-a-sm">
                         <img className="border-radius-sm box-shadow" src={`/storage/kiku/album/${album?.id}.jpg`} alt="" />
-                        <div className="mask"></div>
                         <div className="text">
-                            <p className="txt-lg"><b>{album?.title}</b></p>
+                            <p className="txt-xl"><b>{album?.title}</b></p>
                             <p>{album?.type}</p>
                         </div>
                     </div>
-                    <div id="artist-summary" className="p-a-sm bg-platform-dark box-shadow">
+                    <div id="artist-desktop-summary" className="p-a-sm">
                         <img className="border-radius-sm box-shadow" src={`/storage/kiku/artist/${album?.artist.id}.jpg`} alt={album?.artist.name} />
-                        <div className="mask"></div>
                         <div className="text">
                             <p>{album?.artist.name}</p>
                             <Button variant="contained">Discover {album?.artist.name}</Button>
@@ -88,6 +87,13 @@ export default function AlbumDetails() {
                             </TableBody>
                         </Table>
                     </TableContainer>
+                </div>
+                <div id="artist-mobile-summary" className="p-a-sm">
+                    <img className="border-radius-sm box-shadow" src={`/storage/kiku/artist/${album?.artist.id}.jpg`} alt={album?.artist.name} />
+                    <div className="text">
+                        <p><b>{album?.artist.name}</b></p>
+                        <Button variant="contained">Discover {album?.artist.name}</Button>
+                    </div>
                 </div>
             </div>
         </React.Fragment>

@@ -6,6 +6,8 @@ import KikuCard from "./components/kikuCard";
 import ArcHeader from "@/components/arcHeader";
 
 import '@/styles/pages/kiku/_home.scss';
+import WIP from "@/components/wip";
+import Link from "next/link";
 
 const query = `
     query {
@@ -63,9 +65,9 @@ export default async function MiruHome() {
                         <div id="artist-image">
                             <div className="mask"></div>
                             <img src={`/storage/kiku/artist/${featuredArtist?.id}.jpg`} alt="" />
-                            <Button variant="contained" color="primary">
+                            {/* <Button variant="contained" color="primary">
                                 Discover {featuredArtist?.name}
-                            </Button>
+                            </Button> */}
                         </div>
                     
                     </div>
@@ -75,9 +77,11 @@ export default async function MiruHome() {
                             <img src={`/storage/kiku/album/${featuredAlbum?.id}.jpg`} alt="" />
                             <div>
                                 <p className="txt-lg">{featuredAlbum.title}</p>
-                                <Button variant="contained" color="primary">
-                                    Stream Now
-                                </Button>
+                                <Link href={`/kiku/album/${featuredAlbum.id}`}>
+                                    <Button variant="contained" color="primary">
+                                        Stream Now
+                                    </Button>
+                                </Link>
                             </div>
                         </div>
                     </div>

@@ -2,121 +2,104 @@
 @use "sass:map";
 
 #page-kiku-album-details {
-    #header {
-
-        #album-summary {
-            img {
-                width:  50%;
-                height: 50%;
-                margin: auto;
-            }
-
-            .text {
-                margin-top: 1rem;
-                text-align: center;
-            }
+    #album-summary {
+        img {
+            width: 75%;
+            margin: auto;
         }
-
-        #artist-summary {
-            img {
-                width:  50%;
-                height: 50%;
-                margin: auto;
-            }
-
-            .text {
-                margin-top: 1rem;
-                text-align: center;
-
-                p {
-                    margin-bottom: 1rem;
-                }
-            }
+        .text {
+            text-align: center;
         }
     }
+
+    #artist-mobile-summary {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        img {
+            width: 100%;
+            margin: auto;
+        }
+        .text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            row-gap: 1rem;
+            text-align: center;
+        }
+    }
+
+    #artist-desktop-summary {
+        display: none;
+    }
+    
 }
 
 @media only screen and (min-width: 600px) {
     #page-kiku-album-details {
+        #artist-desktop-summary {
+            display: none;
+        }
+
+        #artist-mobile-summary {
+            display: grid;
+            align-items: flex-end;
+            grid-template-columns: 1fr 1.5fr;
+            column-gap: 1rem;
+            background-color: map.get($colors, platform-dark);
+            border-radius: 12px;
+
+            .text {
+                align-items: flex-start;
+            }
+        }
+
+        #album-summary {
+            display: grid;
+            align-items: flex-end;
+            grid-template-columns: 1fr 1.5fr;
+            column-gap: 1rem;
+            background-color: map.get($colors, platform-dark);
+            border-radius: 12px;
+
+            img {
+                margin: none;
+                width: 100%;
+            }
+            .text {
+                text-align: left;
+            }
+        }
         #header {
-            height: 325px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #page-kiku-album-details {
+        #header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        #artist-desktop-summary {
             display: grid;
             grid-template-columns: 1fr 1fr;
             column-gap: 1rem;
-
-            #album-summary {
-                position: relative;
-                padding: 0;
-                height: inherit;
-
-                img {
-                    position: relative;
-                    z-index: 1;
-                    height: 100%;
-                    width: 100%;
-                    object-fit: cover;
-                }
-
-                .mask {
-                    position: absolute;
-                    top: 0;
-                    z-index: 2;
-                    height: 100%;
-                    width: 100%;
-                    background-color: rgba(#000000, $alpha: .75);
-                }
-
-                .text {
-                    position: absolute;
-                    z-index: 3;
-                    bottom: 1rem;
-                    left: 1rem;
-                }
-            }
-
-            #artist-summary {
-                position: relative;
-                padding: 0;
-                height: inherit;
-
-                img {
-                    position: relative;
-                    z-index: 1;
-                    height: 100%;
-                    width: 100%;
-                    object-fit: cover;
-                }
-
-                .mask {
-                    position: absolute;
-                    top: 0;
-                    z-index: 2;
-                    height: 100%;
-                    width: 100%;
-                    background-color: rgba(#000000, $alpha: .75);
-                }
-
-                .text {
-                    position: absolute;
-                    z-index: 3;
-                    bottom: 1rem;
-                    left: 50%;
-                    transform: translateX(-50%);
-
-                    p {
-                        display: none;
-                    }
-                }
+            background-color: map.get($colors, platform-dark);
+            border-radius: 12px;
+            
+            .text {
+                display: flex;
+                flex-direction: column;
+                row-gap: 1rem;
+                justify-content: flex-end;
+                
             }
         }
-    }
-}
 
-@media only screen and (min-width: 600px) {
-    #page-kiku-album-details {
-        #header {
-            height: 400px;
-            grid-template-columns: 1.5fr 1fr;
+        #artist-mobile-summary {
+            display: none
         }
     }
 }
