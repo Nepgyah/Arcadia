@@ -84,7 +84,17 @@
             }
         }
     }
-    
+    #artist-content {
+        #detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap: 2rem;
+        }
+
+        #songs {
+            margin-top: 2rem;
+        }
+    }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -99,6 +109,18 @@
 
 @media only screen and (min-width: 1200px) {
     #page-kiku-artist-details {
+        #artist-content {
+            display: grid;
+            grid-template-columns: 1fr 1.25fr;
+            column-gap: 2rem;
 
+            #detail {
+                display: flex;
+            }
+
+            #songs {
+                margin-top: 0;
+            }
+        }
     }
 }

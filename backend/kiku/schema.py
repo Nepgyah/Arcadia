@@ -1,5 +1,6 @@
 import graphene
 from graphene_django import DjangoObjectType
+from graphene.types.generic import GenericScalar
 from .models import (
     AlbumSong,
     Song,
@@ -19,11 +20,15 @@ class AlbumType(DjangoObjectType):
     
 class ArtistType(DjangoObjectType):
     latest_album = graphene.Field(AlbumType)
+    socials = GenericScalar()
 
     class Meta:
         model = Artist
         fields = "__all__"
 
+    def resolve_socials(root, info):
+        return root.socials
+    
     def resolve_latest_album(self, info):
         return Album.objects.filter(artist=self).first()
 
