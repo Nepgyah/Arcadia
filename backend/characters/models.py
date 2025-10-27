@@ -4,7 +4,7 @@ from utils.unique_slugify import unique_slugify
 class Talent(models.Model):
     slug=models.SlugField(unique=True, blank=True)
     bio=models.TextField(default='A bio will be written at a later date.', blank=True)
-    website = models.URLField(null=True, blank=True)
+    socials = models.JSONField(null=True, blank=True)
 
     class Meta:
         abstract = True

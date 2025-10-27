@@ -12,6 +12,7 @@ class Artist(Talent):
     voice_actor_profile = models.OneToOneField(
         VoiceActor, on_delete=models.SET_NULL, null=True, blank=True, related_name='artist_profile'
     )
+    special_message = models.TextField(null=True, blank=True)
 
     class Meta:
         verbose_name_plural = "Artists"

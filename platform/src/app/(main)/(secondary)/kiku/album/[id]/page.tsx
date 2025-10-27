@@ -1,6 +1,6 @@
 'use client';
 
-import { apiGET, GraphQL } from "@/util/api/api"
+import { GraphQL } from "@/util/api/api"
 import { Breadcrumbs, Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
 import { useParams } from "next/navigation"
 import React, { useState } from "react";
@@ -58,8 +58,8 @@ export default function AlbumDetails() {
                     <div id="artist-desktop-summary" className="p-a-sm">
                         <img className="border-radius-sm box-shadow" src={`/storage/kiku/artist/${album?.artist.id}.jpg`} alt={album?.artist.name} />
                         <div className="text">
-                            <p>{album?.artist.name}</p>
-                            <Button variant="contained">Discover {album?.artist.name}</Button>
+                            <p className="txt-xl">{album?.artist.name}</p>
+                            {/* <Button variant="contained">Discover {album?.artist.name}</Button> */}
                         </div>
                     </div>
                 </div>
@@ -92,7 +92,7 @@ export default function AlbumDetails() {
                     <img className="border-radius-sm box-shadow" src={`/storage/kiku/artist/${album?.artist.id}.jpg`} alt={album?.artist.name} />
                     <div className="text">
                         <p><b>{album?.artist.name}</b></p>
-                        <Button variant="contained">Discover {album?.artist.name}</Button>
+                        {/* <Button variant="contained">Discover {album?.artist.name}</Button> */}
                     </div>
                 </div>
             </div>

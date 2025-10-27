@@ -35,7 +35,8 @@ const query = `
         },
         topArtists(count: 5) {
             id,
-            name
+            name,
+            slug
         },
         featuredAlbum {
             id,
@@ -135,7 +136,7 @@ export default async function MiruHome() {
                                         id={artist.id}
                                         title={artist.name}
                                         type="artist"
-                                        mainLink={`/kiku/artist/${artist.id}`}
+                                        mainLink={`/kiku/artist/${artist.slug}/${artist.id}`}
                                     />
                                 ))
                             }

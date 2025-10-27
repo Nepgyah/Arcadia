@@ -84,11 +84,11 @@
 
         #artist-desktop-summary {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1.25fr;
             column-gap: 1rem;
             background-color: map.get($colors, platform-dark);
             border-radius: 12px;
-            
+
             .text {
                 display: flex;
                 flex-direction: column;

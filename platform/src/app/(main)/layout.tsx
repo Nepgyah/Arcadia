@@ -20,7 +20,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
     const pathname = usePathname();
 
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+    const isMobile = useMediaQuery(theme.breakpoints.down('lg'));
     
     const getNav = (): navInfo => {
         if (pathname.startsWith('/miru')) return { 'app': 'miru', 'links': miruNav};
