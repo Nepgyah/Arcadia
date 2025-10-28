@@ -4,7 +4,7 @@ import { Box, Button, Tab } from "@mui/material";
 import '@/styles/pages/_homepage.scss'
 import Script from "next/script";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FadeIn from "@/components/fadeIn";
 import ArcFeature from "@/components/feature";
 
@@ -12,6 +12,11 @@ const platformURL = process.env.NEXT_PLATFORM_URL;
 
 export default function Home() {
 
+  useEffect(() => {
+    setCurrentCC(Math.floor(Math.random() * 3))
+  }, [])
+
+  const [currentCC, setCurrentCC] = useState<number>(0)
   const [secondaryAppValue, setSecondaryAppValue] = useState<string>('1');
 
   return (
@@ -34,10 +39,31 @@ export default function Home() {
                         Explore the Apps
                     </Button>
                 </div>
+                <div id="hero-feats" className="border-radius--md box-shadow bg-arc-secondary-dark p">
+                  <ArcFeature 
+                    icon="diamond"
+                    header="All-In-One Solution"
+                    description="Arcadia combines anime, manga, games and more."
+                    color="arc-tertiary"
+                  />
+                  <ArcFeature 
+                    icon="heart"
+                    header="Passion Project"
+                    description="Built for fans, by fans."
+                    color="arc-tertiary"
+                  />
+                </div>
               </div>
             </div>
-            <div>
-              <img src="/pages/homepage/furina.png" alt="" />
+            <div id="featured-cc">
+              {
+                currentCC == 0 ?
+                  <img src="/pages/homepage/furina.png" alt="" />
+                : currentCC == 1 ?
+                  <img src="/pages/homepage/robin.png" alt="" />
+                :
+                  <img src="/pages/homepage/kitasan-black.png" alt="" />
+              }
             </div>
           </div>
         </div>
@@ -71,36 +97,34 @@ export default function Home() {
           <div className="grid grid--3-col clr-txt-light">
             <div className="flex-row flex-row--spacing-md">
               <ArcFeature 
-                icon="diamond"
-                header="All-In-One Solution"
-                description="Arcadia combines anime tracking, manga reading, gaming, merch shopping."
+                icon="star"
+                header="Seamless Universe"
+                description="Arcadia unites every corner of your fandom under a single login."
                 color="arc-tertiary"
               />
 
               <ArcFeature 
-                icon="lock"
-                header="Direct Connections"
-                description="Offical partners with studios to bring authentic experience."
+                icon="people"
+                header="Community Driven"
+                description="Listening to the most important voice: yours."
                 color="arc-tertiary"
-              />
-
-              
+              />      
             </div>
 
             <div className="flex-row flex-row--spacing-lg">
               <ArcFeature 
-                icon="people"
-                header="Fans Over Everything"
-                description="Listening to the most important voice: yours."
+                icon="lock"
+                header="Direct Connections"
+                description="Unlock authentic experiences with official partnerships"
                 color="arc-tertiary"
-              />
+              />          
               <div className="center-horizontal">
                 <img src="/logo/logo-image-only.png" alt="Arcadia Icon" />
               </div>
               <ArcFeature 
-                icon="heart"
-                header="Passion Prevails"
-                description="Created by fans and driven by passion and curiosity."
+                icon="diamond"
+                header="Modern Technologies"
+                description="Built with modern frameworks to adapt to whatever comes next."
                 color="arc-tertiary"
               />
             </div>
@@ -109,13 +133,13 @@ export default function Home() {
               <ArcFeature 
                 icon="growth"
                 header="Always Improving"
-                description="Always new features, QOL improvements and bug fixes with every patch."
+                description="New features, QOL improvements and bug fixes with every patch."
                 color="arc-tertiary"
               />
               <ArcFeature 
-                icon="clock"
-                header="Future-Ready"
-                description="Built with modern frameworks to adapt to whatever comes next."
+                icon="flag"
+                header="Cross-Platform Freedom"
+                description="Enjoy Arcadia anywhere. Your fandom doesn’t stop when you switch screens."
                 color="arc-tertiary"
               />
             </div>
