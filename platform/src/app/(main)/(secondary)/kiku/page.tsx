@@ -15,7 +15,9 @@ const query = `
             id,
             title,
             artist {
-            name
+                id,
+                slug,
+                name
             }
             album {
             id
@@ -25,7 +27,9 @@ const query = `
             id,
             title,
             artist {
-            name
+                id,
+                name,
+                slug
             }
         },
         featuredArtist {
@@ -101,6 +105,7 @@ export default async function MiruHome() {
                                         subTitle={song.artist.name}
                                         type="album"
                                         mainLink={`/kiku/album/${song.album.id}`}
+                                        subLink={`/kiku/artist/${song.artist.slug}/${song.artist.id}`}
                                     />
                                 ))
                             }
@@ -119,7 +124,7 @@ export default async function MiruHome() {
                                         subTitle={album.artist.name}
                                         type="album"
                                         mainLink={`/kiku/album/${album.id}`}
-                                        subLink={`/kiku/artist/${album.artist.id}`}
+                                        subLink={`/kiku/artist/${album.artist.slug}/${album.artist.id}`}
                                     />
                                 ))
                             }

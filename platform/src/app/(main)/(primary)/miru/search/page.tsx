@@ -128,7 +128,7 @@ export default function MiruHome() {
                                         key={key}
                                         app="miru"
                                         media={anime}
-                                        link={`/platform/miru/anime/${anime.id}/${anime.slug}`}
+                                        link={`/miru/anime/${anime.id}/${anime.slug}`}
                                         status={anime.status}
                                     />
                                 ))

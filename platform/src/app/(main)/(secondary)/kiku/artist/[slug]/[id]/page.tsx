@@ -35,7 +35,8 @@ export default function ArtistDetails() {
                 },
                 topSongs(count: 5, artistId: ${params.id}) {
                     id,
-                    title
+                    title,
+                    plays
                 }
             }
         `
@@ -110,6 +111,13 @@ export default function ArtistDetails() {
                                     <SocialMediaCard 
                                         type="reddit"
                                         social={artist?.socials.reddit }
+                                    />
+                                }
+                                {
+                                    artist?.socials?.instagram &&
+                                    <SocialMediaCard 
+                                        type="instagram"
+                                        social={artist?.socials.instagram }
                                     />
                                 }
                             </div>
