@@ -442,6 +442,28 @@
                 margin-bottom: 2rem;
             }
         }
+
+        #roadmap {
+            #roadmap-main {
+                margin-bottom: 5rem;
+            }
+
+            #goals {
+                display: flex;
+                flex-direction: column;
+                row-gap: 2rem;
+
+                >div {
+                    background-color: map.get($colors, arc-primary);
+                    padding: 1rem;
+                    color: white;
+
+                    h3 {
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+        }
     }
 
     #d2x {
@@ -578,12 +600,18 @@
         #tech {
 
             #tech-pink-lines-1 {
-                top: 55%;
+                top: 40%;
+                width: 20%;
             }
 
             #tech-pink-lines-2 {
-                bottom: 15%;
+                bottom: 40%;
                 right: 0;
+                width: 20%;
+            }
+
+            #tech-pink-ribbon {
+                bottom: 5%;
             }
 
             #stack {
@@ -597,6 +625,20 @@
             }
             .section-main {
                 width: 75%;
+            }
+
+            #roadmap {
+
+                #roadmap-main {
+
+                    &.grid--2-col {
+                        grid-template-columns: 1fr 2fr;
+                        align-items: end;
+                    }
+                    img {
+                        max-height: 300px;
+                    }
+                }
             }
         }
 
@@ -613,9 +655,26 @@
     #page-homepage {
         #tech {
 
+            #tech-pink-lines-1, #tech-pink-lines-1 {
+                // width: auto;
+            }
+
+            #tech-pink-ribbon {
+                bottom: 1rem;
+            }
+
             #stack {
                 gap: 2rem;
                 height: 150px;
+            }
+
+            #roadmap {
+
+                #goals {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr 1fr;
+                    column-gap: 2rem;
+                }
             }
         }
     }
