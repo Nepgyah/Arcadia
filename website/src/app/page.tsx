@@ -7,6 +7,7 @@ import { TabContext, TabList, TabPanel } from "@mui/lab";
 import { useEffect, useState } from "react";
 import FadeIn from "@/components/fadeIn";
 import ArcFeature from "@/components/feature";
+import HomepageCaseStudy from "@/components/homepage/caseStudy";
 
 const platformURL = process.env.NEXT_PLATFORM_URL;
 
@@ -465,6 +466,17 @@ export default function Home() {
                 </FadeIn>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section id="case-study" className="section">
+          <div className="section__wrapper">
+            <div className="section-main section-main--white">
+              <p className="section-main__mini-title">Case Studies</p>
+              <h2 className="section-main__title">Across Worlds, Arcadia Always <br /><span className="clr-txt-dark-emp">Makes An Impact</span></h2>
+              <p>Arcadia’s rich app ecosystem allows it to contribute to different industries in different ways, big or small. See below or click to find out the details on how Arcadia left a mark on these clients.</p>
+            </div>
+            <HomepageCaseStudy />
           </div>
         </section>
       </div>
