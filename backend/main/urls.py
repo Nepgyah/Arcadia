@@ -16,6 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.decorators.csrf import csrf_exempt
+from graphene_django.views import GraphQLView
+from .schema import schema
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,5 +27,8 @@ urlpatterns = [
     path('api/miru/', include('miru.urls')),
     path('api/yomu/', include('yomu.urls')),
     path('api/kumitateru/', include('kumitateru.urls')),
-    path('api/tsunagu/', include('tsunagu.urls'))
+    path('api/kiku/', include('kiku.urls')),
+    path('api/tsunagu/', include('tsunagu.urls')),
+
+    path('graphql/', csrf_exempt(GraphQLView.as_view(graphiql=True, schema=schema)))
 ]

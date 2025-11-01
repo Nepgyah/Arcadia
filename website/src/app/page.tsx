@@ -4,14 +4,20 @@ import { Box, Button, Tab } from "@mui/material";
 import '@/styles/pages/_homepage.scss'
 import Script from "next/script";
 import { TabContext, TabList, TabPanel } from "@mui/lab";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FadeIn from "@/components/fadeIn";
 import ArcFeature from "@/components/feature";
+import HomepageCaseStudy from "@/components/homepage/caseStudy";
 
 const platformURL = process.env.NEXT_PLATFORM_URL;
 
 export default function Home() {
 
+  useEffect(() => {
+    setCurrentCC(Math.floor(Math.random() * 3))
+  }, [])
+
+  const [currentCC, setCurrentCC] = useState<number>(0)
   const [secondaryAppValue, setSecondaryAppValue] = useState<string>('1');
 
   return (
@@ -34,10 +40,31 @@ export default function Home() {
                         Explore the Apps
                     </Button>
                 </div>
+                <div id="hero-feats" className="border-radius--md box-shadow bg-arc-secondary-dark p">
+                  <ArcFeature 
+                    icon="diamond"
+                    header="All-In-One Solution"
+                    description="Arcadia combines anime, manga, games and more."
+                    color="arc-tertiary"
+                  />
+                  <ArcFeature 
+                    icon="heart"
+                    header="Passion Project"
+                    description="Built for fans, by fans."
+                    color="arc-tertiary"
+                  />
+                </div>
               </div>
             </div>
-            <div>
-              <img src="/pages/homepage/furina.png" alt="" />
+            <div id="featured-cc">
+              {
+                currentCC == 0 ?
+                  <img src="/pages/homepage/furina.png" alt="" />
+                : currentCC == 1 ?
+                  <img src="/pages/homepage/robin.png" alt="" />
+                :
+                  <img src="/pages/homepage/kitasan-black.png" alt="" />
+              }
             </div>
           </div>
         </div>
@@ -71,36 +98,34 @@ export default function Home() {
           <div className="grid grid--3-col clr-txt-light">
             <div className="flex-row flex-row--spacing-md">
               <ArcFeature 
-                icon="diamond"
-                header="All-In-One Solution"
-                description="Arcadia combines anime tracking, manga reading, gaming, merch shopping."
+                icon="star"
+                header="Seamless Universe"
+                description="Arcadia unites every corner of your fandom under a single login."
                 color="arc-tertiary"
               />
 
               <ArcFeature 
-                icon="lock"
-                header="Direct Connections"
-                description="Offical partners with studios to bring authentic experience."
+                icon="people"
+                header="Community Driven"
+                description="Listening to the most important voice: yours."
                 color="arc-tertiary"
-              />
-
-              
+              />      
             </div>
 
             <div className="flex-row flex-row--spacing-lg">
               <ArcFeature 
-                icon="people"
-                header="Fans Over Everything"
-                description="Listening to the most important voice: yours."
+                icon="lock"
+                header="Direct Connections"
+                description="Unlock authentic experiences with official partnerships"
                 color="arc-tertiary"
-              />
+              />          
               <div className="center-horizontal">
                 <img src="/logo/logo-image-only.png" alt="Arcadia Icon" />
               </div>
               <ArcFeature 
-                icon="heart"
-                header="Passion Prevails"
-                description="Created by fans and driven by passion and curiosity."
+                icon="diamond"
+                header="Modern Technologies"
+                description="Built with modern frameworks to adapt to whatever comes next."
                 color="arc-tertiary"
               />
             </div>
@@ -109,13 +134,13 @@ export default function Home() {
               <ArcFeature 
                 icon="growth"
                 header="Always Improving"
-                description="Always new features, QOL improvements and bug fixes with every patch."
+                description="New features, QOL improvements and bug fixes with every patch."
                 color="arc-tertiary"
               />
               <ArcFeature 
-                icon="clock"
-                header="Future-Ready"
-                description="Built with modern frameworks to adapt to whatever comes next."
+                icon="flag"
+                header="Cross-Platform Freedom"
+                description="Enjoy Arcadia anywhere. Your fandom doesn’t stop when you switch screens."
                 color="arc-tertiary"
               />
             </div>
@@ -130,17 +155,17 @@ export default function Home() {
             <div className="grid grid--2-col">
               <div id="collab-container">
                 <div className="company">
-                  <img src="/partners/crunchyroll-white.svg" alt="Crunchyroll Logo" />
+                  <img src="/partners/eagle-jump-logo.png" alt="Eagle Jump" />
                 </div>
                 <div className="company">
                   <img src="/partners/nexon-white.png" alt="Nexon Games Logo" />
                 </div>
                 <div className="company">
-                  <img src="/partners/from-soft.png" alt="From Software Logo" />
+                  <img src="/partners/astral-express.png" alt="Astral Express Logo" />
                 </div>
 
                 <div className="company">
-                  <img src="/partners/square-enix-white.svg" alt="Square Enix Logo" />
+                  <img src="/partners/fromsoft.png" alt="Fromsoft logo" />
                 </div>
                 <div className="company">
                   <img src="/partners/hoyoverse-white.png" alt="Hoyoverse Logo" />
@@ -323,103 +348,138 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="secondary" className="section gradient-secondary-primary">
-        <div className="section__wrapper">
-          <div className="section-main section-main--shorten section-main--white">
-            <p className="section-main__mini-title">Beyond The Essentials</p>
-            <h2 className="section-main__title">Arcadia's Secondary App</h2>
-            <p>These supplementary apps are smaller in scope, but big on impact. From planning events to diving into niche blogs and lo-fi vibes, the Arcadia side suites adds extra flavor to your fandom journey.</p>
+      <div className="gradient-secondary-primary">
+        <section id="secondary" className="section">
+          <div className="section__wrapper">
+            <div className="section-main section-main--shorten section-main--white">
+              <p className="section-main__mini-title">Beyond The Essentials</p>
+              <h2 className="section-main__title">Arcadia's Secondary App</h2>
+              <p>These supplementary apps are smaller in scope, but big on impact. From planning events to diving into niche blogs and lo-fi vibes, the Arcadia side suites adds extra flavor to your fandom journey.</p>
+            </div>
+
+            <div>
+              <TabContext value={secondaryAppValue}>
+                <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                  <TabList onChange={(e, value) => setSecondaryAppValue(value)} aria-label="Secondary Apps Tab">
+                    <Tab label="Entertainment" value="1" className="clr-txt-light"/>
+                    <Tab label="Utility" value="2" className="clr-txt-light"/>
+                    <Tab label="Knowledge" value="3" className="clr-txt-light"/>
+                  </TabList>
+                </Box>
+                <TabPanel value="1">
+                  <div className="grid grid--2-col">
+                    <div id="kiku-tile" className="app-tile bg-kiku-base animation__hover-grow">
+                      <h3 className="app-tile__name">Kiku - きく [聞く]</h3>
+                      <p className="app-tile__slogan">A Soundtrack For Every Fan</p>
+
+                      <div className="app-tile__bg-circle bg-kiku-dark"></div>
+                      <img className="app-tile__mascots" src="/pages/homepage/kiku-mascots.png" alt="" />
+                    </div>
+
+                    <div id="todokeru-tile" className="app-tile bg-todokeru-base clr-txt-light animation__hover-grow">
+                      <h3 className="app-tile__name">Todokeru - とどける [届ける]</h3>
+                      <p className="app-tile__slogan">From Pixels, To People</p>
+
+                      <div className="app-tile__bg-circle bg-todokeru-dark"></div>
+                      <img className="app-tile__mascots" src="/pages/homepage/todokeru-mascots.png" alt="" />
+                    </div>
+
+                    <div id="hiku-tile" className="app-tile bg-hiku-base animation__hover-grow">
+                      <h3 className="app-tile__name">Hiku - ひく [引く]</h3>
+                      <p className="app-tile__slogan">Guide. Gather. Game</p>
+
+                      <div className="app-tile__bg-circle bg-hiku-dark"></div>
+                      <img className="app-tile__mascots" src="/pages/homepage/hiku-mascots.png" alt="" />
+                    </div>
+                    
+                    <div id="sagasu-tile" className="app-tile bg-sagasu-base clr-txt-light animation__hover-grow">
+                      <h3 className="app-tile__name">Sagasu - さがす [探す]</h3>
+                      <p className="app-tile__slogan">Test Your Fandom Knowledge</p>
+
+                      <div className="app-tile__bg-circle bg-sagasu-dark"></div>
+                      <img className="app-tile__mascots" src="/pages/homepage/sagasu-mascots.png" alt="" />
+                    </div>
+                  </div>
+                </TabPanel>
+
+                <TabPanel value="2">
+                  <div className="grid grid--2-col">
+                    <div id="kumitateru-tile" className="app-tile bg-kumitateru-base clr-txt-light animation__hover-grow">
+                      <h3 className="app-tile__name">Kumitateru - <br />くみたてる [組み立てる]</h3>
+                      <p className="app-tile__slogan">Build Your Battle Station</p>
+
+                      <div className="app-tile__bg-circle bg-kumitateru-dark"></div>
+                      <img className="app-tile__mascots" src="/pages/homepage/kumitateru-mascots.png" alt="" />
+                    </div>
+
+                    <div id="iku-tile" className="app-tile bg-iku-base clr-txt-light animation__hover-grow">
+                      <h3 className="app-tile__name">Iku - いく [行く]</h3>
+                      <p className="app-tile__slogan">Make Every Meetup A Adventure</p>
+
+                      <div className="app-tile__bg-circle bg-iku-dark"></div>
+                      <img className="app-tile__mascots" src="/pages/homepage/iku-mascots.png" alt="" />
+                    </div>
+                  </div>
+                </TabPanel>
+
+                <TabPanel value="3">
+                  <div className="grid grid--2-col">
+                    <div id="manabu-tile" className="app-tile bg-manabu-base clr-txt-light animation__hover-grow">
+                      <h3 className="app-tile__name">Manabu - <br />まなぶ [学ぶ]</h3>
+                      <p className="app-tile__slogan">Fluency Through Fandom</p>
+
+                      <div className="app-tile__bg-circle bg-manabu-dark"></div>
+                      <img className="app-tile__mascots" src="/pages/homepage/manabu-mascots.png" alt="" />
+                    </div>
+
+                    <div id="shiru-tile" className="app-tile bg-shiru-base animation__hover-grow">
+                      <h3 className="app-tile__name">Shiru - しる [知る]</h3>
+                      <p className="app-tile__slogan">Stories from the Otaku-verse</p>
+
+                      <div className="app-tile__bg-circle bg-shiru-dark"></div>
+                      <img className="app-tile__mascots" src="/pages/homepage/shiru-mascots.png" alt="" />
+                    </div>
+                  </div>
+                </TabPanel>
+              </TabContext>
+            </div>
           </div>
 
-          <div>
-            <TabContext value={secondaryAppValue}>
-              <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <TabList onChange={(e, value) => setSecondaryAppValue(value)} aria-label="Secondary Apps Tab">
-                  <Tab label="Entertainment" value="1" className="clr-txt-light"/>
-                  <Tab label="Utility" value="2" className="clr-txt-light"/>
-                  <Tab label="Knowledge" value="3" className="clr-txt-light"/>
-                </TabList>
-              </Box>
-              <TabPanel value="1">
-                <div className="grid grid--2-col">
-                  <div id="kiku-tile" className="app-tile bg-kiku-base animation__hover-grow">
-                    <h3 className="app-tile__name">Kiku - きく [聞く]</h3>
-                    <p className="app-tile__slogan">A Soundtrack For Every Fan</p>
+        </section>
 
-                    <div className="app-tile__bg-circle bg-kiku-dark"></div>
-                    <img className="app-tile__mascots" src="/pages/homepage/kiku-mascots.png" alt="" />
+        <section id="content-creator" className="section">
+          <div className="section__wrapper">
+            <div className="grid grid--2-col">
+              <div>
+                <FadeIn direction="right">
+                  <img src="/pages/homepage/robin-splash.png" alt="" />
+                </FadeIn>
+              </div>
+              <div className="center-both">
+                <FadeIn direction="left">
+                  <div className="section-main section-main--white">
+                    <p className="section-main__mini-title">Featured Content Creator</p>
+                    <h2 className="section-main__title">The Virtuoso of Penacony Steps onto the <span className="clr-txt-dark-emp">Arcadian Stage</span></h2>
+                    <p>Known for her breathtaking performances that inspire harmony across worlds, Robin now streams exclusive concerts and creative sessions on Todokeru, connecting with fans through the universal language of music.</p>
+                    <p>Her arrival marks a new chapter in Arcadia’s creator ecosystem: where passion, art, and fandom intertwine to build something extraordinary.</p>
                   </div>
-
-                  <div id="todokeru-tile" className="app-tile bg-todokeru-base clr-txt-light animation__hover-grow">
-                    <h3 className="app-tile__name">Todokeru - とどける [届ける]</h3>
-                    <p className="app-tile__slogan">From Pixels, To People</p>
-
-                    <div className="app-tile__bg-circle bg-todokeru-dark"></div>
-                    <img className="app-tile__mascots" src="/pages/homepage/todokeru-mascots.png" alt="" />
-                  </div>
-
-                  <div id="hiku-tile" className="app-tile bg-hiku-base animation__hover-grow">
-                    <h3 className="app-tile__name">Hiku - ひく [引く]</h3>
-                    <p className="app-tile__slogan">Guide. Gather. Game</p>
-
-                    <div className="app-tile__bg-circle bg-hiku-dark"></div>
-                    <img className="app-tile__mascots" src="/pages/homepage/hiku-mascots.png" alt="" />
-                  </div>
-                  
-                  <div id="sagasu-tile" className="app-tile bg-sagasu-base clr-txt-light animation__hover-grow">
-                    <h3 className="app-tile__name">Sagasu - さがす [探す]</h3>
-                    <p className="app-tile__slogan">Test Your Fandom Knowledge</p>
-
-                    <div className="app-tile__bg-circle bg-sagasu-dark"></div>
-                    <img className="app-tile__mascots" src="/pages/homepage/sagasu-mascots.png" alt="" />
-                  </div>
-                </div>
-              </TabPanel>
-
-              <TabPanel value="2">
-                <div className="grid grid--2-col">
-                  <div id="kumitateru-tile" className="app-tile bg-kumitateru-base clr-txt-light animation__hover-grow">
-                    <h3 className="app-tile__name">Kumitateru - <br />くみたてる [組み立てる]</h3>
-                    <p className="app-tile__slogan">Build Your Battle Station</p>
-
-                    <div className="app-tile__bg-circle bg-kumitateru-dark"></div>
-                    <img className="app-tile__mascots" src="/pages/homepage/kumitateru-mascots.png" alt="" />
-                  </div>
-
-                  <div id="iku-tile" className="app-tile bg-iku-base clr-txt-light animation__hover-grow">
-                    <h3 className="app-tile__name">Iku - いく [行く]</h3>
-                    <p className="app-tile__slogan">Make Every Meetup A Adventure</p>
-
-                    <div className="app-tile__bg-circle bg-iku-dark"></div>
-                    <img className="app-tile__mascots" src="/pages/homepage/iku-mascots.png" alt="" />
-                  </div>
-                </div>
-              </TabPanel>
-
-              <TabPanel value="3">
-                <div className="grid grid--2-col">
-                  <div id="manabu-tile" className="app-tile bg-manabu-base clr-txt-light animation__hover-grow">
-                    <h3 className="app-tile__name">Manabu - <br />まなぶ [学ぶ]</h3>
-                    <p className="app-tile__slogan">Fluency Through Fandom</p>
-
-                    <div className="app-tile__bg-circle bg-manabu-dark"></div>
-                    <img className="app-tile__mascots" src="/pages/homepage/manabu-mascots.png" alt="" />
-                  </div>
-
-                  <div id="shiru-tile" className="app-tile bg-shiru-base animation__hover-grow">
-                    <h3 className="app-tile__name">Shiru - しる [知る]</h3>
-                    <p className="app-tile__slogan">Stories from the Otaku-verse</p>
-
-                    <div className="app-tile__bg-circle bg-shiru-dark"></div>
-                    <img className="app-tile__mascots" src="/pages/homepage/shiru-mascots.png" alt="" />
-                  </div>
-                </div>
-              </TabPanel>
-            </TabContext>
+                </FadeIn>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
 
-      </section>
+        <section id="case-study" className="section">
+          <div className="section__wrapper">
+            <div className="section-main section-main--white">
+              <p className="section-main__mini-title">Case Studies</p>
+              <h2 className="section-main__title">Across Worlds, Arcadia Always <br /><span className="clr-txt-dark-emp">Makes An Impact</span></h2>
+              <p>Arcadia’s rich app ecosystem allows it to contribute to different industries in different ways, big or small. See below or click to find out the details on how Arcadia left a mark on these clients.</p>
+            </div>
+            <HomepageCaseStudy />
+          </div>
+        </section>
+      </div>
 
       <section id="middle-cta" className="section gradient-tertiary">
         <img id="anime-lines" className="section__bg-element" src="/pages/homepage/lines.png" alt="Action anime lines" />
@@ -447,10 +507,11 @@ export default function Home() {
       </section>
 
       <section id="tech" className="section">
-        <img id="tech-pink-lines-1" className="desktop-only section__bg-element" src="/bg-assets/pink-lines-1.svg" alt="Pink Lines" />
-        <img id="tech-pink-lines-2" className="desktop-only section__bg-element" src="/bg-assets/pink-lines-2.svg" alt="Pink Lines" />
+        <img id="tech-pink-lines-1" className="desktop-only section__bg-element" src="/bg-assets/pink-lines-1.svg" alt="" />
+        <img id="tech-pink-lines-2" className="desktop-only section__bg-element" src="/bg-assets/pink-lines-2.svg" alt="" />
+        <img id="tech-pink-ribbon" className="desktop-only section__bg-element" src="/bg-assets/pink-ribbon.png" alt="" />
         <div className="section__wrapper">
-          <div className="grid grid--2-col">
+          <div id="tech-stack" className="grid grid--2-col">
             <div className="section-main">
               <p className="section-main__mini-title">App Ecosystem</p>
               <h2 className="section-main__title">Modern Technologies Define Arcadia</h2>
@@ -524,6 +585,37 @@ export default function Home() {
               <div ></div>
             </div>
           </div>
+
+          <div id="roadmap">
+            <div id="roadmap-main" className="grid grid--2-col">
+              <div>
+                <FadeIn direction="right" delay={.5}>
+                  <img src="/pages/homepage/umalandsaga.png" alt="" />
+                </FadeIn>
+              </div>
+              <div id="roadmap-text">
+                  <div className="section-main">
+                  <p className="section-main__mini-title">The Journey Ahead</p>
+                  <h2 className="section-main__title">Arcadia's Next Steps</h2>
+                  <p>We’re just getting started. From new features to fan-powered expansions, Arcadia’s evolving. Here's a glimpse at what’s coming next.</p>
+                </div>
+              </div>
+            </div>
+            <div id="goals">
+              <div className="box-shadow border-radius--md">
+                <h3>Full Website</h3>
+                <p>Once completed, the Arcadia website will hold all you need to know about the ultimate otaku platform and what we(d2x) are all about.</p>
+              </div>
+              <div className="box-shadow border-radius--md">
+                <h3>Primary Apps</h3>
+                <p>We plan to finalize the primary apps first. They serve as the foundation of why Arcadia was created.</p>
+              </div>
+              <div className="box-shadow border-radius--md">
+                <h3>Application Bound</h3>
+                <p>Arcadia won't just be a web platform. We plan to bring you the power of it as a desktop and mobile app.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -567,6 +659,17 @@ export default function Home() {
                 <img src="/pages/homepage/d2x/anime-tommy.png" alt="Anime tommy" />
               </FadeIn>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="bottom-cta" className="section">
+        <img className="section__bg-element" src="/pages/homepage/anime-world-2.jpg" alt="" />
+        <div className="section__wrapper center-both">
+          <div className="section-main section-main--center blur-container box-shadow border-radius--md">
+            <h2 className="section-main__title">Enter the World of Arcadia Today</h2>
+            <p>Join the platform built by fans, for fans. Watch, read, play and more: all in one place.</p>
+            <a href='https://arcadia-inky.vercel.app' target="_blank"><Button variant="contained">Launch Arcadia</Button></a>
           </div>
         </div>
       </section>

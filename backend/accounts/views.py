@@ -29,7 +29,8 @@ class LoginView(APIView):
             login(request, user_obj)
 
             return Response({
-        'csrfToken': request.META.get("CSRF_COOKIE")})
+                'csrfToken': request.META.get("CSRF_COOKIE")
+            })
         else:
             return Response({'message': 'Invalid'}, status=status.HTTP_400_BAD_REQUEST)
     

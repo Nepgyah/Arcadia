@@ -20,6 +20,7 @@ INSTALLED_APPS = [
     'accounts',
     'asobu',
     'miru',
+    'kiku',
     'yomu',
     'kumitateru',
     'tsunagu',
@@ -32,6 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'graphene_django'
 ]
 
 MIDDLEWARE = [
@@ -46,6 +48,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'main.urls'
+
+# GRAPHENE = {
+#     'SCHEMA' : 'myapp.schema.schema'
+# }
 
 TEMPLATES = [
     {

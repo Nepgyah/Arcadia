@@ -1,0 +1,8 @@
+.grid {
+    display: grid;
+    column-gap: 1rem;
+    
+    &--2-col-offset {
+        grid-template-columns: 1.5fr 1fr;
+    }
+}

@@ -33,6 +33,6 @@ export const D2XUrls: Url[] = [
 
 export const ResourceUrls: Url[] = [
     { name: 'Case Studies', path: '/resource/case-study'},
-    { name: 'FAQ', path: '/resource/faq'},
-    { name: 'legal', path: '/resource/legal'},
+    // { name: 'FAQ', path: '/resource/faq'},
+    // { name: 'legal', path: '/resource/legal'},
 ]
