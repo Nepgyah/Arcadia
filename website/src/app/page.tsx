@@ -155,17 +155,17 @@ export default function Home() {
             <div className="grid grid--2-col">
               <div id="collab-container">
                 <div className="company">
-                  <img src="/partners/crunchyroll-white.svg" alt="Crunchyroll Logo" />
+                  <img src="/partners/eagle-jump-logo.png" alt="Eagle Jump" />
                 </div>
                 <div className="company">
                   <img src="/partners/nexon-white.png" alt="Nexon Games Logo" />
                 </div>
                 <div className="company">
-                  <img src="/partners/from-soft.png" alt="From Software Logo" />
+                  <img src="/partners/astral-express.png" alt="Astral Express Logo" />
                 </div>
 
                 <div className="company">
-                  <img src="/partners/square-enix-white.svg" alt="Square Enix Logo" />
+                  <img src="/partners/fromsoft.png" alt="Fromsoft logo" />
                 </div>
                 <div className="company">
                   <img src="/partners/hoyoverse-white.png" alt="Hoyoverse Logo" />
@@ -511,7 +511,7 @@ export default function Home() {
         <img id="tech-pink-lines-2" className="desktop-only section__bg-element" src="/bg-assets/pink-lines-2.svg" alt="" />
         <img id="tech-pink-ribbon" className="desktop-only section__bg-element" src="/bg-assets/pink-ribbon.png" alt="" />
         <div className="section__wrapper">
-          <div className="grid grid--2-col">
+          <div id="tech-stack" className="grid grid--2-col">
             <div className="section-main">
               <p className="section-main__mini-title">App Ecosystem</p>
               <h2 className="section-main__title">Modern Technologies Define Arcadia</h2>
@@ -659,6 +659,17 @@ export default function Home() {
                 <img src="/pages/homepage/d2x/anime-tommy.png" alt="Anime tommy" />
               </FadeIn>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="bottom-cta" className="section">
+        <img className="section__bg-element" src="/pages/homepage/anime-world-2.jpg" alt="" />
+        <div className="section__wrapper center-both">
+          <div className="section-main section-main--center blur-container box-shadow border-radius--md">
+            <h2 className="section-main__title">Enter the World of Arcadia Today</h2>
+            <p>Join the platform built by fans, for fans. Watch, read, play and more: all in one place.</p>
+            <a href='https://arcadia-inky.vercel.app' target="_blank"><Button variant="contained">Launch Arcadia</Button></a>
           </div>
         </div>
       </section>

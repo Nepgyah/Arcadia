@@ -1,7 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import { useState } from "react"
 import HaloGames from '../../../public/pages/homepage/case-study/halo-games.png';
-import AstralExpress from '../../../public/pages/homepage/case-study/astral-express.webp';
+import Rappa from '../../../public/pages/homepage/case-study/rappa.png';
 import EagleJump from '../../../public/pages/homepage/case-study/eagle-jump.jpg';
 import BTR from '../../../public/pages/homepage/case-study/btr.jpeg';
 
@@ -17,27 +17,9 @@ export default function HomepageCaseStudy(){
 
     const handleStudyChange = (id : string) => {
         if (id === currentStudy) return;
-
-        var currentCard = document.getElementById(currentStudy)
-        var targetCard = document.getElementById(id)
-        if (currentCard) {
-            currentCard.style.opacity = '0%'
-            currentCard.style.transform = 'translateY(10px)'
-        }
-
-        setTimeout(() => {
-            setCurrentStudy(id)
-            var targetCard = document.getElementById(id);
-        }, 250)
-        setTimeout(() => {
-
-            if (targetCard) {
-                targetCard.style.opacity = '100%'
-                targetCard.style.transform = 'translateY(0px)'
-            }
-        }, 500)
-
+        setCurrentStudy(id)
     }
+
     return (
         <div id="case-study-content">
             <div id="case-study-cards">
@@ -56,8 +38,8 @@ export default function HomepageCaseStudy(){
                 <CaseStudyCard 
                     currentCase={currentStudy}
                     id="astral-express"
-                    title="A Ninja Finds Her Stage Among the Stars"
-                    imageLink={AstralExpress}
+                    title="Seeking 1st at Paperfold College"
+                    imageLink={Rappa}
                     statOneValue="1.2 Million"
                     statOneText="Peak live concurrent viewers during Ninjastar Live"
                     statTwoValue="1st Place"

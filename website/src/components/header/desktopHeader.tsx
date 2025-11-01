@@ -140,7 +140,7 @@ export default function DesktopHeader() {
                 </nav>
                 <div className="cta-buttons">
                     <a href='https://arcadia-inky.vercel.app' target="_blank">
-                    <Button variant="contained" color="secondary">To Apps</Button>
+                    <Button variant="contained" color="secondary">Platform</Button>
                     </a>
                     {/* <Button variant="text" color="white">Create Account</Button> */}
                 </div>
