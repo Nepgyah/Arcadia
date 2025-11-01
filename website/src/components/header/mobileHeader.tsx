@@ -83,7 +83,7 @@ export default function MobileHeader() {
                             variant="contained" 
                             color="secondary"
                         >
-                            To Apps
+                            Platform
                         </Button>
                     </a>
                     {/* <Button variant="outlined" color="secondary">

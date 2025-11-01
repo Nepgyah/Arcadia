@@ -7,6 +7,7 @@
     top: 0;
     position: fixed;
     width: 100%;
+
     .logo {
         height: 100%;
 
@@ -17,6 +18,7 @@
 
     .mobile {
         height: 5rem;
+
         .wrapper {
             max-width: $max-width;
             margin: auto;
@@ -175,6 +177,21 @@
         ul {
             display: flex;
             flex-direction: column;
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #arcadia-header {
+        .mobile {
+            height: 7rem;
+        }
+    }
+}
+@media only screen and (min-width: 900px) {
+    #arcadia-header {
+        .mobile {
+            height: 5rem;
         }
     }
 }
