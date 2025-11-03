@@ -6,6 +6,7 @@ import React from "react";
 import PartDetailDialog from "./partDialogue";
 import WIP from "@/components/wip";
 import PlusIcon from '@mui/icons-material/AddCircleOutline';
+import ArcHeader from "@/components/arcHeader";
 
 export default function KumitateruHome() {
 
@@ -42,12 +43,13 @@ export default function KumitateruHome() {
                 <Typography>Kumitateru</Typography>
                 <Typography>Home</Typography>
             </Breadcrumbs>
-            <div id="page-home" className="page-content row-gap row-gap--lg">
-                <div id="row-one" className="layout-grid-2">
+            <div id="page-kumitateru-home" className="flex-row flex-row--gap-md">
+                <div id="row-one" className="grid grid--2-col">
                     <div>
-                        <h2>Your Builds</h2>
-                        <div className="layout-grid-3">
-                            <div className="build-card media-image align-content align-content--center">
+                        <ArcHeader title="Your Builds" />
+                        <WIP />
+                        {/* <div className="">
+                            <div className="">
                                 <Tooltip placement="top" arrow title='Start a new build! (Feature To Be Added Later)'>
                                     <IconButton className="animation__hover-grow">
                                         <PlusIcon />
@@ -55,58 +57,58 @@ export default function KumitateruHome() {
                                 </Tooltip>
                                 <p>Start a new build</p>
                             </div>
-                            <div className="build-card media-image align-content align-content--center">
+                            <div className="">
                                 <WIP />
                             </div>
-                            <div className="build-card media-image align-content align-content--center">
+                            <div className="">
                                 <WIP />
                             </div>
-                        </div>
+                        </div> */}
                     </div>
-                    <div className="layout-grid-2">
+                    <div className="grid grid--2-col">
                         <div>
-                            <h2>CPUs</h2>
+                            <ArcHeader title="CPUs" />
                             <PartList list={cpus} handleOpenDialog={handleOpenDialog} type="CPU"/>
                         </div>
                         <div>
-                            <h2>GPUs</h2>
+                            <ArcHeader title="GPUs" />
                             <PartList list={gpus} handleOpenDialog={handleOpenDialog} type="GPU" />
                         </div>
                     </div>
                 </div>
-                <div id="row-two" className="layout-grid-4">
+                <div id="row-two" className="grid grid--4-col">
                     <div>
-                        <h2>Motherboards</h2>
+                        <ArcHeader title="Motherboards" />
                         <PartList list={motherboards} handleOpenDialog={handleOpenDialog} type="Motherboard"/>
                     </div>
                     <div>
-                        <h2>RAM</h2>
+                        <ArcHeader title="RAM" />
                         <PartList list={memory} handleOpenDialog={handleOpenDialog} type="RAM" />
                     </div>
                     <div>
-                        <h2>CPU Coolers</h2>
+                        <ArcHeader title="CPU Coolers" />
                         <WIP />
                     </div>
                     <div>
-                        <h2>Power Supply</h2>
+                        <ArcHeader title="Power Supplies" />
                         <PartList list={psu} handleOpenDialog={handleOpenDialog} type="PSU" />
                     </div>
                 </div>
-                <div id="row-three" className="layout-grid-4">
+                <div id="row-three" className="grid grid--4-col">
                     <div>
-                        <h2>Storage</h2>
+                        <ArcHeader title="Storage" />
                         <WIP />
                     </div>
                     <div>
-                        <h2>Cases</h2>
+                        <ArcHeader title="Cases" />
                         <WIP />
                     </div>
                     <div>
-                        <h2>Monitors</h2>
+                        <ArcHeader title="Monitors" />
                         <WIP />
                     </div>
                     <div>
-                        <h2>Mouse / Keyboard</h2>
+                        <ArcHeader title="Mouse / Keyboards" />
                         <WIP />
                     </div>
                 </div>

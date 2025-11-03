@@ -1,6 +1,6 @@
 import { Dialog, DialogContent, DialogTitle } from "@mui/material"
 
-import '@/styles/platform/components/partDetailDialog.scss';
+import '@/styles/components/kumitateru/_part-dialog.scss';
 import InfoItem from "@/components/infoItem";
 import { CPU, GPU, Motherboard, PSU, RAM } from "@/types/kumitateru";
 
