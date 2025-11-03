@@ -9,7 +9,7 @@
 | Tsunagu    | 0.1     |
 | Kau        |         |
 | Iku        |         |
-| Kiku       |         |
+| Kiku       | 0.1     |
 | Kumitateru | 0.1     |
 | Hiku       |         |
 | Shiru      |         |
@@ -30,7 +30,7 @@
 			- Game
 			- DLC
 		- Added home endpoint
-		- Added detail endpoint [[docs/releases/changelog]]
+		- Added detail endpoint
 	- **Tsunagu v0.1**
 		- The following models have been added
 			- Community

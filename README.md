@@ -1,7 +1,19 @@
-## Latest Release - Alpha v0.7 - XX
+## Latest Release - Alpha v0.7 - 11/3/2025
+- **Overview**
+	- Introduced GraphQL
+	- Migrated public website
+	- Added new App: Kiku
+	- Reworked / Improved several model layouts
+	- Improved responsiveness on the platform
+	- Disabled Tsunagu
+	
 - **API**
 	- Added Graphql functionality
 	- **Miru**
+		- Added graphql schema and resolvers
+	- **Yomu**
+		- Added graphql schema and resolvers
+	- **Asobu**
 		- Added graphql schema and resolvers
 	- **Kiku v0.1**
 		-  The following models have been added
@@ -15,6 +27,7 @@
 	
 - **Website**
 	- Moved website to new domain: https://project-arcadia-jade.vercel.app
+
 - **Platform**
 	- Cleaned up core scss files
 	- Created common platform components
