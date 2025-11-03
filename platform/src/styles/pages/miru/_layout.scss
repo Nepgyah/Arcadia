@@ -1,0 +1,35 @@
+@use '../../utils/variables' as *;
+@use "sass:map";
+
+#miru-layout {
+
+    .arc-header {
+        border-bottom-color: map.get($colors, miru-base);
+        .box {
+            background-color: map.get($colors, miru-base);
+        }
+    }
+
+    .arc-table {
+        .MuiTableHead-root {
+            .MuiTableCell-root {
+                background-color: map.get($colors, miru-base);
+            }
+        }
+    }
+    .MuiPagination-ul {
+        .MuiPaginationItem-previousNext {
+            color: map.get($colors, miru-base);
+        }
+
+        .MuiPaginationItem-page {
+            color: white;
+
+            &.Mui-selected  {
+                background-color: map.get($colors, miru-base);
+                color: map.get($colors, txt-dark);
+                font-weight: bold;
+            }
+        }
+    }
+}

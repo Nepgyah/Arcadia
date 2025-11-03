@@ -1,0 +1,25 @@
+.arc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid;
+    margin-bottom: 1rem;
+
+    > div {
+        display: flex;
+        column-gap: 8px;
+        align-items: center;
+    }
+
+    .box {
+        border-radius: 5px;
+        width: 16px;
+        height: 16px;
+    }
+
+    a {
+        font-size: .9rem;
+        color: white;
+        opacity: .5;
+    }
+}

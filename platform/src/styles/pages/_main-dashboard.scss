@@ -1,0 +1,74 @@
+@use '../utils/variables' as *;
+@use "sass:map";
+
+#page-main-dashboard {
+
+    .app-icon-button {
+        width: fit-content;
+        div {
+            padding: .5rem;
+            border-radius: 100%;
+            width: 64px;
+            height: 64px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+        }
+        p {
+            margin-top: .5rem;
+            text-align: center;
+            text-transform: capitalize;
+        }
+    }
+    #layout {
+        #navigation {
+            margin-bottom: 2rem;
+            
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                justify-content: space-between;
+            }
+        }
+
+        .greeting-image {
+            overflow: hidden;
+            position: relative;
+
+            img {
+                object-fit: cover;
+                width: 100%;
+                height: 100%;
+            }
+            .bg-mask, p {
+                position: absolute;
+            }
+
+            .bg-mask {
+                width: 100%;
+                height: 100%;
+                background-color: black;
+                opacity: .5;
+                z-index: 1;
+            }
+
+            p {
+                bottom: 1rem;
+                right: 1rem;
+                z-index: 2;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #page-main-dashboard {
+        #layout {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            column-gap: 2rem;
+        }
+    }
+}

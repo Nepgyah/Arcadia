@@ -14,6 +14,47 @@
 | Hiku       |         |
 | Shiru      |         |
 
+## Alpha v0.6 - Sep 23 2025
+- Apps
+	- **Yomu v0.2**
+		- Added all time endpoint and page
+		- Added search endpoint and page
+		- Added internal model for yomu related companies
+	- **Miru v0.2**
+		- Added search endpoint and page
+		- Added seasonal endpoint and page
+		- Added internal model for miru related companies
+	-  **Asobu v0.1**
+		- The following models have been added
+			- Company
+			- Game
+			- DLC
+		- Added home endpoint
+		- Added detail endpoint [[docs/releases/changelog]]
+	- **Tsunagu v0.1**
+		- The following models have been added
+			- Community
+			- Post
+			- Comment
+		- Added home endpoint
+		- Added community detail endpoint
+		- Added post detail endpoint
+	- **Shared**
+		- The following models have been added
+			- Franchise
+			- Media
+		- Extracted `Character` and `Talent` models out of shared
+	- Updated current views to receive object id instead of slug
+	- Added `Franchise` key to several models
+		- Added socials to franchise model
+- **Website v0.4**
+	- Added esports page
+	- Updated team page
+- Platform
+	- Adjusted overall styling
+	- Updated API calls to send object id instead of slug
+	- Updated sidebar menu to highlight current page
+
 ## Alpha v0.5 - Aug 31 2025
 - API
 	-  **Yomu

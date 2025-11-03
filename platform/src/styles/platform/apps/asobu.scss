@@ -1,8 +1,0 @@
-@use '../../abstract/variables' as *;
-@use "sass:map";
-
-#asobu-app {
-    h2, .MuiBreadcrumbs-separator {
-        color: map.get($arcadia-colors, asobu-base )
-    }
-}

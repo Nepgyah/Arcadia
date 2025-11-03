@@ -1,0 +1,45 @@
+@use '../utils/variables' as *;
+@use 'sass:map';
+
+.detail-card {
+    flex: 0 0 325px;
+    background-color: #2C2D33;
+    
+    &__title {
+        padding: 1rem;
+        font-size: .9rem;
+        height: 60px;
+        font-weight: bold;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 325px;
+    }
+
+    &__stats, &__misc {
+        background-color: map.get($colors, platform-dark);
+        display: flex;
+        justify-content: space-evenly;
+        font-size: .75rem;
+        padding: .5rem;
+    }
+
+    &__main {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        height: 225px;
+
+        .image {
+            height: inherit;
+            width: 100%;
+            object-fit: cover;
+        }
+        .summary {
+            height: inherit;
+            overflow-y: auto;
+            font-size: .75rem;
+            padding: .5rem;
+        }
+    }
+}

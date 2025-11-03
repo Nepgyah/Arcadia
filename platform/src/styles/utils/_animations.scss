@@ -1,0 +1,41 @@
+// Animation Class
+.animation {
+    
+    &__rotate {
+        animation: rotate 10s infinite linear;
+    }
+
+    &__floating {
+        animation: floating 5s infinite ease-in-out;
+    }
+
+    &__hover-grow {
+        transition: transform .1s ease-in-out;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+}
+
+// Animations
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

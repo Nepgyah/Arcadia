@@ -1,6 +1,6 @@
 'use client';
 
-import DetailMediaCard from "@/components/platform/detailMediaCard";
+import DetailMediaCard from "@/components/detailMediaCard";
 import { Anime } from "@/types/miru";
 import { apiGET } from "@/util/api/api";
 import { Box, Breadcrumbs, Pagination, Paper, Tab, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Tabs, Typography } from "@mui/material";

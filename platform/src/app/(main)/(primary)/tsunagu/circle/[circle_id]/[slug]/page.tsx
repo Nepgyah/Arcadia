@@ -2,7 +2,7 @@
 
 import { useParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import PostCard from "@/components/platform/tsunagu/postCard";
+import PostCard from "@/components/apps/tsunagu/postCard";
 import { apiGET } from "@/util/api/api";
 import { Post } from "@/types/tsunagu";
 
