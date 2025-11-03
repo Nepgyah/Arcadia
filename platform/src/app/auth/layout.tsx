@@ -1,4 +1,4 @@
-import "@/styles/auth/_main.scss";
+// import "@/styles/auth/_main.scss";
 
 export default function AuthLayout({children} : { children: React.ReactNode})  {
     return (

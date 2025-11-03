@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from "react";
+export const revalidate = 0;
+import React from "react";
 import { Breadcrumbs, Typography, Button } from "@mui/material";
 
 import {  GraphQL } from "@/util/api/api";
-import KikuCard from "./components/kikuCard";
+import KikuCard from "./kikuCard";
 import ArcHeader from "@/components/arcHeader";
 
 import '@/styles/pages/kiku/_home.scss';
-import WIP from "@/components/wip";
 import Link from "next/link";
 
 const query = `

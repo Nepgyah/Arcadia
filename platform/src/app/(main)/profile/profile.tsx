@@ -2,7 +2,7 @@ import { useUser } from "@/util/wrappers/userContext";
 import { Avatar, Button, Divider } from '@mui/material';
 import React from 'react';
 
-import '@/styles/platform/pages/profile/profile.scss';
+// import '@/styles/platform/pages/profile/profile.scss';
 
 export default function Profile({user} : {user: any}) {
 

@@ -2,7 +2,6 @@
 
 import ArcHeader from "@/components/arcHeader";
 import EntryCard from "@/components/entryCard";
-import LinkedHeader from "@/components/platform/linkedHeader";
 import WIP from "@/components/wip";
 import { apiGET } from "@/util/api/api";
 import { Breadcrumbs, Typography } from "@mui/material";
