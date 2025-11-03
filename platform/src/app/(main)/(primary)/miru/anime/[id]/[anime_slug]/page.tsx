@@ -5,26 +5,83 @@ import { useParams } from "next/navigation";
 import React from "react";
 import { useEffect, useState } from "react";
 import { Breadcrumbs, Typography } from "@mui/material";
-import { apiGET } from "@/util/api/api";
+import { GraphQL } from "@/util/api/api";
 
-import CharacterAvatar from "@/components/platform/characterAvatar";
-import InfoItem from "@/components/platform/infoItem";
-import RelationCard from "@/components/platform/relationCard";
-import TagChip from "@/components/platform/chip";
-import WIP from "@/components/platform/wip";
+import InfoItem from "@/components/infoItem";
+import WIP from "@/components/wip";
+import MediaFeatureCard from "@/components/mediaFeatureCard";
+import ArcHeader from "@/components/arcHeader";
+import CharacterCard from "@/components/characterCard";
+import MediaFlowCard from "@/components/mediaFlowCard";
+import SocialMediaCard from "@/components/socialMediaCard";
 
 import { Anime } from "@/types/miru";
-import { Character } from "@/types/shared";
-import SocialMediaLink from "@/components/platform/socialMediaLink";
+import '@/styles/layout/_media-detail.scss';
 
 export default function AnimeDetails() {
     const params = useParams();
     const [anime, setAnime] = useState<Anime>()
 
     useEffect(() => {
-        apiGET<Anime>(`miru/anime/${params.id}/`)
+        const query = 
+        `
+            query {
+                animeById(id: ${params.id}) {
+                    id,
+                    title,
+                    franchise {
+                        id,
+                        name,
+                        socials
+                    },
+                    score,
+                    users,
+                    slug,
+                    summary,
+                    season,
+                    status,
+                    characters {
+                    character {
+                        id,
+                        firstName,
+                        lastName,
+                        playedBy {
+                            id,
+                            firstName,
+                            lastName
+                        }
+                    },
+                    role
+                    },
+                    previousAnime {
+                        relationType
+                        fromAnime {
+                            id,
+                            slug,
+                            title
+                        }
+                    },
+                    nextAnime {
+                        relationType
+                        toAnime {
+                            id,
+                            slug,
+                            title
+                        }
+                    },
+                    type,
+                    studio {
+                    name
+                    },
+                    rating,
+                    airingStartDate,
+                    airingEndDate
+                }
+            }
+        `
+        GraphQL<any>(query)
         .then((res) => {
-            setAnime(res)
+            setAnime(res.data.animeById)
         })
     }, [])
 
@@ -34,144 +91,128 @@ export default function AnimeDetails() {
                 <Typography>Anime</Typography>
                 <Typography>{anime?.title}</Typography>
             </Breadcrumbs>
-            <div className="media-detail page-content">
-                <div className="two-col-section two-col-section--uneven">
-                    <div id="left-column" className="row-gap-md">
-                        <img 
-                            id="image" 
-                            className="media-image"
-                            src={`/storage/miru/${anime?.id}.jpg`} 
-                            alt={anime?.title}
-                            onError={(e) => {
-                                e.currentTarget.onerror = null;
-                                e.currentTarget.src = '/global/404-resource.jpg'
-                            }} 
-                        />
-                        <div>
-                            <h2>Quick Access</h2>
-                            <WIP />
+            <div id="page-media-detail" className="page-content">
+                <div className="grid grid--feature-combo">
+                    <MediaFeatureCard
+                        title={anime ? anime.title : 'Anime Name'}
+                        description={anime ? anime.summary : 'Summary'}
+                        score={anime ? anime.score : 0.0}
+                        app="miru"
+                        image={`/storage/miru/${anime?.id}.jpg`}
+                     />
+                    <div id="latest-episode" className="border-radius-md bg-platform-dark box-shadow p-a-lg">
+                        <WIP />
+                    </div>
+                </div>
+                <div className="grid grid--side-col-reverse">
+                    <div className="flex-row flex-row--gap-md">
+                        <div id="quick-access">
+                            <ArcHeader title="Quick Access" />
+                            <div className="flex-row flex-row--gap-sm">
+                                <WIP />
+                            </div>
                         </div>
-                        <div>
-                            <h2>Socials</h2>
-                            <div className="row-gap-s">
+                        <div id="socials">
+                            <ArcHeader title="Socials" />
+                            <div id="socials-container" className="flex-row flex-row--gap-sm">
                                 {
-                                    anime?.franchise.socials.website && <SocialMediaLink type="website" social={anime.franchise.socials.website} />
+                                    anime?.franchise.socials?.website &&
+                                    <SocialMediaCard 
+                                        type="website"
+                                        social={anime?.franchise.socials.website}
+                                    />
                                 }
                                 {
-                                    anime?.franchise.socials.twitter && <SocialMediaLink type="twitter" social={anime.franchise.socials.twitter} />
+                                    anime?.franchise.socials?.youtube &&
+                                    <SocialMediaCard 
+                                        type="youtube"
+                                        social={anime?.franchise.socials.youtube}
+                                    />
                                 }
                                 {
-                                    anime?.franchise.socials.youtube && <SocialMediaLink type="youtube" social={anime.franchise.socials.youtube} />
+                                    anime?.franchise.socials?.reddit &&
+                                    <SocialMediaCard 
+                                        type="reddit"
+                                        social={anime?.franchise.socials.reddit}
+                                    />
                                 }
                                 {
-                                    anime?.franchise.socials.reddit && <SocialMediaLink type="reddit" social={anime.franchise.socials.reddit} />
+                                    anime?.franchise.socials?.twitter &&
+                                    <SocialMediaCard 
+                                        type="twitter"
+                                        social={anime?.franchise.socials.twitter}
+                                    />
                                 }
-                                {
-                                    anime?.franchise.socials.instagram && <SocialMediaLink type="instagram" social={anime.franchise.socials.instagram} />
-                                }
+                            </div>
+                        </div>
+                        <div id="misc">
+                            <ArcHeader title="Misc" />
+                            <div className="flex-row flex-row--gap-sm">
+                                <InfoItem label="Season" value={anime?.season} />
+                                <InfoItem label="Type" value={anime?.type} />
+                                <InfoItem label="Status" value={anime?.status} />
+                                <InfoItem label="Start Date" value={anime?.airingStartDate} />
+                                <InfoItem label="End Date" value={anime?.airingEndDate} />
+                                <InfoItem label="Studio" value={anime?.studio?.name} />
+
                             </div>
                         </div>
                     </div>
-                    <div id="right-column" className="page-content__right-column row-gap row-gap-md">
-                        <div id="primary">
-                            <div id="overview" className="vertical-divider-right p-right-md row-gap-md">
-                                <div id="at-a-glance">
-                                    <div>
-                                        <div id="quick-stats" className="gray-container col-gap-s m-bottom-md">
-                                            <InfoItem label="Season" value={anime ? anime.season ? anime.season : 'N/A' : 'Not announced'} />
-                                            <InfoItem label="Type" value={anime?.type} />
-                                            <InfoItem label="Episodes" value={'Added later'} />
-                                        </div>
-                                        <div id="metrics">
-                                            <div id="arcadia-score" className="gray-container">
-                                                <p className="bold">{anime?.score}</p>
-                                                <p>{anime?.users} users</p>
-                                            </div>
-                                            <div id="tags">
-                                                <h2>Genre</h2>
-                                                <div>
-                                                    {
-                                                        anime?.genres.length === 0 ?
-                                                            <p>No genre tags added</p>
-                                                        :
-                                                            anime?.genres.map((genre: any, index: number) => (
-                                                                <TagChip key={index} value={genre.name} app="miru"/>
-                                                            ))
-                                                    }
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="promo-video">
-                                        <h2>Promo Video</h2>
-                                        <WIP />
-                                    </div>
-                                </div>
-                                <div id="summary">
-                                    <h2>Summary</h2>
-                                    <p>{anime?.summary}</p>
-                                </div>
-                            </div>
-                            <div id="primary-right" className="misc p-left-md row-gap-md">
-                                <div>
-                                    <h2>Details</h2>
-                                    <InfoItem label="Status" value={anime?.status} />
-                                    <InfoItem label="Start Date" value={anime?.airing_start_date} />
-                                    <InfoItem label="End Date" value={anime?.airing_end_date} />
-                                </div>
-                                <div>
-                                    <h2>Production</h2>
-                                    <InfoItem label="Studio" value={anime?.studio} />
-                                </div>
+                    <div className="flex-row flex-row--gap-md">
+                        <div id="characters">
+                            <ArcHeader title="Characters" />
+                            <div id="characters-container" className="flex-col flex-col--gap-sm">
+                                {
+                                    anime?.characters.map((character: any, idx: number) => (
+                                        <CharacterCard 
+                                            key={idx}
+                                            characterId={character.character.id}
+                                            characterName={`${character.character.firstName} ${character.character.lastName ? character.character.lastName : ''}`}
+                                            characterDescription={character.role}
+                                            voiceActorId={character.character.playedBy?.id}
+                                            voiceActorName={character.character.playedBy ? `${character.character.playedBy.firstName} ${character.character.playedBy.lastName ? character.character.playedBy.lastName : ''}` : 'Unknown'}
+                                            voiceActorDescription='Japanese'
+                                        />
+                                    ))
+                                }
                             </div>
                         </div>
-                        <div id="secondary">
-                            <div id="relations" className="vertical-divider-right p-right-md">
-                                <h2>Related Anime</h2>
-                                <div>
-                                    <div id="previous" className="row-gap row-gap--xs">
-                                        {
-                                            anime?.previous_anime.length === 0 ?
-                                            <p>No previous anime</p>
-                                            :
-                                            anime?.previous_anime.map((anime: any, index: number ) => (
-                                                <RelationCard 
-                                                    key={index}
-                                                    name={anime.name} 
-                                                    relation={anime.relation} 
-                                                    link={`/miru/anime/${anime.id}/${anime.slug}`}
-                                                    imageLink={`/storage/miru/${anime.id}.jpg`}
-                                                />
-                                            ))
-                                        }
-                                    </div>
-                                    <div id="next" className="row-gap row-gap--xs">
-                                        {
-                                            anime?.next_anime.length === 0 ?
-                                                <p>No next anime</p>
-                                            :
-                                                anime?.next_anime.map((anime: any, index: number ) => (
-                                                    <RelationCard 
-                                                        key={index}
-                                                        name={anime.name} 
-                                                        relation={anime.relation} 
-                                                        link={`/miru/anime/${anime.id}/${anime.slug}`}
-                                                        imageLink={`/storage/miru/${anime.id}.jpg`}
-                                                    />
-                                                ))
-                                        }
-                                    </div>
-                                </div>
+                        <div id="anime-flow">
+                            <ArcHeader title="Anime Flow" />
+                            <div className="grid grid--2-col">
+                                {
+                                    anime?.previousAnime ?
+                                        <MediaFlowCard 
+                                            image={`/storage/miru/${anime?.previousAnime.fromAnime.id}.jpg`}
+                                            relation="Prequel"
+                                            mediaName={anime ? anime?.previousAnime.fromAnime.title : 'Loading'}
+                                            mediaLink={`/miru/anime/${anime?.previousAnime.fromAnime.id}/${anime?.previousAnime.fromAnime.slug}`}              
+                                        />
+                                    :
+                                        <p>No Previous Anime</p>
+                                }
+                                {
+                                    anime?.nextAnime ?
+                                        <MediaFlowCard 
+                                            image={`/storage/miru/${anime?.nextAnime.toAnime.id}.jpg`}
+                                            relation="Prequel"
+                                            mediaName={anime ? anime?.nextAnime.toAnime.title : 'Loading'}
+                                            mediaLink={`/miru/anime/${anime?.nextAnime.toAnime.id}/${anime?.nextAnime.toAnime.slug}`}              
+                                        />
+                                    :
+                                        <p>No Previous Anime</p>
+                                }
                             </div>
-                            <div id="characters">
-                                <h2>Characters</h2>
-                                <div className="row-gap-md">
-                                    {
-                                        anime?.characters &&
-                                        anime?.characters.map((character: Character, index: number) => (
-                                            <CharacterAvatar key={index} character={character} app='miru' />
-                                        ))
-                                    }
+                        </div>
+                        <div id="themes">
+                            <div className="grid grid--2-col">
+                                <div>
+                                    <ArcHeader title="Openings" />
+                                    <WIP />
+                                </div>
+                                <div>
+                                    <ArcHeader title="Endings" />
+                                    <WIP />
                                 </div>
                             </div>
                         </div>

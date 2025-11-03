@@ -52,8 +52,8 @@ export default function MiruAllTime() {
                     count={pageCount} 
                 />
 
-                <TableContainer component={Paper}>
-                    <Table className="arcadia-table" stickyHeader aria-label="anime table">
+                <TableContainer className="box-shadow border-radius-sm">
+                    <Table className="arc-table" stickyHeader aria-label="anime table">
                         <TableHead>
                             <TableRow>
                                 <TableCell width={"5%"}>Rank</TableCell>
@@ -68,10 +68,10 @@ export default function MiruAllTime() {
                                     <TableRow key={idx}>
                                         <TableCell>{(((currentPage - 1) * MAX_PER_PAGE) + (idx) ) + 1}</TableCell>
                                         <TableCell className="bold image-title">
-                                            <Link href={`/platform/miru/anime/${anime.id}/${anime.slug}`}>
+                                            <Link href={`/miru/anime/${anime.id}/${anime.slug}`}>
                                                 <img className="image" src={`/storage/miru/${anime.id}.jpg`} alt={anime.title} />
                                             </Link>
-                                            <Link className="clickable" href={`/platform/miru/anime/${anime.id}/${anime.slug}`}>
+                                            <Link className="clickable" href={`/miru/anime/${anime.id}/${anime.slug}`}>
                                                 {anime.title}
                                             </Link>
                                         </TableCell>

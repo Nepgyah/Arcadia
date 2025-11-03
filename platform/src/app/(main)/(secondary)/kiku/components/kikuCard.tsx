@@ -15,21 +15,20 @@ export default function KikuCard(
         subLink?: string,
     }
 ) {
-    console.log(id)
     return (
-        <div className="kiku-card">
+        <div className="kiku-song-card">
             { number && <p>{number}</p>}
             <Link href={mainLink} className="clickable">
-                <img className="kiku-card__image" src={`/storage/kiku/${type}/${id}.jpg`} alt="" />
+                <img className="kiku-song-card__image border-radius-sm animation__hover-grow box-shadow" src={`/storage/kiku/${type}/${id}.jpg`} alt="" />
             </Link>
             <div>
                 <Link href={mainLink} className="clickable">
-                    <p className="kiku-card__title">{title}</p>
+                    <p className="kiku-song-card__title">{title}</p>
                 </Link>
                 {
                     subTitle &&
                         <Link href={subLink ? subLink : ''} className="clickable">
-                            <p className="kiku-card__subTitle">{subTitle}</p>
+                            <p className="kiku-song-card__subtitle">{subTitle}</p>
                         </Link>
                 }
             </div>

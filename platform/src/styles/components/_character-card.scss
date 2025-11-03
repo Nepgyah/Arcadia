@@ -1,0 +1,27 @@
+.character-card {
+    height: 100px;
+    overflow: hidden;
+    display: flex;
+    
+    img {
+        height: 100px;
+        width: 75px;
+        object-fit: cover;
+    }
+
+    .text {
+        font-size: .75rem;
+        padding: .5rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .secondary {
+            opacity: .5;
+        }
+        .voice-actor {
+            text-align: right;
+        }
+    }
+}

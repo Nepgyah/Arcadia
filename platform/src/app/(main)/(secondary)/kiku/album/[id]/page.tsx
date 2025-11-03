@@ -1,10 +1,13 @@
 'use client';
 
-import { apiGET, GraphQL } from "@/util/api/api"
+import { GraphQL } from "@/util/api/api"
 import { Breadcrumbs, Button, Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
 import { useParams } from "next/navigation"
 import React, { useState } from "react";
 import { useEffect } from "react"
+
+import '@/styles/pages/kiku/_album-details.scss';
+import ArcHeader from "@/components/arcHeader";
 
 export default function AlbumDetails() {
 
@@ -18,13 +21,14 @@ export default function AlbumDetails() {
                 albumById(id: "${params.id}") {
                     id,
                     title,
+                    type,
                     songs {
-                    title,
-                    plays
+                        title,
+                        plays
                     },
                     artist {
-                    id,
-                    name
+                        id,
+                        name
                     }
                 }
             }
@@ -38,36 +42,31 @@ export default function AlbumDetails() {
     return (
         <React.Fragment>
             <Breadcrumbs>
-                <Typography>Miru</Typography>
+                <Typography>Kiku</Typography>
                 <Typography>Album</Typography>
-                <Typography>{album?.title}</Typography>
+                <Typography className="clr-kiku-base"><b>{album?.title}</b></Typography>
             </Breadcrumbs>
-            <div id="album-details" className="page-content">
-                <div className="grid grid--2-col-offset">
-                    <div className="main-card">
-                        <div className="main-card__text center-vertical">
-                            <p>{album?.title}</p>
+            <div id="page-kiku-album-details" className="page-content">
+                <div id="header" className="grid grid--2-col-offset">
+                    <div id="album-summary" className="p-a-sm">
+                        <img className="border-radius-sm box-shadow" src={`/storage/kiku/album/${album?.id}.jpg`} alt="" />
+                        <div className="text">
+                            <p className="txt-xl"><b>{album?.title}</b></p>
                             <p>{album?.type}</p>
                         </div>
-                        <div className="main-card__image">
-                            <div className="mask"></div>
-                            <img src={`/storage/kiku/album/${album?.id}.jpg`} alt="" />
-                        </div>
                     </div>
-                    <div className="sub-card">
-                        <p className="sub-card__title">{album?.artist.name}</p>
-                        <div className="sub-card__details">
-                            <img className="box-shadow" src={`/storage/kiku/artist/${album?.artist.id}.jpg`} alt={album?.artist.name} />
-                            <div>
-                                <Button variant="contained">See Details</Button>
-                            </div>
+                    <div id="artist-desktop-summary" className="p-a-sm">
+                        <img className="border-radius-sm box-shadow" src={`/storage/kiku/artist/${album?.artist.id}.jpg`} alt={album?.artist.name} />
+                        <div className="text">
+                            <p className="txt-xl">{album?.artist.name}</p>
+                            {/* <Button variant="contained">Discover {album?.artist.name}</Button> */}
                         </div>
                     </div>
                 </div>
                 <div>
-                    <h2>Tracklist</h2>
-                    <TableContainer component={Paper}>
-                        <Table className="arcadia-table">
+                    <ArcHeader title="Tracklist" />
+                    <TableContainer className="box-shadow border-radius-sm">
+                        <Table className="arc-table">
                             <TableHead>
                                 <TableRow>
                                     <TableCell width={"5%"}>#</TableCell>
@@ -88,6 +87,13 @@ export default function AlbumDetails() {
                             </TableBody>
                         </Table>
                     </TableContainer>
+                </div>
+                <div id="artist-mobile-summary" className="p-a-sm">
+                    <img className="border-radius-sm box-shadow" src={`/storage/kiku/artist/${album?.artist.id}.jpg`} alt={album?.artist.name} />
+                    <div className="text">
+                        <p><b>{album?.artist.name}</b></p>
+                        {/* <Button variant="contained">Discover {album?.artist.name}</Button> */}
+                    </div>
                 </div>
             </div>
         </React.Fragment>

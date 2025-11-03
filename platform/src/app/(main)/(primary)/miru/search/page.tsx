@@ -5,7 +5,10 @@ import { Breadcrumbs, Button, FormControl, InputLabel, MenuItem, Pagination, Sel
 
 import { apiGET } from "@/util/api/api";
 import { Anime } from "@/types/miru";
-import DetailMediaCard from "@/components/platform/detailMediaCard";
+import DetailMediaCard from "@/components/detailMediaCard";
+
+import '@/styles/pages/miru/_search.scss';
+import ArcHeader from "@/components/arcHeader";
 
 export default function MiruHome() {
     const [animeList, setAnimeList] = useState<Anime[]>([])
@@ -55,11 +58,11 @@ export default function MiruHome() {
                 <Typography>Miru</Typography>
                 <Typography>Search Anime</Typography>
             </Breadcrumbs>
-            <div id="page-miru-search"  className="page-content">
-                <div className="two-col-section two-col-section--uneven">
-                    <div id="filters">
-                        <h2>Search Settings</h2>
-                        <div className="row-gap-md">
+            <div id="page-miru-search">
+                <div className="grid grid--filter-col">
+                    <div>
+                        <ArcHeader title="Search / Filter" />
+                        <div className="flex-row flex-row--gap-md">
                             <TextField 
                                 id="search-title" 
                                 label="Search Title" 
@@ -115,9 +118,9 @@ export default function MiruHome() {
                             </Button>
                         </div>
                     </div>
-                    <div id="seasonal" className="vertical-divider-left p-left-xl">
+                    <div className="vertical-divider-left p-left-xl">
                         <Pagination onChange={goToPage} page={currentPage} count={pageCount} />
-                        <div className="layout-grid-3 m-top-md">
+                        <div id="results"  className="flex-col flex-col--gap-sm">
                             {
                                 animeList &&
                                 animeList.map((anime: Anime, key: number) => (
@@ -125,7 +128,7 @@ export default function MiruHome() {
                                         key={key}
                                         app="miru"
                                         media={anime}
-                                        link={`/platform/miru/anime/${anime.id}/${anime.slug}`}
+                                        link={`/miru/anime/${anime.id}/${anime.slug}`}
                                         status={anime.status}
                                     />
                                 ))

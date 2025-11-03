@@ -1,0 +1,49 @@
+@use "sass:map";
+@use "sass:string";
+
+$colors: (
+    txt-dark: #3E3E42,
+    txt-light: #ffffff,
+    txt-light-alt: #FFF6E1,
+    txt-fadded: rgba(#bbbbbb, .5),
+    arc-base: #505477,
+    arc-base-dark: #3F3E56,
+    arc-accent-light: #FFC2C2,
+    arc-accent: #C54B61,
+    arc-accent-dark: #3D1F34,
+
+    miru-base: #61CF93,
+    yomu-base: #979797,
+    asobu-base: #EE473D,
+    kau-base: #2692D3,
+    tsunagu-base: #FFCA3C,
+
+    iku-base: #483D8B,
+    shiru-base: #FFA468,
+    hiku-base: #F0D66A,
+    kumitateru-base: #BD4648,
+    kiku-base: #9370DB,
+    todokeru-base: #971868,
+    manabu-base: #8D5C42,
+    sagasu-base: #3C60AF,
+
+    platform-base: #23242A,
+    platform-dark: #1C1D1F,
+);
+
+$text-size: (
+    xs: .75rem,
+    sm: .88rem,
+    md: 1rem,
+    lg: 1.5rem,
+    xl: 2rem,
+    xxl: 2.5rem
+);
+
+$spacing: (
+    xs: .5rem,
+    s:  .75rem,
+    md:  1rem,
+    l:  1.5rem,
+    xl: 2rem
+);

@@ -1,0 +1,10 @@
+@use '../../utils/variables' as *;
+@use "sass:map";
+
+#kumitateru-part-dialog {
+    .MuiPaper-root {
+        border-top: solid 7px map.get($colors, kumitateru-base);;
+        color: white;
+        background-color: map.get($colors, platform-dark);
+    }
+}

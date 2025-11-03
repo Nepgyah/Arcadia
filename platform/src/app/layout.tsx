@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import ThemeWrapper from '../util/wrappers/themeWrapper';
 import { CssBaseline } from '@mui/material';
 
-import "@/styles/_master.scss";
 import { CSRFProvider } from '@/util/api/csrfLoader';
 import { UserProvider } from '@/util/wrappers/userContext';
 import { SnackbarProvider } from '@/util/wrappers/snackbarProvider';
