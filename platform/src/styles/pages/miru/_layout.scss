@@ -3,6 +3,11 @@
 
 #miru-layout {
 
+    .arc-tab {
+        &__icon {
+            background-color: map.get($colors, miru-base);
+        }
+    }
     .arc-header {
         border-bottom-color: map.get($colors, miru-base);
         .box {
