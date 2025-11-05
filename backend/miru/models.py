@@ -1,4 +1,5 @@
 from django.db import models
+import kiku.models
 from shared.models import Company, Franchise, Genre, Media
 from characters.models import Character
 from django.utils.text import slugify
@@ -94,3 +95,44 @@ class AnimeRelation(models.Model):
     from_anime = models.ForeignKey('Anime', on_delete=models.CASCADE, related_name='related_to')
     to_anime = models.ForeignKey('Anime', on_delete=models.CASCADE, related_name='related_from')
     relation_type = models.CharField(choices=Type.choices, default=Type.OTHER, blank=True)
+
+class AnimeTheme(models.Model):
+
+    class Type(models.IntegerChoices):
+        OP = 0, 'Opening'
+        ED = 1, 'Ending'
+    
+    anime=models.ForeignKey(Anime, on_delete=models.CASCADE, related_name="themes")
+    starting_episode=models.SmallIntegerField(null=True, blank=True)
+    ending_episode=models.SmallIntegerField(null=True, blank=True)
+    theme_type=models.IntegerField(choices=Type.choices, default=Type.OP, blank=True)
+    kiku_album=models.ForeignKey(kiku.models.Album, on_delete=models.SET_NULL, null=True, blank=True)
+    title=models.CharField(max_length=255, null=True, blank=True)
+    artist=models.CharField(max_length=255, null=True, blank=True)
+
+    class Meta:
+        ordering = ["theme_type", "starting_episode"]
+
+    def __str__(self):
+        if self.kiku_album:
+            return f"{self.kiku_album.title} - ({self.starting_episode} - {self.ending_episode})"
+        else:
+            f"{self.title} - ({self.starting_episode} - {self.ending_episode})"
+
+    def serialize(self):
+        if not self.kiku_album:
+            return {
+                'id': self.id,
+                'title': self.title,
+                'artist': self.artist,
+                'startingEpisode': self.starting_episode,
+                'endingEpisode': self.ending_episode
+            }
+        else:
+            return {
+                'id': str(self.kiku_album.id),
+                'title': self.kiku_album.title,
+                'artist': self.kiku_album.artist.name,
+                'startingEpisode': self.starting_episode,
+                'endingEpisode': self.ending_episode
+            }

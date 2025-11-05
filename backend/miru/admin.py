@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Season, Anime, AnimeCharacter, AnimeRelation, Studio
+from .models import Season, Anime, AnimeCharacter, AnimeRelation, Studio, AnimeTheme
 
 # Register your models here.
 class AnimeCharacterInline(admin.TabularInline):
@@ -20,3 +20,4 @@ class AnimeAdmin(admin.ModelAdmin):
 
 admin.site.register(Season)
 admin.site.register(Studio)
+admin.site.register(AnimeTheme)

@@ -15,8 +15,9 @@ import CharacterCard from "@/components/characterCard";
 import MediaFlowCard from "@/components/mediaFlowCard";
 import SocialMediaCard from "@/components/socialMediaCard";
 
-import { Anime } from "@/types/miru";
+import { Anime, AnimeTheme } from "@/types/miru";
 import '@/styles/layout/_media-detail.scss';
+import KikuCard from "@/app/(main)/(secondary)/kiku/kikuCard";
 
 export default function AnimeDetails() {
     const params = useParams();
@@ -75,7 +76,8 @@ export default function AnimeDetails() {
                     },
                     rating,
                     airingStartDate,
-                    airingEndDate
+                    airingEndDate,
+                    themes
                 }
             }
         `
@@ -208,11 +210,43 @@ export default function AnimeDetails() {
                             <div className="grid grid--2-col">
                                 <div>
                                     <ArcHeader title="Openings" />
-                                    <WIP />
+                                    <div className="flex-row flex-row--gap-sm row-divider">
+                                        {
+                                            anime?.themes.opening.length ?
+                                                anime.themes.opening.map((op: AnimeTheme, idx: number) => (
+                                                <KikuCard 
+                                                    key={idx}
+                                                    title={op.title}
+                                                    subTitle={`Eps ${op.startingEpisode} - ${op.endingEpisode}`}
+                                                    id={op.id}
+                                                    number={idx + 1}
+                                                    mainLink={`/kiku/album/${op.id}`}
+                                                    type="album"                                                />
+                                            ))
+                                            :
+                                                <p>No Opening Themes Found</p>
+                                        }
+                                    </div>
                                 </div>
                                 <div>
                                     <ArcHeader title="Endings" />
-                                    <WIP />
+                                    <div className="flex-row flex-row--gap-sm row-divider">
+                                        {
+                                            anime?.themes.ending?.length ?
+                                                anime.themes.ending.map((ed: AnimeTheme, idx: number) => (
+                                                    <KikuCard 
+                                                        key={idx}
+                                                        title={ed.title}
+                                                        subTitle={`Eps ${ed.startingEpisode} - ${ed.endingEpisode}`}
+                                                        id={ed.id}
+                                                        number={idx + 1}
+                                                        mainLink={`/kiku/album/${ed.id}`}
+                                                        type="album"                                              />
+                                                ))
+                                            :
+                                                <p>No Ending Themes Found</p>
+                                        }
+                                    </div>
                                 </div>
                             </div>
                         </div>

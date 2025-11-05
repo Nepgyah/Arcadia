@@ -1,11 +1,13 @@
 import graphene
 from graphene_django import DjangoObjectType
+from graphene.types.generic import GenericScalar
 from .models import (
     Anime,
     Studio,
     Season,
     AnimeCharacter,
-    AnimeRelation
+    AnimeRelation,
+    AnimeTheme
 )
 
 from characters.schema import (
@@ -17,7 +19,14 @@ from shared.schema import (
     FranchiseType
 )
     
+class AnimeThemeType(DjangoObjectType):
+
+    class Meta:
+        model = AnimeTheme
+        fields = "__all__"
+
 class StudioType(DjangoObjectType):
+
     class Meta:
         model = Studio
         fields = "__all__"
@@ -48,6 +57,7 @@ class AnimeType(DjangoObjectType):
     previous_anime = graphene.Field(lambda: AnimeRelationType)
     next_anime = graphene.Field(lambda: AnimeRelationType)
     season = graphene.String()
+    themes = GenericScalar()
 
     class Meta:
         model = Anime
@@ -79,6 +89,17 @@ class AnimeType(DjangoObjectType):
     
     def resolve_next_anime(self, info):
         return AnimeRelation.objects.filter(from_anime=self, relation_type=AnimeRelation.Type.SERIES_ENTRY).first()
+    
+    def resolve_themes(self, info):
+        themes = AnimeTheme.objects.filter(anime=self)
+
+        if not themes.exists:
+            return {}
+        else:
+            return {
+                'opening': [theme.serialize() for theme in themes.filter(theme_type=AnimeTheme.Type.OP)],
+                'ending': [theme.serialize() for theme in themes.filter(theme_type=AnimeTheme.Type.ED)],
+            }
     
 class AnimeRelationType(DjangoObjectType):
     from_anime = graphene.Field(lambda: AnimeType)

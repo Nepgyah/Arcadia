@@ -38,5 +38,17 @@ export interface Anime {
     rating: string,
     airingStartDate: string,
     airingEndDate: string,
-    franchise: Franchise
+    franchise: Franchise,
+    themes: {
+        opening: [AnimeTheme],
+        ending: [AnimeTheme]
+    }
+}
+
+export interface AnimeTheme {
+    id: string,
+    title: string,
+    artist:string,
+    startingEpisode: number,
+    endingEpisode: number
 }
