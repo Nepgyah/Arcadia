@@ -17,6 +17,7 @@ export default function AnimeDetailTabContent({ anime } : { anime: Anime }){
             <div id="tab-container" className="flex-col flex-col--gap-sm m-b-lg">
                 <ArcTab label="Overview" value="0" currentValue={tab} icon="info" setTabFunc={setTab} />
                 <ArcTab label="Characters" value="1" currentValue={tab} icon="people" setTabFunc={setTab} />
+                <ArcTab label="Summary" value="2" currentValue={tab} icon="target" setTabFunc={setTab} />
             </div>
             <div hidden={tab !== '0'}>
                 <AnimeDetailMainTab anime={anime}/>
@@ -24,7 +25,9 @@ export default function AnimeDetailTabContent({ anime } : { anime: Anime }){
             <div hidden={tab !== '1'}>
                 <CharacterTab characters={anime.characters}/>
             </div>
-            <div hidden={tab !== '2'}>stats</div>
+            <div hidden={tab !== '2'}>
+                <div className="bg-platform-dark p-a-md border-radius-md">{anime.summary}</div>
+            </div>
         </React.Fragment>
     )
 }
