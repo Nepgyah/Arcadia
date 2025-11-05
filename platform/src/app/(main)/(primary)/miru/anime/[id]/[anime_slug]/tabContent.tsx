@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Tab, Tabs } from "@mui/material";
 import React from "react";
 import ArcTab from "@/components/arcTab";
+import CharacterTab from "@/components/characterTab";
 
 export default function AnimeDetailTabContent({ anime } : { anime: Anime }){
     
@@ -20,7 +21,9 @@ export default function AnimeDetailTabContent({ anime } : { anime: Anime }){
             <div hidden={tab !== '0'}>
                 <AnimeDetailMainTab anime={anime}/>
             </div>
-            <div hidden={tab !== '1'}>characters</div>
+            <div hidden={tab !== '1'}>
+                <CharacterTab characters={anime.characters}/>
+            </div>
             <div hidden={tab !== '2'}>stats</div>
         </React.Fragment>
     )
