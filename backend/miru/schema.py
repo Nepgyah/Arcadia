@@ -116,7 +116,14 @@ class AnimeRelationType(DjangoObjectType):
 class Query(graphene.ObjectType):
     
     anime_by_id = graphene.Field(AnimeType, id=graphene.Int(required=True))
+    top_anime_by_category = graphene.List(AnimeType, count=graphene.Int(required=False), category=graphene.String(required=True))
 
     def resolve_anime_by_id(self, info, id):
         return Anime.objects.get(id=id)
+    
+    def resolve_top_anime_by_category(self, info, count, category):
+        if count:
+            return Anime.objects.order_by(f'-{category}')[:count]
+        else:
+            return Anime.objects.order_by(f'-{category}')[:5]
     

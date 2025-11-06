@@ -1,29 +1,19 @@
-'use client';
+export const revalidate = 3600;
 
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Breadcrumbs, Typography } from "@mui/material";
 
-import { apiGET } from "@/util/api/api";
 import EntryCard from "@/components/entryCard";
 import WIP from "@/components/wip";
-
-import '@/styles/pages/miru/_home.scss';
 import ArcHeader from "@/components/arcHeader";
 
-export default function MiruHome() {
-    const [isLoading, setIsLoading] = useState(true);
-    const [seasonalAnime, setSeasonalAnime] = useState([]);
-    const [topAnime, setTopAnime] = useState([]);
-    const [seasonName, setSeasonName] = useState<string>('N/A');
+import { GraphQL } from "@/util/api/api";
+import { Anime } from "@/types/miru";
 
-    useEffect(() => {
-        apiGET<any>('miru/home/')
-        .then((res) => {
-            setSeasonalAnime(res.seasonal)
-            setTopAnime(res.top)
-            setSeasonName(res.season_name)
-        })
-    }, [])
+import '@/styles/pages/miru/_home.scss';
+
+export default async function MiruHome() {
+    const { topScore, topUsers } = await getAnime()
 
     return (
         <React.Fragment>
@@ -34,12 +24,11 @@ export default function MiruHome() {
             <div id="page-miru-home">
                 <div className="grid grid--side-col">
                     <div className="flex-row flex-row--gap-md">
-                        <div id="seasonal">
-                            <ArcHeader title={`Latest Season - ${seasonName}`} link="miru/seasonal" linkText="See more" />
+                        <div id="all-time">
+                            <ArcHeader title="All Time" link="miru/all-time" linkText="See more" />
                             <div className="flex-col flex-col--gap-sm">
                                 {
-                                    seasonalAnime &&
-                                    seasonalAnime.map((anime: any, key: number) => (
+                                    topScore.map((anime: any, key: number) => (
                                         <EntryCard 
                                             key={key} 
                                             app="miru" 
@@ -51,12 +40,11 @@ export default function MiruHome() {
                                 }
                             </div>
                         </div>
-                        <div id="all-time">
-                            <ArcHeader title="All Time" link="miru/all-time" linkText="See more" />
+                        <div id="most-popular">
+                            <ArcHeader title="Most Popular" />
                             <div className="flex-col flex-col--gap-sm">
                                 {
-                                    topAnime &&
-                                    topAnime.map((anime: any, key: number) => (
+                                    topUsers.map((anime: any, key: number) => (
                                         <EntryCard 
                                             key={key} 
                                             app="miru" 
@@ -78,4 +66,31 @@ export default function MiruHome() {
             </div>
         </React.Fragment>
     )
+}
+
+interface GraphResponse {
+    data: {
+        topScore: Anime[],
+        topUsers: Anime[]
+    }
+}
+async function getAnime() {
+    const query = 
+    `
+        query {
+            topScore: topAnimeByCategory(category: "score", count: 5) {
+                id,	
+                title,
+                slug
+            },
+            topUsers: topAnimeByCategory(category: "users", count: 5) {
+                id,	
+                title,
+                slug
+            }
+        }
+    `
+
+    const res = await GraphQL<GraphResponse>(query);
+    return res.data
 }
