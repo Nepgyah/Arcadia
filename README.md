@@ -1,38 +1,18 @@
-## Latest Release - Alpha v0.7 - 11/3/2025
+## Latest Release - Alpha v0.78 - XX/XX/2025
 - **Overview**
-	- Introduced GraphQL
-	- Migrated public website
-	- Added new App: Kiku
-	- Reworked / Improved several model layouts
-	- Improved responsiveness on the platform
-	- Disabled Tsunagu
-	
-- **API**
-	- Added Graphql functionality
-	- **Miru**
-		- Added graphql schema and resolvers
-	- **Yomu**
-		- Added graphql schema and resolvers
-	- **Asobu**
-		- Added graphql schema and resolvers
-	- **Kiku v0.1**
-		-  The following models have been added
-			- Song
-			- Album
-			- Artist
-		- Added graphql schema and resolvers
-	- **Character**
-		- Reworked relations to hand various va/character/artist connections
-		- Added graphql schema
-	
+	- Improved detail pages of Miru, Yomu and Asobu
+	- Improved reusability of platform components
+
+- **Apps**
+	- **Miru v0.3**
+		- **API**
+			- Added anime themes field
+		- **Platform**
+			- Converted pages to utilize graphql and SSR
+			- Added tab content on detail page
+
 - **Website**
 	- Moved website to new domain: https://project-arcadia-jade.vercel.app
-
-- **Platform**
-	- Cleaned up core scss files
-	- Created common platform components
-	- Added mobile layout for header
-	- Updated responsiveness of platform
 
 ## Name
 Arcadia - Your Otaku Sanctuary

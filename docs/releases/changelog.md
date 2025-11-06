@@ -3,7 +3,7 @@
 | ---------- | ------- |
 | Website    | 0.4     |
 | Profile    | 1       |
-| Miru       | 0.2     |
+| Miru       | 0.3     |
 | Yomu       | 0.2     |
 | Asobu      | 0.1     |
 | Tsunagu    | 0.1     |
@@ -13,6 +13,42 @@
 | Kumitateru | 0.1     |
 | Hiku       |         |
 | Shiru      |         |
+
+## Alpha v0.7 - Nov 23 2025
+- **Overview**
+	- Introduced GraphQL
+	- Migrated public website
+	- Added new App: Kiku
+	- Reworked / Improved several model layouts
+	- Improved responsiveness on the platform
+	- Disabled Tsunagu
+	
+- **API**
+	- Added Graphql functionality
+	- **Miru**
+		- Added graphql schema and resolvers
+	- **Yomu**
+		- Added graphql schema and resolvers
+	- **Asobu**
+		- Added graphql schema and resolvers
+	- **Kiku v0.1**
+		-  The following models have been added
+			- Song
+			- Album
+			- Artist
+		- Added graphql schema and resolvers
+	- **Character**
+		- Reworked relations to hand various va/character/artist connections
+		- Added graphql schema
+	
+- **Website**
+	- Moved website to new domain: https://project-arcadia-jade.vercel.app
+
+- **Platform**
+	- Cleaned up core scss files
+	- Created common platform components
+	- Added mobile layout for header
+	- Updated responsiveness of platform
 
 ## Alpha v0.6 - Sep 23 2025
 - Apps
