@@ -1,4 +1,4 @@
-## Latest Release - Alpha v0.78 - XX/XX/2025
+## Latest Release - Alpha v2.1 - XX/XX/2025
 - **Overview**
 	- Improved detail pages of Miru, Yomu and Asobu
 	- Improved reusability of platform components
@@ -12,7 +12,7 @@
 			- Added tab content on detail page
 
 - **Website**
-	- Moved website to new domain: https://project-arcadia-jade.vercel.app
+	- 
 
 ## Name
 Arcadia - Your Otaku Sanctuary

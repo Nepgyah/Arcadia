@@ -1,7 +1,7 @@
 ## App Version Tracker
 | App        | Version |
 | ---------- | ------- |
-| Website    | 0.4     |
+| Website    | 1.0     |
 | Profile    | 1       |
 | Miru       | 0.3     |
 | Yomu       | 0.2     |
@@ -14,7 +14,7 @@
 | Hiku       |         |
 | Shiru      |         |
 
-## Alpha v0.7 - Nov 23 2025
+## Alpha v2.0 - Nov 23 2025
 - **Overview**
 	- Introduced GraphQL
 	- Migrated public website
@@ -50,7 +50,7 @@
 	- Added mobile layout for header
 	- Updated responsiveness of platform
 
-## Alpha v0.6 - Sep 23 2025
+## Alpha v1.2 - Sep 23 2025
 - Apps
 	- **Yomu v0.2**
 		- Added all time endpoint and page
@@ -91,9 +91,9 @@
 	- Updated API calls to send object id instead of slug
 	- Updated sidebar menu to highlight current page
 
-## Alpha v0.5 - Aug 31 2025
+## Alpha v1.1 - Aug 31 2025
 - API
-	-  **Yomu
+	-  **Yomu**
 		- The following models have been added
 			- Author
 			- Work
@@ -102,6 +102,7 @@
 			- WorkRelation
 		- Added home endpoint
 		- Added detail endpoint
+
 	- **Kumitateru**
 		- The following models have been added
 			- Manufacturer
@@ -129,15 +130,17 @@
 	- Added **Todokeru** landing
 	- Added **WIP** error page
 	- Added more members to team page
+
 - Platform
 	- **Yomu**
 		- Added homepage
 		- Added detail page
 	- **Kumitateru**
 		- Added homepage
-## Alpha v0.4 - Jul 27 2025
+
+## Alpha v1.0 - Jul 27 2025
 - API
-	-  **Miru v.0.1**
+	-  **Miru v0.1**
 		- Added **Anime** model
 		- Added home endpoint
 		- Added detail endpoint
@@ -147,11 +150,13 @@
 		- Added **Genre** model
 - Website
 	- Fixed website bugs and text
+
 - Platform
 	- **Miru**
 		- Home page content
 		- Detail page content
-## Alpha v0.3 - Jul 17 2025
+
+## Alpha v1.0 - Jul 17 2025
 - API
 	-  Created **accounts** app
 	- Added profile endpoints
@@ -167,10 +172,12 @@
 	- Added **Profile** page
 - Dev
 	- Add backend API service
+
 ## Alpha v0.2 - Jul 13 2025
 This version adds 2 more pages under the **D2X** tab for the public website
 - Added **About Us**
 - Added **Careers**
+
 ## Alpha v0.1 - Jul 2 2025
 This version focuses on the the public platform and the essentials for the website
 - Added the **homepage**
