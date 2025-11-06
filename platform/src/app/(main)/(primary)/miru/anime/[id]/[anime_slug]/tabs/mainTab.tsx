@@ -10,6 +10,33 @@ import React from "react";
 export default function AnimeDetailMainTab({ anime } : { anime: Anime }) {
     return (
         <div className="flex-row flex-row--gap-md">
+            <div id="anime-flow">
+                <ArcHeader title="Anime Flow" />
+                <div className="grid grid--2-col">
+                    {
+                        anime.previousAnime ?
+                            <MediaFlowCard 
+                                image={`/storage/miru/${anime.previousAnime.fromAnime.id}.jpg`}
+                                relation="Prequel"
+                                mediaName={anime ? anime.previousAnime.fromAnime.title : 'Loading'}
+                                mediaLink={`/miru/anime/${anime.previousAnime.fromAnime.id}/${anime?.previousAnime.fromAnime.slug}`}              
+                            />
+                        :
+                            <p>No Prequel Anime</p>
+                    }
+                    {
+                        anime.nextAnime ?
+                            <MediaFlowCard 
+                                image={`/storage/miru/${anime.nextAnime.toAnime.id}.jpg`}
+                                relation="Prequel"
+                                mediaName={anime ? anime.nextAnime.toAnime.title : 'Loading'}
+                                mediaLink={`/miru/anime/${anime.nextAnime.toAnime.id}/${anime.nextAnime.toAnime.slug}`}              
+                            />
+                        :
+                            <p>No Sequel Anime</p>
+                    }
+                </div>
+            </div>
             <div id="characters">
                 <ArcHeader title="Characters" />
                 <div id="characters-container" className="flex-col flex-col--gap-sm">
@@ -25,33 +52,6 @@ export default function AnimeDetailMainTab({ anime } : { anime: Anime }) {
                                 voiceActorDescription='Japanese'
                             />
                         ))
-                    }
-                </div>
-            </div>
-            <div id="anime-flow">
-                <ArcHeader title="Anime Flow" />
-                <div className="grid grid--2-col">
-                    {
-                        anime.previousAnime ?
-                            <MediaFlowCard 
-                                image={`/storage/miru/${anime.previousAnime.fromAnime.id}.jpg`}
-                                relation="Prequel"
-                                mediaName={anime ? anime.previousAnime.fromAnime.title : 'Loading'}
-                                mediaLink={`/miru/anime/${anime.previousAnime.fromAnime.id}/${anime?.previousAnime.fromAnime.slug}`}              
-                            />
-                        :
-                            <p>No Previous Anime</p>
-                    }
-                    {
-                        anime.nextAnime ?
-                            <MediaFlowCard 
-                                image={`/storage/miru/${anime.nextAnime.toAnime.id}.jpg`}
-                                relation="Prequel"
-                                mediaName={anime ? anime.nextAnime.toAnime.title : 'Loading'}
-                                mediaLink={`/miru/anime/${anime.nextAnime.toAnime.id}/${anime.nextAnime.toAnime.slug}`}              
-                            />
-                        :
-                            <p>No Previous Anime</p>
                     }
                 </div>
             </div>

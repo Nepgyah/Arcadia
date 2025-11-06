@@ -8,14 +8,17 @@ import InfoItem from "@/components/infoItem";
 import WIP from "@/components/wip";
 import MediaFeatureCard from "@/components/mediaFeatureCard";
 import ArcHeader from "@/components/arcHeader";
-import CharacterCard from "@/components/characterCard";
-import MediaFlowCard from "@/components/mediaFlowCard";
-import SocialMediaCard from "@/components/socialMediaCard";
-
-import { Anime, AnimeTheme } from "@/types/miru";
-import '@/styles/layout/_media-detail.scss';
-import KikuCard from "@/app/(main)/(secondary)/kiku/kikuCard";
 import AnimeDetailTabContent from "./tabContent";
+import SocialsList from "@/components/socialsList";
+
+import {Anime} from "@/types/miru";
+import '@/styles/layout/_media-detail.scss';
+
+interface GraphResponse {
+    data: {
+        animeById: Anime
+    }
+}
 
 export default async function AnimeDetails(
     props: {
@@ -71,7 +74,7 @@ export default async function AnimeDetails(
                 },
                 type,
                 studio {
-                name
+                    name
                 },
                 rating,
                 airingStartDate,
@@ -80,7 +83,7 @@ export default async function AnimeDetails(
             }
         }
     `
-    const res = await GraphQL<any>(query);
+    const res = await GraphQL<GraphResponse>(query);
     const anime = res.data.animeById
 
     return (
@@ -112,36 +115,7 @@ export default async function AnimeDetails(
                         </div>
                         <div id="socials">
                             <ArcHeader title="Socials" />
-                            <div id="socials-container" className="flex-row flex-row--gap-sm">
-                                {
-                                    anime.franchise.socials.website &&
-                                    <SocialMediaCard 
-                                        type="website"
-                                        social={anime.franchise.socials.website}
-                                    />
-                                }
-                                {
-                                    anime.franchise.socials.youtube &&
-                                    <SocialMediaCard 
-                                        type="youtube"
-                                        social={anime.franchise.socials.youtube}
-                                    />
-                                }
-                                {
-                                    anime.franchise.socials.reddit &&
-                                    <SocialMediaCard 
-                                        type="reddit"
-                                        social={anime.franchise.socials.reddit}
-                                    />
-                                }
-                                {
-                                    anime.franchise.socials.twitter &&
-                                    <SocialMediaCard 
-                                        type="twitter"
-                                        social={anime.franchise.socials.twitter}
-                                    />
-                                }
-                            </div>
+                            <SocialsList socials={anime.franchise.socials} />
                         </div>
                         <div id="misc">
                             <ArcHeader title="Misc" />
@@ -152,7 +126,6 @@ export default async function AnimeDetails(
                                 <InfoItem label="Start Date" value={anime.airingStartDate} />
                                 <InfoItem label="End Date" value={anime.airingEndDate} />
                                 <InfoItem label="Studio" value={anime.studio.name} />
-
                             </div>
                         </div>
                     </div>

@@ -73,7 +73,6 @@ export const GraphQL = async <T>(query: any, variables = {}): Promise<T> => {
             credentials: "include",
             headers: {
                 "Content-Type": "application/json",
-                // "X-CSRFToken": csrfToken,
             },
             body: JSON.stringify({ query, variables }),
         });
