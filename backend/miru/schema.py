@@ -16,8 +16,7 @@ from characters.schema import (
 
 from shared.models import Franchise
 from shared.schema import (
-    FranchiseType,
-    GenreType
+    FranchiseType
 )
     
 class AnimeThemeType(DjangoObjectType):

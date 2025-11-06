@@ -1,8 +1,10 @@
 'use client';
 
-import { Anime, AnimeTheme } from "@/types/miru";
-import { useState } from "react";
 import React from "react";
+import { useState } from "react";
+
+import { Chip } from "@mui/material";
+
 import ArcTab from "@/components/arcTab";
 import CharacterTab from "@/components/characterTab";
 import KikuCard from "@/app/(main)/(secondary)/kiku/kikuCard";
@@ -10,7 +12,9 @@ import ArcHeader from "@/components/arcHeader";
 import CharacterCard from "@/components/characterCard";
 import MediaFlowCard from "@/components/mediaFlowCard";
 import WIP from "@/components/wip";
-import { Chip } from "@mui/material";
+
+import { Anime, AnimeTheme } from "@/types/miru";
+
 export default function AnimeDetailTabContent({ anime } : { anime: Anime }){
     
     const [tab, setTab] = useState<string>('0');
