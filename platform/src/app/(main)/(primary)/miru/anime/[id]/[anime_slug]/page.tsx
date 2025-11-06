@@ -32,6 +32,10 @@ export default async function AnimeDetails(
             animeById(id: ${id}) {
                 id,
                 title,
+                genres {
+                    id,
+                    name
+                },
                 franchise {
                     id,
                     name,

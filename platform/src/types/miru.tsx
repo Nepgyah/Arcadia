@@ -10,7 +10,7 @@ export interface Anime {
         season: string,
         year: number
     },
-    genres: string[],
+    genres: any[],
     characters: any[],
     previousAnime: {
         relationType: string,

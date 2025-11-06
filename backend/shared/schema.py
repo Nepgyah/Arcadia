@@ -2,7 +2,8 @@ import graphene
 from graphene.types.generic import GenericScalar
 from graphene_django import DjangoObjectType
 from .models import (
-    Franchise
+    Franchise,
+    Genre
 )
     
 class FranchiseType(DjangoObjectType):
@@ -15,4 +16,8 @@ class FranchiseType(DjangoObjectType):
     def resolve_socials(root, info):
         return root.socials
 
-    
+class GenreType(DjangoObjectType):
+
+    class Meta:
+        model = Genre
+        fields = "__all__"
