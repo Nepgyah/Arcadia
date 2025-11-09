@@ -1,0 +1,47 @@
+@use '../utils/variables' as *;
+@use "sass:map";
+
+.arc-tab {
+    position: relative;
+    filter: grayscale(65%);
+    transition: filter .2s ease-in, opacity .2s ease-in;
+    min-width: 175px;
+
+    p {
+        opacity: .5;
+    }
+
+    &--selected {
+        filter: grayscale(0%);
+
+        p {
+            opacity: 1;
+        }
+    }
+
+    &__icon {
+        position: relative;
+        z-index: 2;
+        margin: auto;
+        height: 64px;
+        width: 64px;
+
+        img {
+            width: 36px;
+            height: 36px;
+        }
+    }
+
+    &__label {
+        position: relative;
+        z-index: 1;
+
+        margin-top: -32px;
+        font-size: 1.25rem;
+        padding: 2.5rem 1rem 1rem;
+        background-color: map.get($colors, platform-light);
+
+        text-align: center;
+        font-weight: bold;
+    }
+}

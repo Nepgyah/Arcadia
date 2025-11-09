@@ -1,11 +1,14 @@
+from django.core.paginator import Paginator
 import graphene
 from graphene_django import DjangoObjectType
+from graphene.types.generic import GenericScalar
 from .models import (
     Anime,
     Studio,
     Season,
     AnimeCharacter,
-    AnimeRelation
+    AnimeRelation,
+    AnimeTheme
 )
 
 from characters.schema import (
@@ -17,7 +20,14 @@ from shared.schema import (
     FranchiseType
 )
     
+class AnimeThemeType(DjangoObjectType):
+
+    class Meta:
+        model = AnimeTheme
+        fields = "__all__"
+
 class StudioType(DjangoObjectType):
+
     class Meta:
         model = Studio
         fields = "__all__"
@@ -48,6 +58,7 @@ class AnimeType(DjangoObjectType):
     previous_anime = graphene.Field(lambda: AnimeRelationType)
     next_anime = graphene.Field(lambda: AnimeRelationType)
     season = graphene.String()
+    themes = GenericScalar()
 
     class Meta:
         model = Anime
@@ -80,6 +91,17 @@ class AnimeType(DjangoObjectType):
     def resolve_next_anime(self, info):
         return AnimeRelation.objects.filter(from_anime=self, relation_type=AnimeRelation.Type.SERIES_ENTRY).first()
     
+    def resolve_themes(self, info):
+        themes = AnimeTheme.objects.filter(anime=self)
+
+        if not themes.exists:
+            return {}
+        else:
+            return {
+                'opening': [theme.serialize() for theme in themes.filter(theme_type=AnimeTheme.Type.OP)],
+                'ending': [theme.serialize() for theme in themes.filter(theme_type=AnimeTheme.Type.ED)],
+            }
+    
 class AnimeRelationType(DjangoObjectType):
     from_anime = graphene.Field(lambda: AnimeType)
     to_anime = graphene.Field(lambda: AnimeType)
@@ -92,10 +114,59 @@ class AnimeRelationType(DjangoObjectType):
     def resolve_relation_type(self, info):
         return self.get_relation_type_display()
 
+class AnimeFilterInput(graphene.InputObjectType):
+    title = graphene.String()
+    type = graphene.Int()
+    status = graphene.Int()
+
+class AnimeSortInput(graphene.InputObjectType):
+    category = graphene.String()
+    direction = graphene.String()
+
+class AnimeFilterResults(graphene.ObjectType):
+    results = graphene.List(AnimeType)
+    page_count = graphene.Int()
+    current_page = graphene.Int()
+
 class Query(graphene.ObjectType):
     
     anime_by_id = graphene.Field(AnimeType, id=graphene.Int(required=True))
+    top_anime_by_category = graphene.List(AnimeType, count=graphene.Int(required=False), category=graphene.String(required=True))
+    search_anime = graphene.Field(AnimeFilterResults, filters=AnimeFilterInput(), sort=AnimeSortInput(), page=graphene.Int(default_value=1), per_page=graphene.Int(default_value=10))
 
     def resolve_anime_by_id(self, info, id):
         return Anime.objects.get(id=id)
+    
+    def resolve_top_anime_by_category(self, info, count, category):
+        if count:
+            return Anime.objects.order_by(f'-{category}')[:count]
+        else:
+            return Anime.objects.order_by(f'-{category}')[:5]
+        
+    def resolve_search_anime(self, info, filters=None, sort=None, page=1, per_page=10):
+        queryset = Anime.objects.only('id', 'title', 'score', 'users', 'status', 'summary', 'slug', 'franchise').select_related('franchise')
+
+        if filters:
+            if filters.title:
+                queryset = queryset.filter(title__icontains=filters.title)
+            if filters.type != -1:
+                queryset = queryset.filter(type=filters.type)
+            if filters.status != -1:
+                queryset = queryset.filter(status=filters.status)
+
+        if sort:
+            direction = '' if sort.direction == 'asc' else '-'
+            if sort.category == 'users':
+                queryset = queryset.order_by(f'{direction}users')
+            if sort.category == 'score':
+                queryset = queryset.order_by(f'{direction}score')
+
+        paginator = Paginator(queryset, per_page)
+        page_obj = paginator.get_page(page)
+
+        return AnimeFilterResults(
+            results=page_obj,
+            page_count=paginator.num_pages,
+            current_page=page
+        )
     

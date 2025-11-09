@@ -8,11 +8,11 @@ import React, { useEffect, useState } from "react";
 
 const MAX_PER_PAGE = 10;
 
-export default function MiruAllTime() {
+export default function MiruPopular() {
 
     const [isLoading, setIsLoading] = useState<boolean>(true);
-    const [pageCount, setPageCount] = useState<number>(1)
-    const [currentPage, setCurrentPage] = useState<number>(1)
+    const [pageCount, setPageCount] = useState<number>(1);
+    const [currentPage, setCurrentPage] = useState<number>(1);
     const [animeList, setAnimeList] = useState<Anime[]>([])
 
     useEffect(() => {
@@ -23,7 +23,7 @@ export default function MiruAllTime() {
         setIsLoading(true)
         const query = `
         query {
-            searchAnime(filters: {status: -1, type: -1}, perPage: 10, page:${page} ){
+            searchAnime(filters: {status: -1, type: -1}, sort: {category: "users", direction: "desc"} perPage: 10, page:${page} ){
                 results {
                     id,
                     title,
@@ -48,7 +48,9 @@ export default function MiruAllTime() {
             setPageCount(res.data.searchAnime.pageCount)
             setCurrentPage(res.data.searchAnime.currentPage)
         })
-        setIsLoading(false);
+        .finally(() => {
+            setIsLoading(false);
+        })
     }
 
     const changePage = (e: React.ChangeEvent<unknown>, page: number) => {
@@ -60,7 +62,7 @@ export default function MiruAllTime() {
         <React.Fragment>
             <Breadcrumbs>
                 <Typography>Miru</Typography>
-                <Typography>All-Time</Typography>
+                <Typography>Popular</Typography>
             </Breadcrumbs>
             <div id="page-miru-all-time" className="page-content">
                 <Pagination 

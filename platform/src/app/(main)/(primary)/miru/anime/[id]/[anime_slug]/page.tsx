@@ -1,9 +1,6 @@
-'use client';
-
-import { useParams } from "next/navigation";
+export const revalidate = 3600;
 
 import React from "react";
-import { useEffect, useState } from "react";
 import { Breadcrumbs, Typography } from "@mui/material";
 import { GraphQL } from "@/util/api/api";
 
@@ -11,85 +8,25 @@ import InfoItem from "@/components/infoItem";
 import WIP from "@/components/wip";
 import MediaFeatureCard from "@/components/mediaFeatureCard";
 import ArcHeader from "@/components/arcHeader";
-import CharacterCard from "@/components/characterCard";
-import MediaFlowCard from "@/components/mediaFlowCard";
-import SocialMediaCard from "@/components/socialMediaCard";
+import AnimeDetailTabContent from "./tabContent";
+import SocialsList from "@/components/socialsList";
 
-import { Anime } from "@/types/miru";
+import {Anime} from "@/types/miru";
 import '@/styles/layout/_media-detail.scss';
 
-export default function AnimeDetails() {
-    const params = useParams();
-    const [anime, setAnime] = useState<Anime>()
-
-    useEffect(() => {
-        const query = 
-        `
-            query {
-                animeById(id: ${params.id}) {
-                    id,
-                    title,
-                    franchise {
-                        id,
-                        name,
-                        socials
-                    },
-                    score,
-                    users,
-                    slug,
-                    summary,
-                    season,
-                    status,
-                    characters {
-                    character {
-                        id,
-                        firstName,
-                        lastName,
-                        playedBy {
-                            id,
-                            firstName,
-                            lastName
-                        }
-                    },
-                    role
-                    },
-                    previousAnime {
-                        relationType
-                        fromAnime {
-                            id,
-                            slug,
-                            title
-                        }
-                    },
-                    nextAnime {
-                        relationType
-                        toAnime {
-                            id,
-                            slug,
-                            title
-                        }
-                    },
-                    type,
-                    studio {
-                    name
-                    },
-                    rating,
-                    airingStartDate,
-                    airingEndDate
-                }
-            }
-        `
-        GraphQL<any>(query)
-        .then((res) => {
-            setAnime(res.data.animeById)
-        })
-    }, [])
+export default async function AnimeDetails(
+    props: {
+        params: Promise<{ id: string; anime_slug: string }>;
+    }
+    ) {
+    const { id } = await props.params;
+    const anime = await getAnime(id);
 
     return (
         <React.Fragment>
             <Breadcrumbs>
                 <Typography>Anime</Typography>
-                <Typography>{anime?.title}</Typography>
+                <Typography>{anime.title}</Typography>
             </Breadcrumbs>
             <div id="page-media-detail" className="page-content">
                 <div className="grid grid--feature-combo">
@@ -98,7 +35,7 @@ export default function AnimeDetails() {
                         description={anime ? anime.summary : 'Summary'}
                         score={anime ? anime.score : 0.0}
                         app="miru"
-                        image={`/storage/miru/${anime?.id}.jpg`}
+                        image={`/storage/miru/${anime.id}.jpg`}
                      />
                     <div id="latest-episode" className="border-radius-md bg-platform-dark box-shadow p-a-lg">
                         <WIP />
@@ -114,111 +51,97 @@ export default function AnimeDetails() {
                         </div>
                         <div id="socials">
                             <ArcHeader title="Socials" />
-                            <div id="socials-container" className="flex-row flex-row--gap-sm">
-                                {
-                                    anime?.franchise.socials?.website &&
-                                    <SocialMediaCard 
-                                        type="website"
-                                        social={anime?.franchise.socials.website}
-                                    />
-                                }
-                                {
-                                    anime?.franchise.socials?.youtube &&
-                                    <SocialMediaCard 
-                                        type="youtube"
-                                        social={anime?.franchise.socials.youtube}
-                                    />
-                                }
-                                {
-                                    anime?.franchise.socials?.reddit &&
-                                    <SocialMediaCard 
-                                        type="reddit"
-                                        social={anime?.franchise.socials.reddit}
-                                    />
-                                }
-                                {
-                                    anime?.franchise.socials?.twitter &&
-                                    <SocialMediaCard 
-                                        type="twitter"
-                                        social={anime?.franchise.socials.twitter}
-                                    />
-                                }
-                            </div>
+                            <SocialsList socials={anime.franchise.socials} />
                         </div>
                         <div id="misc">
                             <ArcHeader title="Misc" />
                             <div className="flex-row flex-row--gap-sm">
-                                <InfoItem label="Season" value={anime?.season} />
-                                <InfoItem label="Type" value={anime?.type} />
-                                <InfoItem label="Status" value={anime?.status} />
-                                <InfoItem label="Start Date" value={anime?.airingStartDate} />
-                                <InfoItem label="End Date" value={anime?.airingEndDate} />
-                                <InfoItem label="Studio" value={anime?.studio?.name} />
-
+                                <InfoItem label="Season" value={anime.season} />
+                                <InfoItem label="Type" value={anime.type} />
+                                <InfoItem label="Status" value={anime.status} />
+                                <InfoItem label="Start Date" value={anime.airingStartDate} />
+                                <InfoItem label="End Date" value={anime.airingEndDate} />
+                                <InfoItem label="Studio" value={anime.studio?.name} />
                             </div>
                         </div>
                     </div>
-                    <div className="flex-row flex-row--gap-md">
-                        <div id="characters">
-                            <ArcHeader title="Characters" />
-                            <div id="characters-container" className="flex-col flex-col--gap-sm">
-                                {
-                                    anime?.characters.map((character: any, idx: number) => (
-                                        <CharacterCard 
-                                            key={idx}
-                                            characterId={character.character.id}
-                                            characterName={`${character.character.firstName} ${character.character.lastName ? character.character.lastName : ''}`}
-                                            characterDescription={character.role}
-                                            voiceActorId={character.character.playedBy?.id}
-                                            voiceActorName={character.character.playedBy ? `${character.character.playedBy.firstName} ${character.character.playedBy.lastName ? character.character.playedBy.lastName : ''}` : 'Unknown'}
-                                            voiceActorDescription='Japanese'
-                                        />
-                                    ))
-                                }
-                            </div>
-                        </div>
-                        <div id="anime-flow">
-                            <ArcHeader title="Anime Flow" />
-                            <div className="grid grid--2-col">
-                                {
-                                    anime?.previousAnime ?
-                                        <MediaFlowCard 
-                                            image={`/storage/miru/${anime?.previousAnime.fromAnime.id}.jpg`}
-                                            relation="Prequel"
-                                            mediaName={anime ? anime?.previousAnime.fromAnime.title : 'Loading'}
-                                            mediaLink={`/miru/anime/${anime?.previousAnime.fromAnime.id}/${anime?.previousAnime.fromAnime.slug}`}              
-                                        />
-                                    :
-                                        <p>No Previous Anime</p>
-                                }
-                                {
-                                    anime?.nextAnime ?
-                                        <MediaFlowCard 
-                                            image={`/storage/miru/${anime?.nextAnime.toAnime.id}.jpg`}
-                                            relation="Prequel"
-                                            mediaName={anime ? anime?.nextAnime.toAnime.title : 'Loading'}
-                                            mediaLink={`/miru/anime/${anime?.nextAnime.toAnime.id}/${anime?.nextAnime.toAnime.slug}`}              
-                                        />
-                                    :
-                                        <p>No Previous Anime</p>
-                                }
-                            </div>
-                        </div>
-                        <div id="themes">
-                            <div className="grid grid--2-col">
-                                <div>
-                                    <ArcHeader title="Openings" />
-                                    <WIP />
-                                </div>
-                                <div>
-                                    <ArcHeader title="Endings" />
-                                    <WIP />
-                                </div>
-                            </div>
-                        </div>
+                    <div>
+                        <AnimeDetailTabContent anime={anime}/>
                     </div>
                 </div>
             </div>
         </React.Fragment>
     )
+}
+
+interface GraphResponse {
+    data: {
+        animeById: Anime
+    }
+}
+
+async function getAnime(id : string) {
+    const query = 
+    `
+        query {
+            animeById(id: ${id}) {
+                id,
+                title,
+                genres {
+                    id,
+                    name
+                },
+                franchise {
+                    id,
+                    name,
+                    socials
+                },
+                score,
+                users,
+                slug,
+                summary,
+                season,
+                status,
+                characters {
+                character {
+                    id,
+                    firstName,
+                    lastName,
+                    playedBy {
+                        id,
+                        firstName,
+                        lastName
+                    }
+                },
+                role
+                },
+                previousAnime {
+                    relationType
+                    fromAnime {
+                        id,
+                        slug,
+                        title
+                    }
+                },
+                nextAnime {
+                    relationType
+                    toAnime {
+                        id,
+                        slug,
+                        title
+                    }
+                },
+                type,
+                studio {
+                    name
+                },
+                rating,
+                airingStartDate,
+                airingEndDate,
+                themes
+            }
+        }
+    `
+    const res = await GraphQL<GraphResponse>(query);
+    return res.data.animeById
 }

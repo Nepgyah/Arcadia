@@ -3,55 +3,96 @@
 import React, { useEffect, useState } from "react";
 import { Breadcrumbs, Button, FormControl, InputLabel, MenuItem, Pagination, Select, TextField, Typography } from "@mui/material";
 
-import { apiGET } from "@/util/api/api";
-import { Anime } from "@/types/miru";
 import DetailMediaCard from "@/components/detailMediaCard";
-
-import '@/styles/pages/miru/_search.scss';
 import ArcHeader from "@/components/arcHeader";
 
+import { GraphQL } from "@/util/api/api";
+import { Anime } from "@/types/miru";
+
+import '@/styles/pages/miru/_search.scss';
+
 export default function MiruHome() {
-    const [animeList, setAnimeList] = useState<Anime[]>([])
-    const [page, setPage] = useState()
+    const [animes, setAnimes] = useState<Anime[]>()
     const [pageCount, setPageCount] = useState<number>(1)
     const [currentPage, setCurrentPage] = useState<number>(1)
+    const [perPage, setPerPage] = useState<number>(9)
     const [search, setSearch] = useState<string>('')
 
     // Filter states
     const [airingStatus, setAiringStatus] = useState<number>(-1)
     const [animeType, setAnimeType] = useState<number>(-1)
-    useEffect(() => {
-        apiGET<any>('miru/anime/search/?page=1')
-        .then((res) => {
-            setAnimeList(res.animes)
-            setPageCount(res.page_count)
-        })
-    }, [])
 
-    const APICall = (page: number) => {
-        apiGET<any>(`miru/anime/search/?page=${page}&status=${airingStatus}&type=${animeType}&search=${search}`)
+    useEffect(() => {
+        fetchAnime(1)
+    }, [])
+    
+    const fetchAnime = (page: number) => {
+        const query = `
+        query {
+            searchAnime(filters: {status: ${airingStatus}, type:${animeType}}, perPage: ${perPage}, page:${page} ){
+                results {
+                    id,
+                    title,
+                    score,
+                    users,
+                    status,
+                    summary,
+                    slug,
+                    franchise {
+                        name
+                    }
+                },
+                pageCount,
+                currentPage
+            }
+        }
+        `
+
+        GraphQL<any>(query)
         .then((res) => {
-            setAnimeList(res.animes)
-            setPageCount(res.page_count)
-            setCurrentPage(page)
+            setAnimes(res.data.searchAnime.results)
+            setPageCount(res.data.searchAnime.pageCount)
+            setCurrentPage(res.data.searchAnime.currentPage)
         })
     }
 
-    const goToPage = (e: React.ChangeEvent<unknown>, page: number) => {
+    const changePage = (e: React.ChangeEvent<unknown>, page: number) => {
         setCurrentPage(page)
-        APICall(page)
+        fetchAnime(page)
     }
 
     const resetFilters = () => {
-        setCurrentPage(1)
-        setAiringStatus(-1)
-        setAnimeType(-1)
-        apiGET<any>(`miru/anime/search/?page=${page}`)
+        const query = `
+        query {
+            searchAnime(filters: {status: -1, type: -1}, perPage: 5, page: 1 ){
+                results {
+                    id,
+                    title,
+                    score,
+                    users,
+                    status,
+                    summary,
+                    slug,
+                    franchise {
+                        name
+                    }
+                },
+                pageCount,
+                currentPage
+            }
+        }
+        `
+
+        GraphQL<any>(query)
         .then((res) => {
-            setAnimeList(res.animes)
-            setPageCount(res.page_count)
+            setAnimes(res.data.searchAnime.results)
+            setPageCount(res.data.searchAnime.pageCount)
+            setCurrentPage(1);
+            setAiringStatus(-1);
+            setAnimeType(-1)
         })
     }
+
     return (
         <React.Fragment>
             <Breadcrumbs>
@@ -78,13 +119,13 @@ export default function MiruHome() {
                                     onChange={(e) => setAiringStatus(e.target.value)}
                                     label="Airing Status"
                                 >
-                                <MenuItem value={-1} disabled>Select status</MenuItem>
+                                <MenuItem value={-1}>All</MenuItem>
                                 <MenuItem value={0}>Not Yet Aired</MenuItem>
                                 <MenuItem value={1}>Airing</MenuItem>
                                 <MenuItem value={2}>Finished Airing</MenuItem>
                                 </Select>
                             </FormControl>
-
+            
                             <FormControl variant="standard">
                                 <InputLabel id="demo-simple-select-standard-label">Type</InputLabel>
                                 <Select
@@ -93,7 +134,7 @@ export default function MiruHome() {
                                     onChange={(e) => setAnimeType(e.target.value)}
                                     label="media-type"
                                 >
-                                <MenuItem value={-1} disabled>Select type</MenuItem>
+                                <MenuItem value={-1}>All</MenuItem>
                                 <MenuItem value={0}>Tv</MenuItem>
                                 <MenuItem value={1}>Movie</MenuItem>
                                 <MenuItem value={2}>OVA</MenuItem>
@@ -101,11 +142,26 @@ export default function MiruHome() {
                                 <MenuItem value={4}>Web</MenuItem>
                                 </Select>
                             </FormControl>
+                            
+                            <FormControl variant="standard">
+                                <InputLabel id="demo-simple-select-standard-label">Per Page</InputLabel>
+                                <Select
+                                    id="per-page"
+                                    value={perPage}
+                                    onChange={(e) => setPerPage(e.target.value)}
+                                    label="per-page"
+                                >
+                                <MenuItem value={6}>6</MenuItem>
+                                <MenuItem value={9}>9</MenuItem>
+                                <MenuItem value={12}>12</MenuItem>
+                                <MenuItem value={15}>15</MenuItem>
+                                </Select>
+                            </FormControl>
 
                             <Button 
                                 variant="contained" 
                                 className="bg-miru-base clr-txt-dark"
-                                onClick={() => APICall(1)}
+                                onClick={() => fetchAnime(1)}
                             >
                                 Filter
                             </Button>
@@ -119,11 +175,11 @@ export default function MiruHome() {
                         </div>
                     </div>
                     <div className="vertical-divider-left p-left-xl">
-                        <Pagination onChange={goToPage} page={currentPage} count={pageCount} />
+                        <Pagination onChange={changePage} page={currentPage} count={pageCount} />
                         <div id="results"  className="flex-col flex-col--gap-sm">
                             {
-                                animeList &&
-                                animeList.map((anime: Anime, key: number) => (
+                                animes ?
+                                animes.map((anime: Anime, key: number) => (
                                     <DetailMediaCard 
                                         key={key}
                                         app="miru"
@@ -132,6 +188,8 @@ export default function MiruHome() {
                                         status={anime.status}
                                     />
                                 ))
+                                :
+                                    <p>ANime</p>
                             }
                         </div>
                     </div>

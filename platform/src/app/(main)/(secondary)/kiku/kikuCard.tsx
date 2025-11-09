@@ -7,7 +7,7 @@ export default function KikuCard(
         number, id, title, subTitle, type, mainLink, subLink
     } : {
         number?: number,
-        id: number,
+        id: number | string,
         title: string,
         subTitle?: string,
         type: mediaType,
@@ -26,10 +26,12 @@ export default function KikuCard(
                     <p className="kiku-song-card__title">{title}</p>
                 </Link>
                 {
-                    subTitle &&
+                    subLink ?
                         <Link href={subLink ? subLink : ''} className="clickable">
                             <p className="kiku-song-card__subtitle">{subTitle}</p>
                         </Link>
+                    :
+                        <p className="kiku-song-card__subtitle">{subTitle}</p>
                 }
             </div>
         </div>

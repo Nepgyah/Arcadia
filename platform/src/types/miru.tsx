@@ -10,7 +10,7 @@ export interface Anime {
         season: string,
         year: number
     },
-    genres: string[],
+    genres: any[],
     characters: any[],
     previousAnime: {
         relationType: string,
@@ -38,5 +38,17 @@ export interface Anime {
     rating: string,
     airingStartDate: string,
     airingEndDate: string,
-    franchise: Franchise
+    franchise: Franchise,
+    themes: {
+        opening: [AnimeTheme],
+        ending: [AnimeTheme]
+    }
+}
+
+export interface AnimeTheme {
+    id: string,
+    title: string,
+    artist:string,
+    startingEpisode: number,
+    endingEpisode: number
 }
