@@ -13,7 +13,6 @@ import '@/styles/pages/miru/_search.scss';
 
 export default function MiruHome() {
     const [animes, setAnimes] = useState<Anime[]>()
-    const [page, setPage] = useState(1)
     const [pageCount, setPageCount] = useState<number>(1)
     const [currentPage, setCurrentPage] = useState<number>(1)
     const [perPage, setPerPage] = useState<number>(9)

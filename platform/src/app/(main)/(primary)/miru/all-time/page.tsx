@@ -2,7 +2,7 @@
 
 import { Anime } from "@/types/miru";
 import { apiGET, GraphQL } from "@/util/api/api";
-import { Breadcrumbs, Pagination, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
+import { Breadcrumbs, Pagination, Skeleton, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
@@ -10,6 +10,7 @@ const MAX_PER_PAGE = 10;
 
 export default function MiruAllTime() {
 
+    const [isLoading, setIsLoading] = useState<boolean>(true);
     const [pageCount, setPageCount] = useState<number>(1)
     const [currentPage, setCurrentPage] = useState<number>(1)
     const [animeList, setAnimeList] = useState<Anime[]>([])
@@ -19,6 +20,7 @@ export default function MiruAllTime() {
     }, [])
 
     const fetchAnime = (page: number) => {
+        setIsLoading(true)
         const query = `
         query {
             searchAnime(filters: {status: -1, type: -1}, perPage: 10, page:${page} ){
@@ -46,6 +48,7 @@ export default function MiruAllTime() {
             setPageCount(res.data.searchAnime.pageCount)
             setCurrentPage(res.data.searchAnime.currentPage)
         })
+        setIsLoading(false);
     }
 
     const changePage = (e: React.ChangeEvent<unknown>, page: number) => {
@@ -80,6 +83,19 @@ export default function MiruAllTime() {
                         </TableHead>
                         <TableBody>
                             {
+                                isLoading ?
+                                    [...Array(10)].map((idx: number) => (
+                                        <TableRow key={idx}>
+                                        <TableCell><Skeleton variant="rectangular" width={"100%"} height={'24px'} /></TableCell>
+                                        <TableCell className="bold image-title">
+                                            <Skeleton variant="rectangular" width={"75px"} height={"100px"} />
+                                            <Skeleton variant="text" width={"50%"} height={'24px'}  />
+                                        </TableCell>
+                                        <TableCell><Skeleton variant="rectangular" width={"100%"} height={'24px'} /></TableCell>
+                                        <TableCell><Skeleton variant="rectangular" width={"100%"} height={'24px'}  /></TableCell>
+                                    </TableRow>
+                                    ))
+                                :
                                 animeList.map((anime: Anime, idx: number) => (
                                     <TableRow key={idx}>
                                         <TableCell>{(((currentPage - 1) * MAX_PER_PAGE) + (idx) ) + 1}</TableCell>

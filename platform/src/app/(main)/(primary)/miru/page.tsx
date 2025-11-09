@@ -41,7 +41,7 @@ export default async function MiruHome() {
                             </div>
                         </div>
                         <div id="most-popular">
-                            <ArcHeader title="Most Popular" />
+                            <ArcHeader title="Most Popular" link="miru/popular" linkText="See more" />
                             <div className="flex-col flex-col--gap-sm">
                                 {
                                     topUsers.map((anime: any, key: number) => (
