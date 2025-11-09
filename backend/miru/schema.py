@@ -119,6 +119,10 @@ class AnimeFilterInput(graphene.InputObjectType):
     type = graphene.Int()
     status = graphene.Int()
 
+class AnimeSortInput(graphene.InputObjectType):
+    category = graphene.String()
+    direction = graphene.String()
+
 class AnimeFilterResults(graphene.ObjectType):
     results = graphene.List(AnimeType)
     page_count = graphene.Int()
@@ -128,7 +132,7 @@ class Query(graphene.ObjectType):
     
     anime_by_id = graphene.Field(AnimeType, id=graphene.Int(required=True))
     top_anime_by_category = graphene.List(AnimeType, count=graphene.Int(required=False), category=graphene.String(required=True))
-    search_anime = graphene.Field(AnimeFilterResults, filters=AnimeFilterInput(), page=graphene.Int(default_value=1), per_page=graphene.Int(default_value=10))
+    search_anime = graphene.Field(AnimeFilterResults, filters=AnimeFilterInput(), sort=AnimeSortInput(), page=graphene.Int(default_value=1), per_page=graphene.Int(default_value=10))
 
     def resolve_anime_by_id(self, info, id):
         return Anime.objects.get(id=id)
@@ -139,18 +143,23 @@ class Query(graphene.ObjectType):
         else:
             return Anime.objects.order_by(f'-{category}')[:5]
         
-    def resolve_search_anime(self, info, filters=None, page=1, per_page=10):
+    def resolve_search_anime(self, info, filters=None, sort=None, page=1, per_page=10):
         queryset = Anime.objects.only('id', 'title', 'score', 'users', 'status', 'summary', 'slug', 'franchise').select_related('franchise')
 
         if filters:
             if filters.title:
                 queryset = queryset.filter(title__icontains=filters.title)
             if filters.type != -1:
-                print('filter type')
                 queryset = queryset.filter(type=filters.type)
             if filters.status != -1:
-                print('filter status')
                 queryset = queryset.filter(status=filters.status)
+
+        if sort:
+            direction = '' if sort.direction == 'asc' else '-'
+            if sort.category == 'users':
+                queryset = queryset.order_by(f'{direction}users')
+            if sort.category == 'score':
+                queryset = queryset.order_by(f'{direction}score')
 
         paginator = Paginator(queryset, per_page)
         page_obj = paginator.get_page(page)

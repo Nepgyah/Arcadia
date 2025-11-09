@@ -16,7 +16,7 @@ export default function MiruHome() {
     const [page, setPage] = useState(1)
     const [pageCount, setPageCount] = useState<number>(1)
     const [currentPage, setCurrentPage] = useState<number>(1)
-    const [perPage, setPerPage] = useState<number>(10)
+    const [perPage, setPerPage] = useState<number>(9)
     const [search, setSearch] = useState<string>('')
 
     // Filter states
@@ -152,10 +152,10 @@ export default function MiruHome() {
                                     onChange={(e) => setPerPage(e.target.value)}
                                     label="per-page"
                                 >
-                                <MenuItem value={5}>5</MenuItem>
-                                <MenuItem value={10}>10</MenuItem>
+                                <MenuItem value={6}>6</MenuItem>
+                                <MenuItem value={9}>9</MenuItem>
+                                <MenuItem value={12}>12</MenuItem>
                                 <MenuItem value={15}>15</MenuItem>
-                                <MenuItem value={20}>20</MenuItem>
                                 </Select>
                             </FormControl>
 

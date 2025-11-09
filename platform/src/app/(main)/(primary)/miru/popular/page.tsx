@@ -8,7 +8,7 @@ import React, { useEffect, useState } from "react";
 
 const MAX_PER_PAGE = 10;
 
-export default function MiruAllTime() {
+export default function MiruPopular() {
 
     const [pageCount, setPageCount] = useState<number>(1)
     const [currentPage, setCurrentPage] = useState<number>(1)
@@ -21,7 +21,7 @@ export default function MiruAllTime() {
     const fetchAnime = (page: number) => {
         const query = `
         query {
-            searchAnime(filters: {status: -1, type: -1}, perPage: 10, page:${page} ){
+            searchAnime(filters: {status: -1, type: -1}, sort: {category: "users", direction: "desc"} perPage: 10, page:${page} ){
                 results {
                     id,
                     title,
@@ -57,7 +57,7 @@ export default function MiruAllTime() {
         <React.Fragment>
             <Breadcrumbs>
                 <Typography>Miru</Typography>
-                <Typography>All-Time</Typography>
+                <Typography>Popular</Typography>
             </Breadcrumbs>
             <div id="page-miru-all-time" className="page-content">
                 <Pagination 
