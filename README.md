@@ -7,10 +7,13 @@
 	- **Miru v0.3**
 		- **API**
 			- Added anime themes field
+			- Improved miru graphql queries
+
 		- **Platform**
 			- Converted pages to utilize graphql and SSR
 			- Added tab content on detail page
-
+			- Various UI improvements on miru lists
+			
 - **Website**
 	- 
 
