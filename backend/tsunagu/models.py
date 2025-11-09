@@ -1,15 +1,18 @@
 from django.db import models
 from django.utils.text import slugify
+import shared.models
 import accounts.models
 
 class Community(models.Model):
     title = models.CharField(max_length=255, unique=True)
     slug = models.SlugField(unique=True, blank=True)
-
-    description = models.TextField()
-    owner = models.ForeignKey(accounts.models.User, on_delete=models.PROTECT, related_name='owned_communities')
-    moderators = models.ManyToManyField(accounts.models.User, related_name='moderated_communities', blank=True)
+    total_users_nickname = models.CharField(max_length=100, null=True, blank=True)
+    description = models.TextField(null=True, blank=True)
+    franchise=models.ForeignKey(shared.models.Franchise, on_delete=models.SET_NULL, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural = "Communities"
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
@@ -31,6 +34,9 @@ class Post(models.Model):
     
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['created_at']
 
     def __str__(self):
         return f'{self.title} by {self.user}'
