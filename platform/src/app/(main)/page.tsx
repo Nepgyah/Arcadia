@@ -24,7 +24,7 @@ export default function HomeDashboard() {
                                 <AppIcon app='yomu' />
                                 <AppIcon app='asobu' />
                                 {/* <AppIcon app='kau' /> */}
-                                {/* <AppIcon app='tsunagu' /> */}
+                                <AppIcon app='tsunagu' />
                             </div>
                         </div>
                         <div className="app-navigation  p-a-md bg-platform-dark border-radius-md box-shadow">

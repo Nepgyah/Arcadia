@@ -1,4 +1,5 @@
-export const revalidate = 0;
+export const revalidate = 3600;
+
 import React from "react";
 import { Breadcrumbs, Typography, Button } from "@mui/material";
 

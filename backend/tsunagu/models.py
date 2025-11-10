@@ -41,6 +41,10 @@ class Post(models.Model):
     def __str__(self):
         return f'{self.title} by {self.user}'
     
+    @property
+    def comment_count(self):
+        return Comment.objects.filter(post=self).count()
+    
 class Comment(models.Model):
     user = models.ForeignKey(accounts.models.User, on_delete=models.CASCADE, related_name="comments")
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name="comments")

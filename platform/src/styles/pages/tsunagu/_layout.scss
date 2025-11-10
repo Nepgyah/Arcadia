@@ -1,0 +1,40 @@
+@use '../../utils/variables' as *;
+@use "sass:map";
+
+#tsunagu-layout {
+
+    a {
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    .arc-header {
+        border-bottom-color: map.get($colors, tsunagu-base);
+        .box {
+            background-color: map.get($colors, tsunagu-base);
+        }
+    }
+
+    .arc-table {
+        .MuiTableHead-root {
+            .MuiTableCell-root {
+                background-color: map.get($colors, tsunagu-base);
+            }
+        }
+    }
+    .MuiPagination-ul {
+        .MuiPaginationItem-previousNext {
+            color: map.get($colors, tsunagu-base);
+        }
+
+        .MuiPaginationItem-page {
+            color: white;
+
+            &.Mui-selected  {
+                background-color: map.get($colors, tsunagu-base);
+                color: map.get($colors, txt-dark);
+                font-weight: bold;
+            }
+        }
+    }
+}
