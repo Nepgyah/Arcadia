@@ -1,5 +1,6 @@
 'use client';
 
+import BreadcrumbSetter from "@/components/breadcrumb/setBreadcrumbs";
 import { Anime } from "@/types/miru";
 import { apiGET, GraphQL } from "@/util/api/api";
 import { Breadcrumbs, Pagination, Skeleton, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography } from "@mui/material";
@@ -60,10 +61,7 @@ export default function MiruPopular() {
 
     return (
         <React.Fragment>
-            <Breadcrumbs>
-                <Typography>Miru</Typography>
-                <Typography>Popular</Typography>
-            </Breadcrumbs>
+            <BreadcrumbSetter breadcrumbs={['Miru', 'Popular']} />
             <div id="page-miru-all-time" className="page-content">
                 <Pagination 
                     style={{ float: "right"}}

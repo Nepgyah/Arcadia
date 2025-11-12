@@ -6,14 +6,13 @@ import Image from 'next/image'
 import '@/styles/pages/_main-dashboard.scss';
 import { useRouter } from "next/navigation";
 import { Breadcrumbs, Typography } from "@mui/material";
+import BreadcrumbSetter from "@/components/breadcrumb/setBreadcrumbs";
 
 export default function HomeDashboard() {
 
     return (
         <React.Fragment>
-            <Breadcrumbs>
-                <Typography>Home</Typography>
-            </Breadcrumbs>
+            <BreadcrumbSetter breadcrumbs={['Home']} />
             <div id="page-main-dashboard" className="page-content">
                 <div id="layout">
                     <div id="navigation">

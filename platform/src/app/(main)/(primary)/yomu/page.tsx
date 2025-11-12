@@ -1,6 +1,7 @@
 'use client';
 
 import ArcHeader from "@/components/arcHeader";
+import BreadcrumbSetter from "@/components/breadcrumb/setBreadcrumbs";
 import EntryCard from "@/components/entryCard";
 import WIP from "@/components/wip";
 import { apiGET } from "@/util/api/api";
@@ -20,10 +21,7 @@ export default function YomuHome() {
 
     return (
         <React.Fragment>
-            <Breadcrumbs>
-                <Typography>Yomu</Typography>
-                <Typography>Home</Typography>
-            </Breadcrumbs>
+            <BreadcrumbSetter breadcrumbs={['Yomu', 'Home']} />
             <div id="page-yomu-home">
                 <div className="grid grid--side-col">
                     <div className="flex-row flex-row--gap-md">

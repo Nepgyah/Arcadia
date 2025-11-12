@@ -9,6 +9,7 @@ import ArcHeader from "@/components/arcHeader";
 
 import '@/styles/pages/kiku/_home.scss';
 import Link from "next/link";
+import BreadcrumbSetter from "@/components/breadcrumb/setBreadcrumbs";
 
 const query = `
     query {
@@ -56,10 +57,7 @@ export default async function MiruHome() {
 
     return (
         <React.Fragment>
-            <Breadcrumbs>
-                <Typography>Kiku</Typography>
-                <Typography>Home</Typography>
-            </Breadcrumbs>
+            <BreadcrumbSetter breadcrumbs={['Kiku', 'Home']} />
             <div id="page-kiku-home"  className="page-content">
                 <div id="spotlight" className="grid">
                     <div id="artist-spotlight" className="box-shadow bg-platform-dark border-radius-md">
