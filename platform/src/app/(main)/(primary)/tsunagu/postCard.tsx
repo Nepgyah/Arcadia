@@ -24,8 +24,8 @@ export default function PostCard(
                         <p className="date txt-xs">{formatDistanceToNow(new Date(post.createdAt), { addSuffix: true })}</p>
                     </div>
                 </div>
-                <p className="post-card__title txt-lg">{post.title}</p>
-                <p className="post-card__content">{post.content}</p>
+                <p className="post-card__title txt-md">{post.title}</p>
+                <p className="post-card__content txt-xs">{post.content}</p>
                 <div className="post-card__footer">
                     <div className="votes-comments">
                         <div><VoteIcon /><p>{post.voteScore}</p></div>
