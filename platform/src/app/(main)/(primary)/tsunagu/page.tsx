@@ -6,16 +6,16 @@ import { Avatar, Breadcrumbs, Typography } from "@mui/material";
 import { GraphQL } from "@/util/api/api";
 import PostCard from "@/app/(main)/(primary)/tsunagu/postCard";
 import ArcHeader from "@/components/arcHeader";
-import WIP from "@/components/wip";
 
 import '@/styles/pages/tsunagu/_home.scss';
-import Link from "next/link";
+import BreadcrumbSetter from "@/components/breadcrumb/setBreadcrumbs";
 
 export default async function TsunaguHome() {
     const { tsunaguPosts } = await getTsuanguHome()
 
     return (
         <React.Fragment>
+            <BreadcrumbSetter breadcrumbs={['Tsunagu', 'Home']} />
             <div id="page-tsunagu-home" className="page-content">
                 <div className="vertical-divider-right p-right-xl">
                     <div id="latest">

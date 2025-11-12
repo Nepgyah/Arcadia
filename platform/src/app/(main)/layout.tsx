@@ -10,6 +10,7 @@ import DesktopTopNav from "@/components/navigation/topNav/desktopTopNav";
 
 import "@/styles/_main.scss";
 import MobileTopNav from "@/components/navigation/topNav/mobileTopNav";
+import ArcBreadcrumb from "@/components/breadcrumb/arcBreadcrumbs";
 
 export interface navInfo {
     'app': App,
@@ -42,6 +43,7 @@ export default function MainLayout({ children }: { children: React.ReactNode }) 
             <div id="platform-second-layout">
                 {!isMobile && <SideNav navObj={nav} />}
                 <div id="platform-content">
+                    <ArcBreadcrumb />
                     {children}
                 </div>
             </div>

@@ -10,10 +10,6 @@ export default async function TsunaguLayout({children} : {children: React.ReactN
 
     return (
         <div id="tsunagu-layout">
-            <Breadcrumbs>
-                <Typography>Tsunagu</Typography>
-                <Typography>Home</Typography>
-            </Breadcrumbs>
             <div className="grid grid--side-col-reverse">
                 <div className="flex-row flex-row--gap-md">
                     <div>
