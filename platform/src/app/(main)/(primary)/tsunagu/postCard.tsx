@@ -6,10 +6,12 @@ import { Avatar } from "@mui/material";
 import { formatDistanceToNow } from "date-fns";
 export default function PostCard( 
     {
-        post, link
+        post, link, imageLink, details
     } : {
         post: any,
-        link: string
+        link: string,
+        imageLink: string,
+        details: string
     }
 ) {
     return (
@@ -17,8 +19,8 @@ export default function PostCard(
             <div className="post-card p-a-lg border-radius-md flex-row flex-row--gap-sm">
                 <div className="post-card__details">
                     <div className="detail-left">
-                        <Avatar src={`/storage/tsunagu/${post.community.id}.jpg`} />
-                        <p className="post-card__community txt-xs">c/{post.community.title} | {post.user.username}</p>
+                        <Avatar src={imageLink} />
+                        <p className="post-card__community txt-xs">{details}</p>
                     </div>
                     <div className="detail-right">
                         <p className="date txt-xs">{formatDistanceToNow(new Date(post.createdAt), { addSuffix: true })}</p>

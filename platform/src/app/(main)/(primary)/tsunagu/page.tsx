@@ -26,6 +26,8 @@ export default async function TsunaguHome() {
                                     <PostCard 
                                         post={post} 
                                         link={`tsunagu/circle/${post.community.id}/${post.community.slug}/${post.id}`}
+                                        imageLink={`/storage/tsunagu/${post.community.id}.jpg`}
+                                        details={`c/${post.community.title} | ${post.user.username}`}
                                         key={idx} 
                                     />
                                 ))

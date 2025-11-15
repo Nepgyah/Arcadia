@@ -1,48 +1,55 @@
 import React from "react";
-import PostCard from "@/app/(main)/(primary)/tsunagu/postCard";
-import { apiGET, GraphQL } from "@/util/api/api";
-import { Post } from "@/types/tsunagu";
+import { GraphQL } from "@/util/api/api";
+import PostCard from "../../../postCard";
 
-export default function TsunaguCommunityPage(
-    // props: {
-    //     params: Promise<{ circle_id: string}>;
-    // }
-) {
-    // const { circle_id } = await props.params;
-    // const { tsunaguCommunity } = await getCommunity(circle_id);
-    // console.log(tsunaguCommunity)
-
+export default async function TsunaguCommunityPage(
+   props: {
+        params: Promise<{ circle_id: string, slug: string }>;
+    }
+    ) {
+    const { circle_id, slug } = await props.params;
+    const { tsunaguPosts } = await getCommunityPosts(circle_id)
+    console.log(tsunaguPosts)
     return (
         <div id="post-list" className="row-gap-md">
-            posts
-            {/* {
-                posts ?
-                    posts.map((post: Post, idx: number) => (
-                        <PostCard
-                            post={post}
-                            link={`${params.slug}/${post.id}`}
-                            key={idx}
-                         />
-                    ))
-                :
-                    'Loading'
-            } */}
+            {
+                tsunaguPosts.map((post: any, idx: number) => (
+                    <PostCard 
+                        post={post} 
+                        link={`tsunagu/circle/${circle_id}/${slug}/${post.id}`}
+                        imageLink=""
+                        details={`u/${post.user.username}`}
+                        key={idx} 
+                    />
+                ))
+            }
         </div>
     )
 }
 
-// async function getCommunity(id: string) {
-//     const query =
-//     `
-//     query {
-//         tsunaguCommunity(id: ${id}) {
-//             id,
-//             title,
-//             slug
-//         }
-//     }
-//     `
+async function getCommunityPosts(id: string) {
+    const query =
+    `
+    query {
+        tsunaguPosts(sort:null, count: 5, community: ${id}) {
+            id,
+            user {
+                username
+            },
+            title,
+            content,
+            community {
+                id,
+                title,
+                slug
+            },
+            commentCount,
+            voteScore,
+            createdAt
+        }
+    }
+    `
     
-//     const res = await GraphQL<any>(query)
-//     return res.data
-// }
+    const res = await GraphQL<any>(query)
+    return res.data
+}

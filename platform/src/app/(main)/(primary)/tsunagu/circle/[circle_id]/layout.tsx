@@ -26,11 +26,11 @@ export default async function TsunaguCircleLayout(
 
     return (
         <React.Fragment>
-        <BreadcrumbSetter breadcrumbs={['Tsunagu', 'Circle', `hi`]} />
+        <BreadcrumbSetter breadcrumbs={['Tsunagu', 'Circle', `${tsunaguCommunity.title}`]} />
         <div id="page-tsunagu-circle"  className="page-content">
             <div className="grid grid--side-col">
                 <div>
-                    {/* {children} */}
+                    {children}
                 </div>
                 <div id="community-details">
                     <ArcHeader title="Circle Details" />

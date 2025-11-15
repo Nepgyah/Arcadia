@@ -37,6 +37,7 @@ class Query(graphene.ObjectType):
     tsunagu_community = graphene.Field(CommunityType, id=graphene.Int(required=True))
 
     def resolve_tsunagu_posts(self, info, count, sort, community):
+        print('Call Recieved')
         if community:
             print('Getting posts within community')
             return tsunagu.models.Post.objects.filter(community_id=community)[:count]
