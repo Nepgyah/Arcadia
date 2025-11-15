@@ -1,25 +1,21 @@
-'use client';
-
-import { useParams } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PostCard from "@/app/(main)/(primary)/tsunagu/postCard";
-import { apiGET } from "@/util/api/api";
+import { apiGET, GraphQL } from "@/util/api/api";
 import { Post } from "@/types/tsunagu";
 
-export default function TsunaguCommunityPage() {
-    const params = useParams();
-    const [posts, setPosts] = useState<Post[]>([])
-
-    useEffect(() => {
-            apiGET<Post[]>(`tsunagu/community/${params.circle_id}/posts/`)
-            .then((res) => {
-                setPosts(res)
-            })
-        }, [])
+export default function TsunaguCommunityPage(
+    // props: {
+    //     params: Promise<{ circle_id: string}>;
+    // }
+) {
+    // const { circle_id } = await props.params;
+    // const { tsunaguCommunity } = await getCommunity(circle_id);
+    // console.log(tsunaguCommunity)
 
     return (
         <div id="post-list" className="row-gap-md">
-            {
+            posts
+            {/* {
                 posts ?
                     posts.map((post: Post, idx: number) => (
                         <PostCard
@@ -30,7 +26,23 @@ export default function TsunaguCommunityPage() {
                     ))
                 :
                     'Loading'
-            }
+            } */}
         </div>
     )
 }
+
+// async function getCommunity(id: string) {
+//     const query =
+//     `
+//     query {
+//         tsunaguCommunity(id: ${id}) {
+//             id,
+//             title,
+//             slug
+//         }
+//     }
+//     `
+    
+//     const res = await GraphQL<any>(query)
+//     return res.data
+// }

@@ -1,7 +1,8 @@
-## Latest Release - Alpha v2.1 - XX/XX/2025
+## Latest Release - Alpha v3.0 - XX/XX/2025
 - **Overview**
 	- Improved detail pages of Miru, Yomu and Asobu
 	- Improved reusability of platform components
+	- Introduced redux toolkit library
 
 - **Apps**
 	- **Miru v0.3**
@@ -13,7 +14,14 @@
 			- Converted pages to utilize graphql and SSR
 			- Added tab content on detail page
 			- Various UI improvements on miru lists
-			
+	
+	- **Tsunagu v0.2**
+		- **API**
+			- Added graphql queries
+		- **Platform**
+			- Converted pages to SSR
+			- Various UI improvements
+		
 - **Website**
 	- 
 

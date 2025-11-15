@@ -3,6 +3,9 @@
 
 #tsunagu-layout {
 
+    .community-card {
+        align-items: center;
+    }
     a {
         &:hover {
             text-decoration: none;

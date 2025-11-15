@@ -34,10 +34,11 @@ class PostSortInput(graphene.InputObjectType):
 class Query(graphene.ObjectType):
     tsunagu_posts = graphene.List(PostType, count=graphene.Int(required=True), sort=graphene.String(required=False), community=graphene.Int(required=False))
     tsunagu_communities = graphene.List(CommunityType, count=graphene.Int(required=True))
-    
+    tsunagu_community = graphene.Field(CommunityType, id=graphene.Int(required=True))
+
     def resolve_tsunagu_posts(self, info, count, sort, community):
         if community:
-            print('Getting posts withing community')
+            print('Getting posts within community')
             return tsunagu.models.Post.objects.filter(community_id=community)[:count]
         else:
             print('Getting all posts')
@@ -45,4 +46,7 @@ class Query(graphene.ObjectType):
         
     def resolve_tsunagu_communities(self, info, count):
         return tsunagu.models.Community.objects.all()[:count]
+    
+    def resolve_tsunagu_community(self, info, id):
+        return tsunagu.models.Community.objects.get(id=id)
         
