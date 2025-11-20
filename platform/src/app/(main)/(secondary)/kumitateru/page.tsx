@@ -7,6 +7,7 @@ import PartDetailDialog from "./partDialogue";
 import WIP from "@/components/wip";
 import PlusIcon from '@mui/icons-material/AddCircleOutline';
 import ArcHeader from "@/components/arcHeader";
+import BreadcrumbSetter from "@/components/breadcrumb/setBreadcrumbs";
 
 export default function KumitateruHome() {
 
@@ -39,10 +40,7 @@ export default function KumitateruHome() {
     return (
         <React.Fragment>
             <PartDetailDialog entry={currentPart} partType={partType} isOpen={isDialogOpen} handleClose={() => setIsDialogOpen(false)}/>
-            <Breadcrumbs>
-                <Typography>Kumitateru</Typography>
-                <Typography>Home</Typography>
-            </Breadcrumbs>
+            <BreadcrumbSetter breadcrumbs={['Kumitateru', 'Home']} />
             <div id="page-kumitateru-home" className="flex-row flex-row--gap-md">
                 <div id="row-one" className="grid grid--2-col">
                     <div>

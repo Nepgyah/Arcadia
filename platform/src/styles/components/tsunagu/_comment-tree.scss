@@ -1,0 +1,39 @@
+@use '../../utils/variables' as *;
+@use "sass:map";
+
+.comment-tree {
+    position: relative;
+    padding-left: 2px;
+    
+    &__main-line {
+        position: absolute;
+        height: 100%;
+        background-color: rgba(white, .5);
+        width: 2px;
+        left: 0;
+        border-radius: 1px;
+    }
+
+    &__reply-line {
+        top: 20px;
+        position: absolute;
+        height: 2px;
+        background-color: rgba(white, .5);
+    }
+
+    &__user {
+        &.flex-col {
+            align-items: center;
+            column-gap: .5rem;
+        }
+    }
+
+    &__data {
+        position: relative;
+        padding-left: 18px;
+        
+        &:hover {
+            background-color: map.get($colors, platform-dark);
+        }
+    }
+}

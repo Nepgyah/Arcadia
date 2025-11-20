@@ -3,10 +3,7 @@ import type { Metadata } from 'next';
 import ThemeWrapper from '../util/wrappers/themeWrapper';
 import { CssBaseline } from '@mui/material';
 
-import { CSRFProvider } from '@/util/api/csrfLoader';
-import { UserProvider } from '@/util/wrappers/userContext';
-import { SnackbarProvider } from '@/util/wrappers/snackbarProvider';
-import Providers from './providers';
+import ArcProvider from './providers';
 
 export const metadata: Metadata = {
   title: 'Arcadia Platform',
@@ -18,16 +15,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   // Wraps the entire project, include things that are absolutely
-  // Essential to both sides of the project
 
   return (
     <ThemeWrapper>
       <CssBaseline>
         <html lang="en">
           <body>
-            <Providers>
+            <ArcProvider>
               {children}
-            </Providers>
+            </ArcProvider>
           </body>
         </html>
       </CssBaseline>

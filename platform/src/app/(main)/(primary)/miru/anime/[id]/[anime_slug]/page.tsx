@@ -13,6 +13,7 @@ import SocialsList from "@/components/socialsList";
 
 import {Anime} from "@/types/miru";
 import '@/styles/layout/_media-detail.scss';
+import BreadcrumbSetter from "@/components/breadcrumb/setBreadcrumbs";
 
 export default async function AnimeDetails(
     props: {
@@ -24,10 +25,7 @@ export default async function AnimeDetails(
 
     return (
         <React.Fragment>
-            <Breadcrumbs>
-                <Typography>Anime</Typography>
-                <Typography>{anime.title}</Typography>
-            </Breadcrumbs>
+            <BreadcrumbSetter breadcrumbs={['Miru', `${anime.title}`]} />
             <div id="page-media-detail" className="page-content">
                 <div className="grid grid--feature-combo">
                     <MediaFeatureCard

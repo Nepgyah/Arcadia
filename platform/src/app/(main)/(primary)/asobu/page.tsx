@@ -8,6 +8,7 @@ import EntryCard from "@/components/entryCard";
 import { apiGET } from "@/util/api/api";
 import { Game } from "@/types/asobu";
 import ArcHeader from "@/components/arcHeader";
+import BreadcrumbSetter from "@/components/breadcrumb/setBreadcrumbs";
 
 interface APIProps {
     latest_games: Game[],
@@ -29,10 +30,7 @@ export default function AsobuHome() {
     
     return (
         <React.Fragment>
-            <Breadcrumbs>
-                <Typography>Asobu</Typography>
-                <Typography>Home</Typography>
-            </Breadcrumbs>
+            <BreadcrumbSetter breadcrumbs={['Asobu', 'Home']} />
             <div id="page-miru-home">
                 <div className="grid grid--side-col">
                     <div className="flex-row flex-row--gap-md">

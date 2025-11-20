@@ -8,6 +8,7 @@ import { useEffect } from "react"
 
 import '@/styles/pages/kiku/_album-details.scss';
 import ArcHeader from "@/components/arcHeader";
+import BreadcrumbSetter from "@/components/breadcrumb/setBreadcrumbs";
 
 export default function AlbumDetails() {
 
@@ -41,11 +42,9 @@ export default function AlbumDetails() {
         
     return (
         <React.Fragment>
-            <Breadcrumbs>
-                <Typography>Kiku</Typography>
-                <Typography>Album</Typography>
-                <Typography className="clr-kiku-base"><b>{album?.title}</b></Typography>
-            </Breadcrumbs>
+            {
+                album?.title && <BreadcrumbSetter breadcrumbs={['Kiku', 'Album', `${album?.title}`]} />
+            }
             <div id="page-kiku-album-details" className="page-content">
                 <div id="header" className="grid grid--2-col-offset">
                     <div id="album-summary" className="p-a-sm">

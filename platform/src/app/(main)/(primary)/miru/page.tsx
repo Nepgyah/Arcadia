@@ -11,16 +11,14 @@ import { GraphQL } from "@/util/api/api";
 import { Anime } from "@/types/miru";
 
 import '@/styles/pages/miru/_home.scss';
+import BreadcrumbSetter from "@/components/breadcrumb/setBreadcrumbs";
 
 export default async function MiruHome() {
     const { topScore, topUsers } = await getAnime()
 
     return (
         <React.Fragment>
-            <Breadcrumbs>
-                <Typography>Miru</Typography>
-                <Typography>Home</Typography>
-            </Breadcrumbs>
+            <BreadcrumbSetter breadcrumbs={['Miru', 'Home']} />
             <div id="page-miru-home">
                 <div className="grid grid--side-col">
                     <div className="flex-row flex-row--gap-md">

@@ -13,10 +13,13 @@
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^7.1.1",
     "@mui/material": "^7.1.1",
+    "@reduxjs/toolkit": "^2.10.1",
+    "date-fns": "^4.1.0",
     "next": "^15.4.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-intersection-observer": "^9.16.0",
+    "react-redux": "^9.2.0",
     "sass": "^1.89.0"
   },
   "devDependencies": {

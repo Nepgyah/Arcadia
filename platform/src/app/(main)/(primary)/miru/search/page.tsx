@@ -10,6 +10,7 @@ import { GraphQL } from "@/util/api/api";
 import { Anime } from "@/types/miru";
 
 import '@/styles/pages/miru/_search.scss';
+import BreadcrumbSetter from "@/components/breadcrumb/setBreadcrumbs";
 
 export default function MiruHome() {
     const [animes, setAnimes] = useState<Anime[]>()
@@ -95,10 +96,7 @@ export default function MiruHome() {
 
     return (
         <React.Fragment>
-            <Breadcrumbs>
-                <Typography>Miru</Typography>
-                <Typography>Search Anime</Typography>
-            </Breadcrumbs>
+            <BreadcrumbSetter breadcrumbs={['Miru', 'Search']} />
             <div id="page-miru-search">
                 <div className="grid grid--filter-col">
                     <div>

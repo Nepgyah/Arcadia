@@ -1,0 +1,54 @@
+@use '../../utils/variables' as *;
+@use "sass:map";
+
+.post-card {
+    background-color: map.get($colors, platform-base);
+
+    &:hover {
+        background-color: map.get($colors, platform-dark);
+    }
+
+    &__details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .detail-left {
+            display: flex;
+            align-items: center;
+            column-gap: .5rem;   
+        }
+
+        .detail-right {
+            opacity: .5;
+        }
+    }
+
+    &__title {
+        font-weight: bold;
+    }
+
+    &__content {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3; /* Number of lines to display before truncation */
+        -webkit-box-orient: vertical;
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+
+        .votes-comments {
+            display: flex;
+            align-items: center;
+            column-gap: 2rem;
+
+            div {
+                display: flex;
+                column-gap: .5rem;
+                align-items: center;
+            }
+        }
+    }
+}

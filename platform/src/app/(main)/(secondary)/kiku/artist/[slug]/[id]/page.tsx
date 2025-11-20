@@ -10,6 +10,7 @@ import '@/styles/pages/kiku/_artist-details.scss';
 import ArcHeader from "@/components/arcHeader";
 import WIP from "@/components/wip";
 import SocialMediaCard from "@/components/socialMediaCard";
+import BreadcrumbSetter from "@/components/breadcrumb/setBreadcrumbs";
 
 export default function ArtistDetails() {
 
@@ -49,11 +50,9 @@ export default function ArtistDetails() {
         
     return (
         <React.Fragment>
-            <Breadcrumbs>
-                <Typography>Kiku</Typography>
-                <Typography>Artist</Typography>
-                <Typography className="clr-kiku-base"><b>{artist?.name}</b></Typography>
-            </Breadcrumbs>
+            {
+                artist?.name && <BreadcrumbSetter breadcrumbs={['Kiku', 'Artist', `${artist?.name}`]} />
+            }
             <div id="page-kiku-artist-details" className="page-content">
                 <div id="spotlight" className="grid">
                     <div id="artist-spotlight" className="box-shadow bg-platform-dark border-radius-md">
