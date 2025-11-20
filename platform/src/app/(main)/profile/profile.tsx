@@ -1,63 +1,79 @@
-import { useUser } from "@/util/wrappers/userContext";
-import { Avatar, Button, Divider } from '@mui/material';
+import BreadcrumbSetter from "@/components/breadcrumb/setBreadcrumbs";
 import React from 'react';
 
-// import '@/styles/platform/pages/profile/profile.scss';
+import '@/styles/pages/profile/_profile.scss';
+import { Divider } from "@mui/material";
+import ArcHeader from "@/components/arcHeader";
+import WIP from "@/components/wip";
 
 export default function Profile({user} : {user: any}) {
-
-    const now = new Date()
-
+    console.log(user)
+    const joinDate = new Date(user.created_at)
     return (
         <React.Fragment>
-            <h1>My Profile</h1>
-            <div id="page-profile" className="page-content page-content--two-col">
-                <div className="page-content__left-column">
-                    <div id="overview" className="card card--custom">
-                        <img className="background" src="/website/images/homepage/hero/anime-world.png" alt="" />
-                        <Avatar className={`profile-pic profile-pic--color-${user.color_preset}`} src={user ? `/platform/auth/profile-pics/profile_${user?.picture_preset}.webp` : ''}/>
-                        <div className="card__content">
-                            <h2 className="name">{user?.username}</h2>
-                            <p>{user?.about}</p>
+            <BreadcrumbSetter breadcrumbs={['Profile']} />
+            <div id="page-profile" className="grid grid--side-col-reverse">
+                <div id="left-col" className="flex-row flex-row--gap-md">
+                    <div id="overview" className="profile-card">
+                        <img id="profile-bg" src="/platform/main-dashboard/afternoon.jpg" alt="" />
+                        <div className="flex-row flex-row--gap-sm">
+                            <img id="profile-picture" src={`/storage/preset-profile/${user.picture_preset}.webp`} alt="" />
+                            <p className="txt-lg txt-bold">{user.username}</p>
+                            <p className="txt-sm">{user.about}</p>
                             <Divider />
-                            <div className="summary">
-                                <div className="stat">
-                                    <p className="stat__label">Birthday</p>
-                                    <p className="stat__value">{user?.birth_date}</p>
-                                </div>
-                                <div className="stat">
-                                    <p className="stat__label">Joined</p>
-                                    <p className="stat__value">{user?.birth_date}</p>
-                                </div>
-                                <div className="stat">
-                                    <p className="stat__label">Location</p>
-                                    <p className="stat__value">Place</p>
+                            <div id="profile-details" className="flex-row flex-row--gap-sm">
+                                <div>
+                                    <p>Joined:</p> 
+                                    <p>{joinDate.toLocaleString('default', { month: 'short'})} {joinDate.getFullYear()}</p>
                                 </div>
                             </div>
-                            <Button variant="contained">Edit Profile</Button>
                         </div>
                     </div>
-                    <div className="card">
-                        <p className="card__title">Friends</p>
-                    </div>
-                    <div className="card">
-                        <p className="card__title">Achievements</p>
+                    <div id="friends" className="profile-card">
+                        <h3>Friends</h3>
                     </div>
                 </div>
-                <div className="page-content__right-column">
-                    <div id="top-stats">
-                        <div className="card">
-                            <p>Anime Watched</p>
+                <div className="flex-row flex-row--gap-md">
+                    <div id="stat-overview">
+                        <ArcHeader title="At A Glance" />
+                        <div>
+                            <div className="profile-card">
+                                <img src="/global/app-icons/miru.svg" alt="" />
+                                <div>
+                                    <p>N/A</p>
+                                    <p>Anime Watch</p>
+                                </div>
+                            </div>
+                            <div className="profile-card">
+                                <img src="/global/app-icons/yomu.svg" alt="" />
+                                <div>
+                                    <p>N/A</p>
+                                    <p>Works Read</p>
+                                </div>
+                            </div>
+                            <div className="profile-card">
+                                <img src="/global/app-icons/asobu.svg" alt="" />
+                                <div>
+                                    <p>N/A</p>
+                                    <p>Games Owned</p>
+                                </div>
+                            </div>
+                            <div className="profile-card">
+                                <img src="/global/app-icons/tsunagu.svg" alt="" />
+                                <div>
+                                    <p>N/A</p>
+                                    <p>Posts Made</p>
+                                </div>
+                            </div>
                         </div>
-                        <div className="card">
-                            <p>Manga Read</p>
-                        </div>
-                        <div className="card">
-                            <p>Games Owned</p>
-                        </div>
-                        <div className="card">
-                            <p>Events Attended</p>
-                        </div>
+                    </div>
+                    <div>
+                        <ArcHeader title="Showcase" />
+                        <WIP />
+                    </div>
+                    <div>
+                        <ArcHeader title="Statistics" />
+                        <WIP />
                     </div>
                 </div>
             </div>

@@ -55,7 +55,7 @@ export default function SideNav({ navObj }: { navObj: navInfo }) {
             <Divider sx={{ backgroundColor: 'white'}} />
             {user?
                 <React.Fragment>
-                    <Button color="white" fullWidth onClick={() => router.push(`/platform/profile`)}>
+                    <Button color="white" fullWidth onClick={() => router.push(`/profile`)}>
                         Profile
                     </Button>
                     <Button color="white" fullWidth onClick={() => handleLogout()}>
@@ -63,7 +63,7 @@ export default function SideNav({ navObj }: { navObj: navInfo }) {
                     </Button>
                 </React.Fragment>
             :
-                <Button color="white" fullWidth onClick={() => router.push('/platform/auth/login')}>
+                <Button color="white" fullWidth onClick={() => router.push('/auth/login')}>
                     Login
                 </Button>
             }

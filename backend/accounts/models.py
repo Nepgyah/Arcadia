@@ -44,11 +44,11 @@ class CustomUserManager(BaseUserManager):
     
 class User(AbstractBaseUser, PermissionsMixin):
 
-    username = models.CharField(max_length=50)
+    username = models.CharField(max_length=50, blank=False)
     tag = models.CharField(max_length=4)
     email = models.EmailField(unique=True)
-    real_name = models.CharField(max_length=75, blank=True)
-    about = models.TextField(max_length=500, blank=True)
+    real_name = models.CharField(max_length=75, blank=True, null=True)
+    about = models.TextField(max_length=500, blank=True, null=True)
     birth_date = models.DateField(null=True, blank=True)
     updated_at = models.DateTimeField(auto_now_add=True)
     created_at = models.DateTimeField(auto_now=True)

@@ -156,7 +156,7 @@
 		- Home page content
 		- Detail page content
 
-## Alpha v1.0 - Jul 17 2025
+## Alpha v0.3- Jul 17 2025
 - API
 	-  Created **accounts** app
 	- Added profile endpoints
