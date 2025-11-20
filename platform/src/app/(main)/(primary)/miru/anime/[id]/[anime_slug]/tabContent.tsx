@@ -59,7 +59,6 @@ export default function AnimeDetailTabContent({ anime } : { anime: Anime }){
 }
 
 function MainTab({ anime } : { anime: Anime }) {
-    console.log(anime)
     return (
         <div className="flex-row flex-row--gap-md">
             <div className="grid grid--2-col">

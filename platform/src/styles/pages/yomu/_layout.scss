@@ -3,6 +3,12 @@
 
 #yomu-layout {
 
+    .arc-tab {
+        &__icon {
+            background-color: map.get($colors, yomu-base);
+        }
+    }
+
     .arc-header {
         border-bottom-color: map.get($colors, yomu-base);
         .box {

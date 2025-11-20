@@ -22,6 +22,13 @@
 			- Converted pages to SSR
 			- Various UI improvements
 		
+	- **Yomu v0.3**
+		- **API** 
+			- Added graphql queries
+		- **Platform**
+			- Converted pages to SSR
+			- Various UI improvements
+		
 - **Website**
 	- 
 
