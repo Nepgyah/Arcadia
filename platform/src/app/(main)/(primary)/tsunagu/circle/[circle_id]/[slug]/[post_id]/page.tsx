@@ -1,41 +1,57 @@
-'use client';
-
 import React, { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
-import { apiGET } from "@/util/api/api";
+import { apiGET, GraphQL } from "@/util/api/api";
 import { Comment, Post } from "@/types/tsunagu";
 import CommentCard from "@/components/apps/tsunagu/commentTree";
+import ArcHeader from "@/components/arcHeader";
+import CommentTree from "./commentTree";
 
-export default function TsunaguPostPage() {
-    const params = useParams();
-    const [post, setPost] = useState<Post>()
+export default async function TsunaguPostPage(
+    props: {
+        params: Promise<{ post_id: string}>
+    }
+) {
 
-    useEffect(() => {
-            apiGET<Post>(`tsunagu/community/${params.circle_id}/post/${params.post_id}`)
-            .then((res) => {
-                setPost(res)
-            })
-        }, [])
+    const { post_id } = await props.params;
+    const { tsunaguPost } = await getPostData(post_id)
 
     return (
         <div id="post-detail" className="row-gap-md">
-            <p className="post-title txt-l bold">{post?.title}</p>
-            <p className="post-content">{post?.content}</p>
+            <p className="post-title txt-lg txt-bold m-b-md">{tsunaguPost?.title}</p>
+            <p className="post-content m-b-md">{tsunaguPost?.content}</p>
 
             <div id="comments" className="m-top-xl">
-                <h2>Ripples</h2>
-                <div id="comment-container" className="row-gap-md">
+                <ArcHeader title="Ripples" />
+                <div id="comment-container" className="flex-row flex-row--gap-md">
                     {
-                        post ? 
-                            post.comments.map((comment: Comment) => (
-                            <CommentCard key={comment.id} depth={0} comment={comment} />
+                        tsunaguPost ? 
+                            tsunaguPost.comments.map((comment: any, idx: number) => (
+                                <CommentTree key={idx} comment={comment} depth={0} />
                         ))
                         :
                             ""
                     }
-                    
                 </div>
             </div>
         </div>
     )
+}
+
+async function getPostData(id: string) {
+
+    const query = `
+        query {
+            tsunaguPost(id: ${id}) {
+                id,
+                title,
+                content,
+                user {
+                  username
+                },
+                comments
+            }
+        }
+    `
+    const res = await GraphQL<any>(query);
+    return res.data
 }

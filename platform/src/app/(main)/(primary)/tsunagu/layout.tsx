@@ -5,6 +5,12 @@ import '@/styles/pages/tsunagu/_layout.scss';
 import { GraphQL } from '@/util/api/api';
 import { Avatar, Breadcrumbs, Link, Typography } from '@mui/material';
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Tsunagu | Arcadia",
+};
+
 export default async function TsunaguLayout({children} : {children: React.ReactNode}) {
     const { tsunaguCommunities } = await getTsunaguCommunity();
 

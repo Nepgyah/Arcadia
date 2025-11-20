@@ -61,3 +61,16 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment by {self.user} on {self.post}"
+    
+    def get_comment_tree(self):
+        return {
+            'id': self.id,
+            'post': self.post.id,
+            'content': self.content,
+            'user': {
+                'id': self.user.id,
+                'username': self.user.username
+            },
+            # 'createdAt': self.created_at,
+            'replies': [comment.get_comment_tree() for comment in self.replies.all()]
+        }
