@@ -3,6 +3,12 @@
 
 #yomu-layout {
 
+    .arc-tab {
+        &__icon {
+            background-color: map.get($colors, yomu-base);
+        }
+    }
+
     .arc-header {
         border-bottom-color: map.get($colors, yomu-base);
         .box {
@@ -13,20 +19,20 @@
     .arc-table {
         .MuiTableHead-root {
             .MuiTableCell-root {
-                background-color: map.get($colors, miru-base);
+                background-color: map.get($colors, yomu-base);
             }
         }
     }
     .MuiPagination-ul {
         .MuiPaginationItem-previousNext {
-            color: map.get($colors, miru-base);
+            color: map.get($colors, yomu-base);
         }
 
         .MuiPaginationItem-page {
             color: white;
 
             &.Mui-selected  {
-                background-color: map.get($colors, miru-base);
+                background-color: map.get($colors, yomu-base);
                 color: map.get($colors, txt-dark);
                 font-weight: bold;
             }

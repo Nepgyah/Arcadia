@@ -3,65 +3,106 @@
 import React, { useEffect, useState } from "react";
 import { Breadcrumbs, Button, FormControl, InputLabel, MenuItem, Pagination, Select, TextField, Typography } from "@mui/material";
 
-import { apiGET } from "@/util/api/api";
+import { apiGET, GraphQL } from "@/util/api/api";
 import { Anime } from "@/types/miru";
 import DetailMediaCard from "@/components/detailMediaCard";
 import { Work } from "@/types/yomu";
 import ArcHeader from "@/components/arcHeader";
+import BreadcrumbSetter from "@/components/breadcrumb/setBreadcrumbs";
+
+import '@/styles/pages/yomu/_search.scss';
 
 export default function YomuSearch() {
     const [workList, setWorkList] = useState<Work[]>([])
-    const [page, setPage] = useState()
     const [pageCount, setPageCount] = useState<number>(1)
     const [currentPage, setCurrentPage] = useState<number>(1)
-    const [search, setSearch] = useState<string>('')
+    const [perPage, setPerPage] = useState<number>(9)
+    const [search, setSearch] = useState<string>("")
 
     // Filter states
     const [publishingStatus, setAiringStatus] = useState<number>(-1)
-    const [type, setType] = useState<string>('')
+    const [type, setType] = useState<number>(-1)
+
     useEffect(() => {
-        apiGET<any>('yomu/work/search/?page=1')
-        .then((res) => {
-            setWorkList(res.works)
-            setPageCount(res.page_count)
-        })
+        fetchWork(1)
     }, [])
 
-    const APICall = (page: number) => {
-        apiGET<any>(`yomu/work/search/?page=${page}&status=${publishingStatus}&type=${type}&search=${search}`)
+    const fetchWork = (page: number) => {
+        const query = `
+        query {
+            searchWork(filters: {status: ${publishingStatus}, type:${type}, title: "${search}"}, perPage: ${perPage}, page:${page} ){
+                results {
+                    id,
+                    title,
+                    score,
+                    users,
+                    status,
+                    summary,
+                    slug,
+                    franchise {
+                        name
+                    }
+                },
+                pageCount,
+                currentPage
+            }
+        }
+        `
+
+        GraphQL<any>(query)
         .then((res) => {
-            setWorkList(res.works)
-            setPageCount(res.page_count)
-            setCurrentPage(page)
+            setWorkList(res.data.searchWork.results)
+            setPageCount(res.data.searchWork.pageCount)
+            setCurrentPage(res.data.searchWork.currentPage)
         })
     }
 
-    const goToPage = (e: React.ChangeEvent<unknown>, page: number) => {
+     const changePage = (e: React.ChangeEvent<unknown>, page: number) => {
         setCurrentPage(page)
-        APICall(page)
+        fetchWork(page)
     }
 
     const resetFilters = () => {
-        setCurrentPage(1)
-        setAiringStatus(-1)
-        setType('')
-        apiGET<any>(`yomu/work/search/?page=${page}`)
+        const query = `
+        query {
+            searchWork(filters: {status: -1, type: -1, title: "" }, perPage: 5, page: 1 ){
+                results {
+                    id,
+                    title,
+                    score,
+                    users,
+                    status,
+                    summary,
+                    slug,
+                    franchise {
+                        name
+                    }
+                },
+                pageCount,
+                currentPage
+            }
+        }
+        `
+
+        GraphQL<any>(query)
         .then((res) => {
-            setWorkList(res.works)
-            setPageCount(res.page_count)
+            setWorkList(res.data.searchWork.results)
+            setPageCount(res.data.searchWork.pageCount)
+            setSearch('')
+            setCurrentPage(1);
+            setAiringStatus(-1);
+            setType(-1)
         })
     }
+
     return (
         <React.Fragment>
-            <Breadcrumbs>
-                <Typography>Miru</Typography>
-                <Typography>Search Anime</Typography>
-            </Breadcrumbs>
-            <div id="page-yomu-search"  className="page-content">
-                <div className="two-col-section two-col-section--uneven">
+            <BreadcrumbSetter breadcrumbs={['Yomu', 'Search']} />
+            <div id="page-yomu-search">
+                <div className="grid grid--filter-col">
                     <div id="filters">
                         <ArcHeader title="Search / Filter" />
-                        <div className="row-gap-md">
+                        <div className="flex-row flex-row--gap-md">
                             <TextField 
                                 id="search-title" 
                                 label="Search Title" 
@@ -103,8 +144,8 @@ export default function YomuSearch() {
 
                             <Button 
                                 variant="contained" 
-                                className="bg-yomu-base"
-                                onClick={() => APICall(1)}
+                                className="bg-yomu-base clr-txt-dark"
+                                onClick={() => fetchWork(1)}
                             >
                                 Filter
                             </Button>
@@ -117,9 +158,9 @@ export default function YomuSearch() {
                             </Button>
                         </div>
                     </div>
-                    <div id="results" className="vertical-divider-left p-left-xl">
-                        <Pagination onChange={goToPage} page={currentPage} count={pageCount} />
-                        <div className="layout-grid-3 m-top-md">
+                    <div className="vertical-divider-left p-left-xl">
+                        <Pagination onChange={changePage} page={currentPage} count={pageCount} />
+                        <div id="results" className="flex-col flex-col--gap-sm">
                             {
                                 workList &&
                                 workList.map((work: Work, key: number) => (
