@@ -65,7 +65,7 @@ export default function MiruHome() {
     const resetFilters = () => {
         const query = `
         query {
-            searchAnime(filters: {status: -1, type: -1}, perPage: 5, page: 1 ){
+            searchAnime(filters: {status: -1, type: -1}, perPage: 9, page: 1 ){
                 results {
                     id,
                     title,
@@ -174,7 +174,7 @@ export default function MiruHome() {
                     </div>
                     <div className="vertical-divider-left p-left-xl">
                         <Pagination onChange={changePage} page={currentPage} count={pageCount} />
-                        <div id="results"  className="flex-col flex-col--gap-sm">
+                        <div id="results" className="flex-col flex-col--gap-sm">
                             {
                                 animes ?
                                 animes.map((anime: Anime, key: number) => (
