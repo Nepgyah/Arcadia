@@ -47,7 +47,7 @@ export default async function WorkDetail(
                             </div>
                         </div>
                         {
-                            work.franchise.socials && 
+                            work.franchise && 
                                 <div id="socials">
                                     <ArcHeader title="Socials" />
                                     <SocialsList socials={work.franchise.socials} />
