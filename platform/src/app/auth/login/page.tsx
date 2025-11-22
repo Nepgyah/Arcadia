@@ -1,9 +1,7 @@
 'use client';
 
-// import { apiPOST } from '@/util/api/api';
+import { useCSRFStore, useUserStore } from '@/app/store';
 import { useApi } from '@/util/api/api';
-import { useCSRF } from '@/util/api/csrfLoader';
-import { useUser } from '@/util/wrappers/userContext';
 import { Button, Checkbox, FormControl, FormControlLabel } from '@mui/material';
 import TextField from '@mui/material/TextField';
 import Link from 'next/link';
@@ -12,10 +10,8 @@ import { useState } from 'react';
 
 export default function Login() {
     const { apiPOST } = useApi()
-    const { csrfToken, setCsrfToken } = useCSRF();
-    const {
-        user, setUser
-    } = useUser();
+    const setUser = useUserStore((state) => state.setUser )
+    const setToken = useCSRFStore((state) => state.setToken)
 
     const router = useRouter()
 
@@ -35,9 +31,9 @@ export default function Login() {
         })
         .then((res) => {
             setUser(res)
-            router.push('/platform');
+            router.push('/');
             if (res.csrfToken) {
-                setCsrfToken(res.csrfToken);
+                setToken(res.csrfToken);
             }
         })
     }

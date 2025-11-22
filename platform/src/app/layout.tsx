@@ -4,6 +4,8 @@ import ThemeWrapper from '../util/wrappers/themeWrapper';
 import { CssBaseline } from '@mui/material';
 
 import ArcProvider from './providers';
+import AccountFetcher from '@/components/account/accountFetch';
+import TokenFetcher from '@/components/account/tokenFetch';
 
 export const metadata: Metadata = {
   title: 'Arcadia Platform',
@@ -18,6 +20,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <ThemeWrapper>
+      <TokenFetcher />
+      <AccountFetcher />
       <CssBaseline>
         <html lang="en">
           <body>
