@@ -3,9 +3,9 @@ import type { Metadata } from 'next';
 import ThemeWrapper from '../util/wrappers/themeWrapper';
 import { CssBaseline } from '@mui/material';
 
-import ArcProvider from './providers';
 import AccountFetcher from '@/components/account/accountFetch';
 import TokenFetcher from '@/components/account/tokenFetch';
+import ArcSnackbar from '@/components/snackbar';
 
 export const metadata: Metadata = {
   title: 'Arcadia Platform',
@@ -16,21 +16,21 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  // Wraps the entire project, include things that are absolutely
 
   return (
+    <>
     <ThemeWrapper>
       <TokenFetcher />
       <AccountFetcher />
       <CssBaseline>
         <html lang="en">
           <body>
-            <ArcProvider>
+            <ArcSnackbar />
               {children}
-            </ArcProvider>
           </body>
         </html>
       </CssBaseline>
     </ThemeWrapper>
+    </>
   );
 }

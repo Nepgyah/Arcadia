@@ -7,8 +7,8 @@ import ArcHeader from "@/components/arcHeader";
 import WIP from "@/components/wip";
 
 export default function Profile({user} : {user: any}) {
-    console.log(user)
     const joinDate = new Date(user.created_at)
+
     return (
         <React.Fragment>
             <BreadcrumbSetter breadcrumbs={['Profile']} />

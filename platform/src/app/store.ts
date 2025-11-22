@@ -44,3 +44,26 @@ export const useUserStore = create<UserStore>((set) => ({
         set((state) => ({ user: null}))
     }
 }))
+
+// Snackbar
+type severity = 'info' | 'success' | 'warning' | 'error'
+
+type SnackbarStore = {
+    open: boolean,
+    message: string,
+    severity: severity,
+    openSnackbar: (message: string, severity: severity) => void,
+    closeSnackbar: () => void
+}
+
+export const useSnackbarStore = create<SnackbarStore>((set) => ({
+    open: false,
+    message: '',
+    severity: 'info',
+    openSnackbar: (message: string, severity: severity) => {
+        set(() => ({ open: true, message: message, severity: severity}))
+    },
+    closeSnackbar: () => {
+        set(() => ({ open: false, message: ''}))
+    }
+}))
