@@ -1,13 +1,14 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { create } from 'zustand';
 import breadcrumbReducer from '@/slices/breadcrumbSlice';
 
-export const store = configureStore({
-    reducer: {
-        breadcrumb: breadcrumbReducer,
+type BreadcrumbStore = {
+    crumbs: string[];
+    setBreadcrumbs: (crumbs: string[]) => void;
+}
+
+export const useBreadcrumbStore = create<BreadcrumbStore>((set) => ({
+    crumbs: ['Home'],
+    setBreadcrumbs: (newCrumbs: string[]) => {
+        set(() => ({ crumbs: newCrumbs}))
     }
-})
-
-export type RootState = ReturnType<typeof store.getState>;
-
-export type AppDispatch = typeof store.dispatch;
-
+}))

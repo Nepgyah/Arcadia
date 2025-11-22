@@ -1,14 +1,13 @@
 'use client';
 
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { setBreadcrumbs } from "@/slices/breadcrumbSlice";
+import { useBreadcrumbStore } from "@/app/store";
 
 export default function BreadcrumbSetter({ breadcrumbs} : { breadcrumbs: string[]}){
-    const dispatch = useDispatch();
+    const setBreadcrumbs = useBreadcrumbStore((state) => state.setBreadcrumbs)
 
     useEffect(() => {
-        dispatch(setBreadcrumbs(breadcrumbs))
+        setBreadcrumbs(breadcrumbs)
     }, [])
     
     return null;

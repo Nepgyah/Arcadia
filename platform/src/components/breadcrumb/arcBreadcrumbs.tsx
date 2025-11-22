@@ -1,19 +1,18 @@
 'use client';
 
-import type { RootState } from "@/app/store";
 import { Breadcrumbs, Typography } from "@mui/material";
-import { useSelector } from "react-redux";
+import { useBreadcrumbStore } from "@/app/store";
 
 export default function ArcBreadcrumb() {
-    const breadcrumbs = useSelector((state: RootState) => state.breadcrumb.breadcrumbs)
-
+    const breadcrumbs = useBreadcrumbStore((state) => state.crumbs)
+    
     return (
         <Breadcrumbs>
-        {
-            breadcrumbs.map((breadcrumb: string, idx: number) => (
-                <Typography key={idx}>{breadcrumb}</Typography>
-            ))
-        }
+            {
+                breadcrumbs.map((value: string, idx: number) => (
+                    <Typography key={idx}>{value}</Typography>
+                ))
+            }
         </Breadcrumbs>
     )
 }
