@@ -1,9 +1,10 @@
-import { useCSRF } from "./csrfLoader";
+import { useCSRFStore } from "@/app/store";
+
 const api_root = process.env.NEXT_PUBLIC_API_URL;
 const graph_root = process.env.NEXT_PUBLIC_GRAPH_URL;
 
 export const useApi = () => {
-  const { csrfToken } = useCSRF();
+  const csrfToken = useCSRFStore((state) => state.token)
 
   const apiPOST = async <T>(url: string, body: any): Promise<T> => {
     if (!csrfToken) throw new Error("CSRF token not available");

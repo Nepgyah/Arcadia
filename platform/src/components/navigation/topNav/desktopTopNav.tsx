@@ -5,19 +5,17 @@ import Link from "next/link";
 import AppsIcon from '@mui/icons-material/Apps';
 
 import { Avatar, IconButton, Menu, MenuItem, Tooltip } from "@mui/material";
-import { useUser } from "@/util/wrappers/userContext";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useApi } from "@/util/api/api";
+import { useUserStore } from "@/app/store";
 
 type openStatus = 'app' | 'profile' | 'none';
 
 export default function DesktopTopNav() {
-    const {
-        user, setUser, userLoading
-    } = useUser()
-    const { apiPOST } = useApi()
-    
+    const user = useUserStore((state) => state.user);
+    const setNull = useUserStore((state) => state.setNull);
+    const { apiPOST } = useApi();
     const router = useRouter();
 
     const appAnchor = useRef<HTMLElement | null>(null);
@@ -41,8 +39,8 @@ export default function DesktopTopNav() {
     const handleLogout = () => {
         apiPOST<any>('account/auth/logout/', {})
         .then((res) => {
-            setUser(res.user);
-            router.push('/platform')
+            setNull();
+            router.push('/')
         })
     }
     return (
@@ -66,7 +64,7 @@ export default function DesktopTopNav() {
                         id="profile"
                         onClick={() => handleOpen('profile')}
                     >
-                        <Avatar src={user ? `/platform/auth/profile-pics/profile_${user?.picture_preset}.webp` : ''}/>
+                        <Avatar src={user ? `/storage/preset-profile/${user?.picture_preset}.webp` : ''}/>
                     </IconButton>
                 </Tooltip>
                 {!user ?
@@ -76,7 +74,7 @@ export default function DesktopTopNav() {
                         open={open === 'profile'}
                         onClose={() => setOpen('none')}
                     >
-                        <MenuItem onClick={() => routeTo('/platform/auth/login')}>
+                        <MenuItem onClick={() => routeTo('/auth/login')}>
                             Login
                         </MenuItem>
                     </Menu>
@@ -87,7 +85,7 @@ export default function DesktopTopNav() {
                         open={open === 'profile'}
                         onClose={() => setOpen('none')}
                     >
-                        <MenuItem onClick={() => routeTo('/platform/profile')}>
+                        <MenuItem onClick={() => routeTo('/profile')}>
                             My Profile
                         </MenuItem>
                         <MenuItem onClick={() => handleLogout()}>
@@ -120,4 +118,8 @@ export default function DesktopTopNav() {
             </div>
         </div>
     )
+}
+
+function apiPOST<T>(arg0: string, arg1: {}) {
+    throw new Error("Function not implemented.");
 }

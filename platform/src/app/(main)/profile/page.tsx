@@ -1,10 +1,10 @@
 'use client';
 
-import { useUser } from "@/util/wrappers/userContext";
+import { useUserStore } from "@/app/store";
 import Profile from "./profile";
 
 export default function SelfProfile() {
-    const { user } = useUser()
+    const user = useUserStore((state) => state.user)
 
     if (user == null) {
         return (

@@ -25,32 +25,37 @@ export default function CreateAccount() {
                           label="Username"
                           value={email}
                           onChange={(e) => setUsername(e.target.value)}
+                          fullWidth
                         />
                         <TextField
                           id="email"
                           label="Email"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
+                          fullWidth
                         />
                         <TextField
                           id="password"
                           label="Password"
                           value={pasword}
                           onChange={(e) => setPassword(e.target.value)}
+                          fullWidth
                         />
                         <TextField
                           id="confirm-password"
                           label="Confirm Password"
                           value={confirmPasword}
                           onChange={(e) => setConfirmPassword(e.target.value)}
+                          fullWidth
                         />
                         <Button 
                             className='submit'
                             variant='contained'
+                            size='large'
                         >
                             Create
                         </Button>
-                        <p className='instruction'><Link href="/platform/auth/login">Already have an account?</Link></p>
+                        <p className='instruction'><Link href="/auth/login">Already have an account?</Link></p>
                     </div>
                 </div>
                 <div className="logo">

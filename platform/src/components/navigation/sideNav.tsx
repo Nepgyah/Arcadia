@@ -1,28 +1,30 @@
 'use client';
 
 import { navInfo } from "@/app/(main)/layout";
+import { useUserStore } from "@/app/store";
 import { url } from "@/data/urls"
 import { useApi } from "@/util/api/api";
-import { useUser } from "@/util/wrappers/userContext";
 import { Button, Divider } from "@mui/material"
 import { usePathname, useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function SideNav({ navObj }: { navObj: navInfo }) {
-    const {
-        user,
-        setUser
-    } = useUser()
-
+    const user = useUserStore((state) => state.user);
+    const setNull = useUserStore((state) => state.setNull)
     const pathname = usePathname();
     const { apiPOST } = useApi()
     const router = useRouter();
 
+    useEffect(() => {
+
+    }, [user])
     const handleLogout = () => {
         apiPOST<any>('account/auth/logout/', {})
         .then((res) => {
-            setUser(res.user);
-            router.push('/platform')
+            setNull();
+        })
+        .finally(() => {
+            router.push('/auth/login')
         })
     }
 
@@ -55,7 +57,7 @@ export default function SideNav({ navObj }: { navObj: navInfo }) {
             <Divider sx={{ backgroundColor: 'white'}} />
             {user?
                 <React.Fragment>
-                    <Button color="white" fullWidth onClick={() => router.push(`/platform/profile`)}>
+                    <Button color="white" fullWidth onClick={() => router.push(`/profile`)}>
                         Profile
                     </Button>
                     <Button color="white" fullWidth onClick={() => handleLogout()}>
@@ -63,7 +65,7 @@ export default function SideNav({ navObj }: { navObj: navInfo }) {
                     </Button>
                 </React.Fragment>
             :
-                <Button color="white" fullWidth onClick={() => router.push('/platform/auth/login')}>
+                <Button color="white" fullWidth onClick={() => router.push('/auth/login')}>
                     Login
                 </Button>
             }

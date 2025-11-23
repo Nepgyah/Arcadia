@@ -2,7 +2,7 @@
 | App        | Version |
 | ---------- | ------- |
 | Website    | 1.0     |
-| Profile    | 1       |
+| Account    | 1.1     |
 | Miru       | 0.3     |
 | Yomu       | 0.2     |
 | Asobu      | 0.1     |
@@ -156,7 +156,7 @@
 		- Home page content
 		- Detail page content
 
-## Alpha v1.0 - Jul 17 2025
+## Alpha v0.3- Jul 17 2025
 - API
 	-  Created **accounts** app
 	- Added profile endpoints

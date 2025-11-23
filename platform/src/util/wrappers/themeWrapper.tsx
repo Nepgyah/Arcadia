@@ -7,7 +7,6 @@ import theme from '@/util/mui_override';
 export default function ThemeWrapper({ children }: { children: React.ReactNode }) {
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
       {children}
     </ThemeProvider>
   );

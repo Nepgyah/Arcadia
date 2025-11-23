@@ -1,0 +1,127 @@
+@use '../../utils/variables' as *;
+@use "sass:map";
+
+#page-profile {
+    .profile-card {
+        padding: 1rem;
+        border-radius: 16px;
+        background-color: map.get($colors, platform-light);
+    }
+
+    .arc-header {
+        border-color: map.get($colors, arc-accent);
+
+        .box {
+            background-color: map.get($colors, arc-accent);
+        }
+    }
+    .MuiDivider-root {
+        background-color: map.get($colors, platform-dark);
+    }
+    #left-col {
+        #overview {
+            overflow: hidden;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            #profile-bg {
+                height: 100%;
+                object-fit: cover;
+            }
+
+            >div {
+                padding: 1rem;
+
+                #profile-picture {
+                    width: 120px;
+                    height: 120px;
+                }
+            }
+        }
+
+    }
+
+    #stat-overview {
+        >div {
+            display: flex;
+            flex-direction: column;
+            row-gap: 1rem;
+        }
+
+        .profile-card {
+            display: flex;
+            column-gap: 2rem;
+
+            img {
+                height: 48px;
+                width: 48px;
+            }
+
+            p {
+                &:first-of-type {
+                    color: map.get($colors, arc-accent-light);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 480px) {
+    #page-profile {
+        #left-col {
+
+        }
+
+        #stat-overview {
+            >div {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    #page-profile {
+        .profile-card {
+            padding: 1rem;
+            border-radius: 16px;
+            background-color: map.get($colors, platform-light);
+        }
+
+        #left-col {
+            #overview {
+                overflow: hidden;
+                padding: 0;
+                display: block;
+    
+                #profile-bg {
+                    height: 150px;
+                    object-fit: fill;
+                }
+    
+                >div {
+                    padding: 1rem;
+    
+                    #profile-picture {
+                        width: 120px;
+                        height: 120px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    #page-profile {
+        #stat-overview {
+            >div {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+        }
+    }
+}
