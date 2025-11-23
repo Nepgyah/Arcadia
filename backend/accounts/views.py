@@ -26,9 +26,11 @@ class LoginView(APIView):
         user_obj = authenticate(request, email=email, password=password )
         
         if user_obj:
+            user_data = UserSerializer(user_obj, many=False).data
             login(request, user_obj)
 
             return Response({
+                'user': user_data,
                 'csrfToken': request.META.get("CSRF_COOKIE")
             })
         else:

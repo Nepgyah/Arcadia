@@ -4,10 +4,9 @@ import { navInfo } from "@/app/(main)/layout";
 import { useUserStore } from "@/app/store";
 import { url } from "@/data/urls"
 import { useApi } from "@/util/api/api";
-import { useUser } from "@/util/wrappers/userContext";
 import { Button, Divider } from "@mui/material"
 import { usePathname, useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function SideNav({ navObj }: { navObj: navInfo }) {
     const user = useUserStore((state) => state.user);
@@ -16,11 +15,16 @@ export default function SideNav({ navObj }: { navObj: navInfo }) {
     const { apiPOST } = useApi()
     const router = useRouter();
 
+    useEffect(() => {
+
+    }, [user])
     const handleLogout = () => {
         apiPOST<any>('account/auth/logout/', {})
         .then((res) => {
             setNull();
-            router.push('/')
+        })
+        .finally(() => {
+            router.push('/auth/login')
         })
     }
 
@@ -56,9 +60,9 @@ export default function SideNav({ navObj }: { navObj: navInfo }) {
                     <Button color="white" fullWidth onClick={() => router.push(`/profile`)}>
                         Profile
                     </Button>
-                    {/* <Button color="white" fullWidth onClick={() => handleLogout()}>
+                    <Button color="white" fullWidth onClick={() => handleLogout()}>
                         Logout
-                    </Button> */}
+                    </Button>
                 </React.Fragment>
             :
                 <Button color="white" fullWidth onClick={() => router.push('/auth/login')}>

@@ -30,12 +30,14 @@ export default function ResetPassword() {
                           label="Password"
                           value={pasword}
                           onChange={(e) => setPassword(e.target.value)}
+                          fullWidth
                         />
                         <TextField
                           id="confirm-password"
                           label="Confirm Password"
                           value={confirmPasword}
                           onChange={(e) => setConfirmPassword(e.target.value)}
+                          fullWidth
                         />
                         <Button 
                             className='submit'

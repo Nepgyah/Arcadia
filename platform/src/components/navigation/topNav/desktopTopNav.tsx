@@ -5,7 +5,6 @@ import Link from "next/link";
 import AppsIcon from '@mui/icons-material/Apps';
 
 import { Avatar, IconButton, Menu, MenuItem, Tooltip } from "@mui/material";
-import { useUser } from "@/util/wrappers/userContext";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useApi } from "@/util/api/api";
@@ -86,7 +85,7 @@ export default function DesktopTopNav() {
                         open={open === 'profile'}
                         onClose={() => setOpen('none')}
                     >
-                        <MenuItem onClick={() => routeTo('/platform/profile')}>
+                        <MenuItem onClick={() => routeTo('/profile')}>
                             My Profile
                         </MenuItem>
                         <MenuItem onClick={() => handleLogout()}>

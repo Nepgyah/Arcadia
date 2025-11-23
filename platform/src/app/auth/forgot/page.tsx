@@ -30,14 +30,16 @@ export default function ForgotPassword() {
                           label="Email"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
+                          fullWidth
                         />
                         <Button 
                             className='submit'
                             variant='contained'
+                            size='large'
                         >
                             Send
                         </Button>
-                        <p className='instruction'><Link href="/platform/auth/login">Remember Your Password?</Link></p>
+                        <p className='instruction'><Link href="/auth/login">Remember Your Password?</Link></p>
                     </div>
                 </div>
                 <div className="logo">

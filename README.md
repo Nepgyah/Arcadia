@@ -2,7 +2,7 @@
 - **Overview**
 	- Improved detail pages of Miru, Yomu and Asobu
 	- Improved reusability of platform components
-	- Introduced redux toolkit library
+	- Introduced zustand library
 
 - **Apps**
 	- **Miru v0.3**
@@ -29,6 +29,12 @@
 			- Converted pages to SSR
 			- Various UI improvements
 		
+- **Account v1.1**
+	- **Platform**
+		- Added template for profile page
+		- Created global state for user
+		- Fixed account pages (login/forgot/login/reset)
+
 - **Website**
 	- 
 

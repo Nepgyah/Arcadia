@@ -2,7 +2,7 @@
 | App        | Version |
 | ---------- | ------- |
 | Website    | 1.0     |
-| Profile    | 1       |
+| Account    | 1.1     |
 | Miru       | 0.3     |
 | Yomu       | 0.2     |
 | Asobu      | 0.1     |
