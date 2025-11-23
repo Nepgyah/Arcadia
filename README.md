@@ -1,39 +1,45 @@
 ## Latest Release - Alpha v3.0 - XX/XX/2025
 - **Overview**
-	- Improved detail pages of Miru, Yomu and Asobu
-	- Improved reusability of platform components
-	- Introduced zustand library
+	- Improve detail pages of Miru, Yomu and Asobu
+	- Improve reusability of platform components
+	- Introduce **zustand** library
 
 - **Apps**
 	- **Miru v0.3**
 		- **API**
-			- Added anime themes field
-			- Improved miru graphql queries
-
+			- Add anime themes field
+			- Improv miru graphql queries
 		- **Platform**
-			- Converted pages to utilize graphql and SSR
-			- Added tab content on detail page
+			- Convert pages to utilize graphql and SSR
+			- Add tab content on detail page
 			- Various UI improvements on miru lists
 	
-	- **Tsunagu v0.2**
+	- **Miru v0.3.1**
 		- **API**
 			- Added graphql queries
 		- **Platform**
-			- Converted pages to SSR
+			- Improve ux on loading
+			- Improve ssr/csr implementation
+
+	- **Tsunagu v0.2**
+		- **API**
+			- Add graphql queries
+		- **Platform**
+			- Convert pages to SSR
 			- Various UI improvements
 		
 	- **Yomu v0.3**
 		- **API** 
-			- Added graphql queries
+			- Add graphql queries
 		- **Platform**
-			- Converted pages to SSR
+			- Convert pages to SSR
 			- Various UI improvements
 		
 - **Account v1.1**
 	- **Platform**
-		- Added template for profile page
-		- Created global state for user
-		- Fixed account pages (login/forgot/login/reset)
+		- Add template for profile page
+		- Creat global state for user
+		- Fix account pages (login/forgot/login/reset)
 
 - **Website**
 	- 
