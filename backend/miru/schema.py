@@ -132,6 +132,7 @@ class Query(graphene.ObjectType):
     
     anime_by_id = graphene.Field(AnimeType, id=graphene.Int(required=True))
     top_anime_by_category = graphene.List(AnimeType, count=graphene.Int(required=False), category=graphene.String(required=True))
+    characters_by_anime = graphene.List(AnimeCharacterType, id=graphene.Int(required=True))
     search_anime = graphene.Field(AnimeFilterResults, filters=AnimeFilterInput(), sort=AnimeSortInput(), page=graphene.Int(default_value=1), per_page=graphene.Int(default_value=10))
 
     def resolve_anime_by_id(self, info, id):
@@ -143,6 +144,10 @@ class Query(graphene.ObjectType):
         else:
             return Anime.objects.order_by(f'-{category}')[:5]
         
+    def resolve_characters_by_anime(self, info, id):
+        anime = Anime.objects.get(id=id)
+        return AnimeCharacter.objects.filter(anime=anime)
+    
     def resolve_search_anime(self, info, filters=None, sort=None, page=1, per_page=10):
         queryset = Anime.objects.only('id', 'title', 'score', 'users', 'status', 'summary', 'slug', 'franchise').select_related('franchise')
 
