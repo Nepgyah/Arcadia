@@ -1,5 +1,4 @@
 import { create } from 'zustand';
-import breadcrumbReducer from '@/slices/breadcrumbSlice';
 import { User } from '@/types/account';
 
 // CSRF Token

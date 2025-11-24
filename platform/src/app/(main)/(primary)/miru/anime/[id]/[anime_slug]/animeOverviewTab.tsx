@@ -1,6 +1,7 @@
-'use client';
+import { Anime, AnimeTheme } from "@/types/miru";
+import { Character } from "@/types/shared";
 
-import React from "react";
+import React, { Suspense, use } from "react";
 import { useState } from "react";
 
 import { Chip } from "@mui/material";
@@ -12,59 +13,27 @@ import ArcHeader from "@/components/arcHeader";
 import CharacterCard from "@/components/characterCard";
 import MediaFlowCard from "@/components/mediaFlowCard";
 import WIP from "@/components/wip";
+import wait from "@/util/wait";
+import { MediaCharacterListSkeleton } from "@/components/media/characterList";
 
-import { Anime, AnimeTheme } from "@/types/miru";
 
-export default function AnimeDetailTabContent({ anime } : { anime: Anime }){
-    
-    const [tab, setTab] = useState<string>('0');
+export default function AnimeOverviewTab(
+    {
+        animePromise,
+        characterPromise,
+    } : {
+        animePromise: Promise<Anime>,
+        characterPromise: Promise<Character[]>
+    }
+) {
+    const anime = use(animePromise);
 
-    return (
-        <React.Fragment>
-            <div id="tab-container" className="flex-col flex-col--gap-sm m-b-lg">
-                <ArcTab label="Overview" value="0" currentValue={tab} icon="info" setTabFunc={setTab} />
-                <ArcTab label="Characters" value="1" currentValue={tab} icon="people" setTabFunc={setTab} />
-                <ArcTab label="Summary" value="2" currentValue={tab} icon="target" setTabFunc={setTab} />
-                <ArcTab label="Stats" value="3" currentValue={tab} icon="graph" setTabFunc={setTab} />
-                <ArcTab label="Reviews" value="4" currentValue={tab} icon="comment" setTabFunc={setTab} />
-            </div>
-            <div hidden={tab !== '0'}>
-                <MainTab anime={anime}/>
-            </div>
-            <div hidden={tab !== '1'}>
-                <CharacterTab characters={anime.characters}/>
-            </div>
-            <div hidden={tab !== '2'}>
-                <ArcHeader title="Synopsis" />
-                <p>{anime.summary}</p>
-            </div>
-             <div hidden={tab !== '3'}>
-                <ArcHeader title="Score Breakdown" />
-                <WIP />
-            </div>
-            <div hidden={tab !== '4'}>
-                <div className="flex-row flex-row--gap-md">
-                    <div id="top-reviews">
-                        <ArcHeader title="Top Reviews" />
-                        <WIP />
-                    </div>
-                    <div id="latest-reviews">
-                        <ArcHeader title="Latest Reviews" />
-                        <WIP />
-                    </div>
-                </div>
-            </div>
-        </React.Fragment>
-    )
-}
-
-function MainTab({ anime } : { anime: Anime }) {
     return (
         <div className="flex-row flex-row--gap-md">
             <div className="grid grid--2-col">
                 <div id="genres">
                     <ArcHeader title="Genres" />
-                    {
+                    {/* {
                         anime.genres.length !== 0 ?
                             <div className="flex-col flex-col--gap-sm">
                                 {
@@ -75,7 +44,7 @@ function MainTab({ anime } : { anime: Anime }) {
                             </div>
                         :
                             <p>No genres added</p>
-                    }
+                    } */}
                 </div>
                 <div id="franchise">
                     <ArcHeader title="Franchise" />
@@ -116,21 +85,9 @@ function MainTab({ anime } : { anime: Anime }) {
             </div>
             <div id="characters">
                 <ArcHeader title="Characters" />
-                <div id="characters-container" className="flex-col flex-col--gap-sm">
-                    {
-                        anime.characters.slice(0,6).map((character: any, idx: number) => (
-                            <CharacterCard 
-                                key={idx}
-                                characterId={character.character.id}
-                                characterName={`${character.character.firstName} ${character.character.lastName ? character.character.lastName : ''}`}
-                                characterDescription={character.role}
-                                voiceActorId={character.character.playedBy?.id}
-                                voiceActorName={character.character.playedBy ? `${character.character.playedBy.firstName} ${character.character.playedBy.lastName ? character.character.playedBy.lastName : ''}` : 'Unknown'}
-                                voiceActorDescription='Japanese'
-                            />
-                        ))
-                    }
-                </div>
+                <Suspense fallback={ <MediaCharacterListSkeleton />}>
+                    <OverviewCharacters characterPromise={characterPromise} />
+                </Suspense>
             </div>
             <div id="themes">
                 <div className="grid grid--2-col">
@@ -176,6 +133,34 @@ function MainTab({ anime } : { anime: Anime }) {
                     </div>
                 </div>
             </div>
+        </div>
+    )
+}
+
+async function OverviewCharacters(
+    {
+        characterPromise
+    } : {
+        characterPromise: Promise<Character[]>
+    }
+) {
+    await new Promise((resolve) => setTimeout(resolve, 3000))
+    const characters = await characterPromise;
+    return (
+        <div id="characters-container" className="flex-col flex-col--gap-sm">
+            {
+                characters.slice(0,6).map((character: any, idx: number) => (
+                    <CharacterCard 
+                        key={idx}
+                        characterId={character.character.id}
+                        characterName={`${character.character.firstName} ${character.character.lastName ? character.character.lastName : ''}`}
+                        characterDescription={character.role}
+                        voiceActorId={character.character.playedBy?.id}
+                        voiceActorName={character.character.playedBy ? `${character.character.playedBy.firstName} ${character.character.playedBy.lastName ? character.character.playedBy.lastName : ''}` : 'Unknown'}
+                        voiceActorDescription='Japanese'
+                    />
+                ))
+            }
         </div>
     )
 }

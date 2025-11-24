@@ -1,7 +1,6 @@
 export const revalidate = 3600;
 
-import React from "react";
-import { Breadcrumbs, Typography } from "@mui/material";
+import React, { Suspense } from "react";
 import { GraphQL } from "@/util/api/api";
 
 import InfoItem from "@/components/infoItem";
@@ -14,6 +13,13 @@ import SocialsList from "@/components/socialsList";
 import {Anime} from "@/types/miru";
 import '@/styles/layout/_media-detail.scss';
 import BreadcrumbSetter from "@/components/breadcrumb/setBreadcrumbs";
+import { UseMiruDetailStore } from "@/app/store/miruStore";
+import AnimeTabWrapper from "./animeTabWrapper";
+import MainTab from "./tabContent";
+import CharacterTab from "@/components/characterTab";
+import { Character } from "@/types/shared";
+import AnimeOverviewTab from "./animeOverviewTab";
+import MediaCharacterList, { MediaCharacterListSkeleton } from "@/components/media/characterList";
 
 export default async function AnimeDetails(
     props: {
@@ -22,7 +28,8 @@ export default async function AnimeDetails(
     ) {
     const { id } = await props.params;
     const anime = await getAnime(id);
-
+    const animePromise = getAnime(id);
+    const characterPromise = getCharactersByAnime(id)
     return (
         <React.Fragment>
             <BreadcrumbSetter breadcrumbs={['Miru', `${anime.title}`]} />
@@ -64,7 +71,35 @@ export default async function AnimeDetails(
                         </div>
                     </div>
                     <div>
-                        <AnimeDetailTabContent anime={anime}/>
+                        <AnimeTabWrapper>
+                            <Suspense fallback={ <h2>Loading overview</h2>}>
+                                <AnimeOverviewTab animePromise={animePromise} characterPromise={characterPromise} />
+                            </Suspense>
+                            <Suspense fallback={ <MediaCharacterListSkeleton /> }>
+                                <MediaCharacterList characterPromise={characterPromise} />
+                            </Suspense>
+                            <div>
+                                <ArcHeader title="Synopsis" />
+                                <p>{anime.summary}</p>
+                            </div>
+                            <div>
+                                <ArcHeader title="Score Breakdown" />
+                                <WIP />
+                            </div>
+                            <div>
+                                <div className="flex-row flex-row--gap-md">
+                                    <div id="top-reviews">
+                                        <ArcHeader title="Top Reviews" />
+                                        <WIP />
+                                    </div>
+                                    <div id="latest-reviews">
+                                        <ArcHeader title="Latest Reviews" />
+                                        <WIP />
+                                    </div>
+                                </div>
+                            </div>
+                        </AnimeTabWrapper>
+                        {/* <AnimeDetailTabContent anime={anime}/> */}
                     </div>
                 </div>
             </div>
@@ -72,7 +107,7 @@ export default async function AnimeDetails(
     )
 }
 
-interface GraphResponse {
+interface AnimeOverviewQuery {
     data: {
         animeById: Anime
     }
@@ -100,19 +135,6 @@ async function getAnime(id : string) {
                 summary,
                 season,
                 status,
-                characters {
-                character {
-                    id,
-                    firstName,
-                    lastName,
-                    playedBy {
-                        id,
-                        firstName,
-                        lastName
-                    }
-                },
-                role
-                },
                 previousAnime {
                     relationType
                     fromAnime {
@@ -140,6 +162,36 @@ async function getAnime(id : string) {
             }
         }
     `
-    const res = await GraphQL<GraphResponse>(query);
+    const res = await GraphQL<AnimeOverviewQuery>(query);
     return res.data.animeById
+}
+
+interface CharactersByAnimeQuery {
+    data: {
+        charactersByAnime: Character[]
+    }
+}
+
+async function getCharactersByAnime(id: string) {
+    const query = `
+        query {
+            charactersByAnime(id: ${id}) {
+            id,
+            character {
+                id,
+                firstName,
+                lastName,
+                playedBy {
+                    id,
+                    firstName,
+                    lastName
+                }
+            }
+            role
+        }      
+    }
+    `
+
+    const res = await GraphQL<CharactersByAnimeQuery>(query);
+    return res.data.charactersByAnime
 }

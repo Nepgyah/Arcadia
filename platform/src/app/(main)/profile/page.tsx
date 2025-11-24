@@ -1,6 +1,6 @@
 'use client';
 
-import { useUserStore } from "@/app/store";
+import { useUserStore } from "@/app/store/store";
 import Profile from "./profile";
 
 export default function SelfProfile() {

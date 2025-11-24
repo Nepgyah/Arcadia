@@ -1,6 +1,6 @@
 'use client';
 
-import { useSnackbarStore } from "@/app/store";
+import { useSnackbarStore } from "@/app/store/store";
 import { Alert, Snackbar } from "@mui/material";
 
 export default function ArcSnackbar() {

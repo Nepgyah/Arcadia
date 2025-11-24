@@ -1,7 +1,7 @@
 'use client';
 
 import { Breadcrumbs, Typography } from "@mui/material";
-import { useBreadcrumbStore } from "@/app/store";
+import { useBreadcrumbStore } from "@/app/store/store";
 
 export default function ArcBreadcrumb() {
     const breadcrumbs = useBreadcrumbStore((state) => state.crumbs)
