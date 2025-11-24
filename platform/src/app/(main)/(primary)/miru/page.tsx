@@ -1,20 +1,21 @@
 export const revalidate = 3600;
 
-import React from "react";
-import { Breadcrumbs, Typography } from "@mui/material";
+import React, { Suspense } from "react";
+import {Skeleton} from "@mui/material";
+import { GraphQL } from "@/util/api/api";
 
-import EntryCard from "@/components/entryCard";
 import WIP from "@/components/wip";
 import ArcHeader from "@/components/arcHeader";
+import BreadcrumbSetter from "@/components/breadcrumb/setBreadcrumbs";
+import TopAnimeCards from "./topAnime";
 
-import { GraphQL } from "@/util/api/api";
 import { Anime } from "@/types/miru";
 
 import '@/styles/pages/miru/_home.scss';
-import BreadcrumbSetter from "@/components/breadcrumb/setBreadcrumbs";
 
 export default async function MiruHome() {
-    const { topScore, topUsers } = await getAnime()
+    const topAnime: Promise<Anime[]> = getTopAnime()
+    const popularAnime: Promise<Anime[]> = getPopularAnime();
 
     return (
         <React.Fragment>
@@ -24,35 +25,15 @@ export default async function MiruHome() {
                     <div className="flex-row flex-row--gap-md">
                         <div id="all-time">
                             <ArcHeader title="All Time" link="miru/all-time" linkText="See more" />
-                            <div className="flex-col flex-col--gap-sm">
-                                {
-                                    topScore.map((anime: any, key: number) => (
-                                        <EntryCard 
-                                            key={key} 
-                                            app="miru" 
-                                            title={anime.title} 
-                                            clickLink={`/miru/anime/${anime.id}/${anime.slug}`} 
-                                            imageLink={`/storage/miru/${anime.id}.jpg`}
-                                        />
-                                    ))
-                                }
-                            </div>
+                            <Suspense fallback={ <AnimeSkeleton /> }>
+                                <TopAnimeCards animePromise={topAnime} />
+                            </Suspense>
                         </div>
                         <div id="most-popular">
                             <ArcHeader title="Most Popular" link="miru/popular" linkText="See more" />
-                            <div className="flex-col flex-col--gap-sm">
-                                {
-                                    topUsers.map((anime: any, key: number) => (
-                                        <EntryCard 
-                                            key={key} 
-                                            app="miru" 
-                                            title={anime.title} 
-                                            clickLink={`/miru/anime/${anime.id}/${anime.slug}`} 
-                                            imageLink={`/storage/miru/${anime.id}.jpg`}
-                                        />
-                                    ))
-                                }
-                            </div>
+                            <Suspense fallback={ <AnimeSkeleton /> }>
+                                <TopAnimeCards animePromise={popularAnime} />
+                            </Suspense>
                         </div>
                     </div>
                     <div className="side-col">
@@ -72,7 +53,8 @@ interface GraphResponse {
         topUsers: Anime[]
     }
 }
-async function getAnime() {
+
+async function getTopAnime() {
     const query = 
     `
         query {
@@ -81,6 +63,17 @@ async function getAnime() {
                 title,
                 slug
             },
+        }
+    `
+
+    const res = await GraphQL<GraphResponse>(query);
+    return res.data.topScore
+}
+
+async function getPopularAnime() {
+    const query = 
+    `
+        query {
             topUsers: topAnimeByCategory(category: "users", count: 5) {
                 id,	
                 title,
@@ -90,5 +83,17 @@ async function getAnime() {
     `
 
     const res = await GraphQL<GraphResponse>(query);
-    return res.data
+    return res.data.topUsers
+}
+
+function AnimeSkeleton() {
+    return (
+        <div className="flex-col flex-col--gap-sm">
+            <Skeleton variant="rectangular" height={300} width={200} />
+            <Skeleton variant="rectangular" height={300} width={200} />
+            <Skeleton variant="rectangular" height={300} width={200} />
+            <Skeleton variant="rectangular" height={300} width={200} />
+            <Skeleton variant="rectangular" height={300} width={200} />
+        </div>
+    )
 }
