@@ -7,16 +7,12 @@ import InfoItem from "@/components/infoItem";
 import WIP from "@/components/wip";
 import MediaFeatureCard from "@/components/mediaFeatureCard";
 import ArcHeader from "@/components/arcHeader";
-import AnimeDetailTabContent from "./tabContent";
 import SocialsList from "@/components/socialsList";
 
 import {Anime} from "@/types/miru";
 import '@/styles/layout/_media-detail.scss';
 import BreadcrumbSetter from "@/components/breadcrumb/setBreadcrumbs";
-import { UseMiruDetailStore } from "@/app/store/miruStore";
 import AnimeTabWrapper from "./animeTabWrapper";
-import MainTab from "./tabContent";
-import CharacterTab from "@/components/characterTab";
 import { Character } from "@/types/shared";
 import AnimeOverviewTab from "./animeOverviewTab";
 import MediaCharacterList, { MediaCharacterListSkeleton } from "@/components/media/characterList";
@@ -99,7 +95,6 @@ export default async function AnimeDetails(
                                 </div>
                             </div>
                         </AnimeTabWrapper>
-                        {/* <AnimeDetailTabContent anime={anime}/> */}
                     </div>
                 </div>
             </div>
