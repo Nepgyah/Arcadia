@@ -1,6 +1,5 @@
 'use client';
 
-import { UseMiruDetailStore } from "@/app/store/miruStore";
 import ArcTab from "@/components/arcTab";
 import { Children, useState } from "react";
 

@@ -20,11 +20,6 @@ export async function getAnime(id : string) {
                     id,
                     name
                 },
-                franchise {
-                    id,
-                    name,
-                    socials
-                },
                 score,
                 users,
                 slug,
@@ -102,7 +97,9 @@ export async function getFranchiseByAnime(id: string) {
     const query = `
         query {
             franchiseByAnime(id: ${id}) {
-            name
+            id,
+            name,
+            socials
         }     
     }
     `

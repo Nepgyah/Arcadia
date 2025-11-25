@@ -149,7 +149,7 @@ class Query(graphene.ObjectType):
         anime = Anime.objects.get(id=id)
 
         try:
-            franchise = Franchise.objects.get(id=25)
+            franchise = Franchise.objects.get(id=anime.franchise.id)
         except Franchise.DoesNotExist:
             return {}
         
