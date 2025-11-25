@@ -1,4 +1,5 @@
 export const revalidate = 3600;
+export const dynamic = "force-dynamic";
 
 import React, { Suspense } from "react";
 import {Skeleton} from "@mui/material";
@@ -19,7 +20,9 @@ export default async function MiruHome() {
 
     return (
         <React.Fragment>
-            <BreadcrumbSetter breadcrumbs={['Miru', 'Home']} />
+            <Suspense fallback={null}>
+                <BreadcrumbSetter breadcrumbs={['Miru', 'Home']} />
+            </Suspense>
             <div id="page-miru-home">
                 <div className="grid grid--side-col">
                     <div className="flex-row flex-row--gap-md">

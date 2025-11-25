@@ -16,9 +16,7 @@ export default async function TsunaguCircleLayout(
         params
     } : {
         children: React.ReactNode,
-        params: {
-           circle_id: string
-        }
+        params: Promise<{ circle_id: string}>
     }) {
 
     const { circle_id } = await Promise.resolve(params);

@@ -27,7 +27,7 @@ export default async function TsunaguLayout({children} : {children: React.ReactN
                             <div className="flex-row flex-row--gap-sm">
                             {
                                 tsunaguCommunities.map((community: any, idx: number) => (
-                                    <Link href={`/tsunagu/circle/${community.id}/${community.slug}`}>
+                                    <Link key={community.title} href={`/tsunagu/circle/${community.id}/${community.slug}`}>
                                         <div className="community-card bg-platform-dark p-a-sm border-radius-md flex-col flex-col--gap-sm">
                                             <Avatar src={`/storage/tsunagu/${community.id}.jpg`} />
                                             <p>c/{community.title}</p>
