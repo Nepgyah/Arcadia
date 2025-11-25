@@ -1,6 +1,6 @@
 'use client';
 
-import { useCSRFStore } from "@/app/store";
+import { useCSRFStore } from "@/app/store/store";
 import { useEffect } from "react";
 
 const api_root = process.env.NEXT_PUBLIC_API_URL;

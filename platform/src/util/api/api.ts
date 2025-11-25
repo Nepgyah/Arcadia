@@ -1,4 +1,4 @@
-import { useCSRFStore } from "@/app/store";
+import { useCSRFStore } from "@/app/store/store";
 
 const api_root = process.env.NEXT_PUBLIC_API_URL;
 const graph_root = process.env.NEXT_PUBLIC_GRAPH_URL;

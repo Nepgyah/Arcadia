@@ -8,7 +8,7 @@ import { Avatar, IconButton, Menu, MenuItem, Tooltip } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useApi } from "@/util/api/api";
-import { useUserStore } from "@/app/store";
+import { useUserStore } from "@/app/store/store";
 
 type openStatus = 'app' | 'profile' | 'none';
 

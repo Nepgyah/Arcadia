@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from "react";
-import { useUserStore } from "@/app/store";
+import { useUserStore } from "@/app/store/store";
 import { apiGET } from "@/util/api/api";
 
 export default function AccountFetcher() {

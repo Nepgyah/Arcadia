@@ -1,6 +1,6 @@
 'use client';
 
-import { useCSRFStore, useUserStore } from '@/app/store';
+import { useCSRFStore, useUserStore } from '@/app/store/store';
 import { useApi } from '@/util/api/api';
 import { Button, Checkbox, FormControl, FormControlLabel } from '@mui/material';
 import TextField from '@mui/material/TextField';

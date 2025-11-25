@@ -1,7 +1,7 @@
 'use client';
 
 import { navInfo } from "@/app/(main)/layout";
-import { useUserStore } from "@/app/store";
+import { useUserStore } from "@/app/store/store";
 import { url } from "@/data/urls"
 import { useApi } from "@/util/api/api";
 import { Button, Divider } from "@mui/material"
