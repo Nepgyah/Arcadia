@@ -50,7 +50,6 @@ class AnimeCharacterType(DjangoObjectType):
         return self.get_role_display()
 
 class AnimeType(DjangoObjectType):
-    franchise = graphene.Field(FranchiseType)
     status = graphene.String()
     type = graphene.String()
     rating = graphene.String()
@@ -63,9 +62,6 @@ class AnimeType(DjangoObjectType):
     class Meta:
         model = Anime
         fields = "__all__"
-    
-    def resolve_franchise(self, info):
-        return Franchise.objects.get(id=self.franchise.id)
     
     def resolve_rating(self, info):
         return self.get_rating_display()
@@ -133,6 +129,7 @@ class Query(graphene.ObjectType):
     anime_by_id = graphene.Field(AnimeType, id=graphene.Int(required=True))
     top_anime_by_category = graphene.List(AnimeType, count=graphene.Int(required=False), category=graphene.String(required=True))
     characters_by_anime = graphene.List(AnimeCharacterType, id=graphene.Int(required=True))
+    franchise_by_anime = graphene.Field(FranchiseType, id=graphene.Int(required=True))
     search_anime = graphene.Field(AnimeFilterResults, filters=AnimeFilterInput(), sort=AnimeSortInput(), page=graphene.Int(default_value=1), per_page=graphene.Int(default_value=10))
 
     def resolve_anime_by_id(self, info, id):
@@ -147,6 +144,11 @@ class Query(graphene.ObjectType):
     def resolve_characters_by_anime(self, info, id):
         anime = Anime.objects.get(id=id)
         return AnimeCharacter.objects.filter(anime=anime)
+    
+    def resolve_franchise_by_anime(self, info, id):
+        anime = Anime.objects.get(id=id)
+        franchise = Franchise.objects.get(id=anime.franchise.id)
+        return franchise
     
     def resolve_search_anime(self, info, filters=None, sort=None, page=1, per_page=10):
         queryset = Anime.objects.only('id', 'title', 'score', 'users', 'status', 'summary', 'slug', 'franchise').select_related('franchise')
