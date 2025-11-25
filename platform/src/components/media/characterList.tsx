@@ -3,15 +3,14 @@ import { use } from "react";
 import CharacterCard from "../characterCard";
 import { Skeleton } from "@mui/material";
 
-export default async function MediaCharacterList(
+export default function MediaCharacterList(
     {
         characterPromise
     } : {
         characterPromise: Promise<Character[]>
     }
 ) {
-    await new Promise((resolve) => setTimeout(resolve, 5000))
-    const characters = await characterPromise
+    const characters = use(characterPromise)
 
     return (
         <div id="characters-container" className="flex-col flex-col--gap-sm">

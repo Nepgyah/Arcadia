@@ -4,7 +4,7 @@ import { Character } from "@/types/shared";
 import React, { Suspense, use } from "react";
 import { useState } from "react";
 
-import { Chip } from "@mui/material";
+import { Chip, Skeleton } from "@mui/material";
 
 import ArcTab from "@/components/arcTab";
 import CharacterTab from "@/components/characterTab";
@@ -15,6 +15,7 @@ import MediaFlowCard from "@/components/mediaFlowCard";
 import WIP from "@/components/wip";
 import wait from "@/util/wait";
 import { MediaCharacterListSkeleton } from "@/components/media/characterList";
+import ArcChip from "@/components/arcChip";
 
 
 export default function AnimeOverviewTab(
@@ -26,40 +27,36 @@ export default function AnimeOverviewTab(
         characterPromise: Promise<Character[]>
     }
 ) {
-    const anime = use(animePromise);
 
     return (
         <div className="flex-row flex-row--gap-md">
             <div className="grid grid--2-col">
                 <div id="genres">
                     <ArcHeader title="Genres" />
-                    {/* {
-                        anime.genres.length !== 0 ?
-                            <div className="flex-col flex-col--gap-sm">
-                                {
-                                    anime.genres.map((genre: any, idx: number) => (
-                                        <Chip className="bg-miru-base" key={idx} label={genre.name} />
-                                    ))
-                                }
-                            </div>
-                        :
-                            <p>No genres added</p>
-                    } */}
+                    <Suspense fallback={
+                        <div className="flex-col flex-col--gap-sm">
+                            {Array.from({ length: 5}).map((_, i) => (
+                                <Skeleton height={'54px'} width={'90px'} variant="rectangular" animation={'wave'}/>
+                            ))}
+                        </div>
+                    }>
+                        <OverviewGenres animePromise={animePromise} />
+                    </Suspense>
                 </div>
                 <div id="franchise">
                     <ArcHeader title="Franchise" />
-                    {
+                    {/* {
                         anime.franchise ? 
                             <WIP />
                         :
                             <p>No Franchise Found</p>
-                    }
+                    } */}
                 </div>
             </div>
             <div id="anime-flow">
                 <ArcHeader title="Anime Flow" />
                 <div className="grid grid--2-col">
-                    {
+                    {/* {
                         anime.previousAnime ?
                             <MediaFlowCard 
                                 image={`/storage/miru/${anime.previousAnime.fromAnime.id}.jpg`}
@@ -80,7 +77,7 @@ export default function AnimeOverviewTab(
                             />
                         :
                             <p>No Sequel Anime</p>
-                    }
+                    } */}
                 </div>
             </div>
             <div id="characters">
@@ -90,7 +87,7 @@ export default function AnimeOverviewTab(
                 </Suspense>
             </div>
             <div id="themes">
-                <div className="grid grid--2-col">
+                {/* <div className="grid grid--2-col">
                     <div>
                         <ArcHeader title="Openings" />
                         <div className="flex-row flex-row--gap-sm row-divider">
@@ -131,21 +128,21 @@ export default function AnimeOverviewTab(
                             }
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     )
 }
 
-async function OverviewCharacters(
+function OverviewCharacters(
     {
         characterPromise
     } : {
         characterPromise: Promise<Character[]>
     }
 ) {
-    await new Promise((resolve) => setTimeout(resolve, 3000))
-    const characters = await characterPromise;
+    const characters = use(characterPromise);
+
     return (
         <div id="characters-container" className="flex-col flex-col--gap-sm">
             {
@@ -162,5 +159,32 @@ async function OverviewCharacters(
                 ))
             }
         </div>
+    )
+}
+
+function OverviewGenres(
+    {
+        animePromise
+    } : {
+        animePromise: Promise<Anime>
+    }
+) {
+
+    const anime = use(animePromise)
+    return (
+        <>
+        {
+            anime.genres.length !== 0 ?
+                <div className="flex-col flex-col--gap-sm">
+                    {
+                        anime.genres.map((genre: any, idx: number) => (
+                            <ArcChip key={genre.name} label={genre.name} app="miru"/>
+                        ))
+                    }
+                </div>
+            :
+                <p>No genres added</p>
+        }
+        </>
     )
 }
