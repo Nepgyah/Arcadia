@@ -1,4 +1,4 @@
-## Latest Release - Alpha v3.0 - XX/XX/2025
+## Latest Release - Alpha v3.0 - 11/25/2025
 - **Overview**
 	- Improve detail pages of Miru, Yomu and Asobu
 	- Improve reusability of platform components
