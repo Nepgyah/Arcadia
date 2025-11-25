@@ -16,15 +16,19 @@ import WIP from "@/components/wip";
 import wait from "@/util/wait";
 import { MediaCharacterListSkeleton } from "@/components/media/characterList";
 import ArcChip from "@/components/arcChip";
+import { Franchise } from "@/types/franchise";
+import FranchiseCard from "@/components/media/franchiseCard";
 
 
 export default function AnimeOverviewTab(
     {
         animePromise,
         characterPromise,
+        franchisePromise
     } : {
         animePromise: Promise<Anime>,
-        characterPromise: Promise<Character[]>
+        characterPromise: Promise<Character[]>,
+        franchisePromise: Promise<Franchise>
     }
 ) {
 
@@ -35,8 +39,8 @@ export default function AnimeOverviewTab(
                     <ArcHeader title="Genres" />
                     <Suspense fallback={
                         <div className="flex-col flex-col--gap-sm">
-                            {Array.from({ length: 5}).map((_, i) => (
-                                <Skeleton height={'54px'} width={'90px'} variant="rectangular" animation={'wave'}/>
+                            {Array.from({ length: 5}).map((_, i: number) => (
+                                <Skeleton key={i} height={'54px'} width={'90px'} variant="rectangular" animation={'wave'}/>
                             ))}
                         </div>
                     }>
@@ -45,12 +49,7 @@ export default function AnimeOverviewTab(
                 </div>
                 <div id="franchise">
                     <ArcHeader title="Franchise" />
-                    {/* {
-                        anime.franchise ? 
-                            <WIP />
-                        :
-                            <p>No Franchise Found</p>
-                    } */}
+                    <FranchiseCard  franchisePromise={franchisePromise}/>
                 </div>
             </div>
             <div id="anime-flow">

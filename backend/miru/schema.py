@@ -147,7 +147,12 @@ class Query(graphene.ObjectType):
     
     def resolve_franchise_by_anime(self, info, id):
         anime = Anime.objects.get(id=id)
-        franchise = Franchise.objects.get(id=anime.franchise.id)
+
+        try:
+            franchise = Franchise.objects.get(id=25)
+        except Franchise.DoesNotExist:
+            return {}
+        
         return franchise
     
     def resolve_search_anime(self, info, filters=None, sort=None, page=1, per_page=10):
