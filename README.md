@@ -19,7 +19,7 @@
 			- Added graphql queries
 		- **Platform**
 			- Improve ux on loading
-			- Improve ssr/csr implementation
+			- Improve ssr/csr implementation and loading optimization
 
 	- **Tsunagu v0.2**
 		- **API**
@@ -40,9 +40,6 @@
 		- Add template for profile page
 		- Creat global state for user
 		- Fix account pages (login/forgot/login/reset)
-
-- **Website**
-	- 
 
 ## Name
 Arcadia - Your Otaku Sanctuary
