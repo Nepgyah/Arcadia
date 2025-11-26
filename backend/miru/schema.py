@@ -1,5 +1,6 @@
 from django.core.paginator import Paginator
 import graphene
+from graphene import ObjectType
 from graphene_django import DjangoObjectType
 from graphene.types.generic import GenericScalar
 from .models import (
@@ -49,6 +50,19 @@ class AnimeCharacterType(DjangoObjectType):
     def resolve_role(self, info):
         return self.get_role_display()
 
+class AnimeThemesType(ObjectType):
+    openings = GenericScalar()
+    endings = GenericScalar()
+
+    def resolve_openings(self, info):
+        openings = self.filter(theme_type=0)
+       
+        return [op.serialize() for op in openings.filter(theme_type=AnimeTheme.Type.OP)]
+    
+    def resolve_endings(self, info):
+        endings = self.filter(theme_type=1)
+        return [ed.serialize() for ed in endings.filter(theme_type=AnimeTheme.Type.ED)]
+    
 class AnimeType(DjangoObjectType):
     status = graphene.String()
     type = graphene.String()
@@ -130,7 +144,8 @@ class Query(graphene.ObjectType):
     top_anime_by_category = graphene.List(AnimeType, count=graphene.Int(required=False), category=graphene.String(required=True))
     characters_by_anime = graphene.List(AnimeCharacterType, id=graphene.Int(required=True))
     franchise_by_anime = graphene.Field(FranchiseType, id=graphene.Int(required=True))
-    search_anime = graphene.Field(AnimeFilterResults, filters=AnimeFilterInput(), sort=AnimeSortInput(), page=graphene.Int(default_value=1), per_page=graphene.Int(default_value=10))
+    songs_by_anime = graphene.Field(AnimeThemesType, id=graphene.Int(required=True))
+    search_anime = graphene.Field(AnimeThemesType, filters=AnimeFilterInput(), sort=AnimeSortInput(), page=graphene.Int(default_value=1), per_page=graphene.Int(default_value=10))
 
     def resolve_anime_by_id(self, info, id):
         return Anime.objects.get(id=id)
@@ -155,6 +170,14 @@ class Query(graphene.ObjectType):
         
         return franchise
     
+    def resolve_songs_by_anime(self, info, id):
+        anime = Anime.objects.get(id=id)
+        themes = AnimeTheme.objects.filter(anime=anime)
+        if not themes.exists:
+            return {}
+        else:
+            return themes
+        
     def resolve_search_anime(self, info, filters=None, sort=None, page=1, per_page=10):
         queryset = Anime.objects.only('id', 'title', 'score', 'users', 'status', 'summary', 'slug', 'franchise').select_related('franchise')
 
