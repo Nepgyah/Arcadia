@@ -171,7 +171,7 @@ function OverviewFlow({animePromise} : {animePromise: Promise<Anime>}) {
                 anime.nextAnime ?
                     <MediaFlowCard 
                         image={`/storage/miru/${anime.nextAnime.toAnime.id}.jpg`}
-                        relation="Prequel"
+                        relation="Sequel"
                         mediaName={anime ? anime.nextAnime.toAnime.title : 'Loading'}
                         mediaLink={`/miru/anime/${anime.nextAnime.toAnime.id}/${anime.nextAnime.toAnime.slug}`}              
                     />
@@ -181,6 +181,7 @@ function OverviewFlow({animePromise} : {animePromise: Promise<Anime>}) {
         </>
     )
 }
+
 function Openings(
     {
         songsPromise
