@@ -1,3 +1,4 @@
+import { Skeleton } from "@mui/material";
 import Link from "next/link";
 
 type mediaType = 'song' | 'album' | 'artist';
@@ -35,5 +36,17 @@ export default function KikuCard(
                 }
             </div>
         </div>
+    )
+}
+
+export function KikuCardSkeleton() {
+    return (
+        <>
+        {
+            Array.from({ length: 3}).map((_, idx) => (
+                <Skeleton key={idx} animation={'wave'} height={'140px'} width={'100%'} />
+            ))
+        }
+        </>
     )
 }

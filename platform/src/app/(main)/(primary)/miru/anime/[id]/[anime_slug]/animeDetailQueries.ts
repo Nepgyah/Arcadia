@@ -1,5 +1,5 @@
 import { Franchise } from "@/types/franchise";
-import { Anime } from "@/types/miru";
+import { Anime, AnimeTheme } from "@/types/miru";
 import { Character } from "@/types/shared";
 import { GraphQL } from "@/util/api/api";
 
@@ -97,13 +97,40 @@ export async function getFranchiseByAnime(id: string) {
     const query = `
         query {
             franchiseByAnime(id: ${id}) {
-            id,
-            name,
-            socials
-        }     
-    }
+                id,
+                name,
+                socials
+            },
+            songsByAnime(id : ${id}) {
+                openings,
+                endings
+            }     
+        }
     `
 
     const res = await GraphQL<FranchiseByAnimeQuery>(query);
     return res.data.franchiseByAnime
+}
+
+interface SongsByAnime {
+    data: {
+        songsByAnime: {
+            openings: AnimeTheme[],
+            endings: AnimeTheme[]
+        }
+    }
+}
+
+export async function getSongsByAnime(id: string) {
+    const query = `
+        query {
+            songsByAnime(id : ${id}) {
+                openings,
+                endings
+            }     
+        }
+    `
+
+    const res = await GraphQL<SongsByAnime>(query);
+    return res.data.songsByAnime
 }

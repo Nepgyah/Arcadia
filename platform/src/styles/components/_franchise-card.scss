@@ -1,0 +1,24 @@
+.franchise-card {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    
+    img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__mask {
+        height: 100%;
+        width: 100%;
+        background: linear-gradient(to bottom, rgba(#000, 0), rgba(#000, 1));
+        position: absolute;
+        top: 0;
+    }
+    &__name {
+        position: absolute;
+        bottom: 12px;
+        right: 12px;
+    }
+}

@@ -1,7 +1,7 @@
 export const revalidate = 3600;
 
 import React, { Suspense, use } from "react";
-import { getAnime, getCharactersByAnime, getFranchiseByAnime } from './animeDetailQueries'
+import { getAnime, getCharactersByAnime, getFranchiseByAnime, getSongsByAnime } from './animeDetailQueries'
 import { Skeleton } from "@mui/material";
 
 import InfoItem from "@/components/infoItem";
@@ -27,6 +27,7 @@ export default async function AnimeDetails(
     const animePromise = getAnime(id);
     const characterPromise = getCharactersByAnime(id);
     const franchisePromise = getFranchiseByAnime(id);
+    const songsPromise = getSongsByAnime(id)
 
     return (
         <React.Fragment>
@@ -69,6 +70,7 @@ export default async function AnimeDetails(
                                     animePromise={animePromise} 
                                     characterPromise={characterPromise} 
                                     franchisePromise={franchisePromise}
+                                    songsPromise={songsPromise}
                                 />
                             </Suspense>
                             <Suspense fallback={ <MediaCharacterListSkeleton /> }>
