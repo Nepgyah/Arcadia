@@ -3,7 +3,7 @@
 | ---------- | ------- |
 | Website    | 1.0     |
 | Account    | 1.1     |
-| Miru       | 0.3     |
+| Miru       | 0.3.1   |
 | Yomu       | 0.2     |
 | Asobu      | 0.1     |
 | Tsunagu    | 0.1     |
@@ -13,6 +13,49 @@
 | Kumitateru | 0.1     |
 | Hiku       |         |
 | Shiru      |         |
+
+## Alpha v2.0 - 11/23/2025
+- **Overview**
+	- Improve detail pages of Miru, Yomu and Asobu
+	- Improve reusability of platform components
+	- Introduce **zustand** library
+
+- **Apps**
+	- **Miru v0.3**
+		- **API**
+			- Add anime themes field
+			- Improv miru graphql queries
+		- **Platform**
+			- Convert pages to utilize graphql and SSR
+			- Add tab content on detail page
+			- Various UI improvements on miru lists
+	
+	- **Miru v0.3.1**
+		- **API**
+			- Added graphql queries
+		- **Platform**
+			- Improve ux on loading
+			- Improve ssr/csr implementation and loading optimization
+
+	- **Tsunagu v0.2**
+		- **API**
+			- Add graphql queries
+		- **Platform**
+			- Convert pages to SSR
+			- Various UI improvements
+		
+	- **Yomu v0.3**
+		- **API** 
+			- Add graphql queries
+		- **Platform**
+			- Convert pages to SSR
+			- Various UI improvements
+		
+- **Account v1.1**
+	- **Platform**
+		- Add template for profile page
+		- Creat global state for user
+		- Fix account pages (login/forgot/login/reset)
 
 ## Alpha v2.0 - Nov 23 2025
 - **Overview**
