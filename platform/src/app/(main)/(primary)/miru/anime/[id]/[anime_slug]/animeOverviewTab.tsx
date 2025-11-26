@@ -8,7 +8,7 @@ import { Chip, Skeleton } from "@mui/material";
 
 import ArcTab from "@/components/arcTab";
 import CharacterTab from "@/components/characterTab";
-import KikuCard from "@/app/(main)/(secondary)/kiku/kikuCard";
+import KikuCard, { KikuCardSkeleton } from "@/app/(main)/(secondary)/kiku/kikuCard";
 import ArcHeader from "@/components/arcHeader";
 import CharacterCard from "@/components/characterCard";
 import MediaFlowCard from "@/components/mediaFlowCard";
@@ -24,11 +24,17 @@ export default function AnimeOverviewTab(
     {
         animePromise,
         characterPromise,
-        franchisePromise
+        franchisePromise,
+        songsPromise
     } : {
         animePromise: Promise<Anime>,
         characterPromise: Promise<Character[]>,
-        franchisePromise: Promise<Franchise>
+        franchisePromise: Promise<Franchise>,
+        songsPromise: Promise<
+        {
+            openings: AnimeTheme[],
+            endings: AnimeTheme[]
+        }>
     }
 ) {
 
@@ -55,28 +61,14 @@ export default function AnimeOverviewTab(
             <div id="anime-flow">
                 <ArcHeader title="Anime Flow" />
                 <div className="grid grid--2-col">
-                    {/* {
-                        anime.previousAnime ?
-                            <MediaFlowCard 
-                                image={`/storage/miru/${anime.previousAnime.fromAnime.id}.jpg`}
-                                relation="Prequel"
-                                mediaName={anime ? anime.previousAnime.fromAnime.title : 'Loading'}
-                                mediaLink={`/miru/anime/${anime.previousAnime.fromAnime.id}/${anime?.previousAnime.fromAnime.slug}`}              
-                            />
-                        :
-                            <p>No Prequel Anime</p>
-                    }
-                    {
-                        anime.nextAnime ?
-                            <MediaFlowCard 
-                                image={`/storage/miru/${anime.nextAnime.toAnime.id}.jpg`}
-                                relation="Prequel"
-                                mediaName={anime ? anime.nextAnime.toAnime.title : 'Loading'}
-                                mediaLink={`/miru/anime/${anime.nextAnime.toAnime.id}/${anime.nextAnime.toAnime.slug}`}              
-                            />
-                        :
-                            <p>No Sequel Anime</p>
-                    } */}
+                    <Suspense fallback={
+                        <>
+                            <Skeleton animation={'wave'} height={'200px'} width={'100%'}/>
+                            <Skeleton animation={'wave'} height={'200px'} width={'100%'}/>
+                        </>
+                    }>
+                        <OverviewFlow animePromise={animePromise} />
+                    </Suspense>
                 </div>
             </div>
             <div id="characters">
@@ -86,48 +78,20 @@ export default function AnimeOverviewTab(
                 </Suspense>
             </div>
             <div id="themes">
-                {/* <div className="grid grid--2-col">
+                <div className="grid grid--2-col">
                     <div>
                         <ArcHeader title="Openings" />
-                        <div className="flex-row flex-row--gap-sm row-divider">
-                            {
-                                anime.themes.opening.length ?
-                                    anime.themes.opening.map((op: AnimeTheme, idx: number) => (
-                                    <KikuCard 
-                                        key={idx}
-                                        title={op.title}
-                                        subTitle={`Eps ${op.startingEpisode} - ${op.endingEpisode}`}
-                                        id={op.id}
-                                        number={idx + 1}
-                                        mainLink={`/kiku/album/${op.id}`}
-                                        type="album"                                                />
-                                ))
-                                :
-                                    <p>No Opening Themes Found</p>
-                            }
-                        </div>
+                        <Suspense fallback={ <KikuCardSkeleton />}>
+                            <Openings songsPromise={songsPromise} />
+                        </Suspense>
                     </div>
                     <div>
                         <ArcHeader title="Endings" />
-                        <div className="flex-row flex-row--gap-sm row-divider">
-                            {
-                                anime.themes.ending.length ?
-                                    anime.themes.ending.map((ed: AnimeTheme, idx: number) => (
-                                        <KikuCard 
-                                            key={idx}
-                                            title={ed.title}
-                                            subTitle={`Eps ${ed.startingEpisode} - ${ed.endingEpisode}`}
-                                            id={ed.id}
-                                            number={idx + 1}
-                                            mainLink={`/kiku/album/${ed.id}`}
-                                            type="album"                                              />
-                                    ))
-                                :
-                                    <p>No Ending Themes Found</p>
-                            }
-                        </div>
+                        <Suspense fallback={ <KikuCardSkeleton />}>
+                            <Endings songsPromise={songsPromise} />
+                        </Suspense>
                     </div>
-                </div> */}
+                </div>
             </div>
         </div>
     )
@@ -185,5 +149,94 @@ function OverviewGenres(
                 <p>No genres added</p>
         }
         </>
+    )
+}
+
+function OverviewFlow({animePromise} : {animePromise: Promise<Anime>}) {
+    const anime = use(animePromise)
+    return (
+        <>
+            {
+                anime.previousAnime ?
+                    <MediaFlowCard 
+                        image={`/storage/miru/${anime.previousAnime.fromAnime.id}.jpg`}
+                        relation="Prequel"
+                        mediaName={anime ? anime.previousAnime.fromAnime.title : 'Loading'}
+                        mediaLink={`/miru/anime/${anime.previousAnime.fromAnime.id}/${anime?.previousAnime.fromAnime.slug}`}              
+                    />
+                :
+                    <p>No Prequel Anime</p>
+            }
+            {
+                anime.nextAnime ?
+                    <MediaFlowCard 
+                        image={`/storage/miru/${anime.nextAnime.toAnime.id}.jpg`}
+                        relation="Prequel"
+                        mediaName={anime ? anime.nextAnime.toAnime.title : 'Loading'}
+                        mediaLink={`/miru/anime/${anime.nextAnime.toAnime.id}/${anime.nextAnime.toAnime.slug}`}              
+                    />
+                :
+                    <p>No Sequel Anime</p>
+            }
+        </>
+    )
+}
+function Openings(
+    {
+        songsPromise
+    } : {
+        songsPromise: Promise<{openings: AnimeTheme[]}>
+    }
+) {
+    const openings = use(songsPromise).openings
+
+    return (
+        <div className="flex-row flex-row--gap-sm row-divider">
+            {
+                openings.length !== 0 ?
+                    openings.map((op: AnimeTheme, idx: number) => (
+                    <KikuCard 
+                        key={idx}
+                        title={op.title}
+                        subTitle={`Eps ${op.startingEpisode} - ${op.endingEpisode}`}
+                        id={op.id}
+                        number={idx + 1}
+                        mainLink={`/kiku/album/${op.id}`}
+                        type="album"                                                />
+                ))
+                :
+                    <p>No Opening Themes Found</p>
+            }
+        </div>
+    )
+}
+
+function Endings(
+    {
+        songsPromise
+    } : {
+        songsPromise: Promise<{endings: AnimeTheme[]}>
+    }
+) {
+    const endings = use(songsPromise).endings
+    
+    return (
+        <div className="flex-row flex-row--gap-sm row-divider">
+            {
+                endings.length !== 0 ?
+                    endings.map((op: AnimeTheme, idx: number) => (
+                    <KikuCard 
+                        key={idx}
+                        title={op.title}
+                        subTitle={`Eps ${op.startingEpisode} - ${op.endingEpisode}`}
+                        id={op.id}
+                        number={idx + 1}
+                        mainLink={`/kiku/album/${op.id}`}
+                        type="album"                                                />
+                ))
+                :
+                    <p>No Ending Themes Found</p>
+            }
+        </div>
     )
 }
