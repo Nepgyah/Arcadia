@@ -1,12 +1,8 @@
-'use client';
+export const revalidate = 3600;
 
 import { useParams } from "next/navigation";
 
-import React from "react";
-import { useEffect, useState } from "react";
-import { Breadcrumbs, Typography } from "@mui/material";
-import { GraphQL } from "@/util/api/api";
-
+import React, { Suspense, use } from "react";
 import InfoItem from "@/components/infoItem";
 import WIP from "@/components/wip";
 import MediaFeatureCard from "@/components/mediaFeatureCard";
@@ -17,95 +13,33 @@ import SocialMediaCard from "@/components/socialMediaCard";
 
 import { Anime } from "@/types/miru";
 import '@/styles/layout/_media-detail.scss';
+import { fetchFranchiseByGame, fetchGameCharacters, fetchGameDetails } from "./gameDetailsQueries";
+import { Game } from "@/types/asobu";
+import BreadcrumbSetter from "@/components/breadcrumb/setBreadcrumbs";
+import { Skeleton } from "@mui/material";
+import FranchiseSocials from "@/components/media/franchiseSocials";
 
-export default function GameDetail() {
-    const params = useParams();
-    const [game, setGame] = useState<any>()
-
-    useEffect(() => {
-        const query = 
-        `
-           query {
-            gameById(id: ${params.id}) {
-                id,
-                slug,
-                summary,
-                title,
-                score,
-                status,
-                esrbRating,
-                pegiRating,
-                previousGame {
-                    fromGame {
-                        id,
-                        title,
-                        slug
-                    }
-                },
-                nextGame {
-                    toGame {
-                        id,
-                        title,
-                        slug
-                    }
-                },
-                characters {
-                    character {
-                        id,
-                        firstName,
-                        lastName,
-                        playedBy {
-                            id,
-                            firstName,
-                            lastName
-                        }
-                    }
-                },
-                developers {
-                    name
-                },
-                publishers {
-                    name
-                },
-                hasCampaignMode,
-                hasPvpMode,
-                hasPveMode,
-                isOnConsole,
-                isOnPc,
-                releaseDate,
-                franchise {
-                    id,
-                    name,
-                    socials
-                }
-            }
-        }
-        `
-        GraphQL<any>(query)
-        .then((res) => {
-            setGame(res.data.gameById)
-        })
-    }, [])
+export default async function GameDetail(
+    props: {
+        params: Promise<{ id: string, game_slug: string}>
+    }
+) {
+    const { id } = await props.params
+    const gamePromise = fetchGameDetails(id);
+    const characterPromise = fetchGameCharacters(id);
+    const franchisePromise = fetchFranchiseByGame(id);
 
     return (
         <React.Fragment>
-            <Breadcrumbs>
-                <Typography>Game</Typography>
-                <Typography>{game?.title}</Typography>
-            </Breadcrumbs>
+            <Suspense>
+                <GameDetailBreadcrumbs gamePromise={gamePromise} />
+            </Suspense>
             <div id="page-media-detail" className="page-content">
-                <div className="grid grid--feature-combo">
-                    <MediaFeatureCard
-                        title={game ? game.title : 'Game Name'}
-                        description={game ? game.summary : 'Summary'}
-                        score={game ? game.score : 0.0}
-                        app="asobu"
-                        image={`/storage/asobu/${game?.id}.jpg`}
-                     />
-                    <div id="latest-episode" className="border-radius-md bg-platform-dark box-shadow p-a-lg">
-                        <WIP />
-                    </div>
-                </div>
+                <Suspense fallback={
+                    <Skeleton variant="rectangular" height={'350px'} width={'100%'}/>
+                }>
+                    <GameHero gamePromise={gamePromise}/>
+                </Suspense>
                 <div className="grid grid--side-col-reverse">
                     <div className="flex-row flex-row--gap-md">
                         <div id="quick-access">
@@ -116,52 +50,23 @@ export default function GameDetail() {
                         </div>
                         <div id="socials">
                             <ArcHeader title="Socials" />
-                            <div id="socials-container" className="flex-row flex-row--gap-sm">
-                                {
-                                    game?.franchise.socials?.website &&
-                                    <SocialMediaCard 
-                                        type="website"
-                                        social={game?.franchise.socials.website}
-                                    />
-                                }
-                                {
-                                    game?.franchise.socials?.youtube &&
-                                    <SocialMediaCard 
-                                        type="youtube"
-                                        social={game?.franchise.socials.youtube}
-                                    />
-                                }
-                                {
-                                    game?.franchise.socials?.reddit &&
-                                    <SocialMediaCard 
-                                        type="reddit"
-                                        social={game?.franchise.socials.reddit}
-                                    />
-                                }
-                                {
-                                    game?.franchise.socials?.twitter &&
-                                    <SocialMediaCard 
-                                        type="twitter"
-                                        social={game?.franchise.socials.twitter}
-                                    />
-                                }
-                            </div>
+                            <Suspense fallback={ <Skeleton animation={`wave`} height={'200px'} width={'100%'}/>}>
+                                <FranchiseSocials franchisePromise={franchisePromise} />
+                            </Suspense>
                         </div>
                         <div id="misc">
                             <ArcHeader title="Misc" />
-                            <div className="flex-row flex-row--gap-sm">
-                                <InfoItem label="Status" value={game?.status} />
-                                <InfoItem label="Release Date" value={game?.releaseDate} />
-                                <InfoItem label="ESRB Rating" value={game?.esrbRating} />
-                                <InfoItem label="PEGI Rating" value={game?.pegiRating} />
-                                <InfoItem label="Campaign Mode" value={game?.hasCampaignMode ? 'Yes' : 'No'} />
-                                <InfoItem label="PVP Mode" value={game?.hasPvpMode ? 'Yes' : 'No'} />
-                                <InfoItem label="PVE Mode" value={game?.hasPveMode ? 'Yes' : 'No'} />
-                            </div>
+                            <Suspense fallback={
+                                Array.from({ length: 5}).map((_, i) => (
+                                    <Skeleton animation={'wave'} key={i} variant="rectangular" height={'46px'} width={'100%'} />
+                                ))
+                            }>
+                                <GameMisc gamePromise={gamePromise} />
+                            </Suspense>
                         </div>
                     </div>
                     <div className="flex-row flex-row--gap-md">
-                        <div id="characters">
+                        {/* <div id="characters">
                             <ArcHeader title="Characters" />
                             <div id="characters-container" className="flex-col flex-col--gap-sm">
                                 {
@@ -217,10 +122,50 @@ export default function GameDetail() {
                                     <WIP />
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
         </React.Fragment>
+    )
+}
+
+function GameHero({gamePromise}:{gamePromise: Promise<Game>}) {
+    const game = use(gamePromise)
+
+    return (
+        <div className="grid grid--feature-combo">
+            <MediaFeatureCard
+                title={game.title}
+                description={game.summary}
+                score={game.score}
+                app="asobu"
+                image={`/storage/asobu/${game.id}.jpg`}
+                />
+            <div id="latest-episode" className="border-radius-md bg-platform-dark box-shadow p-a-lg">
+                <WIP />
+            </div>
+        </div>
+    )
+}
+
+function GameDetailBreadcrumbs({gamePromise}:{gamePromise: Promise<Game>}) {
+    const game = use(gamePromise);
+    return <BreadcrumbSetter breadcrumbs={['Asobu', `${game.title}`]} />
+}
+
+function GameMisc({gamePromise}:{gamePromise: Promise<any>}) {
+    const game = use(gamePromise);
+
+    return (
+        <div className="flex-row flex-row--gap-sm">
+            <InfoItem label="Status" value={game.status} />
+            <InfoItem label="Release Date" value={game.releaseDate} />
+            <InfoItem label="ESRB Rating" value={game.esrbRating} />
+            <InfoItem label="PEGI Rating" value={game.pegiRating} />
+            <InfoItem label="Campaign Mode" value={game.hasCampaignMode ? 'Yes' : 'No'} />
+            <InfoItem label="PVP Mode" value={game.hasPvpMode ? 'Yes' : 'No'} />
+            <InfoItem label="PVE Mode" value={game.hasPveMode ? 'Yes' : 'No'} />
+        </div>
     )
 }

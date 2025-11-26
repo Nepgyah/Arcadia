@@ -76,6 +76,7 @@ class GameRelationType(DjangoObjectType):
 class Query(graphene.ObjectType):
     game_by_id = graphene.Field(GameType, id=graphene.Int(required=True))
     characters_by_game = graphene.List(GameCharacterType, id=graphene.Int(required=True))
+    franchise_by_game = graphene.Field(FranchiseType, id=graphene.Int(required=True))
 
     def resolve_game_by_id(self, info, id):
         return asobu.models.Game.objects.get(id=id)
@@ -85,4 +86,13 @@ class Query(graphene.ObjectType):
         characters = asobu.models.GameCharacter.objects.filter(game=game)
         return characters
 
+    def resolve_franchise_by_game(self, info, id):
+        game = asobu.models.Game.objects.get(id=id)
+
+        try:
+            franchise = Franchise.objects.get(id=game.franchise.id)
+        except Franchise.DoesNotExist:
+            return {}
+        
+        return franchise
         
