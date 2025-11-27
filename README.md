@@ -2,7 +2,8 @@
 - **Overview**
 	- Finalize initial version of anime detail page
 	- Added more graphql queries to cover Miru, Asobu, Yomu apps
-
+    - Improve peformance of several pages with ssr suspense
+    
 - **Apps**
 	- **Miru v0.3.2**
         - **API**
@@ -16,6 +17,8 @@
             - Convert pages to utilize SSR w/ suspense
 
     - **Asobu v0.1.1**
+        - **Platform**
+            - Convert pages to utilize SSR w/ suspense
 
 ## Name
 Arcadia - Your Otaku Sanctuary
