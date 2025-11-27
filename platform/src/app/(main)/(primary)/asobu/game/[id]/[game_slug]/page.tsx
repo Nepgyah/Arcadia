@@ -18,6 +18,9 @@ import { Game } from "@/types/asobu";
 import BreadcrumbSetter from "@/components/breadcrumb/setBreadcrumbs";
 import { Skeleton } from "@mui/material";
 import FranchiseSocials from "@/components/media/franchiseSocials";
+import MediaCharacterList, { MediaCharacterListSkeleton } from "@/components/media/characterList";
+import GameTabWrapper from "./gameTabWrapper";
+import { GameOverviewTab } from "./gameOverviewTab";
 
 export default async function GameDetail(
     props: {
@@ -66,24 +69,7 @@ export default async function GameDetail(
                         </div>
                     </div>
                     <div className="flex-row flex-row--gap-md">
-                        {/* <div id="characters">
-                            <ArcHeader title="Characters" />
-                            <div id="characters-container" className="flex-col flex-col--gap-sm">
-                                {
-                                    game?.characters.map((character: any, idx: number) => (
-                                        <CharacterCard 
-                                            key={idx}
-                                            characterId={character.character.id}
-                                            characterName={`${character.character.firstName} ${character.character.lastName ? character.character.lastName : ''}`}
-                                            characterDescription={character.role}
-                                            voiceActorId={character.character.playedBy?.id}
-                                            voiceActorName={character.character.playedBy ? `${character.character.playedBy.firstName} ${character.character.playedBy.lastName ? character.character.playedBy.lastName : ''}` : 'Unknown'}
-                                            voiceActorDescription='Japanese'
-                                        />
-                                    ))
-                                }
-                            </div>
-                        </div>
+                        {/*
                         <div id="game-flow">
                             <ArcHeader title="Game Flow" />
                             <div className="grid grid--2-col">
@@ -123,6 +109,34 @@ export default async function GameDetail(
                                 </div>
                             </div>
                         </div> */}
+                        <GameTabWrapper>
+                            <Suspense>
+                                <GameOverviewTab gamePromise={gamePromise} characterPromise={characterPromise} franchisePromise={franchisePromise}/>
+                            </Suspense>
+                            <Suspense fallback={ <MediaCharacterListSkeleton /> }>
+                                <MediaCharacterList characterPromise={characterPromise} />
+                            </Suspense>
+                            <div>
+                                <ArcHeader title="Synopsis" />
+                                <GameSummary gamePromise={gamePromise} />
+                            </div>
+                            <div>
+                                <ArcHeader title="Score Breakdown" />
+                                <WIP />
+                            </div>
+                            <div>
+                                <div className="flex-row flex-row--gap-md">
+                                    <div id="top-reviews">
+                                        <ArcHeader title="Top Reviews" />
+                                        <WIP />
+                                    </div>
+                                    <div id="latest-reviews">
+                                        <ArcHeader title="Latest Reviews" />
+                                        <WIP />
+                                    </div>
+                                </div>
+                            </div>
+                        </GameTabWrapper>
                     </div>
                 </div>
             </div>
@@ -152,6 +166,14 @@ function GameHero({gamePromise}:{gamePromise: Promise<Game>}) {
 function GameDetailBreadcrumbs({gamePromise}:{gamePromise: Promise<Game>}) {
     const game = use(gamePromise);
     return <BreadcrumbSetter breadcrumbs={['Asobu', `${game.title}`]} />
+}
+
+function GameSummary({gamePromise}:{gamePromise: Promise<Game>}) {
+    const game = use(gamePromise);
+
+    return (
+        <p>{game.summary}</p>
+    )
 }
 
 function GameMisc({gamePromise}:{gamePromise: Promise<any>}) {

@@ -58,6 +58,12 @@ export default function AnimeOverviewTab(
                     <FranchiseCard  franchisePromise={franchisePromise}/>
                 </div>
             </div>
+            <div id="characters">
+                <ArcHeader title="Characters" />
+                <Suspense fallback={ <MediaCharacterListSkeleton />}>
+                    <OverviewCharacters characterPromise={characterPromise} />
+                </Suspense>
+            </div>
             <div id="anime-flow">
                 <ArcHeader title="Anime Flow" />
                 <div className="grid grid--2-col">
@@ -70,12 +76,6 @@ export default function AnimeOverviewTab(
                         <OverviewFlow animePromise={animePromise} />
                     </Suspense>
                 </div>
-            </div>
-            <div id="characters">
-                <ArcHeader title="Characters" />
-                <Suspense fallback={ <MediaCharacterListSkeleton />}>
-                    <OverviewCharacters characterPromise={characterPromise} />
-                </Suspense>
             </div>
             <div id="themes">
                 <div className="grid grid--2-col">

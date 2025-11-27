@@ -21,6 +21,10 @@ export async function fetchGameDetails(id: string) {
                 status,
                 esrbRating,
                 pegiRating,
+                genres {
+                    id,
+                    name
+                },
                 previousGame {
                     fromGame {
                         id,
@@ -85,9 +89,15 @@ export async function fetchGameCharacters(id: string) {
             id
             role,
             isPlayable
-                character {
+            character {
+                id,
                 firstName,
-                lastName
+                lastName,
+                playedBy {
+                    id,
+                    firstName,
+                    lastName
+                }
             }
         }
     }

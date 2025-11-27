@@ -3,6 +3,12 @@
 
 #asobu-layout {
 
+    .arc-tab {
+        &__icon {
+            background-color: map.get($colors, asobu-base);
+        }
+    }
+
     .arc-header {
         border-bottom-color: map.get($colors, asobu-base);
         .box {
