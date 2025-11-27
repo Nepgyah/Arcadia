@@ -48,7 +48,7 @@ export function GameOverviewTab(
                 </Suspense>
             </div>
             <div id="game-flow">
-                <ArcHeader title="Anime Flow" />
+                <ArcHeader title="Game Flow" />
                 <div className="grid grid--2-col">
                     <Suspense fallback={
                         <>
@@ -104,6 +104,7 @@ function Characters(
     return (
         <div id="characters-container" className="flex-col flex-col--gap-sm">
             {
+                characters.length !== 0 ?
                 characters.slice(0,6).map((character: any, idx: number) => (
                     <CharacterCard 
                         key={idx}
@@ -115,6 +116,8 @@ function Characters(
                         voiceActorDescription='Japanese'
                     />
                 ))
+                :
+                    <p>No Characters Found</p>
             }
         </div>
     )
