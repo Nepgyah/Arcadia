@@ -9,7 +9,7 @@
 | Tsunagu    | 0.1     |
 | Kau        |         |
 | Iku        |         |
-| Kiku       | 0.1     |
+| Kiku       | 0.1.1   |
 | Kumitateru | 0.1     |
 | Hiku       |         |
 | Shiru      |         |
