@@ -69,46 +69,6 @@ export default async function GameDetail(
                         </div>
                     </div>
                     <div className="flex-row flex-row--gap-md">
-                        {/*
-                        <div id="game-flow">
-                            <ArcHeader title="Game Flow" />
-                            <div className="grid grid--2-col">
-                                {
-                                    game?.previousGame ?
-                                        <MediaFlowCard 
-                                            image={`/storage/asobu/${game?.previousGame.fromGame.id}.jpg`}
-                                            relation="Prequel"
-                                            mediaName={game ? game?.previousGame.fromGame.title : 'Loading'}
-                                            mediaLink={`/asobu/game/${game?.previousGame.fromGame.id}/${game?.previousGame.fromGame.slug}`}              
-                                        />
-                                    :
-                                        <p>No Previous Game</p>
-                                }
-                                {
-                                    game?.nextGame ?
-                                        <MediaFlowCard 
-                                            image={`/storage/asobu/${game?.nextGame.toGame.id}.jpg`}
-                                            relation="Sequel"
-                                            mediaName={game ? game?.nextGame.toGame.title : 'Loading'}
-                                            mediaLink={`/asobu/game/${game?.nextGame.toGame.id}/${game?.nextGame.toGame.slug}`}              
-                                        />
-                                    :
-                                        <p>No Previous Game</p>
-                                }
-                            </div>
-                        </div>
-                        <div id="themes">
-                            <div className="grid grid--2-col">
-                                <div>
-                                    <ArcHeader title="Openings" />
-                                    <WIP />
-                                </div>
-                                <div>
-                                    <ArcHeader title="Endings" />
-                                    <WIP />
-                                </div>
-                            </div>
-                        </div> */}
                         <GameTabWrapper>
                             <Suspense>
                                 <GameOverviewTab gamePromise={gamePromise} characterPromise={characterPromise} franchisePromise={franchisePromise}/>
