@@ -18,6 +18,7 @@ export interface Song {
 export interface Album {
     id: string,
     title: string,
+    type: string,
     artist: Artist,
     producer: any,
     releaseDate: string,

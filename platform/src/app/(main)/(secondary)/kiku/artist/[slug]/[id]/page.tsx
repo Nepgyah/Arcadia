@@ -7,6 +7,7 @@ import BreadcrumbSetter from "@/components/breadcrumb/setBreadcrumbs";
 import FranchiseSocials from "@/components/media/franchiseSocials";
 
 import { Album, Artist, Song } from "@/types/kiku";
+
 import '@/styles/pages/kiku/_artist-details.scss';
 
 export default async function ArtistDetails(
@@ -83,7 +84,7 @@ interface KikuHero extends Artist {
 }
 function Hero({artistPromise}:{artistPromise: Promise<KikuHero>}) {
     const artist = use(artistPromise);
-    
+
     return (
         <React.Fragment>
             <div id="artist-spotlight" className="box-shadow bg-platform-dark border-radius-md">
