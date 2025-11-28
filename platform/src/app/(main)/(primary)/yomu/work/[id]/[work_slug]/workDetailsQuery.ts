@@ -15,19 +15,7 @@ export async function fetchWork(id: string) {
                 id,
                 name
             },
-            franchise {
-                id,
-                name,
-                socials
-            },
             status,
-            characters {
-                character {
-                    id,
-                    firstName,
-                    lastName
-                }
-            },
             totalVolumes,
             totalChapters,
             type,
