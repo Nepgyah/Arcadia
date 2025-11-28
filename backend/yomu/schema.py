@@ -111,7 +111,7 @@ class Query(graphene.ObjectType):
     
     def resolve_franchise_by_work(self, info, id):
         work = yomu.models.Work.objects.get(id=id)
-        return shared.models.Franchise.objects.get(id=work.franchise)
+        return shared.models.Franchise.objects.get(id=work.franchise.id)
     
     def resolve_characters_by_work(self, info, id):
         work = yomu.models.Work.objects.get(id=id)

@@ -50,7 +50,7 @@ export default function WorkOverviewTab(
                 </div>
                 <div id="franchise">
                     <ArcHeader title="Franchise" />
-                    <FranchiseCard  franchisePromise={franchisePromise}/>
+                    <FranchiseCard franchisePromise={franchisePromise}/>
                 </div>
             </div>
             <div id="characters">

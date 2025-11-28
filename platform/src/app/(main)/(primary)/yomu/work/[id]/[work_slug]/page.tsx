@@ -95,9 +95,6 @@ export default async function WorkDetail(
                             </div>
                         </WorkTabWrapper>
                     </div>
-                    {/* <div>
-                        <WorkDetailTabContent work={work} />
-                    </div> */}
                 </div>
             </div>
         </React.Fragment>
