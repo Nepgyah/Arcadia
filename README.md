@@ -3,7 +3,8 @@
 	- Finalize initial version of anime detail page
 	- Added more graphql queries to cover Miru, Asobu, Yomu apps
     - Improve peformance of several pages with ssr suspense
-    
+    - Add login and create account feature
+
 - **Apps**
 	- **Miru v0.3.2**
         - **API**
@@ -20,6 +21,12 @@
         - **Platform**
             - Convert pages to utilize SSR w/ suspense
 
+- **Account v1.2**
+    - **API**
+        - Add create views to handle auth actions login and create account
+    - **Platform**
+        - Connect auth pages to api
+        
 ## Name
 Arcadia - Your Otaku Sanctuary
 
