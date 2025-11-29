@@ -41,10 +41,10 @@ export default function Login() {
             if (res.csrfToken) {
                 setToken(res.csrfToken);
             }
-        })
-        
-        .finally(() => {
             router.push('/');
+        })
+        .catch((error) => {
+            console.log(error)
         })
     }
     
