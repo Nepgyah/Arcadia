@@ -28,9 +28,18 @@ class AnimeRepository:
         return animes[:count]
     
     @staticmethod
-    def get_themes_by_anime(anime):
-        return AnimeTheme.objects.filter(anime=anime)
+    def get_themes_by_anime(id):
+        try:
+            anime = Anime.objects.get(id=id)
+            return AnimeTheme.objects.filter(anime=anime)
+        except Anime.DoesNotExist:
+            return None
     
     @staticmethod
-    def get_characters(anime):
-        return AnimeCharacter.objects.filter(anime=anime)
+    def get_characters(id):
+        try:
+            anime = Anime.objects.get(id=id)
+            return AnimeCharacter.objects.filter(anime=anime)
+        except Anime.DoesNotExist:
+            return None
+    

@@ -16,8 +16,7 @@ class AnimeService:
     
     @staticmethod
     def get_themes_by_anime(id):
-        anime = AnimeRepository.get_anime_by_id(id)
-        themes = AnimeRepository.get_themes_by_anime(anime)
+        themes = AnimeRepository.get_themes_by_anime(id)
         if not themes.exists:
             return {}
         else:
@@ -25,8 +24,7 @@ class AnimeService:
         
     @staticmethod
     def get_characters_by_anime(id):
-        anime = AnimeRepository.get_anime_by_id(id)
-        characters = AnimeRepository.get_characters(anime)
+        characters = AnimeRepository.get_characters(id)
         if not characters.exists:
             return []
         else:
