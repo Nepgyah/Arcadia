@@ -21,6 +21,9 @@ from shared.schema import (
     FranchiseType
 )
     
+from miru.services.anime_service import AnimeService
+from shared.services.franchise_service import FranchiseService
+
 class AnimeThemeType(DjangoObjectType):
 
     class Meta:
@@ -148,35 +151,19 @@ class Query(graphene.ObjectType):
     search_anime = graphene.Field(AnimeThemesType, filters=AnimeFilterInput(), sort=AnimeSortInput(), page=graphene.Int(default_value=1), per_page=graphene.Int(default_value=10))
 
     def resolve_anime_by_id(self, info, id):
-        return Anime.objects.get(id=id)
+        return AnimeService.get_anime_by_id(id)
     
     def resolve_top_anime_by_category(self, info, count, category):
-        if count:
-            return Anime.objects.order_by(f'-{category}')[:count]
-        else:
-            return Anime.objects.order_by(f'-{category}')[:5]
+        return AnimeService.get_top_animes_by_category(category, count)
         
     def resolve_characters_by_anime(self, info, id):
-        anime = Anime.objects.get(id=id)
-        return AnimeCharacter.objects.filter(anime=anime)
+        return AnimeService.get_characters_by_anime(id)
     
     def resolve_franchise_by_anime(self, info, id):
-        anime = Anime.objects.get(id=id)
-
-        try:
-            franchise = Franchise.objects.get(id=anime.franchise.id)
-        except Franchise.DoesNotExist:
-            return {}
-        
-        return franchise
+        return FranchiseService.get_franchise_via_anime(id)
     
     def resolve_songs_by_anime(self, info, id):
-        anime = Anime.objects.get(id=id)
-        themes = AnimeTheme.objects.filter(anime=anime)
-        if not themes.exists:
-            return {}
-        else:
-            return themes
+        return AnimeService.get_themes_by_anime(id)
         
     def resolve_search_anime(self, info, filters=None, sort=None, page=1, per_page=10):
         queryset = Anime.objects.only('id', 'title', 'score', 'users', 'status', 'summary', 'slug', 'franchise').select_related('franchise')

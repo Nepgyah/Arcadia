@@ -100,11 +100,7 @@ export async function getFranchiseByAnime(id: string) {
                 id,
                 name,
                 socials
-            },
-            songsByAnime(id : ${id}) {
-                openings,
-                endings
-            }     
+            }  
         }
     `
 
