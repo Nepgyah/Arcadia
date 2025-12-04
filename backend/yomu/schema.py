@@ -5,6 +5,8 @@ import yomu.models
 import characters.schema
 import shared.models
 import shared.schema
+from yomu.services.yomu_service import YomuSerivce
+from shared.services.franchise_service import FranchiseService
 
 class PublisherType(DjangoObjectType):
 
@@ -107,15 +109,13 @@ class Query(graphene.ObjectType):
     characters_by_work = graphene.List(WorkCharacterType, id=graphene.Int(required=True))
 
     def resolve_work_by_id(self, info, id):
-        return yomu.models.Work.objects.get(id=id)
+        return YomuSerivce.get_work_by_id(id)
     
     def resolve_franchise_by_work(self, info, id):
-        work = yomu.models.Work.objects.get(id=id)
-        return shared.models.Franchise.objects.get(id=work.franchise.id)
+        return FranchiseService.get_franchise_via_work(id)
     
     def resolve_characters_by_work(self, info, id):
-        work = yomu.models.Work.objects.get(id=id)
-        return yomu.models.WorkCharacter.objects.filter(work=work)
+        return YomuSerivce.get_characters_by_work(id)
     
     def resolve_search_work(self, info, filters=None, sort=None, page=1, per_page=10):
         queryset = yomu.models.Work.objects.only('id', 'title', 'score', 'users', 'status', 'summary', 'slug', 'franchise').select_related('franchise')

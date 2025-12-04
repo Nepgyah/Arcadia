@@ -89,6 +89,5 @@ export async function fetchFranchiseByWork(id: string) {
     `
 
     const res = await GraphQL<any>(query);
-    console.log(res.data)
     return res.data.franchiseByWork
 }
