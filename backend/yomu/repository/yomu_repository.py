@@ -19,3 +19,10 @@ class WorkRepository:
             return WorkCharacter.objects.filter(work=work)
         except Work.DoesNotExist:
             return None
+        
+    @staticmethod
+    def get_works_by_category(category, direction, count):
+        if direction == 'desc':
+            return Work.objects.order_by(f'-{category}')[:count]
+        else:
+            return Work.objects.order_by(category)[:count]

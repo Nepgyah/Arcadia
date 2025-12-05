@@ -104,12 +104,21 @@ class WorkSortInput(graphene.InputObjectType):
 
 class Query(graphene.ObjectType):
     work_by_id = graphene.Field(WorkType, id=graphene.Int(required=True))
+    works_by_category = graphene.List(
+        WorkType, 
+        category=graphene.String(required=True, default_value='-score'), 
+        count=graphene.Int(required=False, default_value=5),
+        direction=graphene.String(required=False, default_value='desc')
+    )
     search_work = graphene.Field(WorkFilterResults, filters=WorkFilterInput(), sort=WorkSortInput(), page=graphene.Int(default_value=1), per_page=graphene.Int(default_value=10))
     franchise_by_work = graphene.Field(shared.schema.FranchiseType, id=graphene.Int(required=True))
     characters_by_work = graphene.List(WorkCharacterType, id=graphene.Int(required=True))
 
     def resolve_work_by_id(self, info, id):
         return YomuSerivce.get_work_by_id(id)
+    
+    def resolve_works_by_category(self, info, category, direction, count):
+        return YomuSerivce.get_works_by_category(category, direction, count)
     
     def resolve_franchise_by_work(self, info, id):
         return FranchiseService.get_franchise_via_work(id)
