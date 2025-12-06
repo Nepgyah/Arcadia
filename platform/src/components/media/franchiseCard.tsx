@@ -10,7 +10,6 @@ export default function FranchiseCard(
     }
 ) {
     const franchise = use(franchisePromise);
-
     return (
         <>
         {

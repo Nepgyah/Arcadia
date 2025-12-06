@@ -44,7 +44,6 @@ export default async function MiruHome() {
                         <WIP />
                     </div>
                 </div>
-
             </div>
         </React.Fragment>
     )
