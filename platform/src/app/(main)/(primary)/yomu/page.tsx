@@ -9,7 +9,7 @@ import TopWorkCards from "./topWork";
 
 import { Work } from "@/types/yomu";
 
-export default function YomuHome() {
+export default async function YomuHome() {
     const topWorkPromise: Promise<Work[]> = fetchTopWork()
     const popularWorkPromise: Promise<Work[]> = fetchPopularWork()
 
@@ -18,7 +18,7 @@ export default function YomuHome() {
             <Suspense fallback={null}>
                 <BreadcrumbSetter breadcrumbs={['Miru', 'Home']} />
             </Suspense>
-            <div id="page-miru-home">
+            <div id="page-yomu-home">
                 <div className="grid grid--side-col">
                     <div className="flex-row flex-row--gap-md">
                         <div id="all-time">
