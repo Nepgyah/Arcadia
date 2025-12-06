@@ -1,3 +1,4 @@
+import json
 from django.views.decorators.csrf import ensure_csrf_cookie
 from django.views.decorators.http import require_POST, require_GET
 from django.http import JsonResponse
@@ -9,7 +10,14 @@ from rest_framework.exceptions import NotFound
 from rest_framework.response import Response
 
 from accounts.models import User
-from accounts.serializers import UserSerializer
+from accounts.serializers import UserSerializer, CreateUserSerializer
+
+from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+load_dotenv(Path(__file__).resolve().parent.parent / ".env.prod")
+ARC_KEY = os.getenv("ARC_KEY")
 
 @ensure_csrf_cookie
 def csrf(request):
@@ -23,7 +31,7 @@ class LoginView(APIView):
     def post(self, request):
         email = request.data.get('email')
         password = request.data.get('password')
-        user_obj = authenticate(request, email=email, password=password )
+        user_obj = authenticate(request, email=email, password=password)
         
         if user_obj:
             user_data = UserSerializer(user_obj, many=False).data
@@ -66,6 +74,29 @@ class GetAccountView(APIView):
 
         return Response({'user': user_data})
 
+@require_POST
+def CreateUser(request):
+
+    data = json.loads(request.body.decode('utf-8')) 
+    formData = data.get('form')
+    serializer = CreateUserSerializer(data=formData)
+    
+    if serializer.is_valid():
+        if formData['arc_key'] == ARC_KEY:
+            user = serializer.save()
+            login(request, user)
+            return JsonResponse({
+                'user':UserSerializer(user, many=False).data,
+                'csrfToken': request.META.get("CSRF_COOKIE")
+            }, status=200)
+        else:
+            return JsonResponse({}, status=400)
+    else:
+        return JsonResponse({
+            'errors': serializer.errors
+        }, status=400)
+
+# MISC
 @require_POST
 def testPost(request):
     print('ok')
