@@ -1,5 +1,4 @@
 import EntryCard from "@/components/entryCard";
-import { Anime } from "@/types/miru";
 import { Work } from "@/types/yomu";
 
 export default async function TopWorkCards(

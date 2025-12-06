@@ -1,12 +1,12 @@
+import React, { Suspense } from "react";
+import { GraphQL } from "@/util/api/api";
+import { Skeleton } from "@mui/material";
 
 import ArcHeader from "@/components/arcHeader";
 import BreadcrumbSetter from "@/components/breadcrumb/setBreadcrumbs";
-import EntryCard from "@/components/entryCard";
 import WIP from "@/components/wip";
-import { apiGET, GraphQL } from "@/util/api/api";
-import { Breadcrumbs, Skeleton, Typography } from "@mui/material";
-import React, { Suspense, useEffect, useState } from "react";
 import TopWorkCards from "./topWork";
+
 import { Work } from "@/types/yomu";
 
 export default function YomuHome() {
