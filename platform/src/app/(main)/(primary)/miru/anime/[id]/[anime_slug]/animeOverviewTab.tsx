@@ -2,18 +2,13 @@ import { Anime, AnimeTheme } from "@/types/miru";
 import { Character } from "@/types/shared";
 
 import React, { Suspense, use } from "react";
-import { useState } from "react";
 
-import { Chip, Skeleton } from "@mui/material";
+import { Skeleton } from "@mui/material";
 
-import ArcTab from "@/components/arcTab";
-import CharacterTab from "@/components/characterTab";
 import KikuCard, { KikuCardSkeleton } from "@/app/(main)/(secondary)/kiku/kikuCard";
 import ArcHeader from "@/components/arcHeader";
 import CharacterCard from "@/components/characterCard";
 import MediaFlowCard from "@/components/mediaFlowCard";
-import WIP from "@/components/wip";
-import wait from "@/util/wait";
 import { MediaCharacterListSkeleton } from "@/components/media/characterList";
 import ArcChip from "@/components/arcChip";
 import { Franchise } from "@/types/franchise";

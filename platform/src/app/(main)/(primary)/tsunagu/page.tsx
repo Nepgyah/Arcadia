@@ -1,7 +1,6 @@
 export const revalidate = 0;
 
 import React from "react";
-import { Avatar, Breadcrumbs, Typography } from "@mui/material";
 
 import { GraphQL } from "@/util/api/api";
 import PostCard from "@/app/(main)/(primary)/tsunagu/postCard";

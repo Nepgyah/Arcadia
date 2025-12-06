@@ -1,8 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
-import { apiGET, GraphQL } from "@/util/api/api";
-import { Comment, Post } from "@/types/tsunagu";
-import CommentCard from "@/components/apps/tsunagu/commentTree";
+import { GraphQL } from "@/util/api/api";
 import ArcHeader from "@/components/arcHeader";
 import CommentTree from "./commentTree";
 
