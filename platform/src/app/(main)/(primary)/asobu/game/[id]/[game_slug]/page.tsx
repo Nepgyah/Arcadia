@@ -1,17 +1,11 @@
 export const revalidate = 3600;
 
-import { useParams } from "next/navigation";
-
 import React, { Suspense, use } from "react";
 import InfoItem from "@/components/infoItem";
 import WIP from "@/components/wip";
 import MediaFeatureCard from "@/components/mediaFeatureCard";
 import ArcHeader from "@/components/arcHeader";
-import CharacterCard from "@/components/characterCard";
-import MediaFlowCard from "@/components/mediaFlowCard";
-import SocialMediaCard from "@/components/socialMediaCard";
 
-import { Anime } from "@/types/miru";
 import '@/styles/layout/_media-detail.scss';
 import { fetchFranchiseByGame, fetchGameCharacters, fetchGameDetails } from "./gameDetailsQueries";
 import { Game } from "@/types/asobu";
