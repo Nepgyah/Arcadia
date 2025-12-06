@@ -1,7 +1,8 @@
-## Latest Release - Alpha v3.1 - 11/25/2025
+## Latest Release - Alpha v3.1 - 12/6/2025
 - **Overview**
 	- Finalize initial version of anime detail page
 	- Added more graphql queries to cover Miru, Asobu, Yomu apps
+    - Improve backend architecture with layering
     - Improve peformance of several pages with ssr suspense
     - Add login and create account feature
 
@@ -9,10 +10,13 @@
 	- **Miru v0.3.2**
         - **API**
             - Create graphql queries for anime flow and theme songs
+            - Add layered architecture
         - **Platform**
             - Add anime flow and theme with suspense
 
     - **Yomu v0.3.1**
+        - **API**
+            - Add layered architecture
         - **Platform**
             - Improve user experience when loading
             - Convert pages to utilize SSR w/ suspense

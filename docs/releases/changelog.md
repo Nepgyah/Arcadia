@@ -4,8 +4,8 @@
 | Website    | 1.0     |
 | Account    | 1.2     |
 | Miru       | 0.3.1   |
-| Yomu       | 0.2     |
-| Asobu      | 0.1     |
+| Yomu       | 0.3.1   |
+| Asobu      | 0.1.1   |
 | Tsunagu    | 0.1     |
 | Kau        |         |
 | Iku        |         |
@@ -14,7 +14,7 @@
 | Hiku       |         |
 | Shiru      |         |
 
-## Alpha v2.0 - 11/23/2025
+## Alpha v3.0 - 11/26/2025
 - **Overview**
 	- Improve detail pages of Miru, Yomu and Asobu
 	- Improve reusability of platform components
