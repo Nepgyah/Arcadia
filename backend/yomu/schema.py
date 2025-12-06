@@ -1,9 +1,12 @@
-import graphene
+from django.core.paginator import Paginator
 from graphene_django import DjangoObjectType
+import graphene
 import yomu.models
 import characters.schema
+import shared.models
 import shared.schema
-from django.core.paginator import Paginator
+from yomu.services.yomu_service import YomuSerivce
+from shared.services.franchise_service import FranchiseService
 
 class PublisherType(DjangoObjectType):
 
@@ -101,28 +104,40 @@ class WorkSortInput(graphene.InputObjectType):
 
 class Query(graphene.ObjectType):
     work_by_id = graphene.Field(WorkType, id=graphene.Int(required=True))
+    works_by_category = graphene.List(
+        WorkType, 
+        category=graphene.String(required=True, default_value='-score'), 
+        count=graphene.Int(required=False, default_value=5),
+        direction=graphene.String(required=False, default_value='desc')
+    )
     search_work = graphene.Field(WorkFilterResults, filters=WorkFilterInput(), sort=WorkSortInput(), page=graphene.Int(default_value=1), per_page=graphene.Int(default_value=10))
+    franchise_by_work = graphene.Field(shared.schema.FranchiseType, id=graphene.Int(required=True))
+    characters_by_work = graphene.List(WorkCharacterType, id=graphene.Int(required=True))
 
     def resolve_work_by_id(self, info, id):
-        return yomu.models.Work.objects.get(id=id)
+        return YomuSerivce.get_work_by_id(id)
+    
+    def resolve_works_by_category(self, info, category, direction, count):
+        return YomuSerivce.get_works_by_category(category, direction, count)
+    
+    def resolve_franchise_by_work(self, info, id):
+        return FranchiseService.get_franchise_via_work(id)
+    
+    def resolve_characters_by_work(self, info, id):
+        return YomuSerivce.get_characters_by_work(id)
     
     def resolve_search_work(self, info, filters=None, sort=None, page=1, per_page=10):
         queryset = yomu.models.Work.objects.only('id', 'title', 'score', 'users', 'status', 'summary', 'slug', 'franchise').select_related('franchise')
 
         if filters:
-            print('filtering')
             if filters.title:
-                print('title')
                 queryset = queryset.filter(title__icontains=filters.title)
             if filters.status != -1:
-                print('status')
                 queryset = queryset.filter(status=filters.status)
             if filters.type != -1:
-                print('type')
                 queryset = queryset.filter(status=filters.type)
 
         if sort:
-            print('Sorting')
             direction = '' if sort.direction == 'asc' else '-'
             if sort.category == 'users':
                 queryset = queryset.order_by(f'{direction}users')

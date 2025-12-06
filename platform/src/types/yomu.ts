@@ -11,13 +11,20 @@ export interface Work extends Media {
     total_chapters: number,
     type: string,
     publisher: any,
-    publishing_start_date: string,
-    publishing_end_date: string,
+    publishingStartDate: string,
+    publishingEndDate: string,
     franchise: Franchise,
+    studio: any,
     authors: [
         {
             name: string,
             role: string
         }
-    ]
+    ],
+    previousWork: {
+        toWork: Work
+    },
+    nextWork: {
+        toWork: Work
+    }
 }

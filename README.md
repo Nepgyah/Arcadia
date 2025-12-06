@@ -12,7 +12,7 @@
         - **Platform**
             - Add anime flow and theme with suspense
 
-    - **Yomu v0.2.1**
+    - **Yomu v0.3.1**
         - **Platform**
             - Improve user experience when loading
             - Convert pages to utilize SSR w/ suspense
