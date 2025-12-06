@@ -1,54 +1,89 @@
-'use client';
 
 import ArcHeader from "@/components/arcHeader";
 import BreadcrumbSetter from "@/components/breadcrumb/setBreadcrumbs";
 import EntryCard from "@/components/entryCard";
 import WIP from "@/components/wip";
-import { apiGET } from "@/util/api/api";
-import { Breadcrumbs, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import { apiGET, GraphQL } from "@/util/api/api";
+import { Breadcrumbs, Skeleton, Typography } from "@mui/material";
+import React, { Suspense, useEffect, useState } from "react";
+import TopWorkCards from "./topWork";
+import { Work } from "@/types/yomu";
 
 export default function YomuHome() {
-
-    const [trendingYomu, setTrendingYomu] = useState([]);
-
-    useEffect(() => {
-        apiGET<any>('yomu/home/')
-        .then((res) => {
-            setTrendingYomu(res.trending)
-        })
-    }, [])
+    const topWorkPromise: Promise<Work[]> = fetchTopWork()
+    const popularWorkPromise: Promise<Work[]> = fetchPopularWork()
 
     return (
         <React.Fragment>
-            <BreadcrumbSetter breadcrumbs={['Yomu', 'Home']} />
-            <div id="page-yomu-home">
+            <Suspense fallback={null}>
+                <BreadcrumbSetter breadcrumbs={['Miru', 'Home']} />
+            </Suspense>
+            <div id="page-miru-home">
                 <div className="grid grid--side-col">
                     <div className="flex-row flex-row--gap-md">
-                        <div id="trending">
-                            <ArcHeader title="Trending" />
-                            <div className="flex-col flex-col--gap-sm">
-                                {
-                                    trendingYomu &&
-                                    trendingYomu.map((work: any, key: number) => (
-                                        <EntryCard 
-                                            key={key} 
-                                            app="miru" 
-                                            title={work.title} 
-                                            clickLink={`/yomu/work/${work.id}/${work.slug}`} 
-                                            imageLink={`/storage/yomu/${work.id}.jpg`}
-                                        />
-                                    ))
-                                }
-                            </div>
+                        <div id="all-time">
+                            <ArcHeader title="All Time" link="miru/all-time" linkText="See more" />
+                            <Suspense fallback={ <WorkSkeleton /> }>
+                                <TopWorkCards workPromise={topWorkPromise} />
+                            </Suspense>
+                        </div>
+                        <div id="most-popular">
+                            <ArcHeader title="Most Popular" link="miru/popular" linkText="See more" />
+                            <Suspense fallback={ <WorkSkeleton /> }>
+                                <TopWorkCards workPromise={popularWorkPromise} />
+                            </Suspense>
                         </div>
                     </div>
                     <div className="side-col">
-                        <h2 className="app-font--yomu border-bottom">Friend Activity</h2>
+                        <h2 className="app-font--miru border-bottom">Friend Activity</h2>
                         <WIP />
                     </div>
                 </div>
             </div>
         </React.Fragment>
+    )
+}
+
+async function fetchTopWork() {
+    const query = `
+        query {
+            worksByCategory(category: "score", direction:"asc") {
+                id,
+                slug,
+                title,
+                score
+            }
+        }
+    `
+
+    const res = await GraphQL<any>(query)
+    return res.data.worksByCategory
+}
+
+async function fetchPopularWork() {
+    const query = `
+        query {
+            worksByCategory(category: "users", direction:"asc") {
+                id,
+                slug,
+                title,
+                score
+            }
+        }
+    `
+
+    const res = await GraphQL<any>(query)
+    return res.data.worksByCategory
+}
+
+function WorkSkeleton() {
+    return (
+        <div className="flex-col flex-col--gap-sm">
+            <Skeleton variant="rectangular" height={300} width={200} />
+            <Skeleton variant="rectangular" height={300} width={200} />
+            <Skeleton variant="rectangular" height={300} width={200} />
+            <Skeleton variant="rectangular" height={300} width={200} />
+            <Skeleton variant="rectangular" height={300} width={200} />
+        </div>
     )
 }
